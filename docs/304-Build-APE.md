@@ -1,4 +1,4 @@
-## 34. Build APE
+## 304. Build APE
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -181,6 +181,6 @@ sudo cp -f ./$BUILD_APE/mmojo-server-ape /mnt/mmojo/builds/ape/mmojo-server-ape
 
 ---
 ### Proceed
-- **Next:** [35. Build linux x86_64](35-Build-linux-x86_64.md)
-- **Previous:** [33. Build Test](33-Build-Test.md)
-- **Up:** [30. Build Mmojo Server](30-Build-Mmojo-Server.md)
+- **Next:** [305. Build linux x86_64](305-Build-linux-x86_64.md)
+- **Previous:** [303. Build Test](303-Build-Test.md)
+- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
