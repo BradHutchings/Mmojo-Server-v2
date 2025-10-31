@@ -1,4 +1,4 @@
-## 12. Set Timezone
+## 102. Set Timezone
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -42,6 +42,6 @@ Reference: [Timedatectl can control your Linux time and time zone](https://www.n
 
 ---
 ### Proceed
-- **Next:** [13. Create Mmojo Share](13-Create-Mmojo-Share.md)
-- **Previous:** [11. Clone Mmojo Server Repo](11-Clone-Mmojo-Server-Repo.md)
-- **Up:** [10. Prepare Build Environment](10-Prepare-Build-Environment.md)
+- **Next:** [103. Create Mmojo Share](103-Create-Mmojo-Share.md)
+- **Previous:** [101. Clone Mmojo Server Repo](101-Clone-Mmojo-Server-Repo.md)
+- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
