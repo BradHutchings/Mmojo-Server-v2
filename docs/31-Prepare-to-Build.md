@@ -11,6 +11,10 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### OPTIONAL: Update from Mmojo Server Repo
+(Instructions here to update your locally cloned repo. Run a script in the repo.)
+
+---
 ### Environment Variables
 *This could be a script in the repo. We show the script optionally NO IT CAN't. WE DON'T HAVE THE REPO YET!!*
 
