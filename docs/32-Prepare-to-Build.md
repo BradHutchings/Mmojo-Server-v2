@@ -1,4 +1,4 @@
-## 31. Prepare to Build
+## 32. Prepare to Build
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -131,6 +131,6 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 
 ---
 ### Proceed
-- **Next:** [32. Build Test](NEW-32-Build-Test.md)
-- **Previous:** This is the first article in this section.
+- **Next:** [33. Build Test](33-Build-Test.md)
+- **Previous:** [31. Update Local Mmojo Server Repo](31-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [30. Build Mmojo Server](NEW-30-Build-Mmojo-Server.md)
