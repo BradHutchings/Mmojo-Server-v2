@@ -131,6 +131,6 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 
 ---
 ### Proceed
-- **Next:** [33. Build Test](33-Build-Test.md)
-- **Previous:** [31. Update Local Mmojo Server Repo](31-Update-Local-Mmojo-Server-Repo.md)
-- **Up:** [30. Build Mmojo Server](NEW-30-Build-Mmojo-Server.md)
+- **Next:** [303. Build Test](303-Build-Test.md)
+- **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
+- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
