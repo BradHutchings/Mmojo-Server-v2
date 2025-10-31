@@ -1,4 +1,4 @@
-## 23. Build llamafile
+## 24. Build llamafile
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -7,11 +7,9 @@ brad@bradhutchings.com
 ### About this Step - DO THIS ONCE
 In this step, we will clone the llamafile repo and build it. This will give us access to llamafile's `zipalign` tool for packaging `mmojo-server-one`. You don't need to do this every time you build Mmojo Server.
 
-**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
+This will be renamed "Build Tools" or "Build zipalign" or some such. `zipalign` is the only thing we need from this, built with `cosmocc`.
 
----
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
 ### Environment Variables
@@ -52,6 +50,6 @@ Now, `zipalign` exists at `~/23-BUILD-llamafile/bin/zipalign`.
 
 ---
 ### Proceed
-- **Next:** [24. Build OpenSSL](24-Build-OpenSSL.md)
-- **Previous:** [22. Build Cosmopolitan](22-Build-Cosmopolitan.md)
+- **Next:** [25. Build OpenSSL](25-Build-OpenSSL.md)
+- **Previous:** [23. Build Cosmopolitan](23-Build-Cosmopolitan.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
