@@ -22,11 +22,12 @@ Before you can build Mmojo Server, you need a build environment. Depending on wh
 #### [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
 Prepare things needed to build Mmojo Server executables. 
 
-- [21. Download gguf Files](21-Download-gguf-Files.md) - Download `.gguf` model files from Hugging Face or copy from your Mmojo share.
-- [22. Build Cosmopolitan](22-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
-- [23. Build llamafile](23-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
-- [24. Build OpenSSL](24-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [25. Build Vulkan](25-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
+- [21. Update Local Mmojo Server Repo](21-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
+- [22. Download Models](22-Download-M<odels.md) - Download `.gguf` model files from Hugging Face or copy from your Mmojo share.
+- [23. Build Cosmopolitan](23-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
+- [24. Build llamafile](24-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
+- [25. Build OpenSSL](25-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
+- [26. Build Vulkan](26-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
 
 #### [30. Build Mmojo Server](30-Build-Mmojo-Server.md)
 Build Mmojo Server executables.
