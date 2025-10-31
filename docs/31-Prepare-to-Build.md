@@ -12,7 +12,7 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 
 ---
 ### Environment Variables
-*This could be a script in the repo. We show the script optionally.*
+*This could be a script in the repo. We show the script optionally NO IT CAN't. WE DON'T HAVE THE REPO YET!!*
 
 Let's define some environment variables:
 ```
