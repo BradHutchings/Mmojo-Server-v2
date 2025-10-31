@@ -10,6 +10,10 @@ In this step, we will download some `gguf` files we will need from Hugging Face 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### OPTIONAL: Update from Mmojo Server Repo
+(Instructions here to update your locally cloned repo. Run a script in the repo.)
+
+---
 ### Environment Variables
 
 Let's define some environment variables:
