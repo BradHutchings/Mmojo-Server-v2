@@ -1,4 +1,4 @@
-## 24. Build OpenSSL
+## 25. Build OpenSSL
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -12,10 +12,6 @@ We need to build our own `libssl.a` and `libcrypto.a` becuase:
 This is how I understand the problem. My understanding might be incorrect, but it bears out in trying to find workarounds.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
-
----
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
 
 ---
 ### Environment Variables
@@ -78,6 +74,6 @@ printf "\n**********\n*\n* FINISHED: Build openssl with Cosmo.\n*\n**********\n\
 
 ---
 ### Proceed
-- **Next:** [25. Build Vulkan](25-Build-Vulkan.md)
-- **Previous:** [23. Build llamafile](23-Build-llamafile.md)
+- **Next:** [26. Build Vulkan](26-Build-Vulkan.md)
+- **Previous:** [24. Build llamafile](24-Build-llamafile.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
