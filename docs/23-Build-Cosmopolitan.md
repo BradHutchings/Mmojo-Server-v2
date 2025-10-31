@@ -1,4 +1,4 @@
-## 22. Build Cosmopolitan
+## 23. Build Cosmopolitan
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -8,10 +8,6 @@ brad@bradhutchings.com
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
-
----
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
 
 ---
 ### Environment Variables
@@ -49,6 +45,6 @@ printf "\n**********\n*\n* FINISHED: Clone Cosmopolitan Repo, Build Locally.\n*\
 
 ---
 ### Proceed
-- **Next:** [23. Build llamafile](23-Build-llamafile.md)
-- **Previous:** [21. Download gguf Files](21-Download-gguf-Files.md)
+- **Next:** [24. Build llamafile](24-Build-llamafile.md)
+- **Previous:** [22. Download Models](22-Download-Models.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
