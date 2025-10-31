@@ -1,4 +1,4 @@
-## 15. Set up Cross Compile aarch64 on x86_64
+## 105. Set up Cross Compile aarch64 on x86_64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -58,6 +58,6 @@ I hope to be able to use these to replace the lengthy openssl build with cosmocc
 
 ---
 ### Proceed
-- **Next:** [16. Set up Cross Compile - x86_64 on aarch64](16-Set-up-Cross-Compile-x86_64-on-aarch64.md)
-- **Previous:** [14. Install Dependencies](14-Install-Dependencies.md)
-- **Up:** [10. Prepare Build Environment](10-Prepare-Build-Environment.md)
+- **Next:** [106. Set up Cross Compile - x86_64 on aarch64](106-Set-up-Cross-Compile-x86_64-on-aarch64.md)
+- **Previous:** [104. Install Dependencies](104-Install-Dependencies.md)
+- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
