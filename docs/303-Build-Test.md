@@ -1,4 +1,4 @@
-## 33. Build Test
+## 303. Build Test
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -165,6 +165,6 @@ sudo cp -r completion-ui-original /mnt/mmojo/web-apps/completion-ui
 
 ---
 ### Proceed
-- **Next:** [34. Build APE](34-Build-APE.md)
-- **Previous:** [32. Prepare to Build](32-Prepare-to-Build.md)
-- **Up:** [30. Build Mmojo Server](30-Build-Mmojo-Server.md)
+- **Next:** [304. Build APE](304-Build-APE.md)
+- **Previous:** [302. Prepare to Build](302-Prepare-to-Build.md)
+- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
