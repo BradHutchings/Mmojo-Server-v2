@@ -1,4 +1,4 @@
-## 11. Clone Mmojo Server Repo
+## 101. Clone Mmojo Server Repo
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -38,6 +38,6 @@ printf "\n**********\n*\n* FINISHED: Checkout work-in-progress.\n*\n**********\n
 
 ---
 ### Proceed
-- **Next:** [12. Set Timezone](12-Set-Timezone.md)
+- **Next:** [102. Set Timezone](102-Set-Timezone.md)
 - **Previous:** This is the first article in this section.
-- **Up:** [10. Prepare Build Environment](10-Prepare-Build-Environment.md)
+- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
