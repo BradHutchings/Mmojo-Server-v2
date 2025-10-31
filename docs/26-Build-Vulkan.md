@@ -65,7 +65,7 @@ chmod a+x ~/scripts/Setup-Vulkan-Env.sh
 ---
 ### Proceed
 - **Next:** This is the last article in this section.
-- **Previous:** [25. Build OpenSSL](24-Build-OpenSSL.md)
+- **Previous:** [25. Build OpenSSL](25-Build-OpenSSL.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
 
 ---
