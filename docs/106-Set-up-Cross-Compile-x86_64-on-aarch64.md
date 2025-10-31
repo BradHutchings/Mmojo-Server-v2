@@ -1,4 +1,4 @@
-## 16. Set up Cross Compile x86_64 on aarch64
+## 106. Set up Cross Compile x86_64 on aarch64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -25,9 +25,9 @@ Do this if you're running on aarch64/arm64:
 ---
 ### Proceed
 - **Next:** This is the last article in this section.
-- **Previous:** [15. Set up Cross Compile - aarch64 on x86_64](15-Set-up-Cross-Compile-aarch64-on-x86_64.md)
-- **Up:** [10. Prepare Build Environment](10-Prepare-Build-Environment.md)
+- **Previous:** [105. Set up Cross Compile - aarch64 on x86_64](105-Set-up-Cross-Compile-aarch64-on-x86_64.md)
+- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
 
 ---
 ### Next Section
-- **Next Section:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
+- **Next Section:** [200. Gather Build Pieces](200-Gather-Build-Pieces.md)
