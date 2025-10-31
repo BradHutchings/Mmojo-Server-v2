@@ -12,6 +12,10 @@ I have not had success yet cross-compiling x86_64 builds on aarch64/arm64.
 **Where:** Perform this step in both your aarch64 (arm64) build environment.
 
 ---
+### OPTIONAL: Update from Mmojo Server Repo
+(Instructions here to update your locally cloned repo. Run a script in the repo.)
+
+---
 ### Set up Cross Compile x86_64 on aarch64 (arm64)
 Do this if you're running on aarch64/arm64:
 ```
