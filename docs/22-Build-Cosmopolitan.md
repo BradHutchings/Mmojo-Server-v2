@@ -10,7 +10,10 @@ In this step, we will clone the Cosmopolitan repo, fix known problems, and build
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### OPTIONAL: Update from Mmojo Server Repo
+(Instructions here to update your locally cloned repo. Run a script in the repo.)
 
+---
 ### Environment Variables
 
 Let's define some environment variables:
