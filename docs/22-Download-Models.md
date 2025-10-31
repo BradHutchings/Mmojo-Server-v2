@@ -1,4 +1,4 @@
-## 21. Download gguf Files
+## 21. Download Models
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -10,16 +10,12 @@ In this step, we will download some `gguf` files we will need from Hugging Face 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
-
----
 ### Environment Variables
 
 Let's define some environment variables:
 ```
-cd ~
-DOWNLOAD_DIR="21-DOWNLOAD"
+cd $HOME
+MODELS_DIR="$HOME/22-MODELS"
 MODEL_MAP="model-map.txt"
 printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
 ```
@@ -27,11 +23,11 @@ printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
 
 ---
-### Create Download Directory
-Create the `21-DOWNLOAD` directory, and add a simple model map to it.
+### Create Models Directory
+Create the $MODELS_DIR directory, and add a simple model map to it.
 ```
-mkdir -p ~/$DOWNLOAD_DIR
-cd ~/$DOWNLOAD_DIR
+mkdir -p $MODELS_DIR
+cd $MODELS_DIR
 cat << EOF > $MODEL_MAP
 Google-Gemma-1B-Instruct-v3-q8_0.gguf mmojo-server-Google-Gemma-1B-Instruct-v3
 EOF
@@ -82,13 +78,6 @@ printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 ### Copy Models from Mmojo Share
 If you've created a Mmojo share on your network, copying from that share is much faster than downloading from Hugging Face.
 
-Mount the share:
-```
-mount-mmojo-share.sh
-ls -al /mnt/mmojo
-printf "\n**********\n*\n* FINISHED: Mount the share.\n*\n**********\n\n"
-```
-
 Copy the models:
 ```
 CopyModel() {
@@ -100,6 +89,7 @@ CopyModel() {
   fi
 }
 
+mount-mmojo-share.sh
 unset apefiles
 declare -A apefiles
 
@@ -117,6 +107,6 @@ printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n*********
 
 ---
 ### Proceed
-- **Next:** [22. Build Cosmopolitan](22-Build-Cosmopolitan.md)
-- **Previous:** This is the first article in this section.
+- **Next:** [23. Build Cosmopolitan](23-Build-Cosmopolitan.md)
+- **Previous:** [21. Update Local Mmojo Server Repo](21-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
