@@ -1,4 +1,4 @@
-## 35. Build linux x86_64
+## 305. Build linux x86_64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -20,6 +20,6 @@ The resulting executable will run on any Linux x86_64 system. Support files can 
 
 ---
 ### Proceed
-- **Next:** [36. Build linux aarch64](36-Build-linux-aarch64.md)
-- **Previous:** [34. Build APE](34-Build-APE.md)
-- **Up:** [30. Build Mmojo Server](NEW-30-Build-Mmojo-Server.md)
+- **Next:** [306. Build linux aarch64](306-Build-linux-aarch64.md)
+- **Previous:** [304. Build APE](304-Build-APE.md)
+- **Up:** [300. Build Mmojo Server](NEW-300-Build-Mmojo-Server.md)
