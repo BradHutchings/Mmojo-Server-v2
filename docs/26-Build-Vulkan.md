@@ -1,4 +1,4 @@
-## 25. Build Vulkan
+## 26. Build Vulkan
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -11,10 +11,6 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 - Since Vulkan interfaces with a dynamic library, we can't link to it with cross-platform and cross-architecture Cosmo builds.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
-
----
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
 
 ---
 ### Environment Variables
@@ -69,7 +65,7 @@ chmod a+x ~/scripts/Setup-Vulkan-Env.sh
 ---
 ### Proceed
 - **Next:** This is the last article in this section.
-- **Previous:** [24. Build OpenSSL](24-Build-OpenSSL.md)
+- **Previous:** [25. Build OpenSSL](24-Build-OpenSSL.md)
 - **Up:** [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
 
 ---
