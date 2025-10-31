@@ -12,11 +12,12 @@ Welcome to the **Mmojo Server Documentation**. This page is a jump-off point for
 #### [10. Prepare Build Environment](10-Prepare-Build-Environment.md)
 Before you can build Mmojo Server, you need a build environment. Depending on what you want to build, it could be a single computer or multiple computers. You should have a separate share on your network to keep files you only need to download once, and keep the products of your builds. You may find yourself rebuilding your build environments regularly, especially if you edit or enhance code and instructions in the repo.
 
-- [11. Set Timezone](11-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
-- [12. Create Mmojo Share](12-Create-Mmojo-Share.md) - Create and mount a file share to support multiple build environments.
-- [13. Install Dependencies](13-Install-Dependencies.md) - Install packages needed for your build system.
-- [14. Set up Cross Compile - aarch64 on x86_64](14-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
-- [15. Set up Cross Compile - x86_64 on aarch64](15-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
+- [11. Clone Mmojo Server Repo](11-CloneMmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
+- [12. Set Timezone](12-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
+- [13. Create Mmojo Share](13-Create-Mmojo-Share.md) - Create and mount a file share to support multiple build environments.
+- [14. Install Dependencies](14-Install-Dependencies.md) - Install packages needed for your build system.
+- [15. Set up Cross Compile - aarch64 on x86_64](15-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
+- [16. Set up Cross Compile - x86_64 on aarch64](16-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 
 #### [20. Gather Build Pieces](20-Gather-Build-Pieces.md)
 Prepare things needed to build Mmojo Server executables. 
