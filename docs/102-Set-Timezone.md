@@ -10,10 +10,6 @@ The Completion UI indicates a build date in its Settings panel. Set your build s
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
-
----
 ### Set Timezone
 
 List available time zone names:
