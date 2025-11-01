@@ -13,13 +13,44 @@ This step is automated (below). If you're not familiar with how mounting shares 
 
 ---
 ### Create Mmojo Share
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share.
+Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
 
 ---
-### Mount Mmojo Share
+### Environment Variables
+Copy this script and paste it into your terminal to set environment variables.
+```
+cd $HOME
+export MMOJO_SERVER_DIR="$HOME/101-mmojo-server"
+export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+```
 
-**AUTOM<ATED THIS AS A SCRIPT TO RUN.**
+---
+### Create Mmojo Share Mount Point
 
+1. This script creates a place to mount the Mmojo share and a script to mount it:
+   - View script: <a href="../scripts/101-work-in-progress-branch.sh" target="_blank">104-create-mmojo-mount-point.sh</a>.
+     - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+       <br/>
+       <br/>
+   - Run the script:
+     ```
+     bash $MMOJO_SERVER_SCRIPTS/104-create-mmojo-mount-point.sh
+     ```
+
+2. Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
+   ```
+   nano "$SCRIPTS_DIR/$MOUNT_SCRIPT"
+   ```
+
+3. Mount the Mmojo share and list its contents.
+   ```
+   mount-mmojo-share.sh
+   ls -al /mnt/mmojo
+   ```
+
+
+
+<!--
 1. We need some variables:
    ```
    SHARE_DIR="/mnt/mmojo"
@@ -67,6 +98,7 @@ Create an SMB share on a computer on your network. It should have a user and pas
    mount-mmojo-share.sh
    ls -al /mnt/mmojo
    ```
+-->
 
 ---
 ### Proceed
