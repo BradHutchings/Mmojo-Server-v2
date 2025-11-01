@@ -69,5 +69,5 @@ Create an SMB share on a computer on your network. It should have a user and pas
 ---
 ### Proceed
 - **Next:** [105. Install Dependencies](105-Install-Dependencies.md)
-- **Previous:** [103-Create-Mmojo-Share](103-Create-Mmojo-Share.md)
+- **Previous:** [103. Create Mmojo Share](103-Create-Mmojo-Share.md)
 - **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
