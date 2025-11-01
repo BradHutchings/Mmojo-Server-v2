@@ -17,7 +17,7 @@ List available time zone names:
 timedatectl list-timezones | column
 ```
 
-Set your system's time zone:
+Set your system's time zone. Here are some popular US values:
 ```
 sudo timedatectl set-timezone America/Los_Angeles
 ```
@@ -28,7 +28,7 @@ sudo timedatectl set-timezone America/Phoenix
 sudo timedatectl set-timezone America/Denver
 ```
 ```
-sudo timedatectl set-timezone America/Detroit
+sudo timedatectl set-timezone America/Chicago
 ```
 ```
 sudo timedatectl set-timezone America/New_York
