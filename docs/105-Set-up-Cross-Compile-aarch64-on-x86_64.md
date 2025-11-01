@@ -12,10 +12,6 @@ I've had some limited success building for Raspberry Pi (arm64) from x86_64 Ubun
 **Where:** Perform this step in your x86_64 build environment.
 
 ---
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
-
----
 ### Set up Cross Compile aarch64 (arm64) on x86_64
 ARM has a few names for various versions and purposes of developer tools. `aarch64` means the same thing in some contexts as `arm64` does in others.
 
