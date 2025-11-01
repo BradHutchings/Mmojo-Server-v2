@@ -1,4 +1,4 @@
-## 104. Create Mmojo Share (Automsated)
+## 104. Create Mmojo Share (Automated)
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
