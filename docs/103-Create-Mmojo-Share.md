@@ -13,7 +13,7 @@ This step is a sequence of manual substeps (below). This will help you become fa
 
 ---
 ### Create Mmojo Share
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share.
+Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
 
 ---
 ### Mount Mmojo Share
