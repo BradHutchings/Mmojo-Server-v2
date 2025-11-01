@@ -33,16 +33,20 @@ fi
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
 
-#### Optional: Use the `work-in-progress` branch.
-This branch is where I implement and test my own changes and where I test upstream changes from `llama.cpp`.
+#### Optional: Use the work-in-progress branch.
+The **work-in-progress** branch is where I implement and test my own changes and where I test upstream changes from **llama.cpp**.
 
 This script switches to the **work-in-progress** branch:
-- View the script in a new tab: <a href="../scripts/101-work-in-progress-branch.sh" target="_blank">101-work-in-progress-branch.sh</a>
+- View script: <a href="../scripts/101-work-in-progress-branch.sh" target="_blank">101-work-in-progress-branch.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
 - Run the script:
   ```
   bash $MMOJO_SERVER_SCRIPTS/101-work-in-progress-branch.sh
   ```
- 
+
+<!--
 This script switches to the **work-in-progress** branch:
 ```
 cd $MMOJO_SERVER_DIR
@@ -50,7 +54,7 @@ git checkout work-in-progress
 cd $HOME
 printf "\n**********\n*\n* FINISHED: Checkout work-in-progress.\n*\n**********\n\n"
 ```
-
+-->
 ---
 ### Proceed
 - **Next:** [102. Set Timezone](102-Set-Timezone.md)
