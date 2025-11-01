@@ -10,10 +10,6 @@ Install system package updates, then install packages we will need for our build
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
-
----
 ### Install Package Updates
 First, let's install any package updates.
 ```
