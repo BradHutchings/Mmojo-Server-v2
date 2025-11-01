@@ -12,10 +12,28 @@ I've had some limited success building for Raspberry Pi (arm64) from x86_64 Ubun
 **Where:** Perform this step in your x86_64 build environment.
 
 ---
+### Environment Variables
+Run this script to set environment variables.
+```
+cd $HOME
+export MMOJO_SERVER_DIR="$HOME/101-mmojo-server"
+export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+```
+
+---
 ### Set up Cross Compile aarch64 (arm64) on x86_64
 ARM has a few names for various versions and purposes of developer tools. `aarch64` means the same thing in some contexts as `arm64` does in others.
 
 Do this if you're running on x86_64.
+
+View the script in a new tab: <a href="../scripts/105-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">105-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
+
+```
+bash $MMOJO_SERVER_SCRIPTS/105-Set-up-Cross-Compile-aarch64-on-x86_64.sh
+```
+
+
+Old copy pasta:
 ```
 sudo dpkg --add-architecture arm64
 sudo cat << EOF > ubuntu-arm64.sources
