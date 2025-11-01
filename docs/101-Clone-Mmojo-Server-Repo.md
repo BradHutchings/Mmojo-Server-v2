@@ -17,7 +17,7 @@ As we work, we will update our local copy of the repo before performing each ste
 Clone the Mmojo Server repo:
 ```
 cd $HOME
-export MMOJO_SERVER_DIR="$HOME/11-mmojo-server"
+export MMOJO_SERVER_DIR="$HOME/101-mmojo-server"
 if [ ! -d "$MMOJO_SERVER_DIR" ]; then
   mkdir -p $MMOJO_SERVER_DIR
   git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
