@@ -25,7 +25,8 @@ fi
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
 
-#### Optional: Use the `work-in-progress` branch where I implement and test my own changes and where I test upstream changes from `llama.cpp`.
+#### Optional: Use the `work-in-progress` branch.
+This branch is where I implement and test my own changes and where I test upstream changes from `llama.cpp`.
 
 *This SHOULD be a script in the repo. We show the script optionally.*
 
