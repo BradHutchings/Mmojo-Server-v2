@@ -11,16 +11,39 @@ Install system package updates, then install packages we will need for our build
 
 ---
 ### Install Package Updates
-First, let's install any package updates.
+This script installs available package updates for your Linux system:
+- View script: <a href="../scripts/205-Install-Package-Updates.sh" target="_blank">205-Install-Package-Updates.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script:
+  ```
+  bash $MMOJO_SERVER_SCRIPTS/205-Install-Package-Updates.sh
+  ```
+
+
+<!--
 ```
 sudo apt update
 sudo apt upgrade -y
 
 printf "\n**********\n*\n* FINISHED: Install Package Updates.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### Install Dependencies
+This script installs dependencies you will need:
+- View script: <a href="../scripts/205-Install-Dependencies.sh" target="_blank">205-Install-Package-Updates.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script:
+  ```
+  bash $MMOJO_SERVER_SCRIPTS/205-Install-Dependencies.sh
+  ```
+
+<!--
 Here are some packages that should be adequate for creating a working build system. You may need to install more.
 ```
 sudo apt install -y \
@@ -37,6 +60,7 @@ sudo apt install -y \
 
 printf "\n**********\n*\n* FINISHED: Build Dependencies.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### Proceed
