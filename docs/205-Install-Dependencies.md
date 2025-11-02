@@ -41,5 +41,5 @@ printf "\n**********\n*\n* FINISHED: Build Dependencies.\n*\n**********\n\n"
 ---
 ### Proceed
 - **Next:** [206. Set up Cross Compile - aarch64 on x86_64](206-Set-up-Cross-Compile-aarch64-on-x86_64.md)
-- **Previous:** [204. Create Mmojo Share](204-Mount-Mmojo-Share.md)
+- **Previous:** [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
