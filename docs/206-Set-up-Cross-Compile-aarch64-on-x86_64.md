@@ -26,10 +26,10 @@ ARM has a few names for various versions and purposes of developer tools. `aarch
 
 Do this if you're running on x86_64.
 
-View the script in a new tab: <a href="../scripts/205-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">205-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
+View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">206-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
 
 ```
-bash $MMOJO_SERVER_SCRIPTS/205-Set-up-Cross-Compile-aarch64-on-x86_64.sh
+bash $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
 ```
 
 
