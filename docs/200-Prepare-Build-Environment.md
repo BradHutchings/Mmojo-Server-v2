@@ -18,7 +18,7 @@ I plan to add into my regular mix and provide custom build instructions in the f
 You only need to prepare each build environment once. 
 
 If you have already prepared your build environments, skip ahead to: 
-- [200. Gather Build Pieces](200-Gather-Build-Pieces.md).
+- [300. Gather Build Pieces](300-Gather-Build-Pieces.md).
 
 ---
 ### Preparing Your Build Environment
