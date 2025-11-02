@@ -18,6 +18,7 @@ Copy this script and paste it into your terminal to set environment variables.
 cd $HOME
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
 ```
 
 ---
