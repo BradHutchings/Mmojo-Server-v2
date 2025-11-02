@@ -23,4 +23,4 @@ The resulting executable will run on any Linux x86_64 system. Support files can 
 ### Proceed
 - **Next:** [407. Build pi5](407-Build-pi5.md)
 - **Previous:** [405. Build linux x86_64](405-Build-linux-x86_64.md)
-- **Up:** [400. Build Mmojo Server](NEW-40-Build-Mmojo-Server.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
