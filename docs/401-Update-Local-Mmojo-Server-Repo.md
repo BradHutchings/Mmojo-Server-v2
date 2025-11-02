@@ -1,4 +1,4 @@
-## 301. Update Local Mmojo Server Repo
+## 401. Update Local Mmojo Server Repo
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -15,6 +15,6 @@ Instructions go here.
 
 ---
 ### Proceed
-- **Next:** [302. Prepare to Build](302-Prepare-to-Build.md)
+- **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
 - **Previous:** This is the first article in this section.
-- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
