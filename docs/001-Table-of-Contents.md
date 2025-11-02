@@ -1,4 +1,4 @@
-## 1. Documentation - Table of Contents
+## Table of Contents
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -9,6 +9,9 @@ Welcome to the **Mmojo Server Documentation**. This page is a jump-off point for
 
 ---
 ### Table of Contents
+#### [Overview](010-Overview.md) - (Should be 100-)
+This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
+
 #### [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
 Before you can build Mmojo Server, you need a build environment. Depending on what you want to build, it could be a single computer or multiple computers. You should have a separate share on your network to keep files you only need to download once, and keep the products of your builds. You may find yourself rebuilding your build environments regularly, especially if you edit or enhance code and instructions in the repo.
 
