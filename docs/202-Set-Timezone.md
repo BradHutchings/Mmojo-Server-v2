@@ -34,6 +34,11 @@ sudo timedatectl set-timezone America/Chicago
 sudo timedatectl set-timezone America/New_York
 ```
 
+Check your new settings:
+```
+timedatectl
+```
+
 Reference: [Timedatectl can control your Linux time and time zone](https://www.networkworld.com/article/970572/using-the-timedatectl-command-to-control-your-linux-time-and-time-zone.html).
 
 ---
