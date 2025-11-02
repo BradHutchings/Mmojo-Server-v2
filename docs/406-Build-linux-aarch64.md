@@ -1,4 +1,4 @@
-## 306. Build linux aarch64
+## 406. Build linux aarch64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -21,6 +21,6 @@ The resulting executable will run on any Linux x86_64 system. Support files can 
 
 ---
 ### Proceed
-- **Next:** [307. Build pi5](307-Build-pi5.md)
-- **Previous:** [305. Build linux x86_64](305-Build-linux-x86_64.md)
-- **Up:** [300. Build Mmojo Server](NEW-30-Build-Mmojo-Server.md)
+- **Next:** [407. Build pi5](407-Build-pi5.md)
+- **Previous:** [405. Build linux x86_64](405-Build-linux-x86_64.md)
+- **Up:** [400. Build Mmojo Server](NEW-40-Build-Mmojo-Server.md)
