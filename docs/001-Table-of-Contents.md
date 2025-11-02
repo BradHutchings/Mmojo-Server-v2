@@ -26,7 +26,7 @@ Before you can build Mmojo Server, you need a build environment. Depending on wh
 - [207. Set up Cross Compile - x86_64 on aarch64](207-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 
 ---
-### [300. Gather Build Pieces](30-Gather-Build-Pieces.md)
+### [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 Prepare things needed to build Mmojo Server executables. **You only need to do these steps once (in awhile).**
 
 - [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
@@ -37,7 +37,7 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [306. Build Vulkan](306-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
 
 ---
-### [400. Build Mmojo Server](40-Build-Mmojo-Server.md)
+### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 Build Mmojo Server executables.
 
 - [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
