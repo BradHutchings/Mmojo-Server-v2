@@ -1,4 +1,4 @@
-## 207. Set up Cross Compile x86_64 on aarch64
+## 206. Set up Cross Compile x86_64 on aarch64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -39,7 +39,7 @@ Old copy pasta:
 ---
 ### Proceed
 - **Next:** This is the last article in this section.
-- **Previous:** [206. Set up Cross Compile - aarch64 on x86_64](206-Set-up-Cross-Compile-aarch64-on-x86_64.md)
+- **Previous:** [205. Set up Cross Compile - aarch64 on x86_64](205-Set-up-Cross-Compile-aarch64-on-x86_64.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
