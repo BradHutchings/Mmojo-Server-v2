@@ -1,4 +1,4 @@
-## 205. Install Dependencies
+## 204. Install Dependencies
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -40,6 +40,6 @@ printf "\n**********\n*\n* FINISHED: Build Dependencies.\n*\n**********\n\n"
 
 ---
 ### Proceed
-- **Next:** [206. Set up Cross Compile - aarch64 on x86_64](206-Set-up-Cross-Compile-aarch64-on-x86_64.md)
-- **Previous:** [204. Create Mmojo Share (Automated)](204-Create-Mmojo-Share-Automated.md)
+- **Next:** [205. Set up Cross Compile - aarch64 on x86_64](205-Set-up-Cross-Compile-aarch64-on-x86_64.md)
+- **Previous:** [203. Create Mmojo Share](203-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
