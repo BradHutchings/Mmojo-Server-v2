@@ -32,7 +32,7 @@ View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-aarch
 bash $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
 ```
 
-
+<!--
 Old copy pasta:
 ```
 sudo dpkg --add-architecture arm64
@@ -51,6 +51,7 @@ sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu binutils-aarch64
 
 printf "\n**********\n*\n* FINISHED: Set up Cross Compile aarch64 (arm64) on x86_64.\n*\n**********\n\n"
 ```
+-->
 
 #### Verify that libssl.a and libcrypto.a are Installed for Both Architectures
 Find where the files are under `/usr/lib`:
