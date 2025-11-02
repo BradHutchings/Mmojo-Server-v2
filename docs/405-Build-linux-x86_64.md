@@ -22,4 +22,4 @@ The resulting executable will run on any Linux x86_64 system. Support files can 
 ### Proceed
 - **Next:** [406. Build linux aarch64](406-Build-linux-aarch64.md)
 - **Previous:** [404. Build APE](404-Build-APE.md)
-- **Up:** [400. Build Mmojo Server](NEW-400-Build-Mmojo-Server.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
