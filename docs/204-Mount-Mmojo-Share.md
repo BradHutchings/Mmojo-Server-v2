@@ -1,4 +1,4 @@
-## 203. Create Mmojo Share
+## 204. Mount Mmojo Share
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -68,6 +68,6 @@ Create an SMB share on a computer on your network. It should have a user and pas
 
 ---
 ### Proceed
-- **Next:** [204. Install Dependencies](204-Install-Dependencies.md)
-- **Previous:** [202. Set Timezone](202-Set-Timezone.md)
+- **Next:** [205. Install Dependencies](205-Install-Dependencies.md)
+- **Previous:** [203. Create Mmojo Share](203-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
