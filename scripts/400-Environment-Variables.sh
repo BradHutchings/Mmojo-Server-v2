@@ -7,6 +7,8 @@ export COSMOCC_DIR="$HOME/$BUILD_COSMOPOLITAN_DIR/cosmocc"
 export BUILD_LLAMAFILE_DIR="$HOME/304-BUILD-llamafile"
 export BUILD_OPENSSSL_DIR="$HOME/305-BUILD-openssl"
 export BUILD_VULKAN_DIR="$HOME/306-BUILD-vulkan"
+export BUILD_LLAMA_CPP_DIR="$HOME/400-BUILD-lamma-cpp"
+export MMOJO_SERVER_DIR="$BUILD_LLAMA_CPP_DIR/mmojo-server"
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi

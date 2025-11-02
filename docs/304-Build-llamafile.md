@@ -1,4 +1,4 @@
-## 204. Build llamafile
+## 304. Build llamafile
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -50,6 +50,6 @@ Now, `zipalign` exists at `~/23-BUILD-llamafile/bin/zipalign`.
 
 ---
 ### Proceed
-- **Next:** [205. Build OpenSSL](205-Build-OpenSSL.md)
-- **Previous:** [203. Build Cosmopolitan](203-Build-Cosmopolitan.md)
-- **Up:** [200. Gather Build Pieces](200-Gather-Build-Pieces.md)
+- **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
+- **Previous:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)

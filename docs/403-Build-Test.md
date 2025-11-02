@@ -1,4 +1,4 @@
-## 303. Build Test
+## 403. Build Test
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -20,7 +20,7 @@ DOWNLOAD_DIR="21-DOWNLOAD"
 BUILD_COSMOPOLITAN_DIR="22-BUILD-cosmopolitan"
 BUILD_LLAMAFILE_DIR="23-BUILD-llamafile"
 BUILD_OPENSSSL_DIR="24-BUILD-openssl"
-BUILD_MMOJO_SERVER_DIR="30-BUILD-mmojo"
+BUILD_MMOJO_SERVER_DIR="40-BUILD-mmojo"
 BUILD_TEST="build-test"
 EXTRA_FLAGS=""
 if [ -z "$SAVE_PATH" ]; then
@@ -165,6 +165,6 @@ sudo cp -r completion-ui-original /mnt/mmojo/web-apps/completion-ui
 
 ---
 ### Proceed
-- **Next:** [304. Build APE](304-Build-APE.md)
-- **Previous:** [302. Prepare to Build](302-Prepare-to-Build.md)
-- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
+- **Next:** [404. Build APE](404-Build-APE.md)
+- **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)

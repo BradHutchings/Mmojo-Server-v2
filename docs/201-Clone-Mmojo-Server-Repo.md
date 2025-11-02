@@ -1,4 +1,4 @@
-## 101. Clone Mmojo Server Repo
+## 201. Clone Mmojo Server Repo
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -16,7 +16,7 @@ As we work, we will update our local copy of the repo before performing each ste
 Copy this script and paste it into your terminal to set environment variables.
 ```
 cd $HOME
-export MMOJO_SERVER_DIR="$HOME/101-mmojo-server"
+export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 ```
 
@@ -37,13 +37,13 @@ printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********
 The **work-in-progress** branch is where I implement and test my own changes and where I test upstream changes from **llama.cpp**.
 
 This script switches to the **work-in-progress** branch:
-- View script: <a href="../scripts/101-work-in-progress-branch.sh" target="_blank">101-work-in-progress-branch.sh</a>.
+- View script: <a href="../scripts/201-work-in-progress-branch.sh" target="_blank">201-work-in-progress-branch.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script:
   ```
-  bash $MMOJO_SERVER_SCRIPTS/101-work-in-progress-branch.sh
+  bash $MMOJO_SERVER_SCRIPTS/201-work-in-progress-branch.sh
   ```
 
 <!--
@@ -57,6 +57,6 @@ printf "\n**********\n*\n* FINISHED: Checkout work-in-progress.\n*\n**********\n
 -->
 ---
 ### Proceed
-- **Next:** [102. Set Timezone](102-Set-Timezone.md)
+- **Next:** [202. Set Timezone](202-Set-Timezone.md)
 - **Previous:** This is the first article in this section.
-- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
+- **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
