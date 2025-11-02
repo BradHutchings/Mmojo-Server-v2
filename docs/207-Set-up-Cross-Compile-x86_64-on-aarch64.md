@@ -3,6 +3,8 @@
 Brad Hutchings<br/>
 brad@bradhutchings.com
 
+**THIS PAGE NEEDS TO HAVE A WORKING SCRIPT INCLUDED FOR CROSS COMPILING X86_64 ON AARCH64/ARM<64. -Brad 2025-11-02**
+
 ---
 ### About this Step
 Cross-compiling llama.cpp does not work very well right now. The llama.cpp CMake build system is meant to discover the capabilities of the host machine and build for that. In particular, I run into problems with OpenSSL that need to be patched for cosmocc builds to link in compatible static libraries.
