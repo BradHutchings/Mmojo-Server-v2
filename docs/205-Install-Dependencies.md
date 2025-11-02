@@ -34,7 +34,7 @@ printf "\n**********\n*\n* FINISHED: Install Package Updates.\n*\n**********\n\n
 ---
 ### Install Dependencies
 This script installs dependencies you will need:
-- View script: <a href="../scripts/205-Install-Dependencies.sh" target="_blank">205-Install-Package-Updates.sh</a>.
+- View script: <a href="../scripts/205-Install-Dependencies.sh" target="_blank">205-Install-Dependencies.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
