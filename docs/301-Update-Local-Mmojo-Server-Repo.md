@@ -1,4 +1,4 @@
-## 201. Update Local Mmojo Server Repo
+## 301. Update Local Mmojo Server Repo
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -15,6 +15,6 @@ Instructions go here.
 
 ---
 ### Proceed
-- **Next:** [202. Download Models](202-Download-Models.md)
+- **Next:** [302. Download Models](302-Download-Models.md)
 - **Previous:** This is the first article in this section.
-- **Up:** [200. Gather Build Pieces](200-Gather-Build-Pieces.md)
+- **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
