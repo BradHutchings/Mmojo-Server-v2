@@ -16,4 +16,4 @@ Here are some topics you should review:
 - [104. Packaging for Deployment](104-Packaging-for-Deployment.md) - About packaging builds for deployment.
 - [105. Contributing](105-Contributing.md) - About contributing to this project.
  
- **Get Started:** [101. Goals of the Project](101-Goals-of-the-Project.md)
+ **Get Started:** [101. Project Goals](101-Project-Goals.md)
