@@ -7,13 +7,7 @@ brad@bradhutchings.com
 ### About the Step
 The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
 
-This step is a sequence of manual substeps (below). This will help you become familiar with how mounting a share works. If you're familiar with the process, I have it automated in the next step: [204, Create Mmojo Share (Automated)](204-Create-Mmojo-Share-Automated.md).
-
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
-
----
-### Create Mmojo Share
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
 
 ---
 ### Mount Mmojo Share
