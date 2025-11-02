@@ -6,7 +6,7 @@ export BUILD_COSMOPOLITAN_DIR="$HOME/303-BUILD-cosmopolitan"
 export COSMOCC_DIR="$HOME/$BUILD_COSMOPOLITAN_DIR/cosmocc"
 export BUILD_LLAMAFILE_DIR="$HOME/304-BUILD-llamafile"
 export BUILD_OPENSSSL_DIR="$HOME/305-BUILD-openssl"
-export BUILD_VULKAN_DIR="$HOME/306-BUILD-openssl"
+export BUILD_VULKAN_DIR="$HOME/306-BUILD-vulkan"
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
