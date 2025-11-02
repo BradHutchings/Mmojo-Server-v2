@@ -1,4 +1,4 @@
-## 32. Prepare to Build
+## 402. Prepare to Build
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -26,7 +26,7 @@ export BUILD_COSMOPOLITAN_DIR="$HOME/22-BUILD-cosmopolitan"
 export COSMOCC_DIR="$HOME/$BUILD_COSMOPOLITAN_DIR/cosmocc"
 export BUILD_LLAMAFILE_DIR="$HOME/23-BUILD-llamafile"
 export BUILD_OPENSSSL_DIR="$HOME/24-BUILD-openssl"
-export BUILD_LLAMA_CPP_DIR="$HOME/30-BUILD-lamma-cpp"
+export BUILD_LLAMA_CPP_DIR="$HOME/40-BUILD-lamma-cpp"
 export MMOJO_SERVER_DIR="$BUILD_LLAMA_CPP_DIR/mmojo-server"
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
@@ -131,6 +131,6 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 
 ---
 ### Proceed
-- **Next:** [303. Build Test](303-Build-Test.md)
-- **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
-- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
+- **Next:** [403. Build Test](403-Build-Test.md)
+- **Previous:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
