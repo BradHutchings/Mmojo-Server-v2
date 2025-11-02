@@ -1,4 +1,4 @@
-## 304. Build APE
+## 404. Build APE
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -21,7 +21,7 @@ DOWNLOAD_DIR="21-DOWNLOAD"
 BUILD_COSMOPOLITAN_DIR="22-BUILD-cosmopolitan"
 BUILD_LLAMAFILE_DIR="23-BUILD-llamafile"
 BUILD_OPENSSSL_DIR="24-BUILD-openssl"
-BUILD_MMOJO_SERVER_DIR="30-BUILD-mmojo"
+BUILD_MMOJO_SERVER_DIR="40-BUILD-mmojo"
 COSMO_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
 BUILD_COSMO_AMD64="build-cosmo-amd64"
 BUILD_COSMO_AARCH64="build-cosmo-aarch"
@@ -181,6 +181,6 @@ sudo cp -f ./$BUILD_APE/mmojo-server-ape /mnt/mmojo/builds/ape/mmojo-server-ape
 
 ---
 ### Proceed
-- **Next:** [305. Build linux x86_64](305-Build-linux-x86_64.md)
-- **Previous:** [303. Build Test](303-Build-Test.md)
-- **Up:** [300. Build Mmojo Server](300-Build-Mmojo-Server.md)
+- **Next:** [405. Build linux x86_64](405-Build-linux-x86_64.md)
+- **Previous:** [403. Build Test](403-Build-Test.md)
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
