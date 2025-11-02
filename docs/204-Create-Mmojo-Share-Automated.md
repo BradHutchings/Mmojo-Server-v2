@@ -28,7 +28,7 @@ export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 ### Create Mmojo Share Mount Point
 
 1. This script creates a place to mount the Mmojo share and a script to mount it:
-   - View script: <a href="../scripts/201-work-in-progress-branch.sh" target="_blank">204-create-mmojo-mount-point.sh</a>.
+   - View script: <a href="../scripts/204-create-mmojo-mount-point.sh" target="_blank">204-create-mmojo-mount-point.sh</a>.
      - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
        <br/>
        <br/>
