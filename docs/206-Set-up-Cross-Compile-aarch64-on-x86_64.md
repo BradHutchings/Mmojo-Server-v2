@@ -1,4 +1,4 @@
-## 106. Set up Cross Compile aarch64 on x86_64
+## 206. Set up Cross Compile aarch64 on x86_64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -16,7 +16,7 @@ I've had some limited success building for Raspberry Pi (arm64) from x86_64 Ubun
 Run this script to set environment variables.
 ```
 cd $HOME
-export MMOJO_SERVER_DIR="$HOME/101-mmojo-server"
+export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 ```
 
@@ -26,10 +26,10 @@ ARM has a few names for various versions and purposes of developer tools. `aarch
 
 Do this if you're running on x86_64.
 
-View the script in a new tab: <a href="../scripts/105-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">105-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
+View the script in a new tab: <a href="../scripts/205-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">205-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
 
 ```
-bash $MMOJO_SERVER_SCRIPTS/105-Set-up-Cross-Compile-aarch64-on-x86_64.sh
+bash $MMOJO_SERVER_SCRIPTS/205-Set-up-Cross-Compile-aarch64-on-x86_64.sh
 ```
 
 
@@ -72,6 +72,6 @@ I hope to be able to use these to replace the lengthy openssl build with cosmocc
 
 ---
 ### Proceed
-- **Next:** [107. Set up Cross Compile - x86_64 on aarch64](107-Set-up-Cross-Compile-x86_64-on-aarch64.md)
-- **Previous:** [105. Install Dependencies](105-Install-Dependencies.md)
-- **Up:** [100. Prepare Build Environment](100-Prepare-Build-Environment.md)
+- **Next:** [207. Set up Cross Compile - x86_64 on aarch64](207-Set-up-Cross-Compile-x86_64-on-aarch64.md)
+- **Previous:** [205. Install Dependencies](205-Install-Dependencies.md)
+- **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
