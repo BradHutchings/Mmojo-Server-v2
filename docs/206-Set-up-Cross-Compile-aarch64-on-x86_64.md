@@ -12,46 +12,22 @@ I've had some limited success building for Raspberry Pi (arm64) from x86_64 Ubun
 **Where:** Perform this step in your x86_64 build environment.
 
 ---
-### Environment Variables
-Run this script to set environment variables.
-```
-cd $HOME
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-```
-
----
 ### Set up Cross Compile aarch64 (arm64) on x86_64
 ARM has a few names for various versions and purposes of developer tools. `aarch64` means the same thing in some contexts as `arm64` does in others.
 
 Do this if you're running on x86_64.
 
-View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">206-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
-
-```
-bash $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
-```
-
-<!--
-Old copy pasta:
-```
-sudo dpkg --add-architecture arm64
-sudo cat << EOF > ubuntu-arm64.sources
-Types: deb
-URIs: http://ports.ubuntu.com/ubuntu-ports/
-Suites: noble noble-updates noble-security
-Components: main restricted universe multiverse
-Architectures: arm64
-Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-EOF
-sudo mv ubuntu-arm64.sources /etc/apt/sources.list.d/ubuntu-arm64.sources
-sudo apt update
-sudo apt install -y libssl-dev:arm64
-sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu binutils-aarch64-linux-gnu
-
-printf "\n**********\n*\n* FINISHED: Set up Cross Compile aarch64 (arm64) on x86_64.\n*\n**********\n\n"
-```
--->
+- View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">206-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  cd $HOME
+  export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+  export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  . $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
+  ```
 
 #### Verify that libssl.a and libcrypto.a are Installed for Both Architectures
 Find where the files are under `/usr/lib`:
