@@ -7,8 +7,8 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
 
   for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
     ln -sf $FILE $HOME/scripts
-    chmod a+x $HOME/scripts/mm-*.sh
   done
+  chmod a+x $HOME/scripts/mm-*.sh
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi

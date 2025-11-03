@@ -31,13 +31,13 @@ printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********
 The **work-in-progress** branch is where I implement and test my own changes and where I test upstream changes from **llama.cpp**.
 
 This script switches to the **work-in-progress** branch:
-- View script: <a href="../scripts/201-work-in-progress-branch.sh" target="_blank">201-work-in-progress-branch.sh</a>.
+- View script: <a href="../scripts/mm-work-in-progress-branch.sh" target="_blank">mm-work-in-progress-branch.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . $MMOJO_SERVER_SCRIPTS/201-work-in-progress-branch.sh
+  . $MMOJO_SERVER_SCRIPTS/mm-work-in-progress-branch.sh
   ```
 
 ---
