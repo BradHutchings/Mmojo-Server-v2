@@ -12,23 +12,17 @@ As we work, we will update our local copy of the repo before performing each ste
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Environment Variables
-Copy this script and paste it into your terminal to set environment variables.
-```
-cd $HOME
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-```
-
----
 ### Clone the Mmojo Server Repo
 
 Clone the Mmojo Server repo:
 ```
+export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 cd $HOME
 if [ ! -d "$MMOJO_SERVER_DIR" ]; then
   mkdir -p $MMOJO_SERVER_DIR
   git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
+  . $MMOJO_SERVER_SCRIPTS/mm-update-local-repo.sh
 fi
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
@@ -41,20 +35,11 @@ This script switches to the **work-in-progress** branch:
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script:
+- Run the script. We run with `.` so variables can be defined and exported.
   ```
-  bash $MMOJO_SERVER_SCRIPTS/201-work-in-progress-branch.sh
+  . $MMOJO_SERVER_SCRIPTS/201-work-in-progress-branch.sh
   ```
 
-<!--
-This script switches to the **work-in-progress** branch:
-```
-cd $MMOJO_SERVER_DIR
-git checkout work-in-progress
-cd $HOME
-printf "\n**********\n*\n* FINISHED: Checkout work-in-progress.\n*\n**********\n\n"
-```
--->
 ---
 ### Proceed
 - **Next:** [202. Set Timezone](202-Set-Timezone.md)

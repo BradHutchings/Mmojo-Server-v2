@@ -1,4 +1,4 @@
-## 204. Create Mmojo Share (Automated)
+## 204. Mount Mmojo Share
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -7,50 +7,11 @@ brad@bradhutchings.com
 ### About the Step
 The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
 
-This step is automated (below). If you're not familiar with how mounting shares works on Linux, I have manual steps in the previous step: [203, Create Mmojo Share](203-Create-Mmojo-Share.md).
-
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Create Mmojo Share
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
+### Mount Mmojo Share
 
----
-### Environment Variables
-Copy this script and paste it into your terminal to set environment variables.
-```
-cd $HOME
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-```
-
----
-### Create Mmojo Share Mount Point
-
-1. This script creates a place to mount the Mmojo share and a script to mount it:
-   - View script: <a href="../scripts/201-work-in-progress-branch.sh" target="_blank">204-create-mmojo-mount-point.sh</a>.
-     - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-       <br/>
-       <br/>
-   - Run the script:
-     ```
-     bash $MMOJO_SERVER_SCRIPTS/204-create-mmojo-mount-point.sh
-     ```
-
-2. Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
-   ```
-   nano "$SCRIPTS_DIR/$MOUNT_SCRIPT"
-   ```
-
-3. Mount the Mmojo share and list its contents.
-   ```
-   mount-mmojo-share.sh
-   ls -al /mnt/mmojo
-   ```
-
-
-
-<!--
 1. We need some variables:
    ```
    SHARE_DIR="/mnt/mmojo"
@@ -98,7 +59,6 @@ export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
    mount-mmojo-share.sh
    ls -al /mnt/mmojo
    ```
--->
 
 ---
 ### Proceed

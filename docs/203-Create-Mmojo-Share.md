@@ -3,71 +3,26 @@
 Brad Hutchings<br/>
 brad@bradhutchings.com
 
+**THIS PAGE NEEDS TO HAVE STEPS INCLIUDED FOR INSTALLING AND CONFIGURING SAMBA. -Brad 2025-11-02**
+
 ---
 ### About the Step
 The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
 
-This step is a sequence of manual substeps (below). This will help you become familiar with how mounting a share works. If you're familiar with the process, I have it automated in the next step: [204, Create Mmojo Share (Automated)](204-Create-Mmojo-Share-Automated.md).
+In this step, we will create a Mmojo Share on a device running Linuz. We will install the necessary SMB software, configure `smb.conf`, restart the SMB server, and set it to start automatically at system startup. You can perform this step on another computer on your network if you like.
 
-**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
+If you have a Mmojo Share already set up, skip ahead to the next step: [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md).
+
+**Where:** Perform this step on a computer on your network reachable by other build environments on your network.
 
 ---
 ### Create Mmojo Share
 Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
 
----
-### Mount Mmojo Share
-
-1. We need some variables:
-   ```
-   SHARE_DIR="/mnt/mmojo"
-   SCRIPTS_DIR="$HOME/scripts"
-   TILDE_SCRIPTS="~/scripts"
-   MOUNT_SCRIPT="mount-mmojo-share.sh"
-   ```
-2. Create `/mnt/mmojo` directory.
-   ```
-   if [ ! -d "$SHARE_DIR" ]; then
-       sudo mkdir -p $SHARE_DIR
-   fi
-   ```
-3. Create `$HOME/scripts` directory.
-   ```
-   if [ ! -d "$SCRIPTS_DIR" ]; then
-       mkdir -p $SCRIPTS_DIR
-   fi
-   ```
-4. Create a `mount-mmojo-share.sh` script.
-   ```
-   cat << EOF > "$SCRIPTS_DIR/$MOUNT_SCRIPT"
-   if [[ ! \$(findmnt $SHARE_DIR) ]]; then
-       sudo mount -t cifs -o user=[USER] //[COMPUTER]/mmojo $SHARE_DIR
-   fi
-   EOF
-   chmod a+x "$SCRIPTS_DIR/$MOUNT_SCRIPT"
-   ```
-5. Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
-   ```
-   nano "$SCRIPTS_DIR/$MOUNT_SCRIPT"
-   ```
-6. If `~/scripts` is not already in the `$PATH`, add `~/scripts` to your `$PATH` in `.bashrc` and `source` `.bashrc`.
-   ```
-   if [[ "${PATH}" != *"${SCRIPTS_DIR}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
-   cat << EOF >> $HOME/.bashrc
-   export PATH="$PATH:$SCRIPTS_DIR"
-   EOF
-   source $HOME/.bashrc
-   fi
-   echo $PATH
-   ```
-7. Mount the Mmojo share and list its contents.
-   ```
-   mount-mmojo-share.sh
-   ls -al /mnt/mmojo
-   ```
+Details will be here.
 
 ---
 ### Proceed
-- **Next:** [204. Create Mmojo Share (Automated)](204-Create-Mmojo-Share-Automated.md)
+- **Next:** [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md)
 - **Previous:** [202. Set Timezone](202-Set-Timezone.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
