@@ -7,4 +7,4 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
-printf "\n**********\n*\n* FINISHED: Checkout work-in-progress.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: mm-work-in-progress-branch.\n*\n**********\n\n"
