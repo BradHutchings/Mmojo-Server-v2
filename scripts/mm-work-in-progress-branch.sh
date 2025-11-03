@@ -5,9 +5,10 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   git checkout work-in-progress
   cd $HOME
 
-  # Can I soft link these instead?
-  cp -f $MMOJO_SERVER_SCRIPTS/mm-* $HOME/scripts/
-  chmod a+x $HOME/scripts/mm-*
+  for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
+    ln -sf $FILE $HOME/scripts
+    chmod a+x $HOME/scripts/mm-*.sh
+  done
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
