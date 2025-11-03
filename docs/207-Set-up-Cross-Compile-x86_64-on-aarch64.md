@@ -14,29 +14,20 @@ I have not had success yet cross-compiling x86_64 builds on aarch64/arm64.
 **Where:** Perform this step in both your aarch64 (arm64) build environment.
 
 ---
-### Environment Variables
-Run this script to set environment variables.
-```
-cd $HOME
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-```
-
----
 ### Set up Cross Compile x86_64 on aarch64 (arm64)
 Do this if you're running on aarch64/arm64.
 
-View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-x86_64-on-aarch64.sh" target="_blank">206-Set-up-Cross-Compile-x86_64-on-aarch64.sh</a>
-
-```
-bash $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-x86_64-on-aarch64.sh
-```
-
-
-Old copy pasta:
-```
-# Coming soon
-```
+- View the script in a new tab: <a href="../scripts/207-Set-up-Cross-Compile-x86_64-on-aarch64.sh" target="_blank">207-Set-up-Cross-Compile-x86_64-on-aarch64.sh</a>
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  cd $HOME
+  export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+  export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  . $MMOJO_SERVER_SCRIPTS/207-Set-up-Cross-Compile-x86_64-on-aarch64.sh.sh
+  ```
 
 ---
 ### Proceed
