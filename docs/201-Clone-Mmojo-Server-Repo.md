@@ -12,23 +12,17 @@ As we work, we will update our local copy of the repo before performing each ste
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Environment Variables
-Copy this script and paste it into your terminal to set environment variables.
-```
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
-```
-
----
 ### Clone the Mmojo Server Repo
 
 Clone the Mmojo Server repo:
 ```
+export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 cd $HOME
 if [ ! -d "$MMOJO_SERVER_DIR" ]; then
   mkdir -p $MMOJO_SERVER_DIR
   git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
+  . $MMOJO_SERVER_SCRIPTS/mm-update-local-repo.sh
 fi
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
