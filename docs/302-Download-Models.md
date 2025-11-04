@@ -7,6 +7,8 @@ brad@bradhutchings.com
 ### About this Step - DO THIS ONCE
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
+If you already have models downloaded and copied to your Mmojo share, please proceed to: [303. Copy Models](303-Copy-Models.sh).
+
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
@@ -107,6 +109,6 @@ printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n*********
 
 ---
 ### Proceed
-- **Next:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Next:** [303. Copy Models](303-Copy-Models.sh)
 - **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
