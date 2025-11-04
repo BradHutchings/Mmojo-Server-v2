@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Environment Variables for preparing the build environment, building, and packaging.
 # run this with: ". mm-environment-variables.sh"
 
