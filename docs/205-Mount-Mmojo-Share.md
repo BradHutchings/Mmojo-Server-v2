@@ -1,4 +1,4 @@
-## 204. Mount Mmojo Share
+## 205. Mount Mmojo Share
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -64,6 +64,6 @@ The Mmojo Share is a file share where I keep files for local access and complete
 
 ---
 ### Proceed
-- **Next:** [205. Install Dependencies](205-Install-Dependencies.md)
-- **Previous:** [203. Create Mmojo Share](203-Create-Mmojo-Share.md)
+- **Next:** [206. Install Dependencies](206-Install-Dependencies.md)
+- **Previous:** [204. Create Mmojo Share](204-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
