@@ -1,4 +1,4 @@
-## 201. Clone Mmojo Server Repo
+## 202. Clone Mmojo Server Repo
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -42,6 +42,6 @@ This script switches to the **work-in-progress** branch:
 
 ---
 ### Proceed
-- **Next:** [202. Set Timezone](202-Set-Timezone.md)
-- **Previous:** This is the first article in this section.
+- **Next:** [203. Set Timezone](203-Set-Timezone.md)
+- **Previous:** [201. Create Scripts Directory](201-Create-Scripts-Directory.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
