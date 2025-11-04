@@ -13,19 +13,31 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 
 ---
 ### Environment Variables
-
-Let's define some environment variables:
-```
-cd $HOME
-MODELS_DIR="$HOME/22-MODELS"
-MODEL_MAP="model-map.txt"
-printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
-```
+This script sets environment variables:
+- View script: <a href="../scripts/mm-environment-variables.sh" target="_blank">mm-environment-variables.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script, which is linked into your `$HOME/scripts` directory. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  ```
 
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
 
 ---
 ### Create Models Directory
+This script creates the `$MODELS_DIR` and adds a simple model map to it:
+- View script: <a href="../scripts/303-Create-Models-Directory.sh" target="_blank">303-Create-Models-Directory.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . $MMOJO_SERVER_SCRIPTS/303-Create-Models-Directory.sh
+  ```
+
+<!--
 Create the $MODELS_DIR directory, and add a simple model map to it.
 ```
 mkdir -p $MODELS_DIR
@@ -35,14 +47,28 @@ Google-Gemma-1B-Instruct-v3-q8_0.gguf mmojo-server-Google-Gemma-1B-Instruct-v3
 EOF
 printf "\n**********\n*\n* FINISHED: Create Download Directory.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### OPTIONAL: Download Model Map
 If you plan to create `mmojo-server-one` Actual Portable Executables (APEs) with embedded models, you should download some models that are tested to work with `mmojo-server`. We'll download a model map from Hugging Face.
+
+This script downloads the model map from Hugging Face:
+- View script: <a href="../scripts/303-Download-Model-Map.sh" target="_blank">303-Download-Model-Map.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . $MMOJO_SERVER_SCRIPTS/303-Download-Model-Map.sh
+  ```
+
+<!--
 ```
 MODEL_MAP_URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/model-map.txt"
 wget $MODEL_MAP_URL --quiet -O $MODEL_MAP
 ```
+-->
 
 #### OPTIONAL: Edit the Model Map
 All these models will take a long time to download, so you can edit the model map and remove models you don't want.
