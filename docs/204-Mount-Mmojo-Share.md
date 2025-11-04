@@ -33,7 +33,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
        mkdir -p $SCRIPTS_DIR
    fi
    ```
-4. Create a `mount-mmojo-share.sh` script.
+4. Create an `mm-mount-mmojo-share.sh` script.
    ```
    cat << EOF > "$SCRIPTS_DIR/$MOUNT_SCRIPT"
    if [[ ! \$(findmnt $SHARE_DIR) ]]; then
