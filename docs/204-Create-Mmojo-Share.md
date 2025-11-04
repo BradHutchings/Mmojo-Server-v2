@@ -1,4 +1,4 @@
-## 203. Create Mmojo Share
+## 204. Create Mmojo Share
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -26,6 +26,6 @@ Make the directories we'll use.
 
 ---
 ### Proceed
-- **Next:** [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md)
-- **Previous:** [202. Set Timezone](202-Set-Timezone.md)
+- **Next:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
+- **Previous:** [203. Set Timezone](203-Set-Timezone.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
