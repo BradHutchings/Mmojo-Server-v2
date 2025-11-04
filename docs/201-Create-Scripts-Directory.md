@@ -5,28 +5,32 @@ brad@bradhutchings.com
 
 ---
 ### About this Step
-Let's get started by create a `$HOME/scripts` directory and adding it to your `$PATH`.
+Let's get started by creating a `$HOME/scripts` directory and adding it to your `$PATH` environment variable.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### That Step Here
-
-Do something:
+### Create `$HOME/scripts` Directory
+Create `$HOME/scripts` directory.
 ```
-# The script goes here.
-
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
-cd $HOME
-if [ ! -d "$MMOJO_SERVER_DIR" ]; then
-  mkdir -p $MMOJO_SERVER_DIR
-  git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
-  . $MMOJO_SERVER_SCRIPTS/mm-update-local-repo.sh
+SCRIPTS_DIR="$HOME/scripts"
+TILDE_SCRIPTS="~/scripts"
+if [ ! -d "$SCRIPTS_DIR" ]; then
+  mkdir -p $SCRIPTS_DIR
 fi
-printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
 
+### Add `$HOME/scripts` to `$PATH`
+If `$HOME/scripts` (or `~/scripts`) is not already in the `$PATH`, add `$HOME/scripts` to your `$PATH` in `.bashrc`, then `source` `.bashrc`.
+```
+if [[ "${PATH}" != *"${SCRIPTS_DIR}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
+cat << EOF >> $HOME/.bashrc
+export PATH="$PATH:$SCRIPTS_DIR"
+EOF
+source $HOME/.bashrc
+fi
+echo $PATH
+```
 
 ---
 ### Proceed
