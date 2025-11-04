@@ -1,4 +1,4 @@
-## 303. Build Cosmopolitan
+## 304. Build Cosmopolitan
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -45,6 +45,6 @@ printf "\n**********\n*\n* FINISHED: Clone Cosmopolitan Repo, Build Locally.\n*\
 
 ---
 ### Proceed
-- **Next:** [304. Build llamafile](304-Build-llamafile.md)
-- **Previous:** [302. Download Models](302-Download-Models.md)
+- **Next:** [305. Build llamafile](305-Build-llamafile.md)
+- **Previous:** [303. Copy Models](303-Copy-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
