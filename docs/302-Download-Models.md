@@ -25,6 +25,8 @@ This script sets environment variables:
 
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
 
+_Note that we won't include a section for "Environment Variables" on subsequent pages. Running `mm-environment-variables` will simply be the first line of code block you copy/paste into your Terminal._
+
 ---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
