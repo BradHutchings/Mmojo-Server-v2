@@ -1,4 +1,4 @@
-## 305. Build OpenSSL
+## 306. Build OpenSSL
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -74,6 +74,6 @@ printf "\n**********\n*\n* FINISHED: Build openssl with Cosmo.\n*\n**********\n\
 
 ---
 ### Proceed
-- **Next:** [306. Build Vulkan](306-Build-Vulkan.md)
-- **Previous:** [304. Build llamafile](304-Build-llamafile.md)
+- **Next:** [307. Build Vulkan](307-Build-Vulkan.md)
+- **Previous:** [305. Build llamafile](305-Build-llamafile.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
