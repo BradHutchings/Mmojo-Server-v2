@@ -25,7 +25,6 @@ _Note that if you copy each code block from the guide and paste it into your ter
 
 ---
 ### Clone Cosmopolitan Repo, Build Locally
----
 Clone Cosmopolitan repo into a `$BUILD_COSMOPOLITAN_DIR` directory, fix bugs, then build Cosmopolitan. Build this once, and leave the `$BUILD_COSMOPOLITAN_DIR` directory between builds.
 
 This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
