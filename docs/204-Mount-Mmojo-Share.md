@@ -58,7 +58,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
    ```
 7. Mount the Mmojo share and list its contents.
    ```
-   mount-mmojo-share.sh
+   mm-mount-mmojo-share.sh
    ls -al /mnt/mmojo
    ```
 
