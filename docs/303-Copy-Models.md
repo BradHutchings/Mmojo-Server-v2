@@ -11,14 +11,15 @@ In this step, we will copy models from the Mmojo Share.
 
 ---
 ### Environment Variables
-
-Let's define some environment variables:
-```
-cd $HOME
-MODELS_DIR="$HOME/22-MODELS"
-MODEL_MAP="model-map.txt"
-printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
-```
+This script sets environment variables:
+- View script: <a href="../scripts/mm-environment-variables.sh" target="_blank">mm-environment-variables.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script, which is linked into your `$HOME/scripts` directory. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  ```
 
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
 
