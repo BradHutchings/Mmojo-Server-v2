@@ -18,8 +18,9 @@ This script installs available package updates for your Linux system:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-  export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  # export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+  # export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/205-Install-Package-Updates.sh
   ```
 
@@ -32,8 +33,9 @@ This script installs dependencies you will need:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-  export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  # export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+  # export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  # . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/205-Install-Dependencies.sh
   ```
 
