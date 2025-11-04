@@ -11,7 +11,10 @@ Before gathering build pieces, let's make sure our local copy of the Mmojo Serve
 
 ---
 ### Update Local Mmojo Server Repo
-Instructions go here.
+We already have a script in place in `$HOME/scripts` to update the repo and link any updated `mm-` scripts:
+```
+. $HOME/scripts/mm-update-local-repo.sh
+```
 
 ---
 ### Proceed
