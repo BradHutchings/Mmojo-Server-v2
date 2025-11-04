@@ -12,22 +12,6 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Environment Variables
-This script sets environment variables:
-- View script: <a href="../scripts/mm-environment-variables.sh" target="_blank">mm-environment-variables.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
-- Run the script, which is linked into your `$HOME/scripts` directory. We run with `.` so variables can be defined and exported.
-  ```
-  . mm-environment-variables.sh
-  ```
-
-_Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
-
-_Note that we won't include a section for "Environment Variables" on subsequent pages. Running `mm-environment-variables` will simply be the first line of code block you copy/paste into your Terminal._
-
----
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
 - View script: <a href="../scripts/303-Create-Models-Directory.sh" target="_blank">303-Create-Models-Directory.sh</a>.
@@ -36,6 +20,7 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
+  . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/303-Create-Models-Directory.sh
   ```
 
