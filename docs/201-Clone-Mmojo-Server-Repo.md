@@ -37,7 +37,7 @@ This script switches to the **work-in-progress** branch:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . $MMOJO_SERVER_SCRIPTS/mm-work-in-progress-branch.sh
+  . $HOME/scripts/mm-work-in-progress-branch.sh
   ```
 
 ---

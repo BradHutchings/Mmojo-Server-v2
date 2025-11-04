@@ -10,9 +10,11 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   git checkout main
   cd $HOME
 
-  for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
-    ln -sf $FILE $SCRIPTS_DIR
-  done
+  ### Links don't work - end up modifying repo files on chmod.
+  # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
+  #  ln -sf $FILE $SCRIPTS_DIR
+  # done
+  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $SCRIPTS_DIR
   chmod a+x $SCRIPTS_DIR/mm-*.sh
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."

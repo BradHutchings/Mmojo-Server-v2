@@ -1,16 +1,15 @@
-## 302. Download Models
+## 302. Copy Models
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
 
 ---
 ### About this Step - DO THIS ONCE
-In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
-
-If you already have models downloaded and copied to your Mmojo share, please proceed to: [303. Copy Models](303-Copy-Models.sh).
+In this step, we will copy models from the Mmojo Share.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+<!--
 ---
 ### Environment Variables
 This script sets environment variables:
@@ -24,8 +23,7 @@ This script sets environment variables:
   ```
 
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
-
-_Note that we won't include a section for "Environment Variables" on subsequent pages. Running `mm-environment-variables` will simply be the first line of code block you copy/paste into your Terminal._
+-->
 
 ---
 ### Create Models Directory
@@ -36,6 +34,7 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
+  . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/303-Create-Models-Directory.sh
   ```
 
@@ -79,32 +78,6 @@ nano $MODEL_MAP
 ```
 
 ---
-### Download Models
-Download the models from Hugging Face.
-```
-DownloadModel() {
-  MODEL_FILE=$1
-  URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
-  if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
-}
-
-unset apefiles
-declare -A apefiles
-
-while IFS=$' ' read -r gguf apefile ; do
-  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
-    apefiles["${gguf}"]="${apefile}"
-  fi
-done < "$MODEL_MAP"
-
-for key in "${!apefiles[@]}"; do
-  DownloadModel $key 
-done
-printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
-```
-
-
----
 ### Copy Models from Mmojo Share
 If you've created a Mmojo share on your network, copying from that share is much faster than downloading from Hugging Face.
 
@@ -137,6 +110,6 @@ printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n*********
 
 ---
 ### Proceed
-- **Next:** [303. Copy Models](303-Copy-Models.sh)
-- **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
+- **Next:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
+- **Previous:** [302. Download Models](302-Download-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)

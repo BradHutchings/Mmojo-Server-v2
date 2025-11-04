@@ -1,7 +1,9 @@
-## 304. Build llamafile
+## 305. Build llamafile
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
+
+**THIS NEEDS TO BE PARED DOWN TO JUST BUILD `zipalign` AS AN APE. -Brad 2025-11-04**
 
 ---
 ### About this Step - DO THIS ONCE
@@ -50,6 +52,6 @@ Now, `zipalign` exists at `~/23-BUILD-llamafile/bin/zipalign`.
 
 ---
 ### Proceed
-- **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
-- **Previous:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Next:** [306. Build OpenSSL](306-Build-OpenSSL.md)
+- **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
