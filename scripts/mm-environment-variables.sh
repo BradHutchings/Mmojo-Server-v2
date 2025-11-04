@@ -3,6 +3,7 @@
 
 cd $HOME
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
 export MODELS_DIR="$HOME/302-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
