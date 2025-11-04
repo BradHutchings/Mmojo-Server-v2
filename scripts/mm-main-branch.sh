@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$SCRIPTS_DIR="$HOME/scripts/"
+SCRIPTS_DIR="$HOME/scripts/"
 if [ ! -d "$SCRIPTS_DIR" ]; then
   mkdir -p $SCRIPTS_DIR
 fi
