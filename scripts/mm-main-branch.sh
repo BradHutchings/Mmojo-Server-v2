@@ -1,9 +1,7 @@
 #!/bin/bash
 
+# THe $SCRIPTS_DIR was created and added to $PATH in step 201.
 SCRIPTS_DIR="$HOME/scripts/"
-if [ ! -d "$SCRIPTS_DIR" ]; then
-  mkdir -p $SCRIPTS_DIR
-fi
 
 if [ -d "$MMOJO_SERVER_DIR" ]; then
   cd $MMOJO_SERVER_DIR
