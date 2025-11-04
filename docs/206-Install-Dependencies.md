@@ -1,4 +1,4 @@
-## 205. Install Dependencies
+## 206. Install Dependencies
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -39,6 +39,6 @@ This script installs dependencies you will need:
 
 ---
 ### Proceed
-- **Next:** [206. Set up Cross Compile - aarch64 on x86_64](206-Set-up-Cross-Compile-aarch64-on-x86_64.md)
-- **Previous:** [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md)
+- **Next:** [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md)
+- **Previous:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
