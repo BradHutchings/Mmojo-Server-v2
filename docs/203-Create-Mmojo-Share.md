@@ -21,6 +21,9 @@ Create an SMB share on a computer on your network. It should have a user and pas
 
 Details will be here.
 
+### Create Directories on Mmojo Share
+Make the directories we'll use.
+
 ---
 ### Proceed
 - **Next:** [204. Mount Mmojo Share](204-Mount-Mmojo-Share.md)
