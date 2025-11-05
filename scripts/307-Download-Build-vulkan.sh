@@ -7,8 +7,8 @@ tar xf vulkansdk-linux-x86_64-$VULKAN_VERSION.tar.xz
 cd $VULKAN_VERSION/
 source setup-env.sh 
 
-# unset CC; export CC
-# unset CXX; export CXX
+unset CC
+unset CXX
 sed -i -e 's/apt-get update/apt-get update || true/g' vulkansdk
 
 SIMULTANEOUS_COMPILES=$VULKAN_SIMULTANEOUS_COMPILES
@@ -16,5 +16,7 @@ if [[ -z "${SIMULTANEOUS_COMPILES}" ]]; then
   SIMULTANEOUS_COMPILES=4
 fi
 ./vulkansdk -j $SIMULTANEOUS_COMPILES
+
+cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 307-Download-Build-vulkan.sh.\n*\n**********\n\n"
