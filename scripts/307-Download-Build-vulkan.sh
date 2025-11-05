@@ -6,9 +6,6 @@ wget https://sdk.lunarg.com/sdk/download/$VULKAN_VERSION/linux/vulkansdk-linux-x
 tar xf vulkansdk-linux-x86_64-$VULKAN_VERSION.tar.xz
 cd $VULKAN_VERSION/
 source setup-env.sh 
-
-unset CC
-unset CXX
 sed -i -e 's/apt-get update/apt-get update || true/g' vulkansdk
 
 SIMULTANEOUS_COMPILES=$VULKAN_SIMULTANEOUS_COMPILES
