@@ -4,6 +4,11 @@
 # run this with: ". mm-environment-variables.sh"
 
 cd $HOME
+# Reset these compiler environment variables. Set in build step scripts as needed.
+unset CC
+unset CXX
+unset AR
+
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
