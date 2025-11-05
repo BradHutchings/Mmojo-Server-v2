@@ -13,4 +13,4 @@ sed -i '39i \  if ((s == NULL) || (n == 0)) return 0;' libc/intrin/memchr.c
 # Build Cosmo
 tool/cosmocc/package.sh
 
-printf "\n**********\n*\n* FINISHED: Clone Cosmopolitan Repo, Build Locally.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 304-Clone-Build-Cosmopolian.sh.\n*\n**********\n\n"
