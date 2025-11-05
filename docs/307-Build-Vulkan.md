@@ -13,6 +13,31 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Fast Builds
+If you're working in a build environment that has more than 4 CPU threads available, run this command:
+```
+export VULKAN_SIMULTANEOUS_BUILDS=8
+```
+
+Otherwise, we'll use the default 4.
+
+---
+### Download Vulkan, Build Locally
+Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds.
+
+This script downloads the latest tested version of Vulkan source to `$BUILD_VULKAN_DIR`, then builds it:
+- View script: <a href="../scripts/307-Download-Build-vulkan.sh" target="_blank">307-Download-Build-vulkan.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/307-Download-Build-vulkan.sh
+  ```
+
+<!--
+---
 ### Environment Variables
 ```
 cd ~
@@ -61,6 +86,7 @@ source ~/$BUILD_VULKAN_DIR/$VULKAN_VERSION/setup-env.sh
 EOF
 chmod a+x ~/scripts/Setup-Vulkan-Env.sh
 ```
+-->
 
 ---
 ### Proceed
