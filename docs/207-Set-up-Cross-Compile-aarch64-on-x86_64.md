@@ -1,4 +1,4 @@
-## 206. Set up Cross Compile aarch64 on x86_64
+## 207. Set up Cross Compile aarch64 on x86_64
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
@@ -23,9 +23,7 @@ Do this if you're running on x86_64.
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  cd $HOME
-  export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-  export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+  . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
   ```
 
@@ -49,6 +47,6 @@ I hope to be able to use these to replace the lengthy openssl build with cosmocc
 
 ---
 ### Proceed
-- **Next:** [207. Set up Cross Compile - x86_64 on aarch64](207-Set-up-Cross-Compile-x86_64-on-aarch64.md)
-- **Previous:** [205. Install Dependencies](205-Install-Dependencies.md)
+- **Next:** [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md)
+- **Previous:** [206. Install Dependencies](206-Install-Dependencies.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)

@@ -14,41 +14,21 @@ This will be renamed "Build Tools" or "Build zipalign" or some such. `zipalign` 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Environment Variables
+### Clone llamafile Repo, Build Locally
+Clone llamafile repo into a `$BUILD_LLAMAFILE_DIR` directory, then build llamfile. Build this once, and leave the `$BUILD_LLAMAFILE_DIR` directory between builds.
 
-Let's define some environment variables:
-```
-cd ~
-DOWNLOAD_DIR="21-DOWNLOAD"
-BUILD_COSMOPOLITAN_DIR="22-BUILD-cosmopolitan"
-BUILD_LLAMAFILE_DIR="23-BUILD-llamafile"
-printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
-```
+This script clones the llamafile repo to `$BUILD_LLAMAFILE_DIR`, then builds it:
+- View script: <a href="../scripts/305-Clone-Build-llamafile.sh" target="_blank">305-Clone-Build-llamafile.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/305-Clone-Build-llamafile.sh
+  ```
 
-_Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
-
----
-### Create Build llamafile Directory
-```
-mkdir -p ~/$BUILD_LLAMAFILE_DIR
-cd ~/$BUILD_LLAMAFILE_DIR
-printf "\n**********\n*\n* FINISHED: Create Build Directory.\n*\n**********\n\n"
-```
-
----
-### Clone and Build llamafile
-We clone and build llamafile so we will have access to its custom `zipalign` tool for packaging. 
-
-```
-git clone https://github.com/Mozilla-Ocho/llamafile ~/$BUILD_LLAMAFILE_DIR
-cd $BUILD_LLAMAFILE_DIR
-make -j8
-make install PREFIX=.
-printf "\n**********\n*\n* FINISHED: Clone and Build llamafile.\n*\n**********\n\n"
-```
-
-Now, `zipalign` exists at `~/23-BUILD-llamafile/bin/zipalign`.
-
+Now, `zipalign` exists at `$BUILD_LLAMAFILE_DIR/bin/zipalign`.
 
 ---
 ### Proceed

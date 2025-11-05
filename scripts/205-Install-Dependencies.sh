@@ -12,5 +12,5 @@ sudo apt install -y \
     qtbase5-dev qtbase5-dev-tools qtcreator tk-dev wayland-protocols \
     xz-utils zip zlib1g-dev 
 
-printf "\n**********\n*\n* FINISHED: Build Dependencies.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 205-Install-Dependencies.sh.\n*\n**********\n\n"
 

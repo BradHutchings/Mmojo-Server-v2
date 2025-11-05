@@ -1,9 +1,9 @@
-## 204. Mount Mmojo Share
+## 205. Mount Mmojo Share
 
 Brad Hutchings<br/>
 brad@bradhutchings.com
 
-**THIS NEEDS TO BE REWRITTEN TO DEPEND ON $HOME/scripts ALREADY EXISTING PLUS 204-mount-mmojo-share.sh COPIED TTO $HOME/scripts/mm-mount-mmojo-share.sh. IT CAN'T BE LINKED BECAUSE USER WILL EDIT. -Brad 2025-11-04**
+**THIS NEEDS TO BE REWRITTEN WITH 204-mount-mmojo-share.sh COPIED TTO $HOME/scripts/mm-mount-mmojo-share.sh. IT CAN'T BE LINKED BECAUSE USER WILL EDIT. -Brad 2025-11-04**
 
 ---
 ### About the Step
@@ -18,8 +18,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
    ```
    SHARE_DIR="/mnt/mmojo"
    SCRIPTS_DIR="$HOME/scripts"
-   TILDE_SCRIPTS="~/scripts"
-   MOUNT_SCRIPT="mount-mmojo-share.sh"
+   MOUNT_SCRIPT="mm-mount-mmojo-share.sh"
    ```
 2. Create `/mnt/mmojo` directory.
    ```
@@ -27,13 +26,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
        sudo mkdir -p $SHARE_DIR
    fi
    ```
-3. Create `$HOME/scripts` directory.
-   ```
-   if [ ! -d "$SCRIPTS_DIR" ]; then
-       mkdir -p $SCRIPTS_DIR
-   fi
-   ```
-4. Create a `mount-mmojo-share.sh` script.
+3. Create an `mm-mount-mmojo-share.sh` script.
    ```
    cat << EOF > "$SCRIPTS_DIR/$MOUNT_SCRIPT"
    if [[ ! \$(findmnt $SHARE_DIR) ]]; then
@@ -42,28 +35,18 @@ The Mmojo Share is a file share where I keep files for local access and complete
    EOF
    chmod a+x "$SCRIPTS_DIR/$MOUNT_SCRIPT"
    ```
-5. Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
+4. Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
    ```
    nano "$SCRIPTS_DIR/$MOUNT_SCRIPT"
    ```
-6. If `~/scripts` is not already in the `$PATH`, add `~/scripts` to your `$PATH` in `.bashrc` and `source` `.bashrc`.
+5. Mount the Mmojo share and list its contents.
    ```
-   if [[ "${PATH}" != *"${SCRIPTS_DIR}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
-   cat << EOF >> $HOME/.bashrc
-   export PATH="$PATH:$SCRIPTS_DIR"
-   EOF
-   source $HOME/.bashrc
-   fi
-   echo $PATH
-   ```
-7. Mount the Mmojo share and list its contents.
-   ```
-   mount-mmojo-share.sh
+   mm-mount-mmojo-share.sh
    ls -al /mnt/mmojo
    ```
 
 ---
 ### Proceed
-- **Next:** [205. Install Dependencies](205-Install-Dependencies.md)
-- **Previous:** [203. Create Mmojo Share](203-Create-Mmojo-Share.md)
+- **Next:** [206. Install Dependencies](206-Install-Dependencies.md)
+- **Previous:** [204. Create Mmojo Share](204-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
