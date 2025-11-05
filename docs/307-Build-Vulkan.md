@@ -16,7 +16,7 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 ### Fast Builds
 If you're working in a build environment that has more than 4 CPU threads available, run this command:
 ```
-export VULKAN_SIMULTANEOUS_BUILDS=8
+export VULKAN_SIMULTANEOUS_COMPILES=8
 ```
 
 Otherwise, we'll use the default 4.
