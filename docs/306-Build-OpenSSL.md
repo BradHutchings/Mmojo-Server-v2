@@ -14,6 +14,22 @@ This is how I understand the problem. My understanding might be incorrect, but i
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Clone openssl Repo, Build Locally with cosmocc
+Clone openssl repo into a `$BUILD_OPENSSSL_DIR` directory, then build openssl with cosmo. Build this once, and leave the `$BUILD_OPENSSSL_DIR` directory between builds.
+
+This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
+- View script: <a href="../scripts/306-Clone-Build-openssl.sh" target="_blank">306-Clone-Build-openssl.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/306-Clone-Build-openssl.sh
+  ```
+
+<!--
+---
 ### Environment Variables
 
 Let's define some environment variables:
@@ -32,13 +48,6 @@ printf "\n**********\n*\n* FINISHED: Environment Variables.\n*\n**********\n\n"
 ```
 
 _Note that if you copy each code block from the guide and paste it into your terminal, each block ends with a message so you won't lose your place in this guide._
-
-<!--
-**Optional:** Set `$EXTRA_FLAGS` for profiling.
-```
-EXTRA_FLAGS=" -pg "
-```
--->
 
 ---
 ### Create Build OpenSSL Directory
@@ -71,6 +80,7 @@ cd ~/$BUILD_OPENSSSL_DIR
 export PATH=$SAVE_PATH
 printf "\n**********\n*\n* FINISHED: Build openssl with Cosmo.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### Proceed
