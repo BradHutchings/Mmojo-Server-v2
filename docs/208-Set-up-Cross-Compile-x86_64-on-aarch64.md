@@ -23,9 +23,6 @@ Do this if you're running on aarch64/arm64.
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  cd $HOME
-  # export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-  # export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/207-Set-up-Cross-Compile-x86_64-on-aarch64.sh.sh
   ```
