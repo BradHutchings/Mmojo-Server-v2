@@ -25,4 +25,4 @@ make
 cd ~/$BUILD_OPENSSSL_DIR
 export PATH=$SAVE_PATH
 
-printf "\n**********\n*\n* FINISHED: 305-Clone-Build-openssl.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 306-Clone-Build-openssl.sh.\n*\n**********\n\n"
