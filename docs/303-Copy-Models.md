@@ -92,7 +92,7 @@ CopyModel() {
   fi
 }
 
-mount-mmojo-share.sh
+mm-mount-mmojo-share.sh
 unset apefiles
 declare -A apefiles
 
