@@ -35,9 +35,11 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ---
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
-- The Mmojo Server repo needs pacthed files that can be copied.
-  - Eventually, I want to use scripts to patch here.
-- Run the patch script:
+- View script: <a href="../scripts/402-Fix-llama-cpp.sh" target="_blank">402-Fix-llama-cpp.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
   ```
