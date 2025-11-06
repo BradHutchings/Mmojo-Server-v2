@@ -14,3 +14,5 @@ sed -i -e "s/>.*llama.cpp.*</>$APP_NAME</g" tools/server/webui/index.html
 sed -i -e "s/>.*llama.cpp.*</>$APP_NAME</g" tools/server/webui/src/components/Header.tsx
 
 cd $HOME
+
+printf "\n**********\n*\n* FINISHED: 402-Rollback-webui.sh.\n*\n**********\n\n"
