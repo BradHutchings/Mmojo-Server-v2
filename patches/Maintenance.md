@@ -27,3 +27,7 @@ These are the instructions for maintaining the files rooted in this directory.
 4. Search for `mmojo-server START` in right tab of tablet triplet. Repeatedly copy those blocks from right tab and paste into middle tab.
 
 5. Commit changes to middle tab
+
+6. Edit the script that clones llama.cpp and change the rollback point. More details needed here.
+
+   <img width="205" height="180" alt="image" src="https://github.com/user-attachments/assets/9beadab3-9b4f-4435-9c0b-41edb728a590" />
