@@ -10,10 +10,76 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
----
-### OPTIONAL: Update from Mmojo Server Repo
-(Instructions here to update your locally cloned repo. Run a script in the repo.)
+### Clone Repos
+Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
+This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
+- View script: <a href="../scripts/402-Clone-Repos.sh" target="_blank">402-Clone-Repos.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
+  ```
+
+#### Optional: Use `work-in-progress` Branch
+Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
+```
+. mm-work-in-progress-branch.sh
+```
+
+---
+### Patch llama.cpp Source Code and Build Code
+This looks like lots of fun.
+- The Mmojo Server repo needs pacthed files that can be copied.
+  - Eventually, I want to use scripts to patch here.
+- Run the patch script:
+  ```
+  # THIS DOESN'T WORK YET
+  chmod a+x scripts-mmojo/*.sh
+  ./scripts-mmojo/fix-source-mmojo.sh
+  ```
+
+---
+### Customize WebUI
+
+**Suggested:** Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
+
+```
+# THIS DOESN'T WORK YET
+chmod a+x scripts-mmojo/*.sh
+./scripts-mmojo/customize-web-ui-rollback.sh
+printf "\n**********\n*\n* FINISHED: Customize WebUI - Rollback.\n*\n**********\n\n"
+```
+
+**Required:** Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
+```
+# THIS DOESN'T WORK YET
+chmod a+x scripts-mmojo/*.sh
+./scripts-mmojo/customize-web-ui.sh
+printf "\n**********\n*\n* FINISHED: Customize WebUI.\n*\n**********\n\n"
+```
+
+#### Uh. Oh. npm Spit Out Errors
+
+You may have an earlier version of `npm` and `nodejs` installed on your build machine than are required
+for that customization step. If you're running Linux or macOS, these steps should clean that up.
+
+**ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
+
+```
+cd ~
+sudo apt remove nodejs npm -y
+sudo apt install nodejs npm -y
+sudo npm install -g node@latest
+sudo npm install -g npm@latest
+cd ~/$BUILD_MMOJO_SERVER_DIR
+```
+
+
+<!--
 ---
 ### Environment Variables
 *This could be a script in the repo. We show the script optionally NO IT CAN't. WE DON'T HAVE THE REPO YET!!*
