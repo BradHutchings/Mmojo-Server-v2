@@ -10,7 +10,7 @@ unset CXX
 unset AR
 
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
-export MMOJO_SERVER_PATCHES="$MMOJO_SERVER_DIR/patches"
+export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
 export MODELS_DIR="$HOME/302-MODELS"
