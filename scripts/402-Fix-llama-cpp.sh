@@ -38,4 +38,6 @@ sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 # Future: Just patch common/argc.cpp and eliminate common/argc-mmojo.cpp
 # Future: Move loading-mmojo.html to loading.html instead of mangling server-mmojo.cpp. Will this work with .hpp, etc?
 
+cd $HOME
+
 printf "\n**********\n*\n* FINISHED: 402-Fix-llama-cpp.sh.\n*\n**********\n\n"
