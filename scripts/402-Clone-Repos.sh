@@ -20,4 +20,6 @@ printf "\n----------------------------------------------------------------------
 printf "TO DO: Roll back llama.cpp to a known safe point."
 printf "--------------------------------------------------------------------------------"
 
+cd $HOME
+
 printf "\n**********\n*\n* FINISHED: 402-Clone-Repos.sh.\n*\n**********\n\n"
