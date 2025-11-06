@@ -44,19 +44,31 @@ This looks like lots of fun.
   . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
   ```
 
+
+
+
 ---
 ### Customize WebUI
-
 **Suggested:** Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
-
-```
-# THIS DOESN'T WORK YET
-chmod a+x scripts-mmojo/*.sh
-./scripts-mmojo/customize-web-ui-rollback.sh
-printf "\n**********\n*\n* FINISHED: Customize WebUI - Rollback.\n*\n**********\n\n"
-```
+- View script: <a href="../scripts/402-Rollback-webui.sh" target="_blank">402-Rollback-webui.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . $MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
+  ```
 
 **Required:** Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
+- View script: <a href="../scripts/402-Customize-webui.sh" target="_blank">402-Customize-webui.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
+  ```
+
 ```
 # THIS DOESN'T WORK YET
 chmod a+x scripts-mmojo/*.sh
