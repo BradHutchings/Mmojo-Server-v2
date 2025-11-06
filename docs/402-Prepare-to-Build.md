@@ -10,6 +10,14 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+---
+### Optional: Use `work-in-progress` Branch of Mmojo Server Repo
+Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
+```
+. mm-work-in-progress-branch.sh
+```
+
+---
 ### Clone Repos
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
@@ -24,12 +32,6 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
   . $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
   ```
 
-#### Optional: Use `work-in-progress` Branch
-Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
-```
-. mm-work-in-progress-branch.sh
-```
-
 ---
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
@@ -37,9 +39,7 @@ This looks like lots of fun.
   - Eventually, I want to use scripts to patch here.
 - Run the patch script:
   ```
-  # THIS DOESN'T WORK YET
-  chmod a+x scripts-mmojo/*.sh
-  ./scripts-mmojo/fix-source-mmojo.sh
+  . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
   ```
 
 ---
