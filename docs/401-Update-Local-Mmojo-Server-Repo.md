@@ -17,10 +17,6 @@ We already have a script in place in `$HOME/scripts` to update the repo and copy
 ```
 
 ---
-### Update Local Mmojo Server Repo
-Instructions go here.
-
----
 ### Proceed
 - **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
 - **Previous:** This is the first article in this section.
