@@ -1,8 +1,5 @@
 ## 204. Create Mmojo Share
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 **THIS PAGE NEEDS TO HAVE STEPS INCLIUDED FOR INSTALLING AND CONFIGURING SAMBA. -Brad 2025-11-02**
 
 ---
@@ -29,3 +26,8 @@ Make the directories we'll use.
 - **Next:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
 - **Previous:** [203. Set Timezone](203-Set-Timezone.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
