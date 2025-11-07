@@ -66,38 +66,6 @@ done
 printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 ```
 
-
----
-### Copy Models from Mmojo Share
-If you've created a Mmojo share on your network, copying from that share is much faster than downloading from Hugging Face.
-
-Copy the models:
-```
-CopyModel() {
-  MODEL_FILE=$1
-  if [ ! -f $MODEL_FILE ]; then 
-    echo "Copying $MODEL_FILE.\n"
-    cp -v /mnt/mmojo/models/$MODEL_FILE .
-    chmod a-x $MODEL_FILE
-  fi
-}
-
-mount-mmojo-share.sh
-unset apefiles
-declare -A apefiles
-
-while IFS=$' ' read -r gguf apefile ; do
-  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
-    apefiles["${gguf}"]="${apefile}"
-  fi
-done < "$MODEL_MAP"
-
-for key in "${!apefiles[@]}"; do
-  CopyModel $key 
-done
-printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n**********\n\n"
-```
-
 ---
 ### Proceed
 - **Next:** [303. Copy Models](303-Copy-Models.md)
