@@ -22,7 +22,7 @@ Use the `work-in-progress` branch where I implement and test my own changes and 
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View script: <a href="../scripts/402-Clone-Repos.sh" target="_blank">402-Clone-Repos.sh</a>.
+- View the script: <a href="../scripts/402-Clone-Repos.sh" target="_blank">402-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
