@@ -1,8 +1,5 @@
 ## 305. Build llamafile
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 **THIS NEEDS TO BE PARED DOWN TO JUST BUILD `zipalign` AS AN APE. -Brad 2025-11-04**
 
 ---
@@ -35,3 +32,8 @@ Now, `zipalign` exists at `$BUILD_LLAMAFILE_DIR/bin/zipalign`.
 - **Next:** [306. Build OpenSSL](306-Build-OpenSSL.md)
 - **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
