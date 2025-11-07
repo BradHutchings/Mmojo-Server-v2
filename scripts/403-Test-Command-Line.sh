@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_DIR="$HOME/Test-Command-Line"
+TEST_DIR="$HOME/403-Test-Command-Line"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
