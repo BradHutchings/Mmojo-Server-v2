@@ -11,7 +11,7 @@ $BUILD_LLAMA_CPP_DIR/$BUILD_TEST/bin/mmojo-server --model $MODELS_DIR/Google-Gem
     --path $BUILD_LLAMA_CPP_DIR/completion-ui/ --default-ui-endpoint "chat" --host 0.0.0.0 --port 8080 --batch-size 64 \
     --threads-http 8 --ctx-size 0 --mlock
 
-printf "\nVerify 'mmojo-server-args' and 'mmojo-server-support'."
+printf "\nVerify 'mmojo-server-args' and 'mmojo-server-support'.\n"
 ls -ald mmojo-server-args mmojo-server-support
 
 cd $HOME
