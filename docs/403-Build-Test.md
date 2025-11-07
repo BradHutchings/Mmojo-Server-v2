@@ -25,7 +25,7 @@ export BUILD_PROFILE=1
 ---
 ### Build Test Mmojo Server for Native Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View script: <a href="../scripts/403-Build-Test.sh" target="_blank">403-Build-Test.sh</a>.
+- View the script: <a href="../scripts/403-Build-Test.sh" target="_blank">403-Build-Test.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -38,8 +38,8 @@ This script uses cmake to build Mmojo Server:
 ---
 ### OPTIONAL: Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View script: <a href="../scripts/403-Test-Command-Line.sh" target="_blank">403-Test-Command-Line.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/403-Test-Command-Line.sh" target="_blank">403-Test-Command-Line.sh</a>.
+- Run the script.
   ```
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/403-Test-Command-Line.sh
@@ -48,8 +48,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-args` File
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View script: <a href="../scripts/403-Test-mmojo-server-args.sh" target="_blank">403-Test-mmojo-server-args.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/403-Test-mmojo-server-args.sh" target="_blank">403-Test-mmojo-server-args.sh</a>.
+- Run the script.
   ```
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/403-Test-mmojo-server-args.sh
@@ -58,8 +58,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-support` Directory
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View script: <a href="../scripts/403-Test-mmojo-server-support.sh" target="_blank">403-Test-mmojo-server-support.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/403-Test-mmojo-server-support.sh" target="_blank">403-Test-mmojo-server-support.sh</a>.
+- Run the script.
   ```
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/403-Test-mmojo-server-support.sh
@@ -67,8 +67,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 
 ---
 ### OPTIONAL: Remove Test Directories
-- View script: <a href="../scripts/403-Delete-Tests.sh" target="_blank">403-Delete-Tests.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/403-Delete-Tests.sh" target="_blank">403-Delete-Tests.sh</a>.
+- Run the script.
   ```
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/403-Delete-Tests.sh
