@@ -1,9 +1,4 @@
 ## 402. Prepare to Build
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 
 In this step, we will clone this Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and add some features for Mmojo Server.
@@ -78,3 +73,8 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 - **Next:** [403. Build Test](403-Build-Test.md)
 - **Previous:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
