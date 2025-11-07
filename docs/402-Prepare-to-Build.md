@@ -35,8 +35,8 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ---
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
-- View script: <a href="../scripts/402-Fix-llama-cpp.sh" target="_blank">402-Fix-llama-cpp.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/402-Fix-llama-cpp.sh" target="_blank">402-Fix-llama-cpp.sh</a>.
+- Run the script.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
   ```
@@ -45,16 +45,16 @@ This looks like lots of fun.
 ### Customize WebUI
 #### Suggested
 Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
-- View script: <a href="../scripts/402-Rollback-webui.sh" target="_blank">402-Rollback-webui.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/402-Rollback-webui.sh" target="_blank">402-Rollback-webui.sh</a>.
+- Run the script.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
   ```
 
 #### Required
 Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
-- View script: <a href="../scripts/402-Customize-webui.sh" target="_blank">402-Customize-webui.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- View the script: <a href="../scripts/402-Customize-webui.sh" target="_blank">402-Customize-webui.sh</a>.
+- Run the script.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
   ```
