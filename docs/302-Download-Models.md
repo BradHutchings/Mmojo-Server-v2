@@ -1,9 +1,4 @@
 ## 302. Download Models
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step - DO THIS ONCE
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
@@ -71,3 +66,8 @@ printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 - **Next:** [303. Copy Models](303-Copy-Models.md)
 - **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
