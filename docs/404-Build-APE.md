@@ -34,14 +34,25 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
   . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-x86_64.sh
   ```
 
-#### Optional: Copy to Your Mmojo Share
+#### Optional: Copy x86_64 Build to Your Mmojo Share
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+- View script: <a href="../scripts/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh
+  ```
+
+
+
+<!--
 ```
 mm-mount-mmojo-share.sh
 sudo mkdir -p /mnt/mmojo/builds
 sudo mkdir -p /mnt/mmojo/builds/ape
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server /mnt/mmojo/builds/ape/mmojo-server-x86_64
 ```
+-->
 
 ---
 ### Build Mmojo Server for aarch64 (arm64)
@@ -65,6 +76,16 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
   . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-aarch64.sh
   ```
 
+#### Optional: Copy aarch64 (arm64) Build to Your Mmojo Share
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+- View script: <a href="../scripts/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh
+  ```
+
+<!--
 #### Optional: Copy to Your Mmojo Share
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
 ```
@@ -73,6 +94,7 @@ sudo mkdir -p /mnt/mmojo/builds
 sudo mkdir -p /mnt/mmojo/builds/ape
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server /mnt/mmojo/builds/ape/mmojo-server-aarch64
 ```
+-->
 
 ---
 ### Build mmojo-server Actual Portable Executable (APE)
@@ -123,14 +145,23 @@ printf "\n**********\n*\n* FINISHED: Build mmojo-server Actual Portable Executab
 ```
 
 ---
-#### Optional: Copy to Your Mmojo Share
-Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+#### Optional: Copy Assembled APE to Your Mmojo Share
+Copy this assembled APE to your Mmojo share.
+- View script: <a href="../scripts/404-Copy-Cosmo-APE-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-APE-to-Mmojo-Share.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
+  ```
+
+<!--
 ```
 mm-mount-mmojo-share.sh
 sudo mkdir -p /mnt/mmojo/builds
 sudo mkdir -p /mnt/mmojo/builds/ape
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_APE/mmojo-server-ape /mnt/mmojo/builds/ape/mmojo-server-ape
 ```
+-->
 
 <!--
 ```
