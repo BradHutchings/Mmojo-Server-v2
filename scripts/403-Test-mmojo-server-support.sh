@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_DIR="$HOME/Test-mmojo-server-support"
+TEST_DIR="$HOME/403-Test-mmojo-server-support"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
