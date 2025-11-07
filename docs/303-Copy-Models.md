@@ -1,9 +1,4 @@
 ## 302. Copy Models
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step - DO THIS ONCE
 In this step, we will copy models from the Mmojo Share.
 
@@ -75,3 +70,8 @@ printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n*********
 - **Next:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Previous:** [302. Download Models](302-Download-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
