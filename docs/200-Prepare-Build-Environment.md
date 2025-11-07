@@ -1,6 +1,4 @@
 ## 200. Prepare Build Environment
-
----
 ### About this Section
 Before you can build `mmojo-server`, `mmojo-server-one`, and other targets, you need to set up a build environment. I use two build environments regularly:
 - Ubuntu 24.04 Server (Debian 13 Trixie) for x86_64 in a virtual machine.
