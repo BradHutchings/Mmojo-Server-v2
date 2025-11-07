@@ -16,9 +16,13 @@ cp -r $BUILD_OPENSSSL_DIR/openssl .
 
 # Roll the llama.cpp repo back to last known working.
 # Should we track to releases on the repo? No ides.
-echo -e "\n--------------------------------------------------------------------------------"
-echo -e "TO DO: Roll back llama.cpp to a known safe point."
-echo -e "--------------------------------------------------------------------------------"
+# echo -e "\n--------------------------------------------------------------------------------"
+# echo -e "TO DO: Roll back llama.cpp to a known safe point."
+# echo -e "--------------------------------------------------------------------------------"
+
+# Up through: https://github.com/ggml-org/llama.cpp/pull/16919
+# a44d77126c911d105f7f800c17da21b2a5b112d1 
+git checkout a44d77126c911d105f7f800c17da21b2a5b112d1 
 
 cd $HOME
 
