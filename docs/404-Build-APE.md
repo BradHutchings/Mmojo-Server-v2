@@ -13,6 +13,74 @@ The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating sy
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
 
 ---
+### Build Mmojo Server for x86_64
+This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+- View script: <a href="../scripts/404-Build-Cosmo-x86_64.sh" target="_blank">404-Build-Cosmo-x86_64.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
+  ```
+
+#### Optional: Test the x86_64 Build
+If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-x86_64.sh
+  ```
+
+---
+### Build Mmojo Server for aarch64 (arm64)
+This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+- View script: <a href="../scripts/404-Build-Cosmo-aarch64.sh" target="_blank">404-Build-Cosmo-aarch64.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
+  ```
+
+#### Optional: Test the aarch64 (arm64) Build
+If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-aarch64.sh
+  ```
+
+<!--
+```
+export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
+    -DCOSMOCC=1 -nostdinc -O3 $EXTRA_FLAGS "
+export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $EXTRA_FLAGS \
+    -I$(pwd)/cosmocc/include/third_party/libcxx \
+    -I$(pwd)/openssl/include \
+    -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
+export AR="cosmoar"
+cp common/CMakeLists.txt common/CMakeLists-orig.txt
+sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
+cmake -B $BUILD_COSMO_AMD64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64
+mv common/CMakeLists-orig.txt common/CMakeLists.txt
+cmake --build $BUILD_COSMO_AMD64 --config Release
+export PATH=$SAVE_PATH
+
+printf "\n**********\n*\n* FINISHED: Build Mmojo Server for x86_64.\n*\n**********\n\n"
+```
+-->
+
+<!--
+---
 ### Environment Variables
 
 Let's define some environment variables:
@@ -169,6 +237,7 @@ rm -r -f mmojo-server-support
     --path completion-ui/ --default-ui-endpoint "chat" --host 0.0.0.0 --port 8080 --batch-size 64 \
     --threads-http 8 --ctx-size 0 --mlock
 ```
+-->
 
 #### Optional: Copy to Your Mmojo Share
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
