@@ -1,6 +1,4 @@
 ## 201. Create Scripts Directory
-
----
 ### About this Step
 Let's get started by creating a `$HOME/scripts` directory and adding it to your `$PATH` environment variable.
 
