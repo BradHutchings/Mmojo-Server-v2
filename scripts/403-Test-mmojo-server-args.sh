@@ -32,7 +32,8 @@ EOF
 $BUILD_LLAMA_CPP_DIR/$BUILD_TEST/bin/mmojo-server
 
 printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
-ls -ald mmojo-server-args mmojo-server-support
+ls -ald mmojo-server-args
+ls -ald mmojo-server-support
 
 cd $HOME
 
