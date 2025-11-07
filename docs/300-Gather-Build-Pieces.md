@@ -1,9 +1,4 @@
 ## 300. Gather Buid Pieces
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Section
 We need a few items ready to build an Actually Portable Executable (APE) with Cosmopolitan and for other build considerations. These only need to be prepared once in each of your build environments and rebuilt occasionally.
 
@@ -22,3 +17,8 @@ Here are the things you need to do:
 - [307. Build Vulkan](307-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
 
 **Get Started:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
