@@ -18,8 +18,8 @@ mv loading-mmojo.html tools/server/public/loading-mmojo.html
 
 TODAY=$(date +%Y-%m-%d)
 cp -r completion-ui completion-ui-original
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/completion/scripts.js
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/completion/bookmark-scripts.js
+sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/scripts.js
+sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/bookmark-scripts.js
 
 cd $HOME
 
