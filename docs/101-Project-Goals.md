@@ -1,6 +1,4 @@
 ## 101. Project Goals
-
----
 ### Project Goals
 
 ---
