@@ -1,9 +1,4 @@
 ## 400. Build Mmojo Server
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Section
 We're ready to build `mmojo-server` executables. First, we'll build a native version for the build environment platfrom that can be used to test features and changes. Then, we'll build an Actually Portable Executable (APE) with Cosmopolitan that will run anywhere. After that, we'll build unoptimized linux builds for x86_64 and aarch64 (arm64) platforms, as well as optimized builds for specific devices like macOS and Raspberry Pi.
 
@@ -19,3 +14,8 @@ Here are the things you need to do:
 - [407. Build pi5](407-Build-pi5.md) - Build optimized linux build for Raspberry Pi 3, 4, and 5.
 
 **Get Started:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
