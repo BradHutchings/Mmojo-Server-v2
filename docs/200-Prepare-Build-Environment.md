@@ -1,8 +1,5 @@
 ## 200. Prepare Build Environment
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 ---
 ### About this Section
 Before you can build `mmojo-server`, `mmojo-server-one`, and other targets, you need to set up a build environment. I use two build environments regularly:
@@ -33,3 +30,8 @@ Here are the things you need to do:
 - [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 
 **Get Started:** [201. Create Scripts Directory](201-Create-Scripts-Directory.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
