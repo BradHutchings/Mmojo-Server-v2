@@ -1,8 +1,5 @@
 ## 105. Contributing
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 ---
 ### Contributing
 
@@ -17,3 +14,8 @@ brad@bradhutchings.com
 ---
 ### Next Section
 - **Next Section:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
