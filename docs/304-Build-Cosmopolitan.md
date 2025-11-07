@@ -1,9 +1,4 @@
 ## 304. Build Cosmopolitan
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step - DO THIS ONCE
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
@@ -29,3 +24,8 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
 - **Next:** [305. Build llamafile](305-Build-llamafile.md)
 - **Previous:** [303. Copy Models](303-Copy-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
