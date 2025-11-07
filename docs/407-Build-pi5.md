@@ -1,9 +1,4 @@
 ## 407. Build pi5
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server-pi5`) for use on Raspberry Pi. 
 
@@ -27,3 +22,8 @@ The resulting executable will run on any Raspberry Pi 3, 4, and 5 runnng Raspber
 ---
 ### Next Section
 - **Next Section:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md) - **Not implemented.**
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
