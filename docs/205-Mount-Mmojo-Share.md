@@ -1,9 +1,6 @@
 ## 205. Mount Mmojo Share
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
-**THIS NEEDS TO BE REWRITTEN WITH 204-mount-mmojo-share.sh COPIED TTO $HOME/scripts/mm-mount-mmojo-share.sh. IT CAN'T BE LINKED BECAUSE USER WILL EDIT. -Brad 2025-11-04**
+**THIS NEEDS TO BE REWRITTEN WITH 204-mount-mmojo-share.sh COPIED TO $HOME/scripts/mm-mount-mmojo-share.sh. IT CAN'T BE LINKED BECAUSE USER WILL EDIT. -Brad 2025-11-04**
 
 ---
 ### About the Step
@@ -50,3 +47,8 @@ The Mmojo Share is a file share where I keep files for local access and complete
 - **Next:** [206. Install Dependencies](206-Install-Dependencies.md)
 - **Previous:** [204. Create Mmojo Share](204-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
