@@ -23,7 +23,7 @@ export BUILD_PROFILE=1
 ```
 
 ---
-### Build Test Mmojo Server for Native Build Environment Platform.
+### Build Test Mmojo Server for Native Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View script: <a href="../scripts/403-Build-Test.sh" target="_blank">403-Build-Test.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -36,7 +36,7 @@ This script uses cmake to build Mmojo Server:
   ```
 
 ---
-### OPTIONAL: Test the Build - Command-Line Arguments.
+### OPTIONAL: Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View script: <a href="../scripts/403-Test-Command-Line.sh" target="_blank">403-Test-Command-Line.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -47,7 +47,28 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/403-Test-Command-Line.sh
   ```
+#### Verify that there is no `mmojo-server-args` file or `mmojo-server-support` folder.
+```
+ls -ald mmojo-server-args mmojo-server-support
+```
 
+---
+### OPTIONAL: Test the Build - `mmojo-server-args` File
+The `mmojo-server-args` file is saved in the current working directory. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View script: <a href="../scripts/403-Test-mmojo-server-args.sh" target="_blank">403-Test-mmojo-server-args.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Test-mmojo-server-args.sh
+  ```
+
+#### Verify that there is a `mmojo-server-args` file.
+```
+ls -ald mmojo-server-args mmojo-server-support
+```
 
 <!--
 ---
