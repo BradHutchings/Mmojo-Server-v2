@@ -1,8 +1,5 @@
 ## Table of Contents
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 ---
 ### [100. Overview](100-Overview.md)
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
@@ -53,3 +50,8 @@ Build Mmojo Server executables.
 ---
 ### [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 **Not stubbed yet.**
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)</small>
