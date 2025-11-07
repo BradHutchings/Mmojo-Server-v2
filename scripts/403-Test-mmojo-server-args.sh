@@ -6,7 +6,7 @@ rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 cat << EOF > mmojo-server-args
 --model
-$HOME/$MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
+$MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 --host
 0.0.0.0
 --port
