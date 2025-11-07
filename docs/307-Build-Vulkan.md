@@ -26,7 +26,7 @@ Otherwise, we'll use the default 4.
 Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds.
 
 This script downloads the latest tested version of Vulkan source to `$BUILD_VULKAN_DIR`, then builds it:
-- View script: <a href="../scripts/307-Download-Build-vulkan.sh" target="_blank">307-Download-Build-vulkan.sh</a>.
+- View the script: <a href="../scripts/307-Download-Build-vulkan.sh" target="_blank">307-Download-Build-vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
