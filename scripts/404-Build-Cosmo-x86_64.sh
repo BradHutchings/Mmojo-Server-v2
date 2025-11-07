@@ -17,7 +17,7 @@ cp common/CMakeLists.txt common/CMakeLists-orig.txt
 sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
 
 # Prepare the build folder
-cmake -B $BUILD_COSMO_AMD64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+cmake -B $BUILD_COSMO_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64
 
 # Revert to original CMake system.
