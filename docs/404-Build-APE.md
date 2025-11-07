@@ -86,6 +86,14 @@ Do this if you built both x86_64 and aarch64/arm64 in the same build environment
 
 #### Option 2: Assemble from Your Mmojo Share
 Do this if you built both x86_64 and aarch64/arm64 in different build environments and copied them to your Mmojo share.
+- View the script: <a href="../scripts/404-Assemble-Cosmo-APE-Mmojo-Share.sh" target="_blank">404-Assemble-Cosmo-APE-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Mmojo-Share.sh
+  ```
+
+<!--
 ```
 # THIS DOES NOT WORK, NEEDS TO BE A SCRIPT
 mount-mmojo-share.sh
@@ -101,6 +109,7 @@ apelink \
 export PATH=$SAVE_PATH
 printf "\n**********\n*\n* FINISHED: Build mmojo-server Actual Portable Executable (APE).\n*\n**********\n\n"
 ```
+-->
 
 #### Optional: Test the Assembled APE
 If you're build enviornment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
