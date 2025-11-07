@@ -1,9 +1,4 @@
 ## 207. Set up Cross Compile aarch64 on x86_64
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 Cross-compiling llama.cpp does not work very well right now. The llama.cpp CMake build system is meant to discover the capabilities of the host machine and build for that. In particular, I run into problems with OpenSSL that need to be patched for cosmocc builds to link in compatible static libraries.
 
@@ -50,3 +45,8 @@ I hope to be able to use these to replace the lengthy openssl build with cosmocc
 - **Next:** [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md)
 - **Previous:** [206. Install Dependencies](206-Install-Dependencies.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
