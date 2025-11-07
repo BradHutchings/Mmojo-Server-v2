@@ -1,6 +1,4 @@
 ## 203. Set Timezone
-
----
 ### About this Step
 The Completion UI indicates a build date in its Settings panel. Set your build system's time zone so that the displayed build date is local to you.
 
