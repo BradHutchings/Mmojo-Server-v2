@@ -36,9 +36,6 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
 - View script: <a href="../scripts/402-Fix-llama-cpp.sh" target="_blank">402-Fix-llama-cpp.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
@@ -49,9 +46,6 @@ This looks like lots of fun.
 #### Suggested
 Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
 - View script: <a href="../scripts/402-Rollback-webui.sh" target="_blank">402-Rollback-webui.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
@@ -60,9 +54,6 @@ Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI d
 #### Required
 Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
 - View script: <a href="../scripts/402-Customize-webui.sh" target="_blank">402-Customize-webui.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
@@ -73,7 +64,6 @@ You may have an earlier version of `npm` and `nodejs` installed on your build ma
 for that customization step. If you're running Linux or macOS, these steps should clean that up.
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
-
 ```
 cd ~
 sudo apt remove nodejs npm -y
