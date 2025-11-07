@@ -24,7 +24,7 @@ cmake -B $BUILD_COSMO_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OP
 mv common/CMakeLists-orig.txt common/CMakeLists.txt
 
 # Build
-cmake --build $BUILD_COSMO_AMD64 --config Release
+cmake --build $BUILD_COSMO_X86_64 --config Release
 
 export PATH=$SAVE_PATH
 unset CC
