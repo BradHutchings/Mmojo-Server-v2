@@ -1,8 +1,5 @@
 ## 201. Create Scripts Directory
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 ---
 ### About this Step
 Let's get started by creating a `$HOME/scripts` directory and adding it to your `$PATH` environment variable.
@@ -38,4 +35,8 @@ echo $PATH
 - **Previous:** This is the first article in this section.
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
 
