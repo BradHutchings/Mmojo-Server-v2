@@ -18,7 +18,7 @@ This will be renamed "Build Tools" or "Build zipalign" or some such. `zipalign` 
 Clone llamafile repo into a `$BUILD_LLAMAFILE_DIR` directory, then build llamfile. Build this once, and leave the `$BUILD_LLAMAFILE_DIR` directory between builds.
 
 This script clones the llamafile repo to `$BUILD_LLAMAFILE_DIR`, then builds it:
-- View script: <a href="../scripts/305-Clone-Build-llamafile.sh" target="_blank">305-Clone-Build-llamafile.sh</a>.
+- View the script: <a href="../scripts/305-Clone-Build-llamafile.sh" target="_blank">305-Clone-Build-llamafile.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
