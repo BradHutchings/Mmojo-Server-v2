@@ -12,7 +12,8 @@ $BUILD_LLAMA_CPP_DIR/$BUILD_TEST/bin/mmojo-server --model $MODELS_DIR/Google-Gem
     --threads-http 8 --ctx-size 0 --mlock
 
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
-ls -ald mmojo-server-args mmojo-server-support
+ls -ald mmojo-server-args
+ls -ald mmojo-server-support
 
 cd $HOME
 
