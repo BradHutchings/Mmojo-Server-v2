@@ -1,6 +1,4 @@
 ## 202. Clone Mmojo Server Repo
-
----
 ### About this Step
 Let's get started by cloning the Mmojo Server Repo, so we have scripts available to do all the documented steps.
 
