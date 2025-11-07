@@ -1,8 +1,5 @@
 ## 208. Set up Cross Compile x86_64 on aarch64
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 **THIS PAGE NEEDS TO HAVE A WORKING SCRIPT INCLUDED FOR CROSS COMPILING X86_64 ON AARCH64/ARM<64. -Brad 2025-11-02**
 
 ---
@@ -36,3 +33,8 @@ Do this if you're running on aarch64/arm64.
 ---
 ### Next Section
 - **Next Section:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
