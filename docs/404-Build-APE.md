@@ -34,6 +34,15 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
   . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-x86_64.sh
   ```
 
+#### Optional: Copy to Your Mmojo Share
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+```
+mm-mount-mmojo-share.sh
+sudo mkdir -p /mnt/mmojo/builds
+sudo mkdir -p /mnt/mmojo/builds/ape
+sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server /mnt/mmojo/builds/ape/mmojo-server-x86_64
+```
+
 ---
 ### Build Mmojo Server for aarch64 (arm64)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
@@ -55,6 +64,64 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
   . mm-environment-variables.sh
   . $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-aarch64.sh
   ```
+
+#### Optional: Copy to Your Mmojo Share
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+```
+mm-mount-mmojo-share.sh
+sudo mkdir -p /mnt/mmojo/builds
+sudo mkdir -p /mnt/mmojo/builds/ape
+sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server /mnt/mmojo/builds/ape/mmojo-server-aarch64
+```
+
+---
+### Build mmojo-server Actual Portable Executable (APE)
+Now that we have x86_64 and aarch64 (ARM64) builds, we can combine them into an Actual Portable Executable (APE) file.
+
+#### Option 1: Assemble from Local Copies
+Do this if you built both x86_64 and aarch64/arm64 in the same build environment.
+```
+# THIS DOES NOT WORK, NEEDS TO BE A SCRIPT
+cd ~/$BUILD_MMOJO_SERVER_DIR
+mkdir -p ~/$BUILD_MMOJO_SERVER_DIR/$BUILD_APE
+export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+apelink \
+	-l ~/$BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+	-l ~/$BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+	-o $BUILD_APE/mmojo-server-ape \
+    $BUILD_COSMO_AMD64/bin/mmojo-server \
+    $BUILD_COSMO_AARCH64/bin/mmojo-server
+export PATH=$SAVE_PATH
+printf "\n**********\n*\n* FINISHED: Build mmojo-server Actual Portable Executable (APE).\n*\n**********\n\n"
+```
+
+#### Option 2: Assemble from Your Mmojo Share
+Do this if you built both x86_64 and aarch64/arm64 in different build environments and copied them to your Mmojo share.
+```
+# THIS DOES NOT WORK, NEEDS TO BE A SCRIPT
+mount-mmojo-share.sh
+cd ~/$BUILD_MMOJO_SERVER_DIR
+mkdir -p ~/$BUILD_MMOJO_SERVER_DIR/$BUILD_APE
+export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+apelink \
+	-l ~/$BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+	-l ~/$BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+	-o $BUILD_APE/mmojo-server-ape \
+    /mnt/mmojo/builds/ape/mmojo-server-x86_64 \
+    /mnt/mmojo/builds/ape/mmojo-server-aarch64
+export PATH=$SAVE_PATH
+printf "\n**********\n*\n* FINISHED: Build mmojo-server Actual Portable Executable (APE).\n*\n**********\n\n"
+```
+
+---
+#### Optional: Copy to Your Mmojo Share
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+```
+mm-mount-mmojo-share.sh
+sudo mkdir -p /mnt/mmojo/builds
+sudo mkdir -p /mnt/mmojo/builds/ape
+sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_APE/mmojo-server-ape /mnt/mmojo/builds/ape/mmojo-server-ape
+```
 
 <!--
 ```
@@ -239,14 +306,6 @@ rm -r -f mmojo-server-support
 ```
 -->
 
-#### Optional: Copy to Your Mmojo Share
-Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
-```
-mount-mmojo-share.sh
-sudo mkdir -p /mnt/mmojo/builds
-sudo mkdir -p /mnt/mmojo/builds/ape
-sudo cp -f ./$BUILD_APE/mmojo-server-ape /mnt/mmojo/builds/ape/mmojo-server-ape
-```
 
 ---
 ### Proceed
