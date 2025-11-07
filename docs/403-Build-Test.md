@@ -1,9 +1,4 @@
 ## 403. Build Test
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for your native build environment platform without any optimizations. You don't need to do this. You can use it to test and debug features of Mmojo Server that are not specific to any particular build.
@@ -79,3 +74,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - **Next:** [404. Build APE](404-Build-APE.md)
 - **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
