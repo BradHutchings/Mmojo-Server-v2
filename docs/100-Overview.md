@@ -1,6 +1,4 @@
 ## 100. Overview
-
----
 ### About this Section
 This needs to be written.
 
