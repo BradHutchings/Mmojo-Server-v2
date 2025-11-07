@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd $BUILD_LLAMA_CPP_DIR
+TEST_DIR="$HOME/Test-mmojo-server-args"
+mkdir -p $TEST_DIR
+rm -r -f $TEST_DIR/*
+cd $TEST_DIR
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
@@ -20,13 +23,16 @@ $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 --batch-sleep-ms
 0
 --path
-$(pwd)/completion-ui
+$BUILD_LLAMA_CPP_DIR/completion-ui
 --default-ui-endpoint
 chat
 --mlock
 ...
 EOF
-./$BUILD_TEST/bin/mmojo-server
+$BUILD_LLAMA_CPP_DIR/$BUILD_TEST/bin/mmojo-server
+
+printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
+ls -ald mmojo-server-args mmojo-server-support
 
 cd $HOME
 
