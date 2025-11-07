@@ -1,9 +1,4 @@
 ## 306. Build OpenSSL
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step - DO THIS ONCE
 We need to build our own `libssl.a` and `libcrypto.a` becuase:
 1. Actual Portable Executable (APE) does not support dynamic loading of libraries.
@@ -33,3 +28,8 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 - **Next:** [307. Build Vulkan](307-Build-Vulkan.md)
 - **Previous:** [305. Build llamafile](305-Build-llamafile.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
