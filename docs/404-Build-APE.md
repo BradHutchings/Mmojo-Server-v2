@@ -80,6 +80,14 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can combine them into an 
 
 #### Option 1: Assemble from Local Copies
 Do this if you built both x86_64 and aarch64/arm64 in the same build environment.
+- View script: <a href="../scripts/404-Assemble-Cosmo-APE-Local.sh" target="_blank">404-Assemble-Cosmo-APE-Local.sh</a>.
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  . $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Local.sh
+  ```
+
+<!--
 ```
 # THIS DOES NOT WORK, NEEDS TO BE A SCRIPT
 cd ~/$BUILD_MMOJO_SERVER_DIR
@@ -94,6 +102,7 @@ apelink \
 export PATH=$SAVE_PATH
 printf "\n**********\n*\n* FINISHED: Build mmojo-server Actual Portable Executable (APE).\n*\n**********\n\n"
 ```
+-->
 
 #### Option 2: Assemble from Your Mmojo Share
 Do this if you built both x86_64 and aarch64/arm64 in different build environments and copied them to your Mmojo share.
