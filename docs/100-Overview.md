@@ -1,11 +1,8 @@
 ## 100. Overview
 
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
 ---
 ### About this Section
-
+This needs to be written.
 
 ---
 ### Overview
@@ -17,3 +14,8 @@ Here are some topics you should review:
 - [105. Contributing](105-Contributing.md) - About contributing to this project.
  
  **Get Started:** [101. Project Goals](101-Project-Goals.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)</small>
