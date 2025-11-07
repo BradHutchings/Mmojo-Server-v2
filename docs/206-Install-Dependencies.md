@@ -1,9 +1,4 @@
 ## 206. Install Dependencies
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 Install system package updates, then install packages we will need for our build system.
 
@@ -36,3 +31,8 @@ This script installs dependencies you will need:
 - **Next:** [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md)
 - **Previous:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
