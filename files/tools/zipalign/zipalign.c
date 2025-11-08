@@ -39,6 +39,7 @@
 // Mmojo Server START
 // Not including llamafile.h. -Brad
 // #include "llamafile.h"
+#define _COSMO_SOURCE 1
 // Mmojo Server END
 #include "zip.h"
 
