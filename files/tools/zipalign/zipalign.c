@@ -1,20 +1,19 @@
 /*
-  zipalign.c comes from the original llamafile project.
-  It is used to build the zipalign tool which we use in
-  Mmojo Server to package .gguf model files into mmojo-server-ape
-  zip archives. The .gguf model files need to be aligned on 65536
-  byte boundaries so that GPUs can mmap directly into the zip files
-  to get model data.
+  zipalign.c and related files come from the original llamafile project.
+  They are used to build the zipalign tool which we use in Mmojo Server 
+  to package .gguf model files into mmojo-server-ape zip archives. The 
+  .gguf model files need to be aligned on 65536 byte boundaries so that 
+  GPUs can mmap directly into the zip files to get model data.
 
   This file has been modified to remove some llamafile dependencies.
 
-  Original file: https://raw.githubusercontent.com/mozilla-ai/llamafile/refs/tags/0.9.3/llamafile/zipalign.c
+  Original zipalign.c file:
+      https://raw.githubusercontent.com/mozilla-ai/llamafile/refs/tags/0.9.3/llamafile/zipalign.c
 
   -Brad 2025-11-08
   --
   Brad Hutchings
   brad@bradhutchings.com
-  
 */
 
 // -*- mode:c;indent-tabs-mode:nil;c-basic-offset:4;coding:utf-8 -*-
