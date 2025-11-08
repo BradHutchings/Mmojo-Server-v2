@@ -8,6 +8,7 @@ Before building Mmojo Server, let's make sure our local copy of the Mmojo Server
 ### Update Local Mmojo Server Repo
 We already have a script in place in `$HOME/scripts` to update the repo and copy any updated `mm-` scripts:
 ```
+. mm-environment-variables
 . mm-update-local-repo.sh
 ```
 
