@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d "$BUILD_OPENSSSL_DIR" ]; then
+    rm -r -f $BUILD_OPENSSSL_DIR
+fi
+
 mkdir -p $BUILD_OPENSSSL_DIR
 cd $BUILD_OPENSSSL_DIR
 cp -r $COSMOCC_DIR .
