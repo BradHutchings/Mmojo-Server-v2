@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 sudo apt install -y \
     bison build-essential clang-format cmake g++ \
