@@ -6,7 +6,10 @@
   GPUs can mmap directly into the zip files to get model data.
 
   This file has been modified to remove some llamafile dependencies.
-
+  Modifications are surrounded by:
+    // Mmojo Server START
+    // Mmojo Server END
+    
   Original zipalign.c file:
       https://raw.githubusercontent.com/mozilla-ai/llamafile/refs/tags/0.9.3/llamafile/zipalign.c
 
@@ -33,7 +36,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "llamafile.h"
+// Mmojo Server START
+// Not including llamafile.h. -Brad
+// #include "llamafile.h"
+// Mmojo Server END
 #include "zip.h"
 
 #include <assert.h>
@@ -116,12 +122,16 @@ static int NormalizeMode(int mode) {
 }
 
 int main(int argc, char *argv[]) {
-
+    // Mmojo Server START
+    // Not including llamafile.h - _has or _help. -Brad
+    /*
     if (llamafile_has(argv, "-h") || llamafile_has(argv, "-help") ||
         llamafile_has(argv, "--help")) {
         llamafile_help("/zip/llamafile/zipalign.1.asc");
         __builtin_unreachable();
     }
+    */
+    // Mmojo Server END
 
     // get name of program
     prog = argv[0];
