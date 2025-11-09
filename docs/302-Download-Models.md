@@ -27,7 +27,7 @@ This script downloads the model map from Hugging Face:
 - View the script: <a href="../scripts/302-Download-Model-Map.sh" target="_blank">302-Download-Model-Map.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
+  $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
   ```
 
 #### OPTIONAL: Edit the Model Map
