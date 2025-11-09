@@ -1,0 +1,50 @@
+#!/bin/bash
+
+################################################################################
+# This script copies models from the Mmojo Share.
+#
+# See licensing note at end.
+################################################################################
+
+CopyModel() {
+  MODEL_FILE=$1
+  if [ ! -f $MODEL_FILE ]; then 
+    echo "Copying $MODEL_FILE.\n"
+    cp -v /mnt/mmojo/models/$MODEL_FILE .
+    chmod a-x $MODEL_FILE
+  fi
+}
+
+cd $MODELS_DIR
+mm-mount-mmojo-share.sh
+unset apefiles
+declare -A apefiles
+
+while IFS=$' ' read -r gguf apefile ; do
+  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
+    apefiles["${gguf}"]="${apefile}"
+  fi
+done < "$MODEL_MAP"
+
+for key in "${!apefiles[@]}"; do
+  CopyModel $key 
+done
+
+cd $HOME
+
+echo -e "\nModels directory:"
+ls -al $MODELS_DIR/*.gguf
+
+printf "\n**********\n*\n* FINISHED: 303-Copy-Models.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
