@@ -10,6 +10,7 @@ We already have a script in place in `$HOME/scripts` to update the repo and copy
 ```
 . mm-environment-variables.sh
 . mm-update-local-repo.sh
+. mm-environment-variables.sh
 ```
 
 ---
