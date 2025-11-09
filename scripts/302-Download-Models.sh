@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script downloads models from Higging Face.
+# This script downloads models from Hugging Face.
 #
 # See licensing note at end.
 ################################################################################
