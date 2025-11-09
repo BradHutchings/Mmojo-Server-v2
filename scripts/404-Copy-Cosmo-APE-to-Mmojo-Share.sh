@@ -15,6 +15,7 @@ sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
 
 # TO-DO: check that the $MMOJO_SHARE_BUILDS_APE directory exists.
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mmojo-server-ape $MMOJO_SHARE_BUILDS_APE/mmojo-server-ape
+sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $MMOJO_SHARE_BUILDS_APE/mm-zipalign-ape
 
 printf "\n**********\n*\n* FINISHED: 404-Copy-Cosmo-APE-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
