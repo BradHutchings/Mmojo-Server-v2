@@ -20,7 +20,7 @@ sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' 
 # Prepare the build folder
 rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64
 cmake -B $BUILD_COSMO_AARCH64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64
+    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCOSMOCC=1
 
 # Revert to original CMake system.
 mv common/CMakeLists-orig.txt common/CMakeLists.txt
