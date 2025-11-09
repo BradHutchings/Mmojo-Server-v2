@@ -1,3 +1,20 @@
+/*
+  server-mmojo.cpp is a derivative for tools/server/server.cpp.
+
+  This file has been modified to implement Mmojo Server specific
+  Modifications are surrounded by:
+    // Mmojo Server START
+    // Mmojo Server END
+    
+  Original server.cpp file:
+      https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/tools/server/server.cpp
+
+  -Brad 2025-11-09
+  --
+  Brad Hutchings
+  brad@bradhutchings.com
+*/
+
 #include "chat.h"
 #include "utils.hpp"
 
