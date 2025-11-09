@@ -18,7 +18,7 @@ If you have already prepared your build environments, skip ahead to:
 ---
 ### Preparing Your Build Environment
 Here are the things you need to do:
-- [201. Create Scripts Directory](201-Create-Scripts-Directory.md) - Create `$HOME/scripts` directory and add it to your `$PATH`.
+- [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
 - [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
 - [203. Set Timezone](203-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
 - [204. Create Mmojo Share](204-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
