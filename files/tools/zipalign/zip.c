@@ -10,8 +10,8 @@
     // Mmojo Server START
     // Mmojo Server END
     
-  Original zipalign.c file:
-      https://raw.githubusercontent.com/mozilla-ai/llamafile/refs/tags/0.9.3/llamafile/zipalign.c
+  Original zip.c file:
+      https://raw.githubusercontent.com/mozilla-ai/llamafile/refs/tags/0.9.3/llamafile/zip.c
 
   -Brad 2025-11-08
   --
