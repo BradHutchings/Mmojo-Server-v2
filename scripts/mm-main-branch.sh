@@ -7,9 +7,6 @@
 # See licensing note at end.
 ################################################################################
 
-# THe $SCRIPTS_DIR was created and added to $PATH in step 201.
-SCRIPTS_DIR="$HOME/scripts/"
-
 if [ -d "$MMOJO_SERVER_DIR" ]; then
   cd $MMOJO_SERVER_DIR
   git checkout main
@@ -24,8 +21,8 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
   #  ln -sf $FILE $SCRIPTS_DIR
   # done
-  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $SCRIPTS_DIR
-  chmod a+x $SCRIPTS_DIR/mm-*.sh
+  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
+  chmod a+x $HOME_SCRIPTS/mm-*.sh
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
