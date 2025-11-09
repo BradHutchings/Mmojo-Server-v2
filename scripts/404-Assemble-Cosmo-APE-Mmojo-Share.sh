@@ -38,3 +38,15 @@ export PATH=$SAVE_PATH
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 404-Assemble-Cosmo-APE-Mmojo-Share.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
