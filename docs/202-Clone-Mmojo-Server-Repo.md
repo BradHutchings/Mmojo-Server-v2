@@ -1,9 +1,4 @@
 ## 202. Clone Mmojo Server Repo
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### About this Step
 Let's get started by cloning the Mmojo Server Repo, so we have scripts available to do all the documented steps.
 
@@ -43,5 +38,10 @@ This script switches to the **work-in-progress** branch:
 ---
 ### Proceed
 - **Next:** [203. Set Timezone](203-Set-Timezone.md)
-- **Previous:** [201. Create Scripts Directory](201-Create-Scripts-Directory.md)
+- **Previous:** [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)

@@ -1,0 +1,49 @@
+## 306. Build Vulkan
+### About this Step
+Vulkan is a newer industry standard API to help applications work seamlessly with GPUs from different vendors. GPU vendors provide Vulkan interfaces for their GPUs, which are loaded dynamically by applications which use the Vulkan API. It should be the easiest way to add GPU support to your builds for any particular device you have. However:
+
+- Metal support on Mac M* chips is provided through a third-party open source project.
+- Many systems with small GPUs do not support a large enough `maxComputeSharedMemorySize` in Vulkan for llama.cpp to work with it. Such systems include Raspberry Pi 5 and Intel Iris Xe built-in graphics.
+- Since Vulkan interfaces with a dynamic library, we can't link to it with cross-platform and cross-architecture Cosmo builds.
+
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
+
+---
+### Fast Builds
+If you're working in a build environment that has more than 4 CPU threads available, run this command:
+```
+export VULKAN_SIMULTANEOUS_COMPILES=8
+```
+
+Otherwise, we'll use the default 4.
+
+---
+### Download Vulkan, Build Locally
+Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds.
+
+This script downloads the latest tested version of Vulkan source to `$BUILD_VULKAN_DIR`, then builds it:
+- View the script: <a href="../scripts/306-Download-Build-vulkan.sh" target="_blank">306-Download-Build-vulkan.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  . mm-environment-variables.sh
+  $MMOJO_SERVER_SCRIPTS/306-Download-Build-vulkan.sh
+  . mm-environment-variables.sh
+  ```
+
+---
+### Proceed
+- **Next:** This is the last article in this section.
+- **Previous:** [305. Build OpenSSL](305-Build-OpenSSL.md)
+- **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+
+---
+### Next Section
+- **Next Section:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)

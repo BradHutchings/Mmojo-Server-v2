@@ -1,9 +1,4 @@
 ## Table of Contents
-
-Brad Hutchings<br/>
-brad@bradhutchings.com
-
----
 ### [100. Overview](100-Overview.md)
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
 
@@ -17,14 +12,16 @@ This is an overview of what this repository is about, how to work with it, what 
 ### [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 Before you can build Mmojo Server, you need a build environment. Depending on what you want to build, it could be a single computer or multiple computers. You should have a separate share on your network to keep files you only need to download once, and keep the products of your builds. You may find yourself rebuilding your build environments regularly, especially if you edit or enhance code and instructions in the repo.
 
-- [201. Create Scripts Directory](201-Create-Scripts-Directory.md) - Create `$HOME/scripts` directory and add it to your `$PATH`.
+- [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
 - [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
 - [203. Set Timezone](203-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
 - [204. Create Mmojo Share](204-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
 - [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
 - [206. Install Dependencies](206-Install-Dependencies.md) - Install packages needed for your build system.
+<!--
 - [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 - [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
+-->
 
 ---
 ### [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
@@ -34,17 +31,18 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [302. Download Models](302-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
 - [303. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
-- [305. Build llamafile](305-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
-- [306. Build OpenSSL](306-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [307. Build Vulkan](307-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
-
+- [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
+- [306. Build Vulkan](306-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
+<!--
+- [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
+-->
 ---
 ### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 Build Mmojo Server executables.
 
 - [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
 - [402. Prepare to Build](402-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
-- [403. Build Test](403-Build-Test.md) - Build an unoptimized `mmojo-server` for the build environment platformm that can be used to test features and changes.
+- [403. Build CPU Only](403-Build-CPU-Only.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
 - [404. Build APE](404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
 - [405. Build linux x86_64](405-Build-linux-x86_64.md) - Build unoptimized linux build for x86_64.
 - [406. Build linux aarch64](406-Build-linux-aarch64.md) - Build unoptimized linux build for aarch64 (arm64).
@@ -53,3 +51,8 @@ Build Mmojo Server executables.
 ---
 ### [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 **Not stubbed yet.**
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
