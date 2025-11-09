@@ -23,6 +23,7 @@ This script installs dependencies you will need:
 - View script: <a href="../scripts/206-Install-Dependencies.sh" target="_blank">206-Install-Dependencies.sh</a>.
 - Run the script.
   ```
+  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/206-Install-Dependencies.sh
   ```
 
