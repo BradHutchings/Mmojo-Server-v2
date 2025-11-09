@@ -15,4 +15,4 @@ make install PREFIX=.
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 305-Clone-Build-llamafile.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 307-Clone-Build-llamafile.sh.\n*\n**********\n\n"
