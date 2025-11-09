@@ -24,9 +24,9 @@ sed -i '39i \  if ((s == NULL) || (n == 0)) return 0;' libc/intrin/memchr.c
 tool/cosmocc/package.sh
 
 # Show off what we built
-printf "\nBuild of Cosmopolitan is complete.\n"
-printf "ls -al cosmocc/bin/\n\n"
-ls -al cosmocc/bin/
+printf "\nBuild of Cosmopolitan is complete.\n\n"
+printf "\$ ls -al $BUILD_COSMOPOLITAN_DIR/cosmocc/bin/\n"
+ls -al $BUILD_COSMOPOLITAN_DIR/cosmocc/bin/
 printf "\n"
 
 cd $HOME
