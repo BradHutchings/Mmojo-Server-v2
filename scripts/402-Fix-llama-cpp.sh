@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# This script patches up source code right before we compile so I don't have to maintain all the changed files in the forked repo. -Brad
+################################################################################
+# This script patches up source code right before we compile so I don't have to 
+# maintain all the changed files within this repo's /files directory. -Brad
+#
+# See licensing note at end.
+################################################################################
 
 # This copies the $MMOJO_SERVER_FILES tree into the $BUILD_LLAMA_CPP_DIR tree.
 cp -r $MMOJO_SERVER_FILES/* $BUILD_LLAMA_CPP_DIR/
@@ -42,3 +47,15 @@ sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 402-Fix-llama-cpp.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
