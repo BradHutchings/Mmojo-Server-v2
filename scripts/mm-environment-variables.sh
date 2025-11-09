@@ -1,9 +1,20 @@
 #!/bin/bash
 
-# Environment Variables for preparing the build environment, building, and packaging.
-# run this with: ". mm-environment-variables.sh"
+################################################################################
+# This script sets environment variables for building, testing, and packaging
+# all of the things we build, test, and package in this repo. It is copied
+# to your $HOME/scripts directory for convenient access.
+#
+# Run from the command-line like this so all the variables are exported to
+# the shell environment:
+#
+#     . mm-environment-variables.sh
+#
+# See licensing note at end.
+################################################################################
 
 cd $HOME
+
 # Reset these compiler environment variables. Set in build step scripts as needed.
 unset CC
 unset CXX
@@ -48,3 +59,15 @@ if [ -z "$SAVE_PATH" ]; then
 fi
 
 printf "\n**********\n*\n* FINISHED: mm-environment-variables.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
