@@ -14,7 +14,7 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
   ```
 
 ---
@@ -25,7 +25,7 @@ This script downloads the model map from Hugging Face:
 - View the script: <a href="../scripts/302-Download-Model-Map.sh" target="_blank">302-Download-Model-Map.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
+  $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
   ```
 
 #### OPTIONAL: Edit the Model Map
