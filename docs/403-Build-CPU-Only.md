@@ -27,7 +27,7 @@ This script uses cmake to build Mmojo Server:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Build-CPU-Only.sh
+  $MMOJO_SERVER_SCRIPTS/403-Build-CPU-Only.sh
   ```
 
 ---
@@ -37,7 +37,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-Command-Line.sh
+  $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-Command-Line.sh
   ```
 
 ---
@@ -47,7 +47,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-args.sh
+  $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-args.sh
   ```
 
 ---
@@ -57,7 +57,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-support.sh
+  $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-support.sh
   ```
 
 ---
@@ -66,7 +66,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Delete-CPU-Only-Tests.sh
+  $MMOJO_SERVER_SCRIPTS/403-Delete-CPU-Only-Tests.sh
   ```
   
 ---
