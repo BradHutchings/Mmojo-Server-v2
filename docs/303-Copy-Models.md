@@ -49,6 +49,7 @@ CopyModel() {
   fi
 }
 
+cd $MODELS_DIR
 mm-mount-mmojo-share.sh
 unset apefiles
 declare -A apefiles
@@ -62,6 +63,8 @@ done < "$MODEL_MAP"
 for key in "${!apefiles[@]}"; do
   CopyModel $key 
 done
+
+cd $HOME
 printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n**********\n\n"
 ```
 
