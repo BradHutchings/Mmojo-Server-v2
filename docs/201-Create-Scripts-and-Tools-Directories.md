@@ -12,8 +12,8 @@ HOME_SCRIPTS="$HOME/scripts"
 TILDE_SCRIPTS="~/scripts"
 HOME_TOOLS="$HOME/tools"
 TILDE_TOOLS="~/tools"
-mkdir -p $SCRIPTS_DIR
-mkdir -p $TOOLS_DIR
+mkdir -p $HOME_SCRIPTS
+mkdir -p $HOME_TOOLS
 ```
 
 ### Add `$HOME/scripts` to `$PATH`
