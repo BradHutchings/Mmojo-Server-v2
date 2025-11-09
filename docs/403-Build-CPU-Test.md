@@ -33,40 +33,40 @@ This script uses cmake to build Mmojo Server:
 ---
 ### OPTIONAL: Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Command-Line.sh" target="_blank">403-Test-Command-Line.sh</a>.
+- View the script: <a href="../scripts/403-CPU-Test-Command-Line.sh" target="_blank">403-CPU-Test-Command-Line.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-Command-Line.sh
+  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-Command-Line.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-args` File
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-mmojo-server-args.sh" target="_blank">403-Test-mmojo-server-args.sh</a>.
+- View the script: <a href="../scripts/403-CPU-Test-mmojo-server-args.sh" target="_blank">403-CPU-Test-mmojo-server-args.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-mmojo-server-args.sh
+  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-mmojo-server-args.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-support` Directory
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-mmojo-server-support.sh" target="_blank">403-Test-mmojo-server-support.sh</a>.
+- View the script: <a href="../scripts/403-CPU-Test-mmojo-server-support.sh" target="_blank">403-CPU-Test-mmojo-server-support.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Test-mmojo-server-support.sh
+  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-mmojo-server-support.sh
   ```
 
 ---
 ### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/403-Delete-Tests.sh" target="_blank">403-Delete-Tests.sh</a>.
+- View the script: <a href="../scripts/403-Delete-CPU-Tests.sh" target="_blank">403-Delete-CPU-Tests.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Delete-Tests.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Delete-CPU-Tests.sh
   ```
   
 ---
