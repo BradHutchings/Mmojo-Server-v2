@@ -15,6 +15,11 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   git checkout work-in-progress
   cd $HOME
 
+  chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
+  chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
+  chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
+  # chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
+
   ### Links don't work - end up modifying repo files on chmod.
   # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
   #  ln -sf $FILE $SCRIPTS_DIR
