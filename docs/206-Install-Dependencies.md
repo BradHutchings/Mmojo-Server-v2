@@ -21,7 +21,7 @@ This script installs available package updates for your Linux system:
 ### Install Dependencies
 This script installs dependencies you will need:
 - View script: <a href="../scripts/206-Install-Dependencies.sh" target="_blank">206-Install-Dependencies.sh</a>.
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/206-Install-Dependencies.sh
   ```
