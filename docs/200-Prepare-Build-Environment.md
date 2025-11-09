@@ -27,7 +27,7 @@ Here are the things you need to do:
 - [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 - [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 
-**Get Started:** [201. Create Scripts Directory](201-Create-Scripts-Directory.md)
+**Get Started:** [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md)
 
 ---
 [MIT License](/LICENSE)<br/>
