@@ -12,14 +12,14 @@ ARM has a few names for various versions and purposes of developer tools. `aarch
 
 Do this if you're running on x86_64.
 
-- View the script in a new tab: <a href="../scripts/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">206-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
+- View the script in a new tab: <a href="../scripts/207-Set-up-Cross-Compile-aarch64-on-x86_64.sh" target="_blank">207-Set-up-Cross-Compile-aarch64-on-x86_64.sh</a>
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/206-Set-up-Cross-Compile-aarch64-on-x86_64.sh
+  . $MMOJO_SERVER_SCRIPTS/207-Set-up-Cross-Compile-aarch64-on-x86_64.sh
   ```
 
 #### Verify that libssl.a and libcrypto.a are Installed for Both Architectures
