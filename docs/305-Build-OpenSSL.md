@@ -20,7 +20,7 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/305-Clone-Build-openssl.sh
+  $MMOJO_SERVER_SCRIPTS/305-Clone-Build-openssl.sh
   ```
 
 ---
