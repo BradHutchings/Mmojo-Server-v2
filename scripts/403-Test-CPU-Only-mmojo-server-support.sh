@@ -7,7 +7,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/403-CPU-Test-mmojo-server-support"
+TEST_DIR="$HOME/403-Test-CPU-Only-mmojo-server-support"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
@@ -37,7 +37,7 @@ chat
 --mlock
 ...
 EOF
-$BUILD_LLAMA_CPP_DIR/$BUILD_TEST/bin/mmojo-server
+$BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY/bin/mmojo-server
 
 printf "\nVerify that 'mmojo-server-args' does not exist and 'mmojo-server-support' exists.\n"
 ls -ald mmojo-server-args
@@ -45,7 +45,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-CPU-Test-mmojo-server-support.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Test-CPU-Only-mmojo-server-support.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
