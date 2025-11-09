@@ -46,6 +46,7 @@ DownloadModel() {
   if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
 }
 
+cd $MODELS_DIR
 unset apefiles
 declare -A apefiles
 
@@ -58,6 +59,8 @@ done < "$MODEL_MAP"
 for key in "${!apefiles[@]}"; do
   DownloadModel $key 
 done
+
+cd $HOME
 printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 ```
 
