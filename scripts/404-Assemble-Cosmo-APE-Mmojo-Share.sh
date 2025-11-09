@@ -22,7 +22,7 @@ apelink \
     $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64  \
     $MMOJO_SHARE_BUILDS_APE/mm-zipalign-aarch64
 
-cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools
+cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
 export PATH=$SAVE_PATH
 
