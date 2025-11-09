@@ -7,14 +7,14 @@ In this step, we will copy models from the Mmojo Share.
 ---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
-- View the script: <a href="../scripts/303-Create-Models-Directory.sh" target="_blank">303-Create-Models-Directory.sh</a>.
+- View the script: <a href="../scripts/302-Create-Models-Directory.sh" target="_blank">302-Create-Models-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/303-Create-Models-Directory.sh
+  . $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
   ```
 
 ---
@@ -22,10 +22,10 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
 If you plan to create `mmojo-server-one` Actual Portable Executables (APEs) with embedded models, you should download some models that are tested to work with `mmojo-server`. We'll download a model map from Hugging Face.
 
 This script downloads the model map from Hugging Face:
-- View the script: <a href="../scripts/303-Download-Model-Map.sh" target="_blank">303-Download-Model-Map.sh</a>.
+- View the script: <a href="../scripts/302-Download-Model-Map.sh" target="_blank">302-Download-Model-Map.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/303-Download-Model-Map.sh
+  . $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
   ```
 
 #### OPTIONAL: Edit the Model Map
