@@ -6,7 +6,6 @@
 # See licensing note at end.
 ################################################################################
 
-
 #----------------------------------------
 # We need some variables. These should be
 # in the mm-environment-variables.sh script.
