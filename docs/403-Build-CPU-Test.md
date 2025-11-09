@@ -1,7 +1,7 @@
-## 403. Build Test
+## 403. Build CPU Test
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for your native build environment platform without any optimizations. You don't need to do this. You can use it to test and debug features of Mmojo Server that are not specific to any particular build.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform without any optimizations. You don't need to do this. You can use it to test and debug features of Mmojo Server that are not specific to any particular build.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -18,16 +18,16 @@ export BUILD_PROFILE=1
 ```
 
 ---
-### Build Test Mmojo Server for Native Build Environment Platform
+### Build CPU Test Mmojo Server for Native Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/403-Build-Test.sh" target="_blank">403-Build-Test.sh</a>.
+- View the script: <a href="../scripts/403-Build-CPU-Test.sh" target="_blank">403-Build-CPU-Test.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Build-Test.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Build-CPU-Test.sh
   ```
 
 ---
