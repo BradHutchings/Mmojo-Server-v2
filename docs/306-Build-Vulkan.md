@@ -30,6 +30,7 @@ This script downloads the latest tested version of Vulkan source to `$BUILD_VULK
   ```
   . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/306-Download-Build-vulkan.sh
+  . mm-environment-variables.sh
   ```
 
 ---
