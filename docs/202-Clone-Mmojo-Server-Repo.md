@@ -32,7 +32,7 @@ This script switches to the **work-in-progress** branch:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-work-in-progress-branch.sh
+  mm-work-in-progress-branch.sh
   ```
 
 ---
