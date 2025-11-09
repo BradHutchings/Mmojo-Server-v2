@@ -1,5 +1,11 @@
 #!/bin/bash
 
+################################################################################
+# This script installs dependencies needed for building Mmojo Server.
+#
+# See licensing note at end.
+################################################################################
+
 sudo apt install -y \
     bison build-essential clang-format cmake g++ \
     gcc git libbz2-dev libffi-dev libglm-dev \
@@ -14,3 +20,14 @@ sudo apt install -y \
 
 printf "\n**********\n*\n* FINISHED: 206-Install-Dependencies.sh.\n*\n**********\n\n"
 
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
