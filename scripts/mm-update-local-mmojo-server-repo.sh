@@ -9,6 +9,7 @@
 
 WD=$(pwd)
 cd $MMOJO_SERVER_DIR
+git reset --hard
 git pull
 cd $WD
 
