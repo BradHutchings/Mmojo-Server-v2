@@ -61,6 +61,10 @@ for key in "${!apefiles[@]}"; do
 done
 
 cd $HOME
+
+echo -e "\nModels directory:"
+ls -al $MODELS_DIR/*.gguf
+
 printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 ```
 
