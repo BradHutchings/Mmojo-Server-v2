@@ -5,8 +5,8 @@ Let's get started by creating a `$HOME/scripts` directory and a `$HOME\tools` di
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Create `$HOME/scripts` and `$Hime\tools` Directories
-Create `$HOME/scripts` and `$Hime\tools` directories.
+### Create `$HOME/scripts` and `$Home/tools` Directories
+Create `$HOME/scripts` and `$Home/tools` directories.
 ```
 SCRIPTS_DIR="$HOME/scripts"
 TILDE_SCRIPTS="~/scripts"
