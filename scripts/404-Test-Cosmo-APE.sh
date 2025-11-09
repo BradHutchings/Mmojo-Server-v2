@@ -1,5 +1,11 @@
 #!/bin/bash
 
+################################################################################
+# This script runs the Cosmo APE build with command-line arguments.
+#
+# See licensing note at end.
+################################################################################
+
 TEST_DIR="$HOME/404-Test-Cosmo-x86_64"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
@@ -18,3 +24,15 @@ ls -ald mmojo-server-support
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 404-Test-Cosmo-APE.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
