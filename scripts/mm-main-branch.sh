@@ -2,7 +2,7 @@
 
 ################################################################################
 # This script switches your local clone of the Mmojo Server repo to the main
-# branch, the copies all the mm- scripts to $HOME/scripts.
+# branch, then copies all the mm- scripts to $HOME/scripts.
 #
 # See licensing note at end.
 ################################################################################
