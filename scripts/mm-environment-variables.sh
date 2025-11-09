@@ -45,7 +45,7 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
 fi
 
 export BUILD_LLAMA_CPP_DIR="$HOME/400-BUILD-lamma-cpp"
-export BUILD_CPU_TEST="build-cpu-test"
+export BUILD_CPU_ONLY="build-cpu-only"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
 export BUILD_COSMO_APE="build-cosmo-ape"
