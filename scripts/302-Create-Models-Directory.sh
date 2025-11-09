@@ -9,4 +9,4 @@ EOF
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 303-Create-Models-Directory.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 302-Create-Models-Directory.sh.\n*\n**********\n\n"
