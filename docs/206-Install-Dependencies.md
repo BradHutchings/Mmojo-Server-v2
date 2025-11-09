@@ -14,7 +14,7 @@ This script installs available package updates for your Linux system:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . mm-install-updates.sh
+  mm-install-updates.sh
   ```
 
 ---
@@ -23,7 +23,7 @@ This script installs dependencies you will need:
 - View script: <a href="../scripts/206-Install-Dependencies.sh" target="_blank">206-Install-Dependencies.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . $MMOJO_SERVER_SCRIPTS/206-Install-Dependencies.sh
+  $MMOJO_SERVER_SCRIPTS/206-Install-Dependencies.sh
   ```
 
 ---
