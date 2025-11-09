@@ -17,7 +17,7 @@ cd $HOME
 if [ ! -d "$MMOJO_SERVER_DIR" ]; then
   mkdir -p $MMOJO_SERVER_DIR
   git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
-  . $MMOJO_SERVER_SCRIPTS/mm-update-local-repo.sh
+  . $MMOJO_SERVER_SCRIPTS/mm-update-local-mmojo-server-repo.sh
 fi
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
@@ -32,7 +32,7 @@ This script switches to the **work-in-progress** branch:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-work-in-progress-branch.sh
+  mm-work-in-progress-branch.sh
   ```
 
 ---
