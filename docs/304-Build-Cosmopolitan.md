@@ -21,7 +21,7 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
 
 ---
 ### Proceed
-- **Next:** [305. Build llamafile](305-Build-llamafile.md)
+- **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
 - **Previous:** [303. Copy Models](303-Copy-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
