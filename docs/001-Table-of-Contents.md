@@ -12,7 +12,7 @@ This is an overview of what this repository is about, how to work with it, what 
 ### [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 Before you can build Mmojo Server, you need a build environment. Depending on what you want to build, it could be a single computer or multiple computers. You should have a separate share on your network to keep files you only need to download once, and keep the products of your builds. You may find yourself rebuilding your build environments regularly, especially if you edit or enhance code and instructions in the repo.
 
-- [201. Create Scripts Directory](201-Create-Scripts-Directory.md) - Create `$HOME/scripts` directory and add it to your `$PATH`.
+- [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
 - [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
 - [203. Set Timezone](203-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
 - [204. Create Mmojo Share](204-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
