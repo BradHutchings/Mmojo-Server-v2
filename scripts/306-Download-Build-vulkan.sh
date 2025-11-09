@@ -16,4 +16,4 @@ fi
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 307-Download-Build-vulkan.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 306-Download-Build-vulkan.sh.\n*\n**********\n\n"
