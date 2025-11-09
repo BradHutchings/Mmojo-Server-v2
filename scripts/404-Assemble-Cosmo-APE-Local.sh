@@ -19,6 +19,8 @@ apelink \
     $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
     $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
 
+cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools
+
 export PATH=$SAVE_PATH
 
 cd $HOME
