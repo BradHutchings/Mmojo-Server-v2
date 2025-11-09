@@ -21,8 +21,6 @@ export MODELS_DIR="$HOME/302-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
 export BUILD_COSMOPOLITAN_DIR="$HOME/304-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
-export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
-export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export BUILD_OPENSSSL_DIR="$HOME/306-BUILD-openssl"
 export BUILD_VULKAN_DIR="$HOME/307-BUILD-vulkan"
 export VULKAN_VERSION="1.4.328.1"
@@ -41,7 +39,12 @@ export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
 export BUILD_COSMO_APE="build-cosmo-ape"
 
+# export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
+# export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
+export ZIPALIGN="$HOME/tools/mm-zipalign"
+
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
+
 printf "\n**********\n*\n* FINISHED: mm-environment-variables.\n*\n**********\n\n"
