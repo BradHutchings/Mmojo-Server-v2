@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# This script clones and builds the Cosmpolitan Github repository. We use it to build
-# Actual Portable Executables (APE). Thank you to Justine Tunney and team for 
-# the Cosmopolitan project!
+################################################################################
+# This script clones and builds the Cosmpolitan Github repository. We use it to 
+# build Actual Portable Executables (APE). Thank you to Justine Tunney and team 
+# for the Cosmopolitan project!
 #
 # https://github.com/jart/cosmopolitan
 #
 # See licensing note at end.
+################################################################################
 
 if [ -d "$BUILD_COSMOPOLITAN_DIR" ]; then
     rm -r -f $BUILD_COSMOPOLITAN_DIR
