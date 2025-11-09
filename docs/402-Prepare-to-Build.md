@@ -9,7 +9,7 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 ### Optional: Use `work-in-progress` Branch of Mmojo Server Repo
 Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
 ```
-. mm-work-in-progress-branch.sh
+mm-work-in-progress-branch.sh
 ```
 
 ---
@@ -24,7 +24,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
+  $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
   ```
 
 ---
@@ -33,7 +33,7 @@ This looks like lots of fun.
 - View the script: <a href="../scripts/402-Fix-llama-cpp.sh" target="_blank">402-Fix-llama-cpp.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
+  $MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
   ```
 
 ---
@@ -43,7 +43,7 @@ Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI d
 - View the script: <a href="../scripts/402-Rollback-webui.sh" target="_blank">402-Rollback-webui.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
+  $MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
   ```
 
 #### Required
@@ -51,7 +51,7 @@ Customize the web UI, rebuild all the web files. If you did the **Suggested** st
 - View the script: <a href="../scripts/402-Customize-webui.sh" target="_blank">402-Customize-webui.sh</a>.
 - Run the script.
   ```
-  . $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
+  $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
   ```
 #### Uh. Oh. npm Spit Out Errors
 
