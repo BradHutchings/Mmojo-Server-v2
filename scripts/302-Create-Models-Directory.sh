@@ -1,5 +1,11 @@
 #!/bin/bash
 
+################################################################################
+# This script... DESCRIPTION HERE.
+#
+# See licensing note at end.
+################################################################################
+
 mkdir -p $MODELS_DIR
 cd $MODELS_DIR
 
@@ -10,3 +16,15 @@ EOF
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 302-Create-Models-Directory.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
