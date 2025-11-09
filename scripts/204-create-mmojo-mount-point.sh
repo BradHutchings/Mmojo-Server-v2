@@ -1,7 +1,15 @@
 #!/bin/bash
 
+################################################################################
+# This script creates a /mnt/mmojo mount point for an SMB share on your network.
+#
+# See licensing note at end.
+################################################################################
+
+
 #----------------------------------------
-# We need some variables:
+# We need some variables. These should be
+# in the mm-environment-variables.sh script.
 #----------------------------------------
 export SHARE_DIR="/mnt/mmojo"
 export SCRIPTS_DIR="$HOME/scripts"
@@ -32,13 +40,14 @@ fi
 EOF
 chmod a+x "$SCRIPTS_DIR/$MOUNT_SCRIPT"
 
-#------------------------------------------------------------------------------------------------------------------------
-# If `~/scripts` is not already in the `$PATH`, add `~/scripts` to your `$PATH` in `.bashrc` and `source` `.bashrc`.
-#------------------------------------------------------------------------------------------------------------------------
-if [[ "${PATH}" != *"${SCRIPTS_DIR}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
-cat << EOF >> $HOME/.bashrc
-export PATH="$PATH:$SCRIPTS_DIR"
-EOF
-source $HOME/.bashrc
-echo "Your \$PATH has been set to:\n$PATH"
-fi
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
