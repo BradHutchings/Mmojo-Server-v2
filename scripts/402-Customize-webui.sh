@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# This script rebuilds the chat web UI so that it can be customized and used with mmojo-server.
-# -Brad
+################################################################################
+# This script rebuilds the chat web UI so that it can be customized and used 
+# with Mmojo Server.
+#
+# See licensing note at end.
+################################################################################
 
 cd $BUILD_LLAMA_CPP_DIR
 
@@ -24,3 +28,15 @@ sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/bookmark-scripts.js
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 402-Customize-webui.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
