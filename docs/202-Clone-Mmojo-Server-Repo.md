@@ -38,7 +38,7 @@ This script switches to the **work-in-progress** branch:
 ---
 ### Proceed
 - **Next:** [203. Set Timezone](203-Set-Timezone.md)
-- **Previous:** [201. Create Scripts Directory](201-Create-Scripts-Directory.md)
+- **Previous:** [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
