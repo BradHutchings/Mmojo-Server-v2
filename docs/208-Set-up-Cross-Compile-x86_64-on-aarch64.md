@@ -14,14 +14,14 @@ I have not had success yet cross-compiling x86_64 builds on aarch64/arm64.
 ### Set up Cross Compile x86_64 on aarch64 (arm64)
 Do this if you're running on aarch64/arm64.
 
-- View the script in a new tab: <a href="../scripts/207-Set-up-Cross-Compile-x86_64-on-aarch64.sh" target="_blank">207-Set-up-Cross-Compile-x86_64-on-aarch64.sh</a>
+- View the script in a new tab: <a href="../scripts/208-Set-up-Cross-Compile-x86_64-on-aarch64.sh" target="_blank">208-Set-up-Cross-Compile-x86_64-on-aarch64.sh</a>
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/207-Set-up-Cross-Compile-x86_64-on-aarch64.sh.sh
+  . $MMOJO_SERVER_SCRIPTS/208-Set-up-Cross-Compile-x86_64-on-aarch64.sh.sh
   ```
 
 ---
