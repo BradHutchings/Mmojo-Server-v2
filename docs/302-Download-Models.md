@@ -38,6 +38,14 @@ nano $MODEL_MAP
 
 ---
 ### Download Models
+This script downloads the models from Hugging Face:
+- View the script: <a href="../scripts/302-Download-Models.sh" target="_blank">302-Download-Models.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/302-Download-Models.sh
+  ```
+
+<!--
 Download the models from Hugging Face.
 ```
 DownloadModel() {
@@ -67,6 +75,7 @@ ls -al $MODELS_DIR/*.gguf
 
 printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### Proceed

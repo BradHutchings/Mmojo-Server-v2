@@ -38,6 +38,14 @@ nano $MODEL_MAP
 ### Copy Models from Mmojo Share
 If you've created a Mmojo share on your network, copying from that share is much faster than downloading from Hugging Face.
 
+This script downloads the models from Hugging Face:
+- View the script: <a href="../scripts/303-Copy-Models.sh" target="_blank">303-Copy-Models.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
+  ```
+
+<!--
 Copy the models:
 ```
 CopyModel() {
@@ -71,6 +79,7 @@ ls -al $MODELS_DIR/*.gguf
 
 printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n**********\n\n"
 ```
+-->
 
 ---
 ### Proceed

@@ -13,6 +13,7 @@ Clone the Mmojo Server repo:
 ```
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+export HOME_SCRIPTS="$HOME/scripts"
 cd $HOME
 if [ ! -d "$MMOJO_SERVER_DIR" ]; then
   mkdir -p $MMOJO_SERVER_DIR
