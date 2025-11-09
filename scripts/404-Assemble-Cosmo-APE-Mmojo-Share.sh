@@ -14,7 +14,16 @@ apelink \
 	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
     $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64  \
     $MMOJO_SHARE_BUILDS_APE/mmojo-server-aarch64
-    
+
+apelink \
+	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+    $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64  \
+    $MMOJO_SHARE_BUILDS_APE/mm-zipalign-aarch64
+
+cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools
+
 export PATH=$SAVE_PATH
 
 cd $HOME
