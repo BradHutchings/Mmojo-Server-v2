@@ -1,5 +1,14 @@
 #!/bin/bash
 
+################################################################################
+# This script assembles the mmojo-server-ape Actual Portable Executable (APE)
+# and the mm-zipalign-ape APE from x86_64 and aarch64 (arm64) builds on your
+# Mmojo Share. The mm-zipalign-ape APE is copied to $HOME/tools as mm-zipalign 
+# for use in the packaging phase.
+#
+# See licensing note at end.
+################################################################################
+
 cd $BUILD_LLAMA_CPP_DIR
 
 mm-mount-mmojo-share.sh
