@@ -7,14 +7,14 @@ Install system package updates, then install packages we will need for our build
 ---
 ### Install Package Updates
 This script installs available package updates for your Linux system:
-- View script: <a href="../scripts/206-Install-Package-Updates.sh" target="_blank">206-Install-Package-Updates.sh</a>.
+- View script: <a href="../scripts/mm-install-updates.sh" target="_blank">mm-install-updates.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/206-Install-Package-Updates.sh
+  . mm-install-updates.sh
   ```
 
 ---
