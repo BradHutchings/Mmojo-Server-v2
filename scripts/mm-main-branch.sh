@@ -1,5 +1,12 @@
 #!/bin/bash
 
+################################################################################
+# This script switches your local clone of the Mmojo Server repo to the main
+# branch, the copies all the mm- scripts to $HOME/scripts.
+#
+# See licensing note at end.
+################################################################################
+
 # THe $SCRIPTS_DIR was created and added to $PATH in step 201.
 SCRIPTS_DIR="$HOME/scripts/"
 
@@ -17,4 +24,17 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
+
 printf "\n**********\n*\n* FINISHED: mm-main-branch.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
