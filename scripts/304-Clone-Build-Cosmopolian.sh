@@ -13,6 +13,24 @@ sed -i '39i \  if ((s == NULL) || (n == 0)) return 0;' libc/intrin/memchr.c
 # Build Cosmo
 tool/cosmocc/package.sh
 
+printf "\nBuild of Cosmopolitan is complete.\n"
+printf "ls -al cosmocc/bin/\n\n"
+ls -al cosmocc/bin/
+printf "\n"
+
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 304-Clone-Build-Cosmopolian.sh.\n*\n**********\n\n"
+
+/*
+  This is an original script for the Mmojo Server repo. It is covered by
+  the MIT-style LICENSE.
+
+  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+
+  Copyright (c) 2025 Brad Hutchings.
+  --
+  Brad Hutchings
+  brad@bradhutchings.com
+*/
+
