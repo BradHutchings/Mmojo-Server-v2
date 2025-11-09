@@ -16,7 +16,7 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
   ```
 
 ---
