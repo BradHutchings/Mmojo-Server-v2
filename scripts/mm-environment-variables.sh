@@ -21,8 +21,8 @@ export MODELS_DIR="$HOME/302-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
 export BUILD_COSMOPOLITAN_DIR="$HOME/304-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
-export BUILD_OPENSSSL_DIR="$HOME/306-BUILD-openssl"
-export BUILD_VULKAN_DIR="$HOME/307-BUILD-vulkan"
+export BUILD_OPENSSSL_DIR="$HOME/305-BUILD-openssl"
+export BUILD_VULKAN_DIR="$HOME/306-BUILD-vulkan"
 export VULKAN_VERSION="1.4.328.1"
 if [[ -z "${VULKAN_SIMULTANEOUS_COMPILES}" ]]; then
   export VULKAN_SIMULTANEOUS_COMPILES=4
@@ -34,7 +34,7 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
 fi
 
 export BUILD_LLAMA_CPP_DIR="$HOME/400-BUILD-lamma-cpp"
-export BUILD_TEST="build-test"
+export BUILD_CPU_TEST="build-cpu-test"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
 export BUILD_COSMO_APE="build-cosmo-ape"
