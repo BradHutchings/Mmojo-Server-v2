@@ -21,7 +21,7 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
   #  ln -sf $FILE $SCRIPTS_DIR
   # done
-  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $SCRIPTS_DIR
+  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
   chmod a+x $HOME_SCRIPTS/mm-*.sh
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
