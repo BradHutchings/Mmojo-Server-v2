@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# This script rolls back the webui directory to the commit before the new Svelte based webui was introduced.
-# Rolling back ensures we can run the chat web UI on a non-root endpoint.
-# -Brad
+################################################################################
+# This script rolls back the webui directory to the commit before the new Svelte 
+# based webui was introduced. Rolling back ensures we can run the chat web UI on 
+# a non-root endpoint. -Brad
+#
+# See licensing note at end.
+################################################################################
 
 cd $BUILD_LLAMA_CPP_DIR
 
@@ -16,3 +20,15 @@ sed -i -e "s/>.*llama.cpp.*</>$APP_NAME</g" tools/server/webui/src/components/He
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: 402-Rollback-webui.sh.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
