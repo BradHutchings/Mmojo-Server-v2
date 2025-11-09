@@ -7,9 +7,6 @@
 # See licensing note at end.
 ################################################################################
 
-# THe $SCRIPTS_DIR was created and added to $PATH in step 201.
-SCRIPTS_DIR="$HOME/scripts/"
-
 WD=$(pwd)
 cd $MMOJO_SERVER_DIR
 git pull
@@ -22,10 +19,10 @@ chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
 
 ### Links don't work - end up modifying repo files on chmod.
 # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
-#  ln -sf $FILE $SCRIPTS_DIR
+#  ln -sf $FILE $HOME_SCRIPTS
 # done
-cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $SCRIPTS_DIR
-chmod a+x $SCRIPTS_DIR/mm-*.sh
+cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
+chmod a+x $HOME_SCRIPTS/mm-*.sh
 
 printf "\n**********\n*\n* FINISHED: mm-update-local-mmojo-server-repo.sh.\n*\n**********\n\n"
 
