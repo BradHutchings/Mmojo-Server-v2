@@ -17,19 +17,19 @@ if [ "$BUILD_PROFILE" ]; then
     export CXX="c++ -pg "
 fi
 
-rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_TEST
-cmake -B $BUILD_CPU_TEST -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON
-cmake --build $BUILD_CPU_TEST --config Release
+rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_NO_GPU
+cmake -B $BUILD_CPU_NO_GPU -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON
+cmake --build $BUILD_CPU_NO_GPU --config Release
 
 # Show off what we built
 printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_TEST/bin/\n"
-ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_TEST/bin
+printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_NO_GPU/bin/\n"
+ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_NO_GPU/bin
 printf "\n"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Build-Test.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Build-CPU-no-GPU.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
