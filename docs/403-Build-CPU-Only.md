@@ -1,7 +1,7 @@
-## 403. Build CPU Test
+## 403. Build CPU Only
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform without any optimizations. You don't need to do this. You can use it to test and debug features of Mmojo Server that are not specific to any particular build.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform without any GPU support. Even if you're more interested in building APE builds or Vulkan builds, you should use this build to test and debug features of Mmojo Server that are not specific to any particular build.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -18,55 +18,55 @@ export BUILD_PROFILE=1
 ```
 
 ---
-### Build CPU Test Mmojo Server for Native Build Environment Platform
+### Build CPU Only Mmojo Server for Native Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/403-Build-CPU-Test.sh" target="_blank">403-Build-CPU-Test.sh</a>.
+- View the script: <a href="../scripts/403-Build-CPU-Only.sh" target="_blank">403-Build-CPU-Only.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Build-CPU-Test.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Build-CPU-Only.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-CPU-Test-Command-Line.sh" target="_blank">403-CPU-Test-Command-Line.sh</a>.
+- View the script: <a href="../scripts/403-Test-CPU-Only-Command-Line.sh" target="_blank">403-Test-CPU-Only-Command-Line.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-Command-Line.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-Command-Line.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-args` File
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-CPU-Test-mmojo-server-args.sh" target="_blank">403-CPU-Test-mmojo-server-args.sh</a>.
+- View the script: <a href="../scripts/403-Test-CPU-Only-mmojo-server-args.sh" target="_blank">403-Test-CPU-Only-mmojo-server-args.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-mmojo-server-args.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-args.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build - `mmojo-server-support` Directory
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-CPU-Test-mmojo-server-support.sh" target="_blank">403-CPU-Test-mmojo-server-support.sh</a>.
+- View the script: <a href="../scripts/403-Test-CPU-Only-mmojo-server-support.sh" target="_blank">403-Test-CPU-Only-mmojo-server-support.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-CPU-Test-mmojo-server-support.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Test-CPU-Only-mmojo-server-support.sh
   ```
 
 ---
 ### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/403-Delete-CPU-Tests.sh" target="_blank">403-Delete-CPU-Tests.sh</a>.
+- View the script: <a href="../scripts/403-Delete-CPU-Only-Tests.sh" target="_blank">403-Delete-CPU-Only-Tests.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/403-Delete-CPU-Tests.sh
+  . $MMOJO_SERVER_SCRIPTS/403-Delete-CPU-Only-Tests.sh
   ```
   
 ---
