@@ -7,37 +7,21 @@
 ################################################################################
 
 #----------------------------------------
-# We need some variables. These should be
-# in the mm-environment-variables.sh script.
+# Create mpount point: /mnt/mmojo
 #----------------------------------------
-export SHARE_DIR="/mnt/mmojo"
-export SCRIPTS_DIR="$HOME/scripts"
-TILDE_SCRIPTS="~/scripts"
-export MOUNT_SCRIPT="mount-mmojo-share.sh"
-
-#----------------------------------------
-# Create `/mnt/mmojo` directory.
-#----------------------------------------
-if [ ! -d "$SHARE_DIR" ]; then
-    sudo mkdir -p $SHARE_DIR
+if [ ! -d "$MMOJO_SHARE_MOUNT_POINT" ]; then
+    sudo mkdir -p $MMOJO_SHARE_MOUNT_POINT
 fi
 
 #----------------------------------------
-# Create `$HOME/scripts` directory.
+# Create a `mm-mount-mmojo-share.sh` script.
 #----------------------------------------
-if [ ! -d "$SCRIPTS_DIR" ]; then
-    mkdir -p $SCRIPTS_DIR
-fi
-
-#----------------------------------------
-# Create a `mount-mmojo-share.sh` script.
-#----------------------------------------
-cat << EOF > "$SCRIPTS_DIR/$MOUNT_SCRIPT"
-if [[ ! \$(findmnt $SHARE_DIR) ]]; then
-    sudo mount -t cifs -o user=[USER] //[COMPUTER]/mmojo $SHARE_DIR
+cat << EOF > "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
+if [[ ! \$(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+    sudo mount -t cifs -o user=[USER] //[COMPUTER]/mmojo $MMOJO_SHARE_MOUNT_POINT
 fi
 EOF
-chmod a+x "$SCRIPTS_DIR/$MOUNT_SCRIPT"
+chmod a+x "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
