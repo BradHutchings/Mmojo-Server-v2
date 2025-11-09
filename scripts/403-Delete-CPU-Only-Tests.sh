@@ -8,10 +8,10 @@
 
 cd $HOME
 
-TEST_DIR="$HOME/403-CPU-Test-*"
+TEST_DIR="$HOME/403-Test-CPU-Only-*"
 rm -r -f $TEST_DIR
 
-printf "\n**********\n*\n* FINISHED: 403-Delete-CPU-Tests.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Delete-CPU-Only-Tests.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
