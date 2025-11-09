@@ -70,7 +70,7 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 
 ---
 ### Proceed
-- **Next:** [403. Build Test](403-Build-Test.md)
+- **Next:** [403. Build CPU Test](403-Build-CPU-Test.md)
 - **Previous:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
