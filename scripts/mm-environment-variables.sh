@@ -20,6 +20,11 @@ unset CC
 unset CXX
 unset AR
 
+export HOME_SCRIPTS="$HOME/scripts"
+export TILDE_SCRIPTS="~/scripts"
+export HOME_TOOLS="$HOME/scripts"
+export TILDE_TOOLS="~/tools"
+
 export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
 export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
@@ -27,6 +32,7 @@ export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 export MMOJO_SHARE_MOUNT_POINT="/mnt/mmojo"
 export MMOJO_SHARE_BUILDS="$MMOJO_SHARE_MOUNT_POINT/builds"
 export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
+export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
 export MODELS_DIR="$HOME/302-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
