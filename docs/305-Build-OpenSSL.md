@@ -26,7 +26,7 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 ---
 ### Proceed
 - **Next:** [306. Build Vulkan](306-Build-Vulkan.md)
-- **Previous:** [303. Copy Models](303-Copy-Models.md)
+- **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
