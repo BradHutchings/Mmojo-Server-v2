@@ -1,19 +1,21 @@
 #!/bin/bash
 
 ################################################################################
-# This script runs the CPU-Test build arguments in a `mmojo-server-args` file.
+# This script runs the CPU-Test build with arguments and assets in a 
+# mmojo-server-support directory.
 #
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/403-Test-CPU-Only-mmojo-server-args"
+TEST_DIR="$HOME/403-Test-CPU-Debug-mmojo-server-support"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
-cat << EOF > mmojo-server-args
+mkdir -p mmojo-server-support
+cat << EOF > mmojo-server-support/default-args
 --model
 $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 --host
@@ -35,15 +37,15 @@ chat
 --mlock
 ...
 EOF
-$BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY/bin/mmojo-server
+$BUILD_LLAMA_CPP_DIR/$BUILD_CPU_DEBUG/bin/mmojo-server
 
-printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
+printf "\nVerify that 'mmojo-server-args' does not exist and 'mmojo-server-support' exists.\n"
 ls -ald mmojo-server-args
 ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Test-CPU-Only-mmojo-server-args.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Test-CPU-Debug-mmojo-server-support.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

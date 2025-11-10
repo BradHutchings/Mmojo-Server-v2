@@ -35,7 +35,7 @@ This script downloads the latest tested version of Vulkan source to `$BUILD_VULK
 
 ---
 ### Proceed
-- **Next:** This is the last article in this section.
+- **Next:** This is the last step in this section.
 - **Previous:** [305. Build OpenSSL](305-Build-OpenSSL.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 

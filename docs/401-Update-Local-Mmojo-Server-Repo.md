@@ -9,14 +9,14 @@ Before building Mmojo Server, let's make sure our local copy of the Mmojo Server
 We already have a script in place in `$HOME/scripts` to update the repo and copy any updated `mm-` scripts:
 ```
 . mm-environment-variables.sh
-mm-update-local-repo.sh
+mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
 
 ---
 ### Proceed
 - **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---

@@ -4,7 +4,7 @@
 ---
 ### Proceed
 - **Next:** [102. Build Environment](102-Build-Environment.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [100. Overview](100-Overview.md)
 
 ---

@@ -1,51 +1,29 @@
 #!/bin/bash
 
 ################################################################################
-# This script runs the CPU-Test build with arguments and assets in a 
-# mmojo-server-support directory.
+# This script runs the Cosmo APE build with command-line arguments.
 #
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/403-Test-CPU-Only-mmojo-server-support"
+TEST_DIR="$HOME/405-Test-Cosmo-ape"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
-mkdir -p mmojo-server-support
-cat << EOF > mmojo-server-support/default-args
---model
-$MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
---host
-0.0.0.0
---port
-8080
---ctx-size
-0
---threads-http
-8
---batch-size
-64
---batch-sleep-ms
-0
---path
-$BUILD_LLAMA_CPP_DIR/completion-ui
---default-ui-endpoint
-chat
---mlock
-...
-EOF
-$BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY/bin/mmojo-server
+$BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mmojo-server-ape --model $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf \
+    --path $BUILD_LLAMA_CPP_DIR/completion-ui/ --default-ui-endpoint "chat" --host 0.0.0.0 --port 8080 --batch-size 64 \
+    --threads-http 8 --ctx-size 0 --mlock
 
-printf "\nVerify that 'mmojo-server-args' does not exist and 'mmojo-server-support' exists.\n"
+printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
 ls -ald mmojo-server-args
 ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Test-CPU-Only-mmojo-server-support.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 405-Test-Cosmo-APE.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

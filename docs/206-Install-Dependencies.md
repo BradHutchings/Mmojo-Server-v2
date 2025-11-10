@@ -29,13 +29,9 @@ This script installs dependencies you will need:
 
 ---
 ### Proceed
-- **Next:** This is the last article in this section.
+- **Next:** This is the last step in this section.
 - **Previous:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
-
-<!--
-- **Next:** [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md)
--->
 
 ---
 ### Next Section

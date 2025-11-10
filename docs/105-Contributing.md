@@ -13,7 +13,7 @@ Brad Hutchings</br>
 
 ---
 ### Proceed
-- **Next:** This is the last article in this section.
+- **Next:** This is the last step in this section.
 - **Previous:** [104. Packaging for Deployment](104-Packaging-for-Deployment.md)
 - **Up:** [100. Overview](100-Overview.md)
 

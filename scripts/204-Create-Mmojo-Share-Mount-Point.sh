@@ -23,6 +23,8 @@ fi
 EOF
 chmod a+x "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 
+printf "\n**********\n*\n* FINISHED: 204-Create-Mmojo-Share-Mount-Point.sh.\n*\n**********\n\n"
+
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
 #  the repo's MIT-style LICENSE:

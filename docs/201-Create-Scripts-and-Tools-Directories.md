@@ -12,8 +12,8 @@ HOME_SCRIPTS="$HOME/scripts"
 TILDE_SCRIPTS="~/scripts"
 HOME_TOOLS="$HOME/tools"
 TILDE_TOOLS="~/tools"
-mkdir -p $SCRIPTS_DIR
-mkdir -p $TOOLS_DIR
+mkdir -p $HOME_SCRIPTS
+mkdir -p $HOME_TOOLS
 ```
 
 ### Add `$HOME/scripts` to `$PATH`
@@ -43,7 +43,7 @@ echo $PATH
 ---
 ### Proceed
 - **Next:** [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
