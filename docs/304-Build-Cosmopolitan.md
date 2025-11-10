@@ -20,6 +20,13 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
   ```
 
 ---
+### WSL Note
+In WSL, I had to run this to get the build to work:
+```
+sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
+```
+
+---
 ### Proceed
 - **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
 - **Previous:** [303. Copy Models](303-Copy-Models.md)
