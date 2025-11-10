@@ -5,6 +5,7 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your na
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+<!--
 ---
 ### Profiling
 If you do not want to profile code for the test build, copy this snippet and paste into your terminal:
@@ -16,6 +17,7 @@ If you want to profile code for the test build, copy this snippet copy this snip
 ```
 export BUILD_PROFILE=1
 ```
+-->
 
 ---
 ### Build CPU Debug Mmojo Server for Native Build Environment Platform
