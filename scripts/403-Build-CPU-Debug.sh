@@ -17,10 +17,10 @@ if [ "$BUILD_PROFILE" ]; then
     export CXX="c++ -pg "
 fi
 
-rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY
-cmake -B $BUILD_CPU_ONLY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_DEBUG
+cmake -B $BUILD_CPU_DEBUG -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Debug
-cmake --build $BUILD_CPU_ONLY
+cmake --build $BUILD_CPU_DEBUG
 
 # rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY
 # cmake -B $BUILD_CPU_ONLY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON
@@ -28,8 +28,8 @@ cmake --build $BUILD_CPU_ONLY
 
 # Show off what we built
 printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY/bin/\n"
-ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY/bin
+printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_DEBUG/bin/\n"
+ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_DEBUG/bin
 printf "\n"
 
 cd $HOME
