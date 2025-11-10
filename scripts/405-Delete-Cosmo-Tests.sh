@@ -8,7 +8,7 @@
 
 cd $HOME
 
-TEST_DIR="$HOME/403-Test-Cosmo-*"
+TEST_DIR="$HOME/405-Test-Cosmo-*"
 rm -r -f $TEST_DIR
 
 printf "\n**********\n*\n* FINISHED: 405-Delete-Cosmo-Tests.sh.\n*\n**********\n\n"
