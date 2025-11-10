@@ -43,7 +43,7 @@ echo $PATH
 ---
 ### Proceed
 - **Next:** [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
