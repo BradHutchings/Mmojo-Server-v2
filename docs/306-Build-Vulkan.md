@@ -19,9 +19,7 @@ Otherwise, we'll use the default 4.
 
 ---
 ### Download Vulkan, Build Locally
-Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds. This takes about an hour on a fast PC (e.g. 12th generation i9) and several hours on a slow PC (e.g. Raspberry Pi 5).
-
-This script downloads the latest tested version of Vulkan source to `$BUILD_VULKAN_DIR`, then builds it:
+This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds. This takes about an hour on a fast PC (e.g. 12th generation i9) and several hours on a slow PC (e.g. Raspberry Pi 5).
 - View the script: <a href="../scripts/306-Download-Build-vulkan.sh" target="_blank">306-Download-Build-vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
