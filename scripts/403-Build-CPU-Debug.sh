@@ -12,10 +12,10 @@
 
 cd $BUILD_LLAMA_CPP_DIR
 
-if [ "$BUILD_PROFILE" ]; then
-    export CC="cc -pg "
-    export CXX="c++ -pg "
-fi
+# if [ "$BUILD_PROFILE" ]; then
+#    export CC="cc -pg "
+#    export CXX="c++ -pg "
+# fi
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
