@@ -40,7 +40,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 ---
 ### Proceed
 - **Next:** [405. Build APE](405-Build-APE.md)
-- **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
+- **Previous:** [403. Build CPU Debug](403-Build-CPU-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
