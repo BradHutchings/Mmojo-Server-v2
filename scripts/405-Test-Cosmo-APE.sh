@@ -6,7 +6,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/405-Test-Cosmo-x86_64"
+TEST_DIR="$HOME/405-Test-Cosmo-ape"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
