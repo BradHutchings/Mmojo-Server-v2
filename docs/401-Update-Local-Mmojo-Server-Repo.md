@@ -16,7 +16,7 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Proceed
 - **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
