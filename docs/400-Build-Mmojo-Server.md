@@ -10,9 +10,6 @@ Here are the things you need to do:
 - [403. Build CPU Debug](403-Build-CPU-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
 - [404. Build CPU Release](404-Build-CPU-Release.md) - Build an optimized `mmojo-server` for the CPU of the build environment platformm.
 - [405. Build APE](405-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
-- [406. Build linux x86_64](406-Build-linux-x86_64.md) - Build unoptimized linux build for x86_64.
-- [407. Build linux aarch64](407-Build-linux-aarch64.md) - Build unoptimized linux build for aarch64 (arm64).
-- [408. Build pi5](408-Build-pi5.md) - Build optimized linux build for Raspberry Pi 3, 4, and 5.
 
 **Get Started:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
 
