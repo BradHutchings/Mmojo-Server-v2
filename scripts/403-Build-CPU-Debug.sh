@@ -18,8 +18,13 @@ if [ "$BUILD_PROFILE" ]; then
 fi
 
 rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY
-cmake -B $BUILD_CPU_ONLY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON
-cmake --build $BUILD_CPU_ONLY --config Release
+cmake -B $BUILD_CPU_ONLY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+    -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Debug
+cmake --build $BUILD_CPU_ONLY
+
+# rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU_ONLY
+# cmake -B $BUILD_CPU_ONLY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON
+# cmake --build $BUILD_CPU_ONLY --config Release
 
 # Show off what we built
 printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
@@ -29,7 +34,7 @@ printf "\n"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Build-CPU-Only.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Build-CPU-Debug.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
