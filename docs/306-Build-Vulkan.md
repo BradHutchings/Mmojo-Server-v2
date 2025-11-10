@@ -19,7 +19,7 @@ Otherwise, we'll use the default 4.
 
 ---
 ### Download Vulkan, Build Locally
-Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds.
+Download the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between builds. This takes about an hour on a fast PC (e.g. 12th generation i9) and several hours on a slow PC (e.g. Raspberry Pi 5).
 
 This script downloads the latest tested version of Vulkan source to `$BUILD_VULKAN_DIR`, then builds it:
 - View the script: <a href="../scripts/306-Download-Build-vulkan.sh" target="_blank">306-Download-Build-vulkan.sh</a>.
@@ -32,6 +32,13 @@ This script downloads the latest tested version of Vulkan source to `$BUILD_VULK
   $MMOJO_SERVER_SCRIPTS/306-Download-Build-vulkan.sh
   . mm-environment-variables.sh
   ```
+
+---
+### Verify that Vulkan is Installed
+Run this command to verify that Vulkan is installed.
+```
+vulkaninfo
+```
 
 ---
 ### Proceed
