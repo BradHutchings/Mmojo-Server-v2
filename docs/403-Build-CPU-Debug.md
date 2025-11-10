@@ -71,7 +71,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   
 ---
 ### Proceed
-- **Next:** [404. Build APE](404-Build-APE.md)
+- **Next:** [404. Build CPU Release](404-Build-CPU-Release.md)
 - **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
