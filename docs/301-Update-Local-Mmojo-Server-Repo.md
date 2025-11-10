@@ -18,7 +18,7 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Proceed
 - **Next:** [302. Download Models](302-Download-Models.md)
-- **Previous:** This is the first article in this section.
+- **Previous:** This is the first step in this section.
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
