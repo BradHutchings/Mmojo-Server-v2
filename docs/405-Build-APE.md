@@ -116,7 +116,7 @@ Copy this assembled APE to your Mmojo share.
 
 ---
 ### Proceed
-- **Next:** This is the last article in this section.
+- **Next:** This is the last step in this section.
 - **Previous:** [404. Build CPU Release](404-Build-CPU-Release.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
