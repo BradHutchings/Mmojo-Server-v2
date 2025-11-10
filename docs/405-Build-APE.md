@@ -107,7 +107,7 @@ Copy this assembled APE to your Mmojo share.
 
 ---
 ### Proceed
-- **Next:** [406. Build linux x86_64](406-Build-linux-x86_64.md)
+- **Next:** This is the last article in this section.
 - **Previous:** [404. Build CPU Release](404-Build-CPU-Release.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
