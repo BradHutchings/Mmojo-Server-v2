@@ -1,17 +1,17 @@
 #!/bin/bash
 
 ################################################################################
-# This script deletes all of the $HOME/403-CPU-Test-* directories.
+# This script deletes all of the $HOME/403-Test-CPU-Debug-* directories.
 #
 # See licensing note at end.
 ################################################################################
 
 cd $HOME
 
-TEST_DIR="$HOME/403-Test-CPU-Only-*"
+TEST_DIR="$HOME/403-Test-CPU-Debug-*"
 rm -r -f $TEST_DIR
 
-printf "\n**********\n*\n* FINISHED: 403-Delete-CPU-Only-Tests.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Delete-CPU-Debug-Tests.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
