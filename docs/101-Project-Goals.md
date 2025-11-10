@@ -16,7 +16,7 @@ For developers, especially in the agent space, the OpenAI compatible API that ll
 
 I am not interested in squeezing out every ounce of performance out of particular CPUs or GPUs. The llama.cpp team has that covered. One funny thing that made llamafile more complicated than it needed to be was its focus on CPU ineference optimization. It's funny because having to run on a wide range of x86 and ARM chips already took many effective CPU specific compiler optimizations off the table. And while the out-of-the-box Metal support on macOS was impressive, it made deploying llamafile for the first time a bit cumbersome for macOS users who weren't developers.
 
-Finally, I created and maintain Mmojo Server to power my Mmojo Knowledge Appliance. Every feature in Mmojo Server is included because it makes the appliance better. There will be no unmaintainable fluff. My ability and willingness to say "No" will keep Mmojo Server usable and useful.
+Most importantly to me, I created and maintain Mmojo Server to power my Mmojo Knowledge Appliance. Every feature in Mmojo Server is included because it makes the appliance better. There will be no unmaintainable fluff. My ability and willingness to say "No" will keep Mmojo Server a more usable and useful platform for you.
 
 ---
 ### Proceed
