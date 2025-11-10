@@ -9,6 +9,7 @@
 
 if [ -d "$MMOJO_SERVER_DIR" ]; then
   cd $MMOJO_SERVER_DIR
+  git reset --hard
   git checkout work-in-progress
   cd $HOME
 
