@@ -9,7 +9,7 @@
 sudo apt update
 sudo apt upgrade -y
 
-printf "\n**********\n*\n* FINISHED: mm-install-updates.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: mm-install-system-updates.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
