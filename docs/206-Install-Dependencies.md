@@ -5,16 +5,16 @@ Install system package updates, then install packages we will need for our build
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Install Package Updates
+### Install System Updates
 This script installs available package updates for your Linux system:
-- View script: <a href="../scripts/mm-install-updates.sh" target="_blank">mm-install-updates.sh</a>.
+- View script: <a href="../scripts/mm-install-system-updates.sh" target="_blank">mm-install-system-updates.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  mm-install-updates.sh
+  mm-install-system-updates.sh
   ```
 
 ---
