@@ -8,7 +8,7 @@
 
 cd $HOME
 
-TEST_DIR="$HOME/404-Test-CPU-Release-*"
+TEST_DIR="$HOME/404-Test-CPU-Release*"
 rm -r -f $TEST_DIR
 
 printf "\n**********\n*\n* FINISHED: 404-Delete-CPU-Release-Tests.sh.\n*\n**********\n\n"
