@@ -108,7 +108,7 @@ Copy this assembled APE to your Mmojo share.
 ---
 ### Proceed
 - **Next:** [405. Build linux x86_64](405-Build-linux-x86_64.md)
-- **Previous:** [403. Build CPU Only](403-Build-CPU-Only.md)
+- **Previous:** [403. Build CPU Debug](403-Build-CPU-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
