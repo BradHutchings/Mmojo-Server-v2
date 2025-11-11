@@ -11,6 +11,14 @@ mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
+UI_PARAMS="--path\n$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/\n--default-ui-endpoint\n\"chat\"\n"
+if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
+    echo "Using chat UI."
+    UI_PARAMS=""
+fi
+echo "\$UI_PARAMS: $UI_PARAMS"
+sleep 5s
+
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 cat << EOF > mmojo-server-args
@@ -28,11 +36,7 @@ $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 64
 --batch-sleep-ms
 0
---path
-$BUILD_LLAMA_CPP_DIR/completion-ui
---default-ui-endpoint
-chat
---mlock
+$UI_PARAMS--mlock
 ...
 EOF
 $BUILD_LLAMA_CPP_DIR/$BUILD_DEBUG/bin/mmojo-server
