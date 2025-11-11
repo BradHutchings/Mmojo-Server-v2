@@ -1,4 +1,4 @@
-## 205. Mount Mmojo Share
+## 206. Mount Mmojo Share
 
 ---
 ### About the Step
@@ -9,7 +9,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
 ---
 ### Create Mmojo Share Mount Point and Mount Script
 This script creates a mount point for the Mmojo Share and a script for mounting the Mmojo Share:
-- View script: <a href="../scripts/204-Create-Mmojo-Share-Mount-Point.sh" target="_blank">204-Create-Mmojo-Share-Mount-Point.sh</a>.
+- View script: <a href="../scripts/206-Create-Mmojo-Share-Mount-Point.sh" target="_blank">206-Create-Mmojo-Share-Mount-Point.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -36,8 +36,8 @@ ls -al /mnt/mmojo
 
 ---
 ### Proceed
-- **Next:** [206. Install Dependencies](206-Install-Dependencies.md)
-- **Previous:** [204. Create Mmojo Share](204-Create-Mmojo-Share.md)
+- **Next:** [207. Install Dependencies](207-Install-Dependencies.md)
+- **Previous:** [205. Create Mmojo Share](205-Create-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
