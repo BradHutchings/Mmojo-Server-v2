@@ -15,7 +15,6 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
   ```
 
@@ -24,7 +23,6 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
 - View the script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-x86_64.sh
   ```
 
@@ -33,7 +31,6 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
 - View the script: <a href="../scripts/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh
   ```
 
@@ -43,7 +40,6 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (a
 - View the script: <a href="../scripts/404-Build-Cosmo-aarch64.sh" target="_blank">404-Build-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
   ```
 
@@ -52,7 +48,6 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
 - View the script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-aarch64.sh
   ```
 
@@ -61,7 +56,6 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
 - View the script: <a href="../scripts/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh
   ```
 
@@ -74,7 +68,6 @@ Do this if you built both x86_64 and aarch64/arm64 in the same build environment
 - View the script: <a href="../scripts/404-Assemble-Cosmo-APE-Local.sh" target="_blank">404-Assemble-Cosmo-APE-Local.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Local.sh
   ```
 
@@ -83,7 +76,6 @@ Do this if you built both x86_64 and aarch64/arm64 in different build environmen
 - View the script: <a href="../scripts/404-Assemble-Cosmo-APE-Mmojo-Share.sh" target="_blank">404-Assemble-Cosmo-APE-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Mmojo-Share.sh
   ```
 
@@ -92,7 +84,6 @@ If you're build enviornment is x86_64 or aarch64, you can test the assembled APE
 - View the script: <a href="../scripts/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
   ```
 
@@ -101,7 +92,6 @@ Copy this assembled APE to your Mmojo share.
 - View the script: <a href="../scripts/404-Copy-Cosmo-APE-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-APE-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
   ```
 
