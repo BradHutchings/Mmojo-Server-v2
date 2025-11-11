@@ -6,7 +6,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/404-Test-Cosmo-aarch64"
+TEST_DIR="$TEST_LLAMA_CPP_DIR/$TEST_COSMO_AARCH64"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
