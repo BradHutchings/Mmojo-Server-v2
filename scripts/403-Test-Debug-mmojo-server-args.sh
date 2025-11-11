@@ -11,7 +11,9 @@ mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
-UI_PARAMS="--path\n$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/\n--default-ui-endpoint\n\"chat\"\n"
+NL=$'\n'
+UI_PARAMS="--path${NL}$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}chat${NL}"
+
 if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
     echo "Using chat UI."
     UI_PARAMS=""
