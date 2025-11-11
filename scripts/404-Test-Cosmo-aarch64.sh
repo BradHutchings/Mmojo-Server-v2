@@ -6,7 +6,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/405-Test-Cosmo-aarch64"
+TEST_DIR="$HOME/404-Test-Cosmo-aarch64"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
@@ -23,7 +23,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 405-Test-Cosmo-aarch64.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 404-Test-Cosmo-aarch64.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
