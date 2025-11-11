@@ -40,7 +40,7 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 ### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 Build Mmojo Server executables.
 
-- [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
+- [401. Update Environment](401-Update-Environment.md) - Make sure you have the latest instructions and scripts.
 - [402. Prepare to Build](402-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
 - [404. Build APE](404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
