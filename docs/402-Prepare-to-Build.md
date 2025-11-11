@@ -6,13 +6,6 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Optional: Use `work-in-progress` Branch of Mmojo Server Repo
-Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
-```
-mm-work-in-progress-branch.sh
-```
-
----
 ### Clone Repos
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
@@ -23,7 +16,6 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
   ```
 
