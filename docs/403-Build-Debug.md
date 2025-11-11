@@ -1,12 +1,12 @@
 ## 403. Build Debug
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform without any GPU support. Even if you're more interested in APE builds or Vulkan builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or Vulkan builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Build Debug Mmojo Server for Native Build Environment Platform
+### Build Debug Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../scripts/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
