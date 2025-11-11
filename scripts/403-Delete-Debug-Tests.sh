@@ -1,17 +1,16 @@
 #!/bin/bash
 
 ################################################################################
-# This script deletes all of the $HOME/403-Test-CPU-Debug-* directories.
+# This script deletes all of the test-debug subdirectories.
 #
 # See licensing note at end.
 ################################################################################
 
 cd $HOME
 
-TEST_DIR="$HOME/403-Test-CPU-Debug-*"
-rm -r -f $TEST_DIR
+rm -r -f "$TEST_LLAMA_CPP_DIR/$BUILD_DEBUG"
 
-printf "\n**********\n*\n* FINISHED: 403-Delete-CPU-Debug-Tests.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Delete-Debug-Tests.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
