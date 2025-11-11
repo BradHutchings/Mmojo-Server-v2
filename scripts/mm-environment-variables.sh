@@ -56,6 +56,8 @@ export BUILD_CPU_RELEASE="build-cpu-release"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
 export BUILD_COSMO_APE="build-cosmo-ape"
+export BUILD_CUDA="build-cuda"
+export BUILD_VULKAN="build-vulkan"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
