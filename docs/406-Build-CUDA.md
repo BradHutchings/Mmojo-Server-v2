@@ -27,15 +27,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/406-Test-CUDA.sh
   ```
-
----
-### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/406-Delete-CUDA-Tests.sh" target="_blank">406-Delete-CUDA-Tests.sh</a>.
-- Run the script.
-  ```
-  . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/406-Delete-CUDA-Tests.sh
-  ```
   
 ---
 ### Proceed
