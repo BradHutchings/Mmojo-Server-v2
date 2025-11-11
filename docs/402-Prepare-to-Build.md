@@ -63,7 +63,7 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 ---
 ### Proceed
 - **Next:** [403. Build Debug](403-Build-Debug.md)
-- **Previous:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
+- **Previous:** [401. Update Environment](401-Update-Environment.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
