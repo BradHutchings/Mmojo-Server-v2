@@ -6,7 +6,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/406-Test-CUDA"
+TEST_DIR="$TEST_LLAMA_CPP_DIR/$TEST_CUDA"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
