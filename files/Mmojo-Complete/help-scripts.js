@@ -22,7 +22,7 @@ var instructions =
             "<li><img src=\"images/settings-64.png\" class=\"inline-image\" /><b>Settings:</b> Shows <b>Settings</b> panel.\n" + 
             "<ul>\n" +
                 "<li>Set temperature, tokens, and stop words.</li>\n" +
-                "<li>Updated indicates when Mmojo Completion and your Mmojo Knowledge Appliance executable were built.</li>\n" +
+                "<li>Updated indicates when Mmojo Complete and your Mmojo Knowledge Appliance executable were built.</li>\n" +
                 "<li>Print Size, Picture Width, and Picture URL are for printing.</li>\n" +
             "</ul>\n" +
             "<li><img src=\"images/chat-64.png\" class=\"inline-image\" /><b>Chat:</b> Click for a more standard chat-style interface.\n" + 
