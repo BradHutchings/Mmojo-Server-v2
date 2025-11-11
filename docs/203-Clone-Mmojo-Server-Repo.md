@@ -1,4 +1,4 @@
-## 202. Clone Mmojo Server Repo
+## 203. Clone Mmojo Server Repo
 ### About this Step
 Let's get started by cloning the Mmojo Server Repo, so we have scripts available to do all the documented steps.
 
@@ -38,8 +38,8 @@ This script switches to the **work-in-progress** branch:
 
 ---
 ### Proceed
-- **Next:** [203. Set Timezone](203-Set-Timezone.md)
-- **Previous:** [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md)
+- **Next:** [204. Set Timezone](204-Set-Timezone.md)
+- **Previous:** [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
