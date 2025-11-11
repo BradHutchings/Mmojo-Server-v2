@@ -17,7 +17,7 @@ const kCompletionsURL = kServerURL + "/completion";
 const kModelsURL = kServerURL + "/v1/models"
 const kTokenizeURL = kServerURL + "/tokenize"
 
-const kMmojoCompletion = "Mmojo Completion";
+const kMmojoComplete = "Mmojo Complete";
 
 const kStatusMode = Object.freeze({
     preparing:                          1,      // page loading, not ready for editing.
@@ -58,7 +58,7 @@ const kModeReplace = "replace";
 const kModeReplaceRegEx = "replace-regex";
 
 const kWorkAreaTextPlaceholder = 
-    "Welcome to Mmojo Completion, delivered to you from your own Mmojo Server. " +
+    "Welcome to Mmojo Complete, delivered to you from your own Mmojo Server. " +
     "Anything you do with LLMs in the cloud, you can do here, privately.\n\n" +
     "Type some text in this work area that will get the language model started. The text you type is called a \"cue\".\n\n" +
     "Once you've entered your cue, click the Start button at the bottom or type the ENTER key to start completing.\n\n" +
@@ -89,7 +89,7 @@ script.evaluatingTokensProcessed = 0;
 script.evaluatingTokensTotal = 0;
 script.stoppedByWord = "";
 script.stoppedAfterTokens = 0;
-script.mmojoCompletionClicked = false;         //  This is that header showing Mmojo Completion (should be a contant kAppName) or the model name.
+script.mmojoCompleteClicked = false;         //  This is that header showing Mmojo Complete (should be a contant kAppName) or the model name.
 script.statusMode = kStatusMode.editing;
 script.statusMessage = "";
 
@@ -168,7 +168,7 @@ function FindElements() {
     elements.printContent           = document.getElementById("print-content");
 
     elements.titleBar               = document.getElementById("title-bar");
-    elements.mmojoCompletion        = document.getElementById("mmojo-completion");
+    elements.mmojoComplete        	= document.getElementById("mmojo-complete");
     elements.settingsIcon           = document.getElementById("settings-icon");
     //  elements.hashIcon               = document.getElementById("hash-icon");
     //  elements.colorWheelIcon         = document.getElementById("color-wheel-icon");
@@ -1361,7 +1361,7 @@ function MakeHash() {
     let mode = kModeCueLink;
     let autoComplete = true;
 
-    var label = 'Completion Tool';
+    var label = 'Mmojo Complete';
     if (cue != '') {
         label = (completed != '') ? "Completed: " : "Complete: ";
     }
@@ -1702,19 +1702,19 @@ function Help() {
     window.open('help.html', '_blank');
 }
 
-function ClickMmojoCompletion() {
-    if (!script.mmojoCompletionClicked) {
-        script.mmojoCompletionClicked = true;
-        elements.mmojoCompletion.innerText = script.modelName;
+function ClickMmojoComplete() {
+    if (!script.mmojoCompleteClicked) {
+        script.mmojoCompleteClicked = true;
+        elements.mmojoComplete.innerText = script.modelName;
         setTimeout(function() {
-            RestoreMmojoCompletion();
+            RestoreMmojoComplete();
         }, 3000);
     }
 }
 
-function RestoreMmojoCompletion() {
-    elements.mmojoCompletion.innerText = kMmojoCompletion;
-    script.mmojoCompletionClicked = false;
+function RestoreMmojoComplete() {
+    elements.mmojoComplete.innerText = kMmojoComplete;
+    script.mmojoCompleteClicked = false;
 }
 
 function GetElapsedTimeString(ms) {
