@@ -40,7 +40,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 ---
 ### Proceed
 - **Next:** [407. Build Vulkan](407-Build-Vulkan.md)
-- **Previous:** [405. Build CPU Release](405-Build-CPU-Release.md)
+- **Previous:** [405. Build CPU](405-Build-CPU.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
