@@ -1,7 +1,7 @@
 ## 403. Build Debug
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or Vulkan builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or GPU-enabled builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
