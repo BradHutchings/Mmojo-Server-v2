@@ -14,7 +14,6 @@ This script uses cmake to build Mmojo Server:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/406-Build-CUDA.sh
   ```
 
@@ -24,7 +23,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - View the script: <a href="../scripts/406-Test-CUDA.sh" target="_blank">406-Test-CUDA.sh</a>.
 - Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/406-Test-CUDA.sh
   ```
   
