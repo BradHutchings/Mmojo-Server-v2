@@ -8,10 +8,10 @@
 
 cd $HOME
 
-TEST_DIR="$HOME/405-Test-Cosmo-*"
+TEST_DIR="$HOME/404-Test-Cosmo-*"
 rm -r -f $TEST_DIR
 
-printf "\n**********\n*\n* FINISHED: 405-Delete-Cosmo-Tests.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 404-Delete-Cosmo-Tests.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
