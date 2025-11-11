@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script runs the CPU-Debug build with command-line arguments.
+# This script runs the debug build with command-line arguments.
 #
 # See licensing note at end.
 ################################################################################
