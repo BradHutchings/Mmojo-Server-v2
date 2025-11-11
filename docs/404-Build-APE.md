@@ -106,15 +106,6 @@ Copy this assembled APE to your Mmojo share.
   ```
 
 ---
-### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/404-Delete-Cosmo-Tests.sh" target="_blank">404-Delete-Cosmo-Tests.sh</a>.
-- Run the script.
-  ```
-  . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/404-Delete-Cosmo-Tests.sh
-  ```
-
----
 ### Proceed
 - **Next:** [405. Build CPU](405-Build-CPU.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
