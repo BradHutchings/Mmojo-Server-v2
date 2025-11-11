@@ -27,15 +27,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
   ```
-
----
-### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/405-Delete-CPU-Tests.sh" target="_blank">405-Delete-CPU-Tests.sh</a>.
-- Run the script.
-  ```
-  . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/405-Delete-CPU-Tests.sh
-  ```
   
 ---
 ### Proceed
