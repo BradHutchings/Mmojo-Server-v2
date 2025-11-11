@@ -1,12 +1,12 @@
 ## 405. Build CPU
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform with CPU optimizations enabled, but no GPU support.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled, but no GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Build CPU Mmojo Server for Native Build Environment Platform
+### Build CPU Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../scripts/405-Build-CPU.sh" target="_blank">405-Build-CPU.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
