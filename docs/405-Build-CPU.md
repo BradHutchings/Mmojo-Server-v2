@@ -1,4 +1,4 @@
-## 405. Build CPU Release
+## 405. Build CPU
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform with CPU optimizations enabled, but no GPU support.
@@ -6,35 +6,35 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your na
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Build CPU Release Mmojo Server for Native Build Environment Platform
+### Build CPU Mmojo Server for Native Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/405-Build-CPU-Release.sh" target="_blank">405-Build-CPU-Release.sh</a>.
+- View the script: <a href="../scripts/405-Build-CPU.sh" target="_blank">405-Build-CPU.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/405-Build-CPU-Release.sh
+  $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/405-Test-CPU-Release.sh" target="_blank">405-Test-CPU-Release.sh</a>.
+- View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/405-Test-CPU-Release.sh
+  $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
   ```
 
 ---
 ### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/405-Delete-CPU-Release-Tests.sh" target="_blank">405-Delete-CPU-Release-Tests.sh</a>.
+- View the script: <a href="../scripts/405-Delete-CPU-Tests.sh" target="_blank">405-Delete-CPU-Tests.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/405-Delete-CPU-Release-Tests.sh
+  $MMOJO_SERVER_SCRIPTS/405-Delete-CPU-Tests.sh
   ```
   
 ---
