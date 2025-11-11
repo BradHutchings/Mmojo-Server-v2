@@ -14,7 +14,6 @@ This script uses cmake to build Mmojo Server:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
   ```
 
@@ -24,7 +23,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-Command-Line.sh" target="_blank">403-Test-Debug-Command-Line.sh</a>.
 - Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
   ```
 
@@ -34,7 +32,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-args.sh" target="_blank">403-Test-Debug-mmojo-server-args.sh</a>.
 - Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-args.sh
   ```
 
@@ -44,7 +41,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-support.sh" target="_blank">403-Test-Debug-mmojo-server-support.sh</a>.
 - Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-support.sh
   ```
 
