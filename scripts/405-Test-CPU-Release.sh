@@ -6,7 +6,7 @@
 # See licensing note at end.
 ################################################################################
 
-TEST_DIR="$HOME/404-Test-CPU-Release"
+TEST_DIR="$HOME/405-Test-CPU-Release"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
@@ -23,7 +23,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 404-Test-CPU-Release.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 405-Test-CPU-Release.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
