@@ -116,8 +116,8 @@ Copy this assembled APE to your Mmojo share.
 
 ---
 ### Proceed
-- **Next:** [405. Build CPU Release](405-Build-CPU-Release.md)
-- **Previous:** [403. Build CPU Debug](403-Build-CPU-Debug.md)
+- **Next:** [405. Build CPU](405-Build-CPU.md)
+- **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
