@@ -17,7 +17,7 @@ sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64
 sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64
 
-printf "\n**********\n*\n* FINISHED: 405-Copy-Cosmo-x86_64-to-Mmojo-Share.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
