@@ -13,8 +13,11 @@ cd $TEST_DIR
 
 UI_PARAMS=" --path $BUILD_LLAMA_CPP_DIR/Mmojo-Complete/ --default-ui-endpoint \"chat\""
 if [ $TEST_WITH_CHAT_UI ]; then
+    echo "Using chat UI."
     UI_PARAMS=""
 fi
+echo "\$UI_PARAMS: $UI_PARAMS"
+sleep 5s
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
