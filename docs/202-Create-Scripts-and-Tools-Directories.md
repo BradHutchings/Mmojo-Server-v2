@@ -1,4 +1,4 @@
-## 201. Create Scripts and Tools Directories
+## 202. Create Scripts and Tools Directories
 ### About this Step
 Let's get started by creating a `$HOME/scripts` directory and a `$HOME\tools` directory, then adding them to your `$PATH` environment variable.
 
@@ -42,8 +42,8 @@ echo $PATH
 
 ---
 ### Proceed
-- **Next:** [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md)
-- **Previous:** This is the first step in this section.
+- **Next:** [203. Clone Mmojo Server Repo](203-Clone-Mmojo-Server-Repo.md)
+- **Previous:** [201. Prepare WSL](201-Prepare-WSL.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
