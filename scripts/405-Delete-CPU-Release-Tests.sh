@@ -8,10 +8,10 @@
 
 cd $HOME
 
-TEST_DIR="$HOME/404-Test-CPU-Release*"
+TEST_DIR="$HOME/405-Test-CPU-Release*"
 rm -r -f $TEST_DIR
 
-printf "\n**********\n*\n* FINISHED: 404-Delete-CPU-Release-Tests.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 405-Delete-CPU-Release-Tests.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
