@@ -29,6 +29,38 @@ If you have multiple drives on your Windows computer, you should move the `.vhdx
 (Instructions here and links on moving the drive.)
 
 ---
+### Supress Host Machine Paths
+Your Windows host machine paths will get in the way of everything, especially CMake. Fortunately, we can edit a `.conf` file and supress those.
+
+Let's see what our `$PATH` has in it. Likely lots of things starting with `/mnt/c/`.
+```
+echo $PATH
+```
+
+Run this command to edit the `wsl.conf` file.
+```
+sudo nano /etc/wsl.conf
+```
+
+Add this short block of configuration code to the end:
+```
+[interop]
+appendWindowsPath = false
+```
+
+Save that file by typing `CTRL-X` then `Y`.
+
+In another Windows Terminal or PowerShell window, type a command to shutdown your WSL instance:
+```
+wsl --shutdown
+```
+
+Connect to your WSL instance again, and view the `$PATH`:
+```
+echo $PATH
+```
+
+---
 ### Start from Scratch Often
 It's OK to start from scratch and do it often. There is a lot going on to build and package Mmojo Server. There are a lot of moving parts. When you get stuck, save your sanity and start over.
 
