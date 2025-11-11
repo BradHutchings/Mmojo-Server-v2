@@ -1,8 +1,8 @@
 {
-    "name": "Mmojo Completion",
+    "name": "Mmojo Complete",
     "short_name": "Mmojo",
-    "start_url": "/completion",
-    "id": "https://mmojo.local/completion",
+    "start_url": "/",
+    "id": "https://mmojo.local",
     "icons": [
       {
         "src": "images/logo-512.png",
