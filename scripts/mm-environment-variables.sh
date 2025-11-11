@@ -71,6 +71,10 @@ export TEST_CPU="test-cpu"
 export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
 
+if [ -z $TEST_WITH_CHAT_UI ]; then
+  export TEST_WITH_CHAT_UI=0
+fi
+
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
