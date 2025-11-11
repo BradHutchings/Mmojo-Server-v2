@@ -18,18 +18,19 @@ If you have already prepared your build environments, skip ahead to:
 ---
 ### Preparing Your Build Environment
 Here are the things you need to do:
-- [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
-- [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
-- [203. Set Timezone](203-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
-- [204. Create Mmojo Share](204-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
-- [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
-- [206. Install Dependencies](206-Install-Dependencies.md) - Install packages needed for your build system.
+- [201. Prepare WSL](201-Prepare-WSL.md) - Prepare your Windows Subsystem for Linux (WSL) environment if you're using one.
+- [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
+- [203. Clone Mmojo Server Repo](203-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
+- [204. Set Timezone](204-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
+- [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
+- [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
+- [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
 <!--
 - [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 - [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 -->
 
-**Get Started:** [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md)
+**Get Started:** [201. Prepare WSL](201-Prepare-WSL.md)
 
 ---
 [MIT License](/LICENSE)<br/>
