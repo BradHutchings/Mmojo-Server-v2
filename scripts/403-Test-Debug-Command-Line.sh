@@ -11,10 +11,17 @@ mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
+UI_PARAMS=" --path $BUILD_LLAMA_CPP_DIR/Mmojo-Complete/ --default-ui-endpoint \"chat\""
+if [ ! -z $TEST_WITH_CHAT_UI ]; then
+  if [ $TEST_WITH_CHAT_UI != 0 ]; then
+    UI_PARAMS=""
+  fi
+fi
+
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 $BUILD_LLAMA_CPP_DIR/$BUILD_DEBUG/bin/mmojo-server --model $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf \
-    --path $BUILD_LLAMA_CPP_DIR/completion-ui/ --default-ui-endpoint "chat" --host 0.0.0.0 --port 8080 --batch-size 64 \
+    $UI_PARAMNS --host 0.0.0.0 --port 8080 --batch-size 64 \
     --threads-http 8 --ctx-size 0 --mlock
 
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
