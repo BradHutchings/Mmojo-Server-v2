@@ -1,4 +1,4 @@
-## 204. Create Mmojo Share
+## 205. Create Mmojo Share
 
 **THIS PAGE NEEDS TO HAVE STEPS INCLIUDED FOR INSTALLING AND CONFIGURING SAMBA. -Brad 2025-11-02**
 
@@ -23,8 +23,8 @@ Make the directories we'll use.
 
 ---
 ### Proceed
-- **Next:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
-- **Previous:** [203. Set Timezone](203-Set-Timezone.md)
+- **Next:** [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md)
+- **Previous:** [204. Set Timezone](204-Set-Timezone.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
