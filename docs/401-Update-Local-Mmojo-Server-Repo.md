@@ -1,6 +1,6 @@
-## 401. Update Local Mmojo Server Repo
+## 401. Update Environment
 ### About this Step
-Before building Mmojo Server, let's make sure our local copy of the Mmojo Server repo is up to date with the latest instructions and scripts.
+Before building Mmojo Server, let's make sure our local copy of the Mmojo Server repo is up to date with the latest instructions and scripts. Let's also set whether you want a chat interface when you test.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -11,6 +11,12 @@ We already have a script in place in `$HOME/scripts` to update the repo and copy
 . mm-environment-variables.sh
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
+```
+
+### Optional: Set Chat User Interface
+If you prefer using the llama.cpp chat user interface instead of Mmojo Complete for testing, run this command:
+```
+export TEST_WITH_CHAT_UI=1
 ```
 
 ---
