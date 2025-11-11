@@ -1,4 +1,4 @@
-## 206. Install Dependencies
+## 207. Install Dependencies
 ### About this Step
 Install system package updates, then install packages we will need for our build system.
 
@@ -20,17 +20,17 @@ This script installs available package updates for your Linux system:
 ---
 ### Install Dependencies
 This script installs dependencies you will need:
-- View script: <a href="../scripts/206-Install-Dependencies.sh" target="_blank">206-Install-Dependencies.sh</a>.
+- View script: <a href="../scripts/207-Install-Dependencies.sh" target="_blank">207-Install-Dependencies.sh</a>.
 - Run the script.
   ```
   . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/206-Install-Dependencies.sh
+  $MMOJO_SERVER_SCRIPTS/207-Install-Dependencies.sh
   ```
 
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md)
+- **Previous:** [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
