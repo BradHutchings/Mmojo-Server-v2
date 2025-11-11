@@ -13,6 +13,14 @@ mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
 
+---
+### Optional: Use `work-in-progress` Branch of Mmojo Server Repo
+Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
+```
+mm-work-in-progress-branch.sh
+. mm-environment-variables.sh
+```
+
 ### Optional: Set Chat User Interface
 If you prefer using the llama.cpp chat user interface instead of Mmojo Complete for testing, run this command:
 ```
