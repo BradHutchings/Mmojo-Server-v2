@@ -21,10 +21,10 @@ var elements = {};
 var textChanged = true;
 
 const completedText_placeholder = 
-    "The Bookmark Maker makes web browser bookmarks and links for automating Completion Tool.\n\n" +
+    "The Bookmark Maker makes web browser bookmarks and links for automating Mmojo Complete.\n\n" +
     "The settings are in the olive area at top:\n" +
     "    - Label lets you set the label for the bookmark so you don't have to rename it.\n" +
-    "    - Temperature, Tokens, and Stop Words work as they do in Completion Tool.\n" +
+    "    - Temperature, Tokens, and Stop Words work as they do in Mmojo Complete Tool.\n" +
     "    - If the Auto-Complete checkbox is checked, opening the bookmark will cause the model to automatically start completing.\n" +
     "    - Append will append the cue to what's in the work area. Use to make clarifying bookmarks.\n" +
     "    - Replace will update the work area text, replacing the text in the top peach area with text in the bottom peach area. Use to make clarifying bookmarks.\n" +
@@ -123,7 +123,7 @@ function UpdateBookmark() {
     if (kLogging || logThis) console.log(dataJson);
 
     if (label == '') {
-        label = "Completion Tool"
+        label = "Mmojo Complete"
         if (cue != '') {
             label = (append) ? "+++ Complete: " : "Complete: ";
             label = label + cue.split(' ').slice(0,10).join(' ');
@@ -173,7 +173,7 @@ function UpdateBookmark() {
         elements.bookmark.href = js;
     }
     else if (bookmarkTypeLink) {
-        var rootUrl = window.location.protocol + "//" + window.location.host + "/completion/";
+        var rootUrl = window.location.protocol + "//" + window.location.host;
         if (kLogging || logThis) console.log(rootUrl);
 
         var location = rootUrl + hash;
@@ -207,8 +207,7 @@ function settings_drop(event) {
 
         if (kLogging || logThis) console.log("bookmarkData: " + bookmarkData);
 
-        var hostUrl = window.location.protocol + "//" + window.location.host + "/completion/";
-
+        var hostUrl = window.location.protocol + "//" + window.location.host;
 
         if (bookmarkData.startsWith("javascript:(") && bookmarkData.endsWith("();")) {
             if (kLogging || logThis) console.log("This is one of our script bookmarks.");
