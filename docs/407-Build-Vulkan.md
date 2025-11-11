@@ -27,15 +27,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/407-Test-Vulkan.sh
   ```
-
----
-### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/407-Delete-Vulkan-Tests.sh" target="_blank">407-Delete-Vulkan-Tests.sh</a>.
-- Run the script.
-  ```
-  . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/407-Delete-Vulkan-Tests.sh
-  ```
   
 ---
 ### Proceed
