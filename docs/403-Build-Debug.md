@@ -49,15 +49,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
 
 ---
-### OPTIONAL: Remove Test Directories
-- View the script: <a href="../scripts/403-Delete-Debug-Tests.sh" target="_blank">403-Delete-Debug-Tests.sh</a>.
-- Run the script.
-  ```
-  . mm-environment-variables.sh
-  $MMOJO_SERVER_SCRIPTS/403-Delete-Debug-Tests.sh
-  ```
-  
----
 ### Proceed
 - **Next:** [404. Build APE](404-Build-APE.md)
 - **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
