@@ -39,7 +39,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   
 ---
 ### Proceed
-- **Next:** [406. Build Vulkan](406-Build-Vulkan.md)
+- **Next:** [406. Build CUDA](406-Build-CUDA.md)
 - **Previous:** [404. Build APE](404-Build-APE.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
