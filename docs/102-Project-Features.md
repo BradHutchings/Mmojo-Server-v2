@@ -77,10 +77,10 @@ return json {
 - There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
 
 ---
-### Self Extracting Application (SEA) Files
+### Self Extracting Application Support (SEAS) Files
 I am working on a self-extracting application that can extract support files, including a web user interface and a .gguf model, into an adjacent support directory during the application's initial invocation. These would be a good 2nd thing for users to try &mdash; after an APE package &mdash; because they can contain platform optimized code and GPU support, packaged in a single file.
 
-SEAs are a work in progress.
+SEASes are a work in progress.
 
 - There will be additions to the `main()` function in [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
 
