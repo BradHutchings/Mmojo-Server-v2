@@ -23,6 +23,11 @@ wsl --install Ubuntu --name MmojoServerBuild
 -- Create a default Unix user account: linux
 -- New password: admin123!
 -- Retype new password: admin123!
+(Do the interop stuff here.)
+-- sudo nano /etc/wsl.conf
+[interop]
+enabled=false
+appendWindowsPath = false
 -- sudo poweroff
    -- admin123!
 
