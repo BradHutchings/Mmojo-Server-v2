@@ -3,7 +3,7 @@
 We're ready to build `mmojo-server` executables. First, we'll build a native version for the build environment platfrom that can be used to test features and changes. Then, we'll build an Actually Portable Executable (APE) with Cosmopolitan that will run anywhere. After that, we'll build unoptimized linux builds for x86_64 and aarch64 (arm64) platforms, as well as optimized builds for specific devices like macOS and Raspberry Pi.
 
 ---
-### Preparing Your Build Environment
+### Build Mmojo Server
 Here are the things you need to do:
 - [401. Update Environment](401-Update-Environment.md) - Make sure you have the latest instructions and scripts.
 - [402. Prepare to Build](402-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
