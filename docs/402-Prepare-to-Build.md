@@ -61,6 +61,19 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
 
 ---
+### SHORTCUT: Run All the Above Scripts 
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
+$MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
+$MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
+$MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
+```
+
+---
 ### Proceed
 - **Next:** [403. Build Debug](403-Build-Debug.md)
 - **Previous:** [401. Update Environment](401-Update-Environment.md)
