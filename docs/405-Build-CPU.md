@@ -17,12 +17,12 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
 
-#### Optional: Copy CPU Build to Your Mmojo Share
+#### Optional: Copy CPU Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/405-Copy-CPU-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
   ```
 
 ---
