@@ -6,13 +6,6 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Optional: Use `work-in-progress` Branch of Mmojo Server Repo
-Use the `work-in-progress` branch where I implement and test my own changes and where I test changes from `llama.cpp`.
-```
-mm-work-in-progress-branch.sh
-```
-
----
 ### Clone Repos
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
@@ -23,7 +16,6 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
   ```
 
@@ -69,9 +61,22 @@ cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
 
 ---
+### SHORTCUT: Run All the Above Scripts 
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/402-Clone-Repos.sh
+$MMOJO_SERVER_SCRIPTS/402-Fix-llama-cpp.sh
+$MMOJO_SERVER_SCRIPTS/402-Rollback-webui.sh
+$MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
+```
+
+---
 ### Proceed
-- **Next:** [403. Build CPU Debug](403-Build-CPU-Debug.md)
-- **Previous:** [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md)
+- **Next:** [403. Build Debug](403-Build-Debug.md)
+- **Previous:** [401. Update Environment](401-Update-Environment.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---

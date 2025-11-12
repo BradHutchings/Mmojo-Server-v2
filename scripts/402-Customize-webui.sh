@@ -21,9 +21,9 @@ cd $SAVE_WD
 mv loading-mmojo.html tools/server/public/loading-mmojo.html
 
 TODAY=$(date +%Y-%m-%d)
-cp -r completion-ui completion-ui-original
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/scripts.js
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" completion-ui/bookmark-scripts.js
+cp -r Mmojo-Complete Mmojo-Complete-original
+sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/scripts.js
+sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/bookmark-scripts.js
 
 cd $HOME
 

@@ -1,0 +1,45 @@
+## 206. Mount Mmojo Share
+
+---
+### About the Step
+The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
+
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
+
+---
+### Create Mmojo Share Mount Point and Mount Script
+This script creates a mount point for the Mmojo Share and a script for mounting the Mmojo Share:
+- View script: <a href="../scripts/206-Create-Mmojo-Share-Mount-Point.sh" target="_blank">206-Create-Mmojo-Share-Mount-Point.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  $MMOJO_SERVER_SCRIPTS/204-Create-Mmojo-Share-Mount-Point.sh
+  ```
+
+---
+### Edit the Mmojo Share Mount Script
+Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
+```
+nano "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
+```
+
+---
+### Mount the Mmojo Share
+Mount the Mmojo share and list its contents.
+```
+mm-mount-mmojo-share.sh
+ls -al /mnt/mmojo
+```
+
+---
+### Proceed
+- **Next:** [207. Install Dependencies](207-Install-Dependencies.md)
+- **Previous:** [205. Create Mmojo Share](205-Create-Mmojo-Share.md)
+- **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)

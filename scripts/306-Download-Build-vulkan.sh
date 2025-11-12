@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ################################################################################
 # This script downloads and builds a recent Vulkan source tarball. We hope to

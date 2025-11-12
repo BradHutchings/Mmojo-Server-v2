@@ -12,12 +12,13 @@ This is an overview of what this repository is about, how to work with it, what 
 ### [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 Before you can build Mmojo Server, you need a build environment. Depending on what you want to build, it could be a single computer or multiple computers. You should have a separate share on your network to keep files you only need to download once, and keep the products of your builds. You may find yourself rebuilding your build environments regularly, especially if you edit or enhance code and instructions in the repo.
 
-- [201. Create Scripts and Tools Directories](201-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
-- [202. Clone Mmojo Server Repo](202-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
-- [203. Set Timezone](203-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
-- [204. Create Mmojo Share](204-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
-- [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
-- [206. Install Dependencies](206-Install-Dependencies.md) - Install packages needed for your build system.
+- [201. Prepare WSL](201-Prepare-WSL.md) - Prepare your Windows Subsystem for Linux (WSL) environment if you're using one.
+- [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md) - Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH`.
+- [203. Clone Mmojo Server Repo](203-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
+- [204. Set Timezone](204-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
+- [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
+- [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
+- [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
 <!--
 - [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
 - [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
@@ -40,15 +41,21 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 ### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 Build Mmojo Server executables.
 
-- [401. Update Local Mmojo Server Repo](401-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
+- [401. Update Environment](401-Update-Environment.md) - Make sure you have the latest instructions and scripts.
 - [402. Prepare to Build](402-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
-- [403. Build CPU Debug](403-Build-CPU-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
-- [404. Build CPU Release](404-Build-CPU-Release.md) - Build an optimized `mmojo-server` for the CPU of the build environment platformm.
-- [405. Build APE](405-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
+- [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
+- [404. Build APE](404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
+- [405. Build CPU](405-Build-CPU.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [406. Build CUDA](406-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
+- [407. Build Vulkan](407-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
 
 ---
 ### [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
-**Not stubbed yet.**
+Package Mmojo Server for distribution and deployment.
+
+- [501. Package APE](501-Package-APE.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+- [502. Package zip](502-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
+- [503. Package SEA](503-Package-SEA.md) - Package Mmojo Server as a Self-Extracting Application (SEA) file, that extracts its support files on first run.
 
 ---
 [MIT License](/LICENSE)<br/>

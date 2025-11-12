@@ -20,6 +20,15 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
   ```
 
 ---
+### WSL Note
+If you get build errors in the CMake preparation step, most likely did not turn off interoperability in WSL. Please see instructions in [2021. Prepare WSL](201-Prepare-WSL.md).
+
+You can turn off interoperability temporarily with this command:
+```
+sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
+```
+
+---
 ### Proceed
 - **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
 - **Previous:** [303. Copy Models](303-Copy-Models.md)

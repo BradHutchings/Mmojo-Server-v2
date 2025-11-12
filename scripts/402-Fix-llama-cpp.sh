@@ -30,11 +30,7 @@ sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/set(TARGET llama-server)/set(TARGET mmojo-server)/g' tools/server/CMakeLists.txt
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
 
-# OBSOLETE: Use lbssl.a and libcrypto.a static libraries.
-# We only do this tempoararily for Cosmo builds now.
-# sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
-
-# Delete the rejection test for OpenSSL.
+# Delete the rejection test for OpenSSL. Might be a candidate for temporary cosmo build fix.
 sed -i -e '/#include <openssl\/opensslv.h>/d' common/CMakeLists.txt
 sed -i -e '/error bad version/d' common/CMakeLists.txt
 
