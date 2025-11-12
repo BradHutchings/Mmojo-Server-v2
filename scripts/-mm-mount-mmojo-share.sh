@@ -21,7 +21,7 @@ fi
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     if [ $RUNNING_IN_WSL ]; then
         echo "Mounting Mmojo Share as drvfs. You may be prompted for your share password."
-        sudo mount -t drvfs -o user=$USER '\\$HOST\$SHARE' $MMOJO_SHARE_MOUNT_POINT
+        sudo mount -t drvfs -o user=$USER "\\\\$HOST\\$SHARE" $MMOJO_SHARE_MOUNT_POINT
     else
         echo "Mounting Mmojo Share as cifs. You may be prompted for your share password."
         sudo mount -t cifs -o user=$USER //$HOST/$SHARE $MMOJO_SHARE_MOUNT_POINT
