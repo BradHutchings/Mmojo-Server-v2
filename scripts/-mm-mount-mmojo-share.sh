@@ -13,6 +13,11 @@ HOST="[HOST]"
 USER="[USER]"
 SHARE="mmojo"
 
+if [ "$HOST" == "[HOST]" ]; then
+   echo "Your mm-mount-mmojo-share.sh script is not configured."
+   exit
+fi
+
 RUNNING_IN_WSL=0
 if [[ $(uname -r) =~ Microsoft|WSL ]]; then
     RUNNING_IN_WSL=1
