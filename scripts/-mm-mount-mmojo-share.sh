@@ -26,6 +26,9 @@ if [[ $(uname -r) =~ Microsoft|WSL ]]; then
     RUNNING_IN_WSL=1
 fi
 
+# This logic might not be right, depending on what drvfs actually does. Might want to try it if in WSL,
+# then fall back on cifs if we we're not mounted. -Brad 2025-11-12
+
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     if [ $RUNNING_IN_WSL ]; then
         echo "Mounting Mmojo Share as drvfs. You may be prompted for your share password."
@@ -35,3 +38,15 @@ if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         sudo mount -t cifs -o user=$USER //$HOST/$SHARE $MMOJO_SHARE_MOUNT_POINT
     fi
 fi
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
