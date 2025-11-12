@@ -4,7 +4,7 @@
 ---
 ### Proceed
 - **Next:** [104. Build Targets](104-Build-Targets.md)
-- **Previous:** [102. Project Features](101-Project-Features.md)
+- **Previous:** [102. Project Features](102-Project-Features.md)
 - **Up:** [100. Overview](100-Overview.md)
 
 ---
