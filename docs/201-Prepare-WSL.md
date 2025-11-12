@@ -23,11 +23,16 @@ wsl --install Ubuntu --name MmojoServerBuild
 -- Create a default Unix user account: linux
 -- New password: admin123!
 -- Retype new password: admin123!
---(DO THE INTEROP STUFF -- CAN WE cat append instead of nano? maybe best to not do that so user can see.)
+(Do the interop stuff here.)
+-- sudo nano /etc/wsl.conf
+[interop]
+enabled=false
+appendWindowsPath = false
 -- sudo poweroff
    -- admin123!
 
 mkdir -p D:\wsl
+(wait a couple minutes... or try and try again...)
 wsl --manage MmojoServerBuild --move D:\wsl
 ```
 
