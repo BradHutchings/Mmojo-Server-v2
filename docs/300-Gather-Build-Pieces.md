@@ -13,7 +13,8 @@ Here are the things you need to do:
 - [303. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
 - [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [306. Build Vulkan](306-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
+- [306. Install CUDA SDK](306-Install-CUDA-SDK.md) - Install NVIDIA's CUDA SDK.
+- [307. Build Vulkan](307-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
 <!--
 - [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
 -->
