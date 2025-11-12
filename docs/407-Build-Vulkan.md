@@ -41,6 +41,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
+### Next Section
+- **Next Section:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
+
+---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
