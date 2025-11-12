@@ -96,6 +96,20 @@ Copy this assembled APE to your Mmojo share.
   ```
 
 ---
+### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
+$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Local.sh
+$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
+```
+
+---
 ### Proceed
 - **Next:** [405. Build CPU](405-Build-CPU.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
