@@ -42,9 +42,10 @@ Run this command to edit the `wsl.conf` file.
 sudo nano /etc/wsl.conf
 ```
 
-Add this short block of configuration code to the end:
+We need to turn off the interop feature so APE applications can run as Linux apps. We also need to suppress your Windows `$env:PATH` from poluting your WSL Linux `$PATH`. Add this short block of configuration code to the end:
 ```
 [interop]
+enabled=false
 appendWindowsPath = false
 ```
 
