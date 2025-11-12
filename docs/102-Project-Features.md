@@ -12,7 +12,7 @@ Even if you're just trying to build a mostly stock llama.cpp to run locally, I h
 
 ---
 ### Actual Portable Executable (APE) files
-Inspired by llamafile, I use the [Cosmopolitan](https://github.com/jart/cosmopolitan) project to create applications that can run anywhwere, as described in the into to the Cosmopolitan Github repo:
+Inspired by llamafile, I use the [Cosmopolitan](https://github.com/jart/cosmopolitan) project to create applications that can run anywhwere, as described in the intorduction to the Cosmopolitan Github repo:
 
 > Cosmopolitan Libc makes C/C++ a build-once run-anywhere language, like Java, except it doesn't need an interpreter or virtual machine. Instead, it reconfigures stock GCC and Clang to output a POSIX-approved polyglot format that runs natively on Linux + Mac + Windows + FreeBSD + OpenBSD 7.3 + NetBSD + BIOS with the best possible performance and the tiniest footprint imaginable.
 
