@@ -1,6 +1,6 @@
 ## 204. Set Timezone
 ### About this Step
-The Completion UI indicates a build date in its Settings panel. Set your build system's time zone so that the displayed build date is local to you.
+The Mmojo Complete user interface indicates a build date in its Settings panel. Set your build system's time zone so that the displayed build date is local to you.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
