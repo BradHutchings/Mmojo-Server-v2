@@ -16,7 +16,7 @@ fi
 #----------------------------------------
 # Create a `mm-mount-mmojo-share.sh` script.
 #----------------------------------------
-cp "$MMOJO_SERVER_SCRIPTS/-MOUNT_MMOJO_SHARE_SCRIPT" "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
+cp "$MMOJO_SERVER_SCRIPTS/-$MOUNT_MMOJO_SHARE_SCRIPT" "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 chmod a+x "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 
 # cat << EOF > "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
