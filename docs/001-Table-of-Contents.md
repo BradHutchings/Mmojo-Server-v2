@@ -31,7 +31,7 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 
 - [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
 - [302. Download Models](302-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
-- [303. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
+- [303. Copy Models](303-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
 - [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
 - [306. Install CUDA SDK](306-Install-CUDA-SDK.md) - Install NVIDIA's CUDA SDK.
