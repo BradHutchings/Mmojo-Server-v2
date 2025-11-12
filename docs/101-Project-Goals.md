@@ -6,7 +6,7 @@ Unfortunately, Mozilla stopped actively supporting llamafile around the fall of 
 
 ---
 ### Project Goals
-The goal of the Mmojo Server project is to provide LLM server software that is easy to install on any supported system, then easy enough to update to a more performant version tuned to users' specific hardware and operating system. Mmojo Server will do the first part with APE files. I will do the second part by not customizing llama.cpp in unmaintainable ways and keeping the llama.cpp part up-to-date at least weekly. This will let us gain from everything llama.cpp is doing for reach and performance.
+The goal of the Mmojo Server project is to provide LLM server software that is easy to install on any supported system, then easy enough to update to a more performant version tuned to users' specific hardware and operating system. Mmojo Server will do the first part with APE files. It will do the second part by not customizing llama.cpp in unmaintainable ways and keeping the llama.cpp part up-to-date at least weekly. This will let us gain from everything llama.cpp is doing for reach and performance.
 
 There are some lessons from llamafile and APE packaging I can apply to the platform-specific build. We can package supporing files &mdash; like configuration, .gguf models, user interface, and certificates &mdash; in subdirectories adjacent to our executables, or perhaps in the executables themselves. Packaging for easy end-user installation is important.
 
