@@ -14,7 +14,7 @@ Here are the things you need to do:
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
 - [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
 - [306. Install CUDA SDK](306-Install-CUDA-SDK.md) - Install NVIDIA's CUDA SDK.
-- [307. Build Vulkan](307-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
+- [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 <!--
 - [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
 -->
