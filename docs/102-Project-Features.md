@@ -32,7 +32,7 @@ These are a way to specify command line defaults and aggregate support files, li
 
 ---
 ### Mmojo Complete - Completion User Interface
-I hold this currently unpopular opinion that chat interfaces are an abomination. Not in how they're implemented, but in that they make users pretend to have a conversation with a computer in order to extract knowledge from an LLM. I provide an original and powerful Mmojo Complete user interface that can be used as the default user interface, with llama.cpp's traditional chat interface as an option for end-users.
+I hold a currently unpopular opinion that chat interfaces are an abomination. Not in how they're implemented, but in that they make users pretend to have a conversation with a computer in order to extract knowledge from an LLM. I provide an original and powerful Mmojo Complete user interface that can be used as the default user interface, with llama.cpp's traditional chat interface as an option for end-users.
 
 If you have your own preferred UI, you can use the additions to Mmojo Server to support it as well.
 
