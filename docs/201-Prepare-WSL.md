@@ -17,6 +17,24 @@ Let's configure your WSL system to work better for Mmojo Server development.
 **Where:** Perform this step with and inside your WSL environment.
 
 ---
+### Setup stuff to be sorted out:
+```
+wsl --install Ubuntu --name MmojoServerBuild
+-- Create a default Unix user account: linux
+-- New password: admin123!
+-- Retype new password: admin123!
+-- sudo poweroff
+   -- admin123!
+
+mkdir -p D:\wsl
+wsl --manage MmojoServerBuild --move D:\wsl
+```
+
+(Start menu --> Search for MmojoServerBuild --> Add to Taskbar)
+
+Taskbar --> MmojoServerBuild -- will start MmojoServerBuild and connect a terminal.
+
+---
 ### Dedicate an Instance
 If you already use WSL, you should dedicate an instance just for building Mmoho Server.
 
@@ -51,9 +69,9 @@ appendWindowsPath = false
 
 Save that file by typing `CTRL-X` then `Y`.
 
-In another Windows Terminal or PowerShell window, type a command to shutdown your WSL instance:
+Shutdown your WSL instance:
 ```
-wsl --shutdown
+sudo poweroff
 ```
 
 Connect to your WSL instance again, and view the `$PATH`:
