@@ -3,7 +3,7 @@
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
 
 - [101. Project Goals](101-Project-Goals.md) - What this project is about and what it is not about.
-- [102. Project Features](102-Project-Features.md) - What this project is about and what it is not about.
+- [102. Project Features](102-Project-Features.md) - Comprehensive list of features implemented in this project.
 - [103. Build Environment](103-Build-Environment.md) - Constructing a multi-machine build environment.
 - [104. Build Targets](104-Build-Targets.md) - About build targets.
 - [105. Packaging for Deployment](105-Packaging-for-Deployment.md) - About packaging builds for deployment.
