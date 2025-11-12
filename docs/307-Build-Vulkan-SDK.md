@@ -1,4 +1,4 @@
-## 307. Build Vulkan
+## 307. Build Vulkan SDK
 ### About this Step
 Vulkan is a newer industry standard API to help applications work seamlessly with GPUs from different vendors. GPU vendors provide Vulkan interfaces for their GPUs, which are loaded dynamically by applications which use the Vulkan API. It should be the easiest way to add GPU support to your builds for any particular device you have. However:
 
