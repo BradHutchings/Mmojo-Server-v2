@@ -1,10 +1,10 @@
-## 102. Build Environment
-### Build Environment
+## 104. Build Targets
+### Build Targets
 
 ---
 ### Proceed
-- **Next:** [103. Build Targets](103-Build-Targets.md)
-- **Previous:** [101. Project Goals](101-Project-Goals.md)
+- **Next:** [105. Packaging for Deployment](105-Packaging-for-Deployment.md) 
+- **Previous:** [103. Build Environment](103-Build-Environment.md)
 - **Up:** [100. Overview](100-Overview.md)
 
 ---

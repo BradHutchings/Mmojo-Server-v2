@@ -1,4 +1,4 @@
-## 105. Contributing
+## 106. Contributing
 ### Contributing
 This project is (mostly) a one man show. I do not accept or even evaluate unsolicited pull requests. Please start a discussion about a feature, discuss, and listen to feedback before implementing the feature and expecting it to be considered. The most important feature of any feature in Mmojo Server is maintainability. The second most important feature is understandability. To get a new feature in, code and documentation will be written in a style consistent with my own in this repo.
 
@@ -14,7 +14,7 @@ Brad Hutchings</br>
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [104. Packaging for Deployment](104-Packaging-for-Deployment.md)
+- **Previous:** [105. Packaging for Deployment](105-Packaging-for-Deployment.md)
 - **Up:** [100. Overview](100-Overview.md)
 
 ---

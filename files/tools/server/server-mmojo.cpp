@@ -32,11 +32,11 @@
 
 // auto generated files (see README.md for details)
 #include "index.html.gz.hpp"
-// mmojo-server START
+// Mmojo Server START
 // This could be automated by searhing for "loading.html.hpp" and replacing that line with this block.
 // #include "loading.html.hpp"
 #include "loading-mmojo.html.hpp"
-// mmojo-server END
+// Mmojo Server END
 
 #include <atomic>
 #include <chrono>
@@ -51,7 +51,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-// mmojo-server START
+// Mmojo Server START
 // This could be automated by searching for "using json =" and inserting this block before.
 #include "mmojo-args.h"
 
@@ -76,7 +76,7 @@ bool ends_with (std::string const &fullString, std::string const &ending) {
         return false;
     } 
 }
-// mmojo-server END
+// Mmojo Server END
 
 using json = nlohmann::ordered_json;
 
@@ -4272,7 +4272,7 @@ struct server_context {
                     if (slot.task->params.stream && slot.task->params.return_progress) {
                         send_partial_response(slot, {}, true);
 
-                        // mmojo-server START
+                        // Mmojo Server START
                         // This could be automated by searching for "send_partial_response(slot, {}, true);" and inserting this block after. -Brad 2025-11-05
                         // This looks like the right spot to sleep.
                         if (params_base.n_batch_sleep_ms > 0) {
@@ -4280,7 +4280,7 @@ struct server_context {
                             std::this_thread::sleep_for(std::chrono::milliseconds(params_base.n_batch_sleep_ms));
                             SLT_INF(slot, "%s", "Finished sleep after batch.\n");
                         }
-                        // mmojo-server END                                            
+                        // Mmojo Server END                                            
                     }
                 }
 
@@ -4457,7 +4457,7 @@ struct server_context {
         SRV_DBG("%s", "run slots completed\n");
     }
 
-    // mmojo-server START
+    // Mmojo Server START
     // This could be automated by searching for "json model_meta() const {" and replacing 10 lines with this block. -Brad 2025-11-05
     json model_meta() const {
         char general_architecture[64];
@@ -4505,7 +4505,7 @@ struct server_context {
             {"general.license", general_license },
         };
     }
-    // mmojo-server END
+    // Mmojo Server END
 
 };
 
@@ -4538,7 +4538,7 @@ inline void signal_handler(int signal) {
 }
 
 int main(int argc, char ** argv) {
-    // mmojo-server START
+    // Mmojo Server START
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
     // Keep the build from showing up as ape in the process list.
@@ -4620,7 +4620,7 @@ int main(int argc, char ** argv) {
     #endif
     
     // Yep, this is counterintuitive, but how the cosmo_args command works.
-    // mmojo-server END
+    // Mmojo Server END
 
     // own arguments required by this example
     common_params params;
@@ -4640,7 +4640,7 @@ int main(int argc, char ** argv) {
         params.kv_unified = true;
     }
 
-    // mmojo-server START
+    // Mmojo Server START
     // This could be automated by looking for "common_init();" and inserting this block immediately after. -Brad 2025-11-05
     // fix params -- model, path, ssl-key-file, ssl-cert-file
     // if they are relative paths, fix to absolute relative to working directory
@@ -4667,7 +4667,7 @@ int main(int argc, char ** argv) {
             printf("  - new ssl-cert-file path: %s\n", s.c_str());
         }
     }
-    // mmojo-server END
+    // Mmojo Server END
 
     common_init();
 
@@ -4811,13 +4811,13 @@ int main(int argc, char ** argv) {
             // if (req.path == "/" || tmp.back() == "html") {
             //    res.set_content(reinterpret_cast<const char*>(loading_html), loading_html_len, "text/html; charset=utf-8");
             //    res.status = 503;
-            // mmojo-server START
+            // Mmojo Server START
             // This can be automated by searching for "req.path == \"/models\"" then replacing previous 3 lines with this block. -Brad 2025-11-05
             if (req.path == "/" || tmp.back() == "html" || ends_with(req.path, "/") || ends_with(req.path, ".html")) {
                 // res.set_content(reinterpret_cast<const char*>(loading_html), loading_html_len, "text/html; charset=utf-8");
                 res.set_content(reinterpret_cast<const char*>(loading_mmojo_html), loading_mmojo_html_len, "text/html; charset=utf-8");
                 res.status = 503;
-            // mmojo-server END
+            // Mmojo Server END
             } else if (req.path == "/models" || req.path == "/v1/models" || req.path == "/api/tags") {
                 // allow the models endpoint to be accessed during loading
                 return true;
@@ -5839,7 +5839,7 @@ int main(int argc, char ** argv) {
         }
     }
     
-    // mmojo-server START
+    // Mmojo Server START
     // This can be automated by searching for "register API routes" and inserting this block before. -Brad 2025-11-05
     // LOG_INF("%s%s\n", "default_ui_endpoint: ", params.default_ui_endpoint.c_str());
 
@@ -5872,7 +5872,7 @@ int main(int argc, char ** argv) {
             return false;
         });        
     }
-    // mmojo-server END        
+    // Mmojo Server END        
 
     // register API routes
     svr->Get (params.api_prefix + "/health",              handle_health); // public endpoint (no API key check)

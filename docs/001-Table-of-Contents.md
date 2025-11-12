@@ -3,10 +3,11 @@
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
 
 - [101. Project Goals](101-Project-Goals.md) - What this project is about and what it is not about.
-- [102. Build Environment](102-Build-Environment.md) - Constructing a multi-machine build environment.
-- [103. Build Targets](103-Build-Targets.md) - About build targets.
-- [104. Packaging for Deployment](104-Packaging-for-Deployment.md) - About packaging builds for deployment.
-- [105. Contributing](105-Contributing.md) - About contributing to this project.
+- [102. Project Features](102-Project-Features.md) - Comprehensive list of features implemented in this project.
+- [103. Build Environment](103-Build-Environment.md) - Constructing a multi-machine build environment.
+- [104. Build Targets](104-Build-Targets.md) - About build targets.
+- [105. Packaging for Deployment](105-Packaging-for-Deployment.md) - About packaging builds for deployment.
+- [106. Contributing](106-Contributing.md) - About contributing to this project.
 
 ---
 ### [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
@@ -30,10 +31,11 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 
 - [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
 - [302. Download Models](302-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
-- [303. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
+- [303. Copy Models](303-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
 - [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [306. Build Vulkan](306-Build-Vulkan.md) - Build Vulkan for platform optimized builds.
+- [306. Install CUDA SDK](306-Install-CUDA-SDK.md) - Install NVIDIA's CUDA SDK.
+- [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 <!--
 - [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
 -->
