@@ -17,6 +17,14 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/406-Build-CUDA.sh
   ```
 
+#### Optional: Copy CUDA Build to Your Mmojo Share
+Copy this build to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/406-Copy-CUDA-Build-to-Mmojo-Share.sh" target="_blank">406-Copy-CUDA-Build-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/406-Copy-CUDA-Build-to-Mmojo-Share.sh
+  ```
+
 ---
 ### OPTIONAL: Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
