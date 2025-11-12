@@ -41,7 +41,7 @@ vulkaninfo
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [306. Install CUDA Developer](306-Install-CUDA-Developer.md)
+- **Previous:** [306. Install CUDA SDK](306-Install-CUDA-SDK.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
