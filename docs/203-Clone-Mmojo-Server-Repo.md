@@ -1,8 +1,8 @@
 ## 203. Clone Mmojo Server Repo
 ### About this Step
-Let's get started by cloning the Mmojo Server Repo, so we have scripts available to do all the documented steps.
+Let's get started by cloning the Mmojo Server repository from Github, so we have scripts available to do all the documented steps.
 
-As we work, we will update our local copy of the repo before performing each step.
+As we work, we will update our local copy of the repo at the start of each section.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
