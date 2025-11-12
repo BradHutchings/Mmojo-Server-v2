@@ -20,7 +20,7 @@ Most importantly to me, I created and maintain Mmojo Server to power my Mmojo Kn
 
 ---
 ### Proceed
-- **Next:** [102. Build Environment](102-Build-Environment.md)
+- **Next:** [102. Project Features](102-Project-Features.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [100. Overview](100-Overview.md)
 
