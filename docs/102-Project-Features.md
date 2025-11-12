@@ -24,7 +24,7 @@ The APE files are a good starting point for end users because the same binary ru
 
 ---
 ### `mmojo-server-args` File and `mmojo-server-support` Directory
-These are a way to specify command line defaults and aggregate support files, like the user interface and LLM in the working directory where the ``mmojo-server` application is invoked. These are very helpful for packaging and configuration management.
+These are a way to specify command line defaults and aggregate support files, like the user interface and LLM in the working directory where the `mmojo-server` application is invoked. Like the APE files, these are very helpful for packaging and configuration management.
 
 - There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
 - There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accomodate this feature.
