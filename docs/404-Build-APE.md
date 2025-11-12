@@ -96,6 +96,15 @@ Copy this assembled APE to your Mmojo share.
   ```
 
 ---
+### WSL Note
+If you get build errors in the CMake preparation step, most likely did not turn off interoperability in WSL. Please see instructions in [2021. Prepare WSL](201-Prepare-WSL.md).
+
+You can turn off interoperability temporarily with this command:
+```
+sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
+```
+
+---
 ### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
