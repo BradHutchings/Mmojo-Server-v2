@@ -1,12 +1,12 @@
 ## 407. Build Vulkan
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your native build environment platform with CPU optimizations enabled and Vulkan GPU support enabled.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled and Vulkan GPU support enabled.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Build Vulkan Mmojo Server for Native Build Environment Platform
+### Build Vulkan Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../scripts/407-Build-Vulkan.sh" target="_blank">407-Build-Vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
