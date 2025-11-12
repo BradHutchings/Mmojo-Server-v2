@@ -10,7 +10,7 @@ The goal of the Mmojo Server project is to provide LLM server software that is e
 
 There are some lessons from llamafile and APE packaging I can apply to the platform-specific build. We can package supporing files &mdash; like configuration, .gguf models, user interface, and certificates &mdash; in subdirectories adjacent to our executables, or perhaps in the executables themselves. Packaging for easy end-user installation is important.
 
-I want to promote a completion user interface as a better way to use LLMs than the chat illusion. People do not need to pretend they are having a conversation to get good information from an LLM. Meanwhile, the chat illusion can have serious downsides for people who get hooked into it.
+I want to promote my Mmojo Complete completion-style user interface as a better way to use LLMs than the chat illusion. People do not need to pretend they are having a conversation to get good information from an LLM. Meanwhile, the chat illusion can have serious downsides for people who get hooked into it.
 
 For developers, especially in the agent space, the OpenAI compatible API that llama.cpp gives us will save them money and support hassle. It has the potential to preserve end-user privacy and dignity as well.
 
