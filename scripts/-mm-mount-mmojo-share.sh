@@ -9,6 +9,9 @@
 ################################################################################
 
 # Setup step: Replace [HOST] and [USER] with your Mmojo Share's hostname and user.
+# If you leave HOST="[HOST]" this script will fail silently in scripts that call
+# this script. So, it's OK if you don't have a Mmojo Share.
+
 HOST="[HOST]"
 USER="[USER]"
 SHARE="mmojo"
