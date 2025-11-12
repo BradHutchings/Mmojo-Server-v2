@@ -32,6 +32,7 @@ appendWindowsPath = false
    -- admin123!
 
 mkdir -p D:\wsl
+(wait a couple minutes... or try and try again...)
 wsl --manage MmojoServerBuild --move D:\wsl
 ```
 
