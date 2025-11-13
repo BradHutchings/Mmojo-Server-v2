@@ -1,4 +1,4 @@
-## Table of Contents
+## Mmojo Server &ndash; Table of Contents
 ### [100. Overview](100-Overview.md)
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
 
