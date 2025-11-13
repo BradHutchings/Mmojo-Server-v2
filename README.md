@@ -14,7 +14,7 @@ My philosophy is that end-users can easily get started with the APE build, then 
 
 I want Mmojo Server to be the easiest way for developers to build llama.cpp and to foster greater and wider understanding of how llama.cpp works.
 
-I use Mmojo Server for my own consulting and commercial offerings. There is no fluff in this project driven by hypothetical use cases, surveys, or discussion board warriors. I do not solicit or accept pull requests from strangers. You can depend on Mmojo Server to be maintained and remain relevant.
+I use Mmojo Server for my own consulting and commercial offerings. There is no fluff in this project driven by hypothetical use cases, surveys, or discussion board warriors. I do not solicit or accept pull requests from strangers. I do not use LLMs to write the documentation or provide more than sample code to guide my coding. You can depend on Mmojo Server to be maintained and remain relevant.
  
 Mmojo Server version 2 is currently a near final draft, but more useful in practice than version 1. For now, I have archived version 1 in the [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). 
 
