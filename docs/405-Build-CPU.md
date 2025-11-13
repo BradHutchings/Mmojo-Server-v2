@@ -26,7 +26,7 @@ Copy this build to your Mmojo Share for packaging later.
   ```
 
 ---
-### OPTIONAL: Test the Build
+### Optional: Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
 - Run the script.
