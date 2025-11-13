@@ -25,7 +25,7 @@ export TILDE_SCRIPTS="~/scripts"
 export HOME_TOOLS="$HOME/scripts"
 export TILDE_TOOLS="~/tools"
 
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
@@ -37,12 +37,13 @@ export MMOJO_SHARE_BUILDS_CUDA="$MMOJO_SHARE_BUILDS/cuda"
 export MMOJO_SHARE_BUILDS_VULKAN="$MMOJO_SHARE_BUILDS/vulkan"
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
-export MODELS_DIR="$HOME/302-MODELS"
+export MODELS_DIR="$HOME/300-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
 export BUILD_COSMOPOLITAN_DIR="$HOME/304-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
 export BUILD_OPENSSSL_DIR="$HOME/305-BUILD-openssl"
-export BUILD_VULKAN_DIR="$HOME/306-BUILD-vulkan"
+export INSTALL_CUDA_TOOLKIT_DIR="$HOME/306-INSTALL-cuda-toolkit"
+export BUILD_VULKAN_SDK_DIR="$HOME/307-BUILD-vulkan-sdk"
 export VULKAN_VERSION="1.4.328.1"
 if [[ -z "${VULKAN_SIMULTANEOUS_COMPILES}" ]]; then
   export VULKAN_SIMULTANEOUS_COMPILES=4
