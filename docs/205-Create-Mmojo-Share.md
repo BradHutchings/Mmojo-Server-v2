@@ -8,7 +8,7 @@ The Mmojo Share is a file share where I keep files for local access and complete
 
 In this step, we will create a Mmojo Share on a device running Linuz. We will install the necessary SMB software, configure `smb.conf`, restart the SMB server, and set it to start automatically at system startup. You can perform this step on another computer on your network if you like.
 
-If you have a Mmojo Share already set up, skip ahead to the next step: [205. Mount Mmojo Share](205-Mount-Mmojo-Share.md).
+If you have a Mmojo Share already set up, skip ahead to the next step: [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md).
 
 **Where:** Perform this step on a computer on your network reachable by other build environments on your network.
 

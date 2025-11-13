@@ -5,10 +5,10 @@ This page contains an itemized list of project features. These are all additions
 I am very choosy about new features. They need to be necessary. They need to be easy for regular end-users to work with. They need to be maintainable. They need to not be clever hacks. They need to not step on llama.cpp or alter it too much. Mostly, they should not try to do what the llama.cpp team is good at, like optimize the GGML algorithms.
 
 ---
-### Top Tier Build Documentation
-The documentation should make building and packaging an LLM server approachable to even casual developers and hobbyists. It can be a comfortable learning experience and spread knowledge of how these systems work beyond hard-core technical people.
+### Top Shelf Build Instructions
+The instructions (aks "documentation") should make building and packaging an LLM server approachable to even casual developers and hobbyists. It can be a comfortable learning experience and spread knowledge of how these systems work beyond hard-core technical people.
 
-Even if you're just trying to build a mostly stock llama.cpp to run locally, I hope my documentation gets you through setting up your environment to support GPUs with CUDA, Vulkan, or (soon!) Metal.
+Even if you're just trying to build a mostly stock llama.cpp to run locally, I hope my instructions gets you through setting up your environment to support GPUs with CUDA, Vulkan, or (soon!) Metal.
 
 ---
 ### Actual Portable Executable (APE) files

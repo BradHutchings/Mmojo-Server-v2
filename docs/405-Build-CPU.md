@@ -33,7 +33,19 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   ```
   $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
   ```
-  
+
+---
+### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
+$MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+```
+
 ---
 ### Proceed
 - **Next:** [406. Build CUDA](406-Build-CUDA.md)
