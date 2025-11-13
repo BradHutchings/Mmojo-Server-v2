@@ -13,7 +13,6 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
   ```
 
@@ -45,41 +44,17 @@ This script downloads the models from Hugging Face:
   $MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
   ```
 
-<!--
-Copy the models:
+---
+### SHORTCUT: Copy Tested Models
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to copy all the models I offer on Hugging Face from your Mmojo SHare. This will take awhile and use a lot (i.e. 100 GB-ish) of disk space.
 ```
-CopyModel() {
-  MODEL_FILE=$1
-  if [ ! -f $MODEL_FILE ]; then 
-    echo "Copying $MODEL_FILE.\n"
-    cp -v /mnt/mmojo/models/$MODEL_FILE .
-    chmod a-x $MODEL_FILE
-  fi
-}
-
-cd $MODELS_DIR
-mm-mount-mmojo-share.sh
-unset apefiles
-declare -A apefiles
-
-while IFS=$' ' read -r gguf apefile ; do
-  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
-    apefiles["${gguf}"]="${apefile}"
-  fi
-done < "$MODEL_MAP"
-
-for key in "${!apefiles[@]}"; do
-  CopyModel $key 
-done
-
-cd $HOME
-
-echo -e "\nModels directory:"
-ls -al $MODELS_DIR/*.gguf
-
-printf "\n**********\n*\n* FINISHED: Copy Models from Mmojo Share.\n*\n**********\n\n"
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
+$MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
 ```
--->
 
 ---
 ### Proceed
