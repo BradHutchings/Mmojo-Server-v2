@@ -8,7 +8,7 @@ Welcome to Mmojo Server version 2! This project makes it easy to build and packa
 - Build and package CPU-optimized and GPU-enabled executables that run on specific operating systems and CPU architectures.
 - Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
 - Extensive, maintained, easy to follow documentation.
-- Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option.
+- Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option. 
 - Mmojo Server version 2 is no longer a Github fork of llama.cpp. Instead, it incorporates a locally cloned llama.cpp repository into its build sequence.
 
 My philosophy is that end-users can easily get started with the APE build, then upgrade to an optimized CPU/GPU build for their computer. Developers building Mmojo Server should expect a similar experience.
