@@ -1,4 +1,14 @@
 ## Mmojo Server &ndash; Table of Contents
+The Mmojo Server project is mostly my readable documentation, with lots of functioning scripts to work out the gory details. It is organized to be worked through sequentially from start to finish. I'll tell you what the point of this project is, help you prepare your build environment, gather things you'll need, build Mmojo Server, then package it for deployment.
+
+You really can't do much with this project without R-ing TFM. So [jump in and read](101-Project-Goals.md)! Then start doing! Table of Contents is below for your reference.
+
+-Brad<br/>
+--<br/>
+Brad Hutchings<br/>
+brad@bradhutchings.com
+
+---
 ### [100. Overview](100-Overview.md)
 This is an overview of what this repository is about, how to work with it, what to contribute, etc. Read this first before diving in!
 
