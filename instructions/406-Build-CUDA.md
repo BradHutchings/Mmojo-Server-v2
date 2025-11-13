@@ -5,6 +5,12 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Note:**
+```
+# Need to set this variable -OR- add "/usr/local/cuda-13.0/bin" to $PATH
+export $CUDACXX="/usr/local/cuda-13.0/bin/nvcc"
+```
+
 ---
 ### Build CUDA Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
