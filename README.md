@@ -5,7 +5,7 @@ Welcome to Mmojo Server version 2! This project makes it easy to build and packa
   - I am inspired by the original llamafile project.
   - APE files can contain an LLM, user interface, certificates, and other support files.
   - Download and run the same executable file on x86_64 Linux and an ARM Raspberry Pi.
-- Coordinate builds across CPU and OS platforms with a file share on your network.
+- Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
 - Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option.
 - Mmojo Server version 2 is no longer a Github fork of llama.cpp. Instead, it incorporates a locally cloned llama.cpp repository into its build sequence.
 - My philosophy is that end-users can easily get started with the APE build, then upgrade to an optimized CPU/GPU build for their computer. Developers building Mmojo Server should expect a similar experience.
