@@ -15,7 +15,6 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
   ```
 
@@ -45,37 +44,17 @@ This script downloads the models from Hugging Face:
   $MMOJO_SERVER_SCRIPTS/302-Download-Models.sh
   ```
 
-<!--
-Download the models from Hugging Face.
+---
+### SHORTCUT: Download Tested Models
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to download all the models I offer on Hugging Face. This will take awhile and use a lot (i.e. 100 GB-ish) of disk space.
 ```
-DownloadModel() {
-  MODEL_FILE=$1
-  URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
-  if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
-}
-
-cd $MODELS_DIR
-unset apefiles
-declare -A apefiles
-
-while IFS=$' ' read -r gguf apefile ; do
-  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
-    apefiles["${gguf}"]="${apefile}"
-  fi
-done < "$MODEL_MAP"
-
-for key in "${!apefiles[@]}"; do
-  DownloadModel $key 
-done
-
-cd $HOME
-
-echo -e "\nModels directory:"
-ls -al $MODELS_DIR/*.gguf
-
-printf "\n**********\n*\n* FINISHED: Download Models.\n*\n**********\n\n"
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
+$MMOJO_SERVER_SCRIPTS/302-Download-Models.sh
 ```
--->
 
 ---
 ### Proceed
