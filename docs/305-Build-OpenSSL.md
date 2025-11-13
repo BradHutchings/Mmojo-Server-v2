@@ -25,7 +25,7 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 
 ---
 ### Proceed
-- **Next:** [306. Install CUDA SDK](306-Install-CUDA-SDK.md)
+- **Next:** [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md)
 - **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
