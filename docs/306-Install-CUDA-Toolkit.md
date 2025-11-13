@@ -1,4 +1,4 @@
-## 306. Install CUDA SDK
+## 306. Install CUDA Toolkit
 ### About this Step
 CUDA is... NVIDIA
 
