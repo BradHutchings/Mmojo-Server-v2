@@ -15,10 +15,6 @@ It's on the CUDA SDK page.
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
-### Next Section
-- **Next Section:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
-
----
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)

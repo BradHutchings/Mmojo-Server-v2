@@ -1,4 +1,4 @@
-## 404 Build APE
+## 404. Build APE
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and arm64. We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. 
 
