@@ -19,7 +19,7 @@ I use Mmojo Server for my own consulting and commercial offerings. There is no f
  
 Mmojo Server version 2 is currently a near final draft, but more useful in practice than version 1. For now, I have archived version 1 in the [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). 
 
-Get started now by diving into the [Mmojo Server documentation](docs/-Table-of-Contents.md). Read through it. Start doing it!
+Get started now by diving into the [Mmojo Server documentation](docs/-Start-Here.md). Read through it. Start doing it!
 
 -Brad<br/>
 --<br/>
