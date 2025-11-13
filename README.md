@@ -9,7 +9,7 @@ Welcome to Mmojo Server version 2! This project makes it easy to build and packa
   - Download and run the same executable file on x86_64 Linux and an ARM Raspberry Pi.
 - Build and package CPU-optimized and GPU-enabled executables that run on specific operating systems and CPU architectures.
 - Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
-- Extensive, maintained, easy to follow documentation.
+- Documentation is extensive, maintained, and easy to follow.
 - Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option. 
 - Mmojo Server version 2 is no longer a Github fork of llama.cpp. Instead, it incorporates a locally cloned llama.cpp repository into its build sequence.
 
