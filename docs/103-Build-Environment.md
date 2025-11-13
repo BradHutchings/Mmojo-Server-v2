@@ -1,5 +1,27 @@
 ## 103. Build Environment
-### Build Environment
+### Build Systems
+Your Mmojo Server build environment will consist of one or more build systems, depending on what you're trying to build. 
+
+- The Mmojo Server Actual Portable Executable (APE) can be built on one Linux system running on either an x86_64 or an aarch64 (arm64) CPU.
+- Other than the APE, cross-platform (OS and/or architecture) builds don't work well with llama.cpp. You should build on the deployment platform for the deployment platform. So...
+  - **You will need multiple build environments.**
+- You should keep your build environments from polluting and being polluted by your everyday work. You will want to rebuild them from scratch occasionally / often. A build environment dedicated to building Mmojo Server will work best for you. So...
+  - **Your build environments, ideally, will be containers, virtual machines (VMs), Windows Subsystem for Linux (WSL) instances, etc.**
+- GPU SDKs and Toolkits are typically available for hardware and operating systems the GPU drivers run on. You'll want to test GPU performance of your builds. So...
+  - **You will usually need to build directly on hardware that has the GPU you want your build to use.**
+  - WSL provides a working bridge CUDA / NVIDIA GPUs.
+  - WSL does not provide a working bridge for Vulkan.
+  - VMs typically don't provide GPU support. Where they do, they require advanced setup.
+ 
+In short, you can use one build system if you want to build an APE or are targeting a specific OS/CPU/GPU combination. You will probably have several build systems if you want to build out a robust deployment offering.
+
+---
+### Mmojo Share
+A file share that is accessible to all of your build systems will help you coordinate building and packaging. It's also a place you can store large downloads, such as `.gguf` model files and GPU SDKs, that can survive rebuilding of your individual build systems. I use a CIFS share I host on my main computer and call my Mmojo Share.
+
+---
+### Help is in the Instructions
+I'll help you build set up these build systems, set up a Mmojo Share, connect to the share from the build systems, and install required software, projects, SDKs, and toolkits in the [200. Prepare Build Environment](200-Prepare-Build-Environment.md) and [300. Gather Build Pieces](300-Gather-Build-Pieces.md) sections.
 
 ---
 ### Proceed
