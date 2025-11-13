@@ -10,10 +10,18 @@ Here are the results of running the benchmark in a Windows Subsystem for Linux (
 
 | Build              | Evaulation Time | Notes                                                 |
 | :-------           | :------         | -------:                                              |
-| Unoptimized Debug  | XX:XX           | CPU can do a lot of work.                             |
-| APE                | XX:XX           | Static libraries and generic compile.                 |
+| Unoptimized Debug  | 5:25            | CPU can do a lot of work.                             |
+| APE                | XX:XX           | Static libraries and generic optimized compile.       |
 | Optimized CPU      | XX:XX           | Compiler can save a lot of work for a particular CPU. |
 | CUDA               | XX:XX           | This is what user eventually want.                    |
+
+---
+### Build Targets
+Current build targets itemized here.
+
+---
+### Future Build Targets
+Future build targets itemized here.
 
 ---
 ### Proceed
