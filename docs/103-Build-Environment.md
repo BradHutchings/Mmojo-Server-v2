@@ -17,7 +17,7 @@ In short, you can use one build system if you want to build an APE or are target
 
 ---
 ### Mmojo Share
-A file share that is accessible to all of your build systems will help you coordinate building and packaging. It's also a place you can store large downloads, such as `.gguf` model files and GPU SDKs, that can survive rebuilding of your individual build systems. I use a CIFS share I host on my main computer and call my Mmojo Share.
+A file share that is accessible to all of your build systems will help you coordinate building and packaging. It's also a place you can store large downloads, such as `.gguf` model files and GPU SDKs, that can survive rebuilding of your individual build systems. I use a CIFS share I host on my main computer and call my Mmojo Share. It's mounted at `/mnt/mmojo` on each of my Linux build systems.
 
 ---
 ### Help is in the Instructions
