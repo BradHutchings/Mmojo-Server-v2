@@ -35,7 +35,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   ```
 
 ---
-### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
+### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
