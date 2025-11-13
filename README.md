@@ -1,6 +1,6 @@
 ## About Mmojo Server
 
-**[Get Started Now!](docs/-Start-Here-TOC.md)**
+**[Get Started Now!](instructions/-Start-Here-TOC.md)**
 
 Welcome to Mmojo Server version 2! This project makes it easy to build and package the LLM server and other software from llama.cpp with some carefully selected extensions and enhancements. Highlights:
 - Build and package Actual Portable Executable (APE) files that run on Linux, Windows, macOS operating systems across x86_64 and aarch64 (ARM64) architectures.
@@ -21,7 +21,7 @@ I use Mmojo Server for my own consulting and commercial offerings. There is no f
  
 Mmojo Server version 2 is currently a near final draft, but more useful in practice than version 1. For now, I have archived version 1 in the [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). 
 
-Get started now by diving into the [Mmojo Server Instructions](docs/-Start-Here-TOC.md). Read through it. Start doing it!
+Get started now by diving into the [Mmojo Server Instructions](instructions/-Start-Here-TOC.md). Read through it. Start doing it!
 
 -Brad<br/>
 --<br/>
