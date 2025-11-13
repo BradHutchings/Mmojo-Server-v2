@@ -57,7 +57,7 @@ Package Mmojo Server for distribution and deployment.
 
 - [501. Package APE](501-Package-APE.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
 - [502. Package zip](502-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
-- [503. Package SEA](503-Package-SEA.md) - Package Mmojo Server as a Self-Extracting Application (SEA) file, that extracts its support files on first run.
+- [503. Package SEAS](503-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
 
 ---
 [MIT License](/LICENSE)<br/>
