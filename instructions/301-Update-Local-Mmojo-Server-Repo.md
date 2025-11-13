@@ -2,7 +2,7 @@
 ### About this Step
 Before gathering build pieces, let's make sure our local copy of the Mmojo Server repo is up to date with the latest instructions and scripts. 
 
-*Side note: I use this command all the time while working on docs and scripts in this repo on Github. -Brad*
+*Side note: I use this command all the time while working on instructions and scripts in this repo on Github. -Brad*
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
