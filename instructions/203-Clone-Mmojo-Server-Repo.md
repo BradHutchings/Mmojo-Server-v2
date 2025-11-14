@@ -11,7 +11,7 @@ As we work, we will update our local copy of the repo at the start of each secti
 
 Clone the Mmojo Server repo:
 ```
-export MMOJO_SERVER_DIR="$HOME/201-mmojo-server"
+export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 export HOME_SCRIPTS="$HOME/scripts"
 cd $HOME
