@@ -1,5 +1,5 @@
 ## 303. Copy Models
-### About this Step - DO THIS ONCE
+### About this Step &mdash; DO THIS ONCE
 In this step, we will copy models from the Mmojo Share.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
