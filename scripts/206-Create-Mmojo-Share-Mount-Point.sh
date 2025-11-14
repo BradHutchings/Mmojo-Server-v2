@@ -10,21 +10,16 @@
 # Create mpount point: /mnt/mmojo
 #----------------------------------------
 if [ ! -d "$MMOJO_SHARE_MOUNT_POINT" ]; then
+    echo "Creating Mmojo Share mount point - $MMOJO_SHARE_MOUNT_POINT."
     sudo mkdir -p $MMOJO_SHARE_MOUNT_POINT
 fi
 
 #----------------------------------------
 # Create a `mm-mount-mmojo-share.sh` script.
 #----------------------------------------
+echo "Copying $MOUNT_MMOJO_SHARE_SCRIPT script."
 cp "$MMOJO_SERVER_SCRIPTS/-$MOUNT_MMOJO_SHARE_SCRIPT" "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 chmod a+x "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
-
-# cat << EOF > "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
-# if [[ ! \$(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-#     sudo mount -t cifs -o user=[USER] //[COMPUTER]/mmojo $MMOJO_SHARE_MOUNT_POINT
-# fi
-# EOF
-# chmod a+x "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 
 printf "\n**********\n*\n* FINISHED: 206-Create-Mmojo-Share-Mount-Point.sh.\n*\n**********\n\n"
 

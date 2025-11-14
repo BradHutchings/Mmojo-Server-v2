@@ -1,6 +1,10 @@
 ## 104. Build Targets
 ### Why Build Targets, Plural?
-The obvious question is why there need to be build targets if we have Actually Portable Executable (APE) files that run anywhere. The answer is performance. APE files gives us simple deployment at the cost of performance. Because the builds inside them have to be statically linked, we can't, for example, dynamically link against GPU drivers. The original llamafile was able to provide Metal support on Apple M* silicon, but it had to do dynamic compilation on the user's Mac to provide that support. This made installation and maintenance of llamafiles precarious for non-technical users and occasional developers running on Macs. Clever approach, not that workable in practice.
+The obvious question is why there need to be build targets if we have Actually Portable Executable (APE) files that run anywhere. The answer is performance. APE files gives us simple deployment at the cost of performance. 
+
+- Because the builds inside them have to be statically linked, we can't, for example, dynamically link against GPU drivers. The original llamafile was able to provide Metal support on Apple M* silicon, but it had to do dynamic compilation on the user's Mac to provide that support. This made installation and maintenance of llamafiles precarious for non-technical users and occasional developers running on Macs. Clever approach, not that workable in practice.
+
+- We can't tune to a particular CPU, as the APE needs to run on a wide variety of x86_64 and aarch64 (arm64) machines.
 
 ---
 ### Benchmarks
@@ -10,18 +14,31 @@ Here are the results of running the benchmark in a Windows Subsystem for Linux (
 
 | Build              | Evaulation Time | Notes                                                 |
 | :-------           | :------         | -------:                                              |
-| Unoptimized Debug  | 5:25            | CPU can do a lot of work.                             |
-| APE                | XX:XX           | Static libraries and generic optimized compile.       |
-| Optimized CPU      | XX:XX           | Compiler can save a lot of work for a particular CPU. |
-| CUDA               | XX:XX           | This is what user eventually want.                    |
+| APE                | 11:00           | Static libraries and generic optimized compile.       |
+| Unoptimized Debug  | 5:25            | Tuned CPU but unoptimized code runs faster.           |
+| Optimized CPU      | 1:41            | Compiler can save a lot of work for a particular CPU. |
+| CUDA               | 0:07            | This is what user eventually want.                    |
+
+(This would be a good place for Raspberry Pi metrics &mdash; APE and CPU.)
 
 ---
 ### Build Targets
-Current build targets itemized here.
+These instructions will help you build:
+- APE file that runs on a wide range of x86_64 and aarch64 (arm64) machines, across Linux, Windows, and macOS.
+  - This is a good choice for a getting started deployment, where performance is less important than just running. Developers seeking to replace expensive cloud LLMs or just not use them in the first place should be able to validate their development use case with a Mmojo Server APE file containing the LLM they wish to try. Zero configuration required.
+- CPU-tuned and optimized build runs faster than the APE build on x86_64 or aarch64 Linux. It can be packaged with a `mmojo-server-support` directory containing user interface, certificates, default configuration, and other supporting files for easy unzip then run deployment.
+- CUDA builds are CPU optimized builds that add support for NVIDIA GPUs when present.
+- Vulkan builds are CPU optimized builds that theoretically add support for any GPU with a Vulkan driver. They are also just like CPU optimized builds. In practice, the Vulkan builds require a minimum number of shaders that many embedded "AI enabled" devices don't support. Vulkan support inside WSL is hacky and doesn't work with llama.cpp.
 
 ---
 ### Future Build Targets
-Future build targets itemized here.
+In the future, these instructions will help you build:
+- Untuned CPU builds, compiler optimized that run well on a single operating system and CPU family. These won't be hindered by static linking, as the APE builds are.
+- Mac builds with Metal enabled. Unified memory is the best bang for the buck in local, private LLMs.
+- Linux builds for AMD Ryzen AI Max PRO, with GPU enabled. More unified memory for the value win.
+- Windows native builds. For now, I recommend using the APE for small LLMs, and WSL where possible. We will need a separate instructions and script track for Windows native.
+
+**The best thing you can do to speed these up is to become a paid sponsor of Mmojo Server.**
 
 ---
 ### Proceed

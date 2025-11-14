@@ -1,55 +1,61 @@
-## 405. Build CPU
+## 407. Build CUDA
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled, but no GPU support.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled and CUDA GPU support enabled.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Note:** This should be in the CUDA Toolkit step.
+```
+# Need to set this variable -OR- add "/usr/local/cuda-13.0/bin" to $PATH
+export $CUDACXX="/usr/local/cuda-13.0/bin/nvcc"
+```
+
 ---
-### Build CPU Mmojo Server for Build Environment Platform
+### Build CUDA Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/405-Build-CPU.sh" target="_blank">405-Build-CPU.sh</a>.
+- View the script: <a href="../scripts/407-Build-CUDA.sh" target="_blank">407-Build-CUDA.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
+  $MMOJO_SERVER_SCRIPTS/407-Build-CUDA.sh
   ```
 
-#### Optional: Copy CPU Build to Mmojo Share
+#### Optional: Copy CUDA Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/407-Copy-CUDA-Build-to-Mmojo-Share.sh" target="_blank">407-Copy-CUDA-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/407-Copy-CUDA-Build-to-Mmojo-Share.sh
   ```
 
 ---
-### Optional: Test the Build
+### OPTIONAL: Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
+- View the script: <a href="../scripts/407-Test-CUDA.sh" target="_blank">407-Test-CUDA.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+  $MMOJO_SERVER_SCRIPTS/407-Test-CUDA.sh
   ```
 
 ---
-### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
+### SHORTCUT: Build CUDA, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
-$MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+$MMOJO_SERVER_SCRIPTS/407-Build-CUDA.sh
+$MMOJO_SERVER_SCRIPTS/407-Copy-CUDA-Build-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/407-Test-CUDA.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [406. Build CUDA](406-Build-CUDA.md)
-- **Previous:** [404. Build APE](404-Build-APE.md)
+- **Next:** [408. Build Vulkan](408-Build-Vulkan.md)
+- **Previous:** [406. Build CPU](406-Build-CPU.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---

@@ -1,8 +1,6 @@
-## 203. Clone Mmojo Server Repo
+## 401. Re-Clone Local Mmojo Server Repo
 ### About this Step
-Let's get started by cloning the Mmojo Server repository from Github, so we have scripts available to do all the documented steps.
-
-As we work, we will update our local copy of the repo at the start of each section.
+Before gathering build pieces, let's make sure our local copy of the Mmojo Server repo is up to date with the latest instructions and scripts. We'll re-clone the repo for simplicity. You don't need to do this if you've created your build environment today.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -41,9 +39,9 @@ This script switches to the **work-in-progress** branch:
 
 ---
 ### Proceed
-- **Next:** [204. Set Timezone](204-Set-Timezone.md)
-- **Previous:** [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md)
-- **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+- **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
+- **Previous:** This is the first step in this section.
+- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>

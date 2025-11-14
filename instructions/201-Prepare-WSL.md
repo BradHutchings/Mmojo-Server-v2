@@ -1,89 +1,102 @@
 ## 201. Prepare WSL
 
-**THIS STEP IS NOT COMPLETE YET. -BRAD 2025-11-11**
-
 ### About this Step
-Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directly on Windows. For building and deploying Mmojo Server, it offers a few advantages and disadvantages over the native Windows environment:
+Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directly on Windows. Let's create and configure a WSL instance for Mmojo Server development.
 
-1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Execiutable (APE) file containing an LLM in the 4B parameter range or higher!
-2. (Advantage WSL): If you have NVIDIA drivers installed on your Windows host for a GPU that supports CUDA, you can run CUDA software from within WSL.
-3. (Advantage Windows): Vulkan software can be run with experimental, hard to find bridge software installed within WSL. It does not work well for Mmojo Server.
-4. (Advantage WSL): I don't test natvely building on or for Windows (yet).
-
-Hyper-V virtual machines run on Windows 11 Pro do not have access to the host system's GPU. While they may offer a more robust sandbox for CPU inference with Mmojo Server, they tend to be less convenient and more work than WSL.
-
-Let's configure your WSL system to work better for Mmojo Server development.
-
-**Where:** Perform this step with and inside your WSL environment.
+**Where:** Perform this step with and inside your WSL environment on Windows.
 
 ---
-### Setup stuff to be sorted out:
+### Delete your Existing `MmojoServerBuild` WSL Instance
+If you have a previous `MmojoServerBuild` WSL instance, let's delete it. We're going to start from scratch with a new one.
+
+Open a **Terminal** (or **PowerShell**) window. Verify that your instance exists and is stopped:
+```
+wsl --list --verbose
+```
+
+Unregister ("delete") the instance:
+```
+wsl --unregister MmojoServerBuild
+```
+
+If you previously pinned `MmojoServerBuild` to your **Taskbar**, remove it. The existing pinned shortcut one will not launch the new instance you will create.
+
+---
+### Create New `MmojoServerBuild` WSL Instance
+Still in the **Terminal**, register a new instance:
 ```
 wsl --install Ubuntu --name MmojoServerBuild
--- Create a default Unix user account: linux
--- New password: admin123!
--- Retype new password: admin123!
-(Do the interop stuff here.)
--- sudo nano /etc/wsl.conf
+```
+
+A Ubuntu instance will be downloaded and installed. After a couple of minutes, you will be prompted for a user name and password. I like to use `linux` and `admin123!`.
+```
+linux
+```
+```
+admin123!
+```
+
+---
+### Disable `[interop]`
+Let's diable interoperability with the host Windows environment so we don't have our WSL `$PATH` polluted and won't have problems launching APE files inside WSL.
+
+Check that `/etc/wsl.conf` doesn't already have an `[interop]` section:
+```
+cat /etc/wsl.conf
+```
+
+Append an `[interop]` section to `/etc/wsl.conf`:
+```
+cd $HOME
+cp /etc/wsl.conf ./wsl.conf
+cat << EOF >> wsl.conf
+
 [interop]
 enabled=false
 appendWindowsPath = false
--- sudo poweroff
-   -- admin123!
-
-mkdir -p D:\wsl
-(wait a couple minutes... or try and try again...)
-wsl --manage MmojoServerBuild --move D:\wsl
+EOF
+sudo mv ./wsl.conf /etc/wsl.conf
 ```
 
-(Start menu --> Search for MmojoServerBuild --> Add to Taskbar)
-
-Taskbar --> MmojoServerBuild -- will start MmojoServerBuild and connect a terminal.
-
----
-### Dedicate an Instance
-If you already use WSL, you should dedicate an instance just for building Mmoho Server.
-
-(Instructions here and links on creating a new instance.)
-
----
-### Move the WSL Instance Virtual Drive
-If you have multiple drives on your Windows computer, you should move the `.vhdx` virtual drive file for your instance off the startup disk and onto another drive. That virtual drive file can easily balloon to 100 GB or more if you test with and package many of the popuar models.
-
-(Instructions here and links on moving the drive.)
-
----
-### Supress Host Machine Paths
-Your Windows host machine paths will get in the way of everything, especially CMake. Fortunately, we can edit a `.conf` file and supress those.
-
-Let's see what our `$PATH` has in it. Likely lots of things starting with `/mnt/c/`.
+You'll be prompted for your `sudo` password:
 ```
-echo $PATH
+admin123!
 ```
 
-Run this command to edit the `wsl.conf` file.
+Check that `/etc/wsl.conf` now has an `[interop]` section:
 ```
-sudo nano /etc/wsl.conf
-```
-
-We need to turn off the interop feature so APE applications can run as Linux apps. We also need to suppress your Windows `$env:PATH` from poluting your WSL Linux `$PATH`. Add this short block of configuration code to the end:
-```
-[interop]
-enabled=false
-appendWindowsPath = false
+cat /etc/wsl.conf
 ```
 
-Save that file by typing `CTRL-X` then `Y`.
-
-Shutdown your WSL instance:
+Now, poweroff the WSL instance:
 ```
 sudo poweroff
 ```
 
-Connect to your WSL instance again, and view the `$PATH`:
+The **Terminal** app will revert back to a PowerShell prompt.
+
+---
+### Move the WSL `.vhdx` Virual Disk
+In 2025, advanced Windows users like you have a startup drive for Windows stuff and applications and a separate (fast, larger) drive for your data. The virtual disk for your WSL instance will get pretty big, i.e. 50 GB or 100 GB. You should move it to another drive.
+
+The **Terminal** app should show a PowerShell prompt. Create a destination directory on the `D:` drive:
 ```
-echo $PATH
+mkdir -p D:\wsl
 ```
+
+Wait a couple minutes for WSL to completely shut down the instance you just created. Then move its virtual drive:
+```
+wsl --manage MmojoServerBuild --move D:\wsl
+```
+
+If you get an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
+
+---
+### Pin MmojoServerBuild to the Taskbar, Launch
+(Start menu &rarr; Search for MmojoServerBuild &rarr; Add to Taskbar)
+
+Taskbar &rarr; MmojoServerBuild -- will start MmojoServerBuild and connect a terminal.
+
 
 ---
 ### Start from Scratch Often

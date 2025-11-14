@@ -59,7 +59,7 @@ $MMOJO_SERVER_SCRIPTS/302-Download-Models.sh
 ---
 ### Proceed
 - **Next:** [303. Copy Models](303-Copy-Models.md)
-- **Previous:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
+- **Previous:** [301. Re-Clone Local Mmojo Server Repo](301-Re-Clone-Local-Mmojo-Server-Repo.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---

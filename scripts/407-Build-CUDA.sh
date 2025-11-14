@@ -2,7 +2,7 @@
 
 ################################################################################
 # This script builds llama.cpp with Mmojo Server extensions for the CPU of the
-# build environment machine and Vulkan GPU support. Thank you to Georgi Gerganov 
+# build environment machine and CUDA GPU support. Thank you to Georgi Gerganov 
 # and his team for llama.cpp!
 #
 # https://github.com/ggml-org/llama.cpp
@@ -19,20 +19,20 @@ fi
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_VULKAN
-cmake -B $BUILD_VULKAN -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_BUILD_TYPE=Release -DGGML_VULKAN=ON # -DCMAKE_VERBOSE_MAKEFILE=ON 
-cmake --build $BUILD_VULKAN
+rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA
+cmake -B $BUILD_CUDA -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+    -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON # -DCMAKE_VERBOSE_MAKEFILE=ON 
+cmake --build $BUILD_CUDA
 
 # Show off what we built
-printf "\nBuild of llama.cpp with Vulkan support is complete.\n\n"
-printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_VULKAN/bin/\n"
-ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_VULKAN/bin
+printf "\nBuild of llama.cpp with CUDA support is complete.\n\n"
+printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin/\n"
+ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin
 printf "\n"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 407-Build-Vulkan.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 407-Build-CUDA.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

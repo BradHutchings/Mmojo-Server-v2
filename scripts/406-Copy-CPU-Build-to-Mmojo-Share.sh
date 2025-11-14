@@ -1,23 +1,28 @@
 #!/bin/bash
 
 ################################################################################
-# This script copies the x86_64 build of mmojo-server and mm-zipalign to the
-# right place on the Mmojo Share.
+# This script copies the CPU build of mmojo-server to the right place on the 
+# Mmojo Share.
 #
 # See licensing note at end.
 ################################################################################
 
 mm-mount-mmojo-share.sh
 
-# TO-DO: check that the share is mounted.
-sudo mkdir -p $MMOJO_SHARE_BUILDS
-sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  sudo mkdir -p $MMOJO_SHARE_BUILDS
+  sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU
 
-# TO-DO: check that the $MMOJO_SHARE_BUILDS_APE directory exists.
-# TO-DO: figure out which CPU this is.
-sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_CPU/mmojo-server-cpu
+  # TO-DO: What CPU options/level?
+  ARCH=$(uname -m)
 
-printf "\n**********\n*\n* FINISHED: 404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh.\n*\n**********\n\n"
+  if [ -d "$MMOJO_SHARE_BUILDS_CPU" ]; then
+    echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
+    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU/mmojo-server-cpu-$ARCH
+  fi
+fi
+
+printf "\n**********\n*\n* FINISHED: 406-Copy-CPU-Build-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

@@ -8,7 +8,7 @@ If you have already prepared your build environment, skip ahead to:
 ---
 ### Preparing Your Build Environment
 Here are the things you need to do:
-- [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
+- [301. Re-Clone Local Mmojo Server Repo](301-Re-Clone-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
 - [302. Download Models](302-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
 - [303. Copy Models](303-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
 - [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
@@ -19,7 +19,7 @@ Here are the things you need to do:
 - [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
 -->
 
-**Get Started:** [301. Update Local Mmojo Server Repo](301-Update-Local-Mmojo-Server-Repo.md)
+**Get Started:** [301. Re-Clone Local Mmojo Server Repo](301-Re-Clone-Local-Mmojo-Server-Repo.md)
 
 ---
 [MIT License](/LICENSE)<br/>

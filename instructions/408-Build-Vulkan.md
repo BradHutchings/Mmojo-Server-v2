@@ -1,4 +1,4 @@
-## 407. Build Vulkan
+## 408. Build Vulkan
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled and Vulkan GPU support enabled.
@@ -8,36 +8,48 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 ---
 ### Build Vulkan Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/407-Build-Vulkan.sh" target="_blank">407-Build-Vulkan.sh</a>.
+- View the script: <a href="../scripts/408-Build-Vulkan.sh" target="_blank">408-Build-Vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/407-Build-Vulkan.sh
+  $MMOJO_SERVER_SCRIPTS/408-Build-Vulkan.sh
   ```
 
 #### Optional: Copy Vulkan Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/407-Copy-Vulkan-Build-to-Mmojo-Share.sh" target="_blank">407-Copy-Vulkan-Build-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/408-Copy-Vulkan-Build-to-Mmojo-Share.sh" target="_blank">408-Copy-Vulkan-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/407-Copy-Vulkan-Build-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/408-Copy-Vulkan-Build-to-Mmojo-Share.sh
   ```
 
 ---
 ### OPTIONAL: Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/407-Test-Vulkan.sh" target="_blank">407-Test-Vulkan.sh</a>.
+- View the script: <a href="../scripts/408-Test-Vulkan.sh" target="_blank">408-Test-Vulkan.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/407-Test-Vulkan.sh
+  $MMOJO_SERVER_SCRIPTS/408-Test-Vulkan.sh
   ```
-  
+
+---
+### SHORTCUT: Build Vulkan, Copy to Mmojo Share, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/408-Build-Vulkan.sh
+$MMOJO_SERVER_SCRIPTS/408-Copy-Vulkan-Build-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/408-Test-Vulkan.sh
+```
+
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [406. Build CUDA](406-Build-CUDA.md)
+- **Previous:** [407. Build CUDA](407-Build-CUDA.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
