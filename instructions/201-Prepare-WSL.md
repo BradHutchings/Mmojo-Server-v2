@@ -24,12 +24,23 @@ wsl --install Ubuntu --name MmojoServerBuild
 -- New password: admin123!
 -- Retype new password: admin123!
 (Do the interop stuff here.)
--- sudo nano /etc/wsl.conf
+-- cat /etc/wsl.conf
+-- if it doesn't have an [interop] section:
+
+cd $HOME
+cp /etc/wsl.conf ./wsl.conf
+cat << EOF >> wsl.conf
+
 [interop]
 enabled=false
 appendWindowsPath = false
+EOF
+sudo mv ./wsl.conf /etc/wsl.conf
+-- admin123!
+
+-- cat /etc/wsl.conf
+
 -- sudo poweroff
-   -- admin123!
 
 mkdir -p D:\wsl
 (wait a couple minutes... or try and try again...)
