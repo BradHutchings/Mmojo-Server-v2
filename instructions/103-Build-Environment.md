@@ -20,6 +20,19 @@ In short, you can use one build system if you want to build an APE or are target
 A file share that is accessible to all of your build systems will help you coordinate building and packaging. It's also a place you can store large downloads, such as `.gguf` model files and GPU SDKs, that can survive rebuilding of your individual build systems. I use a CIFS share I host on my main computer and call my Mmojo Share. It's mounted at `/mnt/mmojo` on each of my Linux build systems.
 
 ---
+### WSL vs Windows
+Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directly on Windows. For building and deploying Mmojo Server, it offers a few advantages and disadvantages over the native Windows environment:
+
+1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Execiutable (APE) file containing an LLM in the 4B parameter range or higher!
+2. (Advantage WSL): If you have NVIDIA drivers installed on your Windows host for a GPU that supports CUDA, you can run CUDA software from within WSL.
+3. (Advantage WSL): I don't have instructions for building directly on or for Windows (yet).
+4. (Advantage Windows): Vulkan demonstration software can be run with experimental, hard to find bridge software installed within WSL. It does not work well for Mmojo Server.
+
+Hyper-V virtual machines run on Windows 11 Pro do not have access to the host system's GPU. While they may offer a more robust sandbox for CPU inference with Mmojo Server, they tend to be less convenient and more work than WSL.
+
+There is a [201. Prepare WSL](201-Prepare-WSL) step in the next section to help you with WSL.
+
+---
 ### Help is in the Instructions
 I'll help you build set up these build systems, set up a Mmojo Share, connect to the share from the build systems, and install required software, projects, SDKs, and toolkits in the [200. Prepare Build Environment](200-Prepare-Build-Environment.md) and [300. Gather Build Pieces](300-Gather-Build-Pieces.md) sections.
 
