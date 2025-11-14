@@ -17,7 +17,7 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
   ```
 
 ---
-### OPTIONAL: Download Model Map
+### Optional: Download Model Map
 If you plan to create `mmojo-server-one` Actual Portable Executables (APEs) with embedded models, you should download some models that are tested to work with `mmojo-server`. We'll download a model map from Hugging Face.
 
 This script downloads the model map from Hugging Face:
@@ -27,7 +27,7 @@ This script downloads the model map from Hugging Face:
   $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
   ```
 
-#### OPTIONAL: Edit the Model Map
+#### Optional: Edit the Model Map
 All these models will take a long time to download, so you can edit the model map and remove models you don't want.
 ```
 nano $MODEL_MAP
