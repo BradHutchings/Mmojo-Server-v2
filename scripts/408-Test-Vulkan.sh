@@ -30,7 +30,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 407-Test-Vulkan.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 408-Test-Vulkan.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
