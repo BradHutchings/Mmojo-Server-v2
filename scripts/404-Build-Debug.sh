@@ -27,7 +27,7 @@ printf "\n"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Build-Debug.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 404-Build-Debug.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
