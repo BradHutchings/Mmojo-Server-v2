@@ -76,7 +76,7 @@ $MMOJO_SERVER_SCRIPTS/402-Customize-webui.sh
 ---
 ### Proceed
 - **Next:** [403. Build Debug](403-Build-Debug.md)
-- **Previous:** [401. Update Environment](401-Update-Environment.md)
+- **Previous:** [401. Re-Clone Mmojo Server Repo](401-Re-Clone-Mmojo-Server-Repo.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
