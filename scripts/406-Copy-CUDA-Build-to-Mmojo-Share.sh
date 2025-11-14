@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ################################################################################
-# This script copies the x86_64 build of mmojo-server and mm-zipalign to the
-# right place on the Mmojo Share.
+# This script copies the CUDA build of mmojo-server to the right place on the 
+# Mmojo Share.
 #
 # See licensing note at end.
 ################################################################################
