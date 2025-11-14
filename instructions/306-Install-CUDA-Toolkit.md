@@ -6,7 +6,7 @@ CUDA is... NVIDIA
 
 ---
 ### Install with `apt`
-Let's see how this works:
+This works as we need it to with WSL:
 ```
 sudo apt install -y nvidia-cuda-toolkit
 ```
