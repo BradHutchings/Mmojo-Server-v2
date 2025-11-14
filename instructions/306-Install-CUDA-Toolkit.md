@@ -1,5 +1,5 @@
 ## 306. Install CUDA Toolkit
-### About this Step
+### About this Step &mdash; DO THIS ONCE
 CUDA is... NVIDIA
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
