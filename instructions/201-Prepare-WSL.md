@@ -89,7 +89,7 @@ Wait a couple minutes for WSL to completely shut down the instance you just crea
 wsl --manage MmojoServerBuild --move D:\wsl
 ```
 
-If you get an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
+If you get a `WSL_E_DISTRO_NOT_STOPPED` or an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
 
 ---
 ### Pin MmojoServerBuild to the Taskbar, Launch
