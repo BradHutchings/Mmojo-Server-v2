@@ -5,8 +5,17 @@ CUDA is... NVIDIA
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Install with `apt`
+Let's see how this works:
+```
+sudo apt install -y nvidia-cuda-toolkit
+```
+
+---
 ### Find Download and Install Script
-It's on the CUDA SDK page.
+If installing with `apt` did not work, go here, find your toolkit, run the install script. This link will get you the right stuff for WSL:
+
+[CUDA Toolkit for WSL](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)
 
 ---
 ### Proceed
