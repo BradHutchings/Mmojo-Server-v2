@@ -17,9 +17,8 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/305-Clone-Build-openssl.sh
   ```
 
