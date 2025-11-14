@@ -2502,11 +2502,12 @@ struct server_context {
 
         std::string & mmproj_path = params_base.mmproj.path;
         if (!mmproj_path.empty()) {
+            mtmd_helper_log_set(common_log_default_callback, nullptr);
+
             mtmd_context_params mparams = mtmd_context_params_default();
             mparams.use_gpu          = params_base.mmproj_use_gpu;
             mparams.print_timings    = false;
             mparams.n_threads        = params_base.cpuparams.n_threads;
-            mparams.verbosity        = params_base.verbosity > 0 ? GGML_LOG_LEVEL_DEBUG : GGML_LOG_LEVEL_INFO;
             mparams.flash_attn_type  = params_base.flash_attn_type;
             mparams.image_min_tokens = params_base.image_min_tokens;
             mparams.image_max_tokens = params_base.image_max_tokens;
@@ -3639,13 +3640,13 @@ struct server_context {
         // next, batch any pending prompts without exceeding n_batch
         if (params_base.cont_batching || batch.n_tokens == 0) {
             for (auto & slot : slots) {
+                if (!slot.is_processing()) {
+                    continue;
+                }
+
                 // check if we can batch this slot with the previous one
-                if (slot.is_processing()) {
-                    if (!slot_batched) {
-                        slot_batched = &slot;
-                    } else if (!slot_batched->can_batch_with(slot)) {
-                        continue;
-                    }
+                if (slot_batched && !slot_batched->can_batch_with(slot)) {
+                    continue;
                 }
 
                 // this slot still has a prompt to be processed
@@ -4076,6 +4077,10 @@ struct server_context {
                     }
                 }
 
+                if (!slot_batched) {
+                    slot_batched = &slot;
+                }
+
                 if (batch.n_tokens >= n_batch) {
                     break;
                 }
@@ -4179,8 +4184,8 @@ struct server_context {
                 if (slot.state == SLOT_STATE_PROCESSING_PROMPT || slot.state == SLOT_STATE_DONE_PROMPT) {
                     if (slot.task->params.stream && slot.task->params.return_progress) {
                         send_partial_response(slot, {}, true);
-
-                      // Mmojo Server START
+                        
+                        // Mmojo Server START
                         // This could be automated by searching for "send_partial_response(slot, {}, true);" and inserting this block after. -Brad 2025-11-05
                         // This looks like the right spot to sleep.
                         if (params_base.n_batch_sleep_ms > 0) {
@@ -5903,6 +5908,7 @@ int main(int argc, char ** argv) {
         });        
     }
     // Mmojo Server END        
+
 
     // register API routes
     svr->Get (params.api_prefix + "/health",              handle_health); // public endpoint (no API key check)
