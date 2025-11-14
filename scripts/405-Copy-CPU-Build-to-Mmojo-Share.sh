@@ -9,13 +9,17 @@
 
 mm-mount-mmojo-share.sh
 
-# TO-DO: check that the share is mounted.
-sudo mkdir -p $MMOJO_SHARE_BUILDS
-sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  sudo mkdir -p $MMOJO_SHARE_BUILDS
+  sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU
 
-# TO-DO: check that the $MMOJO_SHARE_BUILDS_APE directory exists.
-# TO-DO: figure out which CPU this is.
-sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_CPU/mmojo-server-cpu
+  # TO-DO: What CPU architecture? What CPU options?
+
+  if [ -d "$MMOJO_SHARE_BUILDS_CPU" ]; then
+    echo "Copying mmojo-server-cpu to Mmojo Share."
+    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU/mmojo-server-cpu
+  fi
+fi
 
 printf "\n**********\n*\n* FINISHED: 404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
