@@ -22,7 +22,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   fi
 fi
 
-printf "\n**********\n*\n* FINISHED: 406-Copy-CUDA-Build-to-Mmojo-Share.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 407-Copy-CUDA-Build-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
