@@ -37,14 +37,6 @@ This script switches to the **work-in-progress** branch:
   . mm-environment-variables.sh
   ```
 
-### Optional: Set Chat User Interface
-If you prefer using the llama.cpp chat user interface instead of Mmojo Complete for testing, run this command:
-```
-export TEST_WITH_CHAT_UI=1
-```
-
-(This will move to its own "Test Setup" page -- 402. -Brad)
-
 ---
 ### Proceed
 - **Next:** [402. Prepare to Build](402-Prepare-to-Build.md)
