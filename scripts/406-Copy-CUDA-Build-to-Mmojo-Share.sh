@@ -13,11 +13,12 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   sudo mkdir -p $MMOJO_SHARE_BUILDS
   sudo mkdir -p $MMOJO_SHARE_BUILDS_CUDA
 
-  # TO-DO: What CPU architecture? What CPU options?
+  # TO-DO: What CPU options/level?
+  ARCH=$(uname -m)
 
   if [ -d "$MMOJO_SHARE_BUILDS_CUDA" ]; then
-    echo "Copying mmojo-server-cuda to Mmojo Share."
-    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin/mmojo-server $MMOJO_SHARE_BUILDS_CUDA/mmojo-server-cuda
+    echo "Copying mmojo-server-cuda-$ARCH to Mmojo Share."
+    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin/mmojo-server $MMOJO_SHARE_BUILDS_CUDA/mmojo-server-cuda-$ARCH
   fi
 fi
 
