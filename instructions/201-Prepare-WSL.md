@@ -8,7 +8,7 @@ Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directl
 1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Execiutable (APE) file containing an LLM in the 4B parameter range or higher!
 2. (Advantage WSL): If you have NVIDIA drivers installed on your Windows host for a GPU that supports CUDA, you can run CUDA software from within WSL.
 3. (Advantage Windows): Vulkan software can be run with experimental, hard to find bridge software installed within WSL. It does not work well for Mmojo Server.
-4. (Advantage WSL): I don't test natvely building on or for Windows (yet).
+4. (Advantage WSL): I don't have instructions for building directly on or for Windows (yet).
 
 Hyper-V virtual machines run on Windows 11 Pro do not have access to the host system's GPU. While they may offer a more robust sandbox for CPU inference with Mmojo Server, they tend to be less convenient and more work than WSL.
 
