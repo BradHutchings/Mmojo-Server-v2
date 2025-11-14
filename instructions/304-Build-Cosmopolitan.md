@@ -15,7 +15,6 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/304-Clone-Build-Cosmopolian.sh
   ```
 
