@@ -30,7 +30,7 @@ Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directl
 
 Hyper-V virtual machines run on Windows 11 Pro do not have access to the host system's GPU. While they may offer a more robust sandbox for CPU inference with Mmojo Server, they tend to be less convenient and more work than WSL.
 
-There is a [201. Prepare WSL](201-Prepare-WSL) step in the next section to help you with WSL.
+There is a [201. Prepare WSL](201-Prepare-WSL.md) step in the next section to help you with WSL.
 
 ---
 ### Help is in the Instructions
