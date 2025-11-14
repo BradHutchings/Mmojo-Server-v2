@@ -53,7 +53,7 @@ cat << EOF >> wsl.conf
 
 [interop]
 enabled=false
-appendWindowsPath = false
+appendWindowsPath=false
 EOF
 sudo mv ./wsl.conf /etc/wsl.conf
 ```
