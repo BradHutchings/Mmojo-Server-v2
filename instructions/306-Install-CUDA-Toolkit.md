@@ -11,6 +11,8 @@ Let's see how this works:
 sudo apt install -y nvidia-cuda-toolkit
 ```
 
+It installs `nvcc` in `/usr/bin`. CMake should be able to see it.
+
 ---
 ### Find Download and Install Script
 If installing with `apt` did not work, go here, find your toolkit, run the install script. This link will get you the right stuff for WSL:
