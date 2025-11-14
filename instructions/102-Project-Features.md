@@ -8,7 +8,7 @@ I am very choosy about new features. They need to be necessary. They need to be 
 ### Top Shelf Build Instructions
 The instructions (aka "documentation") should make building and packaging an LLM server approachable to even casual developers and hobbyists. It can be a comfortable learning experience and spread knowledge of how these systems work beyond hard-core technical people.
 
-Even if you're just trying to build a mostly stock llama.cpp to run locally, I hope my instructions gets you through setting up your environment to support GPUs with CUDA, Vulkan, or (soon!) Metal.
+Even if you're just trying to build a mostly stock llama.cpp to run locally, I hope my instructions get you through setting up your environment to support GPUs with CUDA, Vulkan, or (soon!) Metal.
 
 ---
 ### Actual Portable Executable (APE) files
