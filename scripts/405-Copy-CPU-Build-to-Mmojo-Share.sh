@@ -21,7 +21,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   fi
 fi
 
-printf "\n**********\n*\n* FINISHED: 404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 405-Copy-CPU-Build-to-Mmojo-Share.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
