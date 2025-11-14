@@ -1,5 +1,5 @@
 ## 302. Download Models
-### About this Step - DO THIS ONCE
+### About this Step &mdash; DO THIS ONCE
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
 If you already have models downloaded and copied to your Mmojo share, please proceed to: [303. Copy Models](303-Copy-Models.md).
