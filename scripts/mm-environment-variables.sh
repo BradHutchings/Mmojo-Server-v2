@@ -82,6 +82,14 @@ export TEST_WITH_CHAT_UI=0
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
 
+# Run this script when user starts a session.
+SEARCH_STRING="\. mm-environment-variables.sh"
+COMMAND_STRING=". mm-environment-variables.sh"
+BASHRC_PATH="$HOME/.bashrc"
+if ! grep -q "$SEARCH_STRING" "$BASHRC_PATH"; then
+    echo $COMMAND_STRING >> $BASHRC_PATH
+fi
+
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
