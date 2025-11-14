@@ -18,6 +18,8 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
   $MMOJO_SERVER_SCRIPTS/304-Clone-Build-Cosmopolian.sh
   ```
 
+Need to add `includes/sys/syslimits.h` after Cosmo is cloned and built. It will `#include <linux/limits.h>`. This will fix a recurring build problem with `cosmocc` and `llama.cpp`.
+
 ---
 ### WSL Note
 If you get build errors in the CMake preparation step, you most likely did not turn off interoperability in WSL. Please see instructions in [201. Prepare WSL](201-Prepare-WSL.md).
