@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ################################################################################
-# This script... DESCRIPTION HERE.
+# This script creates the models directory and creates a model map file in that
+# directory. The model map file tell us what models are available to download or
+# copy.
 #
 # See licensing note at end.
 ################################################################################

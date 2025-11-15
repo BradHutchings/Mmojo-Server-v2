@@ -1,5 +1,5 @@
 ## 304. Build Cosmopolitan
-### About this Step - DO THIS ONCE
+### About this Step &mdash; DO THIS ONCE
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
@@ -13,14 +13,16 @@ This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/304-Clone-Build-Cosmopolian.sh
   ```
 
+Need to add `includes/sys/syslimits.h` after Cosmo is cloned and built. It will `#include <linux/limits.h>`. This will fix a recurring build problem with `cosmocc` and `llama.cpp`.
+
 ---
 ### WSL Note
-If you get build errors in the CMake preparation step, most likely did not turn off interoperability in WSL. Please see instructions in [201. Prepare WSL](201-Prepare-WSL.md).
+If you get build errors in the CMake preparation step, you most likely did not turn off interoperability in WSL. Please see instructions in [201. Prepare WSL](201-Prepare-WSL.md).
 
 You can turn off interoperability temporarily with this command:
 ```

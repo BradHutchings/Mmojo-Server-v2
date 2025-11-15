@@ -1,5 +1,5 @@
 ## 305. Build OpenSSL
-### About this Step - DO THIS ONCE
+### About this Step &mdash; DO THIS ONCE
 We need to build our own `libssl.a` and `libcrypto.a` becuase:
 1. Actual Portable Executable (APE) does not support dynamic loading of libraries.
 2. The `libssl.a` and `libcrypto.a` we get by installing `libssl-dev` is built with `_FORTIFY_SOURCE` and will not link against Cosmo's `libc.a`.
@@ -17,9 +17,8 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/305-Clone-Build-openssl.sh
   ```
 

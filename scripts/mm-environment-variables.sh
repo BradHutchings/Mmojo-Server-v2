@@ -49,7 +49,7 @@ if [[ -z "${VULKAN_SIMULTANEOUS_COMPILES}" ]]; then
   export VULKAN_SIMULTANEOUS_COMPILES=4
 fi
 
-VULKAN_SETUP_ENV="$BUILD_VULKAN_DIR/$VULKAN_VERSION/setup-env.sh"
+VULKAN_SETUP_ENV="$BUILD_VULKAN_SDK_DIR/$VULKAN_VERSION/setup-env.sh"
 if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
@@ -81,6 +81,14 @@ export TEST_WITH_CHAT_UI=0
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
+
+# Run this script when user starts a session.
+SEARCH_STRING="\. mm-environment-variables.sh"
+COMMAND_STRING=". mm-environment-variables.sh"
+BASHRC_PATH="$HOME/.bashrc"
+if ! grep -q "$SEARCH_STRING" "$BASHRC_PATH"; then
+    echo $COMMAND_STRING >> $BASHRC_PATH
+fi
 
 if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH

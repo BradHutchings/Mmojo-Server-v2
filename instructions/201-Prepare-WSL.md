@@ -53,7 +53,7 @@ cat << EOF >> wsl.conf
 
 [interop]
 enabled=false
-appendWindowsPath = false
+appendWindowsPath=false
 EOF
 sudo mv ./wsl.conf /etc/wsl.conf
 ```
@@ -89,14 +89,17 @@ Wait a couple minutes for WSL to completely shut down the instance you just crea
 wsl --manage MmojoServerBuild --move D:\wsl
 ```
 
-If you get an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
+If you get a `WSL_E_DISTRO_NOT_STOPPED` or an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
 
 ---
 ### Pin MmojoServerBuild to the Taskbar, Launch
-(Start menu &rarr; Search for MmojoServerBuild &rarr; Add to Taskbar)
+Click your **Start** menu. Search for:
+```
+MmojoServerBuild
+```
+Add it to the **Taskbar**.
 
-Taskbar &rarr; MmojoServerBuild -- will start MmojoServerBuild and connect a terminal.
-
+Launch and log into your new instance by clicking the icon you just added to the **Taskbar**.
 
 ---
 ### Start from Scratch Often

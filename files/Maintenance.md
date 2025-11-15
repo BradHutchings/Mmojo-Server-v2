@@ -1,6 +1,6 @@
 ## Maintenance
 
-These are the instructions for maintaining the files rooted in this directory.
+These are the instructions for maintaining the files rooted in this directory. This turns into a mess if we're in the middle of rapid fire commits to llama.cpp. Test builds after maintenance!
 
 1. Switch to the `work-in-progress` branch for this page.
 

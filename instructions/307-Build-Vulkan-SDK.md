@@ -1,5 +1,5 @@
 ## 307. Build Vulkan SDK
-### About this Step
+### About this Step &mdash; DO THIS ONCE
 Vulkan is a newer industry standard API to help applications work seamlessly with GPUs from different vendors. GPU vendors provide Vulkan interfaces for their GPUs, which are loaded dynamically by applications which use the Vulkan API. It should be the easiest way to add GPU support to your builds for any particular device you have. However:
 
 - Metal support on Mac M* chips is provided through a third-party open source project.
@@ -26,7 +26,6 @@ This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR`
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  . mm-environment-variables.sh
   $MMOJO_SERVER_SCRIPTS/307-Download-Build-vulkan.sh
   . mm-environment-variables.sh
   ```

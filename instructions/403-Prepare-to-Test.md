@@ -10,6 +10,26 @@ In this step, we will set some environment variables to customize testing.
 By default, we'll use Google Gemma 1B Instruct v3. If you'd like to test with a different LLM, set one of these values:
 
 ---
+### Optional: Choose CPU Threads
+By default, Mmojo Server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
+
+Use default &mdash; half of available threads:
+```
+unset TEST_CPU_THREADS
+```
+
+Use a specified number of threads:
+```
+export TEST_CPU_THREADS = 2
+```
+```
+export TEST_CPU_THREADS = 4
+```
+```
+export TEST_CPU_THREADS = 8
+```
+
+---
 ### Optional: Chat User Interface
 If you'd prefer to test with the chat-style user interface, set this value:
 ```
