@@ -48,7 +48,7 @@ git checkout 9b17d74ab7d31cb7d15ee7eec1616c3d825a84c0
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 402-Clone-Repos.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 401-Clone-Repos.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
