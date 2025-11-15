@@ -27,7 +27,9 @@ sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/bookmark-scripts.js
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 401-Customize-webui.sh.\n*\n**********\n\n"
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+# printf "\n**********\n*\n* FINISHED: 401-Customize-webui.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
