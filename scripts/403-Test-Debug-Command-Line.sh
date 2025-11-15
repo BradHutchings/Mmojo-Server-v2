@@ -30,7 +30,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 404-Test-Debug-Command-Line.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 403-Test-Debug-Command-Line.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
