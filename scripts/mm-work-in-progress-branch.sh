@@ -8,10 +8,11 @@
 ################################################################################
 
 if [ -d "$MMOJO_SERVER_DIR" ]; then
+  WD=$(pwd)
   cd $MMOJO_SERVER_DIR
   git reset --hard
   git checkout work-in-progress
-  cd $HOME
+  cd $WD
 
   chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
   chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
