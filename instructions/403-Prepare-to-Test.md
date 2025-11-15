@@ -6,6 +6,14 @@ In this step, we will set some environment variables to customize testing.
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+
+---
 ### Optional: Choose LLM
 By default, we'll use Google Gemma 1B Instruct v3. If you'd like to test with a different LLM, set one of these values:
 
