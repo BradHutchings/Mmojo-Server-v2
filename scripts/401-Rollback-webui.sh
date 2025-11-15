@@ -19,7 +19,7 @@ sed -i -e "s/>.*llama.cpp.*</>$APP_NAME</g" tools/server/webui/src/components/He
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 402-Rollback-webui.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 401-Rollback-webui.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
