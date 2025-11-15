@@ -14,9 +14,10 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   git checkout main
   cd $WD
 
-  # chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
-  # chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
-  # chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
+  # These are the scripts. They need to be executable.
+  chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
+  chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
+  chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
   # chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
 
   ### Links don't work - end up modifying repo files on chmod.
