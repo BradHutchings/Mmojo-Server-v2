@@ -8,7 +8,7 @@ In this step, we will clone the Cosmopolitan repo, fix known problems, and build
 ### Clone Cosmopolitan Repo, Build Locally
 Clone Cosmopolitan repo into a `$BUILD_COSMOPOLITAN_DIR` directory, fix bugs, then build Cosmopolitan. Build this once, and leave the `$BUILD_COSMOPOLITAN_DIR` directory between builds.
 
-This script clone the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
+This script clones the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
 - View the script: <a href="../scripts/304-Clone-Build-Cosmopolian.sh" target="_blank">304-Clone-Build-Cosmopolian.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
