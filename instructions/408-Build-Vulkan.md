@@ -6,6 +6,14 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+
+---
 ### Build Vulkan Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../scripts/408-Build-Vulkan.sh" target="_blank">408-Build-Vulkan.sh</a>.
