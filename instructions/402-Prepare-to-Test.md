@@ -1,4 +1,4 @@
-## 403. Prepare to Test
+## 402. Prepare to Test
 ### About this Step
 
 In this step, we will set some environment variables to customize testing.
@@ -46,8 +46,8 @@ export TEST_WITH_CHAT_UI=1
 
 ---
 ### Proceed
-- **Next:** [404. Build Debug](404-Build-Debug.md)
-- **Previous:** [402. Prepare to Build](402-Prepare-to-Build.md)
+- **Next:** [403. Build Debug](403-Build-Debug.md)
+- **Previous:** [401. Prepare to Build](401-Prepare-to-Build.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
