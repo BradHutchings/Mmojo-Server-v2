@@ -6,12 +6,16 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+<details>
+  <summary>Update Local Mmojo Server Repo &mdash; Expand if you haven't today.</summary>
+  
 ### Update Local Mmojo Server Repo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Build Debug Mmojo Server for Build Environment Platform
