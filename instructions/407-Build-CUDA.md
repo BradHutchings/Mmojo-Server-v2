@@ -5,10 +5,18 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Note:** This should be in the CUDA Toolkit step.
+**Note:** This should be in the CUDA Toolkit step, maybe?!?
 ```
 # Need to set this variable -OR- add "/usr/local/cuda-13.0/bin" to $PATH
 export $CUDACXX="/usr/local/cuda-13.0/bin/nvcc"
+```
+
+---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
 ```
 
 ---
