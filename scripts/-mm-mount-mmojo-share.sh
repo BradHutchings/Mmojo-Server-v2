@@ -30,7 +30,7 @@ fi
 # then fall back on cifs if we we're not mounted. -Brad 2025-11-12
 
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-    if [ $RUNNING_IN_WSL ]; then
+    if [ $RUNNING_IN_WSL == 1 ]; then
         echo "Mounting Mmojo Share as drvfs. You may be prompted for your share password."
         sudo mount -t drvfs -o user=$USER "\\\\$HOST\\$SHARE" $MMOJO_SHARE_MOUNT_POINT
     else

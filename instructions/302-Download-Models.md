@@ -7,6 +7,16 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+
+This instruction will be at the top of every step from this point forward.
+
+---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
 - View the script: <a href="../scripts/302-Create-Models-Directory.sh" target="_blank">302-Create-Models-Directory.sh</a>.

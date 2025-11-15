@@ -37,13 +37,14 @@ export MMOJO_SHARE_BUILDS_CUDA="$MMOJO_SHARE_BUILDS/cuda"
 export MMOJO_SHARE_BUILDS_VULKAN="$MMOJO_SHARE_BUILDS/vulkan"
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
+# Prefix is 300- so we can wipe them out quickly, and changing script numbers doesn't mess stuff up.
 export MODELS_DIR="$HOME/300-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
-export BUILD_COSMOPOLITAN_DIR="$HOME/304-BUILD-cosmopolitan"
+export BUILD_COSMOPOLITAN_DIR="$HOME/300-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
-export BUILD_OPENSSSL_DIR="$HOME/305-BUILD-openssl"
-export INSTALL_CUDA_TOOLKIT_DIR="$HOME/306-INSTALL-cuda-toolkit"
-export BUILD_VULKAN_SDK_DIR="$HOME/307-BUILD-vulkan-sdk"
+export BUILD_OPENSSSL_DIR="$HOME/300-BUILD-openssl"
+export INSTALL_CUDA_TOOLKIT_DIR="$HOME/300-INSTALL-cuda-toolkit"
+export BUILD_VULKAN_SDK_DIR="$HOME/300-BUILD-vulkan-sdk"
 export VULKAN_VERSION="1.4.328.1"
 if [[ -z "${VULKAN_SIMULTANEOUS_COMPILES}" ]]; then
   export VULKAN_SIMULTANEOUS_COMPILES=4

@@ -19,7 +19,7 @@ Unregister ("delete") the instance:
 wsl --unregister MmojoServerBuild
 ```
 
-If you previously pinned `MmojoServerBuild` to your **Taskbar**, remove it. The existing pinned shortcut one will not launch the new instance you will create.
+If you previously pinned `MmojoServerBuild` to your **Taskbar**, unpin it. The existing pinned shortcut one will not launch the new instance you will create.
 
 ---
 ### Create New `MmojoServerBuild` WSL Instance
@@ -74,6 +74,8 @@ sudo poweroff
 ```
 
 The **Terminal** app will revert back to a PowerShell prompt.
+
+*Note: This would be a good place to set up hostname and networking for the instance if we wanted to do that.*
 
 ---
 ### Move the WSL `.vhdx` Virual Disk
