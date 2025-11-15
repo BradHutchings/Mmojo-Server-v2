@@ -6,6 +6,14 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+
+---
 ### Clone Repos
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
