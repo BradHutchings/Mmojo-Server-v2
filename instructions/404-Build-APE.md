@@ -7,12 +7,16 @@ The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating sy
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
 
 ---
+<details>
+  <summary>Update Local Mmojo Server Repo &mdash; Expand if you haven't today.</summary>
+  
 ### Update Local Mmojo Server Repo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Build Mmojo Server for x86_64
