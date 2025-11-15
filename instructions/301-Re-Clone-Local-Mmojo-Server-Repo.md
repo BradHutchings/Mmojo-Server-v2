@@ -23,6 +23,9 @@ git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
 
+<!--
+I am the the only one who should be using this. It just complicated and confuses things to add into the mix. -Brad
+
 #### Optional: Use the work-in-progress branch.
 The **work-in-progress** branch is where I implement and test my own changes and where I test upstream changes from **llama.cpp**.
 
@@ -36,6 +39,7 @@ This script switches to the **work-in-progress** branch:
   mm-work-in-progress-branch.sh
   . mm-environment-variables.sh
   ```
+-->
 
 ---
 ### Proceed
