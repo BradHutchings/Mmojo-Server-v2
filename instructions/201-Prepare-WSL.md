@@ -19,7 +19,7 @@ Unregister ("delete") the instance:
 wsl --unregister MmojoServerBuild
 ```
 
-If you previously pinned `MmojoServerBuild` to your **Taskbar**, remove it. The existing pinned shortcut one will not launch the new instance you will create.
+If you previously pinned `MmojoServerBuild` to your **Taskbar**, unpin it. The existing pinned shortcut one will not launch the new instance you will create.
 
 ---
 ### Create New `MmojoServerBuild` WSL Instance
