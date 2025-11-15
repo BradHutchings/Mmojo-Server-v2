@@ -48,7 +48,9 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 403-Test-Debug-mmojo-server-args.sh.\n*\n**********\n\n"
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+# printf "\n**********\n*\n* FINISHED: 403-Test-Debug-mmojo-server-args.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
