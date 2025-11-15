@@ -13,7 +13,7 @@ rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
 NL=$'\n'
-UI_PARAMS="--path${NL}$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}chat${NL}"
+UI_PARAMS="--path${NL}$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}/chat${NL}"
 if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
     # echo "Using chat UI."
     UI_PARAMS=""
