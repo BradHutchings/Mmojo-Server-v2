@@ -75,6 +75,8 @@ sudo poweroff
 
 The **Terminal** app will revert back to a PowerShell prompt.
 
+*Note: This would be a good place to set up hostname and networking for the instance if we wanted to do that.*
+
 ---
 ### Move the WSL `.vhdx` Virual Disk
 In 2025, advanced Windows users like you have a startup drive for Windows stuff and applications and a separate (fast, larger) drive for your data. The virtual disk for your WSL instance will get pretty big, i.e. 50 GB or 100 GB. You should move it to another drive.
