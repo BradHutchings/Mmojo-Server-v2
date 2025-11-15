@@ -30,7 +30,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 405-Test-Cosmo-x86_64.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: 404-Test-Cosmo-x86_64.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
