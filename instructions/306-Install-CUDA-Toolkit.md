@@ -5,6 +5,14 @@ CUDA is... NVIDIA
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+### Update Local Mmojo Server Repo
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+
+---
 ### Install with `apt`
 This works as we need it to with WSL:
 ```
