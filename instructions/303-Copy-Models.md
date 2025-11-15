@@ -63,6 +63,7 @@ $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
 ```
 
+---
 ### SHORTCUT: Copy All Tested Models
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to copy all the models I offer on Hugging Face from your Mmojo Share. This will take awhile and use a lot (i.e. 100 GB-ish) of disk space.
 ```
