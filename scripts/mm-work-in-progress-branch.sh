@@ -20,9 +20,6 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   # chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
 
   ### Links don't work - end up modifying repo files on chmod.
-  # for FILE in $MMOJO_SERVER_SCRIPTS/mm-*.sh; do
-  #  ln -sf $FILE $HOME_SCRIPTS
-  # done
   cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
   chmod a+x $HOME_SCRIPTS/mm-*.sh
 else
