@@ -12,8 +12,8 @@
 # See licensing note for this script at end.
 ################################################################################
 
-mkdir $BUILD_VULKAN_DIR
-cd $BUILD_VULKAN_DIR
+mkdir $BUILD_VULKAN_SDK_DIR
+cd $BUILD_VULKAN_SDK_DIR
 wget https://sdk.lunarg.com/sdk/download/$VULKAN_VERSION/linux/vulkansdk-linux-x86_64-$VULKAN_VERSION.tar.xz
 tar xf vulkansdk-linux-x86_64-$VULKAN_VERSION.tar.xz
 cd $VULKAN_VERSION/
