@@ -81,7 +81,7 @@ export TEST_VULKAN="test-vulkan"
 
 # Reset this when we update environment variables.
 unset TEST_CPU_THREADS
-export TEST_WITH_CHAT_UI=0
+unset TEST_WITH_CHAT_UI
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
