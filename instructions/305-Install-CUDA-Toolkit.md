@@ -1,4 +1,4 @@
-## 306. Install CUDA Toolkit
+## 305. Install CUDA Toolkit
 ### About this Step &mdash; DO THIS ONCE
 CUDA is... NVIDIA
 
@@ -18,7 +18,7 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Install with `apt`
-This works as we need it to with WSL:
+This works as we need it to with WSL and Ubuntu 24.04 in a virtual machine:
 ```
 sudo apt install -y nvidia-cuda-toolkit
 ```
@@ -33,8 +33,8 @@ If installing with `apt` did not work, go here, find your toolkit, run the insta
 
 ---
 ### Proceed
-- **Next:** [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md)
-- **Previous:** [305. Build OpenSSL](305-Build-OpenSSL.md)
+- **Next:** [306. Build Vulkan SDK](306-Build-Vulkan-SDK.md)
+- **Previous:** [304. Build OpenSSL](304-Build-OpenSSL.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
