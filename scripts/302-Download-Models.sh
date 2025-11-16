@@ -6,6 +6,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 DownloadModel() {
   MODEL_FILE=$1
   URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
@@ -31,7 +34,7 @@ cd $HOME
 echo -e "\nModels directory:"
 ls -al $MODELS_DIR/*.gguf
 
-printf "\n**********\n*\n* FINISHED: 302-Download-Models.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
