@@ -80,6 +80,7 @@ export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
 
 # Reset this when we update environment variables.
+unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
