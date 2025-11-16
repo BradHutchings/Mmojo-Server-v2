@@ -35,8 +35,8 @@ cp -r /usr/include/openssl/ ./cosmocc/include/
 # cp -r /usr/include/x86_64-linux-gnu/openssl/* ./cosmocc/include/openssl
 # cp -r /usr/include/aarch64-linux-gnu/openssl/* ./cosmocc/include/openssl
 
-X86_64_OPENSSL="/usr/include/x86_64-linux-gnu/openssl/"
-AARCH64_OPENSSL="/usr/include/aarch64-linux-gnu/openssl/"
+X86_64_OPENSSL="/usr/include/x86_64-linux-gnu/openssl"
+AARCH64_OPENSSL="/usr/include/aarch64-linux-gnu/openssl"
 if [ -d "$X86_64_OPENSSL" ]; then
   echo "Using x86_64 openssl platform includes."
   cp -r "$X86_64_OPENSSL/*" ./cosmocc/include/openssl
