@@ -10,6 +10,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 cd $BUILD_LLAMA_CPP_DIR
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
@@ -27,9 +30,7 @@ printf "\n"
 
 cd $HOME
 
-SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
-# printf "\n**********\n*\n* FINISHED: 403-Build-Debug.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
