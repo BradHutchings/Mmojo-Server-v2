@@ -5,7 +5,7 @@ In this step, we will set some environment variables to customize testing.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Note: The Choose LLM and Choose CPU Threads features are not implemented yet.**
+**Note: The Choose LLM feature is not implemented yet.**
 
 ---
 <details>
@@ -44,6 +44,11 @@ export TEST_CPU_THREADS=8
 
 ---
 ### Optional: Chat User Interface
+The testing default is to use the Mmojo Complete user interface. Set the default with this:
+```
+unset TEST_WITH_CHAT_UI
+```
+
 If you'd prefer to test with the chat-style user interface, set this value:
 ```
 export TEST_WITH_CHAT_UI=1
