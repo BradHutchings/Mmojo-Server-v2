@@ -7,9 +7,8 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 ---
 <details>
-  <summary>Update Local Mmojo Server Repo &mdash; Expand if you haven't today.</summary>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
   
-### Update Local Mmojo Server Repo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
@@ -29,22 +28,19 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
 
-<details>
-  <summary>Optional: Test the Build.</summary>
-
-#### Optional: Test the Build
+---
+### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
   ```
-</details>
 
+---
 <details>
-  <summary>Optional: Copy CPU Build to Mmojo Share.</summary>
+  <summary><b>Optional: Copy CPU Build to Mmojo Share.</b></summary>
 
-#### Optional: Copy CPU Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
 - View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
