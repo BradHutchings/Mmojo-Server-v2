@@ -22,10 +22,17 @@ fi
 # echo "\$UI_PARAMS: $UI_PARAMS"
 # sleep 5s
 
+THREADS_PARAM=""
+if [[ -v TEST_CPU_THREADS ]]; then
+  THREADS_PARAM=" --threads $TEST_CPU_THREADS "
+fi
+# echo "\$THREADS_PARAM: $THREADS_PARAM"
+# sleep 5s
+
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server --model $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf \
-    $UI_PARAMS --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
+    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
 
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
 ls -ald mmojo-server-args
