@@ -20,7 +20,24 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Optional: Choose LLM
-By default, we'll use Google Gemma 1B Instruct v3. If you'd like to test with a different LLM, set one of these values:
+By default, we'll use Google Gemma 1B Instruct v3. Set the default with:
+```
+unset TEST_MODEL
+```
+
+If you'd like to test with a different LLM, set one of these values:
+```
+export TEST_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
+```
 
 ---
 ### Optional: Choose CPU Threads
