@@ -5,6 +5,8 @@ In this step, we will set some environment variables to customize testing.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Note: The Choose LLM and Choose CPU Threads features are not implemented yet.**
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
