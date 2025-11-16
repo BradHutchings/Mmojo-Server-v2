@@ -37,8 +37,8 @@ export PATH=$SAVE_PATH
 
 cd $HOME
 
--printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
--
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
 #  the repo's MIT-style LICENSE:
