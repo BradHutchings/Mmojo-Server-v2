@@ -39,9 +39,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 
 ---
 <details>
-  <summary>Optional: Test the Build &mdash; mmojo-server-args File.</summary>
+  <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
 
-### Optional: Test the Build - `mmojo-server-args` File
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-args.sh" target="_blank">403-Test-Debug-mmojo-server-args.sh</a>.
 - Run the script.
@@ -52,9 +51,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 
 ---
 <details>
-  <summary>Optional: Test the Build &mdash; mmojo-server-support Directory.</summary>
+  <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
 
-### Optional: Test the Build - `mmojo-server-support` Directory
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-support.sh" target="_blank">403-Test-Debug-mmojo-server-support.sh</a>.
 - Run the script.
@@ -64,7 +62,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 </details>
 
 ---
-### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
+### SHORTCUT: Build Debug, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to build and test a debug build:
 ```
 ################################################################################
