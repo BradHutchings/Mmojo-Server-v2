@@ -3,13 +3,17 @@
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled and CUDA GPU support enabled.
 
-**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments. Compiler may complain about `-arch=native` in a Linux VM.
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Note:** Compiler may complain about `-arch=native` in a Linux VM.
+
+<!--
 **Note:** This should be in the CUDA Toolkit step, maybe?!?
 ```
 # Need to set this variable -OR- add "/usr/local/cuda-13.0/bin" to $PATH
 export $CUDACXX="/usr/local/cuda-13.0/bin/nvcc"
 ```
+-->
 
 ---
 <details>
