@@ -58,15 +58,13 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 
 ---
 ### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
-I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to build and test a debug build:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
 $MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-args.sh
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-support.sh
 ```
 
 ---
