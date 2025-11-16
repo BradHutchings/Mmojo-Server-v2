@@ -8,16 +8,12 @@ If you have already prepared your build environment, skip ahead to:
 ---
 ### Preparing Your Build Environment
 Here are the things you need to do:
-- [301. Re-Clone Local Mmojo Server Repo](301-Re-Clone-Local-Mmojo-Server-Repo.md) - Make sure you have the latest instructions and scripts.
-- [302. Download Models](302-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
-- [303. Copy Models](303-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
-- [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
-- [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md) - Install NVIDIA's CUDA Toolkit.
-- [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
-<!--
-- [307. Build llamafile](307-Build-llamafile.md) - Build `llamafile` so we can use its `zipalign` tool.
--->
+- [301. Download Models](301-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
+- [302. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
+- [303. Build Cosmopolitan](303-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
+- [304. Build OpenSSL](304-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
+- [305. Install CUDA Toolkit](305-Install-CUDA-Toolkit.md) - Install NVIDIA's CUDA Toolkit.
+- [306. Build Vulkan SDK](306-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 **Get Started:** [301. Re-Clone Local Mmojo Server Repo](301-Re-Clone-Local-Mmojo-Server-Repo.md)
 

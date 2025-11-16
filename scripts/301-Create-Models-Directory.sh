@@ -1,17 +1,27 @@
 #!/bin/bash
 
 ################################################################################
-# This script downloads a model map file from Hugging Face. The model map file
-# identifies models we might want to download, and suggest names for their
-# self-contaned APE files we will package later.
+# This script creates the models directory and creates a model map file in that
+# directory. The model map file tell us what models are available to download or
+# copy.
 #
 # See licensing note at end.
 ################################################################################
 
-MODEL_MAP_URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/model-map.txt"
-wget $MODEL_MAP_URL --quiet -O $MODEL_MAP
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-printf "\n**********\n*\n* FINISHED: 302-Download-Model-Map.sh.\n*\n**********\n\n"
+mkdir -p $MODELS_DIR
+cd $MODELS_DIR
+
+cat << EOF > $MODEL_MAP
+Google-Gemma-1B-Instruct-v3-q8_0.gguf mmojo-server-Google-Gemma-1B-Instruct-v3
+Google-Gemma-4B-Instruct-v3-q8_0.gguf mmojo-server-Google-Gemma-4B-Instruct-v3
+EOF
+
+cd $HOME
+
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

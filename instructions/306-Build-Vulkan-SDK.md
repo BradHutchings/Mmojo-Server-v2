@@ -1,5 +1,5 @@
-## 307. Build Vulkan SDK
-### About this Step &mdash; DO THIS ONCE
+## 306. Build Vulkan SDK
+### About this Step
 Vulkan is a newer industry standard API to help applications work seamlessly with GPUs from different vendors. GPU vendors provide Vulkan interfaces for their GPUs, which are loaded dynamically by applications which use the Vulkan API. It should be the easiest way to add GPU support to your builds for any particular device you have. However:
 
 - Metal support on Mac M* chips is provided through a third-party open source project.
@@ -9,12 +9,15 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Update Local Mmojo Server Repo
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Fast Builds
@@ -28,13 +31,13 @@ Otherwise, we'll use the default 4.
 ---
 ### Download Vulkan, Build Locally
 This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between Mmojo Server builds. This takes about an hour on a fast PC (e.g. 12th generation i9) and several hours on a slow PC (e.g. Raspberry Pi 5).
-- View the script: <a href="../scripts/307-Download-Build-vulkan.sh" target="_blank">307-Download-Build-vulkan.sh</a>.
+- View the script: <a href="../scripts/306-Download-Build-vulkan.sh" target="_blank">306-Download-Build-vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/307-Download-Build-vulkan.sh
+  $MMOJO_SERVER_SCRIPTS/306-Download-Build-vulkan.sh
   . mm-environment-variables.sh
   ```
 
@@ -48,7 +51,7 @@ vulkaninfo
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md)
+- **Previous:** [305. Install CUDA Toolkit](305-Install-CUDA-Toolkit.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---

@@ -10,6 +10,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 if [ -d "$BUILD_OPENSSSL_DIR" ]; then
     rm -r -f $BUILD_OPENSSSL_DIR
 fi
@@ -52,7 +55,7 @@ unset CC
 unset CXX
 unset AR
 
-printf "\n**********\n*\n* FINISHED: 305-Clone-Build-openssl.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

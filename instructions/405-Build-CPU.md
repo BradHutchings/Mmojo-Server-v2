@@ -6,12 +6,15 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Update Local Mmojo Server Repo
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Build CPU Mmojo Server for Build Environment Platform
@@ -25,22 +28,26 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
 
-#### Optional: Copy CPU Build to Mmojo Share
-Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
-- Run the script:
-  ```
-  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
-  ```
-
 ---
-### Optional: Test the Build
+### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
   ```
+
+---
+<details>
+  <summary><b>Optional: Copy CPU Build to Mmojo Share.</b></summary>
+
+Copy this build to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Build CPU, Copy to Mmojo Share, Test

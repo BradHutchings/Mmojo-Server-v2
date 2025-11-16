@@ -1,22 +1,21 @@
 #!/bin/bash
 
 ################################################################################
-# This script copies models from the Mmojo Share.
+# This script downloads models from Hugging Face.
 #
 # See licensing note at end.
 ################################################################################
 
-CopyModel() {
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+DownloadModel() {
   MODEL_FILE=$1
-  if [ ! -f $MODEL_FILE ]; then 
-    echo "Copying $MODEL_FILE."
-    cp -v /mnt/mmojo/models/$MODEL_FILE .
-    chmod a-x $MODEL_FILE
-  fi
+  URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
+  if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
 }
 
 cd $MODELS_DIR
-mm-mount-mmojo-share.sh
 unset apefiles
 declare -A apefiles
 
@@ -27,7 +26,7 @@ while IFS=$' ' read -r gguf apefile ; do
 done < "$MODEL_MAP"
 
 for key in "${!apefiles[@]}"; do
-  CopyModel $key 
+  DownloadModel $key 
 done
 
 cd $HOME
@@ -35,7 +34,7 @@ cd $HOME
 echo -e "\nModels directory:"
 ls -al $MODELS_DIR/*.gguf
 
-printf "\n**********\n*\n* FINISHED: 303-Copy-Models.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

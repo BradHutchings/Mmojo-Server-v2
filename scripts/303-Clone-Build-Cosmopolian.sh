@@ -10,6 +10,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 if [ -d "$BUILD_COSMOPOLITAN_DIR" ]; then
     rm -r -f $BUILD_COSMOPOLITAN_DIR
 fi
@@ -33,7 +36,7 @@ printf "\n"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 304-Clone-Build-Cosmopolian.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

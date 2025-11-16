@@ -6,12 +6,15 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Update Local Mmojo Server Repo
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Build Debug Mmojo Server for Build Environment Platform
@@ -26,7 +29,7 @@ This script uses cmake to build Mmojo Server:
   ```
 
 ---
-### OPTIONAL: Test the Build - Command-Line Arguments
+### Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-Command-Line.sh" target="_blank">403-Test-Debug-Command-Line.sh</a>.
 - Run the script.
@@ -34,23 +37,38 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
   ```
 
----
-### OPTIONAL: Test the Build - `mmojo-server-args` File
+<details>
+  <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
+
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-args.sh" target="_blank">403-Test-Debug-mmojo-server-args.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-args.sh
   ```
+</details>
 
----
-### OPTIONAL: Test the Build - `mmojo-server-support` Directory
+<details>
+  <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
+
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-support.sh" target="_blank">403-Test-Debug-mmojo-server-support.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-support.sh
   ```
+</details>
+
+---
+### SHORTCUT: Build Debug, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to build and test a debug build:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
+$MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
+```
 
 ---
 ### Proceed

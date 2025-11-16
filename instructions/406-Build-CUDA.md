@@ -3,21 +3,28 @@
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled and CUDA GPU support enabled.
 
-**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments. Compiler may complain about `-arch=native` in a Linux VM.
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Note:** Compiler may complain about `-arch=native` in a Linux VM.
+
+<!--
 **Note:** This should be in the CUDA Toolkit step, maybe?!?
 ```
 # Need to set this variable -OR- add "/usr/local/cuda-13.0/bin" to $PATH
 export $CUDACXX="/usr/local/cuda-13.0/bin/nvcc"
 ```
+-->
 
 ---
-### Update Local Mmojo Server Repo
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
+</details>
 
 ---
 ### Build CUDA Mmojo Server for Build Environment Platform
@@ -31,22 +38,26 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/406-Build-CUDA.sh
   ```
 
-#### Optional: Copy CUDA Build to Mmojo Share
-Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/406-Copy-CUDA-Build-to-Mmojo-Share.sh" target="_blank">406-Copy-CUDA-Build-to-Mmojo-Share.sh</a>.
-- Run the script:
-  ```
-  $MMOJO_SERVER_SCRIPTS/406-Copy-CUDA-Build-to-Mmojo-Share.sh
-  ```
-
 ---
-### OPTIONAL: Test the Build
+### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/406-Test-CUDA.sh" target="_blank">406-Test-CUDA.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/406-Test-CUDA.sh
   ```
+
+---
+<details>
+  <summary><b>Optional: Copy CUDA Build to Mmojo Share.</b></summary>
+
+Copy this build to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/406-Copy-CUDA-Build-to-Mmojo-Share.sh" target="_blank">406-Copy-CUDA-Build-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/406-Copy-CUDA-Build-to-Mmojo-Share.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Build CUDA, Copy to Mmojo Share, Test
