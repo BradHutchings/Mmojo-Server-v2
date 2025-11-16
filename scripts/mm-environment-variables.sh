@@ -13,6 +13,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 cd $HOME
 
 # Reset these compiler environment variables. Set in build step scripts as needed.
@@ -95,7 +98,7 @@ if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-environment-variables.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
