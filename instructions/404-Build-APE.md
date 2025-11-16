@@ -120,7 +120,7 @@ sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
 ```
 
 ---
-### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
+### SHORTCUT: Build and Assemble APE, Copy to Mmojo Share, Test APE
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
