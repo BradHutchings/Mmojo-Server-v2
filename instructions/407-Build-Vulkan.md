@@ -29,22 +29,27 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/407-Build-Vulkan.sh
   ```
 
-#### Optional: Copy Vulkan Build to Mmojo Share
-Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/407-Copy-Vulkan-Build-to-Mmojo-Share.sh" target="_blank">407-Copy-Vulkan-Build-to-Mmojo-Share.sh</a>.
-- Run the script:
-  ```
-  $MMOJO_SERVER_SCRIPTS/407-Copy-Vulkan-Build-to-Mmojo-Share.sh
-  ```
-
 ---
-### OPTIONAL: Test the Build
+### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/407-Test-Vulkan.sh" target="_blank">407-Test-Vulkan.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/407-Test-Vulkan.sh
   ```
+
+---
+<details>
+  <summary>Optional: Copy Vulkan Build to Mmojo Share.</summary>
+
+### Optional: Copy Vulkan Build to Mmojo Share
+Copy this build to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/407-Copy-Vulkan-Build-to-Mmojo-Share.sh" target="_blank">407-Copy-Vulkan-Build-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/407-Copy-Vulkan-Build-to-Mmojo-Share.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Build Vulkan, Copy to Mmojo Share, Test
