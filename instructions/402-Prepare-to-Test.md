@@ -33,13 +33,13 @@ unset TEST_CPU_THREADS
 
 Use a specified number of threads:
 ```
-export TEST_CPU_THREADS = 2
+export TEST_CPU_THREADS=2
 ```
 ```
-export TEST_CPU_THREADS = 4
+export TEST_CPU_THREADS=4
 ```
 ```
-export TEST_CPU_THREADS = 8
+export TEST_CPU_THREADS=8
 ```
 
 ---
