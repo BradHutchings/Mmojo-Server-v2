@@ -1,5 +1,5 @@
 ## 303. Build Cosmopolitan
-### About this Step &mdash; DO THIS ONCE
+### About this Step
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
