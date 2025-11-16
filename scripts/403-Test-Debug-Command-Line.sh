@@ -22,8 +22,8 @@ if [[ -v TEST_MODEL ]]; then
         MODEL_PARAM=$TEST_MODEL
     fi
 fi
-echo "\$MODEL_PARAM: $MODEL_PARAM"
-sleep 5s
+# echo "\$MODEL_PARAM: $MODEL_PARAM"
+# sleep 5s
 
 THREADS_PARAM=""
 if [[ -v TEST_CPU_THREADS ]]; then
