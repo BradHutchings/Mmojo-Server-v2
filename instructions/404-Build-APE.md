@@ -30,9 +30,8 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
   ```
 
 <details>
-  <summary>Optional: Test the x86_64 Build.</summary>
+  <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
-#### Optional: Test the x86_64 Build
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
@@ -42,9 +41,8 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
 </details>
 
 <details>
-  <summary>Optional: Copy x86_64 Build to Your Mmojo Share.</summary>
+  <summary><b>Optional: Copy x86_64 Build to Your Mmojo Share.</b></summary>
 
-#### Optional: Copy x86_64 Build to Your Mmojo Share
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
 - View the script: <a href="../scripts/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh</a>.
 - Run the script:
@@ -63,9 +61,8 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (a
   ```
 
 <details>
-  <summary>Optional: Test the aarch64 (arm64) Build.</summary>
+  <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
-#### Optional: Test the aarch64 (arm64) Build
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
@@ -75,9 +72,8 @@ If you're build enviornment is x86_64, you can test this build. Requires previou
 </details>
 
 <details>
-  <summary>Optional: Copy aarch64 (arm64) Build to Your Mmojo Share.</summary>
+  <summary><b>Optional: Copy aarch64 (arm64) Build to Your Mmojo Share.</b></summary>
 
-#### Optional: Copy aarch64 (arm64) Build to Your Mmojo Share
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
 - View the script: <a href="../scripts/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh</a>.
 - Run the script:
@@ -90,7 +86,6 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
 ### Build mmojo-server Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can combine them into an Actual Portable Executable (APE) file.
 
-#### Assemble from Local Copies
 Assemble the APE file.
 - View the script: <a href="../scripts/404-Assemble-Cosmo-APE-Local.sh" target="_blank">404-Assemble-Cosmo-APE-Local.sh</a>.
 - Run the script:
@@ -107,9 +102,8 @@ If you're build enviornment is x86_64 or aarch64, you can test the assembled APE
   ```
 
 <details>
-  <summary>Optional: Copy Assembled APE to Your Mmojo Share.</summary>
+  <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
 
-#### Optional: Copy Assembled APE to Your Mmojo Share
 Copy this assembled APE to your Mmojo share.
 - View the script: <a href="../scripts/404-Copy-Cosmo-APE-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-APE-to-Mmojo-Share.sh</a>.
 - Run the script:
