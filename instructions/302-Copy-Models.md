@@ -1,4 +1,4 @@
-## 303. Copy Models
+## 302. Copy Models
 ### About this Step &mdash; DO THIS ONCE
 In this step, we will copy models from the Mmojo Share.
 
@@ -50,10 +50,10 @@ nano $MODEL_MAP
 If you've created a Mmojo share on your network, copying from that share is much faster than downloading from Hugging Face.
 
 This script downloads the models from Hugging Face:
-- View the script: <a href="../scripts/303-Copy-Models.sh" target="_blank">303-Copy-Models.sh</a>.
+- View the script: <a href="../scripts/302-Copy-Models.sh" target="_blank">302-Copy-Models.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
+  $MMOJO_SERVER_SCRIPTS/302-Copy-Models.sh
   ```
 
 ---
@@ -64,7 +64,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
+$MMOJO_SERVER_SCRIPTS/302-Copy-Models.sh
 ```
 
 ---
@@ -76,13 +76,13 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/302-Download-Model-Map.sh
-$MMOJO_SERVER_SCRIPTS/303-Copy-Models.sh
+$MMOJO_SERVER_SCRIPTS/302-Copy-Models.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
-- **Previous:** [302. Download Models](302-Download-Models.md)
+- **Next:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Previous:** [301. Download Models](301-Download-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
