@@ -13,6 +13,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 cd $HOME
 
 # Reset these compiler environment variables. Set in build step scripts as needed.
@@ -77,7 +80,9 @@ export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
 
 # Reset this when we update environment variables.
-export TEST_WITH_CHAT_UI=0
+unset TEST_MODEL
+unset TEST_CPU_THREADS
+unset TEST_WITH_CHAT_UI
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
@@ -95,7 +100,7 @@ if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-environment-variables.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

@@ -32,8 +32,18 @@ cp -r /usr/include/openssl/ ./cosmocc/include/
 
 # Copy the right one. This might not get the right one if cross-platform build installed.
 # Or, put it in mmojo-server support files and copy that instead?
-cp -r /usr/include/x86_64-linux-gnu/openssl/* ./cosmocc/include/openssl
-cp -r /usr/include/aarch64-linux-gnu/openssl/* ./cosmocc/include/openssl
+# cp -r /usr/include/x86_64-linux-gnu/openssl/* ./cosmocc/include/openssl
+# cp -r /usr/include/aarch64-linux-gnu/openssl/* ./cosmocc/include/openssl
+
+X86_64_OPENSSL="/usr/include/x86_64-linux-gnu/openssl"
+AARCH64_OPENSSL="/usr/include/aarch64-linux-gnu/openssl"
+if [ -d "$X86_64_OPENSSL" ]; then
+  echo "Using x86_64 openssl platform includes."
+  cp -r $X86_64_OPENSSL/* ./cosmocc/include/openssl
+elif [ -d "$AARCH64_OPENSSL" ]; then
+  echo "Using aarch64 (arm64) openssl platform includes."
+  cp -r $AARCH64_OPENSSL/* ./cosmocc/include/openssl
+fi
 
 git clone https://github.com/openssl/openssl.git
 cd $BUILD_OPENSSSL_DIR/openssl

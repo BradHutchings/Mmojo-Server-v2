@@ -15,6 +15,24 @@ mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
 
+MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
+if [[ -v TEST_MODEL ]]; then
+    echo "\$TEST_MODEL: $TEST_MODEL."
+    if [ -f "$MODELS_DIR/$TEST_MODEL" ]; then
+        echo "Model found."
+        MODEL_PARAM=$TEST_MODEL
+    fi
+fi
+# echo "\$MODEL_PARAM: $MODEL_PARAM"
+# sleep 5s
+
+THREADS_PARAM=""
+if [[ -v TEST_CPU_THREADS ]]; then
+  THREADS_PARAM="--threads${NL}$TEST_CPU_THREADS${NL}"
+fi
+# echo "\$THREADS_PARAM: $THREADS_PARAM"
+# sleep 5s
+
 NL=$'\n'
 UI_PARAMS="--path${NL}$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}/chat${NL}"
 if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
@@ -29,7 +47,7 @@ rm -r -f mmojo-server-support
 mkdir -p mmojo-server-support
 cat << EOF > mmojo-server-support/default-args
 --model
-$MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
+$MODELS_DIR/$MODEL_PARAM
 --host
 0.0.0.0
 --port
@@ -42,8 +60,7 @@ $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 64
 --batch-sleep-ms
 0
-$UI_PARAMS
---mlock
+$UI_PARAMS$THREADS_PARAM--mlock
 ...
 EOF
 $BUILD_LLAMA_CPP_DIR/$BUILD_DEBUG/bin/mmojo-server

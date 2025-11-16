@@ -5,8 +5,6 @@ In this step, we will set some environment variables to customize testing.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Note: The Choose LLM and Choose CPU Threads features are not implemented yet.**
-
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -20,7 +18,26 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Optional: Choose LLM
-By default, we'll use Google Gemma 1B Instruct v3. If you'd like to test with a different LLM, set one of these values:
+By default, we'll use Google Gemma 1B Instruct v3. Set the default with:
+```
+unset TEST_MODEL
+```
+
+If you'd like to test with a different LLM, set one of these values:
+```
+export TEST_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
+```
+```
+export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
+```
+
+Make sure the LLM has been downloaded or copied to your `$HOME/300-MODEKS` directory. Otherwise, the `Test-`scripts will fall back to Google Gemma 1B Instruct v3.
 
 ---
 ### Optional: Choose CPU Threads
@@ -33,17 +50,22 @@ unset TEST_CPU_THREADS
 
 Use a specified number of threads:
 ```
-export TEST_CPU_THREADS = 2
+export TEST_CPU_THREADS=2
 ```
 ```
-export TEST_CPU_THREADS = 4
+export TEST_CPU_THREADS=4
 ```
 ```
-export TEST_CPU_THREADS = 8
+export TEST_CPU_THREADS=8
 ```
 
 ---
 ### Optional: Chat User Interface
+The testing default is to use the Mmojo Complete user interface. Set the default with this:
+```
+unset TEST_WITH_CHAT_UI
+```
+
 If you'd prefer to test with the chat-style user interface, set this value:
 ```
 export TEST_WITH_CHAT_UI=1
