@@ -30,7 +30,7 @@ This script uses cmake to build Mmojo Server:
   ```
 
 ---
-### Optional: Test the Build - Command-Line Arguments
+### Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-Command-Line.sh" target="_blank">403-Test-Debug-Command-Line.sh</a>.
 - Run the script.
@@ -39,6 +39,9 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
 
 ---
+<details>
+  <summary>Optional: Test the Build &mdash; mmojo-server-args File.</summary>
+
 ### Optional: Test the Build - `mmojo-server-args` File
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-args.sh" target="_blank">403-Test-Debug-mmojo-server-args.sh</a>.
@@ -46,8 +49,12 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-args.sh
   ```
+</details>
 
 ---
+<details>
+  <summary>Optional: Test the Build &mdash; mmojo-server-support Directory.</summary>
+
 ### Optional: Test the Build - `mmojo-server-support` Directory
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/403-Test-Debug-mmojo-server-support.sh" target="_blank">403-Test-Debug-mmojo-server-support.sh</a>.
@@ -55,6 +62,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-support.sh
   ```
+</details>
 
 ---
 ### SHORTCUT: Build and Assemble Locally, Copy to Mmojo Share, Test
