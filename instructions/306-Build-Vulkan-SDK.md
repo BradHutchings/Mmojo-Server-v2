@@ -8,12 +8,10 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-
 ---
 <details>
-  <summary>Update Local Mmojo Server Repo &mdash; Expand if you haven't today.</summary>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
   
-### Update Local Mmojo Server Repo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
