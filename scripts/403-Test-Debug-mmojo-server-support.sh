@@ -28,6 +28,8 @@ THREADS_PARAM=""
 if [[ -v TEST_CPU_THREADS ]]; then
   THREADS_PARAM="--threads${NL}$TEST_CPU_THREADS${NL}"
 fi
+# echo "\$THREADS_PARAM: $THREADS_PARAM"
+# sleep 5s
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
