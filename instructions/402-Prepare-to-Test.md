@@ -5,8 +5,6 @@ In this step, we will set some environment variables to customize testing.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Note: The Choose LLM feature is not implemented yet.**
-
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -38,6 +36,8 @@ export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
 ```
 export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
 ```
+
+Make sure the LLM has been downloaded or copied to your `$HOME/300-MODEKS` directory. Otherwise, the `Test-`scripts will fall back to Google Gemma 1B Instruct v3.
 
 ---
 ### Optional: Choose CPU Threads
