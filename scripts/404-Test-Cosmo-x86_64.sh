@@ -6,6 +6,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 TEST_DIR="$TEST_LLAMA_CPP_DIR/$TEST_COSMO_X86_64"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
@@ -30,9 +33,7 @@ ls -ald mmojo-server-support
 
 cd $HOME
 
-SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
-# printf "\n**********\n*\n* FINISHED: 404-Test-Cosmo-x86_64.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
