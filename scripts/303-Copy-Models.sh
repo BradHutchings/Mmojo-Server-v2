@@ -6,6 +6,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 CopyModel() {
   MODEL_FILE=$1
   if [ ! -f $MODEL_FILE ]; then 
@@ -35,7 +38,7 @@ cd $HOME
 echo -e "\nModels directory:"
 ls -al $MODELS_DIR/*.gguf
 
-printf "\n**********\n*\n* FINISHED: 303-Copy-Models.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
