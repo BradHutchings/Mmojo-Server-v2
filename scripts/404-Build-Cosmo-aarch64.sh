@@ -7,6 +7,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 cd $BUILD_LLAMA_CPP_DIR
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
@@ -48,9 +51,7 @@ unset AR
 
 cd $HOME
 
-SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
-# printf "\n**********\n*\n* FINISHED: 404-Build-Cosmo-aarch64.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
