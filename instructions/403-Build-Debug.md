@@ -37,7 +37,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
   ```
 
----
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
 
@@ -49,7 +48,6 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
 </details>
 
----
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
 
