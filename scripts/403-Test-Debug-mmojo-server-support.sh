@@ -24,6 +24,11 @@ fi
 # echo "\$UI_PARAMS: $UI_PARAMS"
 # sleep 5s
 
+THREADS_PARAM=""
+if [[ -v TEST_CPU_THREADS ]]; then
+  THREADS_PARAM="--threads${NL}$TEST_CPU_THREADS${NL}"
+fi
+
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 mkdir -p mmojo-server-support
@@ -42,8 +47,7 @@ $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf
 64
 --batch-sleep-ms
 0
-$UI_PARAMS
---mlock
+$UI_PARAMS$THREADS_PARAM--mlock
 ...
 EOF
 $BUILD_LLAMA_CPP_DIR/$BUILD_DEBUG/bin/mmojo-server
