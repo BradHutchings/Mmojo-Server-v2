@@ -7,9 +7,8 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 
 ---
 <details>
-  <summary>Update Local Mmojo Server Repo &mdash; Expand if you haven't today.</summary>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
   
-### Update Local Mmojo Server Repo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
