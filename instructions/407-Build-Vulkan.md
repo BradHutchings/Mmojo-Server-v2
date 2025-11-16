@@ -39,9 +39,8 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 
 ---
 <details>
-  <summary>Optional: Copy Vulkan Build to Mmojo Share.</summary>
+  <summary><b>Optional: Copy Vulkan Build to Mmojo Share.</b></summary>
 
-### Optional: Copy Vulkan Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
 - View the script: <a href="../scripts/407-Copy-Vulkan-Build-to-Mmojo-Share.sh" target="_blank">407-Copy-Vulkan-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
