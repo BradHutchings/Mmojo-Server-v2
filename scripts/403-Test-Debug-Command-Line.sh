@@ -16,12 +16,14 @@ cd $TEST_DIR
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v TEST_MODEL ]]; then
+    echo "\$TEST_MODEL: $TEST_MODEL."
     if [ -f "$MODELS_DIR/$TEST_MODEL" ]; then
+        echo "Model found."
         MODEL_PARAM=$TEST_MODEL
     fi
 fi
-# echo "\$MODEL_PARAM: $MODEL_PARAM"
-# sleep 5s
+echo "\$MODEL_PARAM: $MODEL_PARAM"
+sleep 5s
 
 THREADS_PARAM=""
 if [[ -v TEST_CPU_THREADS ]]; then
