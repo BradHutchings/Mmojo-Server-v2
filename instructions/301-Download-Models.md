@@ -1,5 +1,5 @@
 ## 301. Download Models
-### About this Step &mdash; DO THIS ONCE
+### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
 If you already have models downloaded and copied to your Mmojo share, please proceed to: [303. Copy Models](303-Copy-Models.md).
@@ -59,6 +59,17 @@ This script downloads the models from Hugging Face:
   ```
   $MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
   ```
+
+---
+### SHORTCUT: Download Models
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to download two models I offer on Hugging Face.
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+```
 
 ---
 ### SHORTCUT: Download Tested Models
