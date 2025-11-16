@@ -29,6 +29,21 @@ This script uses cmake to build Mmojo Server:
   $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
 
+<details>
+  <summary>Optional: Test the Build.</summary>
+
+#### Optional: Test the Build
+Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
+- View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+  ```
+</details>
+
+<details>
+  <summary>Optional: Copy CPU Build to Mmojo Share.</summary>
+
 #### Optional: Copy CPU Build to Mmojo Share
 Copy this build to your Mmojo Share for packaging later. 
 - View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
@@ -36,15 +51,7 @@ Copy this build to your Mmojo Share for packaging later.
   ```
   $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
   ```
-
----
-### Optional: Test the Build
-Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
-- Run the script.
-  ```
-  $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
-  ```
+</details>
 
 ---
 ### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
