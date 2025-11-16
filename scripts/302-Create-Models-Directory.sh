@@ -8,6 +8,9 @@
 # See licensing note at end.
 ################################################################################
 
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
 mkdir -p $MODELS_DIR
 cd $MODELS_DIR
 
@@ -18,7 +21,7 @@ EOF
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: 302-Create-Models-Directory.sh.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
