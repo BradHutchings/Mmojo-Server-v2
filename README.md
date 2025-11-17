@@ -13,7 +13,7 @@ Welcome to Mmojo Server version 2! This project makes it easy to build and packa
 - Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option. 
 - Mmojo Server version 2 is no longer a Github fork of llama.cpp. Instead, it incorporates a locally cloned llama.cpp repository into its build sequence.
 
-My philosophy is that end-users can easily get started with the APE build, then upgrade to an optimized CPU/GPU build for their computer. Developers building Mmojo Server should expect a similar experience.
+End-users should be able to easily get started with the APE build, then upgrade to an optimized CPU/GPU build for their computer. Developers building Mmojo Server should expect a similar experience.
 
 I want Mmojo Server to be the easiest way for developers to build llama.cpp and to foster greater and wider understanding of how llama.cpp works. I don't want my project to be a hair pulling and muscle flexing exercise for developers like most open source software turns out to be.
 
