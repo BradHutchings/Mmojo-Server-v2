@@ -9,7 +9,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-TEST_DIR="$TEST_LLAMA_CPP_DIR/$TEST_DEBUG_MMOJO_SERVER_ARGS"
+TEST_DIR="$TEST_DIR/$TEST_DEBUG_MMOJO_SERVER_ARGS"
 mkdir -p $TEST_DIR
 rm -r -f $TEST_DIR/*
 cd $TEST_DIR
@@ -33,7 +33,7 @@ fi
 # sleep 5s
 
 NL=$'\n'
-UI_PARAMS="--path${NL}$BUILD_LLAMA_CPP_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}/chat${NL}"
+UI_PARAMS="--path${NL}$BUILD_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}/chat${NL}"
 if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
     # echo "Using chat UI."
     UI_PARAMS=""
@@ -61,7 +61,7 @@ $MODELS_DIR/$MODEL_PARAM
 $UI_PARAMS$THREADS_PARAM--mlock
 ...
 EOF
-$BUILD_LLAMA_CPP_DIR/$BUILD_DEBUG/bin/mmojo-server
+$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
 
 printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
 ls -ald mmojo-server-args
