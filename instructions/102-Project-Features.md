@@ -12,23 +12,23 @@ Even if you're just trying to build a mostly stock llama.cpp to run locally, I h
 
 ---
 ### Actual Portable Executable (APE) files
-Inspired by llamafile, I use the [Cosmopolitan](https://github.com/jart/cosmopolitan) project to create applications that can run anywhwere, as described in the intorduction to the Cosmopolitan Github repo:
+Inspired by llamafile, I use the [Cosmopolitan](https://github.com/jart/cosmopolitan) project to create applications that can run anywhere, as described in the introduction to the Cosmopolitan Github repo:
 
 > Cosmopolitan Libc makes C/C++ a build-once run-anywhere language, like Java, except it doesn't need an interpreter or virtual machine. Instead, it reconfigures stock GCC and Clang to output a POSIX-approved polyglot format that runs natively on Linux + Mac + Windows + FreeBSD + OpenBSD 7.3 + NetBSD + BIOS with the best possible performance and the tiniest footprint imaginable.
 
 The APE files are a good starting point for end users because the same binary runs on most computers and can contain an LLM within the file.
 
-- There are additions to [common-mmojo.cpp](/files/common/common-mmojo.cpp) to accomodate this feature.
-- There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accomodate this feature.
-- There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accomodate this feature.
+- There are additions to [common-mmojo.cpp](/files/common/common-mmojo.cpp) to accommodate this feature.
+- There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accommodate this feature.
+- There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accommodate this feature.
 
 ---
 ### `mmojo-server-args` File and `mmojo-server-support` Directory
 These are a way to specify command line defaults and aggregate support files, like the user interface and LLM in the working directory where the `mmojo-server` application is invoked. Like the APE files, these are very helpful for packaging and configuration management.
 
-- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
-- There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accomodate this feature.
-- There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accomodate this feature.
+- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
+- There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accommodate this feature.
+- There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accommodate this feature.
 
 ---
 ### Mmojo Complete - Completion User Interface
@@ -36,10 +36,10 @@ I hold a currently unpopular opinion that chat interfaces are an abomination. No
 
 If you have your own preferred UI, you can use the additions to Mmojo Server to support it as well.
 
-- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
-- There are additions to [arg-mmojo.cpp](/files/common/arg-mmojo.cpp) to accomodate this feature.
-- There are additions to [common-mmojo.cpp](/files/common/common-mmojo.cpp) to accomodate this feature.
-- There are additions to [common.h](/files/common/common.h) to accomodate this feature.
+- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
+- There are additions to [arg-mmojo.cpp](/files/common/arg-mmojo.cpp) to accommodate this feature.
+- There are additions to [common-mmojo.cpp](/files/common/common-mmojo.cpp) to accommodate this feature.
+- There are additions to [common.h](/files/common/common.h) to accommodate this feature.
 
 ---
 ### Enhanced Reporting of Context Window Evaluation
@@ -47,9 +47,9 @@ The Mmojo Complete UI shows progress evaluating, and allows a delay between batc
 
 Some previous work on this was incorporated into llama-server by the llama.cpp team with the `send_partial_response()` function.
 
-- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
-- There are additions to [arg-mmojo.cpp](/files/common/arg-mmojo.cpp) to accomodate this feature.
-- There are additions to [common.h](/files/common/common.h) to accomodate this feature.
+- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
+- There are additions to [arg-mmojo.cpp](/files/common/arg-mmojo.cpp) to accommodate this feature.
+- There are additions to [common.h](/files/common/common.h) to accommodate this feature.
 
 ---
 ### Enhanced Meta Data Returned by OpenAI compatible API
@@ -74,7 +74,7 @@ return json {
 };
 ```
 
-- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
+- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
 
 ---
 ### Self Extracting Application Support (SEAS) Files
@@ -82,8 +82,7 @@ I am working on a self-extracting application that can extract support files, in
 
 SEASes are a work in progress.
 
-- There will be additions to the `main()` function in [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accomodate this feature.
-
+- There will be additions to the `main()` function in [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
 ---
 ### Proceed
 - **Next:** [103. Build Environment](103-Build-Environment.md)
