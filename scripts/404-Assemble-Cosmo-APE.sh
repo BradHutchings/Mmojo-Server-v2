@@ -12,26 +12,26 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
-mkdir -p $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE
+mkdir -p $BUILD_DIR/$BUILD_COSMO_APE
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
 apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
-    $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server \
-    $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server
+	-o $BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
+    $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server \
+    $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server
 
 apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
-    $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
-    $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
+	-o $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+    $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
+    $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
 
-cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
+cp $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
 export PATH=$SAVE_PATH
 
