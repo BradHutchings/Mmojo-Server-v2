@@ -23,7 +23,7 @@ A file share that is accessible to all of your build systems will help you coord
 ### WSL vs Windows
 Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directly on Windows. For building and deploying Mmojo Server for Windows computers, it offers a few advantages and disadvantages over the native Windows environment:
 
-1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Execiutable (APE) file containing an LLM in the 4B parameter range or higher!
+1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Executable (APE) file containing an LLM in the 4B parameter range or higher!
 2. (Advantage WSL): If you have NVIDIA drivers installed on your Windows host for a GPU that supports CUDA, you can run CUDA software from within WSL.
 3. (Advantage WSL): I don't have instructions for building directly on or for Windows (yet).
 4. (Advantage Windows): Vulkan demonstration software can be run with experimental, hard to find bridge software installed within WSL. The bridge software does not work well for Mmojo Server.
