@@ -9,7 +9,7 @@ Your Mmojo Server build environment will consist of one or more build systems, d
   - **Your build environments, ideally, will be containers, virtual machines (VMs), Windows Subsystem for Linux (WSL) instances, etc. Less than ideally, bootable thumb drives for e.g. Raspberry Pi.**
 - GPU SDKs and Toolkits are typically available for hardware and operating systems the GPU drivers run on. You'll want to test GPU performance of your builds. So...
   - **You will usually need to build directly on hardware that has the GPU you want your build to use.**
-  - WSL provides a working bridge CUDA / NVIDIA GPUs.
+  - WSL provides a working bridge for CUDA / NVIDIA GPUs.
   - WSL does not provide a working bridge for Vulkan.
   - VMs typically don't provide GPU support. Where they do, they require advanced setup.
  
