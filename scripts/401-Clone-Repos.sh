@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script clones these repos to set up a $BUILD_LLAMA_CPP_DIR:
+# This script clones these repos to set up a $BUILD_DIR:
 # - llama.cpp
 #   - https://github.com/ggml-org/llama.cpp
 # - Google minja (for llama.cpp) - chat templates
@@ -27,12 +27,12 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-if [ -d "$BUILD_LLAMA_CPP_DIR" ]; then
-    rm -r -f $BUILD_LLAMA_CPP_DIR
+if [ -d "$BUILD_DIR" ]; then
+    rm -r -f $BUILD_DIR
 fi
 
-git clone https://github.com/ggml-org/llama.cpp $BUILD_LLAMA_CPP_DIR
-cd $BUILD_LLAMA_CPP_DIR
+git clone https://github.com/ggml-org/llama.cpp $BUILD_DIR
+cd $BUILD_DIR
 git clone https://github.com/google/minja.git google-minja
 git clone https://github.com/yhirose/cpp-httplib.git cpp-httplib
 git clone https://github.com/mackron/miniaudio.git miniaudio
