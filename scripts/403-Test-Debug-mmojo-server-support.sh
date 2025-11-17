@@ -10,10 +10,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-TEST="$TEST_DIR/$TEST_DEBUG_MMOJO_SERVER_SUPPORT"
-mkdir -p $TEST
-rm -r -f $TEST/*
-cd $TEST
+THIS_TEST_DIR="$TEST_DIR/$TEST_DEBUG_MMOJO_SERVER_SUPPORT"
+mkdir -p $THIS_TEST_DIR
+rm -r -f $THIS_TEST_DIR/*
+cd $THIS_TEST_DIR
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v TEST_MODEL ]]; then
