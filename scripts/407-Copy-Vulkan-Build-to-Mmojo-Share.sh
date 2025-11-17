@@ -22,7 +22,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
 
   if [ -d "$MMOJO_SHARE_BUILDS_VULKAN" ]; then
     echo "Copying mmojo-server-vulkan-$ARCH to Mmojo Share."
-    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_VULKAN/bin/mmojo-server $MMOJO_SHARE_BUILDS_VULKAN/mmojo-server-vulkan-$ARCH
+    sudo cp -f $BUILD_DIR/$BUILD_VULKAN/bin/mmojo-server $MMOJO_SHARE_BUILDS_VULKAN/mmojo-server-vulkan-$ARCH
   fi
 fi
 
