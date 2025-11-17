@@ -10,7 +10,7 @@ The obvious question is why there need to be build targets if we have Actually P
 ### Benchmarks
 I have a home-grown benchmark for evaluating my Mmojo Server builds. It is using Mmojo Complete to summarize a particular one-hour podcast transcript. The transcript comes from YouTube and has been massaged to remove timestamps and other formatting. I time how long the evaluating step takes.
 
-Here are the results of running the benchmark in a Windows Subsystem for Linux (WSL) instance on my 12-gen i7-12700H Dell Laptop with 64 GB RAM and NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GPU RAM). I run an APE, an unoptimized "Debug" buid, an optimized CPU Build, and an optimized CPU with CUDA build. `mmojo-server` is invoked with the default number of available threads, which are half the CPU threads available. The input has 17,272 tokens. I'm using Google Gemma 1B Instruct v3 (`Google-Gemma-1B-Instruct-v3-q8_0.gguf`), which you'll typically use to test builds.
+Here are the results of running the benchmark in a Windows Subsystem for Linux (WSL) instance on my 12-gen i7-12700H Dell Laptop with 64 GB RAM and NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GPU RAM). I run an APE, an unoptimized "Debug" build, an optimized CPU Build, and an optimized CPU with CUDA build. `mmojo-server` is invoked with the default number of available threads, which are half the CPU threads available. The input has 17,272 tokens. I'm using Google Gemma 1B Instruct v3 (`Google-Gemma-1B-Instruct-v3-q8_0.gguf`), which you'll typically use to test builds.
 
 | Build              | Evaulation Time | Notes                                                 |
 | :-------           | :------         | -------:                                              |
