@@ -83,6 +83,11 @@ unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
+export PACKAGE_DIR="$HOME/500-PACKAGE"
+export PACKAGE_APE="package-ape"
+export PACKAGE_ZIP="package-zip"
+export PACKAGE_SEAS="package-seas"
+
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
