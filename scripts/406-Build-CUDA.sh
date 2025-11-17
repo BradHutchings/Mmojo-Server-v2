@@ -13,7 +13,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
 if [ "$BUILD_PROFILE" ]; then
     export CC="cc -pg "
@@ -22,15 +22,15 @@ fi
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA
+rm -r -f $BUILD_DIR/$BUILD_CUDA
 cmake -B $BUILD_CUDA -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON # -DCMAKE_VERBOSE_MAKEFILE=ON 
 cmake --build $BUILD_CUDA
 
 # Show off what we built
 printf "\nBuild of llama.cpp with CUDA support is complete.\n\n"
-printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin/\n"
-ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin
+printf "\$ ls -al $BUILD_DIR/$BUILD_CUDA/bin/\n"
+ls -al $BUILD_DIR/$BUILD_CUDA/bin
 printf "\n"
 
 cd $HOME

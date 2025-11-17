@@ -13,19 +13,19 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-rm -r -f $BUILD_LLAMA_CPP_DIR/$BUILD_CPU
+rm -r -f $BUILD_DIR/$BUILD_CPU
 cmake -B $BUILD_CPU -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_BUILD_TYPE=Release # -DCMAKE_VERBOSE_MAKEFILE=ON 
 cmake --build $BUILD_CPU
 
 # Show off what we built
 printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin/\n"
-ls -al $BUILD_LLAMA_CPP_DIR/$BUILD_CPU/bin
+printf "\$ ls -al $BUILD_DIR/$BUILD_CPU/bin/\n"
+ls -al $BUILD_DIR/$BUILD_CPU/bin
 printf "\n"
 
 cd $HOME

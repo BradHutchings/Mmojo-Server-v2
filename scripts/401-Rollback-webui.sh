@@ -11,7 +11,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
 rm -r -f tools/server/webui
 git checkout 6c019cb04e86e2dacfe62ce7666c64e9717dde1f tools/server/webui/

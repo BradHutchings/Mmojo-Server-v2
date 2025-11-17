@@ -20,28 +20,10 @@ if [ "$MMOJO_SERVER_DIR" ]; then
 fi
 mkdir -p $MMOJO_SERVER_DIR
 git clone https://github.com/BradHutchings/mmojo-server-v2.git $MMOJO_SERVER_DIR
-. $MMOJO_SERVER_SCRIPTS/mm-update-local-mmojo-server-repo.sh
+$MMOJO_SERVER_SCRIPTS/mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
-
-<!--
-I am the the only one who should be using this. It just complicated and confuses things to add into the mix. -Brad
-
-#### Optional: Use the work-in-progress branch.
-The **work-in-progress** branch is where I implement and test my own changes and where I test upstream changes from **llama.cpp**.
-
-This script switches to the **work-in-progress** branch:
-- View script: <a href="../scripts/mm-work-in-progress-branch.sh" target="_blank">mm-work-in-progress-branch.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
-  ```
-  mm-work-in-progress-branch.sh
-  . mm-environment-variables.sh
-  ```
--->
 
 ---
 ### Proceed

@@ -19,8 +19,8 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
 
   if [ -d "$MMOJO_SHARE_BUILDS_APE" ]; then
     echo "Copying mmojo-server-x86_64 and mm-zipalign-x86_64 to Mmojo Share."
-    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64
-    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64
+    sudo cp -f $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64
+    sudo cp -f $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64
   fi
 fi
 

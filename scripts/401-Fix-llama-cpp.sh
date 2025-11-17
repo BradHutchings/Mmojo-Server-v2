@@ -10,10 +10,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-# This copies the $MMOJO_SERVER_FILES tree into the $BUILD_LLAMA_CPP_DIR tree.
-cp -r $MMOJO_SERVER_FILES/* $BUILD_LLAMA_CPP_DIR/
+# This copies the $MMOJO_SERVER_FILES tree into the $BUILD_DIR tree.
+cp -r $MMOJO_SERVER_FILES/* $BUILD_DIR/
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
 # Cosmo compatibility
 sed -i -e 's/#if defined(_WIN32) || defined(__COSMOPOLITAN__)/#if defined(_WIN32)/g' miniaudio/miniaudio.h

@@ -94,12 +94,15 @@ wsl --manage MmojoServerBuild --move D:\wsl
 If you get a `WSL_E_DISTRO_NOT_STOPPED` or an `ERROR_SHARING_VIOLATION`, wait a minute, then try again.
 
 ---
-### Pin MmojoServerBuild to the Taskbar, Launch
+### Pin MmojoServerBuild to the Taskbar
 Click your **Start** menu. Search for:
 ```
 MmojoServerBuild
 ```
 Add it to the **Taskbar**.
+
+---
+### Launch MmojoServerBuild
 
 Launch and log into your new instance by clicking the icon you just added to the **Taskbar**.
 

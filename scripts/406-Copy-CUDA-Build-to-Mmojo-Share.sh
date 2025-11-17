@@ -22,7 +22,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
 
   if [ -d "$MMOJO_SHARE_BUILDS_CUDA" ]; then
     echo "Copying mmojo-server-cuda-$ARCH to Mmojo Share."
-    sudo cp -f $BUILD_LLAMA_CPP_DIR/$BUILD_CUDA/bin/mmojo-server $MMOJO_SHARE_BUILDS_CUDA/mmojo-server-cuda-$ARCH
+    sudo cp -f $BUILD_DIR/$BUILD_CUDA/bin/mmojo-server $MMOJO_SHARE_BUILDS_CUDA/mmojo-server-cuda-$ARCH
   fi
 fi
 

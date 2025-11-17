@@ -2,9 +2,9 @@
 
 ################################################################################
 # This script assembles the mmojo-server-ape Actual Portable Executable (APE)
-# and the mm-zipalign-ape APE from x86_64 and aarch64 (arm64) builds on your
-# Mmojo Share. The mm-zipalign-ape APE is copied to $HOME/tools as mm-zipalign 
-# for use in the packaging phase.
+# and the mm-zipalign-ape APE from local x86_64 and aarch64 (arm64) builds. The
+# mm-zipalign-ape APE is copied to $HOME/tools as mm-zipalign for use in the 
+# packaging phase.
 #
 # See licensing note at end.
 ################################################################################
@@ -12,29 +12,26 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-cd $BUILD_LLAMA_CPP_DIR
+cd $BUILD_DIR
 
-mm-mount-mmojo-share.sh
-sudo mkdir -p $MMOJO_SHARE_BUILDS
-sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
-
-mkdir -p $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE
+mkdir -p $BUILD_DIR/$BUILD_COSMO_APE
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
-apelink \
-	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
-	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
-    $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64  \
-    $MMOJO_SHARE_BUILDS_APE/mmojo-server-aarch64
 
 apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
-    $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64  \
-    $MMOJO_SHARE_BUILDS_APE/mm-zipalign-aarch64
+	-o $BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
+    $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server \
+    $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server
 
-cp $BUILD_LLAMA_CPP_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
+apelink \
+	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+	-o $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+    $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
+    $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
+
+cp $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
 export PATH=$SAVE_PATH
 
