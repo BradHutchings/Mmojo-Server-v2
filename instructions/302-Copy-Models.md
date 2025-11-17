@@ -67,7 +67,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/302-Copy-Models.sh
 ```
 
