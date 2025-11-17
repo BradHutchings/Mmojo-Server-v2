@@ -42,6 +42,7 @@ Let's diable interoperability with the host Windows environment so we don't have
 
 Check that `/etc/wsl.conf` doesn't already have an `[interop]` section:
 ```
+cd $HOME
 cat /etc/wsl.conf
 ```
 
