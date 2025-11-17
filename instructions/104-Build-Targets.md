@@ -14,8 +14,8 @@ Here are the results of running the benchmark in a Windows Subsystem for Linux (
 
 | Build              | Evaulation Time | Notes                                                 |
 | :-------           | :------         | -------:                                              |
+| Unoptimized Debug  | 22:16           | Tuned CPU but unoptimized code.                       |
 | APE                | 11:00           | Static libraries and generic optimized compile.       |
-| Unoptimized Debug  | 5:25            | Tuned CPU but unoptimized code runs faster.           |
 | Optimized CPU      | 1:41            | Compiler can save a lot of work for a particular CPU. |
 | CUDA               | 0:07            | This is what user eventually want.                    |
 
