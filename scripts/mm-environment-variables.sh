@@ -57,7 +57,7 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
-export BUILD_LLAMA_CPP_DIR="$HOME/400-BUILD-lamma-cpp"
+export BUILD_DIR="$HOME/400-BUILD"
 export BUILD_DEBUG="build-debug"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
@@ -67,7 +67,7 @@ export BUILD_CUDA="build-cuda"
 export BUILD_VULKAN="build-vulkan"
 export BUILD_METAL="build-metal"
 
-export TEST_LLAMA_CPP_DIR="$HOME/400-TEST-lamma-cpp"
+export TEST_DIR="$HOME/400-TEST"
 export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
 export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
 export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
