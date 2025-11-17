@@ -43,9 +43,9 @@ This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR`
 
 ---
 ### Verify that Vulkan is Installed
-Run this command to verify that Vulkan is installed.
+Run this command to verify that Vulkan is installed and see which GPUs on your system it recognizes.
 ```
-vulkaninfo
+vulkaninfo --summary
 ```
 
 ---

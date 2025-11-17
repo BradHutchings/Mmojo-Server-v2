@@ -17,13 +17,13 @@ mkdir -p $HOME_TOOLS
 
 if [[ "${PATH}" != *"${HOME_SCRIPTS}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
 cat << EOF >> $HOME/.bashrc
-export PATH="$PATH:$HOME_SCRIPTS"
+export PATH="\$PATH:$HOME_SCRIPTS"
 EOF
 fi
 
 if [[ "${PATH}" != *"${HOME_TOOLS}"* ]] && [[ "${PATH}" != *"${TILDE_TOOLS}"* ]]; then
 cat << EOF >> $HOME/.bashrc
-export PATH="$PATH:$HOME_TOOLS"
+export PATH="\$PATH:$HOME_TOOLS"
 EOF
 fi
 

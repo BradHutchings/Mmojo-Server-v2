@@ -130,7 +130,7 @@ $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
 $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh
 $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
 $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE-Local.sh
+$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE.sh
 $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
 $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
 ```
