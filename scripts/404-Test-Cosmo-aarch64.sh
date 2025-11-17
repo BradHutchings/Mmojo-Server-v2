@@ -9,10 +9,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-TEST_DIR="$TEST_LLAMA_CPP_DIR/$TEST_COSMO_AARCH64"
-mkdir -p $TEST_DIR
-rm -r -f $TEST_DIR/*
-cd $TEST_DIR
+THIS_TEST="$TEST_DIR/$TEST_COSMO_AARCH64"
+mkdir -p $THIS_TEST
+rm -r -f $THIS_TEST/*
+cd $THIS_TEST
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v TEST_MODEL ]]; then
