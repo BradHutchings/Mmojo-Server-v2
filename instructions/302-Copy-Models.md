@@ -18,13 +18,13 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
-- View the script: <a href="../scripts/302-Create-Models-Directory.sh" target="_blank">302-Create-Models-Directory.sh</a>.
+- View the script: <a href="../scripts/301-Create-Models-Directory.sh" target="_blank">301-Create-Models-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/302-Create-Models-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
   ```
 
 <details>
