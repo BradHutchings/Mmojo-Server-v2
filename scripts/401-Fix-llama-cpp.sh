@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 # This copies the $MMOJO_SERVER_FILES tree into the $BUILD_DIR tree.
 cp -r $MMOJO_SERVER_FILES/* $BUILD_DIR/
@@ -45,7 +45,7 @@ sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
