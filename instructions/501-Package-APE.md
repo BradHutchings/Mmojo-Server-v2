@@ -1,4 +1,7 @@
 ## 501. Package APE
+
+**This is still a work in progress. If you've made it this far, go get some dinner, watch something on Netflix. This step will be ready soon.**
+
 ### About this Step
 
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a configuration file, and add add a `.gguf` model. You will test run it, then copy it to your Mmojo Share. 
