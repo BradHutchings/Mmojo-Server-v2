@@ -101,9 +101,7 @@ This script adds the chosen `.gguf` model to the archive.
 
 ---
 ### Add `default-args` File to Archive
-**Not implemented yet.**
-
-This script adds a `default-args` file to the archive. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that.
+This script adds a `default-args` file to the archive. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
 - Run the script.
   ```
@@ -113,72 +111,6 @@ This script adds a `default-args` file to the archive. If you added certs and/or
 ---
 ### WORKING ON WHAT'S BELOW
 
-
----
-### Create default-args File in Archive
-
-A `default-args` file in the archive can specify sane default parameters. The format of the file is parameter name on a line, parameter value on a line, rinse, repeat. End the file with a `...` line to include user specified parameters.
-
-We don't yet support including the model inside the zip archive (yet). That has a 4GB size limitation on Windows anyway, as `.exe` files cannot exceed 4GB. So let's use an adjacent file called `model.gguf`.
-
-We will serve on localhost, port 8080 by default for safety. The `--ctx-size` parameter is the size of the context window. This is kinda screwy to have as a set size rather than a maximum because the `.gguf` files now have the training context size in metadata. We set it to 8192 to be sensible. The `--threads-http` parameter ensures that the browser can ask for all the image files in our default UI at once.
-```
-cat << EOF > $DEFAULT_ARGS
--m
-model.gguf
---host
-127.0.0.1
---port
-8080
---ctx-size
-0
---threads-http
-8
---batch-size
-64
---batch-sleep-ms
-0
---path
-/zip/website
---default-ui-endpoint
-chat
---ssl-key-file
-/zip/certs/mmojo.local.key
---ssl-cert-file
-/zip/certs/mmojo.local.crt
-...
-EOF
-zip -0 -r $MMOJO_SERVER_ZIP $DEFAULT_ARGS
-printf "\n**********\n*\n* FINISHED: Create Default args File in Archive.\n*\n**********\n\n"
-```
-
-#### Verify default-args File in Archive
-
-Verify that the archive contains the `default-args` file:
-```
-unzip -l $MMOJO_SERVER_ZIP 
-printf "\n**********\n*\n* FINISHED: Verify default-args File in Archive.\n*\n**********\n\n"
-```
-
----
-### Remove .zip Extension, Delete Local Files
-
-Remove the `.zip` from our working file and delete the local copy of the model file:
-```
-mv $MMOJO_SERVER_ZIP $MMOJO_SERVER
-rm -r -f certs default-args website
-printf "\n**********\n*\n* FINISHED: Remove .zip Extension, Delete Local Files.\n*\n**********\n\n"
-```
-
----
-### Copy Model
-
-Let's copy a small model. We'll use Google Gemma 1B Instruct v3, a surprisingly capable tiny model.
-```
-MODEL_FILE="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
-cp ~/$DOWNLOAD_DIR/$MODEL_FILE model.gguf
-printf "\n**********\n*\n* FINISHED: Copy Model.\n*\n**********\n\n"
-```
 
 ---
 ### Test Run
