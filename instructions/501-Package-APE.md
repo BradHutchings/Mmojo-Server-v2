@@ -27,6 +27,8 @@ This script create the packaging directories, copies the `mmojo-server-ape` file
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
+  unset SELECTED_MODEL
+  unset ADDED_MODEL
   ```
 
 ---
@@ -54,7 +56,46 @@ This script adds the Mmojo Complete user interface to the archive.
   ```
 
 ---
+### Add `.gguf` Model to Archive
+First, pick a model. This should be a script to list models in the `300-MODELS` directory. For now, paste one of the snippets below:
+```
+export SELECTED_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="Google-Gemma-9B-Instruct-v2-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="IBM-Granite-2B-Instruct-v3.3-q8_0.gguf"
+```
+```
+export SELECTED_MODEL="IBM-Granite-8B-Instruct-v3.3-q8_0.gguf"
+```
+
+This script adds the chosen `.gguf` model to the archive.
+- View the script: <a href="../scripts/501-Add-gguf-Model-to-APE.sh" target="_blank">501-Add-gguf-Model-to-APE.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
+  # Keep track of what we add below for the `default-args` file.
+  export ADDED_MODEL=1
+  ```
+
+---
 ### Add `default-args` File to Archive
+**Not implemented yet.**
+
 This script adds a `default-args` file to the archive. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that.
 - View the script: <a href="../scripts/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
 - Run the script.
