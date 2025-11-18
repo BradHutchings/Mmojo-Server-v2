@@ -22,7 +22,7 @@ This script clones the llamafile repo to `$BUILD_LLAMAFILE_DIR`, then builds it:
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   . mm-environment-variables.sh
-  . $MMOJO_SERVER_SCRIPTS/305-Clone-Build-llamafile.sh
+  . $MMOJO_SERVER_SCRIPTS/unofficial/305-Clone-Build-llamafile.sh
   ```
 
 Now, `zipalign` exists at `$BUILD_LLAMAFILE_DIR/bin/zipalign`.
