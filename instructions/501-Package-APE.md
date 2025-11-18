@@ -24,6 +24,9 @@ This script create the packaging directories, copies the `mmojo-server-ape` file
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/501-Start-Packaging-APE.sh
+  # Keep track of what we add below for the `default-args` file.
+  unset ADDED_CERTS
+  unset ADDED_MMOJO_COMPLETE
   ```
 
 ---
