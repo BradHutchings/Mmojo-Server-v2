@@ -16,8 +16,9 @@ if [ -v SELECTED_MODEL ]; then
   echo "Selected model: $SELECTED_MODEL"
   MODEL_FILE="$MODELS_DIR/$SELECTED_MODEL"
   if [ -f "$MODEL_FILE" ]; then
+    cd $MODELS_DIR
     echo "mm-zipalign-ing $MODEL_FILE."
-    $ZIPALIGN $PACKAGING_ZIP_FILE $MODEL_FILE
+    $ZIPALIGN $PACKAGING_ZIP_FILE $SELECTED_MODEL
   fi
 fi
 
