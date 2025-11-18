@@ -67,6 +67,11 @@ echo ""
 echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
 unzip -l $PACKAGING_ZIP_FILE 
 
+ehco ""
+echo "Cleaning up."
+mv $PACKAGE_MMOJO_SERVER_APE_FILE $PACKAGE_MMOJO_SERVER_FILE
+rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
+
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
