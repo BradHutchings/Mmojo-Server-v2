@@ -40,7 +40,7 @@ fi
 if [ $ADDED_MMOJO_COMPLETE ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --path
-/zip/website
+/zip/Mmojo-Complete
 --default-ui-endpoint
 chat
 EOF
@@ -49,7 +49,7 @@ fi
 if [ $ADDED_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --model
-$SELECTED_MODEL
+/zip/$SELECTED_MODEL
 EOF
 fi
 
