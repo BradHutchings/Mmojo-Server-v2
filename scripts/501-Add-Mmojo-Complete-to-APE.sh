@@ -24,7 +24,7 @@ cd $PACKAGE_DIR/$PACKAGE_APE
 zip -0 -r $PACKAGING_ZIP_FILE Mmojo-Complete/*
 
 echo ""
-echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
+echo "Contents of $PACKAGING_ZIP_FILE:"
 unzip -l $PACKAGING_ZIP_FILE 
 
 cd $HOME
