@@ -7,7 +7,7 @@
 # See licensing note at end.
 ################################################################################
 
-printf "\n**********\n*\n* STARTED: mm-update-local-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: mm-update-local-mmojo-server-repo.sh.\n*\n$STARS\n\n"
 
 if [ -d "$MMOJO_SERVER_DIR" ]; then
   WD=$(pwd)
@@ -29,7 +29,7 @@ else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-update-local-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: mm-update-local-mmojo-server-repo.sh.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
