@@ -10,6 +10,9 @@
 # See licensing note at end.
 ################################################################################
 
+export BUILD_LLAMAFILE_DIR="$HOME/300-BUILD-llamafile"
+
+
 if [ -d "$BUILD_LLAMAFILE_DIR" ]; then
     rm -r -f $BUILD_LLAMAFILE_DIR
 fi
