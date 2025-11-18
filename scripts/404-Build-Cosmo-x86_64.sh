@@ -23,8 +23,12 @@ export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
 export AR="cosmoar"
 
 # Make temporary change to CMake system so we link in static OpenSSL.
-cp common/CMakeLists.txt common/CMakeLists-orig.txt
-sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
+# cp common/CMakeLists.txt common/CMakeLists-orig.txt
+# sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
+
+# The OpenSSL linking got moved.
+cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
+sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' vendor/cpp-httplib/CMakeLists.txt
 
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_X86_64
@@ -32,7 +36,10 @@ cmake -B $BUILD_COSMO_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OP
     -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCOSMOCC=1
 
 # Revert to original CMake system.
-mv common/CMakeLists-orig.txt common/CMakeLists.txt
+# mv common/CMakeLists-orig.txt common/CMakeLists.txt
+
+# The OpenSSL linking got moved.
+mv vendor/cpp-httplib/CMakeLists-orig.txt vendor/cpp-httplib/CMakeLists.txt
 
 # Build
 cmake --build $BUILD_COSMO_X86_64 --config Release
