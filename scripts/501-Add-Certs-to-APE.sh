@@ -1,0 +1,44 @@
+#!/bin/bash
+
+################################################################################
+# This script adds certs from the Mmojo Share to the mmojo-server.zip packaging
+# file.
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  mount-mmojo-share.sh
+fi
+
+if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  CERTS="$PACKAGE_DIR/$PACKAGE_APE/certs"
+  mkdir -p $CERTS
+  cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
+  cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.key  $CERTS
+  cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
+  zip -0 -r $MMOJO_SERVER_ZIP certs/*
+fi
+
+echo ""
+echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
+unzip -l $PACKAGING_ZIP_FILE 
+
+cd $HOME
+
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
