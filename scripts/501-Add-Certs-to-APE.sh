@@ -22,7 +22,9 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
   cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.key  $CERTS
   cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
-  zip -0 -r $PACKAGING_ZIP_FILE $CERTS/*
+
+  cd $PACKAGE_DIR/$PACKAGE_APE
+  zip -0 -r $PACKAGING_ZIP_FILE certs/*
 fi
 
 echo ""
