@@ -56,8 +56,8 @@ This script adds the Mmojo Complete user interface to the archive.
   ```
 
 ---
-### Add `.gguf` Model to Archive
-First, pick a model. This should be a script to list models in the `300-MODELS` directory. For now, paste one of the snippets below:
+### Choose `.gguf` Model to Add to Archive
+Choose a model. This should be a script to list models in the `300-MODELS` directory. For now, paste one of the snippets below:
 ```
 export SELECTED_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
 ```
@@ -83,13 +83,17 @@ export SELECTED_MODEL="IBM-Granite-2B-Instruct-v3.3-q8_0.gguf"
 export SELECTED_MODEL="IBM-Granite-8B-Instruct-v3.3-q8_0.gguf"
 ```
 
+---
+### Add `.gguf` Model to Archive
 This script adds the chosen `.gguf` model to the archive.
 - View the script: <a href="../scripts/501-Add-gguf-Model-to-APE.sh" target="_blank">501-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
-  # Keep track of what we add below for the `default-args` file.
-  export ADDED_MODEL=1
+  if [ -v SELECTED_MODEL ]; then
+    $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
+    # Keep track of what we add below for the `default-args` file.
+    export ADDED_MODEL=1
+  fi
   ```
 
 ---
