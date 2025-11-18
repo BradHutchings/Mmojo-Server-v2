@@ -49,7 +49,7 @@ fi
 if [ $ADDED_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --model
-SELECTED_MODEL
+$SELECTED_MODEL
 EOF
 fi
 
