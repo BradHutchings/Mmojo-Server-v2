@@ -54,28 +54,17 @@ This script adds the Mmojo Complete user interface to the archive.
   ```
 
 ---
-### WORKING ON WHAT'S BELOW
+### Add `default-args` File to Archive
+This script adds a `default-args` file to the archive. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that.
+- View the script: <a href="../scripts/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/501-Add-default-args-to-APE.sh
+  ```
 
 ---
-### Create website Directory in Archive
+### WORKING ON WHAT'S BELOW
 
-`llama.cpp` has a built in chat UI. If you'd like to provide a custom UI, you should add a `website` directory to the `mmojo-server` archive. `llama.cpp`'s chat UI is optimized for serving inside the project's source code. But we can copy the unoptimized source:
-```
-mount-mmojo-share.sh
-mkdir website
-cp -r ~/$BUILD_MMOJO_SERVER_DIR/completion-ui/* website
-cp /mnt/mmojo/Mmojo-certs/selfsignCA.crt website/CA.crt
-zip -0 -r $MMOJO_SERVER_ZIP website/*
-printf "\n**********\n*\n* FINISHED: Create website Directory in Archive.\n*\n**********\n\n"
-```
-
-#### Verify website Directory in Archive
-
-Verify that the archive has your website:
-```
-unzip -l $MMOJO_SERVER_ZIP 
-printf "\n**********\n*\n* FINISHED: Verify website Directory in Archive.\n*\n**********\n\n"
-```
 
 ---
 ### Create default-args File in Archive
