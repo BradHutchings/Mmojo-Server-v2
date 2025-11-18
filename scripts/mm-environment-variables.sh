@@ -88,8 +88,9 @@ export PACKAGE_APE="package-ape"
 export PACKAGE_ZIP="package-zip"
 export PACKAGE_SEAS="package-seas"
 
-export PACKAGE_APE_FILE="mmojo-server"
-export PACKAGE_APE_ZIP_FILE="mmojo-server.zip"
+export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
+export PACKAGE_MMOJO_SERVER_APE_FILE="mmojo-server-ape"
+export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
