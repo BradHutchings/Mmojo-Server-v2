@@ -1,0 +1,52 @@
+#!/bin/bash
+
+################################################################################
+# This script builds llama.cpp with Mmojo Server extensions for the CPU of the
+# build environment machine and Vulkan GPU support. Thank you to Georgi Gerganov 
+# and his team for llama.cpp!
+#
+# https://github.com/ggml-org/llama.cpp
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+echo "Creating package directories."
+if [ ! -d "$PACKAGE_DIR" ]; then
+    mkdir -p "$PACKAGE_DIR"
+fi
+
+if [ ! -d "$PACKAGE_DIR/$PACKAGE_APE" ]; then
+    mkdir -p "$PACKAGE_DIR/$PACKAGE_APE"
+fi
+
+echo "Copying built mmojo-server-ape."
+BUILT_FILE="$BUILD_DIR/$BUILD_COSMO_APE/$PACKAGE_MMOJO_SERVER_APE_FILE"
+PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+if [ -f "$BUILT_FILE" ]; then
+  cp $BUILT_FILE $PACKAGING_ZIP_FILE
+fi
+
+echo "Removing extraneous time zone files from zip."
+zip -d $PACKAGING_ZIP_FILE "/usr/*"
+
+echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
+unzip -l $PACKAGING_ZIP_FILE 
+
+cd $HOME
+
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
