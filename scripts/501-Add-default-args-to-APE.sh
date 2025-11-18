@@ -64,12 +64,12 @@ echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
 zip -0 -r $PACKAGING_ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
 
 echo ""
-echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
+echo "Contents of $PACKAGING_ZIP_FILE:"
 unzip -l $PACKAGING_ZIP_FILE 
 
-ehco ""
+echo ""
 echo "Cleaning up."
-mv $PACKAGE_MMOJO_SERVER_APE_FILE $PACKAGE_MMOJO_SERVER_FILE
+mv $PACKAGING_ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
 rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
 
 cd $HOME
