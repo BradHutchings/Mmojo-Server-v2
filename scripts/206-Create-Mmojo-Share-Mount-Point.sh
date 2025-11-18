@@ -9,6 +9,9 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
+echo "Installing cifs-utils."
+sudo apt install -y cifs-utils
+
 #----------------------------------------
 # Create mpount point: /mnt/mmojo
 #----------------------------------------
