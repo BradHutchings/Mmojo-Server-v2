@@ -15,84 +15,16 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Create PACKAGE Directory
-This script creates the `500-PACKAGE` directory, creates a `package-ape` subdirectory, and copies the APE we previously built into that subdirectory.
-- View the script: <a href="../scripts/501-Create-Directories.sh" target="_blank">501-Create-Directories.sh</a>.
+### Start Packaging APE
+This script create the packaging directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
+- View the script: <a href="../scripts/501-Start-Packaging-APE.sh" target="_blank">501-Start-Packaging-APE.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Create-Directories.sh
+  $MMOJO_SERVER_SCRIPTS/501-Start-Packaging-APE.sh
   ```
-
-<details>
-  <summary><b>Optional: Examine Contents of `.zip` File</b></summary>
-
-Examine the contents of the `.zip` file. You will see extraneous timezone files that we need to remove.
-- Run this command:
-  ```
-  unzip -l $PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_APE_ZIP_FILE 
-  ```
-</details>
-
----
-### Delete Extraneous Timezone Files
-Let's delete the extraneous timezone files in the `mmojo-server.zip` file. Run this command:
-```
-zip -d $PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_APE_ZIP_FILE "/usr/*"
-```
-
-<details>
-  <summary><b>Optional: Examine Contents of `.zip` File</b></summary>
-
-Examine the contents of the `.zip` file. You will see that extraneous timezone files have been removed.
-- Run this command:
-  ```
-  unzip -l $PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_APE_ZIP_FILE 
-  ```
-</details>
-
-<!--
----
-### Create PACKAGE Directory
-
-Next, let's create a directory where we'll package `mmojo-server`. We copy `mmojo-server` to the directory as `mmojo-server.zip` because the `zip` command will not add or delete files to an archive that does not have a `.` in the name. Crazy, right?
-```
-cd ~
-rm -r -f ~/$PACKAGE_DIR
-mkdir -p $PACKAGE_DIR
-cp ~/$BUILD_COSMO_DIR/$MMOJO_SERVER_COSMO ~/$PACKAGE_DIR/$MMOJO_SERVER_ZIP
-cd ~/$PACKAGE_DIR
-printf "\n**********\n*\n* FINISHED: Create PACKAGE Directory.\n*\n**********\n\n"
-```
-
----
-### Examine Contents of Zip Archive
-
-Look at the contents of the `mmojo.server.zip` archive:
-```
-unzip -l $MMOJO_SERVER_ZIP 
-printf "\n**********\n*\n* FINISHED: Examine Contents of Zip Archive.\n*\n**********\n\n"
-```
-
----
-### Delete Extraneous Timezone Files
-
-You should notice a bunch of extraneous timezone related files in `/usr/*`. Let's get rid of those:
-```
-zip -d $MMOJO_SERVER_ZIP "/usr/*"
-printf "\n**********\n*\n* FINISHED: Delete Extraneous Timezone Files.\n*\n**********\n\n"
-```
-
-#### Verify Contents of Zip Archive
-
-Verify that these files are no longer in the archive:
-```
-unzip -l $MMOJO_SERVER_ZIP 
-printf "\n**********\n*\n* FINISHED: Verify Contents of Zip Archive.\n*\n**********\n\n"
-```
--->
 
 ---
 ### WORKING ON WHAT'S BELOW
