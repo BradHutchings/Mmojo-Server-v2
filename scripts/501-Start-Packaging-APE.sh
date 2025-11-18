@@ -33,7 +33,7 @@ echo "Removing extraneous time zone files from zip."
 zip -d $PACKAGING_ZIP_FILE "/usr/*"
 
 echo ""
-echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
+echo "Contents of $PACKAGING_ZIP_FILE:"
 unzip -l $PACKAGING_ZIP_FILE 
 
 cd $HOME
