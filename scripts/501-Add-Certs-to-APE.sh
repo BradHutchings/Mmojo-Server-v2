@@ -16,7 +16,7 @@ if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   mm-mount-mmojo-share.sh
 fi
 
-if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   CERTS="$PACKAGE_DIR/$PACKAGE_APE/certs"
   mkdir -p $CERTS
   cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
