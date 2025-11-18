@@ -13,7 +13,8 @@
 # See licensing note at end.
 ################################################################################
 
-printf "\n**********\n*\n* STARTED: mm-environment-variables.sh.\n*\n**********\n\n"
+export STARS="****************************************"
+printf "\n$STARS\n*\n* STARTED: mm-environment-variables.sh.\n*\n$STARS\n\n"
 
 cd $HOME
 
@@ -108,7 +109,7 @@ if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-environment-variables.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: mm-environment-variables.sh.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
