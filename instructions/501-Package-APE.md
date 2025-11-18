@@ -30,28 +30,31 @@ This script create the packaging directories, copies the `mmojo-server-ape` file
   ```
 
 ---
-### WORKING ON WHAT'S BELOW
----
 ### Add Certs to Archive
+This script adds SSL certificates from the Mmojo Share to the archive.
+- View the script: <a href="../scripts/501-Add-Certs-to-APE.sh" target="_blank">501-Add-Certs-to-APE.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/501-Add-Certs-to-APE.sh
+  # Keep track of what we add below for the `default-args` file.
+  export ADDED_CERTS=1
+  ```
 
-Add self-signed certs to the archive. CA cert is added to the website folder.
-```
-mount-mmojo-share.sh
-mkdir certs
-cp /mnt/mmojo/Mmojo-certs/mmojo.local.crt certs
-cp /mnt/mmojo/Mmojo-certs/mmojo.local.key certs
-cp /mnt/mmojo/Mmojo-certs/selfsignCA.crt certs
-zip -0 -r $MMOJO_SERVER_ZIP certs/*
-printf "\n**********\n*\n* FINISHED: Add Certs to Archive.\n*\n**********\n\n"
-```
+*Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
 
-#### Verify certs Directory in Archive
+---
+### Add Mmojo Complete UI to Archive
+This script adds the Mmojo Complete user interface to the archive.
+- View the script: <a href="../scripts/501-Add-Mmojo-Complete-to-APE.sh" target="_blank">501-Add-Mmojo-Complete-to-APE.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
+  # Keep track of what we add below for the `default-args` file.
+  export ADDED_MMOJO_COMPLETE=1
+  ```
 
-Verify that the archive has your certs:
-```
-unzip -l $MMOJO_SERVER_ZIP 
-printf "\n**********\n*\n* FINISHED: Verify certs Directory in Archive.\n*\n**********\n\n"
-```
+---
+### WORKING ON WHAT'S BELOW
 
 ---
 ### Create website Directory in Archive
