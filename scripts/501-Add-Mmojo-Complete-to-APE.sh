@@ -15,13 +15,13 @@ WEBSITE="$PACKAGE_DIR/$PACKAGE_APE/Mmojo-Complete"
 mkdir -p $WEBSITE
 cp -r $BUILD_DIR/Mmojo-Complete/* $WEBSITE
 
-cd $PACKAGE_DIR/$PACKAGE_APE
-zip -0 -r $PACKAGING_ZIP_FILE Mmojo-Complete/*
-
 CA_FILE="$PACKAGE_DIR/$PACKAGE_APE/certs/selfsignCA.crt"
 if [ -f "$CA_FILE" ]; then
-  zip -0 -r $CA_FILE Mmojo-Complete/CA.crt
+  cp $CA_FILE $WEBSITE/CA.crt
 fi
+
+cd $PACKAGE_DIR/$PACKAGE_APE
+zip -0 -r $PACKAGING_ZIP_FILE Mmojo-Complete/*
 
 echo ""
 echo "Contents of $PACKAGE_MMOJO_SERVER_APE_FILE:"
