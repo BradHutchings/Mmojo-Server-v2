@@ -1,7 +1,10 @@
 #!/bin/bash
 
 ################################################################################
-# This script downloads models from Hugging Face.
+# This script copies the packaged APE version of Mmojo Server to the Mmojo
+# Share.
+#
+# https://github.com/ggml-org/llama.cpp
 #
 # See licensing note at end.
 ################################################################################
@@ -9,30 +12,21 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-DownloadModel() {
-  MODEL_FILE=$1
-  URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
-  if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
-}
+mm-mount-mmojo-share.sh
 
-cd $MODELS_DIR
-unset apefiles
-declare -A apefiles
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  echo "Creating directories on Mmojo Share."
+  sudo mkdir -p $MMOJO_SHARE_PACKAGES
+  sudo mkdir -p $MMOJO_SHARE_PACKAGES_APE
 
-while IFS=$' ' read -r gguf apefile ; do
-  if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
-    apefiles["${gguf}"]="${apefile}"
+  if [ -d "$MMOJO_SHARE_PACKAGES_APE" ]; then
+    echo "Copying mmojo-server to Mmojo Share."
+    sudo cp -f $PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE $MMOJO_SHARE_PACKAGES_APE/$PACKAGE_MMOJO_SERVER_FILE
+    sudo cp -f $PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE $MMOJO_SHARE_PACKAGES_APE/$PACKAGE_MMOJO_SERVER_EXE_FILE
   fi
-done < "$MODEL_MAP"
-
-for key in "${!apefiles[@]}"; do
-  DownloadModel $key 
-done
+fi
 
 cd $HOME
-
-echo -e "\nModels directory:"
-ls -al $MODELS_DIR/*.gguf
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 

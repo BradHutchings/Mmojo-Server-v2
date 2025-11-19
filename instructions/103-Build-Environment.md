@@ -3,13 +3,13 @@
 Your Mmojo Server build environment will consist of one or more build systems, depending on what you're trying to build. 
 
 - The Mmojo Server Actual Portable Executable (APE) can be built on one Linux system running on either an x86_64 or an aarch64 (arm64) CPU.
-- Other than the APE, cross-platform (OS and/or architecture) builds don't work well with llama.cpp. You should build on the deployment platform for the deployment platform. So...
+- Other than the APE, cross-platform (OS and/or architecture) builds don't work well with llama.cpp. You should build for the deployment platform on the deployment platform. So...
   - **You will need multiple build environments.**
 - You should keep your build environments from polluting and being polluted by your everyday work. You will want to rebuild them from scratch occasionally / often. A build environment dedicated to building Mmojo Server will work best for you. So...
   - **Your build environments, ideally, will be containers, virtual machines (VMs), Windows Subsystem for Linux (WSL) instances, etc. Less than ideally, bootable thumb drives for e.g. Raspberry Pi.**
 - GPU SDKs and Toolkits are typically available for hardware and operating systems the GPU drivers run on. You'll want to test GPU performance of your builds. So...
   - **You will usually need to build directly on hardware that has the GPU you want your build to use.**
-  - WSL provides a working bridge CUDA / NVIDIA GPUs.
+  - WSL provides a working bridge for CUDA / NVIDIA GPUs.
   - WSL does not provide a working bridge for Vulkan.
   - VMs typically don't provide GPU support. Where they do, they require advanced setup.
  
@@ -23,7 +23,7 @@ A file share that is accessible to all of your build systems will help you coord
 ### WSL vs Windows
 Windows Subsystem for Linux (WSL) lets you run a full Linux distribution directly on Windows. For building and deploying Mmojo Server for Windows computers, it offers a few advantages and disadvantages over the native Windows environment:
 
-1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Execiutable (APE) file containing an LLM in the 4B parameter range or higher!
+1. (Advantage WSL): No executable size limit. Windows itself has a 4 GB `.exe` size limit. For Mmojo Server, this means we cannot run an Actual Portable Executable (APE) file containing an LLM in the 4B parameter range or higher!
 2. (Advantage WSL): If you have NVIDIA drivers installed on your Windows host for a GPU that supports CUDA, you can run CUDA software from within WSL.
 3. (Advantage WSL): I don't have instructions for building directly on or for Windows (yet).
 4. (Advantage Windows): Vulkan demonstration software can be run with experimental, hard to find bridge software installed within WSL. The bridge software does not work well for Mmojo Server.

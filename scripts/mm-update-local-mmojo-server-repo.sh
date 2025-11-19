@@ -7,7 +7,7 @@
 # See licensing note at end.
 ################################################################################
 
-printf "\n**********\n*\n* STARTED: mm-update-local-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: mm-update-local-mmojo-server-repo.sh.\n*\n$STARS\n\n"
 
 if [ -d "$MMOJO_SERVER_DIR" ]; then
   WD=$(pwd)
@@ -20,7 +20,7 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
   chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
   chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
-  # chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
+  chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
 
   ### Links don't work - end up modifying repo files on chmod.
   cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
@@ -29,7 +29,7 @@ else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-update-local-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: mm-update-local-mmojo-server-repo.sh.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

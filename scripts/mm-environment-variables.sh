@@ -13,7 +13,8 @@
 # See licensing note at end.
 ################################################################################
 
-printf "\n**********\n*\n* STARTED: mm-environment-variables.sh.\n*\n**********\n\n"
+export STARS="****************************************"
+printf "\n$STARS\n*\n* STARTED: mm-environment-variables.sh.\n*\n$STARS\n\n"
 
 cd $HOME
 
@@ -37,6 +38,9 @@ export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
 export MMOJO_SHARE_BUILDS_CPU="$MMOJO_SHARE_BUILDS/cpu"
 export MMOJO_SHARE_BUILDS_CUDA="$MMOJO_SHARE_BUILDS/cuda"
 export MMOJO_SHARE_BUILDS_VULKAN="$MMOJO_SHARE_BUILDS/vulkan"
+export MMOJO_SHARE_PACKAGES="$MMOJO_SHARE_MOUNT_POINT/packages"
+export MMOJO_SHARE_PACKAGES_APE="$MMOJO_SHARE_PACKAGES/ape"
+
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
 # Prefix is 300- so we can wipe them out quickly, and changing script numbers doesn't mess stuff up.
@@ -88,8 +92,12 @@ export PACKAGE_APE="package-ape"
 export PACKAGE_ZIP="package-zip"
 export PACKAGE_SEAS="package-seas"
 
-export PACKAGE_APE_FILE="mmojo-server"
-export PACKAGE_APE_ZIP_FILE="mmojo-server.zip"
+export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
+export PACKAGE_MMOJO_SERVER_APE_FILE="mmojo-server-ape"
+export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
+export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
+# Change this to "mmojo-server-args", update server-mmojo.cpp.
+export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
@@ -107,7 +115,8 @@ if [ -z "$SAVE_PATH" ]; then
   export SAVE_PATH=$PATH
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-environment-variables.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: mm-environment-variables.sh.\n*\n$STARS\n\n"
+
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

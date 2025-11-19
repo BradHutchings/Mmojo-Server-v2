@@ -7,8 +7,14 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
+echo "Installing system updates."
+sudo apt update
+sudo apt upgrade -y
+
+echo ""
+echo "Installing dependencies."
 sudo apt install -y \
     bison build-essential clang-format cmake g++ \
     gcc git libbz2-dev libffi-dev libglm-dev \
@@ -19,9 +25,9 @@ sudo apt install -y \
     libxrandr-dev libzstd-dev ninja-build npm ocaml-core \
     pkg-config python3 python3-pip python3-tk qt5-qmake \
     qtbase5-dev qtbase5-dev-tools qtcreator tk-dev wayland-protocols \
-    xz-utils zip zlib1g-dev 
+    xz-utils zip zlib1g-dev cifs-utils
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

@@ -2,7 +2,7 @@
 
 ################################################################################
 # This script builds llama.cpp with Mmojo Server extensions for the CPU of the
-# build environment machine and CUDA GPU support. Thank you to Georgi Gerganov 
+# build environment machine and Vulkan GPU support. Thank you to Georgi Gerganov 
 # and his team for llama.cpp!
 #
 # https://github.com/ggml-org/llama.cpp
@@ -13,25 +13,28 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
-
-if [ "$BUILD_PROFILE" ]; then
-    export CC="cc -pg "
-    export CXX="c++ -pg "
+echo "Creating package directories."
+if [ ! -d "$PACKAGE_DIR" ]; then
+    mkdir -p "$PACKAGE_DIR"
 fi
 
-# TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
+if [ ! -d "$PACKAGE_DIR/$PACKAGE_APE" ]; then
+    mkdir -p "$PACKAGE_DIR/$PACKAGE_APE"
+fi
 
-rm -r -f $BUILD_DIR/$BUILD_CUDA
-cmake -B $BUILD_CUDA -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON # -DCMAKE_VERBOSE_MAKEFILE=ON 
-cmake --build $BUILD_CUDA
+echo "Copying built mmojo-server-ape."
+BUILT_FILE="$BUILD_DIR/$BUILD_COSMO_APE/$PACKAGE_MMOJO_SERVER_APE_FILE"
+PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+if [ -f "$BUILT_FILE" ]; then
+  cp $BUILT_FILE $PACKAGING_ZIP_FILE
+fi
 
-# Show off what we built
-printf "\nBuild of llama.cpp with CUDA support is complete.\n\n"
-printf "\$ ls -al $BUILD_DIR/$BUILD_CUDA/bin/\n"
-ls -al $BUILD_DIR/$BUILD_CUDA/bin
-printf "\n"
+echo "Removing extraneous time zone files from zip."
+zip -d $PACKAGING_ZIP_FILE "/usr/*"
+
+echo ""
+echo "Contents of $PACKAGING_ZIP_FILE:"
+unzip -l $PACKAGING_ZIP_FILE 
 
 cd $HOME
 

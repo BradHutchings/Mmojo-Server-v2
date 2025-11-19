@@ -1,22 +1,34 @@
 #!/bin/bash
 
 ################################################################################
-# This script is a convenient script for showing what the current CC, CXX, and 
-# AR build tools are. If you stick to running whole scripts from the docs, 
-# these should always be empty - unset at the end of specific build scripts.
+# This script adds certs from the Mmojo Share to the mmojo-server.zip packaging
+# file.
 #
 # See licensing note at end.
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-echo "Environment build tool values:" 
-echo "   CC: $CC"
-echo "  CXX: $CXX"
-echo "   AR: $AR"
+PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+if [ -v SELECTED_MODEL ]; then
+  echo "Selected model: $SELECTED_MODEL"
+  MODEL_FILE="$MODELS_DIR/$SELECTED_MODEL"
+  if [ -f "$MODEL_FILE" ]; then
+    cd $MODELS_DIR
+    echo "mm-zipalign-ing $MODEL_FILE."
+    $ZIPALIGN $PACKAGING_ZIP_FILE $SELECTED_MODEL
+  fi
+fi
+
+echo ""
+echo "Contents of $PACKAGING_ZIP_FILE:"
+unzip -l $PACKAGING_ZIP_FILE 
+
+cd $HOME
+
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

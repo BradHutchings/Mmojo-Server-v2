@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 # This copies the $MMOJO_SERVER_FILES tree into the $BUILD_DIR tree.
 cp -r $MMOJO_SERVER_FILES/* $BUILD_DIR/
@@ -33,10 +33,6 @@ sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/set(TARGET llama-server)/set(TARGET mmojo-server)/g' tools/server/CMakeLists.txt
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
 
-# Delete the rejection test for OpenSSL. Might be a candidate for temporary cosmo build fix.
-sed -i -e '/#include <openssl\/opensslv.h>/d' common/CMakeLists.txt
-sed -i -e '/error bad version/d' common/CMakeLists.txt
-
 # In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
 sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 
@@ -45,7 +41,7 @@ sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
