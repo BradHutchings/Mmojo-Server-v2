@@ -10,16 +10,16 @@ The obvious question is why there need to be build targets if we have Actually P
 ### Benchmarks
 I have a home-grown benchmark for evaluating my Mmojo Server builds. It is using Mmojo Complete to summarize a particular one-hour podcast transcript. The transcript comes from YouTube and has been massaged to remove timestamps and other formatting. I time how long the evaluating step takes.
 
-Here are the results of running the benchmark in a Windows Subsystem for Linux (WSL) instance on my 12-gen i7-12700H Dell Laptop with 64 GB RAM and NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GPU RAM). I run an APE, an unoptimized "Debug" build, an optimized CPU Build, and an optimized CPU with CUDA build. `mmojo-server` is invoked with the default number of available threads, which are half the CPU threads available. The input has 17,272 tokens. I'm using Google Gemma 1B Instruct v3 (`Google-Gemma-1B-Instruct-v3-q8_0.gguf`), which you'll typically use to test builds.
+Here are the results of running the benchmark in a Windows Subsystem for Linux (WSL) instance on my 12-gen i7-12700H Dell Laptop with 64 GB RAM and NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GPU RAM). I run an unoptimized "Debug" build, an APE, an optimized CPU Build, and an optimized CPU with CUDA build. `mmojo-server` is invoked with the default number of available threads, which are half (10) the CPU threads available (20) on this system. The input has 17,272 tokens. I'm using Google Gemma 1B Instruct v3 (`Google-Gemma-1B-Instruct-v3-q8_0.gguf`), which you'll typically use to test builds.
 
 | Build              | Evaulation Time | Notes                                                 |
 | :-------           | :------         | -------:                                              |
-| Unoptimized Debug  | 22:16           | Tuned CPU but unoptimized code.                       |
-| APE                | 11:00           | Static libraries and generic optimized compile.       |
-| Optimized CPU      | 1:41            | Compiler can save a lot of work for a particular CPU. |
+| Unoptimized Debug  | 24:17           | Tuned CPU but unoptimized compile.                    |
+| APE                | 11:34           | Static libraries and generic optimized compile.       |
+| Optimized CPU      | 1:45            | Compiler can save a lot of work for a particular CPU. |
 | CUDA               | 0:07            | This is what user eventually want.                    |
 
-(This would be a good place for Raspberry Pi metrics &mdash; APE and CPU.)
+(This would be a good place for Raspberry Pi and GMKtec N97 benchmarks &mdash; APE and CPU. I will have them soon. -Brad)
 
 ---
 ### Build Targets
