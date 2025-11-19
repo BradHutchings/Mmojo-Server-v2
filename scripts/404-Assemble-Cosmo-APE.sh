@@ -21,6 +21,7 @@ apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
 	-o $BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape \
+	-M ./cosmocc/bin/ape-m1.c \
     $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server \
     $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server
 
@@ -28,8 +29,11 @@ apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
 	-o $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+	-M ./cosmocc/bin/ape-m1.c \
     $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
     $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
+
+# Thanks to Davide Eynard for the -M line to support Macs.
 
 cp $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
