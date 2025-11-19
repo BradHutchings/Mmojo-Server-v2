@@ -2,11 +2,11 @@
 
 **[Get Started Now!](instructions/-Start-Here-TOC.md)**
 
-Welcome to Mmojo Server version 2! This project makes it easy to build and package the LLM server and other software from llama.cpp with some carefully selected extensions and enhancements. Highlights:
+Welcome to Mmojo Server version 2! This project makes building and packaging the LLM server and other software from llama.cpp easy and approachable, with some carefully selected extensions and enhancements. Highlights:
 - Build and package Actual Portable Executable (APE) files that run on Linux, Windows, macOS operating systems across x86_64 and aarch64 (ARM64) architectures.
   - I am inspired by the original llamafile project.
-  - APE files can contain an LLM, user interface, certificates, and other support files.
-  - Download and run the same executable file on x86_64 Linux and an ARM Raspberry Pi.
+  - APE files can contain an LLM, user interface, certificates, and other support files &mdash; in one single executable file.
+  - Download and run the same executable file on x86_64 Linux and an ARM Raspberry Pi (for example).
 - Build and package CPU-optimized and GPU-enabled executables that run on specific operating systems and CPU architectures.
 - Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
 - Instructions (aka "documentation") are extensive, continually maintained, and easy to follow.
@@ -18,8 +18,8 @@ End-users should be able to easily get started with the APE build, then upgrade 
 I want Mmojo Server to be the easiest way for developers to build llama.cpp and to foster greater and wider understanding of how llama.cpp works. I don't want my project to be a hair pulling and muscle flexing exercise for developers like most open source software turns out to be.
 
 I use Mmojo Server for my own consulting and commercial offerings. There is no fluff in this project driven by hypothetical use cases, surveys, or discussion board warriors. I do not solicit or accept pull requests from strangers. I do not use LLMs to write the documentation or provide more than sample code to guide my coding. You can depend on Mmojo Server to be maintained and remain relevant.
- 
-Mmojo Server version 2 is currently a near final draft, but more useful in practice than version 1. For now, I have archived version 1 in the [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). 
+
+For those of you hoping to find the original Mmojo Server, it is arhcived here: [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). I urge you to switch over to this new version now.
 
 Get started now by diving into the [Mmojo Server Instructions](instructions/-Start-Here-TOC.md). Read through it. Start doing it!
 
