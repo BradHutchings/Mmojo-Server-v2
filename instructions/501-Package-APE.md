@@ -109,37 +109,50 @@ This script adds a `default-args` file to the archive. If you added certs and/or
   ```
 
 ---
-### WORKING ON WHAT'S BELOW
-
-
----
-### Test Run
+### Test Run - localhost
 
 Now we can test run `mmojo-server`, listening on localhost:8080.
 ```
-./$MMOJO_SERVER
+$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE
 ```
 
 After starting up and loading the model, it should display:
 
-**main: server is listening on https://127.0.0.1:8080 - starting the main loop**<br/>
+**main: server is listening on `http://127.0.0.1:8080` - starting the main loop**<br/>
 **srv  update_slots: all slots are idle**
 
 Hit `ctrl-C` on your keyboard to stop it.
 
-#### Test Run on Public Interfaces
+If you added SSL certificates, you can connect to the server with `https`:
+- [https://localhost:8080](https://127.0.0.1:8080)
+- The message about the server listening on `http://127.0.0.1:8080` is incorrect.
+
+If you did not add SSL cxertificates, you can connect to the server with `http`:
+- [http://localhost:8080](http://127.0.0.1:8080) 
+
+---
+### Test Run on Public Interfaces
 
 If you'd like it to listen on all available interfaces, so you can connect from a browser on another computer:
 ```
-./$MMOJO_SERVER --host 0.0.0.0
+$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
 ```
 
 After starting up and loading the model, it should display:
 
-**main: server is listening on https://0.0.0.0:8080 - starting the main loop**<br/>
+**main: server is listening on `https://0.0.0.0:8080` - starting the main loop**<br/>
 **srv  update_slots: all slots are idle**
 
 Hit `ctrl-C` on your keyboard to stop it.
+If you added SSL certificates, you can connect to the server with `https`:
+- https://[host-name-or-ip]:8080
+- The message about the server listening on `http://127.0.0.1:8080` is incorrect.
+
+If you did not add SSL cxertificates, you can connect to the server with `http`:
+- http://[host-name-or-ip]:8080
+
+---
+### WORKING ON WHAT'S BELOW
 
 ---
 ### Copy mmojo-server for Deployment
