@@ -33,10 +33,6 @@ sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/set(TARGET llama-server)/set(TARGET mmojo-server)/g' tools/server/CMakeLists.txt
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
 
-# Delete the rejection test for OpenSSL. Might be a candidate for temporary cosmo build fix.
-sed -i -e '/#include <openssl\/opensslv.h>/d' common/CMakeLists.txt
-sed -i -e '/error bad version/d' common/CMakeLists.txt
-
 # In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
 sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 
