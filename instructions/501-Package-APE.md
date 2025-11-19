@@ -109,7 +109,7 @@ This script adds a `default-args` file to the archive. If you added certs and/or
   ```
 
 ---
-### Test Run - localhost
+### Test Run on localhost
 
 Now we can test run `mmojo-server`, listening on localhost:8080.
 ```
@@ -128,7 +128,9 @@ If you added SSL certificates, you can connect to the server with `https`:
 - The message about the server listening on `http://127.0.0.1:8080` is incorrect.
 
 If you did not add SSL cxertificates, you can connect to the server with `http`:
-- [http://localhost:8080](http://127.0.0.1:8080) 
+- [http://localhost:8080](http://127.0.0.1:8080)
+
+If you're building in WSL, your Windows web browser should be able to connect to the Mmojo Server with the localhost links above.
 
 ---
 ### Test Run on Public Interfaces
