@@ -95,6 +95,7 @@ export PACKAGE_SEAS="package-seas"
 export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
 export PACKAGE_MMOJO_SERVER_APE_FILE="mmojo-server-ape"
 export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
+export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 # Change this to "mmojo-server-args", update server-mmojo.cpp.
 export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 
