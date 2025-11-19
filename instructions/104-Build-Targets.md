@@ -13,13 +13,29 @@ I have a home-grown benchmark for evaluating my Mmojo Server builds. It is using
 Here are the results of running the benchmark in a Windows Subsystem for Linux (WSL) instance on my 12-gen i7-12700H Dell Laptop with 64 GB RAM and NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GPU RAM). I run an unoptimized "Debug" build, an APE, an optimized CPU Build, and an optimized CPU with CUDA build. `mmojo-server` is invoked with the default number of available threads, which are half (10) the CPU threads available (20) on this system. The input has 17,272 tokens. I'm using Google Gemma 1B Instruct v3 (`Google-Gemma-1B-Instruct-v3-q8_0.gguf`), which you'll typically use to test builds.
 
 | Build              | Evaulation Time | Notes                                                 |
-| :-------           | :------         | -------:                                              |
+| :-------           | ------:         | -------:                                              |
 | Unoptimized Debug  | 24:17           | Tuned CPU but unoptimized compile.                    |
 | APE                | 11:34           | Static libraries and generic optimized compile.       |
-| Optimized CPU      | 1:45            | Compiler can save a lot of work for a particular CPU. |
-| CUDA               | 0:07            | This is what user eventually want.                    |
+| Optimized CPU      |  1:45           | Compiler can save a lot of work for a particular CPU. |
+| CUDA               |  0:07           | This is what users eventually want.                   |
 
-(This would be a good place for Raspberry Pi and GMKtec N97 benchmarks &mdash; APE and CPU. I will have them soon. -Brad)
+Same benchmarks on a Raspberry Pi 5 (8 GB RAM), running 4 threads. There is no workable GPU path on stock Pi 5.
+
+| Build              | Evaulation Time | Notes                                                 |
+| :-------           | ------:         | -------:                                              |
+| Unoptimized Debug  | 1:31:30         | Tuned CPU but unoptimized compile.                    |
+| APE                |   13:26         | On $150-ish worth of compute vs. $1200 above.         |
+| Optimized CPU      |    7:13         | Compiler can save a lot of work for a particular CPU. |
+
+Same benchmarks for a GKMTec NUC with Intel N97, 12 GB RAM, running 4 threads. No GPU available.
+
+| Build              | Evaulation Time | Notes                                                 |
+| :-------           | ------:         | -------:                                              |
+| Unoptimized Debug  | 1:00:20         | Tuned CPU but unoptimized compile.                    |
+| APE                |   44:58         | On $220-ish worth of compute vs. $150 Raspberry Pi.   |
+| Optimized CPU      |    7:49         | Compiler can save a lot of work for a particular CPU. |
+
+Notice how mighty the little Raspberry Pi 5 is on CPU performance!
 
 ---
 ### Build Targets
