@@ -19,7 +19,7 @@ I want Mmojo Server to be the easiest way for developers to build llama.cpp and 
 
 I use Mmojo Server for my own consulting and commercial offerings. There is no fluff in this project driven by hypothetical use cases, surveys, or discussion board warriors. I do not solicit or accept pull requests from strangers. I do not use LLMs to write the documentation or provide more than sample code to guide my coding. You can depend on Mmojo Server to be maintained and remain relevant.
 
-For those of you hoping to find the original Mmojo Server, it is arhcived here: [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). I urge you to switch over to this new version now.
+For those of you hoping to find the original Mmojo Server, it is archived here: [Mmojo-Server-v1 repo](https://github.com/BradHutchings/Mmojo-Server-v1). I urge you to switch over to this new version now.
 
 Get started now by diving into the [Mmojo Server Instructions](instructions/-Start-Here-TOC.md). Read through it. Start doing it!
 
