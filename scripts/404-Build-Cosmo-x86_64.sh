@@ -22,13 +22,14 @@ export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
 export AR="cosmoar"
 
-# Make temporary change to CMake system so we link in static OpenSSL.
-# cp common/CMakeLists.txt common/CMakeLists-orig.txt
-# sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
-
 # The OpenSSL linking got moved.
 cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
+
+# Make temporary change to CMake system so we link in static OpenSSL.
 sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' vendor/cpp-httplib/CMakeLists.txt
+# Delete the rejection test for OpenSSL.
+sed -i -e '/#include <openssl\/opensslv.h>/d' vendor/cpp-httplib/CMakeLists.txt
+sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_X86_64
