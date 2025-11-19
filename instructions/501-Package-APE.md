@@ -153,20 +153,16 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
----
-### WORKING ON WHAT'S BELOW
 
 ---
-### Copy mmojo-server for Deployment
-Congratulations! You are ready to copy `mmojo-server` executable to the share for deployment. These commands use Brad's `mount-host-share.sh` script and `/mnt/hyperv` share.
+### Copy mmojo-server to Mmojo Share
+This script copies the packaged `mmojo-server` to your Mmojo Share.
+- View the script: <a href="../scripts/501-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">501-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/501-Copy-APE-Package-to-Mmojo-Share.sh
+  ```
 
-```
-mount-mmojo-share.sh
-sudo cp $MMOJO_SERVER /mnt/mmojo/Mmojo-Server/mmojo-server/$MMOJO_SERVER
-sudo cp $MMOJO_SERVER /mnt/mmojo/Mmojo-Server/mmojo-server/$MMOJO_SERVER.exe
-sudo cp $MMOJO_SERVER /mnt/mmojo/Mmojo-Raspberry-Pi/Mmojo-LLMs/$MMOJO_SERVER
-printf "\n**********\n*\n* FINISHED: Copy mmojo-server for Deployment.\n*\n**********\n\n"
-```
 ---
 ### Proceed
 - **Next:** [502. Package zip](502-Package-zip.md)
