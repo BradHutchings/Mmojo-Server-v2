@@ -74,7 +74,7 @@ mv $PACKAGING_ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
 rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
 
 echo ""
-echo "Listing packaging directory:"
+echo "Listing packaging directory: $PACKAGE_DIR/$PACKAGE_APE"
 ls -al $PACKAGE_DIR/$PACKAGE_APE
 
 cd $HOME
