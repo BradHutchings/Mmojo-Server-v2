@@ -38,6 +38,9 @@ export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
 export MMOJO_SHARE_BUILDS_CPU="$MMOJO_SHARE_BUILDS/cpu"
 export MMOJO_SHARE_BUILDS_CUDA="$MMOJO_SHARE_BUILDS/cuda"
 export MMOJO_SHARE_BUILDS_VULKAN="$MMOJO_SHARE_BUILDS/vulkan"
+export MMOJO_SHARE_PACKAGES="$MMOJO_SHARE_MOUNT_POINT/packages"
+export MMOJO_SHARE_PACKAGES_APE="$MMOJO_SHARE_PACKAGES/ape"
+
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
 # Prefix is 300- so we can wipe them out quickly, and changing script numbers doesn't mess stuff up.
