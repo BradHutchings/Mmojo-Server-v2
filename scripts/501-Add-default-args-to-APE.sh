@@ -73,6 +73,10 @@ echo "Cleaning up."
 mv $PACKAGING_ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
 rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
 
+echo ""
+echo "Listing packaging directory:"
+ls -al $PACKAGE_DIR/$PACKAGE_APE
+
 cd $HOME
 
 printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
