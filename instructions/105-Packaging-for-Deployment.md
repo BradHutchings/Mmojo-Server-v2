@@ -1,6 +1,6 @@
 ## 105. Packaging for Deployment
 ### Packaging for Deployment
-I need to expand on these.
+I need to expand on these. But I need to get Mmojo Server version 2 out first!
 
 Philosophy:
 - It should be easy for any user &mdash; from a developer wanting to work locally with agents to your Mom, who just wants an occasional recipe &mdash; to install software that just works right out of the box.
