@@ -26,10 +26,6 @@ Here are the things you need to do:
 - [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
 - [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
 - [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
-<!--
-- [207. Set up Cross Compile - aarch64 on x86_64](207-Set-up-Cross-Compile-aarch64-on-x86_64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
-- [208. Set up Cross Compile - x86_64 on aarch64](208-Set-up-Cross-Compile-x86_64-on-aarch64.md) - Cross compiling architecture-specific Linux builds might work well in the future.
--->
 
 **Get Started:** [201. Prepare WSL](201-Prepare-WSL.md)
 
