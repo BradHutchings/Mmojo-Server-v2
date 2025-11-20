@@ -95,7 +95,9 @@ if [ -v CHOSEN_BUILD ]; then
     export CHOSEN_BUILD_INFO=$cbi
 fi
 
-echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_INFO -- $CHOSEN_BUILD_PATH"
+echo ""
+echo "Your chosen build, build info, build path:"
+echo "$CHOSEN_BUILD - $CHOSEN_BUILD_INFO - $CHOSEN_BUILD_PATH"
 
 cd $HOME
 
