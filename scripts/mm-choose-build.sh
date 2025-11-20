@@ -85,10 +85,11 @@ select choice in "${available_build_names[@]}"; do
 done
 
 if [ -v $CHOSEN_BUILD ]; then
-    export CHOSEN_BUILD_INFO=$CHOSEN_BUILD
-    if [ "$CHOSEN_BUILD" != "APE" ]; then
-        export CHOSEN_BUILD_INFO+=",$(uname -m),$(uname -s)"
+    cbi=$CHOSEN_BUILD
+    if [ "$cbi" != "APE" ]; then
+        cbi+=",$(uname -m),$(uname -s)"
     fi
+    export CHOSEN_BUILD_INFO=$cbi
 fi
 
 echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_INFO -- $CHOSEN_BUILD_PATH"
