@@ -16,15 +16,15 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Create APE Package
+### Create Package Directory
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/501-Create-APE-Package.sh" target="_blank">501-Create-APE-Package.sh</a>.
+- View the script: <a href="../scripts/501-Create-Package-Directory.sh" target="_blank">501-Create-Package-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Create-APE-Package.sh
+  $MMOJO_SERVER_SCRIPTS/501-Create-Package-Directory.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
