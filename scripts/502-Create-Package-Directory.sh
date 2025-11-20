@@ -17,13 +17,14 @@ if [ ! -d "$PACKAGE_DIR" ]; then
 fi
 
 if [ ! -d "$PACKAGE_DIR/$PACKAGE_ZIP" ]; then
-    mkdir -p "$PACKAGE_DIR/$PACKAGE_ZIP"
-fi
-
-if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
-    cp $CHOSEN_BUILD_PATH $PACKAGE_DIR/$PACKAGE_ZIP
-    mkdir -p "$PACKAGE_DIR/$PACKAGE_ZIP/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
-    touch "$PACKAGE_DIR/$PACKAGE_ZIP/Build--$CHOSEN_BUILD"
+    if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
+        THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP--$CHOSEN_BUILD"
+        mkdir -p "$THIS_PACKAGE_DIR"
+        
+        cp $CHOSEN_BUILD_PATH $THIS_PACKAGE_DIR
+        mkdir -p "$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
+        touch "$THIS_PACKAGE_DIR/Build--$CHOSEN_BUILD"
+    fi
 fi
 
 cd $HOME
