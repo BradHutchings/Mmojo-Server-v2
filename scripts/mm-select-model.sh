@@ -1,0 +1,43 @@
+#!/bin/bash
+
+################################################################################
+# This script adds certs from the Mmojo Share to the mmojo-server.zip packaging
+# file.
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+# printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+unset SELECTED_MODEL
+cd $MODELS_DIR
+select filename in *.gguf; do
+  case $filename in
+    "")
+      echo "That was not a valid choice. \$SELECTED_MODEL has been unset."
+      break
+      ;;
+    *)
+      echo $filename
+      export SELECTED_MODEL=$filename
+      break
+      ;;
+  esac
+done
+
+cd $HOME
+
+# printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
