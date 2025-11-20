@@ -1,10 +1,9 @@
 ## 502. Package zip
-### About this Step
 
-**This step is not implemented yet.**
+**This step is being implemented.**
 
 The gist will be:
-1. Pick a build to copy -- APE, CPU, CUDA, or Vulkan. It gets coopied over, folder gets named.
+1. Pick a build to copy -- APE, CPU, CUDA, or Vulkan. It gets copied over, folder gets named.
 2. `mmojo-server-support` folder gets created.
 3. Add certs.
 4. Add Mmojo Complete.
@@ -13,6 +12,9 @@ The gist will be:
 7. zip it all up.
 8. Copy to Mmojo Server.
 
+---
+### About this Step
+Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-server-support` directory for distribution. You will start with one of the `mmojo-server` apps you built, add certificates, add the Mmojo Complete user interface, add a add a `.gguf` model file, and add a configuration file. You will test run it, zip it up, then copy it to your Mmojo Share. 
 
 ---
 <details>
@@ -24,6 +26,70 @@ mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
 </details>
+
+---
+### Choose a `mmojo-server` Build to Package
+This script has you choose one of the `mmojo-server` apps you've built.
+
+- View the script: <a href="../scripts/mm-choose-build.sh" target="_blank">mm-choose-build.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script.
+  ```
+  unset CHOSEN_BUILD
+  unset CHOSEN_BUILD_PATH
+  . mm-choose-build.sh
+  ```
+
+---
+### Create Package Directory
+This script creates the package directories.
+
+- View the script: <a href="../scripts/502-Create-Package-Directory.sh" target="_blank">502-Create-Package-Directory.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Create-Package-Directory.sh
+  # Keep track of what we add below for the `default-args` file.
+  unset ADDED_CERTS
+  unset ADDED_MMOJO_COMPLETE
+  unset SELECTED_MODEL
+  unset ADDED_MODEL
+  ```
+
+---
+### Add Certs to Package
+This script adds SSL certificates from the Mmojo Share to the package.
+- View the script: <a href="../scripts/502-Add-Certs-to-Package.sh" target="_blank">502-Add-Certs-to-Package.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Add-Certs-to-Package.sh
+  # Keep track of what we add for the `default-args` file.
+  export ADDED_CERTS=1
+  ```
+
+*Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
+
+---
+### Add Mmojo Complete UI to Package
+This script adds the Mmojo Complete user interface to the APE package.
+- View the script: <a href="../scripts/502-Add-Mmojo-Complete-to-Package.sh" target="_blank">502-Add-Mmojo-Complete-to-Package.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Add-Mmojo-Complete-to-Package.sh
+  # Keep track of what we add for the `default-args` file.
+  export ADDED_MMOJO_COMPLETE=1
+  ```
+
+---
+### Choose `.gguf` Model to Add to Package
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  . mm-choose-model.sh
+  ```
 
 ---
 ### Proceed
