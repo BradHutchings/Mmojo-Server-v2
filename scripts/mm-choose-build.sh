@@ -84,7 +84,14 @@ select choice in "${available_build_names[@]}"; do
   esac
 done
 
-# echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_PATH"
+if [ -v $CHOSEN_BUILD ]; then
+    export CHOSEN_BUILD_INFO=$CHOSEN_BUILD
+    if [ "$CHOSEN_BUILD" != "APE" ]; then
+        export CHOSEN_BUILD_INFO+=",$(uname -m),$(uname -s)"
+    fi
+fi
+
+# echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_INFO -- $CHOSEN_BUILD_PATH"
 
 cd $HOME
 
