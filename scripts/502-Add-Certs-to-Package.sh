@@ -27,7 +27,7 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
           cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.key  $CERTS
           cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
 
-          echo "mmojo-server-support/certs:"
+          echo "$SUPPORT_DIR/certs:"
           ls -al "$SUPPORT_DIR/certs"
         fi
     fi
