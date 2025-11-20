@@ -7,7 +7,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n**********\n*\n* STARTED: mm-choose-build.sh.\n*\n**********\n\n"
 
 unset CHOSEN_BUILD
 unset CHOSEN_BUILD_PATH
@@ -50,7 +50,6 @@ if false; then
   done
 fi
 
-echo ""
 echo "These builds are available to package:"
 
 PS3="Please choose a build:"
@@ -104,7 +103,7 @@ echo "$CHOSEN_BUILD - $CHOSEN_BUILD_INFO - $CHOSEN_BUILD_PATH"
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n**********\n*\n* FINISHED: mm-choose-build.sh.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
