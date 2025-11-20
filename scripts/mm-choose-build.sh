@@ -50,6 +50,9 @@ if false; then
   done
 fi
 
+echo ""
+echo "These builds are available to package:"
+
 PS3="Please choose a build:"
 select choice in "${available_build_names[@]}"; do
   export CHOSEN_BUILD=$choice
