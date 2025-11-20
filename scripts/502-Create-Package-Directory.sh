@@ -31,7 +31,7 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     $TOUCH_FILE="Build - $CHOSEN_BUILD"
     if [ $CHOSEN_BUILD -ne "APE" ]; then
         TOUCH_FILE+=" - $CHOSEN_BUILD"
-    if
+    fi
     touch "$THIS_PACKAGE_DIR/$TOUCH_FILE"
 
     echo "$THIS_PACKAGE_DIR:"
