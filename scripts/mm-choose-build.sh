@@ -11,6 +11,7 @@ SCRIPT_NAME=$(basename -- "$0")
 
 unset CHOSEN_BUILD
 unset CHOSEN_BUILD_PATH
+unset CHOSEN_BUILD_INFO
 
 build_paths=()
 build_names=()
@@ -80,7 +81,9 @@ select choice in "${available_build_names[@]}"; do
     *)
       unset CHOSEN_BUILD
       unset CHOSEN_BUILD_PATH
+      unset CHOSEN_BUILD_INFO
       break
+      ;;
   esac
 done
 
