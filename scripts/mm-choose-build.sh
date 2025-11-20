@@ -87,7 +87,7 @@ select choice in "${available_build_names[@]}"; do
   esac
 done
 
-if [ -v $CHOSEN_BUILD ]; then
+if [ -v CHOSEN_BUILD ]; then
     cbi=$CHOSEN_BUILD
     if [ "$cbi" != "APE" ]; then
         cbi+=",$(uname -m),$(uname -s)"
