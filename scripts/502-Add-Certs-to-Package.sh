@@ -11,7 +11,7 @@ SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-  mm-mount-mmojo-share.sh
+    mm-mount-mmojo-share.sh
 fi
 
 if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
@@ -20,21 +20,21 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
 
     if [ -d "$THIS_PACKAGE_DIR" ] && [ -d "$SUPPORT_DIR" ]; then
         if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-          echo "Adding certificate files."
-          CERTS="$SUPPORT_DIR/certs"
-          mkdir -p $CERTS
-          cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
-          cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.key  $CERTS
-          cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
+            echo "Adding certificate files."
+            CERTS="$SUPPORT_DIR/certs"
+            mkdir -p $CERTS
+            cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
+            cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.key  $CERTS
+            cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
 
-          echo ""
-          echo "$SUPPORT_DIR:"
-          ls -al "$SUPPORT_DIR"
+            echo ""
+            echo "$SUPPORT_DIR:"
+            ls -al "$SUPPORT_DIR"
 
-          echo ""
-          echo "$SUPPORT_DIR/certs:"
-          ls -al "$SUPPORT_DIR/certs"
-fi
+            echo ""
+            echo "$SUPPORT_DIR/certs:"
+            ls -al "$SUPPORT_DIR/certs"
+        fi
     fi
 fi
 
