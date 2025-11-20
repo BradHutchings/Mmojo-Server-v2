@@ -39,6 +39,7 @@ This script has you choose one of the `mmojo-server` apps you've built.
   ```
   unset CHOSEN_BUILD
   unset CHOSEN_BUILD_PATH
+  unset CHOSEN_BUILD_INFO
   . mm-choose-build.sh
   ```
 
@@ -72,7 +73,7 @@ This script adds SSL certificates from the Mmojo Share to the package.
 
 ---
 ### Add Mmojo Complete UI to Package
-This script adds the Mmojo Complete user interface to the APE package.
+This script adds the Mmojo Complete user interface to the package.
 - View the script: <a href="../scripts/502-Add-Mmojo-Complete-to-Package.sh" target="_blank">502-Add-Mmojo-Complete-to-Package.sh</a>.
 - Run the script.
   ```
@@ -89,6 +90,26 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
   ```
   unset CHOSEN_MODEL
   . mm-choose-model.sh
+  ```
+
+---
+### Add `.gguf` Model to Package
+This script adds the chosen `.gguf` model to the package.
+- View the script: <a href="../scripts/502-Add-gguf-Model-to-Package.sh" target="_blank">502-Add-gguf-Model-to-Package.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Add-gguf-Model-to-Package.sh
+  # Keep track of what we add for the `default-args` file.
+  export ADDED_MODEL=1
+  ```
+
+---
+### Add `default-args` File to Package
+This script adds a `default-args` file to the package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
+- View the script: <a href="../scripts/502-Add-default-args-to-Package" target="_blank">502-Add-default-args-to-Package</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Add-default-args-to-Package.sh
   ```
 
 ---
