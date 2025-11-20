@@ -47,10 +47,10 @@ chat
 EOF
 fi
 
-if [ $ADDED_MODEL ]; then
+if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --model
-/zip/$SELECTED_MODEL
+/zip/$CHOSEN_MODEL
 EOF
 fi
 
