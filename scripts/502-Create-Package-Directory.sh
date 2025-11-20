@@ -28,10 +28,11 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     cp $CHOSEN_BUILD_PATH $THIS_PACKAGE_DIR
     mkdir -p "$SUPPORT_DIR"
 
-    $TOUCH_FILE="Build - $CHOSEN_BUILD"
-    if [ $CHOSEN_BUILD -ne "APE" ]; then
-        TOUCH_FILE+=" - $CHOSEN_BUILD"
+    TOUCH_FILE="Build - $CHOSEN_BUILD"
+    if [ "$CHOSEN_BUILD" != "APE" ]; then
+        TOUCH_FILE+=",$(uname -m),$(uname -s)"
     fi
+    # echo $TOUCH_FILE
     touch "$THIS_PACKAGE_DIR/$TOUCH_FILE"
 
     echo "$THIS_PACKAGE_DIR:"
