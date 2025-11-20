@@ -39,7 +39,7 @@ This script adds SSL certificates from the Mmojo Share to the archive.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/501-Add-Certs-to-APE.sh
-  # Keep track of what we add below for the `default-args` file.
+  # Keep track of what we add for the `default-args` file.
   export ADDED_CERTS=1
   ```
 
@@ -52,7 +52,7 @@ This script adds the Mmojo Complete user interface to the archive.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
-  # Keep track of what we add below for the `default-args` file.
+  # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
 
@@ -92,7 +92,7 @@ This script adds the chosen `.gguf` model to the archive.
   ```
   if [ -v SELECTED_MODEL ]; then
     $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
-    # Keep track of what we add below for the `default-args` file.
+    # Keep track of what we add for the `default-args` file.
     export ADDED_MODEL=1
   fi
   ```
