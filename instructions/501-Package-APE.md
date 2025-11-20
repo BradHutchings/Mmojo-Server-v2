@@ -16,15 +16,15 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Start Packaging APE
-This script create the packaging directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/501-Start-Packaging-APE.sh" target="_blank">501-Start-Packaging-APE.sh</a>.
+### Create APE Package
+This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
+- View the script: <a href="../scripts/501-Create-APE-Package.sh" target="_blank">501-Create-APE-Package.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Start-Packaging-APE.sh
+  $MMOJO_SERVER_SCRIPTS/501-Create-APE-Package.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -33,8 +33,8 @@ This script create the packaging directories, copies the `mmojo-server-ape` file
   ```
 
 ---
-### Add Certs to Archive
-This script adds SSL certificates from the Mmojo Share to the archive.
+### Add Certs to Package
+This script adds SSL certificates from the Mmojo Share to the APE package.
 - View the script: <a href="../scripts/501-Add-Certs-to-APE.sh" target="_blank">501-Add-Certs-to-APE.sh</a>.
 - Run the script.
   ```
@@ -46,8 +46,8 @@ This script adds SSL certificates from the Mmojo Share to the archive.
 *Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
 
 ---
-### Add Mmojo Complete UI to Archive
-This script adds the Mmojo Complete user interface to the archive.
+### Add Mmojo Complete UI to Package
+This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../scripts/501-Add-Mmojo-Complete-to-APE.sh" target="_blank">501-Add-Mmojo-Complete-to-APE.sh</a>.
 - Run the script.
   ```
@@ -57,49 +57,29 @@ This script adds the Mmojo Complete user interface to the archive.
   ```
 
 ---
-### Choose `.gguf` Model to Add to Archive
-Choose a model. This should be a script to list models in the `300-MODELS` directory. For now, paste one of the snippets below:
-```
-export SELECTED_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="Google-Gemma-9B-Instruct-v2-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="IBM-Granite-2B-Instruct-v3.3-q8_0.gguf"
-```
-```
-export SELECTED_MODEL="IBM-Granite-8B-Instruct-v3.3-q8_0.gguf"
-```
+### Choose `.gguf` Model to Add to Package
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  . mm-choose-model.sh
+  ```
 
 ---
-### Add `.gguf` Model to Archive
-This script adds the chosen `.gguf` model to the archive.
+### Add `.gguf` Model to Package
+This script adds the chosen `.gguf` model to the APE package.
 - View the script: <a href="../scripts/501-Add-gguf-Model-to-APE.sh" target="_blank">501-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
-  if [ -v SELECTED_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
-    # Keep track of what we add for the `default-args` file.
-    export ADDED_MODEL=1
-  fi
+  $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
+  # Keep track of what we add for the `default-args` file.
+  export ADDED_MODEL=1
   ```
 
 ---
-### Add `default-args` File to Archive
-This script adds a `default-args` file to the archive. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
+### Add `default-args` File to Package
+This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
 - Run the script.
   ```
