@@ -15,12 +15,12 @@ if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
 fi
 
 if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
-    echo "Adding certs for $CHOSEN_BUILD - $CHOSEN_BUILD_PATH."
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD"
     SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
 
     if [ -d "$THIS_PACKAGE_DIR" ] && [ -d "$SUPPORT_DIR" ]; then
         if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+          echo "Adding certificate files."
           CERTS="$SUPPORT_DIR/certs"
           mkdir -p $CERTS
           cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/mmojo.local.crt $CERTS
