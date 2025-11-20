@@ -24,7 +24,7 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
             cp $CA_FILE $WEBSITE/CA.crt
         fi
 
-        echo "mmojo-server-support/Mmojo-Complete:"
+        echo "$SUPPORT_DIR/Mmojo-Complete:"
         ls -al "$SUPPORT_DIR/Mmojo-Complete"
     fi
 fi
