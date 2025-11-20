@@ -10,17 +10,17 @@
 SCRIPT_NAME=$(basename -- "$0")
 # printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-unset SELECTED_MODEL
+unset CHOSEN_MODEL
 cd $MODELS_DIR
 select filename in *.gguf; do
   case $filename in
     "")
-      echo "That was not a valid choice. \$SELECTED_MODEL has been unset."
+      echo "That was not a valid choice. \$CHOSEN_MODEL has been unset."
       break
       ;;
     *)
       echo $filename
-      export SELECTED_MODEL=$filename
+      export CHOSEN_MODEL=$filename
       break
       ;;
   esac
