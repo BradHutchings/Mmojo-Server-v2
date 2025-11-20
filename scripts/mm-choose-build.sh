@@ -90,7 +90,7 @@ done
 if [ -v CHOSEN_BUILD ]; then
     cbi=$CHOSEN_BUILD
     if [ "$cbi" != "APE" ]; then
-        cbi+=",$(uname -m),$(uname -s)"
+        cbi+="-$(uname -m)-$(uname -s)"
     fi
     export CHOSEN_BUILD_INFO=$cbi
 fi
