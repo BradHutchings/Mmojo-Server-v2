@@ -25,6 +25,10 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
         fi
 
         echo ""
+        echo "$SUPPORT_DIR:"
+        ls -al "$SUPPORT_DIR"
+
+        echo ""
         echo "$SUPPORT_DIR/Mmojo-Complete:"
         ls -al "$SUPPORT_DIR/Mmojo-Complete"
     fi
