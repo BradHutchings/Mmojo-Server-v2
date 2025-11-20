@@ -91,7 +91,7 @@ if [ -v $CHOSEN_BUILD ]; then
     fi
 fi
 
-# echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_INFO -- $CHOSEN_BUILD_PATH"
+echo "$CHOSEN_BUILD -- $CHOSEN_BUILD_INFO -- $CHOSEN_BUILD_PATH"
 
 cd $HOME
 
