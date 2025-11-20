@@ -35,9 +35,11 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     # echo $TOUCH_FILE
     touch "$THIS_PACKAGE_DIR/$TOUCH_FILE"
 
+    echo ""
     echo "$THIS_PACKAGE_DIR:"
     ls -al "$THIS_PACKAGE_DIR"
 
+    echo ""
     echo "$SUPPORT_DIR:"
     ls -al "$SUPPORT_DIR"
 fi
