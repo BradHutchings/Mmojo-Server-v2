@@ -18,14 +18,27 @@ fi
 
 if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD"
+    SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
+
     if [ -d $THIS_PACKAGE_DIR ]; then
         rm -r -f $THIS_PACKAGE_DIR
     fi
     mkdir -p "$THIS_PACKAGE_DIR"
         
     cp $CHOSEN_BUILD_PATH $THIS_PACKAGE_DIR
-    mkdir -p "$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
-    touch "$THIS_PACKAGE_DIR/Build--$CHOSEN_BUILD"
+    mkdir -p "$SUPPORT_DIR"
+
+    $TOUCH_FILE="Build - $CHOSEN_BUILD"
+    if [ $CHOSEN_BUILD -ne "APE" ]; then
+        TOUCH_FILE+=" - $CHOSEN_BUILD"
+    if
+    touch "$THIS_PACKAGE_DIR/$TOUCH_FILE"
+
+    echo "$THIS_PACKAGE_DIR:"
+    ls -al "$THIS_PACKAGE_DIR"
+
+    echo "$SUPPORT_DIR:"
+    ls -al "$SUPPORT_DIR"
 fi
 
 cd $HOME
