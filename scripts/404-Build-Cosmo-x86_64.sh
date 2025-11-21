@@ -13,7 +13,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 cd $BUILD_DIR
 
 # I'm working on provding an architecture level option in instructions.
-# The default is march=x86-64-v1, and performance is pretty awful.
+# The default appears to be -march=x86-64-v2, and performance is pretty awful.
 unset X86_ARCH_LEVEL
 # X86_ARCH_LEVEL=1
 X86_ARCH_LEVEL=2
