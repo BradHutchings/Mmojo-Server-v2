@@ -9,8 +9,8 @@ We're ready to build `dogpile` executables. First, we'll build a native version 
 Here are the things you need to do:
 - [1401. Prepare to Build](1401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [1402. Prepare to Test](1402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
-- [1403. Build Debug](1403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
-- [1404. Build APE](1404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
+- [1403. Build Debug](1403-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
+- [1404. Build APE](1404-Build-APE.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
 
 **Get Started:** [1401. Prepare to Build](1401-Prepare-to-Build.md)
 
