@@ -5,7 +5,6 @@
 Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-server-support` directory for distribution. You will start with one of the `mmojo-server` apps you built, add certificates, add the Mmojo Complete user interface, add a add a `.gguf` model file, and add a configuration file. You will test run it, zip it up, then copy it to your Mmojo Share. 
 
 **TO-DO**:
-- Fix .gguf short names in model_map file.
 - Incorporate .gguf short name into directory name, zip name.
 - Shortcut after picking build and gguf.
 
