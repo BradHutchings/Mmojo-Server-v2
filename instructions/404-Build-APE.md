@@ -18,8 +18,8 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Choose a Performance Level
 <!--
+### Choose a Performance Level
 This script has you choose a performance level for your APE build.
 
 - View the script: <a href="../scripts/mm-choose-performance-level.sh" target="_blank">mm-choose-performance-level.sh</a>.
@@ -32,8 +32,12 @@ This script has you choose a performance level for your APE build.
   . mm-choose-performance-level.sh
   ```
 -->
+<details>
+  <summary><b>Choose a Performance Level</b></summary>
+
 By default, APE builds don't perform very well. The tradeoff is that they run on a wide range of systems. If you're willing to run your Mmojo Server APE build on a slightly narrower range of systmes, you can get much better CPU performance. Try `CPU_PERFORMANCE_LEVEL=3`.
 
+**This feature is experimental. See [desicussion](https://github.com/BradHutchings/Mmojo-Server/discussions/32)**.
 
 Default, widely compatible, low performance:
 ```
@@ -59,6 +63,7 @@ New high-end Intel/AMD, Mac M1
 ```
 export CPU_PERFORMANCE_LEVEL=4
 ```
+</details>
 
 ---
 ### Build Mmojo Server for x86_64
