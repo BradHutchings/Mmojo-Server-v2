@@ -113,6 +113,26 @@ This script adds a `default-args` file to the package. If you added certs and/or
   ```
 
 ---
+### Zip the Package
+This script zips the package into a `.zip` file and moves the file to `$HOME/500-PACKAGE`.
+- View the script: <a href="../scripts/502-Zip-Package.sh" target="_blank">502-Zip-Package.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Zip-Package.sh
+  ```
+
+<details>
+  <summary><b>Optional: Copy Zip Package to Your Mmojo Share.</b></summary>
+
+Copy this zip package to your Mmojo share.
+- View the script: <a href="../scripts/502-Copy-Zip-Package-to-Mmojo-Share.sh" target="_blank">502-Copy-Zip-Package-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/502-Copy-Zip-Package-to-Mmojo-Share.sh
+  ```
+</details>
+
+---
 ### Proceed
 - **Next:** [503. Package SEAS](503-Package-SEAS.md)
 - **Previous:** [501. Package APE](501-Package-APE.md)
