@@ -34,13 +34,13 @@ This script has you choose one of the `mmojo-server` apps you've built.
   ```
 
 ---
-### Create Package Directory
+### Create Package Directories
 This script creates the package directories.
 
-- View the script: <a href="../scripts/502-Create-Package-Directory.sh" target="_blank">502-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/502-Create-Package-Directories.sh" target="_blank">502-Create-Package-Directories.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Create-Package-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/502-Create-Package-Directories.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
