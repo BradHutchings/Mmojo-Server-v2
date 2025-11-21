@@ -38,7 +38,8 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-unset X86_64_ARCH_LEVEL_PARAM
+unset X86_64_ARCH_LEVEL_PARAM'
+X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
 if [ -v CPU_PERFORMANCE_LEVEL ]; then
   case $CPU_PERFORMANCE_LEVEL in
     1)
