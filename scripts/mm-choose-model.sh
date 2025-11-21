@@ -11,6 +11,8 @@ SCRIPT_NAME=$(basename -- "$0")
 # printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 unset CHOSEN_MODEL
+unset CHOSEN_MODEL_SHORT_NAME
+
 cd $MODELS_DIR
 select filename in *.gguf; do
   case $filename in
@@ -25,6 +27,10 @@ select filename in *.gguf; do
       ;;
   esac
 done
+
+if [ -v CHOSEN_MODEL ]; then
+  export CHOSEN_MODEL_SHORT_NAME=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
+fi
 
 cd $HOME
 
