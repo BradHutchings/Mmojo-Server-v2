@@ -22,7 +22,11 @@ X86_ARCH_LEVEL=1
 
 unset X86_ARCH_LEVEL_PARAM
 if [ -v X86_ARCH_LEVEL ]; then
-    X86_ARCH_LEVEL_PARAM=" -march=x86-64-v$X86_ARCH_LEVEL "
+    if [ $X86_ARCH_LEVEL == 1 ]; then
+        X86_ARCH_LEVEL_PARAM=" -march=x86-64 "
+    else
+        X86_ARCH_LEVEL_PARAM=" -march=x86-64-v$X86_ARCH_LEVEL "
+    fi
 fi
 
 echo ""
