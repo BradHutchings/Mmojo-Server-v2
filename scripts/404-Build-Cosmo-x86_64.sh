@@ -13,7 +13,13 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 cd $BUILD_DIR
 
 # I'm working on provding an architecture level option in instructions.
-# The default appears to be -march=x86-64-v2, and performance is pretty awful.
+# The default appears to be -march=x86-64 (v1), and performance is pretty awful.
+
+# This should be a generic CPU_PERFORMANCE_LEVEL and map to X86_64 and AARCH64.
+# We could have a very compatible build, and a performance build, and use CPU
+# build as specialized. I don't think you could really run an LLM on a CPU
+# stuck at -march=x86-64-v2.
+
 unset X86_ARCH_LEVEL
 X86_ARCH_LEVEL=1
 # X86_ARCH_LEVEL=2
