@@ -96,9 +96,13 @@ This script adds a `default-args` file to the APE package. If you added certs an
 ---
 ### Test Run on localhost
 
-Now we can test run `mmojo-server`, listening on localhost:8080.
+Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+fi
+$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
 ```
 
 After starting up and loading the model, it should display:
@@ -120,9 +124,13 @@ If you're building in WSL, your Windows web browser should be able to connect to
 ---
 ### Test Run on Public Interfaces
 
-If you'd like it to listen on all available interfaces, so you can connect from a browser on another computer:
+If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+fi
+$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
 ```
 
 After starting up and loading the model, it should display:
