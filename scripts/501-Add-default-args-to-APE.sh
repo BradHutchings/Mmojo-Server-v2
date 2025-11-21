@@ -10,9 +10,14 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+if [ -v CHOSEN_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_SHORT_NAME"
+fi
 
-cd "$PACKAGE_DIR/$PACKAGE_APE"
+ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+
+cd "$THIS_PACKAGE_DIR"
 cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
 --no-mmap
 --host
@@ -62,20 +67,20 @@ echo "$PACKAGE_DEFAULT_ARGS_FILE:"
 cat $PACKAGE_DEFAULT_ARGS_FILE
 
 echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
-zip -0 -r $PACKAGING_ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
 
 echo ""
-echo "Contents of $PACKAGING_ZIP_FILE:"
-unzip -l $PACKAGING_ZIP_FILE 
+echo "Contents of $ZIP_FILE:"
+unzip -l $ZIP_FILE 
 
 echo ""
 echo "Cleaning up."
-mv $PACKAGING_ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
+mv $ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
 rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
 
 echo ""
-echo "Listing packaging directory: $PACKAGE_DIR/$PACKAGE_APE"
-ls -al $PACKAGE_DIR/$PACKAGE_APE
+echo "Listing packaging directory: $THIS_PACKAGE_DIR"
+ls -al $THIS_PACKAGE_DIR
 
 cd $HOME
 
