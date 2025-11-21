@@ -21,36 +21,36 @@ cd $BUILD_DIR
 # stuck at -march=x86-64-v2.
 
 # CPU_PERFORMANCE_LEVEL
-# - 1: Widely compatible.        X86_ARCH_LEVEL=1, AARCH64=?
-# - 2: Performant-1.             X86_ARCH_LEVEL=2, AARCH64=?
-# - 2: Performant-2.             X86_ARCH_LEVEL=3, AARCH64=?
-# - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=?
+# - 1: Widely compatible.        X86_ARCH_LEVEL=1, AARCH64= unset AARCH64_ARCH_LEVEL_PARAM
+# - 2: Performant-1.             X86_ARCH_LEVEL=2, AARCH64=armv8-a (R-Pi 3+)
+# - 2: Performant-2.             X86_ARCH_LEVEL=3, AARCH64=armv8-a (R-Pi 3+)
+# - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=armv8-a (R-Pi 3+)
 
-unset X86_ARCH_LEVEL
-X86_ARCH_LEVEL=1
-# X86_ARCH_LEVEL=2
-# X86_ARCH_LEVEL=3
-# X86_ARCH_LEVEL=4
+unset X86_64_ARCH_LEVEL
+X86_64_ARCH_LEVEL=1
+# X86_64_ARCH_LEVEL=2
+# X86_64_ARCH_LEVEL=3
+# X86_64_ARCH_LEVEL=4
 
-unset X86_ARCH_LEVEL_PARAM
-if [ -v X86_ARCH_LEVEL ]; then
-    if [ $X86_ARCH_LEVEL == 1 ]; then
-        X86_ARCH_LEVEL_PARAM=" -march=x86-64 "
+unset X86_64_ARCH_LEVEL_PARAM
+if [ -v X86_64_ARCH_LEVEL ]; then
+    if [ $X86_64_ARCH_LEVEL == 1 ]; then
+        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
     else
-        X86_ARCH_LEVEL_PARAM=" -march=x86-64-v$X86_ARCH_LEVEL "
+        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v$X86_64_ARCH_LEVEL "
     fi
 fi
 
 echo ""
-echo "\$X86_ARCH_LEVEL: $X86_ARCH_LEVEL"
-echo "\$X86_ARCH_LEVEL_PARAM: $X86_ARCH_LEVEL_PARAM"
+echo "\$X86_64_ARCH_LEVEL: $X86_64_ARCH_LEVEL"
+echo "\$X86_64_ARCH_LEVEL_PARAM: $X86_64_ARCH_LEVEL_PARAM"
 echo ""
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-    -DCOSMOCC=1 -nostdinc -O3 $X86_ARCH_LEVEL_PARAM"
+    -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_ARCH_LEVEL_PARAM \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM \
     -I$(pwd)/cosmocc/include/third_party/libcxx \
     -I$(pwd)/openssl/include \
     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
