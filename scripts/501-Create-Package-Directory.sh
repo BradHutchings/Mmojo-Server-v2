@@ -18,23 +18,28 @@ if [ ! -d "$PACKAGE_DIR" ]; then
     mkdir -p "$PACKAGE_DIR"
 fi
 
-if [ ! -d "$PACKAGE_DIR/$PACKAGE_APE" ]; then
-    mkdir -p "$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+if [ -v CHOSEN_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_SHORT_NAME"
+fi
+
+if [ ! -d "$THIS_PACKAGE_DIR" ]; then
+    mkdir -p "$THIS_PACKAGE_DIR"
 fi
 
 echo "Copying built mmojo-server-ape."
 BUILT_FILE="$BUILD_DIR/$BUILD_COSMO_APE/$PACKAGE_MMOJO_SERVER_APE_FILE"
-PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 if [ -f "$BUILT_FILE" ]; then
-  cp $BUILT_FILE $PACKAGING_ZIP_FILE
+  cp $BUILT_FILE $ZIP_FILE
 fi
 
 echo "Removing extraneous time zone files from zip."
-zip -d $PACKAGING_ZIP_FILE "/usr/*"
+zip -d $ZIP_FILE "/usr/*"
 
 echo ""
-echo "Contents of $PACKAGING_ZIP_FILE:"
-unzip -l $PACKAGING_ZIP_FILE 
+echo "Contents of $ZIP_FILE:"
+unzip -l $ZIP_FILE 
 
 cd $HOME
 
