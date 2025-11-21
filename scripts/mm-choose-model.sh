@@ -13,6 +13,9 @@ SCRIPT_NAME=$(basename -- "$0")
 unset CHOSEN_MODEL
 unset CHOSEN_MODEL_SHORT_NAME
 
+echo "These models are available to package:"
+PS3="Please choose a model:"
+
 cd $MODELS_DIR
 select filename in *.gguf; do
   case $filename in
@@ -29,6 +32,7 @@ done
 
 if [ -v CHOSEN_MODEL ]; then
   export CHOSEN_MODEL_SHORT_NAME=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
+  echo ""
   echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_SHORT_NAME"
 fi
 
