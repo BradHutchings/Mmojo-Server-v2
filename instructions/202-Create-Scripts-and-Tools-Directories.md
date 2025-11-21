@@ -1,6 +1,6 @@
 ## 202. Create Scripts and Tools Directories
 ### About this Step
-Let's get started by creating a `$HOME/scripts` directory and a `$HOME\tools` directory, then adding them to your `$PATH` environment variable.
+Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` directory, then adding them to your `$PATH` environment variable.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 

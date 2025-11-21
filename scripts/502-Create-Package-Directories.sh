@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script copies the packaged APE version of Mmojo Server to the Mmojo
-# Share.
+# This script creates a package directories for building the zip package.
 #
 # https://github.com/ggml-org/llama.cpp
 #
@@ -12,25 +11,34 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-    mm-mount-mmojo-share.sh
+echo "Creating package directories."
+if [ ! -d "$PACKAGE_DIR" ]; then
+    mkdir -p "$PACKAGE_DIR"
 fi
 
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-fi
+if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ] && [ -v CHOSEN_BUILD_INFO ]; then
+    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
+    SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
 
-if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-  echo "Creating directories on Mmojo Share."
-  sudo mkdir -p $MMOJO_SHARE_PACKAGES
-  sudo mkdir -p $MMOJO_SHARE_PACKAGES_APE
+    if [ -d $THIS_PACKAGE_DIR ]; then
+        rm -r -f $THIS_PACKAGE_DIR
+    fi
+    mkdir -p "$THIS_PACKAGE_DIR"
+        
+    cp $CHOSEN_BUILD_PATH $THIS_PACKAGE_DIR
+    mkdir -p "$SUPPORT_DIR"
 
-  if [ -d "$MMOJO_SHARE_PACKAGES_APE" ]; then
-    echo "Copying mmojo-server to Mmojo Share."
-    sudo cp -f $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE $MMOJO_SHARE_PACKAGES_APE/$PACKAGE_MMOJO_SERVER_FILE
-    sudo cp -f $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE $MMOJO_SHARE_PACKAGES_APE/$PACKAGE_MMOJO_SERVER_EXE_FILE
-  fi
+    TOUCH_FILE="Build-$CHOSEN_BUILD_INFO"
+    # echo $TOUCH_FILE
+    touch "$THIS_PACKAGE_DIR/$TOUCH_FILE"
+
+    echo ""
+    echo "$THIS_PACKAGE_DIR:"
+    ls -al "$THIS_PACKAGE_DIR"
+
+    echo ""
+    echo "$SUPPORT_DIR:"
+    ls -al "$SUPPORT_DIR"
 fi
 
 cd $HOME

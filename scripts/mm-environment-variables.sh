@@ -40,6 +40,7 @@ export MMOJO_SHARE_BUILDS_CUDA="$MMOJO_SHARE_BUILDS/cuda"
 export MMOJO_SHARE_BUILDS_VULKAN="$MMOJO_SHARE_BUILDS/vulkan"
 export MMOJO_SHARE_PACKAGES="$MMOJO_SHARE_MOUNT_POINT/packages"
 export MMOJO_SHARE_PACKAGES_APE="$MMOJO_SHARE_PACKAGES/ape"
+export MMOJO_SHARE_PACKAGES_ZIP="$MMOJO_SHARE_PACKAGES/zip"
 
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
@@ -88,16 +89,18 @@ unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
 export PACKAGE_DIR="$HOME/500-PACKAGE"
-export PACKAGE_APE="package-ape"
-export PACKAGE_ZIP="package-zip"
-export PACKAGE_SEAS="package-seas"
+export PACKAGE_APE="ape"
+export PACKAGE_ZIP="zip"
+export PACKAGE_SEAS="seas"
 
 export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
 export PACKAGE_MMOJO_SERVER_APE_FILE="mmojo-server-ape"
 export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
 export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
+
 # Change this to "mmojo-server-args", update server-mmojo.cpp.
 export PACKAGE_DEFAULT_ARGS_FILE="default-args"
+export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"

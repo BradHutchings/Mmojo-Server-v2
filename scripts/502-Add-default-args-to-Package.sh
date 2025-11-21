@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ################################################################################
-# This script adds certs from the Mmojo Share to the mmojo-server.zip packaging
-# file.
+# This script adds a default_args file to the mmojo-server-support subdirectory 
+# of the package directory.
 #
 # See licensing note at end.
 ################################################################################
@@ -10,14 +10,12 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-fi
+if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
+    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
+    SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
 
-ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+    cd "$SUPPORT_DIR"
 
-cd "$THIS_PACKAGE_DIR"
 cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
 --no-mmap
 --host
@@ -37,16 +35,16 @@ EOF
 if [ $ADDED_CERTS ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --ssl-key-file
-/zip/certs/mmojo.local.key
+/mmojo/certs/mmojo.local.key
 --ssl-cert-file
-/zip/certs/mmojo.local.crt
+/mmojo/certs/mmojo.local.crt
 EOF
 fi
 
 if [ $ADDED_MMOJO_COMPLETE ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --path
-/zip/Mmojo-Complete
+/mmojo/Mmojo-Complete
 --default-ui-endpoint
 chat
 EOF
@@ -55,7 +53,7 @@ fi
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 --model
-/zip/$CHOSEN_MODEL
+/mmojo/$CHOSEN_MODEL
 EOF
 fi
 
@@ -63,24 +61,13 @@ cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 ...
 EOF
 
-echo "$PACKAGE_DEFAULT_ARGS_FILE:"
-cat $PACKAGE_DEFAULT_ARGS_FILE
+    echo "$PACKAGE_DEFAULT_ARGS_FILE:"
+    cat $PACKAGE_DEFAULT_ARGS_FILE
 
-echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
-zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
-
-echo ""
-echo "Contents of $ZIP_FILE:"
-unzip -l $ZIP_FILE 
-
-echo ""
-echo "Cleaning up."
-mv $ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
-rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
-
-echo ""
-echo "Listing packaging directory: $THIS_PACKAGE_DIR"
-ls -al $THIS_PACKAGE_DIR
+    echo ""
+    echo "$SUPPORT_DIR:"
+    ls -al "$SUPPORT_DIR"
+fi
 
 cd $HOME
 

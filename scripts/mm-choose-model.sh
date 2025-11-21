@@ -8,32 +8,39 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+# printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-fi
-
-ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-
-if [ -v CHOSEN_MODEL ]; then
-  echo "Chosen model: $CHOSEN_MODEL"
-  MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
-  if [ -f "$MODEL_FILE" ]; then
-    cd $MODELS_DIR
-    echo "mm-zipalign-ing $MODEL_FILE."
-    $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
-  fi
-fi
+unset CHOSEN_MODEL
+unset CHOSEN_MODEL_SHORT_NAME
 
 echo ""
-echo "Contents of $ZIP_FILE:"
-unzip -l $ZIP_FILE 
+echo "These models are available to package:"
+PS3="Please choose a model:"
+
+cd $MODELS_DIR
+select filename in *.gguf; do
+  case $filename in
+    "")
+      echo "That was not a valid choice. \$CHOSEN_MODEL has been unset."
+      break
+      ;;
+    *)
+      export CHOSEN_MODEL=$filename
+      break
+      ;;
+  esac
+done
+
+if [ -v CHOSEN_MODEL ]; then
+  export CHOSEN_MODEL_SHORT_NAME=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
+  echo ""
+  echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_SHORT_NAME"
+  echo ""
+fi
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+# printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

@@ -1,29 +1,32 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates the models directory and creates a model map file in that
-# directory. The model map file tell us what models are available to download or
-# copy.
+# This script zips up the package directory.
 #
 # See licensing note at end.
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-mkdir -p $MODELS_DIR
-cd $MODELS_DIR
+if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
+    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
+    ZIP_FILE_NAME="mmojo-server-$CHOSEN_BUILD_INFO.zip"
 
-if ! test -f "$MODEL_MAP"; then
-cat << EOF > $MODEL_MAP
-Google-Gemma-1B-Instruct-v3-q8_0.gguf Goo-Gem-1B-Ins-v3
-Google-Gemma-4B-Instruct-v3-q8_0.gguf Goo-Gem-4B-Ins-v3
-EOF
+    if [ -d "$THIS_PACKAGE_DIR" ]; then
+        cd $THIS_PACKAGE_DIR
+        zip -r -9 $ZIP_FILE_NAME *
+        mv $ZIP_FILE_NAME $PACKAGE_DIR
+
+        echo ""
+        echo "Listing packaging directory: $PACKAGE_DIR"
+        ls -al $PACKAGE_DIR
+    fi
 fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
