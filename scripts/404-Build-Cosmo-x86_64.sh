@@ -26,6 +26,13 @@ cd $BUILD_DIR
 # - 2: Performant-2.             X86_ARCH_LEVEL=3, AARCH64=armv8-a (R-Pi 3+)
 # - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=armv8-a (R-Pi 3+)
 
+AARCH64 -march values:
+- R-Pi 3+     -march=armv8-a      https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications 
+- Apple M1    -march=armv8.4-a    https://en.wikipedia.org/wiki/Apple_M1
+- Apple M2    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M2
+- Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
+- Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
+
 unset X86_64_ARCH_LEVEL
 X86_64_ARCH_LEVEL=1
 # X86_64_ARCH_LEVEL=2
