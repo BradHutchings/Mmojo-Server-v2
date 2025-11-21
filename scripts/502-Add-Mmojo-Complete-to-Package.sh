@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ################################################################################
-# This script adds certs from the Mmojo Share to the mmojo-server-support
-# subdirectory of the package directory.
+# This script adds the Mmojo Complete user interface from the Mmojo Server repo
+# to the mmojo-server-support subdirectory of the package directory.
 #
 # See licensing note at end.
 ################################################################################
