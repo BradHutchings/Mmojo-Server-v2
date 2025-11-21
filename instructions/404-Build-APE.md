@@ -18,7 +18,8 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Choose a Perormance Level
+### Choose a Performance Level
+<!--
 This script has you choose a performance level for your APE build.
 
 - View the script: <a href="../scripts/mm-choose-performance-level.sh" target="_blank">mm-choose-performance-level.sh</a>.
@@ -30,6 +31,9 @@ This script has you choose a performance level for your APE build.
   unset CPU_PERFORMANCE_LEVEL
   . mm-choose-performance-level.sh
   ```
+-->
+By default, APE builds don't perform very well. The tradeoff is that they run on a wide range of systems. 
+
 
 Default, widely compatible, low performance:
 ```
