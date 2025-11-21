@@ -4,6 +4,10 @@
 
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a `.gguf` model file, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
+**TO-DO**:
+- Incorporate .gguf short name into directory name, zip name.
+- Shortcut after picking build and gguf.
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -14,6 +18,17 @@ mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
 </details>
+
+---
+### Choose `.gguf` Model to Add to Package
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  unset CHOSEN_MODEL_SHORT_NAME
+  . mm-choose-model.sh
+  ```
 
 ---
 ### Create Package Directory
@@ -54,16 +69,6 @@ This script adds the Mmojo Complete user interface to the APE package.
   $MMOJO_SERVER_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
-  ```
-
----
-### Choose `.gguf` Model to Add to Package
-Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
-- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
-- Run the script.
-  ```
-  unset CHOSEN_MODEL
-  . mm-choose-model.sh
   ```
 
 ---
