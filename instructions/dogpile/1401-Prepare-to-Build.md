@@ -22,7 +22,7 @@ mm-update-local-mmojo-server-repo.sh
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../scripts/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
+- View the script: <a href="../../scripts/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -34,7 +34,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ---
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
-- View the script: <a href="../scripts/1401-Fix-llama-cpp.sh" target="_blank">1401-Fix-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/1401-Fix-llama-cpp.sh" target="_blank">1401-Fix-llama-cpp.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/1401-Fix-llama-cpp.sh
