@@ -7,7 +7,7 @@ Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-
 **TO-DO**:
 - Incorporate .gguf short name into directory name, zip name.
 - Shortcut after picking build and gguf.
-
+- Test localhost and public interfaces before copying to Mmojo Server.
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
