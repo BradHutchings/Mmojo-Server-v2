@@ -12,11 +12,38 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $BUILD_DIR
 
+unset AARCH64_ARCH_LEVEL_PARAM
+if [ -v CPU_PERFORMANCE_LEVEL ]; then
+  case $CPU_PERFORMANCE_LEVEL in
+    1)
+        unset AARCH64_ARCH_LEVEL_PARAM
+        break
+        ;;
+    2)
+        AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a " 
+        break
+        ;;
+    3)
+        AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a "
+        break
+        ;;
+    4)
+        AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a "
+        break
+        ;;
+    *)
+        AARCH64_ARCH_LEVEL_PARAM=" -march=armv8.4-a "
+        break
+        ;;
+  esac
+fi
+
+
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="aarch64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-    -DCOSMOCC=1 -nostdinc -O3 "
+    -DCOSMOCC=1 -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
 export CXX="aarch64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
     -I$(pwd)/cosmocc/include/third_party/libcxx \
     -I$(pwd)/cosmocc/include/third_party/libcxx \
     -I$(pwd)/openssl/include \
