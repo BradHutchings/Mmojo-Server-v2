@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates a package directory for building the zip package.
+# This script creates a package directories for building the zip package.
 #
 # https://github.com/ggml-org/llama.cpp
 #
