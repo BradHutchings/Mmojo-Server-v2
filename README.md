@@ -5,7 +5,7 @@
 Welcome to Mmojo Server version 2! This project makes building and packaging the LLM server and other software from llama.cpp easy and approachable, with some carefully selected extensions and enhancements. Highlights:
 - Build and package Actual Portable Executable (APE) files that run on Linux, Windows, macOS operating systems across x86_64 and aarch64 (ARM64) architectures.
   - I am inspired by the original llamafile project.
-  - APE files can contain an LLM, user interface, certificates, and other support files &mdash; in one single executable file.
+  - APE files can contain a .gguf model, user interface, certificates, and other support files &mdash; in one single executable file.
   - Download and run the same executable file on x86_64 Linux and an ARM Raspberry Pi (for example).
 - Build and package CPU-optimized and GPU-enabled executables that run on specific operating systems and CPU architectures.
 - Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
