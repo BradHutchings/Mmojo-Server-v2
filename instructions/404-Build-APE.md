@@ -53,7 +53,7 @@ export CPU_PERFORMANCE_LEVEL=3
 
 New high-end Intel/AMD, Mac M1
 ```
-export CPU_PERFORMANCE_LEVEL44
+export CPU_PERFORMANCE_LEVEL=4
 ```
 
 ---
