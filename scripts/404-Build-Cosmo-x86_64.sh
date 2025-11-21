@@ -25,9 +25,10 @@ if [ -v X86_ARCH_LEVEL ]; then
     X86_ARCH_LEVEL_PARAM=" -march=x86-64-v$X86_ARCH_LEVEL "
 fi
 
-# X86_ARCH_LEVEL=" -march=x86-64-v1 "
-X86_ARCH_LEVEL=" -march=x86-64-v2 "
-# X86_ARCH_LEVEL=" -march=x86-64-v3 "
+echo ""
+echo "\$X86_ARCH_LEVEL: $X86_ARCH_LEVEL"
+echo "\$X86_ARCH_LEVEL_PARAM: $X86_ARCH_LEVEL_PARAM"
+echo ""
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
