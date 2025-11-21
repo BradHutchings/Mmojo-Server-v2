@@ -1,16 +1,6 @@
 ## 502. Package zip
 
-**This step is being implemented.**
-
-The gist will be:
-1. Pick a build to copy -- APE, CPU, CUDA, or Vulkan. It gets copied over, folder gets named.
-2. `mmojo-server-support` folder gets created.
-3. Add certs.
-4. Add Mmojo Complete.
-5. Add .gguf.
-6. Add `default-args` file.
-7. zip it all up.
-8. Copy to Mmojo Server.
+**This step is being implemented, in progress.**
 
 ---
 ### About this Step
