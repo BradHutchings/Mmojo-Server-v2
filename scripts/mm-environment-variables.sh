@@ -88,8 +88,8 @@ unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
 export PACKAGE_DIR="$HOME/500-PACKAGE"
-export PACKAGE_APE="package-ape"
-export PACKAGE_ZIP="package-zip"
+export PACKAGE_APE="mmojo-server-ape"
+export PACKAGE_ZIP="mmojo-server-zip"
 export PACKAGE_SEAS="package-seas"
 
 export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
