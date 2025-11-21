@@ -25,7 +25,7 @@ This script has you choose a performance level for your APE build.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script.
+- Run the script. It won't allow you to choose native because native makes no sense for a cross-platform build.
   ```
   unset CPU_PERFORMANCE_LEVEL
   . mm-choose-performance-level.sh
