@@ -77,9 +77,11 @@ This script adds the chosen `.gguf` model to the APE package.
 - View the script: <a href="../scripts/501-Add-gguf-Model-to-APE.sh" target="_blank">501-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
-  # Keep track of what we add for the `default-args` file.
-  export ADDED_MODEL=1
+  if [ -v CHOSEN_MODEL ]; then
+    $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
+    # Keep track of what we add for the `default-args` file.
+    export ADDED_MODEL=1
+  fi
   ```
 
 ---
