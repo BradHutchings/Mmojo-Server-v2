@@ -9,7 +9,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-THIS_TEST_DIR="$TEST_DIR/$TEST_DEBUG_COMMAND_LINE"
+THIS_TEST_DIR="$DOGPILE_TEST_DIR/$TEST_DEBUG_COMMAND_LINE"
 mkdir -p $THIS_TEST_DIR
 rm -r -f $THIS_TEST_DIR/*
 cd $THIS_TEST_DIR
@@ -32,19 +32,12 @@ fi
 # echo "\$THREADS_PARAM: $THREADS_PARAM"
 # sleep 5s
 
-UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
-    # echo "Using chat UI."
-    UI_PARAMS=""
-fi
-# echo "\$UI_PARAMS: $UI_PARAMS"
-# sleep 5s
-
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
-$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
-    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
+$DOGPILE_BUILD_DIR/$BUILD_DEBUG/bin/dogpile --model $MODELS_DIR/$MODEL_PARAM \
+    $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
 
+printf "\nFIX THIS: Need to be 'dogpile-args' and 'dogpile-support' in server.mmojo.cpp - Patch that.\n"
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
 ls -ald mmojo-server-args
 ls -ald mmojo-server-support
