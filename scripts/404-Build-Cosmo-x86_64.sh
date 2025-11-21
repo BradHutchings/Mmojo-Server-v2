@@ -12,11 +12,15 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $BUILD_DIR
 
+unset X86_ARCH_LEVEL
+X86_ARCH_LEVEL=" -march=x86-64-v2 "
+# X86_ARCH_LEVEL=" -march=x86-64-v3 "
+
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-    -DCOSMOCC=1 -nostdinc -O3 -march=x86-64-v3"
+    -DCOSMOCC=1 -nostdinc -O3 $X86_ARCH_LEVEL"
 export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  -march=x86-64-v3 \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_ARCH_LEVEL \
     -I$(pwd)/cosmocc/include/third_party/libcxx \
     -I$(pwd)/openssl/include \
     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
