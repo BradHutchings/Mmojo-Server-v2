@@ -91,9 +91,11 @@ This script adds the chosen `.gguf` model to the package.
 - View the script: <a href="../scripts/502-Add-gguf-Model-to-Package.sh" target="_blank">502-Add-gguf-Model-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-gguf-Model-to-Package.sh
-  # Keep track of what we add for the `default-args` file.
-  export ADDED_MODEL=1
+  if [ -v CHOSEN_MODEL ]; then
+    $MMOJO_SERVER_SCRIPTS/502-Add-gguf-Model-to-Package.sh
+    # Keep track of what we add for the `default-args` file.
+    export ADDED_MODEL=1
+  fi
   ```
 
 ---
