@@ -5,8 +5,8 @@
 Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-server-support` directory for distribution. You will start with one of the `mmojo-server` apps you built, add certificates, add the Mmojo Complete user interface, add a add a `.gguf` model file, and add a configuration file. You will test run it, zip it up, then copy it to your Mmojo Share. 
 
 **TO-DO**:
-- Move picking .gguf before creating directories.
-- Incorporate .gguf short name into difrectory name, zip name.
+- Fix .gguf short names in model_map file.
+- Incorporate .gguf short name into directory name, zip name.
 - Shortcut after picking build and gguf.
 
 ---
@@ -34,6 +34,16 @@ This script has you choose one of the `mmojo-server` apps you've built.
   unset CHOSEN_BUILD_PATH
   unset CHOSEN_BUILD_INFO
   . mm-choose-build.sh
+  ```
+
+---
+### Choose `.gguf` Model to Add to Package
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  . mm-choose-model.sh
   ```
 
 ---
@@ -73,16 +83,6 @@ This script adds the Mmojo Complete user interface to the package.
   $MMOJO_SERVER_SCRIPTS/502-Add-Mmojo-Complete-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
-  ```
-
----
-### Choose `.gguf` Model to Add to Package
-Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
-- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
-- Run the script.
-  ```
-  unset CHOSEN_MODEL
-  . mm-choose-model.sh
   ```
 
 ---
