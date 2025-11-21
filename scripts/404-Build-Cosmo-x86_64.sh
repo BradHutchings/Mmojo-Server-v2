@@ -24,7 +24,7 @@ cd $BUILD_DIR
 # - 1: Widely compatible.        X86_ARCH_LEVEL=1, AARCH64= unset AARCH64_ARCH_LEVEL_PARAM <-- Widely compatible
 # - 2: Performant-1.             X86_ARCH_LEVEL=2, AARCH64=armv8-a (R-Pi 3+)
 # - 2: Performant-2.             X86_ARCH_LEVEL=3, AARCH64=armv8-a (R-Pi 3+) <-- Good default.
-# - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=armv8-a (R-Pi 3+)
+# - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=armv8.4-a (Apple M*)
 
 # Pi should have a CPU native version.
 # Apple M* should have a METAL version -- use M1 arch for CPU.
