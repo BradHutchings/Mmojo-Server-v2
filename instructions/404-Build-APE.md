@@ -18,6 +18,45 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
+### Choose a Perormance Level
+This script has you choose a performance level for your APE build.
+
+- View the script: <a href="../scripts/mm-choose-performance-level.sh" target="_blank">mm-choose-performance-level.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script.
+  ```
+  unset CPU_PERFORMANCE_LEVEL
+  . mm-choose-performance-level.sh
+  ```
+
+Default, widely compatible, low performance:
+```
+unset CPU_PERFORMANCE_LEVEL
+```
+
+Default, widely compatible, low performance:
+```
+export unset CPU_PERFORMANCE_LEVEL-1
+```
+
+Intel ???, Raspberry Pi 3
+```
+export unset CPU_PERFORMANCE_LEVEL-2
+```
+
+Intel i3,i5,i7, Raspberry Pi 3
+```
+export unset CPU_PERFORMANCE_LEVEL-3
+```
+
+New high-end Intel/AMD, Mac M1
+```
+export unset CPU_PERFORMANCE_LEVEL-4
+```
+
+---
 ### Build Mmojo Server for x86_64
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../scripts/404-Build-Cosmo-x86_64.sh" target="_blank">404-Build-Cosmo-x86_64.sh</a>.
