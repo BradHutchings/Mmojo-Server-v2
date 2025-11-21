@@ -10,7 +10,12 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
-PACKAGING_ZIP_FILE="$PACKAGE_DIR/$PACKAGE_APE/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+if [ -v CHOSEN_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_SHORT_NAME"
+fi
+
+ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 
 if [ -v CHOSEN_MODEL ]; then
   echo "Chosen model: $CHOSEN_MODEL"
@@ -18,13 +23,13 @@ if [ -v CHOSEN_MODEL ]; then
   if [ -f "$MODEL_FILE" ]; then
     cd $MODELS_DIR
     echo "mm-zipalign-ing $MODEL_FILE."
-    $ZIPALIGN $PACKAGING_ZIP_FILE $CHOSEN_MODEL
+    $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
   fi
 fi
 
 echo ""
-echo "Contents of $PACKAGING_ZIP_FILE:"
-unzip -l $PACKAGING_ZIP_FILE 
+echo "Contents of $ZIP_FILE:"
+unzip -l $ZIP_FILE 
 
 cd $HOME
 
