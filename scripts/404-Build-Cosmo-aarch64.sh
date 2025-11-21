@@ -38,6 +38,10 @@ if [ -v CPU_PERFORMANCE_LEVEL ]; then
   esac
 fi
 
+echo ""
+echo "\$CPU_PERFORMANCE_LEVEL: $CPU_PERFORMANCE_LEVEL"
+echo "\$AARCH64_ARCH_LEVEL_PARAM: $AARCH64_ARCH_LEVEL_PARAM"
+echo ""
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="aarch64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
