@@ -15,8 +15,8 @@ cd $BUILD_DIR
 # I'm working on provding an architecture level option in instructions.
 # The default appears to be -march=x86-64-v2, and performance is pretty awful.
 unset X86_ARCH_LEVEL
-# X86_ARCH_LEVEL=1
-X86_ARCH_LEVEL=2
+X86_ARCH_LEVEL=1
+# X86_ARCH_LEVEL=2
 # X86_ARCH_LEVEL=3
 # X86_ARCH_LEVEL=4
 
