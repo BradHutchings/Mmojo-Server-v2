@@ -33,7 +33,7 @@ This script has you choose a performance level for your APE build.
   ```
 -->
 <details>
-  <summary><b>Choose a Performance Level</b></summary>
+  <summary><b>Choose a Performance Level</b> &mdash; Experimental.</summary>
 
 By default, APE builds don't perform very well. The tradeoff is that they run on a wide range of systems. If you're willing to run your Mmojo Server APE build on a slightly narrower range of systmes, you can get much better CPU performance. Try `CPU_PERFORMANCE_LEVEL=3`.
 
