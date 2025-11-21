@@ -20,6 +20,12 @@ cd $BUILD_DIR
 # build as specialized. I don't think you could really run an LLM on a CPU
 # stuck at -march=x86-64-v2.
 
+# CPU_PERFORMANCE_LEVEL
+# - 1: Widely compatible.        X86_ARCH_LEVEL=1, AARCH64=?
+# - 2: Performant-1.             X86_ARCH_LEVEL=2, AARCH64=?
+# - 2: Performant-2.             X86_ARCH_LEVEL=3, AARCH64=?
+# - 2: Performant-3.             X86_ARCH_LEVEL=4, AARCH64=?
+
 unset X86_ARCH_LEVEL
 X86_ARCH_LEVEL=1
 # X86_ARCH_LEVEL=2
