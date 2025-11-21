@@ -38,22 +38,22 @@ unset CPU_PERFORMANCE_LEVEL
 
 Default, widely compatible, low performance:
 ```
-export CPU_PERFORMANCE_LEVEL-1
+export CPU_PERFORMANCE_LEVEL=1
 ```
 
 Intel ???, Raspberry Pi 3
 ```
-export CPU_PERFORMANCE_LEVEL-2
+export CPU_PERFORMANCE_LEVEL=2
 ```
 
 Intel i3,i5,i7, Raspberry Pi 3
 ```
-export CPU_PERFORMANCE_LEVEL-3
+export CPU_PERFORMANCE_LEVEL=3
 ```
 
 New high-end Intel/AMD, Mac M1
 ```
-export CPU_PERFORMANCE_LEVEL-4
+export CPU_PERFORMANCE_LEVEL44
 ```
 
 ---
