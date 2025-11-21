@@ -37,6 +37,8 @@ Same benchmarks for a GKMTec NUC with Intel N97, 12 GB RAM, running 4 threads. N
 
 Notice how mighty the little Raspberry Pi 5 is on CPU performance!
 
+*Note: I'm working out how to specify the CPU architecture level for the APE builds, whether it makes sense to support anything before x86-64-v3, and whether that would be adequate for CPU builds. Most users would then only download to replace the APE to use GPU. That exploration is in progress now.*
+
 ---
 ### Build Targets
 These instructions will help you build:
