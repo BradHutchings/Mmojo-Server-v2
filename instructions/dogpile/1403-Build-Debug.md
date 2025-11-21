@@ -1,7 +1,8 @@
-## 403. Build Debug
+## 1403. Build Debug
 ### About this Step
+**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or GPU-enabled builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
+In this step, we will build Dogpile (`dogpile`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds, you can and should use this build to test and debug features of Dogpile that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -17,47 +18,25 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Build Debug Mmojo Server for Build Environment Platform
+### Build Debug Dogpile for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
+- View the script: <a href="../../scripts/1403-Build-Debug.sh" target="_blank">1403-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
+  $MMOJO_SERVER_SCRIPTS/1403-Build-Debug.sh
   ```
 
 ---
 ### Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug-Command-Line.sh" target="_blank">403-Test-Debug-Command-Line.sh</a>.
+- View the script: <a href="../../scripts/1403-Test-Debug-Command-Line.sh" target="_blank">1403-Test-Debug-Command-Line.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
   ```
-
-<details>
-  <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
-
-Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug-mmojo-server-args.sh" target="_blank">403-Test-Debug-mmojo-server-args.sh</a>.
-- Run the script.
-  ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-args.sh
-  ```
-</details>
-
-<details>
-  <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
-
-Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug-mmojo-server-support.sh" target="_blank">403-Test-Debug-mmojo-server-support.sh</a>.
-- Run the script.
-  ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug-mmojo-server-support.sh
-  ```
-</details>
 
 ---
 ### SHORTCUT: Build Debug, Test
@@ -66,15 +45,15 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
+$MMOJO_SERVER_SCRIPTS/1403-Build-Debug.sh
+$MMOJO_SERVER_SCRIPTS/1403-Test-Debug-Command-Line.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [404. Build APE](404-Build-APE.md)
-- **Previous:** [402. Prepare to Test](402-Prepare-to-Test.md)
-- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next:** [1404. Build APE](1404-Build-APE.md)
+- **Previous:** [1402. Prepare to Test](1402-Prepare-to-Test.md)
+- **Up:** [1400. Build Mmojo Server](1400-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
