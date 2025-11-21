@@ -2,7 +2,7 @@
 ### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
-If you already have models downloaded and copied to your Mmojo share, please proceed to: [303. Copy Models](303-Copy-Models.md).
+If you already have models downloaded and copied to your Mmojo share, please proceed to: [302. Copy Models](302-Copy-Models.md).
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
