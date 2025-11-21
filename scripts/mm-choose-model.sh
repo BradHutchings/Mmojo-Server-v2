@@ -29,9 +29,8 @@ done
 
 if [ -v CHOSEN_MODEL ]; then
   export CHOSEN_MODEL_SHORT_NAME=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
+  echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_SHORT_NAME"
 fi
-
-echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_SHORT_NAME"
 
 cd $HOME
 
