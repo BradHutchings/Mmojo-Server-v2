@@ -45,6 +45,8 @@ fi
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
 mkdir -p mmojo-server-support
+
+# --mlock is not needed to run this.
 cat << EOF > mmojo-server-support/default-args
 --model
 $MODELS_DIR/$MODEL_PARAM
@@ -64,8 +66,6 @@ $UI_PARAMS$THREADS_PARAM
 ...
 EOF
 $BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
-
-# $UI_PARAMS$THREADS_PARAM--mlock
 
 printf "\nVerify that 'mmojo-server-args' does not exist and 'mmojo-server-support' exists.\n"
 ls -ald mmojo-server-args
