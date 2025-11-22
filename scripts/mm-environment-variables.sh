@@ -106,6 +106,11 @@ export DOGPILE_BUILD_DIR="$HOME/1400-BUILD-dogpile"
 export DOGPILE_TEST_DIR="$HOME/1400-TEST-dogpile"
 export DOGPILE_PACKAGE_DIR="$HOME/1500-PACKAGE-dogpile"
 
+export PACKAGE_DOGPILE_FILE="dogpile"
+export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"
+export PACKAGE_DOGPILE_ZIP_FILE="dogpile.zip"
+export PACKAGE_DOGPILE_EXE_FILE="dogpile.exe"
+
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
