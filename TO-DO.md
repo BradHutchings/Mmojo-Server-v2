@@ -17,6 +17,8 @@
             Eliminate from tests if possible, or document that and why they are needed.
             Packaging?
 
+2025-11-21  Finish instruction file renumbering step for Dogpile.
+
 2025-11-21  Finish packaging step for Dogpile.
 
 2025-11-21  Why do mm-work-in-progress and mm-main-branch show a quote error, then when run again, do fine? Goofy, not that anyone else will use them.
