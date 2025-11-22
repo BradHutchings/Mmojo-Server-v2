@@ -9,10 +9,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-THIS_TEST_DIR="$DOGPILE_TEST_DIR/$TEST_DEBUG_COMMAND_LINE"
-mkdir -p $THIS_TEST_DIR
-rm -r -f $THIS_TEST_DIR/*
-cd $THIS_TEST_DIR
+THIS_TEST="$DOGPILE_TEST_DIR/$TEST_DEBUG_COMMAND_LINE"
+mkdir -p $THIS_TEST
+rm -r -f $THIS_TEST/*
+cd $THIS_TEST
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v TEST_MODEL ]]; then
