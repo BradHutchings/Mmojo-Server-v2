@@ -44,23 +44,18 @@ if [ -v CPU_PERFORMANCE_LEVEL ]; then
   case $CPU_PERFORMANCE_LEVEL in
     1)
         X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
-        break
         ;;
     2)
         X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v2 "
-        break
         ;;
     3)
         X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v3 "
-        break
         ;;
     4)
         X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v4 "
-        break
         ;;
     *)
         X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
-        break
         ;;
   esac
 fi
