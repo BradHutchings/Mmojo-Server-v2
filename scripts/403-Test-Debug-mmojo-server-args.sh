@@ -58,10 +58,12 @@ $MODELS_DIR/$MODEL_PARAM
 64
 --batch-sleep-ms
 0
-$UI_PARAMS$THREADS_PARAM--mlock
+$UI_PARAMS$THREADS_PARAM
 ...
 EOF
 $BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
+
+# $UI_PARAMS$THREADS_PARAM--mlock
 
 printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
 ls -ald mmojo-server-args
