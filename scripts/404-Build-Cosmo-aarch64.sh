@@ -17,23 +17,18 @@ if [ -v CPU_PERFORMANCE_LEVEL ]; then
   case $CPU_PERFORMANCE_LEVEL in
     1)
         unset AARCH64_ARCH_LEVEL_PARAM
-        break
         ;;
     2)
         AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a " 
-        break
         ;;
     3)
         AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a "
-        break
         ;;
     4)
         AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a "
-        break
         ;;
     *)
         AARCH64_ARCH_LEVEL_PARAM=" -march=armv8.4-a "
-        break
         ;;
   esac
 fi
