@@ -38,7 +38,7 @@ This script creates the package directories, copies the `dogpile-ape` file you p
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Create-Package-Directory.sh
+  $DOGPILE_SCRIPTS/501-Create-Package-Directory.sh
   # Keep track of what we add below for the `default-args` file.
   unset SELECTED_MODEL
   unset ADDED_MODEL
@@ -51,7 +51,7 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 - View the script: <a href="../../scripts/dogpile/501-Add-Certs-to-APE.sh" target="_blank">501-Add-Certs-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-Certs-to-APE.sh
+  $DOGPILE_SCRIPTS/501-Add-Certs-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_CERTS=1
   ```
@@ -66,7 +66,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../../scripts/dogpile/501-Add-Mmojo-Complete-to-APE.sh" target="_blank">501-Add-Mmojo-Complete-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
+  $DOGPILE_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -79,7 +79,7 @@ This script adds the chosen `.gguf` model to the APE package.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/501-Add-gguf-Model-to-APE.sh
+    $DOGPILE_SCRIPTS/501-Add-gguf-Model-to-APE.sh
     # Keep track of what we add for the `default-args` file.
     export ADDED_MODEL=1
   fi
@@ -91,7 +91,7 @@ This script adds a `default-args` file to the APE package. If you a .gguf model 
 - View the script: <a href="../../scripts/dogpile/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-default-args-to-APE.sh
+  $DOGPILE_SCRIPTS/501-Add-default-args-to-APE.sh
   ```
 
 ---
