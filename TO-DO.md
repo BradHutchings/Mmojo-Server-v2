@@ -17,6 +17,8 @@
             Eliminate from tests if possible, or document that and why they are needed.
             Packaging?
 
+            - Test-Debug didn't need --mlock.
+
 2025-11-21  Finish instruction file renumbering step for Dogpile.
 
 2025-11-21  Finish packaging step for Dogpile.
