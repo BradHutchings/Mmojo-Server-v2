@@ -26,31 +26,6 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
   . mm-choose-model.sh
   ```
 
-<!--
----
-### Optional: Choose LLM
-By default, we'll use Google Gemma 1B Instruct v3. Set the default with:
-```
-unset TEST_MODEL
-```
-
-If you'd like to test with a different LLM, set one of these values:
-```
-export TEST_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
-```
-
-Make sure the LLM has been downloaded or copied to your `$HOME/300-MODEKS` directory. Otherwise, the `Test-`scripts will fall back to Google Gemma 1B Instruct v3.
--->
-
 ---
 ### Optional: Choose CPU Threads
 By default, Mmojo Server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
