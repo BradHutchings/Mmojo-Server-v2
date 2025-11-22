@@ -102,9 +102,9 @@ export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
-export DOGPILE_BUILD_DIR="$HOME/1400-BUILD-dogpile"
-export DOGPILE_TEST_DIR="$HOME/1400-TEST-dogpile"
-export DOGPILE_PACKAGE_DIR="$HOME/1500-PACKAGE-dogpile"
+export DOGPILE_BUILD_DIR="$HOME/400-BUILD-dogpile"
+export DOGPILE_TEST_DIR="$HOME/400-TEST-dogpile"
+export DOGPILE_PACKAGE_DIR="$HOME/500-PACKAGE-dogpile"
 
 export PACKAGE_DOGPILE_FILE="dogpile"
 export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"
