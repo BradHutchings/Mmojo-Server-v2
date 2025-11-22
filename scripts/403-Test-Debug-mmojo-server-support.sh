@@ -16,11 +16,11 @@ rm -r -f $THIS_TEST_DIR/*
 cd $THIS_TEST_DIR
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
-if [[ -v TEST_MODEL ]]; then
-    echo "\$TEST_MODEL: $TEST_MODEL."
-    if [ -f "$MODELS_DIR/$TEST_MODEL" ]; then
+if [[ -v CHOSEN_MODEL ]]; then
+    echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
+    if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
         echo "Model found."
-        MODEL_PARAM=$TEST_MODEL
+        MODEL_PARAM=$CHOSEN_MODEL
     fi
 fi
 # echo "\$MODEL_PARAM: $MODEL_PARAM"
