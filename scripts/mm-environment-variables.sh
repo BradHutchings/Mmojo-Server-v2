@@ -62,7 +62,7 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
-export BUILD_DIR="$HOME/400-BUILD"
+export BUILD_DIR="$HOME/400-BUILD-mmojo-server"
 export BUILD_DEBUG="build-debug"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
 export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
@@ -72,7 +72,7 @@ export BUILD_CUDA="build-cuda"
 export BUILD_VULKAN="build-vulkan"
 export BUILD_METAL="build-metal"
 
-export TEST_DIR="$HOME/400-TEST"
+export TEST_DIR="$HOME/400-TEST-mmojo-server"
 export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
 export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
 export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
@@ -88,7 +88,7 @@ unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
-export PACKAGE_DIR="$HOME/500-PACKAGE"
+export PACKAGE_DIR="$HOME/500-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
 export PACKAGE_ZIP="zip"
 export PACKAGE_SEAS="seas"
@@ -102,9 +102,9 @@ export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
-export DOGPILE_BUILD_DIR="$HOME/1400-BUILD-DOGPILE"
-export DOGPILE_TEST_DIR="$HOME/1400-TEST-DOGPILE"
-export DOGPILE_PACKAGE_DIR="$HOME/1500-PACKAGE-DOGPILE"
+export DOGPILE_BUILD_DIR="$HOME/1400-BUILD-dogpile"
+export DOGPILE_TEST_DIR="$HOME/1400-TEST-dogpile"
+export DOGPILE_PACKAGE_DIR="$HOME/1500-PACKAGE-dogpile"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
