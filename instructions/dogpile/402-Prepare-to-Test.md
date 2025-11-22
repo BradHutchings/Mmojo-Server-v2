@@ -1,4 +1,4 @@
-## 1402. Prepare to Test
+## 402. Prepare to Test
 ### About this Step
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
@@ -62,9 +62,9 @@ export TEST_CPU_THREADS=8
 
 ---
 ### Proceed
-- **Next:** [1403. Build Debug](1403-Build-Debug.md)
-- **Previous:** [1401. Prepare to Build](1401-Prepare-to-Build.md)
-- **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
+- **Next:** [403. Build Debug](403-Build-Debug.md)
+- **Previous:** [401. Prepare to Build](401-Prepare-to-Build.md)
+- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
