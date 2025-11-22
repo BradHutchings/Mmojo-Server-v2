@@ -18,6 +18,8 @@
             Packaging?
 
             - Test-Debug didn't need --mlock.
+            - Test-APE didn't need --mlock.
+            - Test-CPU didn't need --mlock.
 
 2025-11-21  Finish instruction file renumbering step for Dogpile.
 
