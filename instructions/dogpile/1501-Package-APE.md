@@ -144,7 +144,7 @@ Hit `ctrl-C` on your keyboard to stop the dogpile server.
 ### Proceed
 - **Next:** This is the final step in this section.
 - **Previous:** This is the first step in this section.
-- **Up:** [1500. Package Mmojo Server](1500-Package-Mmojo-Server.md)
+- **Up:** [1500. Package Dogpile](1500-Package-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
