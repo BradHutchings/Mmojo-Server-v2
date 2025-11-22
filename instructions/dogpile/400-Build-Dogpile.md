@@ -1,4 +1,4 @@
-## 1400. Build Dogpile
+## 400. Build Dogpile
 ### About this Section
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
@@ -7,12 +7,12 @@ We're ready to build `dogpile` executables. First, we'll build a native version 
 ---
 ### Build Dogpile
 Here are the things you need to do:
-- [1401. Prepare to Build](1401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
-- [1402. Prepare to Test](1402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
-- [1403. Build Debug](1403-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
-- [1404. Build APE](1404-Build-APE.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
+- [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
+- [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
+- [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
+- [404. Build APE](404-Build-APE.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
 
-**Get Started:** [1401. Prepare to Build](1401-Prepare-to-Build.md)
+**Get Started:** [401. Prepare to Build](401-Prepare-to-Build.md)
 
 ---
 [MIT License](/LICENSE)<br/>
