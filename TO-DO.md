@@ -23,8 +23,6 @@
 2025-11-21  Figure out which installed dependency is putting up the purple email server screen.
             https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md
 
-2025-11-21  Finish instruction file renumbering step for Dogpile.
-
 2025-11-21  Finish packaging step for Dogpile.
 
 2025-11-21  Why do mm-work-in-progress and mm-main-branch show a quote error, then when run again, do fine? Goofy, not that anyone else will use them.
@@ -43,5 +41,7 @@
 
 2025-11-21  Is it safe to use the latest Cosmo again? Changes started mid-November and broke the build of the Cosmo library.
 
-## Finished
+---
+### Finished - Finished Date - Start Date - Task
 
+2025-11-21            2025-11-21  Finish instruction file renumbering step for Dogpile.
