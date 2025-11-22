@@ -35,7 +35,7 @@ if [ -f "$BUILT_FILE" ]; then
 fi
 
 echo "Removing extraneous time zone files from zip."
-zip -d $ZIP_FILE "/usr/*"
+zip -d -q $ZIP_FILE "/usr/*"
 
 echo ""
 echo "Contents of $ZIP_FILE:"
