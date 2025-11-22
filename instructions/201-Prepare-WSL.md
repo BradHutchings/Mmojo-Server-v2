@@ -50,7 +50,6 @@ cat /etc/wsl.conf
 
 Append an `[interop]` section to `/etc/wsl.conf`:
 ```
-cd $HOME
 cp /etc/wsl.conf ./wsl.conf
 cat << EOF >> wsl.conf
 
