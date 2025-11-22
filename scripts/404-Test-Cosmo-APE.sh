@@ -45,8 +45,6 @@ rm -r -f mmojo-server-support
 $BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
     
-# --mlock
-
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
 ls -ald mmojo-server-args
 ls -ald mmojo-server-support
