@@ -18,13 +18,17 @@ fi
 ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 
 if [ -v CHOSEN_MODEL ]; then
-  echo "Chosen model: $CHOSEN_MODEL"
-  MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
-  if [ -f "$MODEL_FILE" ]; then
-    cd $MODELS_DIR
-    echo "mm-zipalign-ing $MODEL_FILE."
-    $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
-  fi
+    echo "Chosen model: $CHOSEN_MODEL"
+    MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
+    if [ -f "$MODEL_FILE" ]; then
+        cd $MODELS_DIR
+        echo "Zipping $MODEL_FILE."
+        zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
+
+        # No need to use zipaling if GPUs won't load the model.
+        # echo "mm-zipalign-ing $MODEL_FILE."
+        # $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
+    fi
 fi
 
 echo ""
