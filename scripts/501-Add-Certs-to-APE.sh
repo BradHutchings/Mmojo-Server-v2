@@ -29,7 +29,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   cp $MMOJO_SHARE_MOUNT_POINT/Mmojo-certs/selfsignCA.crt $CERTS
 
   cd $THIS_PACKAGE_DIR
-  zip -0 -r $ZIP_FILE certs/*
+  zip -0 -r -q $ZIP_FILE certs/*
 fi
 
 echo ""
