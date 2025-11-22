@@ -156,6 +156,10 @@ $MMOJO_SERVER_SCRIPTS/1404-Test-Cosmo-APE.sh
 - **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
 
 ---
+### Next Section
+- **Next Section:** [1500. Package Dogpile](1500-Package-Dogpile.md)
+
+---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
