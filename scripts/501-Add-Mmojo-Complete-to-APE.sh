@@ -27,7 +27,7 @@ if [ -f "$CA_FILE" ]; then
 fi
 
 cd $THIS_PACKAGE_DIR
-zip -0 -r $ZIP_FILE Mmojo-Complete/*
+zip -0 -r -q $ZIP_FILE Mmojo-Complete/*
 
 echo ""
 echo "Contents of $ZIP_FILE:"
