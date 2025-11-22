@@ -34,7 +34,7 @@ fi
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
-$DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
+$DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/dogpile-ape --model $MODELS_DIR/$MODEL_PARAM \
     $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
 
 printf "\nFIX THIS: Need to be 'dogpile-args' and 'dogpile-support' in server.mmojo.cpp - Patch that.\n"
