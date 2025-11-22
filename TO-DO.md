@@ -1,17 +1,5 @@
 ## Disorganized To-Do List
 
-2025-11-21  Routine update of llama.cpp.
-            Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp?
-
-2025-11-21  #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile.
-
-2025-11-21  Figure out which installed dependency is putting up the purple email server screen.
-            https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md
-
-2025-11-21  If I'm not feeding models to a GPU, do I need to align them in the APE packages? I think no.
-            If not, no need for mm-zipalign, so get rid of it.
-            See llamafile explanation of why aligning is needed here: https://github.com/mozilla-ai/llamafile/blob/main/docs/technical_details.md#zip-weights-embedding
-
 2025-11-21  Are --mlock and --no-mmap needed as parameters when we test builds or package builds?
             Seems like they should be added by one of our users for better performance / behavior.
             Eliminate from tests if possible, or document that and why they are needed.
@@ -20,6 +8,20 @@
             - Test-Debug didn't need --mlock.
             - Test-APE didn't need --mlock.
             - Test-CPU didn't need --mlock.
+            - Test-CUDA didn't need --mlock.
+            - Test-VULKAN didn't need --mlock.
+
+2025-11-21  If I'm not feeding models to a GPU, do I need to align them in the APE packages? I think no.
+            If not, no need for mm-zipalign, so get rid of it.
+            See llamafile explanation of why aligning is needed here: https://github.com/mozilla-ai/llamafile/blob/main/docs/technical_details.md#zip-weights-embedding
+
+2025-11-21  Routine update of llama.cpp.
+            Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp?
+
+2025-11-21  #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile.
+
+2025-11-21  Figure out which installed dependency is putting up the purple email server screen.
+            https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md
 
 2025-11-21  Finish instruction file renumbering step for Dogpile.
 
