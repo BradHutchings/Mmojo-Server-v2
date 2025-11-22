@@ -1,4 +1,4 @@
-## 1404. Build APE
+## 404. Build APE
 ### About this Step
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
@@ -24,7 +24,7 @@ mm-update-local-mmojo-server-repo.sh
 ### Choose a Performance Level
 This script has you choose a performance level for your APE build.
 
-- View the script: <a href="../scripts/mm-choose-performance-level.sh" target="_blank">mm-choose-performance-level.sh</a>.
+- View the script: <a href="../../scripts/mm-choose-performance-level.sh" target="_blank">mm-choose-performance-level.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -70,61 +70,61 @@ export CPU_PERFORMANCE_LEVEL=4
 ---
 ### Build Dogpile for x86_64
 This script uses cmake CMake to build Dogpile with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../../scripts/1404-Build-Cosmo-x86_64.sh" target="_blank">1404-Build-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Build-Cosmo-x86_64.sh" target="_blank">404-Build-Cosmo-x86_64.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Build-Cosmo-x86_64.sh
+  $DOGPILE_SCRIPTS/404-Build-Cosmo-x86_64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/1404-Test-Cosmo-x86_64.sh" target="_blank">1404-Test-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Test-Cosmo-x86_64.sh
+  $DOGPILE_SCRIPTS/404-Test-Cosmo-x86_64.sh
   ```
 </details>
 
 ---
 ### Build Dogpile for aarch64 (arm64)
 This script uses cmake CMake to build Dogpile with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../../scripts/1404-Build-Cosmo-aarch64.sh" target="_blank">1404-Build-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Build-Cosmo-aarch64.sh" target="_blank">404-Build-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Build-Cosmo-aarch64.sh
+  $DOGPILE_SCRIPTS/404-Build-Cosmo-aarch64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/1404-Test-Cosmo-aarch64.sh" target="_blank">1404-Test-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Test-Cosmo-aarch64.sh
+  $DOGPILE_SCRIPTS/404-Test-Cosmo-aarch64.sh
   ```
 </details>
 
 ---
 ### Assemble dogpile Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
-- View the script: <a href="../../scripts/1404-Assemble-Cosmo-APE.sh" target="_blank">1404-Assemble-Cosmo-APE.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Assemble-Cosmo-APE.sh" target="_blank">404-Assemble-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Assemble-Cosmo-APE.sh
+  $DOGPILE_SCRIPTS/404-Assemble-Cosmo-APE.sh
   ```
 
 #### Test the Assembled APE
 If you're build enviornment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/1404-Test-Cosmo-APE.sh" target="_blank">1404-Test-Cosmo-APE.sh</a>.
+- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/1404-Test-Cosmo-APE.sh
+  $DOGPILE_SCRIPTS/404-Test-Cosmo-APE.sh
   ```
 
 ---
@@ -143,17 +143,17 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/1404-Build-Cosmo-x86_64.sh
-$MMOJO_SERVER_SCRIPTS/1404-Build-Cosmo-aarch64.sh
-$MMOJO_SERVER_SCRIPTS/1404-Assemble-Cosmo-APE.sh
-$MMOJO_SERVER_SCRIPTS/1404-Test-Cosmo-APE.sh
+$DOGPILE_SCRIPTS/404-Build-Cosmo-x86_64.sh
+$DOGPILE_SCRIPTS/404-Build-Cosmo-aarch64.sh
+$DOGPILE_SCRIPTS/404-Assemble-Cosmo-APE.sh
+$DOGPILE_SCRIPTS/404-Test-Cosmo-APE.sh
 ```
 
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [1403. Build Debug](1403-Build-Debug.md)
-- **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
+- **Previous:** [403. Build Debug](403-Build-Debug.md)
+- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
 ### Next Section
