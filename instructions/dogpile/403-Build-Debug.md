@@ -1,4 +1,4 @@
-## 1403. Build Debug
+## 403. Build Debug
 ### About this Step
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
@@ -20,22 +20,22 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Build Debug Dogpile for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../../scripts/1403-Build-Debug.sh" target="_blank">1403-Build-Debug.sh</a>.
+- View the script: <a href="../../scripts/dogpile/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/1403-Build-Debug.sh
+  $DOGPILE_SCRIPTS/403-Build-Debug.sh
   ```
 
 ---
 ### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/1403-Test-Debug.sh" target="_blank">1403-Test-Debug.sh</a>.
+- View the script: <a href="../../scripts/dogpile/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/1403-Test-Debug.sh
+  $DOGPILE_SCRIPTS/403-Test-Debug.sh
   ```
 
 ---
@@ -45,15 +45,15 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/1403-Build-Debug.sh
-$MMOJO_SERVER_SCRIPTS/1403-Test-Debug.sh
+$DOGPILE_SCRIPTS/403-Build-Debug.sh
+$DOGPILE_SCRIPTS/403-Test-Debug.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [1404. Build APE](1404-Build-APE.md)
-- **Previous:** [1402. Prepare to Test](1402-Prepare-to-Test.md)
-- **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
+- **Next:** [404. Build APE](404-Build-APE.md)
+- **Previous:** [402. Prepare to Test](402-Prepare-to-Test.md)
+- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
