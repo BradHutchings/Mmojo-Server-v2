@@ -18,27 +18,15 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Optional: Choose LLM
-By default, we'll use Google Gemma 1B Instruct v3. Set the default with:
-```
-unset TEST_MODEL
-```
-
-If you'd like to test with a different LLM, set one of these values:
-```
-export TEST_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
-```
-
-Make sure the LLM has been downloaded or copied to your `$HOME/300-MODEKS` directory. Otherwise, the `Test-`scripts will fall back to Google Gemma 1B Instruct v3.
+### Choose `.gguf` Model for Testing
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. .
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  unset CHOSEN_MODEL_SHORT_NAME
+  . mm-choose-model.sh
+  ```
 
 ---
 ### Optional: Choose CPU Threads
