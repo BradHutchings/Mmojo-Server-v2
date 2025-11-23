@@ -2,8 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [205-Create-Mmojo-Share.md
-](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
+| 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [205-Create-Mmojo-Share.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;23         | Fix the logic in [`-mm-mount-mmojo-share.sh`](https://github.com/BradHutchings/Mmojo-Server/blob/main/scripts/-mm-mount-mmojo-share.sh). Should try drvfs, then fall back to cifs, or vice versa. |
 | 2025&minus;11&minus;21         | Routine update of llama.cpp. Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
 | 2025&minus;11&minus;21         | #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile. |
@@ -13,6 +12,7 @@
 | 2025&minus;11&minus;21         | Similarly, pick performance for CUDA, VULKAN, and METAL builds.  CUDA and VULKAN could get (1) compatible, (2) performant, (3) native.  METAL would get M1, M2, M3, M4, M5(?) -- AARCH64 only. CPU should just be native. Otherwise, use the performant APE. |
 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Or just build a compatible and performant version of each. <-- This would solve things easier. No need to match up prep to builds. |
 | 2025&minus;11&minus;21         | Is it safe to use the latest Cosmo again? Changes started mid-November and broke the build of the Cosmo library. |
+| 2025&minus;11&minus;23         | Do I still need to rollback the new llama.cpp webui so I can run it non-root? [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md) |
 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. |
 | 2025&minus;11&minus;23         | `default-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
 
