@@ -33,7 +33,7 @@ if [ -v CHOSEN_MODEL ]; then
         # Not quite. Memory mapping for CPU requires page alignment. Trying 4096.
         # echo "mm-zipalign-ing $MODEL_FILE."
         # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
-        $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
+        $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
     fi
 fi
 
