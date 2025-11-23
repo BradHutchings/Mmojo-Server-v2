@@ -51,8 +51,12 @@ chat
 EOF
 fi
 
+# Memory mapping through Coscmo libc does not work. If we add a model, make sure we don't use mmap.
+# We need an enable mmap paramter to override this.
+
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+--no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
