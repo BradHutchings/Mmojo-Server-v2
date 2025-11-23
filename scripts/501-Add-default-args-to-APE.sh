@@ -56,6 +56,7 @@ fi
 
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+--no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
@@ -69,8 +70,10 @@ echo "$PACKAGE_DEFAULT_ARGS_FILE:"
 cat $PACKAGE_DEFAULT_ARGS_FILE
 
 # echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
-# zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
-$ZIPALIGN -a 4096 $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+
+# Trying to preserve alignment of .gguf -- doesn't fix mmap() problem.
+# $ZIPALIGN -a 4096 $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
 
 echo ""
 echo "Contents of $ZIP_FILE:"
