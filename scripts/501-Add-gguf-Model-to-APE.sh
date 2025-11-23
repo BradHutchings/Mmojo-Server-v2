@@ -25,15 +25,14 @@ if [ -v CHOSEN_MODEL ]; then
 
         # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
         # Punting on memort mapping for now.
-        # We need page aligning for memory mapping. This will not work.
-        # echo "Zipping $MODEL_FILE."
-        # zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
+        echo "Zipping $MODEL_FILE."
+        zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
 
-        # No need to use zipaling if GPUs won't load the model.
-        # Not quite. Memory mapping for CPU requires page alignment. Trying 4096.
+        # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
+        # wants it to. Try to fix this another day.
         # echo "mm-zipalign-ing $MODEL_FILE."
         # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
-        $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
+        # $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
     fi
 fi
 
