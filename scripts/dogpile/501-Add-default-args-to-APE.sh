@@ -7,7 +7,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
@@ -33,8 +33,12 @@ cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
 0
 EOF
 
+# Memory mapping through Coscmo libc does not work. If we add a model, make sure we don't use mmap.
+# We need an enable mmap paramter to override this.
+
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+--no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
