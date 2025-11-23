@@ -56,7 +56,6 @@ fi
 
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
---no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
