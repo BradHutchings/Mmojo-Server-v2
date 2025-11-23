@@ -1,5 +1,8 @@
 ## 501. Package APE
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Package-Dogpile.md).
 
+---
 ### About this Step
 
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a `.gguf` model file, and add a configuration file. You will test run it.
