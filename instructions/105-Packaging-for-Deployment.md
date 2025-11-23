@@ -15,7 +15,7 @@ Future options:
 
 ---
 ### Proceed
-- **Next:** [106. Contributing](106-Contributing.md)
+- **Next:** [106. Contributing and Sponsoring](106-Contributing-and-Sponsoring.md)
 - **Previous:** [104. Build Targets](104-Build-Targets.md)
 - **Up:** [100. Overview](100-Overview.md)
 
