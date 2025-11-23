@@ -83,8 +83,6 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $DOGPILE_SCRIPTS/401-Clone-Repos.sh
 $DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh
-# $DOGPILE_SCRIPTS/401-Rollback-webui.sh
-# $DOGPILE_SCRIPTS/401-Customize-webui.sh
 ```
 
 ---
