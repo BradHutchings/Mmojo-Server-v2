@@ -32,8 +32,12 @@ fi
 # echo "\$THREADS_PARAM: $THREADS_PARAM"
 # sleep 5s
 
-rm -f mmojo-server-args
-rm -r -f mmojo-server-support
+printf "\nFIX THIS: Need to be $PACKAGE_DOGPILE_ARGS_FILE and $PACKAGE_MMOJO_SERVER_SUPPORT_DIR in server.mmojo.cpp - Patch that.\n"
+rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
+rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+# rm -f $PACKAGE_DOGPILE_ARGS_FILE
+# rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+
 $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/dogpile-ape --model $MODELS_DIR/$MODEL_PARAM \
     $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
 
@@ -41,6 +45,8 @@ printf "\nFIX THIS: Need to be 'dogpile-args' and 'dogpile-support' in server.mm
 printf "\nVerify that args file and support folder do not exist.\n"
 ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+# ls -ald $PACKAGE_DOGPILE_ARGS_FILE
+# ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 
