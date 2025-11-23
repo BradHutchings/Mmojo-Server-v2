@@ -65,15 +65,17 @@ echo "\$CPU_PERFORMANCE_LEVEL: $CPU_PERFORMANCE_LEVEL"
 echo "\$X86_64_ARCH_LEVEL_PARAM: $X86_64_ARCH_LEVEL_PARAM"
 echo ""
 
-export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
-export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-    -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
-export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM \
-    -I$(pwd)/cosmocc/include/third_party/libcxx \
-    -I$(pwd)/openssl/include \
-    -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
-export AR="cosmoar"
+# NOTE: I think I used to have to specify the include and library paths. Maybe before splitting into x86_64 and aarch64 buidls.
+#
+# export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+# export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
+#     -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
+# export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
+#     -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM \
+#     -I$(pwd)/cosmocc/include/third_party/libcxx \
+#     -I$(pwd)/openssl/include \
+#     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
+# export AR="cosmoar"
 
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
@@ -83,6 +85,7 @@ export CXX="x86_64-unknown-cosmo-c++ \
     -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl"
+export AR="cosmoar"
 
 # The OpenSSL linking got moved.
 cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
