@@ -30,7 +30,8 @@ if [ -v CHOSEN_MODEL ]; then
         # No need to use zipaling if GPUs won't load the model.
         # Not quite. Memory mapping for CPU requires page alignment. Trying 4096.
         echo "mm-zipalign-ing $MODEL_FILE."
-        $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
+        # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
+        $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
     fi
 fi
 
