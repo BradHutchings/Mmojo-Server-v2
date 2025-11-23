@@ -75,11 +75,10 @@ export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
 export AR="cosmoar"
 
-export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include \
+export CC="x86_64-unknown-cosmo-cc  \
     -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM \
-    -I$(pwd)/cosmocc/include/third_party/libcxx \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation  $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
      -L$(pwd)/openssl"
 
