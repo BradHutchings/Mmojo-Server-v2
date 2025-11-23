@@ -22,12 +22,15 @@ if [ -v CHOSEN_MODEL ]; then
     MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
     if [ -f "$MODEL_FILE" ]; then
         cd $MODELS_DIR
-        echo "Zipping $MODEL_FILE."
-        zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
+
+        # We need page aligning for memory mapping. This will not work.
+        # echo "Zipping $MODEL_FILE."
+        # zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
 
         # No need to use zipaling if GPUs won't load the model.
-        # echo "mm-zipalign-ing $MODEL_FILE."
-        # $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
+        # Not quite. Memory mapping for CPU requires page alignment. Trying 4096.
+        echo "mm-zipalign-ing $MODEL_FILE."
+        $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
     fi
 fi
 
