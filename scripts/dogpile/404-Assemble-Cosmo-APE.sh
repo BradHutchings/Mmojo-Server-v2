@@ -17,6 +17,8 @@ cd $DOGPILE_BUILD_DIR
 mkdir -p $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
+# Thanks to Davide Eynard for the -M line to support Macs.
+
 apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
@@ -25,17 +27,17 @@ apelink \
     $DOGPILE_BUILD_DIR/$BUILD_COSMO_X86_64/bin/dogpile \
     $DOGPILE_BUILD_DIR/$BUILD_COSMO_AARCH64/bin/dogpile
 
-apelink \
-	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
-	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
-	-M ./cosmocc/bin/ape-m1.c \
-    $DOGPILE_BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
-    $DOGPILE_BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
+# Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
+# apelink \
+# 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+# 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+# 	-o $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+# 	-M ./cosmocc/bin/ape-m1.c \
+# 	$DOGPILE_BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
+# 	$DOGPILE_BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
 
-# Thanks to Davide Eynard for the -M line to support Macs.
-
-cp $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
+# Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
+# cp $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
 export PATH=$SAVE_PATH
 
