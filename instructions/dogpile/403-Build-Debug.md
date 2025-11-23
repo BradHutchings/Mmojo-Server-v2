@@ -1,4 +1,8 @@
 ## 403. Build Debug
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
+
+---
 ### About this Step
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
