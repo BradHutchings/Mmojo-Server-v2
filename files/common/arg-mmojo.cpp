@@ -3176,6 +3176,15 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
             params.n_batch_sleep_ms = value;
         }
     ).set_examples({LLAMA_EXAMPLE_SERVER}));
+
+    add_opt(common_arg(
+        {"--mmap"},
+        "use memory-map model, for overriding --no-mmap",
+        [](common_params & params) {
+            params.use_mmap = true;
+        }
+    ).unset_env("LLAMA_ARG_NO_MMAP"));
+
     // mmojo-server END
 
     return ctx_arg;
