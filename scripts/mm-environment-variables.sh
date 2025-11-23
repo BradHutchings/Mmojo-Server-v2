@@ -100,6 +100,7 @@ export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 
 # Change this to "mmojo-server-args", update server-mmojo.cpp.
 export PACKAGE_DEFAULT_ARGS_FILE="default-args"
+export PACKAGE_MMOJO_SERVER_ARGS_FILE="mmojo-server-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
 export DOGPILE_FILES="$MMOJO_SERVER_DIR/files/dogpile"
@@ -113,6 +114,8 @@ export PACKAGE_DOGPILE_FILE="dogpile"
 export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"
 export PACKAGE_DOGPILE_ZIP_FILE="dogpile.zip"
 export PACKAGE_DOGPILE_EXE_FILE="dogpile.exe"
+export PACKAGE_DOGPILE_ARGS_FILE="dogpile-args"
+export PACKAGE_DOGPILE_SUPPORT_DIR="dogpile-support"
 
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
