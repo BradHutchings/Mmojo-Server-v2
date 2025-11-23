@@ -5,6 +5,8 @@ We're ready to build `mmojo-server` executables. First, we'll build a native ver
 #### Experimental &mdash; Dogpile
 If you would like to build a less branded and opinionated version of llama.cpp, I offer **Dogpile**. It's intended as an example branded server I am offering to paid sponsors of Mmojo Server. Let's work out a sponsorship deal and what you'd like in your custom branded server!
 
+[Jump to these instructions](dogpile/400-Build-Dogpile.md) to build a Dogpile server with a traditional chat-style user interface.
+
 ---
 ### Build Mmojo Server
 Here are the things you need to do:
