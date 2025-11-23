@@ -21,6 +21,7 @@ git clone https://github.com/jart/cosmopolitan.git $BUILD_COSMOPOLITAN_DIR
 cd $BUILD_COSMOPOLITAN_DIR
 
 # Roll the Cosmopolitan repo back to last known working.
+# Problem shows up when we run a build. Server responds to API calls with "400". Not fun to debug. Will do it someday if needed.
 # Up through: https://github.com/jart/cosmopolitan/commit/f1e83d52403060d674161944e849b51f95707c9a
 # f1e83d52403060d674161944e849b51f95707c9a 
 git checkout f1e83d52403060d674161944e849b51f95707c9a 
