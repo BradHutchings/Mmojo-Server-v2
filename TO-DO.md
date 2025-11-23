@@ -10,6 +10,7 @@
 | 2025&minus;11&minus;21         | Similarly, pick performance for CUDA, VULKAN, and METAL builds.  CUDA and VULKAN could get (1) compatible, (2) performant, (3) native.  METAL would get M1, M2, M3, M4, M5(?) -- AARCH64 only. CPU should just be native. Otherwise, use the performant APE. |
 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Or just build a compatible and performant version of each. <-- This would solve things easier. No need to match up prep to builds. |
 | 2025&minus;11&minus;21         | Is it safe to use the latest Cosmo again? Changes started mid-November and broke the build of the Cosmo library. |
+| 2025&minus;11&minus;23         | `default-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
 
 ---
 ### Finished
