@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
@@ -18,13 +18,22 @@ fi
 ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_ZIP_FILE"
 
 if [ -v CHOSEN_MODEL ]; then
-  echo "Chosen model: $CHOSEN_MODEL"
-  MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
-  if [ -f "$MODEL_FILE" ]; then
-    cd $MODELS_DIR
-    echo "mm-zipalign-ing $MODEL_FILE."
-    $ZIPALIGN $ZIP_FILE $CHOSEN_MODEL
-  fi
+    echo "Chosen model: $CHOSEN_MODEL"
+    MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
+    if [ -f "$MODEL_FILE" ]; then
+        cd $MODELS_DIR
+        
+        # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
+        # Punting on memort mapping for now.
+        echo "Zipping $MODEL_FILE."
+        zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
+
+        # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
+        # wants it to. Try to fix this another day.
+        # echo "mm-zipalign-ing $MODEL_FILE."
+        # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
+        # $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
+    fi
 fi
 
 echo ""
@@ -33,7 +42,7 @@ unzip -l $ZIP_FILE
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
