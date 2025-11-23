@@ -23,13 +23,15 @@ sudo apt install -y \
     libxcb-cursor-dev libxcb-dri3-0 libxcb-dri3-dev libxcb-ewmh-dev libxcb-keysyms1-dev \
     libxcb-present0 libxcb-randr0-dev libxcb-xinerama0 libxcb-xinput0 libxml2-dev
 
-# The pink screen is one of these:
+# The pink screen is triggered by one of these:
 #    libxrandr-dev libzstd-dev ninja-build npm ocaml-core \
 #    pkg-config python3 python3-pip python3-tk qt5-qmake \
 
 sudo apt install -y \
     libxrandr-dev libzstd-dev ninja-build npm ocaml-core \
-    pkg-config python3 python3-pip python3-tk qt5-qmake \
+    pkg-config python3 python3-pip python3-tk qt5-qmake
+
+sudo apt install -y \
     qtbase5-dev qtbase5-dev-tools qtcreator tk-dev wayland-protocols \
     xz-utils zip zlib1g-dev cifs-utils
 
