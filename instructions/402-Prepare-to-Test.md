@@ -16,6 +16,7 @@ mm-update-local-mmojo-server-repo.sh
 ```
 </details>
 
+---
 ### Choose `.gguf` Model for Testing
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. .
 - View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
