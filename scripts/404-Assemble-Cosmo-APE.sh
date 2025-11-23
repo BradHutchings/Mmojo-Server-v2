@@ -17,6 +17,8 @@ cd $BUILD_DIR
 mkdir -p $BUILD_DIR/$BUILD_COSMO_APE
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
+# Thanks to Davide Eynard for the -M line to support Macs.
+
 apelink \
 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
@@ -25,17 +27,17 @@ apelink \
     $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mmojo-server \
     $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server
 
-apelink \
-	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
-	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	-o $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
-	-M ./cosmocc/bin/ape-m1.c \
-    $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
-    $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
+# Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
+# apelink \
+# 	-l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
+# 	-l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
+#	-o $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape \
+#	-M ./cosmocc/bin/ape-m1.c \
+#	$BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign \
+#	$BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign
 
-# Thanks to Davide Eynard for the -M line to support Macs.
-
-cp $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
+# Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
+# cp $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $HOME/tools/mm-zipalign
 
 export PATH=$SAVE_PATH
 
