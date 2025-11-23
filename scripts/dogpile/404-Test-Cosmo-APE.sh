@@ -38,9 +38,9 @@ $DOGPILE_BUILD_DIR/$BUILD_COSMO_APE/dogpile-ape --model $MODELS_DIR/$MODEL_PARAM
     $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
 
 printf "\nFIX THIS: Need to be 'dogpile-args' and 'dogpile-support' in server.mmojo.cpp - Patch that.\n"
-printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
-ls -ald mmojo-server-args
-ls -ald mmojo-server-support
+printf "\nVerify that args file and support folder do not exist.\n"
+ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
+ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 
