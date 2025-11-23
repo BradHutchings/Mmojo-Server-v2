@@ -39,20 +39,21 @@ echo "\$AARCH64_ARCH_LEVEL_PARAM: $AARCH64_ARCH_LEVEL_PARAM"
 echo ""
 
 # NOTE: I think I used to have to specify the include and library paths. Maybe before splitting into x86_64 and aarch64 buidls.
+# export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+# export CC="aarch64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
+#    -DCOSMOCC=1 -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
+# export CXX="aarch64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
+#    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
+#    -I$(pwd)/cosmocc/include/third_party/libcxx \
+#    -I$(pwd)/cosmocc/include/third_party/libcxx \
+#    -I$(pwd)/openssl/include \
+#    -L$(pwd)/cosmocc/lib -L$(pwd)/openssl/.aarch64/"
+#export AR="cosmoar"
+
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
-export CC="aarch64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-    -DCOSMOCC=1 -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
-export CXX="aarch64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
-    -I$(pwd)/cosmocc/include/third_party/libcxx \
-    -I$(pwd)/cosmocc/include/third_party/libcxx \
-    -I$(pwd)/openssl/include \
-    -L$(pwd)/cosmocc/lib -L$(pwd)/openssl/.aarch64/"
-export AR="cosmoar"
 
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
-export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="aarch64-unknown-cosmo-cc  \
     -DCOSMOCC=1 -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
 export CXX="aarch64-unknown-cosmo-c++ \
