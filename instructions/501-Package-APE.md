@@ -88,7 +88,7 @@ This script adds the chosen `.gguf` model to the APE package.
 
 *`llama_model_load: error loading model: mmap failed: Invalid argument`*
 
-*Until I resolve this, the .gguf file will not be aligned, and the `default-args` file will have the `--no-mmap` flag set if a `.gguf` file is included. This can't be overridden by command-line arguments.*
+*Until I resolve this, the .gguf file will not be aligned, and the `default-args` file will have the `--no-mmap` flag set if a `.gguf` file is included. This can be overridden by the command-line argument `--mmap `, which is an addition to Mmojo Server.*
 
 *-Brad*
 
