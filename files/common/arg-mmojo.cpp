@@ -3177,13 +3177,14 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
         }
     ).set_examples({LLAMA_EXAMPLE_SERVER}));
 
+    // This is so we can override --no-mmap in default-args in APE file, turn mmap back on from command-line.
     add_opt(common_arg(
         {"--mmap"},
         "use memory-map model, for overriding --no-mmap",
         [](common_params & params) {
             params.use_mmap = true;
         }
-    ).unset_env("LLAMA_ARG_NO_MMAP"));
+    ).set_examples({LLAMA_EXAMPLE_SERVER}));
 
     // mmojo-server END
 
