@@ -83,6 +83,15 @@ This script adds the chosen `.gguf` model to the APE package.
   fi
   ```
 
+#### Note: Aligning the .gguf File to Page Boundary
+*The original llamafile used a custom tool called `zipalign` to add .gguf files to the APE file &mdash; a zip file &mdash; on a page boundary. This would allow Cosmopolitan libc's `mmap()` function to map the uncompressed .gguf file for llamafile. When llama.cpp is compiled and linked with `cosmocc` to use the `mmap()` function in Cosmopolitan libc, this functionality does not work. You'll get an error like:*
+
+*`llama_model_load: error loading model: mmap failed: Invalid argument`*
+
+*Until I resolve this, the .gguf file will not be aligned, and the `default-args` file will have the `--no-mmap` flag set if a `.gguf` file is included. This can't be overridden by command-line arguments.*
+
+*-Brad*
+
 ---
 ### Add `default-args` File to Package
 This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
