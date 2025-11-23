@@ -61,9 +61,20 @@ export CXX="aarch64-unknown-cosmo-c++ \
     -L$(pwd)/openssl/.aarch64/"
 export AR="cosmoar"
 
+# The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
+cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
+
 # Make temporary change to CMake system so we link in static OpenSSL.
-cp common/CMakeLists.txt common/CMakeLists-orig.txt
-sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
+sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' vendor/cpp-httplib/CMakeLists.txt
+# Delete the rejection test for OpenSSL.
+sed -i -e '/#include <openssl\/opensslv.h>/d' vendor/cpp-httplib/CMakeLists.txt
+sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
+
+#
+# Make temporary change to CMake system so we link in static OpenSSL.
+# cp common/CMakeLists.txt common/CMakeLists-orig.txt
+# sed -i -e 's/PUBLIC OpenSSL::SSL OpenSSL::Crypto/PUBLIC libssl.a libcrypto.a/g' common/CMakeLists.txt
+# 
 
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_AARCH64
@@ -71,7 +82,11 @@ cmake -B $BUILD_COSMO_AARCH64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_O
     -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCOSMOCC=1
 
 # Revert to original CMake system.
-mv common/CMakeLists-orig.txt common/CMakeLists.txt
+# mv common/CMakeLists-orig.txt common/CMakeLists.txt
+
+# Revert to original CMake system.
+# The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
+mv vendor/cpp-httplib/CMakeLists-orig.txt vendor/cpp-httplib/CMakeLists.txt
 
 # Build
 cmake --build $BUILD_COSMO_AARCH64 --config Release
