@@ -1,7 +1,9 @@
 ## 401. Prepare to Build
-### About this Step
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
+---
+### About this Step
 In this step, we will clone the Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and customize things for building Dogpile.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
