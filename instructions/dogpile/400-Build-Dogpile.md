@@ -1,7 +1,12 @@
 ## 400. Build Dogpile
-### About this Section
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. You can build Mmojo Server without the Mmojo Server customizations like Mmojo Complete and SSL certificates, and package it in an APE file of a different name. I'm working on some very minor customization details like the process name reported to the operating system and the name of the support directory. If you'd like to become a sponsor of Mmojo Server, this is a zero-work on your part branding opportunity.
 
+If you're wondering about the name...
+<img width="778" height="221" alt="image" src="https://github.com/user-attachments/assets/4c433696-eb88-4a65-a036-f6eac2fe7508" />
+
+---
+### About this Section
 We're ready to build `dogpile` executables. First, we'll build a native version for the build environment platfrom that can be used to test features and changes. Then, we'll build an Actually Portable Executable (APE) with Cosmopolitan that will run anywhere.
 
 ---
