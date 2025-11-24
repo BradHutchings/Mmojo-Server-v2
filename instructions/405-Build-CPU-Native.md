@@ -1,7 +1,7 @@
-## 405. Build CPU
+## 405. Build CPU (Native)
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with CPU optimizations enabled, but no GPU support.
+In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with native CPU optimizations enabled, but no GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
