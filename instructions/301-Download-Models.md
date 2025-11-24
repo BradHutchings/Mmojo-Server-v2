@@ -6,6 +6,8 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Shortcut:** [Scroll down](#shortcut-download-models).
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
