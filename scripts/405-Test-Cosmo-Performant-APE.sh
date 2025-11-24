@@ -44,7 +44,7 @@ rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
 rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 # --mlock is not needed to run this.
-$BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
+$BUILD_DIR/$BUILD_COSMO_PERFORMANT_APE/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
     
 printf "\nVerify that args file and support folder do not exist.\n"
