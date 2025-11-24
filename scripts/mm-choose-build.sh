@@ -58,27 +58,21 @@ select choice in "${available_build_names[@]}"; do
   case $choice in
     "DEBUG")
       export CHOSEN_BUILD_PATH=${build_paths[0]}
-      break
       ;;
     "APE")
       export CHOSEN_BUILD_PATH=${build_paths[1]}
-      break
       ;;
-    "CPU")
+    "CPU-Native")
       export CHOSEN_BUILD_PATH=${build_paths[2]}
-      break
       ;;
     "CUDA")
       export CHOSEN_BUILD_PATH=${build_paths[3]}
-      break
       ;;
     "VULKAN")
       export CHOSEN_BUILD_PATH=${build_paths[4]}
-      break
       ;;
     "METAL")
       export CHOSEN_BUILD_PATH=${build_paths[5]}
-      break
       ;;
     *)
       unset CHOSEN_BUILD
