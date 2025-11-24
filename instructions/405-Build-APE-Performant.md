@@ -20,6 +20,7 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
+### DELETE THIS SECTION
 <!--
 ### Choose a Performance Level
 This script has you choose a performance level for your APE build.
@@ -34,6 +35,7 @@ This script has you choose a performance level for your APE build.
   . mm-choose-performance-level.sh
   ```
 -->
+<!--
 <details>
   <summary><b>Choose a Performance Level</b> &mdash; Experimental.</summary>
 
@@ -66,6 +68,7 @@ New high-end Intel/AMD, Mac M1
 export CPU_PERFORMANCE_LEVEL=4
 ```
 </details>
+-->
 
 ---
 ### Build Mmojo Server for x86_64
