@@ -42,10 +42,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy CPU Build to Mmojo Share.</b></summary>
 
 Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/405-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/405-Copy-CPU-Native-Build-to-Mmojo-Share.sh" target="_blank">405-Copy-CPU-Native-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Native-Build-to-Mmojo-Share.sh
   ```
 </details>
 
@@ -56,9 +56,9 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
-$MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Build-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+$MMOJO_SERVER_SCRIPTS/405-Build-CPU-Native.sh
+$MMOJO_SERVER_SCRIPTS/405-Copy-CPU-Native-Build-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/405-Test-CPU-Native.sh
 ```
 
 ---
