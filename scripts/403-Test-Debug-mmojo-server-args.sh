@@ -41,8 +41,8 @@ fi
 # echo "\$UI_PARAMS: $UI_PARAMS"
 # sleep 5s
 
-rm -f mmojo-server-args
-rm -r -f mmojo-server-support
+rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
+rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 # --mlock is not needed to run this.
 cat << EOF > mmojo-server-args
@@ -65,9 +65,9 @@ $UI_PARAMS$THREADS_PARAM
 EOF
 $BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
 
-printf "\nVerify that 'mmojo-server-args' exists and 'mmojo-server-support' does not exist.\n"
-ls -ald mmojo-server-args
-ls -ald mmojo-server-support
+printf "\nVerify that args file and support folder do not exist.\n"
+ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
+ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 
