@@ -19,8 +19,10 @@ if [ "$MMOJO_SERVER_DIR" ]; then
 fi
 mkdir -p $MMOJO_SERVER_DIR
 git clone https://github.com/BradHutchings/mmojo-server.git $MMOJO_SERVER_DIR
+# update needs the variables.
 . $MMOJO_SERVER_SCRIPTS/mm-environment-variables.sh
 . $MMOJO_SERVER_SCRIPTS/mm-update-local-mmojo-server-repo.sh
+# update might change the variables.
 . mm-environment-variables.sh
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```
