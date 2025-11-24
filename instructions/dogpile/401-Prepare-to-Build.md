@@ -48,7 +48,7 @@ Customize the web UI, rebuild all the web files.
 - View the script: <a href="../../scripts/dogpile/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh
+  $DOGPILE_SCRIPTS/401-Customize-webui.sh
   ```
 #### Uh. Oh. npm Spit Out Errors
 
@@ -57,12 +57,12 @@ for that customization step. If you're running Linux or macOS, these steps shoul
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
 ```
-cd ~
+# cd ~
 sudo apt remove nodejs npm -y
 sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
-cd ~/$BUILD_MMOJO_SERVER_DIR
+# cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
 
 ---
