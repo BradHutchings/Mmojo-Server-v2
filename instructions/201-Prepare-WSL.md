@@ -85,6 +85,8 @@ Defaults        env_reset,timestamp_timeout=-1
 
 `Ctrl-X`, then `Y`, then `Enter` to save and exit.
 
+---
+### Power Off the WSL Instance
 Now, poweroff the WSL instance:
 ```
 sudo poweroff
@@ -122,6 +124,16 @@ Add it to the **Taskbar**.
 ### Launch MmojoServerBuild
 
 Launch and log into your new instance by clicking the icon you just added to the **Taskbar**.
+
+Now, let's get a `sudo` password in, so we don't have to enter it again this session.
+```
+sudo echo "Mmojo Server!"
+```
+
+You'll be prompted for your `sudo` password:
+```
+admin123!
+```
 
 ---
 ### Start from Scratch Often

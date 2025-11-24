@@ -5,6 +5,8 @@ In this step, we will clone this Mmojo-Server repo, fix problems that affect bui
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Shortcut:** [Scroll down](#shortcut-run-all-the-above-scripts).
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -58,17 +60,14 @@ Customize the web UI, rebuild all the web files. If you did the **Suggested** st
   ```
 #### Uh. Oh. npm Spit Out Errors
 
-You may have an earlier version of `npm` and `nodejs` installed on your build machine than are required
-for that customization step. If you're running Linux or macOS, these steps should clean that up.
+You may have an earlier version of `npm` and `nodejs` installed on your build machine than are required for that customization step. If you're running Linux or macOS, these steps should clean that up. This reinstall is already in this step: [207. Install Dependencies](207-Install-Dependencies.md). I'm leaving this workaround here until I'm sure it's not needed.
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
 ```
-cd ~
 sudo apt remove nodejs npm -y
 sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
-cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
 
 ---

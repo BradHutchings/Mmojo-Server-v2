@@ -10,6 +10,8 @@ The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating sy
 
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
 
+**Shortcut:** [Scroll down](#shortcut-build-and-assemble-ape-test-ape).
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -159,7 +161,7 @@ $DOGPILE_SCRIPTS/404-Test-Cosmo-APE.sh
 
 ---
 ### Next Section
-- **Next Section:** [1500. Package Dogpile](1500-Package-Dogpile.md)
+- **Next Section:** [500. Package Dogpile](500-Package-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
