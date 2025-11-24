@@ -23,7 +23,7 @@ This script uses cmake to build Mmojo Server:
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
   ```
