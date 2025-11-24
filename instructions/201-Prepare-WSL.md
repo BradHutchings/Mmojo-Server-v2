@@ -70,6 +70,19 @@ Check that `/etc/wsl.conf` now has an `[interop]` section:
 cat /etc/wsl.conf
 ```
 
+You will use the `sudo` command often, so let's make it not expire.
+```
+sudo visudo
+```
+
+Below the first `Defaults` section, paste this:
+```
+Defaults        env_reset,timestamp_timeout=-1
+```
+<img width="926" height="134" alt="image" src="https://github.com/user-attachments/assets/7793f414-3f52-4c38-93ee-801584e8b102" />
+
+`Ctrl-X`, then `Y`, then `Enter` to save and exit.
+
 Now, poweroff the WSL instance:
 ```
 sudo poweroff
