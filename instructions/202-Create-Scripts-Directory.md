@@ -8,7 +8,7 @@ Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` di
 ### Create `$HOME/mm-scripts` Directory Add to `$PATH`
 Create `$HOME/mm-scripts` directory, then add it to your `$PATH` in `.bashrc`.
 ```
-HOME_SCRIPTS="$HOME/mm-scripts"
+export HOME_SCRIPTS="$HOME/mm-scripts"
 TILDE_SCRIPTS="~/mm-scripts"
 mkdir -p $HOME_SCRIPTS
 
