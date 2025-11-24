@@ -30,9 +30,8 @@ if [[ $(uname -r) =~ Microsoft|WSL ]]; then
 fi
 
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-        echo "Attempting to mount Mmojo Share as cifs. You may be prompted for your share password."
-        sudo mount -t cifs -o user=$USER //$HOST/$SHARE $MMOJO_SHARE_MOUNT_POINT
-    fi
+   echo "Attempting to mount Mmojo Share as cifs. You may be prompted for your share password."
+   sudo mount -t cifs -o user=$USER //$HOST/$SHARE $MMOJO_SHARE_MOUNT_POINT
 fi
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
    if [ $RUNNING_IN_WSL == 1 ]; then
