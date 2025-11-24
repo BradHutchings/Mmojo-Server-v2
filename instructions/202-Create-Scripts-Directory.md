@@ -5,7 +5,7 @@ Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` di
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Create `$HOME/scripts` Directory Add to `$PATH`
+### Create `$HOME/mm-scripts` Directory Add to `$PATH`
 Create `$HOME/mm-scripts` directory, then add it to your `$PATH` in `.bashrc`.
 ```
 HOME_SCRIPTS="$HOME/mm-scripts"
