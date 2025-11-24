@@ -19,13 +19,13 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Build CPU Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/405-Build-CPU.sh" target="_blank">405-Build-CPU.sh</a>.
+- View the script: <a href="../scripts/405-Build-CPU-Native.sh" target="_blank">405-Build-CPU-Native.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Build-CPU.sh
+  $MMOJO_SERVER_SCRIPTS/405-Build-CPU-Native.sh
   ```
 
 ---
