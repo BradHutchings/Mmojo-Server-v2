@@ -5,25 +5,16 @@ Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` di
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
-### Create `$HOME/scripts` and `$HOME/tools` Directories, Add to `$PATH`
+### Create `$HOME/scripts` Directory Add to `$PATH`
 Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH` in `.bashrc`.
 ```
-HOME_SCRIPTS="$HOME/scripts"
-TILDE_SCRIPTS="~/scripts"
-HOME_TOOLS="$HOME/tools"
-TILDE_TOOLS="~/tools"
+HOME_SCRIPTS="$HOME/mmscripts"
+TILDE_SCRIPTS="~/mmscripts"
 mkdir -p $HOME_SCRIPTS
-mkdir -p $HOME_TOOLS
 
 if [[ "${PATH}" != *"${HOME_SCRIPTS}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
 cat << EOF >> $HOME/.bashrc
 export PATH="\$PATH:$HOME_SCRIPTS"
-EOF
-fi
-
-if [[ "${PATH}" != *"${HOME_TOOLS}"* ]] && [[ "${PATH}" != *"${TILDE_TOOLS}"* ]]; then
-cat << EOF >> $HOME/.bashrc
-export PATH="\$PATH:$HOME_TOOLS"
 EOF
 fi
 
