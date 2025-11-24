@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
@@ -27,7 +27,7 @@ if [ -f "$CA_FILE" ]; then
 fi
 
 cd $THIS_PACKAGE_DIR
-zip -0 -r $ZIP_FILE Mmojo-Complete/*
+zip -0 -r -q $ZIP_FILE Mmojo-Complete/*
 
 echo ""
 echo "Contents of $ZIP_FILE:"
@@ -35,7 +35,7 @@ unzip -l $ZIP_FILE
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

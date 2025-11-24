@@ -17,14 +17,14 @@ build_paths=()
 build_names=()
 build_paths+=("$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape")
-build_paths+=("$BUILD_DIR/$BUILD_CPU/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_CUDA/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_VULKAN/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_METAL/bin/mmojo-server")
 
 build_names+=("DEBUG")
 build_names+=("APE")
-build_names+=("CPU")
+build_names+=("CPU-Native")
 build_names+=("CUDA")
 build_names+=("VULKAN")
 build_names+=("METAL")
@@ -55,6 +55,7 @@ echo "These builds are available to package:"
 PS3="Please choose a build:"
 select choice in "${available_build_names[@]}"; do
   export CHOSEN_BUILD=$choice
+  echo "\$choice: $choice."
   case $choice in
     "DEBUG")
       export CHOSEN_BUILD_PATH=${build_paths[0]}
@@ -64,7 +65,7 @@ select choice in "${available_build_names[@]}"; do
       export CHOSEN_BUILD_PATH=${build_paths[1]}
       break
       ;;
-    "CPU")
+    "CPU-Native")
       export CHOSEN_BUILD_PATH=${build_paths[2]}
       break
       ;;

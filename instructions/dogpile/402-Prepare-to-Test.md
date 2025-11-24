@@ -1,7 +1,9 @@
-## 1402. Prepare to Test
-### About this Step
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
+## 402. Prepare to Test
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
+---
+### About this Step
 In this step, we will set some environment variables to customize testing.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
@@ -18,27 +20,15 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Optional: Choose LLM
-By default, we'll use Google Gemma 1B Instruct v3. Set the default with:
-```
-unset TEST_MODEL
-```
-
-If you'd like to test with a different LLM, set one of these values:
-```
-export TEST_MODEL="Google-Gemma-270M-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-4B-Instruct-v3-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E2B-Instruct-v3n-q8_0.gguf"
-```
-```
-export TEST_MODEL="Google-Gemma-E4B-Instruct-v3n-q8_0.gguf"
-```
-
-Make sure the LLM has been downloaded or copied to your `$HOME/300-MODEKS` directory. Otherwise, the `Test-`scripts will fall back to Google Gemma 1B Instruct v3.
+### Choose `.gguf` Model for Testing
+Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. .
+- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- Run the script.
+  ```
+  unset CHOSEN_MODEL
+  unset CHOSEN_MODEL_SHORT_NAME
+  . mm-choose-model.sh
+  ```
 
 ---
 ### Optional: Choose CPU Threads
@@ -62,9 +52,9 @@ export TEST_CPU_THREADS=8
 
 ---
 ### Proceed
-- **Next:** [1403. Build Debug](1403-Build-Debug.md)
-- **Previous:** [1401. Prepare to Build](1401-Prepare-to-Build.md)
-- **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
+- **Next:** [403. Build Debug](403-Build-Debug.md)
+- **Previous:** [401. Prepare to Build](401-Prepare-to-Build.md)
+- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>

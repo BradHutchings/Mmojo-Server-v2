@@ -37,7 +37,7 @@ This script has you choose a performance level for your APE build.
 
 By default, APE builds don't perform very well. The tradeoff is that they run on a wide range of systems. If you're willing to run your Mmojo Server APE build on a slightly narrower range of systmes, you can get much better CPU performance. Try `CPU_PERFORMANCE_LEVEL=3`.
 
-**This feature is experimental. See [desicussion](https://github.com/BradHutchings/Mmojo-Server/discussions/32)**.
+**This feature is experimental. See [this discussion](https://github.com/BradHutchings/Mmojo-Server/discussions/32)**.
 
 Default, widely compatible, low performance:
 ```
@@ -80,7 +80,7 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
-If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
@@ -111,7 +111,7 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (a
 <details>
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
-If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
@@ -140,7 +140,7 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an
   ```
 
 #### Test the Assembled APE
-If you're build enviornment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
@@ -185,7 +185,7 @@ $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
 
 ---
 ### Proceed
-- **Next:** [405. Build CPU](405-Build-CPU.md)
+- **Next:** [405. Build CPU (Native)](405-Build-CPU-Native.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 

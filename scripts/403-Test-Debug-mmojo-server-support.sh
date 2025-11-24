@@ -16,11 +16,11 @@ rm -r -f $THIS_TEST_DIR/*
 cd $THIS_TEST_DIR
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
-if [[ -v TEST_MODEL ]]; then
-    echo "\$TEST_MODEL: $TEST_MODEL."
-    if [ -f "$MODELS_DIR/$TEST_MODEL" ]; then
+if [[ -v CHOSEN_MODEL ]]; then
+    echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
+    if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
         echo "Model found."
-        MODEL_PARAM=$TEST_MODEL
+        MODEL_PARAM=$CHOSEN_MODEL
     fi
 fi
 # echo "\$MODEL_PARAM: $MODEL_PARAM"
@@ -42,9 +42,11 @@ fi
 # echo "\$UI_PARAMS: $UI_PARAMS"
 # sleep 5s
 
-rm -f mmojo-server-args
-rm -r -f mmojo-server-support
-mkdir -p mmojo-server-support
+rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
+rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+mkdir -p $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+
+# --mlock is not needed to run this.
 cat << EOF > mmojo-server-support/default-args
 --model
 $MODELS_DIR/$MODEL_PARAM
@@ -60,14 +62,14 @@ $MODELS_DIR/$MODEL_PARAM
 64
 --batch-sleep-ms
 0
-$UI_PARAMS$THREADS_PARAM--mlock
+$UI_PARAMS$THREADS_PARAM
 ...
 EOF
 $BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
 
-printf "\nVerify that 'mmojo-server-args' does not exist and 'mmojo-server-support' exists.\n"
-ls -ald mmojo-server-args
-ls -ald mmojo-server-support
+printf "\nVerify that args file and support folder do not exist.\n"
+ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
+ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 

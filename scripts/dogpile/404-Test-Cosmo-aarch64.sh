@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script runs the Cosmo APE build with command-line arguments.
+# This script runs the Cosmo aarch64 (arm64) build with command-line arguments.
 #
 # See licensing note at end.
 ################################################################################
@@ -9,7 +9,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-THIS_TEST="$TEST_DIR/$TEST_COSMO_APE"
+THIS_TEST="$DOGPILE_TEST_DIR/$TEST_COSMO_AARCH64"
 mkdir -p $THIS_TEST
 rm -r -f $THIS_TEST/*
 cd $THIS_TEST
@@ -32,24 +32,21 @@ fi
 # echo "\$THREADS_PARAM: $THREADS_PARAM"
 # sleep 5s
 
-UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
-    # echo "Using chat UI."
-    UI_PARAMS=""
-fi
-# echo "\$UI_PARAMS: $UI_PARAMS"
-# sleep 5s
-
+printf "\nFIX THIS: Need to be $PACKAGE_DOGPILE_ARGS_FILE and $PACKAGE_MMOJO_SERVER_SUPPORT_DIR in server.mmojo.cpp - Patch that.\n"
 rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
 rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+# rm -f $PACKAGE_DOGPILE_ARGS_FILE
+# rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
-# --mlock is not needed to run this.
-$BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
-    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
-    
+$DOGPILE_BUILD_DIR/$BUILD_COSMO_AARCH64/bin/dogpile --model $MODELS_DIR/$MODEL_PARAM \
+    $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
+
+printf "\nFIX THIS: Need to be $PACKAGE_DOGPILE_ARGS_FILE and $PACKAGE_MMOJO_SERVER_SUPPORT_DIR in server.mmojo.cpp - Patch that.\n"
 printf "\nVerify that args file and support folder do not exist.\n"
 ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+# ls -ald $PACKAGE_DOGPILE_ARGS_FILE
+# ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 

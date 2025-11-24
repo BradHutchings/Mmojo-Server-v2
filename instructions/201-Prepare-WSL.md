@@ -50,7 +50,6 @@ cat /etc/wsl.conf
 
 Append an `[interop]` section to `/etc/wsl.conf`:
 ```
-cd $HOME
 cp /etc/wsl.conf ./wsl.conf
 cat << EOF >> wsl.conf
 
@@ -70,6 +69,21 @@ Check that `/etc/wsl.conf` now has an `[interop]` section:
 ```
 cat /etc/wsl.conf
 ```
+
+---
+### Remove sudo Timeout
+You will use the `sudo` command often, so let's make it not expire.
+```
+sudo visudo
+```
+
+Below the first `Defaults` section, paste this:
+```
+Defaults        env_reset,timestamp_timeout=-1
+```
+<img width="926" height="134" alt="image" src="https://github.com/user-attachments/assets/7793f414-3f52-4c38-93ee-801584e8b102" />
+
+`Ctrl-X`, then `Y`, then `Enter` to save and exit.
 
 Now, poweroff the WSL instance:
 ```
@@ -115,7 +129,7 @@ It's OK to start from scratch and do it often. There is a lot going on to build 
 
 ---
 ### Proceed
-- **Next:** [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md)
+- **Next:** [202. Create Scripts Directory](202-Create-Scripts-Directory.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 

@@ -1,11 +1,8 @@
 #!/bin/bash
 
 ################################################################################
-# This script builds llama.cpp with Mmojo Server extensions for the CPU of the
-# build environment machine and Vulkan GPU support. Thank you to Georgi Gerganov 
-# and his team for llama.cpp!
-#
-# https://github.com/ggml-org/llama.cpp
+# This script adds certs from the Mmojo Share to the mmojo-server.zip packaging
+# file.
 #
 # See licensing note at end.
 ################################################################################
@@ -13,29 +10,31 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-echo "Creating package directories."
-if [ ! -d "$PACKAGE_DIR" ]; then
-    mkdir -p "$PACKAGE_DIR"
-fi
-
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
 
-if [ ! -d "$THIS_PACKAGE_DIR" ]; then
-    mkdir -p "$THIS_PACKAGE_DIR"
-fi
+ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_ZIP_FILE"
 
-echo "Copying built mmojo-server-ape."
-BUILT_FILE="$BUILD_DIR/$BUILD_COSMO_APE/$PACKAGE_MMOJO_SERVER_APE_FILE"
-ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-if [ -f "$BUILT_FILE" ]; then
-  cp $BUILT_FILE $ZIP_FILE
-fi
+if [ -v CHOSEN_MODEL ]; then
+    echo "Chosen model: $CHOSEN_MODEL"
+    MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
+    if [ -f "$MODEL_FILE" ]; then
+        cd $MODELS_DIR
+        
+        # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
+        # Punting on memort mapping for now.
+        echo "Zipping $MODEL_FILE."
+        zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
 
-echo "Removing extraneous time zone files from zip."
-zip -d -q $ZIP_FILE "/usr/*"
+        # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
+        # wants it to. Try to fix this another day.
+        # echo "mm-zipalign-ing $MODEL_FILE."
+        # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
+        # $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
+    fi
+fi
 
 echo ""
 echo "Contents of $ZIP_FILE:"

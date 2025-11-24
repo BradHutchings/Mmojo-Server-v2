@@ -15,11 +15,11 @@ rm -r -f $THIS_TEST/*
 cd $THIS_TEST
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
-if [[ -v TEST_MODEL ]]; then
-    echo "\$TEST_MODEL: $TEST_MODEL."
-    if [ -f "$MODELS_DIR/$TEST_MODEL" ]; then
+if [[ -v CHOSEN_MODEL ]]; then
+    echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
+    if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
         echo "Model found."
-        MODEL_PARAM=$TEST_MODEL
+        MODEL_PARAM=$CHOSEN_MODEL
     fi
 fi
 # echo "\$MODEL_PARAM: $MODEL_PARAM"
@@ -40,14 +40,16 @@ fi
 # echo "\$UI_PARAMS: $UI_PARAMS"
 # sleep 5s
 
-rm -f mmojo-server-args
-rm -r -f mmojo-server-support
-$BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
-    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 --mlock
+rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
+rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
-printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
-ls -ald mmojo-server-args
-ls -ald mmojo-server-support
+# --mlock is not needed to run this.
+$BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
+    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
+    
+printf "\nVerify that args file and support folder do not exist.\n"
+ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
+ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 cd $HOME
 

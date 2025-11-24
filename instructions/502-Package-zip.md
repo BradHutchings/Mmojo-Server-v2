@@ -101,7 +101,7 @@ This script adds the chosen `.gguf` model to the package.
 ---
 ### Add `default-args` File to Package
 This script adds a `default-args` file to the package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/502-Add-default-args-to-Package" target="_blank">502-Add-default-args-to-Package</a>.
+- View the script: <a href="../scripts/502-Add-default-args-to-Package.sh" target="_blank">502-Add-default-args-to-Package.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/502-Add-default-args-to-Package.sh

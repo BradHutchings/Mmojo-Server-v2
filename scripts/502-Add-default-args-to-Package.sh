@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
@@ -61,6 +61,7 @@ cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 ...
 EOF
 
+    # idented from "if" at top.
     echo "$PACKAGE_DEFAULT_ARGS_FILE:"
     cat $PACKAGE_DEFAULT_ARGS_FILE
 
@@ -71,7 +72,7 @@ fi
 
 cd $HOME
 
-printf "\n**********\n*\n* FINISHED: $SCRIPT_NAME.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

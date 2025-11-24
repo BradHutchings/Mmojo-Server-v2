@@ -20,7 +20,7 @@ This script creates a mount point for the Mmojo Share and a script for mounting 
 
 ---
 ### Edit the Mmojo Share Mount Script
-Edit the script to put your `COMPUTER` and `USER` names in. "Ctrl-X" then "Y" to exit and save.
+Edit the script to put your `COMPUTER` and `USER` names in. `Ctrl-X`, then `Y`, then `Enter` to exit and save.
 ```
 nano "$HOME_SCRIPTS/$MOUNT_MMOJO_SHARE_SCRIPT"
 ```

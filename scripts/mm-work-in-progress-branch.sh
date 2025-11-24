@@ -18,10 +18,12 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   cd $WD
 
   # These are the scripts. They need to be executable.
-  chmod a+x $MMOJO_SERVER_SCRIPTS/2*.sh
-  chmod a+x $MMOJO_SERVER_SCRIPTS/3*.sh
-  chmod a+x $MMOJO_SERVER_SCRIPTS/4*.sh
-  chmod a+x $MMOJO_SERVER_SCRIPTS/5*.sh
+  chmod -f a+x $MMOJO_SERVER_SCRIPTS/2*.sh
+  chmod -f a+x $MMOJO_SERVER_SCRIPTS/3*.sh
+  chmod -f a+x $MMOJO_SERVER_SCRIPTS/4*.sh
+  chmod -f a+x $MMOJO_SERVER_SCRIPTS/5*.sh
+  chmod -f a+x $DOGPILE_SCRIPTS/4*.sh
+  chmod -f a+x $DOGPILE_SCRIPTS/5*.sh
 
   ### Links don't work - end up modifying repo files on chmod.
   cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS

@@ -13,9 +13,10 @@ This script installs system updates and dependencies you will need:
   $MMOJO_SERVER_SCRIPTS/207-Install-Dependencies.sh
   ```
 
+<!--
 *Note: If you see this screen, choose **No Configuration**. I'm checking to see if I can remove the dependency that shows this screen.*
 <img width="1280" height="627" alt="image" src="https://github.com/user-attachments/assets/311a0cb9-df69-4451-9243-57b60297c482" />
-
+-->
 
 ---
 ### Proceed

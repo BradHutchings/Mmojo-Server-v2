@@ -1,11 +1,8 @@
 #!/bin/bash
 
 ################################################################################
-# This script builds llama.cpp with Mmojo Server extensions for the CPU of the
-# build environment machine. CPU optimizations are enabled. Thank you to Georgi 
-# Gerganov and his team for llama.cpp!
-#
-# https://github.com/ggml-org/llama.cpp
+# This script copies the CPU build of mmojo-server to the right place on the 
+# Mmojo Share.
 #
 # See licensing note at end.
 ################################################################################
@@ -13,22 +10,21 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
+mm-mount-mmojo-share.sh
 
-# TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+  echo "Creating directories on Mmojo Share."
+  sudo mkdir -p $MMOJO_SHARE_BUILDS
+  sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU
 
-rm -r -f $BUILD_DIR/$BUILD_CPU
-cmake -B $BUILD_CPU -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_BUILD_TYPE=Release # -DCMAKE_VERBOSE_MAKEFILE=ON 
-cmake --build $BUILD_CPU
+  # TO-DO: What CPU options/level?
+  ARCH=$(uname -m)
 
-# Show off what we built
-printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_DIR/$BUILD_CPU/bin/\n"
-ls -al $BUILD_DIR/$BUILD_CPU/bin
-printf "\n"
-
-cd $HOME
+  if [ -d "$MMOJO_SHARE_BUILDS_CPU" ]; then
+    echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
+    sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU/mmojo-server-cpu-$ARCH
+  fi
+fi
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 

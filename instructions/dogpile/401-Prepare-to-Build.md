@@ -1,7 +1,9 @@
-## 1401. Prepare to Build
-### About this Step
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
+## 401. Prepare to Build
+### About Dogpile
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
+---
+### About this Step
 In this step, we will clone the Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and customize things for building Dogpile.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
@@ -22,41 +24,31 @@ mm-update-local-mmojo-server-repo.sh
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../../scripts/1401-Clone-Repos.sh" target="_blank">1401-Clone-Repos.sh</a>.
+- View the script: <a href="../../scripts/dogpile/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/1401-Clone-Repos.sh
+  $DOGPILE_SCRIPTS/401-Clone-Repos.sh
   ```
 
 ---
 ### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
-- View the script: <a href="../../scripts/1401-Fix-llama-cpp.sh" target="_blank">1401-Fix-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/dogpile/401-Fix-llama-cpp.sh" target="_blank">401-Fix-llama-cpp.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/1401-Fix-llama-cpp.sh
+  $DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh
   ```
 
-<!--
 ---
 ### Customize WebUI
-#### Suggested
-Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
-- View the script: <a href="../scripts/401-Rollback-webui.sh" target="_blank">401-Rollback-webui.sh</a>.
+Customize the web UI, rebuild all the web files.
+- View the script: <a href="../../scripts/dogpile/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Rollback-webui.sh
-  ```
-
-#### Required
-Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
-- View the script: <a href="../scripts/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
-- Run the script.
-  ```
-  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh
+  $DOGPILE_SCRIPTS/401-Customize-webui.sh
   ```
 #### Uh. Oh. npm Spit Out Errors
 
@@ -65,14 +57,13 @@ for that customization step. If you're running Linux or macOS, these steps shoul
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
 ```
-cd ~
+# cd ~
 sudo apt remove nodejs npm -y
 sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
-cd ~/$BUILD_MMOJO_SERVER_DIR
+# cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
--->
 
 ---
 ### SHORTCUT: Run All the Above Scripts 
@@ -81,17 +72,16 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/1401-Clone-Repos.sh
-$MMOJO_SERVER_SCRIPTS/1401-Fix-llama-cpp.sh
-# $MMOJO_SERVER_SCRIPTS/1401-Rollback-webui.sh
-# $MMOJO_SERVER_SCRIPTS/1401-Customize-webui.sh
+$DOGPILE_SCRIPTS/401-Clone-Repos.sh
+$DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh
+$DOGPILE_SCRIPTS/401-Customize-webui.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [1402. Prepare to Test](1402-Prepare-to-Test.md)
+- **Next:** [402. Prepare to Test](402-Prepare-to-Test.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [1400. Build Dogpile](1400-Build-Dogpile.md)
+- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>

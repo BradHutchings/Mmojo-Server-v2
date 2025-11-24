@@ -20,7 +20,9 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   if [ -d "$MMOJO_SHARE_BUILDS_APE" ]; then
     echo "Copying mmojo-server-ape and mm-zipalign-ape to Mmojo Share."
     sudo cp -f $BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape $MMOJO_SHARE_BUILDS_APE/mmojo-server-ape
-    sudo cp -f $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $MMOJO_SHARE_BUILDS_APE/mm-zipalign-ape
+
+    # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
+    # sudo cp -f $BUILD_DIR/$BUILD_COSMO_APE/mm-zipalign-ape $MMOJO_SHARE_BUILDS_APE/mm-zipalign-ape
   fi
 fi
 

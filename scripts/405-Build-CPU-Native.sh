@@ -1,8 +1,11 @@
 #!/bin/bash
 
 ################################################################################
-# This script switches your local clone of the Mmojo Server repo to the main
-# branch, then copies all of the mm- scripts to $HOME/scripts.
+# This script builds llama.cpp with Mmojo Server extensions for the CPU of the
+# build environment machine. CPU optimizations are enabled. Thank you to Georgi 
+# Gerganov and his team for llama.cpp!
+#
+# https://github.com/ggml-org/llama.cpp
 #
 # See licensing note at end.
 ################################################################################
@@ -10,27 +13,22 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-if [ -d "$MMOJO_SERVER_DIR" ]; then
-  WD=$(pwd)
-  cd $MMOJO_SERVER_DIR
-  git reset --hard
-  git checkout main
-  cd $WD
+cd $BUILD_DIR
 
-  # These are the scripts. They need to be executable.
-  chmod -f a+x $MMOJO_SERVER_SCRIPTS/2*.sh
-  chmod -f a+x $MMOJO_SERVER_SCRIPTS/3*.sh
-  chmod -f a+x $MMOJO_SERVER_SCRIPTS/4*.sh
-  chmod -f a+x $MMOJO_SERVER_SCRIPTS/5*.sh
-  chmod -f a+x $DOGPILE_SCRIPTS/4*.sh
-  chmod -f a+x $DOGPILE_SCRIPTS/5*.sh
+# TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-  ### Links don't work - end up modifying repo files on chmod.
-  cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
-  chmod a+x $HOME_SCRIPTS/mm-*.sh
-else
-  echo "The $MMOJO_SERVER_DIR directory does not exist."
-fi
+rm -r -f $BUILD_DIR/$BUILD_CPU_NATIVE
+cmake -B $BUILD_CPU_NATIVE -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+    -DCMAKE_BUILD_TYPE=Release # -DCMAKE_VERBOSE_MAKEFILE=ON 
+cmake --build $BUILD_CPU_NATIVE
+
+# Show off what we built
+printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
+printf "\$ ls -al $BUILD_DIR/$BUILD_CPU_NATIVE/bin/\n"
+ls -al $BUILD_DIR/$BUILD_CPU_NATIVE/bin
+printf "\n"
+
+cd $HOME
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
