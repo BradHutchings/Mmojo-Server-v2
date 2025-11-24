@@ -27,7 +27,7 @@ printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********
 ---
 ### Proceed
 - **Next:** [204. Set Timezone](204-Set-Timezone.md)
-- **Previous:** [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md)
+- **Previous:** [202. Create Scripts Directory](202-Create-Scripts-Directory.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
