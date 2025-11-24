@@ -1,6 +1,6 @@
-## 404. Build APE
+## 404. Build APE (Compatible)
 ### About this Step
-In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and arm64. We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. 
+In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on the widest variety of x86_64 and aarch64 machines.
 
 The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating systems. As a zip file, the APE can also hold configuration files and .gguf models. The APE will not perform as well as platform-specifc builds. It does not have the most optimized GGML CPU code and does not use GGML GPU options. Tradeoffs.
 
@@ -187,7 +187,7 @@ $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
 
 ---
 ### Proceed
-- **Next:** [405. Build CPU (Native)](405-Build-CPU-Native.md)
+- **Next:** [405. Build APE (Performant)](405-Build-APE-Performant.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
