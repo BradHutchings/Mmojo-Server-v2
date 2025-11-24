@@ -70,23 +70,23 @@ export CPU_PERFORMANCE_LEVEL=4
 ---
 ### Build Mmojo Server for x86_64
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../scripts/404-Build-Cosmo-x86_64.sh" target="_blank">404-Build-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../scripts/404-Build-Cosmo-Compatible-x86_64.sh" target="_blank">404-Build-Cosmo-Compatible-x86_64.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
+  $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-x86_64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
 If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../scripts/404-Test-Cosmo-Compatible-x86_64.sh" target="_blank">404-Test-Cosmo-Compatible-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-x86_64.sh
+  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-Compatible-x86_64.sh
   ```
 </details>
 
@@ -94,30 +94,30 @@ If your build environment is x86_64, you can test this build. Requires previousl
   <summary><b>Optional: Copy x86_64 Build to Your Mmojo Share.</b></summary>
 
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
-- View the script: <a href="../scripts/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/404-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh
   ```
 </details>
 
 ---
 ### Build Mmojo Server for aarch64 (arm64)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../scripts/404-Build-Cosmo-aarch64.sh" target="_blank">404-Build-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../scripts/404-Build-Cosmo-Compatible-aarch64.sh" target="_blank">404-Build-Cosmo-Compatible-aarch64.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
+  $MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-aarch64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
 If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../scripts/404-Test-Cosmo-Compatible-aarch64.sh" target="_blank">404-Test-Cosmo-Compatible-aarch64.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-aarch64.sh
+  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-Compatible-aarch64.sh
   ```
 </details>
 
@@ -125,38 +125,38 @@ If your build environment is x86_64, you can test this build. Requires previousl
   <summary><b>Optional: Copy aarch64 (arm64) Build to Your Mmojo Share.</b></summary>
 
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
-- View the script: <a href="../scripts/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/404-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh
   ```
 </details>
 
 ---
 ### Assemble mmojo-server Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
-- View the script: <a href="../scripts/404-Assemble-Cosmo-APE.sh" target="_blank">404-Assemble-Cosmo-APE.sh</a>.
+- View the script: <a href="../scripts/404-Assemble-Cosmo-Compatible-APE.sh" target="_blank">404-Assemble-Cosmo-Compatible-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE.sh
+  $MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-Compatible-APE.sh
   ```
 
 #### Test the Assembled APE
 If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
+- View the script: <a href="../scripts/404-Test-Cosmo-Compatible-APE.sh" target="_blank">404-Test-Cosmo-Compatible-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
+  $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-Compatible-APE.sh
   ```
 
 <details>
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
 
 Copy this assembled APE to your Mmojo share.
-- View the script: <a href="../scripts/404-Copy-Cosmo-APE-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-APE-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/404-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh" target="_blank">404-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh
   ```
 </details>
 
@@ -176,13 +176,13 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-x86_64.sh
-$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-x86_64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-aarch64.sh
-$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-aarch64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-APE.sh
-$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-APE-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-x86_64.sh
+$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-aarch64.sh
+$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-Compatible-APE.sh
+$MMOJO_SERVER_SCRIPTS/404-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh
+$MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-Compatible-APE.sh
 ```
 
 ---
