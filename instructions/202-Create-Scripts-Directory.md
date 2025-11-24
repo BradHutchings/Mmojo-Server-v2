@@ -8,8 +8,8 @@ Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` di
 ### Create `$HOME/scripts` Directory Add to `$PATH`
 Create `$HOME/scripts` and `$HOME/tools` directories, then add them to your `$PATH` in `.bashrc`.
 ```
-HOME_SCRIPTS="$HOME/mmscripts"
-TILDE_SCRIPTS="~/mmscripts"
+HOME_SCRIPTS="$HOME/mm-scripts"
+TILDE_SCRIPTS="~/mm-scripts"
 mkdir -p $HOME_SCRIPTS
 
 if [[ "${PATH}" != *"${HOME_SCRIPTS}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
