@@ -38,44 +38,7 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-unset X86_64_ARCH_LEVEL_PARAM
 X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
-if [ -v CPU_PERFORMANCE_LEVEL ]; then
-  case $CPU_PERFORMANCE_LEVEL in
-    1)
-        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
-        ;;
-    2)
-        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v2 "
-        ;;
-    3)
-        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v3 "
-        ;;
-    4)
-        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v4 "
-        ;;
-    *)
-        X86_64_ARCH_LEVEL_PARAM=" -march=x86-64 "
-        ;;
-  esac
-fi
-
-echo ""
-echo "\$CPU_PERFORMANCE_LEVEL: $CPU_PERFORMANCE_LEVEL"
-echo "\$X86_64_ARCH_LEVEL_PARAM: $X86_64_ARCH_LEVEL_PARAM"
-echo ""
-
-# NOTE: I think I used to have to specify the include and library paths. Maybe before splitting into x86_64 and aarch64 buidls.
-#
-# export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
-# export CC="x86_64-unknown-cosmo-cc -I$(pwd)/cosmocc/include -L$(pwd)/cosmocc/lib \
-#     -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
-# export CXX="x86_64-unknown-cosmo-c++ -I$(pwd)/cosmocc/include \
-#     -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM \
-#     -I$(pwd)/cosmocc/include/third_party/libcxx \
-#     -I$(pwd)/openssl/include \
-#     -L$(pwd)/cosmocc/lib -L$(pwd)/openssl"
-# export AR="cosmoar"
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
