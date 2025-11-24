@@ -185,7 +185,7 @@ $MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-APE.sh
 
 ---
 ### Proceed
-- **Next:** [405. Build CPU](405-Build-CPU.md)
+- **Next:** [405. Build CPU (Native)](405-Build-CPU-Native.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
