@@ -5,7 +5,7 @@
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [205-Create-Mmojo-Share.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;21         | Routine update of llama.cpp. Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
 | 2025&minus;11&minus;21         | #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile. |
-| 2025&minus;11&minus;21         | Figure out which installed dependency is putting up the purple email server screen. https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md |
+| 2025&minus;11&minus;21         | Figure out which installed dependency is putting up the purple email server screen. Figured out it's `ocaml-core`. Do we need it? https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md |
 | 2025&minus;11&minus;21         | Why do mm-work-in-progress and mm-main-branch show a quote error, then when run again, do fine? Goofy, not that anyone else will use them. |
 | 2025&minus;11&minus;21         | Script to pick performance level for APE builds: Levels might be: (1) compatible, (2) performant. If users of this repo want more control, they can fork it and change it. Probably should suggest that. Keep it simple and easy! |
 | 2025&minus;11&minus;21         | Similarly, pick performance for CUDA, VULKAN, and METAL builds.  CUDA and VULKAN could get (1) compatible, (2) performant, (3) native.  METAL would get M1, M2, M3, M4, M5(?) -- AARCH64 only. CPU should just be native. Otherwise, use the performant APE. |
