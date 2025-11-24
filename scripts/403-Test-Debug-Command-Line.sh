@@ -47,7 +47,7 @@ rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 $BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
 
-printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
+printf "\nVerify that args file and support folder do not exist.\n"
 ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
