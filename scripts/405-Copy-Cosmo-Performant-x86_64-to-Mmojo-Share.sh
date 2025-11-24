@@ -17,7 +17,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   sudo mkdir -p $MMOJO_SHARE_BUILDS
   sudo mkdir -p $MMOJO_SHARE_BUILDS_PERFORMANT_APE
 
-  if [ -d "$MMOJO_SHARE_BUILDS_APE" ]; then
+  if [ -d "$MMOJO_SHARE_BUILDS_PERFORMANT_APE" ]; then
     echo "Copying mmojo-server-x86_64 and mm-zipalign-x86_64 to Mmojo Share."
     sudo cp -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_X86_64/bin/mmojo-server $MMOJO_SHARE_BUILDS_PERFORMANT_APE/mmojo-server-x86_64
 
