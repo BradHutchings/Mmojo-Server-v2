@@ -31,10 +31,10 @@ This script uses cmake to build Mmojo Server:
 ---
 ### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/405-Test-CPU.sh" target="_blank">405-Test-CPU.sh</a>.
+- View the script: <a href="../scripts/405-Test-CPU-Native.sh" target="_blank">405-Test-CPU-Native.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/405-Test-CPU.sh
+  $MMOJO_SERVER_SCRIPTS/405-Test-CPU-Native.sh
   ```
 
 ---
