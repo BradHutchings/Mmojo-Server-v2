@@ -10,6 +10,8 @@ In this step, we will build Dogpile (`dogpile`) for the CPU of your build enviro
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Shortcut:** [Scroll down](#shortcut-build-debug-test).
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
