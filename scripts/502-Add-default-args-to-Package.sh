@@ -61,12 +61,14 @@ cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
 ...
 EOF
 
-echo "$PACKAGE_DEFAULT_ARGS_FILE:"
-cat $PACKAGE_DEFAULT_ARGS_FILE
+    # idented from "if" at top.
+    echo "$PACKAGE_DEFAULT_ARGS_FILE:"
+    cat $PACKAGE_DEFAULT_ARGS_FILE
 
-echo ""
-echo "$SUPPORT_DIR:"
-ls -al "$SUPPORT_DIR"
+    echo ""
+    echo "$SUPPORT_DIR:"
+    ls -al "$SUPPORT_DIR"
+fi
 
 cd $HOME
 
