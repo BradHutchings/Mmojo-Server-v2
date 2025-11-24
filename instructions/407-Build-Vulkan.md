@@ -5,6 +5,8 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**[Shortcut below](#shortcut-build-vulkan-copy-to-mmojo-share-test).**
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
