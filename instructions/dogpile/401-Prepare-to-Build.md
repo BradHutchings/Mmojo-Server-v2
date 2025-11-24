@@ -42,23 +42,13 @@ This looks like lots of fun.
   $DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh
   ```
 
-<!--
 ---
 ### Customize WebUI
-#### Suggested
-Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
-- View the script: <a href="../scripts/dogpile/401-Rollback-webui.sh" target="_blank">401-Rollback-webui.sh</a>.
+Customize the web UI, rebuild all the web files.
+- View the script: <a href="../../scripts/dogpile/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $DOGPILE_SCRIPTS/401-Rollback-webui.sh
-  ```
-
-#### Required
-Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
-- View the script: <a href="../scripts/dogpile/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
-- Run the script.
-  ```
-  $DOGPILE_SCRIPTS/401-Customize-webui.sh
+  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh
   ```
 #### Uh. Oh. npm Spit Out Errors
 
@@ -74,7 +64,6 @@ sudo npm install -g node@latest
 sudo npm install -g npm@latest
 cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
--->
 
 ---
 ### SHORTCUT: Run All the Above Scripts 
@@ -85,6 +74,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $DOGPILE_SCRIPTS/401-Clone-Repos.sh
 $DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh
+$DOGPILE_SCRIPTS/401-Customize-webui.sh
 ```
 
 ---
