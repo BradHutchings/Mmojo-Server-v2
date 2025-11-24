@@ -27,10 +27,6 @@ sudo apt install -y \
     qtbase5-dev-tools qtcreator tk-dev wayland-protocols xz-utils \
     zip zlib1g-dev cifs-utils
     
-# The pink screen is triggered by this one. Let's figure out if it's needed.
-# sudo apt install -y \
-#    ocaml-core 
-
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
