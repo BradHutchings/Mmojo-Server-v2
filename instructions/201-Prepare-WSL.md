@@ -70,6 +70,8 @@ Check that `/etc/wsl.conf` now has an `[interop]` section:
 cat /etc/wsl.conf
 ```
 
+---
+### Remove sudo Timeout
 You will use the `sudo` command often, so let's make it not expire.
 ```
 sudo visudo
