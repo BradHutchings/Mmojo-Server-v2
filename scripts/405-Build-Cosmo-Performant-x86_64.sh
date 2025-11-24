@@ -62,8 +62,8 @@ sed -i -e '/#include <openssl\/opensslv.h>/d' vendor/cpp-httplib/CMakeLists.txt
 sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 
 # Prepare the build folder
-rm -r -f $BUILD_DIR/$BUILD_COSMO_X86_64
-cmake -B $BUILD_COSMO_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+rm -r -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_X86_64
+cmake -B $BUILD_COSMO_PERFORMANT_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCOSMOCC=1
 
 # Revert to original CMake system.
@@ -71,12 +71,12 @@ cmake -B $BUILD_COSMO_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OP
 mv vendor/cpp-httplib/CMakeLists-orig.txt vendor/cpp-httplib/CMakeLists.txt
 
 # Build
-cmake --build $BUILD_COSMO_X86_64 --config Release
+cmake --build $BUILD_COSMO_PERFORMANT_X86_64 --config Release
 
 # Show off what we built
 printf "\nBuild of Cosmo aarch64 of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_DIR/$BUILD_COSMO_X86_64/bin/\n"
-ls -al $BUILD_DIR/$BUILD_COSMO_X86_64/bin
+printf "\$ ls -al $BUILD_DIR/$BUILD_COSMO_PERFORMANT_X86_64/bin/\n"
+ls -al $BUILD_DIR/$BUILD_COSMO_PERFORMANT_X86_64/bin
 printf "\n"
 
 export PATH=$SAVE_PATH
