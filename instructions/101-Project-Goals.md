@@ -24,7 +24,7 @@ Most importantly to me, I created and maintain Mmojo Server to power my Mmojo Kn
 ### Shortcuts and Automation
 The first developer criticism that Mmojo Server always gets is that it isn't automated enough. Guilty. Hear me out. Automation breaks. When it breaks, someone has to jump in and figure out what broke, then fix it, before anyone can use the automation again. The sequences of discrete automated steps in this repo, invoked manually do two things: (1) isolate what happens to be broken on any particular day, and (2) they foster understanding of each process from users of this repo. In a previous job, I spent ten years fighting against premature optimization that continually and expensively broke. I do not want that in my project.
 
-Having said that, many steps (or pages) in the instructions have "SHORTCUT" scripts at the end. After you've done a few builds end-to-end, you should try them out. I also plan to offer shortcut scripts for whole sections. I promise they will break spectacularly and often, because lots of stuff changes unexpectedly and often in upstream projects like llama.cpp. But if the section shortcuts work well most of the time, they'll be pretty valuable.
+Having said that, many steps (or pages) in the instructions have "SHORTCUT" scripts at the end. The shortcuts for a step are linked in the **About this Step** area at the top of the page for your convenience. After you've done a few builds end-to-end, you should try them out. I also plan to offer shortcut scripts for whole sections. I promise they will break spectacularly and often, because lots of stuff changes unexpectedly and often in upstream projects like llama.cpp. But if the section shortcuts work well most of the time, they'll be pretty valuable.
 
 ---
 ### Proceed
