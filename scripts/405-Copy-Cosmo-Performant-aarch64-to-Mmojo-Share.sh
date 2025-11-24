@@ -15,14 +15,14 @@ mm-mount-mmojo-share.sh
 if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   echo "Creating directories on Mmojo Share."
   sudo mkdir -p $MMOJO_SHARE_BUILDS
-  sudo mkdir -p $MMOJO_SHARE_BUILDS_APE
+  sudo mkdir -p $MMOJO_SHARE_BUILDS_PERFORMANT_APE
 
-  if [ -d "$MMOJO_SHARE_BUILDS_APE" ]; then
+  if [ -d "$MMOJO_SHARE_BUILDS_PERFORMANT_APE" ]; then
     echo "Copying mmojo-server-aarch64 and mm-zipalign-aarch64 to Mmojo Share."
-    sudo cp -f $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mmojo-server $MMOJO_SHARE_BUILDS_APE/mmojo-server-aarch64
+    sudo cp -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_AARCH64/bin/mmojo-server $MMOJO_SHARE_BUILDS_PERFORMANT_APE/mmojo-server-aarch64
 
     # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
-    # sudo cp -f $BUILD_DIR/$BUILD_COSMO_AARCH64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-aarch64
+    # sudo cp -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_AARCH64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_PERFORMANT_APE/mm-zipalign-aarch64
   fi
 fi
 
