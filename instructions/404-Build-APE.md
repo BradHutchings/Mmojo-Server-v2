@@ -140,7 +140,7 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an
   ```
 
 #### Test the Assembled APE
-If you're build enviornment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
