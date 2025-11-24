@@ -55,6 +55,7 @@ echo "These builds are available to package:"
 PS3="Please choose a build:"
 select choice in "${available_build_names[@]}"; do
   export CHOSEN_BUILD=$choice
+  echo "\$choice: $choice."
   case $choice in
     "DEBUG")
       export CHOSEN_BUILD_PATH=${build_paths[0]}
@@ -78,7 +79,6 @@ select choice in "${available_build_names[@]}"; do
       unset CHOSEN_BUILD
       unset CHOSEN_BUILD_PATH
       unset CHOSEN_BUILD_INFO
-      break
       ;;
   esac
 done
