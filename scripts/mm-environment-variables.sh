@@ -23,10 +23,8 @@ unset CC
 unset CXX
 unset AR
 
-export HOME_SCRIPTS="$HOME/scripts"
-export TILDE_SCRIPTS="~/scripts"
-export HOME_TOOLS="$HOME/scripts"
-export TILDE_TOOLS="~/tools"
+export HOME_SCRIPTS="$HOME/mmscripts"
+export TILDE_SCRIPTS="~/mmscripts"
 
 export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
