@@ -5,6 +5,8 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**[Shortcut below](#shortcut-build-cuda-copy-to-mmojo-share-test).**
+
 **Note:** Compiler may complain about `-arch=native` in a Linux VM.
 
 <!--
