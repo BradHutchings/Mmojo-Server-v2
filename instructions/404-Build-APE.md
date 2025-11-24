@@ -80,7 +80,7 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
-If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
@@ -111,7 +111,7 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (a
 <details>
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
-If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
