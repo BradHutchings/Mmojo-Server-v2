@@ -57,12 +57,10 @@ for that customization step. If you're running Linux or macOS, these steps shoul
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
 ```
-# cd ~
 sudo apt remove nodejs npm -y
 sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
-# cd ~/$BUILD_MMOJO_SERVER_DIR
 ```
 
 ---
