@@ -1,4 +1,4 @@
-## 202. Create Scripts and Tools Directories
+## 202. Create Scripts Directory
 ### About this Step
 Let's get started by creating a `$HOME/scripts` directory and a `$HOME/tools` directory, then adding them to your `$PATH` environment variable.
 
