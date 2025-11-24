@@ -127,7 +127,7 @@ It's OK to start from scratch and do it often. There is a lot going on to build 
 
 ---
 ### Proceed
-- **Next:** [202. Create Scripts and Tools Directories](202-Create-Scripts-and-Tools-Directories.md)
+- **Next:** [202. Create Scripts Directory](202-Create-Scripts-Directory.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
