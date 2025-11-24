@@ -42,7 +42,7 @@ fi
 
 rm -f mmojo-server-args
 rm -r -f mmojo-server-support
-$BUILD_DIR/$BUILD_CPU/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
+$BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
     
 printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
