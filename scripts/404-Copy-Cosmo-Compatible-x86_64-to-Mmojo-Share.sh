@@ -22,7 +22,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     sudo cp -f $BUILD_DIR/$BUILD_COSMO_COMPATIBLE_X86_64/bin/mmojo-server $MMOJO_SHARE_BUILDS_APE/mmojo-server-x86_64
 
     # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
-    # sudo cp -f $BUILD_DIR/$BUILD_COSMO_X86_64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64
+    # sudo cp -f $BUILD_DIR/$BUILD_COSMO_COMPATIBLE_X86_64/bin/mm-zipalign $MMOJO_SHARE_BUILDS_APE/mm-zipalign-x86_64
   fi
 fi
 
