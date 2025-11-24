@@ -14,7 +14,7 @@ Here are the things you need to do:
 - [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
 - [404. Build APE](404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
-- [405. Build CPU](405-Build-CPU.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [405. Build CPU (Native)](405-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 - [406. Build CUDA](406-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
 - [407. Build Vulkan](407-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
 
