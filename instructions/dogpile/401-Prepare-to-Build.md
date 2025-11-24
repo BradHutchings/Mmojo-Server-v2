@@ -55,7 +55,9 @@ Customize the web UI, rebuild all the web files.
 #### Uh. Oh. npm Spit Out Errors
 
 You may have an earlier version of `npm` and `nodejs` installed on your build machine than are required
-for that customization step. If you're running Linux or macOS, these steps should clean that up.
+for that customization step. If you're running Linux or macOS, these steps should clean that up. I am working
+to figure out if this it's safe to just put this in the [207. Install Dependencies](../207-Install-Dependencies.md)
+step.
 
 **ONLY RUN THESE IF YOU HAD PROBLEMS IN THE PREVIOUS STEP!!** Then rerun the previous step.
 ```
