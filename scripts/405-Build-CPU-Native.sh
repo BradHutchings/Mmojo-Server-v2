@@ -17,15 +17,15 @@ cd $BUILD_DIR
 
 # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-rm -r -f $BUILD_DIR/$BUILD_CPU
-cmake -B $BUILD_CPU -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+rm -r -f $BUILD_DIR/$BUILD_CPU_NATIVE
+cmake -B $BUILD_CPU_NATIVE -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
     -DCMAKE_BUILD_TYPE=Release # -DCMAKE_VERBOSE_MAKEFILE=ON 
-cmake --build $BUILD_CPU
+cmake --build $BUILD_CPU_NATIVE
 
 # Show off what we built
 printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_DIR/$BUILD_CPU/bin/\n"
-ls -al $BUILD_DIR/$BUILD_CPU/bin
+printf "\$ ls -al $BUILD_DIR/$BUILD_CPU_NATIVE/bin/\n"
+ls -al $BUILD_DIR/$BUILD_CPU_NATIVE/bin
 printf "\n"
 
 cd $HOME
