@@ -8,6 +8,8 @@ In this step, we will clone the Mmojo-Server repo, fix problems that affect buil
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Shortcut:** [Scroll down](#shortcut-run-all-the-above-scripts).
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
