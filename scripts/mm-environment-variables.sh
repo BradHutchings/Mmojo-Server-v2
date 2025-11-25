@@ -113,7 +113,7 @@ export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
 export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 
 # Change this to "mmojo-server-args", update server-mmojo.cpp.
-export PACKAGE_DEFAULT_ARGS_FILE="default-args"
+# export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 export PACKAGE_MMOJO_SERVER_ARGS_FILE="mmojo-server-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
