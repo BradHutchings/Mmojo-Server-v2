@@ -129,7 +129,7 @@ Copy this zip package to your Mmojo share.
 
 ---
 ### Proceed
-- **Next:** [504. Package SEAS](504-Package-SEAS.md)
+- **Next:** This is the last step in this section.
 - **Previous:** [502. Package APE (Performant)](502-Package-APE-Performant.md)
 - **Up:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 
