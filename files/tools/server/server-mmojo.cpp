@@ -55,6 +55,9 @@
 // This could be automated by searching for "using json =" and inserting this block before.
 #include "mmojo-args.h"
 
+#define ARGS_FILENAME "mmojo-server-args"
+#define SUPPORT_DIRECTORY_NAME "mmojo-server-support"
+
 // pre C++20 helpers.
 bool starts_with (std::string const &fullString, std::string const &beginning);
 bool ends_with (std::string const &fullString, std::string const &ending);
@@ -4577,10 +4580,15 @@ int main(int argc, char ** argv) {
     }
 
     // Args files if present. The names are different to remove confusion during packaging.
-    const std::string& argsFilename = "mmojo-server-args";
-    const std::string& supportDirectoryName = "mmojo-server-support";
-    const std::string& supportArgsFilename = "default-args";
-    const std::string& zipArgsPath = "/zip/default-args";
+    # const std::string& argsFilename = "mmojo-server-args";
+    # const std::string& supportDirectoryName = "mmojo-server-support";
+    # const std::string& supportArgsFilename = "default-args";
+    # const std::string& zipArgsPath = "/zip/default-args";
+
+    const std::string& argsFilename = ARGS_FILENAME;
+    const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
+    const std::string& supportArgsFilename = ARGS_FILENAME;
+    const std::string& zipArgsPath = "/zip/" + ARGS_FILENAME;
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
