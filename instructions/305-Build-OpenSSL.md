@@ -1,4 +1,4 @@
-## 304. Build OpenSSL
+## 305. Build OpenSSL
 ### About this Step
 We need to build our own `libssl.a` and `libcrypto.a` becuase:
 1. Actual Portable Executable (APE) does not support dynamic loading of libraries.
@@ -24,7 +24,7 @@ mm-update-local-mmojo-server-repo.sh
 Clone openssl repo into a `$BUILD_OPENSSSL_DIR` directory, then build openssl with cosmo. Build this once, and leave the `$BUILD_OPENSSSL_DIR` directory between builds.
 
 This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
-- View the script: <a href="../scripts/304-Clone-Build-openssl.sh" target="_blank">304-Clone-Build-openssl.sh</a>.
+- View the script: <a href="../scripts/305-Clone-Build-openssl.sh" target="_blank">305-Clone-Build-openssl.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -35,8 +35,8 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 
 ---
 ### Proceed
-- **Next:** [305. Install CUDA Toolkit](305-Install-CUDA-Toolkit.md)
-- **Previous:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Next:** [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md)
+- **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
