@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates a default_args file and adds it to the dogpile APE file.
+# This script creates a dogpile_args file and adds it to the dogpile APE file.
 #
 # See licensing note at end.
 ################################################################################
@@ -17,7 +17,7 @@ fi
 ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_ZIP_FILE"
 
 cd "$THIS_PACKAGE_DIR"
-cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF > $PACKAGE_DOGPILE_ARGS_FILE
 --no-mmap
 --host
 127.0.0.1
@@ -37,22 +37,22 @@ EOF
 # We need an enable mmap paramter to override this.
 
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_DOGPILE_ARGS_FILE
 --no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
 fi
 
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_DOGPILE_ARGS_FILE
 ...
 EOF
 
-echo "$PACKAGE_DEFAULT_ARGS_FILE:"
-cat $PACKAGE_DEFAULT_ARGS_FILE
+echo "$PACKAGE_DOGPILE_ARGS_FILE:"
+cat $PACKAGE_DOGPILE_ARGS_FILE
 
-echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
-zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+echo "Zipping contents of $PACKAGE_DOGPILE_ARGS_FILE"
+zip -0 -r $ZIP_FILE $PACKAGE_DOGPILE_ARGS_FILE
 
 echo ""
 echo "Contents of $ZIP_FILE:"
@@ -61,7 +61,7 @@ unzip -l $ZIP_FILE
 echo ""
 echo "Cleaning up."
 mv $ZIP_FILE $PACKAGE_DOGPILE_FILE
-rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
+rm -r -f Mmojo-Complete certs $PACKAGE_DOGPILE_ARGS_FILE
 
 echo ""
 echo "Listing packaging directory: $THIS_PACKAGE_DIR"
