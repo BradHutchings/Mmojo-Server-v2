@@ -1,4 +1,4 @@
-## 502. Package zip
+## 503. Package zip
 
 ---
 ### About this Step
@@ -50,10 +50,10 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ### Create Package Directories
 This script creates the package directories.
 
-- View the script: <a href="../scripts/502-Create-Package-Directories.sh" target="_blank">502-Create-Package-Directories.sh</a>.
+- View the script: <a href="../scripts/503-Create-Package-Directories.sh" target="_blank">503-Create-Package-Directories.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Create-Package-Directories.sh
+  $MMOJO_SERVER_SCRIPTS/503-Create-Package-Directories.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -64,10 +64,10 @@ This script creates the package directories.
 ---
 ### Add Certs to Package
 This script adds SSL certificates from the Mmojo Share to the package.
-- View the script: <a href="../scripts/502-Add-Certs-to-Package.sh" target="_blank">502-Add-Certs-to-Package.sh</a>.
+- View the script: <a href="../scripts/503-Add-Certs-to-Package.sh" target="_blank">503-Add-Certs-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-Certs-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/503-Add-Certs-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_CERTS=1
   ```
@@ -77,10 +77,10 @@ This script adds SSL certificates from the Mmojo Share to the package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the package.
-- View the script: <a href="../scripts/502-Add-Mmojo-Complete-to-Package.sh" target="_blank">502-Add-Mmojo-Complete-to-Package.sh</a>.
+- View the script: <a href="../scripts/503-Add-Mmojo-Complete-to-Package.sh" target="_blank">503-Add-Mmojo-Complete-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-Mmojo-Complete-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/503-Add-Mmojo-Complete-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -88,11 +88,11 @@ This script adds the Mmojo Complete user interface to the package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the package.
-- View the script: <a href="../scripts/502-Add-gguf-Model-to-Package.sh" target="_blank">502-Add-gguf-Model-to-Package.sh</a>.
+- View the script: <a href="../scripts/503-Add-gguf-Model-to-Package.sh" target="_blank">503-Add-gguf-Model-to-Package.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/502-Add-gguf-Model-to-Package.sh
+    $MMOJO_SERVER_SCRIPTS/503-Add-gguf-Model-to-Package.sh
     # Keep track of what we add for the `default-args` file.
     export ADDED_MODEL=1
   fi
@@ -101,36 +101,36 @@ This script adds the chosen `.gguf` model to the package.
 ---
 ### Add `default-args` File to Package
 This script adds a `default-args` file to the package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/502-Add-default-args-to-Package.sh" target="_blank">502-Add-default-args-to-Package.sh</a>.
+- View the script: <a href="../scripts/503-Add-default-args-to-Package.sh" target="_blank">503-Add-default-args-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-default-args-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/503-Add-default-args-to-Package.sh
   ```
 
 ---
 ### Zip the Package
 This script zips the package into a `.zip` file and moves the file to `$HOME/500-PACKAGE`.
-- View the script: <a href="../scripts/502-Zip-Package.sh" target="_blank">502-Zip-Package.sh</a>.
+- View the script: <a href="../scripts/503-Zip-Package.sh" target="_blank">503-Zip-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Zip-Package.sh
+  $MMOJO_SERVER_SCRIPTS/503-Zip-Package.sh
   ```
 
 <details>
   <summary><b>Optional: Copy Zip Package to Your Mmojo Share.</b></summary>
 
 Copy this zip package to your Mmojo share.
-- View the script: <a href="../scripts/502-Copy-Zip-Package-to-Mmojo-Share.sh" target="_blank">502-Copy-Zip-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/503-Copy-Zip-Package-to-Mmojo-Share.sh" target="_blank">503-Copy-Zip-Package-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Copy-Zip-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/503-Copy-Zip-Package-to-Mmojo-Share.sh
   ```
 </details>
 
 ---
 ### Proceed
-- **Next:** [503. Package SEAS](503-Package-SEAS.md)
-- **Previous:** [501. Package APE](501-Package-APE.md)
+- **Next:** [504. Package SEAS](504-Package-SEAS.md)
+- **Previous:** [502. Package APE (Performant)](502-Package-APE-Performant.md)
 - **Up:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 
 ---
