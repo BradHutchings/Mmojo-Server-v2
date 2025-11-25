@@ -7,9 +7,10 @@ Now that you have Mmojo Server built as an Actual Portable Executable (APE) file
 ---
 ### Package Mmojo Server
 Here are some packaging options:
-- [501. Package APE](501-Package-APE.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
-- [502. Package zip](502-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
-- [503. Package SEAS](503-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
+- [501. Package APE (Compatible)](501-Package-APE-Compatible.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+- [502. Package APE (Performant)](502-Package-APE-Performant.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+- [503. Package zip](503-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
+- [504. Package SEAS](504-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
 
 **Get Started:** [501. Package APE](501-Package-APE.md)
 
