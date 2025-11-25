@@ -5,7 +5,7 @@ In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your bu
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Shortcut:** [Scroll down](#shortcut-build-vulkan-copy-to-mmojo-share-test).
+**Shortcut:** [Scroll down](#shortcut-build-vulkan-test).
 
 ---
 <details>
@@ -50,6 +50,17 @@ Copy this build to your Mmojo Share for packaging later.
   $MMOJO_SERVER_SCRIPTS/408-Copy-Vulkan-Build-to-Mmojo-Share.sh
   ```
 </details>
+
+---
+### SHORTCUT: Build Vulkan, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/408-Build-Vulkan.sh
+$MMOJO_SERVER_SCRIPTS/408-Test-Vulkan.sh
+```
 
 ---
 ### SHORTCUT: Build Vulkan, Copy to Mmojo Share, Test
