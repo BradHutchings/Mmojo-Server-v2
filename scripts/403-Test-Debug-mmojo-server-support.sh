@@ -47,7 +47,7 @@ rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 mkdir -p $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 # --mlock is not needed to run this.
-cat << EOF > mmojo-server-support/default-args
+cat << EOF > mmojo-server-support/mmojo-server-args
 --model
 $MODELS_DIR/$MODEL_PARAM
 --host
