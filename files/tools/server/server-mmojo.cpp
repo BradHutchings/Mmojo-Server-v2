@@ -4590,7 +4590,7 @@ int main(int argc, char ** argv) {
     const std::string& argsFilename = ARGS_FILENAME;
     const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
     const std::string& supportArgsFilename = ARGS_FILENAME;
-    const std::string& zipArgsPath = "/zip/" + ARGS_FILENAME;
+    const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
