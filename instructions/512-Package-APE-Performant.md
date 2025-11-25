@@ -1,4 +1,4 @@
-## 502. Package APE (Performant)
+## 512. Package APE (Performant)
 
 ### About this Step
 
@@ -32,13 +32,13 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/502-Create-Package-Directory.sh" target="_blank">502-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/512-Create-Package-Directory.sh" target="_blank">512-Create-Package-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Create-Package-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/512-Create-Package-Directory.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -49,10 +49,10 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
 ---
 ### Add Certs to Package
 This script adds SSL certificates from the Mmojo Share to the APE package.
-- View the script: <a href="../scripts/502-Add-Certs-to-APE.sh" target="_blank">502-Add-Certs-to-APE.sh</a>.
+- View the script: <a href="../scripts/512-Add-Certs-to-APE.sh" target="_blank">512-Add-Certs-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-Certs-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/512-Add-Certs-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_CERTS=1
   ```
@@ -62,10 +62,10 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/502-Add-UI-to-APE.sh" target="_blank">502-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../scripts/512-Add-UI-to-APE.sh" target="_blank">512-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-UI-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/512-Add-UI-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -73,11 +73,11 @@ This script adds the Mmojo Complete user interface to the APE package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the APE package.
-- View the script: <a href="../scripts/502-Add-gguf-Model-to-APE.sh" target="_blank">502-Add-gguf-Model-to-APE.sh</a>.
+- View the script: <a href="../scripts/512-Add-gguf-Model-to-APE.sh" target="_blank">512-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/502-Add-gguf-Model-to-APE.sh
+    $MMOJO_SERVER_SCRIPTS/512-Add-gguf-Model-to-APE.sh
     # Keep track of what we add for the `default-args` file.
     export ADDED_MODEL=1
   fi
@@ -95,10 +95,10 @@ This script adds the chosen `.gguf` model to the APE package.
 ---
 ### Add Args File to Package
 This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/502-Add-Args-to-APE.sh" target="_blank">502-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../scripts/512-Add-Args-to-APE.sh" target="_blank">512-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-Args-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/512-Add-Args-to-APE.sh
   ```
 
 ---
@@ -158,16 +158,16 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/502-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">502-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/512-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">512-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Copy-APE-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/512-Copy-APE-Package-to-Mmojo-Share.sh
   ```
 
 ---
 ### Proceed
-- **Next:** [503. Package zip](503-Package-zip.md)
-- **Previous:** [501. Package APE (Compatible)](501-Package-APE-Compatible.md)
+- **Next:** [521. Package zip](521-Package-zip.md)
+- **Previous:** [511. Package APE (Compatible)](511-Package-APE-Compatible.md)
 - **Up:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 
 ---
