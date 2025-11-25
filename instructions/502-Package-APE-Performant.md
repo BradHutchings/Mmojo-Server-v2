@@ -63,10 +63,10 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/502-Add-Mmojo-Complete-to-APE.sh" target="_blank">502-Add-Mmojo-Complete-to-APE.sh</a>.
+- View the script: <a href="../scripts/502-AddUI-to-APE.sh" target="_blank">502-AddUI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-Mmojo-Complete-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/502-AddUI-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -94,12 +94,12 @@ This script adds the chosen `.gguf` model to the APE package.
 *-Brad*
 
 ---
-### Add `default-args` File to Package
+### Add Args File to Package
 This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/502-Add-default-args-to-APE.sh" target="_blank">502-Add-default-args-to-APE.sh</a>.
+- View the script: <a href="../scripts/502-Add-Args-to-APE.sh" target="_blank">502-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-Add-default-args-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/502-Add-Args-to-APE.sh
   ```
 
 ---
@@ -107,7 +107,7 @@ This script adds a `default-args` file to the APE package. If you added certs an
 
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
@@ -135,7 +135,7 @@ If you're building in WSL, your Windows web browser should be able to connect to
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
