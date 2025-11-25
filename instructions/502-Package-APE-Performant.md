@@ -8,8 +8,6 @@ Let's prepare an Actual Portable Executable (APE) for distribution. You will sta
 - Actually write this step. LOL.
 - Shortcut after picking gguf.
 
-<!--
-
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -166,8 +164,6 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
   ```
   $MMOJO_SERVER_SCRIPTS/502-Copy-APE-Package-to-Mmojo-Share.sh
   ```
-
--->
 
 ---
 ### Proceed
