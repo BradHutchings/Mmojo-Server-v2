@@ -18,7 +18,7 @@ fi
 ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 
 cd "$THIS_PACKAGE_DIR"
-cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF > $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --host
 127.0.0.1
 --port
@@ -34,7 +34,7 @@ cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
 EOF
 
 if [ $ADDED_CERTS ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --ssl-key-file
 /zip/certs/mmojo.local.key
 --ssl-cert-file
@@ -43,10 +43,10 @@ EOF
 fi
 
 if [ $ADDED_MMOJO_COMPLETE ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --path
 /zip/Mmojo-Complete
---default-ui-endpoint
+---ui-endpoint
 chat
 EOF
 fi
@@ -55,25 +55,25 @@ fi
 # We need an enable mmap paramter to override this.
 
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
 fi
 
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ...
 EOF
 
-echo "$PACKAGE_DEFAULT_ARGS_FILE:"
-cat $PACKAGE_DEFAULT_ARGS_FILE
+echo "$PACKAGE_MMOJO_SERVER_ARGS_FILE:"
+cat $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
-# echo "Zipping contents of $PACKAGE_DEFAULT_ARGS_FILE"
-zip -0 -r $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+# echo "Zipping contents of $PACKAGE_MMOJO_SERVER_ARGS_FILE"
+zip -0 -r $ZIP_FILE $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
 # Trying to preserve alignment of .gguf -- doesn't fix mmap() problem.
-# $ZIPALIGN -a 4096 $ZIP_FILE $PACKAGE_DEFAULT_ARGS_FILE
+# $ZIPALIGN -a 4096 $ZIP_FILE $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
 echo ""
 echo "Contents of $ZIP_FILE:"
@@ -82,7 +82,7 @@ unzip -l $ZIP_FILE
 echo ""
 echo "Cleaning up."
 mv $ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
-rm -r -f Mmojo-Complete certs $PACKAGE_DEFAULT_ARGS_FILE
+rm -r -f Mmojo-Complete certs $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
 echo ""
 echo "Listing packaging directory: $THIS_PACKAGE_DIR"
