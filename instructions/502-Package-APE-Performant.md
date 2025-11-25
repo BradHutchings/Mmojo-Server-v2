@@ -63,10 +63,10 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/502-AddUI-to-APE.sh" target="_blank">502-AddUI-to-APE.sh</a>.
+- View the script: <a href="../scripts/502-Add-UI-to-APE.sh" target="_blank">502-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/502-AddUI-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/502-Add-UI-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
