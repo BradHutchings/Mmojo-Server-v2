@@ -46,7 +46,7 @@ if [ $ADDED_MMOJO_COMPLETE ]; then
 cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --path
 /zip/Mmojo-Complete
----ui-endpoint
+--default-ui-endpoint
 chat
 EOF
 fi
