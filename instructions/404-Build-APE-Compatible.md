@@ -6,7 +6,7 @@ The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating sy
 
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
 
-**Shortcut:** [Scroll down](#shortcut-build-and-assemble-ape-copy-to-mmojo-share-test-ape).
+**Shortcut:** [Scroll down](shortcut-build-and-assemble-ape-test-ape).
 
 ---
 <details>
@@ -119,6 +119,19 @@ If you get build errors in the CMake preparation step, you most likely did not t
 You can turn off interoperability temporarily with this command:
 ```
 sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
+```
+
+---
+### SHORTCUT: Build and Assemble APE, Test APE
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-x86_64.sh
+$MMOJO_SERVER_SCRIPTS/404-Build-Cosmo-Compatible-aarch64.sh
+$MMOJO_SERVER_SCRIPTS/404-Assemble-Cosmo-Compatible-APE.sh
+$MMOJO_SERVER_SCRIPTS/404-Test-Cosmo-Compatible-APE.sh
 ```
 
 ---
