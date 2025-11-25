@@ -98,6 +98,8 @@ unset TEST_WITH_CHAT_UI
 
 export PACKAGE_DIR="$HOME/500-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
+export PACKAGE_COMPATIBLE_APE="compatible-ape"
+export PACKAGE_PERFORMANT_APE="performant-ape"
 export PACKAGE_ZIP="zip"
 export PACKAGE_SEAS="seas"
 
