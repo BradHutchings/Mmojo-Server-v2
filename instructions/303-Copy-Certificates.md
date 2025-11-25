@@ -1,4 +1,4 @@
-## 303. Copy Certs
+## 303. Copy Certificates
 ### About this Step
 In this step, we will create a `300-Certificates` directory and copy certificates from your Mmojo Share.
 
