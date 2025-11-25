@@ -106,7 +106,7 @@ This script adds a `default-args` file to the APE package. If you added certs an
 
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
@@ -134,7 +134,7 @@ If you're building in WSL, your Windows web browser should be able to connect to
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
