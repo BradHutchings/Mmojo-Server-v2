@@ -55,6 +55,7 @@
 // This could be automated by searching for "using json =" and inserting this block before.
 #include "mmojo-args.h"
 
+#define PROCESS_NAME "mmojo-server"
 #define ARGS_FILENAME "mmojo-server-args"
 #define SUPPORT_DIRECTORY_NAME "mmojo-server-support"
 
@@ -4566,7 +4567,7 @@ int main(int argc, char ** argv) {
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
     // Keep the build from showing up as ape in the process list.
-    pthread_setname_np(pthread_self(), "mmojo-server");
+    pthread_setname_np(pthread_self(), PROCESS_NAME);
 
     // This implements an args file feature inspired by llamafile's.
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
