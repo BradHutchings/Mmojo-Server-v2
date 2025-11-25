@@ -1,4 +1,4 @@
-## 521. Package SEAS
+## 531. Package SEAS
 ### About this Step
 
 ---
@@ -15,7 +15,7 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [511. Package zip](511-Package-zip.md)
+- **Previous:** [521. Package zip](521-Package-zip.md)
 - **Up:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 
 ---
