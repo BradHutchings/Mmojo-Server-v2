@@ -4581,10 +4581,11 @@ int main(int argc, char ** argv) {
     }
 
     // Args files if present. The names are different to remove confusion during packaging.
-    # const std::string& argsFilename = "mmojo-server-args";
-    # const std::string& supportDirectoryName = "mmojo-server-support";
-    # const std::string& supportArgsFilename = "default-args";
-    # const std::string& zipArgsPath = "/zip/default-args";
+    // original hard coded values -- upper case first letter so they don't get replaced by sed.
+    // const std::string& argsFilename = "Mmojo-server-args";
+    // const std::string& supportDirectoryName = "Mmojo-server-support";
+    // const std::string& supportArgsFilename = "Default-args";
+    // const std::string& zipArgsPath = "/zip/Default-args";
 
     const std::string& argsFilename = ARGS_FILENAME;
     const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
