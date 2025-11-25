@@ -16,7 +16,7 @@ if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
 
     cd "$SUPPORT_DIR"
 
-cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF > $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --no-mmap
 --host
 127.0.0.1
@@ -33,7 +33,7 @@ cat << EOF > $PACKAGE_DEFAULT_ARGS_FILE
 EOF
 
 if [ $ADDED_CERTS ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --ssl-key-file
 /mmojo/certs/mmojo.local.key
 --ssl-cert-file
@@ -42,7 +42,7 @@ EOF
 fi
 
 if [ $ADDED_MMOJO_COMPLETE ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --path
 /mmojo/Mmojo-Complete
 --default-ui-endpoint
@@ -51,19 +51,19 @@ EOF
 fi
 
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --model
 /mmojo/$CHOSEN_MODEL
 EOF
 fi
 
-cat << EOF >> $PACKAGE_DEFAULT_ARGS_FILE
+cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ...
 EOF
 
     # idented from "if" at top.
-    echo "$PACKAGE_DEFAULT_ARGS_FILE:"
-    cat $PACKAGE_DEFAULT_ARGS_FILE
+    echo "$PACKAGE_MMOJO_SERVER_ARGS_FILE:"
+    cat $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
     echo ""
     echo "$SUPPORT_DIR:"
