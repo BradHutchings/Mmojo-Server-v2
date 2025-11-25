@@ -30,7 +30,7 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/304-Clone-Build-openssl.sh
+  $MMOJO_SERVER_SCRIPTS/305-Clone-Build-openssl.sh
   ```
 
 ---
