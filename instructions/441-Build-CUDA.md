@@ -86,8 +86,8 @@ $MMOJO_SERVER_SCRIPTS/441-Test-CUDA.sh
 
 ---
 ### Proceed
-- **Next:** [408. Build Vulkan](408-Build-Vulkan.md)
-- **Previous:** [406. Build CPU (Native)](406-Build-CPU-Native.md)
+- **Next:** [451. Build Vulkan](451-Build-Vulkan.md)
+- **Previous:** [431. Build CPU (Native)](431-Build-CPU-Native.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
