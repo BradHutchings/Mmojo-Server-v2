@@ -62,10 +62,10 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/501-Add-Mmojo-Complete-to-APE.sh" target="_blank">501-Add-Mmojo-Complete-to-APE.sh</a>.
+- View the script: <a href="../scripts/501-Add-UI-to-APE.sh" target="_blank">501-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-Mmojo-Complete-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/501-Add-UI-to-APE.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -93,12 +93,12 @@ This script adds the chosen `.gguf` model to the APE package.
 *-Brad*
 
 ---
-### Add `default-args` File to Package
+### Add Args File to Package
 This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/501-Add-default-args-to-APE.sh" target="_blank">501-Add-default-args-to-APE.sh</a>.
+- View the script: <a href="../scripts/501-Add-Args-to-APE.sh" target="_blank">501-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Add-default-args-to-APE.sh
+  $MMOJO_SERVER_SCRIPTS/501-Add-Args-to-APE.sh
   ```
 
 ---
