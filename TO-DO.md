@@ -2,11 +2,9 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;11&minus;23         | Move npm updates to dependencies? Test to make sure it doesn't screw up mmojo or dogpile builds. [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md)|
+| 2025&minus;11&minus;21         | #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [205-Create-Mmojo-Share.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;21         | Routine update of llama.cpp. Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
-| 2025&minus;11&minus;21         | #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile. |
-| 2025&minus;11&minus;21         | Why do mm-work-in-progress and mm-main-branch show a quote error, then when run again, do fine? Goofy, not that anyone else will use them. |
 | 2025&minus;11&minus;21         | Script to pick performance level for APE builds: Levels might be: (1) compatible, (2) performant. If users of this repo want more control, they can fork it and change it. Probably should suggest that. Keep it simple and easy! |
 | 2025&minus;11&minus;21         | Similarly, pick performance for CUDA, VULKAN, and METAL builds.  CUDA and VULKAN could get (1) compatible, (2) performant, (3) native.  METAL would get M1, M2, M3, M4, M5(?) -- AARCH64 only. CPU should just be native. Otherwise, use the performant APE. |
 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Or just build a compatible and performant version of each. <-- This would solve things easier. No need to match up prep to builds. |
@@ -25,6 +23,8 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;11&minus;25 | 2025&minus;11&minus;21         | Why do mm-work-in-progress and mm-main-branch show a quote error, then when run again, do fine? Goofy, not that anyone else will use them. Seems to be fixed after last PR. |
+| 2025&minus;11&minus;25 | 2025&minus;11&minus;23         | Move npm updates to dependencies? Test to make sure it doesn't screw up mmojo or dogpile builds. Works great. [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md)|
 | 2025&minus;11&minus;23 | 2025&minus;11&minus;21         | Figure out which installed dependency is putting up the purple email server screen. Figured out it's `ocaml-core`. Do we need it? Nope. Remove it. https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/207-Install-Dependencies.md |
 | 2025&minus;11&minus;23 | 2025&minus;11&minus;23         | Fix the logic in [`-mm-mount-mmojo-share.sh`](https://github.com/BradHutchings/Mmojo-Server/blob/main/scripts/-mm-mount-mmojo-share.sh). Should try drvfs, then fall back to cifs, or vice versa. This worked! |
 | 2025&minus;11&minus;23 | 2025&minus;11&minus;21         | Finish packaging step for Dogpile. |
