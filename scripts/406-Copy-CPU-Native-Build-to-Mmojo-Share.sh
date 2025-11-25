@@ -15,14 +15,14 @@ mm-mount-mmojo-share.sh
 if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
   echo "Creating directories on Mmojo Share."
   sudo mkdir -p $MMOJO_SHARE_BUILDS
-  sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU
+  sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU_NATIVE
 
   # TO-DO: What CPU options/level?
   ARCH=$(uname -m)
 
-  if [ -d "$MMOJO_SHARE_BUILDS_CPU" ]; then
+  if [ -d "$MMOJO_SHARE_BUILDS_CPU_NATIVE" ]; then
     echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
-    sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU/mmojo-server-cpu-$ARCH
+    sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU_NATIVE/mmojo-server-cpu-$ARCH
   fi
 fi
 
