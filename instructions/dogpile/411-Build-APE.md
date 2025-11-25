@@ -1,4 +1,4 @@
-## 404. Build APE
+## 411. Build APE
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
@@ -74,61 +74,61 @@ export CPU_PERFORMANCE_LEVEL=4
 ---
 ### Build Dogpile for x86_64
 This script uses cmake CMake to build Dogpile with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../../scripts/dogpile/404-Build-Cosmo-x86_64.sh" target="_blank">404-Build-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Build-Cosmo-x86_64.sh" target="_blank">411-Build-Cosmo-x86_64.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $DOGPILE_SCRIPTS/404-Build-Cosmo-x86_64.sh
+  $DOGPILE_SCRIPTS/411-Build-Cosmo-x86_64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-x86_64.sh" target="_blank">404-Test-Cosmo-x86_64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Test-Cosmo-x86_64.sh" target="_blank">411-Test-Cosmo-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $DOGPILE_SCRIPTS/404-Test-Cosmo-x86_64.sh
+  $DOGPILE_SCRIPTS/411-Test-Cosmo-x86_64.sh
   ```
 </details>
 
 ---
 ### Build Dogpile for aarch64 (arm64)
 This script uses cmake CMake to build Dogpile with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="../../scripts/dogpile/404-Build-Cosmo-aarch64.sh" target="_blank">404-Build-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Build-Cosmo-aarch64.sh" target="_blank">411-Build-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  $DOGPILE_SCRIPTS/404-Build-Cosmo-aarch64.sh
+  $DOGPILE_SCRIPTS/411-Build-Cosmo-aarch64.sh
   ```
 
 <details>
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
 If you're build enviornment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-aarch64.sh" target="_blank">404-Test-Cosmo-aarch64.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Test-Cosmo-aarch64.sh" target="_blank">411-Test-Cosmo-aarch64.sh</a>.
 - Run the script:
   ```
-  $DOGPILE_SCRIPTS/404-Test-Cosmo-aarch64.sh
+  $DOGPILE_SCRIPTS/411-Test-Cosmo-aarch64.sh
   ```
 </details>
 
 ---
 ### Assemble dogpile Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
-- View the script: <a href="../../scripts/dogpile/404-Assemble-Cosmo-APE.sh" target="_blank">404-Assemble-Cosmo-APE.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Assemble-Cosmo-APE.sh" target="_blank">411-Assemble-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $DOGPILE_SCRIPTS/404-Assemble-Cosmo-APE.sh
+  $DOGPILE_SCRIPTS/411-Assemble-Cosmo-APE.sh
   ```
 
 #### Test the Assembled APE
 If you're build enviornment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/dogpile/404-Test-Cosmo-APE.sh" target="_blank">404-Test-Cosmo-APE.sh</a>.
+- View the script: <a href="../../scripts/dogpile/411-Test-Cosmo-APE.sh" target="_blank">411-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $DOGPILE_SCRIPTS/404-Test-Cosmo-APE.sh
+  $DOGPILE_SCRIPTS/411-Test-Cosmo-APE.sh
   ```
 
 ---
@@ -147,10 +147,10 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$DOGPILE_SCRIPTS/404-Build-Cosmo-x86_64.sh
-$DOGPILE_SCRIPTS/404-Build-Cosmo-aarch64.sh
-$DOGPILE_SCRIPTS/404-Assemble-Cosmo-APE.sh
-$DOGPILE_SCRIPTS/404-Test-Cosmo-APE.sh
+$DOGPILE_SCRIPTS/411-Build-Cosmo-x86_64.sh
+$DOGPILE_SCRIPTS/411-Build-Cosmo-aarch64.sh
+$DOGPILE_SCRIPTS/411-Assemble-Cosmo-APE.sh
+$DOGPILE_SCRIPTS/411-Test-Cosmo-APE.sh
 ```
 
 ---
