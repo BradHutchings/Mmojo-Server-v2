@@ -12,12 +12,12 @@ If you would like to build a less branded and opinionated version of llama.cpp, 
 Here are the things you need to do:
 - [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
-- [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
-- [404. Build APE (Compatible)](404-Build-APE-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-- [405. Build APE (Performant)](405-Build-APE-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
-- [406. Build CPU (Native)](406-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
-- [407. Build CUDA](407-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
-- [408. Build Vulkan](408-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
+- [411. Build Debug](411-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
+- [421. Build APE (Compatible)](421-Build-APE-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+- [422. Build APE (Performant)](422-Build-APE-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [431. Build CPU (Native)](431-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [441. Build CUDA](441-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
+- [451. Build Vulkan](451-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
 
 **Get Started:** [401. Prepare to Build](401-Prepare-to-Build.md)
 
