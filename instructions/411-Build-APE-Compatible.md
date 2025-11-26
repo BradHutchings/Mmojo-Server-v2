@@ -66,7 +66,16 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
 </details>
 
 ---
-### Build Mmojo Server for aarch64 (arm64)
+### Build Mmojo Server for aarch64 (arm64) (NEW)
+This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+- View the script: <a href="../scripts/410-Build-with-Cosmo.sh" target="_blank">410-Build-with-Cosmo.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
+  ```
+
+---
+### Build Mmojo Server for aarch64 (arm64) (OLD)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../scripts/411-Build-Cosmo-Compatible-aarch64.sh" target="_blank">411-Build-Cosmo-Compatible-aarch64.sh</a>.
 - Run the script:
