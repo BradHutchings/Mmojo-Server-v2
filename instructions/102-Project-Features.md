@@ -77,6 +77,12 @@ return json {
 - There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
 
 ---
+### `sed` Modified Files
+Some files in llama.cpp are automatically modified by `sed` to customize them and fix incompatibilities:
+- `tools/server/server-queue.cpp`
+- `tools/server/server-queue.h`
+
+---
 ### Self Extracting Application Support (SEAS) Files
 I am working on a self-extracting application that can extract support files, including a web user interface and a .gguf model, into an adjacent support directory during the application's initial invocation. These would be a good 2nd thing for users to try &mdash; after an APE package &mdash; because they can contain platform optimized code and GPU support, packaged in a single file.
 

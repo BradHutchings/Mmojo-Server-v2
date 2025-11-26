@@ -30,6 +30,7 @@ sed -i -e 's/common.cpp/common-mmojo.cpp/g' common/CMakeLists.txt
 sed -i -e '/log.h/a \    mmojo-args.h\n\    mmojo-args.c' common/CMakeLists.txt
 sed -i -e 's/add_subdirectory(server)/add_subdirectory(server)\n\tif (COSMOCC)\n\t\tadd_subdirectory(zipalign)\n\tendif()/g' tools/CMakeLists.txt
 sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
+sed -i -e 's/server-http.cpp/server-http-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/set(TARGET llama-server)/set(TARGET dogpile)/g' tools/server/CMakeLists.txt
 
 # What to do about this?!?
@@ -42,6 +43,8 @@ sed -i -e 's/SUPPORT_DIRECTORY_NAME\ \"mmojo-server-support\"/SUPPORT_DIRECTORY_
 
 # In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
 sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
+sed -i -e 's/server_queue::defer(/server_queue::defer_task(/g' tools/server/server-queue.cpp
+sed -i -e 's/void\ defer(/void\ defer_task(/g' tools/server/server-queue.h
 
 # Future: Just patch common/argc.cpp and eliminate common/argc-mmojo.cpp
 # Future: Move loading-mmojo.html to loading.html instead of mangling server-mmojo.cpp. Will this work with .hpp, etc?
