@@ -3,10 +3,8 @@
 | Added              | Item      |
 | :-------------           | :------    |
 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
-| 2025&minus;11&minus;25         | For the APE builds, can I remove `-DCOSMOCC=1` from the compiles? CMake warns not used. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;26         | Next update of llama.cpp: Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
-| 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Or just build a compatible and performant version of each. <-- This would solve things easier. No need to match up prep to builds. Probably doesn't make a huge difference. |
 | 2025&minus;11&minus;21         | Is it safe to use the latest Cosmo again? Changes started mid-November and broke the build of the Cosmo library. No. We get 400 responses to our API requests when running the server. Nothing shows up in building before that. Grrrr. |
 | 2025&minus;11&minus;23         | Do I still need to rollback the new llama.cpp webui so I can run it non-root-path? I do as of latest commit of llama.cpp I'm letting through. [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md) |
 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. |
@@ -22,6 +20,8 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;11&minus;26 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Not bothering. Too much work for too little gain. |
+| 2025&minus;11&minus;26 | 2025&minus;11&minus;25         | For the APE builds, can I remove `-DCOSMOCC=1` from the compiles? CMake warns not used. Needed for C++ compiler, not for CMake.|
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;25         | Implement the Copy Certificates step. |
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;21         | Routine update of llama.cpp. Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? Solve that loading thing another day. This update was some work. |
 | 2025&minus;11&minus;25 | 2025&minus;11&minus;21         | #defines for default_args and mmojo-server-support filenames in server-mmojo.cpp, so they can be improved, plus replaced easily for Dogpile. |
