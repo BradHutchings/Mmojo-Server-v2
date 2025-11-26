@@ -159,6 +159,16 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
 ---
 ### Assemble mmojo-server Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
+- View the script: <a href="../scripts/410-Assemble-Cosmo-APE.sh" target="_blank">410-Assemble-Cosmo-APE.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant
+
+  ```
+
+---
+### Assemble mmojo-server Actual Portable Executable (APE) (OLD)
+Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
 - View the script: <a href="../scripts/412-Assemble-Cosmo-Performant-APE.sh" target="_blank">412-Assemble-Cosmo-Performant-APE.sh</a>.
 - Run the script:
   ```
