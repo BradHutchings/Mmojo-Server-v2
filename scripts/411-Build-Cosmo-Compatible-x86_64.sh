@@ -38,16 +38,16 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-X86_64_ARCH_LEVEL_PARAM=" $ARCH_X86_64_COMPATIBLE " 
+X86_64_ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_COMPATIBLE " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
 export CC="x86_64-unknown-cosmo-cc \
-    -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
+    -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
+    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl"
 export AR="cosmoar"
