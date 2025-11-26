@@ -39,6 +39,8 @@
 
 // Mmojo Server START
 // This could be automated by searching for "using json =" and inserting this block before.
+#include <linux/limits.h>
+#include <sys/stat.h>
 #include "mmojo-args.h"
 
 #define PROCESS_NAME "mmojo-server"
