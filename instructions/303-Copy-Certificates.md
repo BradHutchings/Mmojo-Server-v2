@@ -4,6 +4,10 @@ In this step, we will create a `300-Certificates` directory and copy certificate
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+TO-DO:
+- Implement this step.
+- Use the certificates from here when building the APE and zip packages.
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
