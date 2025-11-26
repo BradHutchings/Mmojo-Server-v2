@@ -21,7 +21,7 @@ export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="aarch64-unknown-cosmo-cc  \
     -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
 export CXX="aarch64-unknown-cosmo-c++ \
-    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
+    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl/.aarch64/"
 export AR="cosmoar"
