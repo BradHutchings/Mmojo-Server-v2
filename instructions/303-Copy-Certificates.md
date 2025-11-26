@@ -4,6 +4,8 @@ In this step, we will create a `300-Certificates` directory and copy certificate
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
+**Shortcut:** [Scroll down](#shortcut-copy-models).
+
 TO-DO:
 - Implement this step.
 - Use the certificates from here when building the APE and zip packages.
@@ -18,6 +20,27 @@ mm-update-local-mmojo-server-repo.sh
 . mm-environment-variables.sh
 ```
 </details>
+
+---
+### Create Certificates Directory
+This script creates the `$CERTIFICATES_DIR`:
+- View the script: <a href="../scripts/303-Create-Certificates-Directory.sh" target="_blank">303-Create-Certificates-Directory.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/303-Create-Certificates-Directory.sh
+  ```
+
+---
+### Copy Certificate Files from Mmojo Share
+This script copies files from your Mmojo Share to the `$CERTIFICATES_DIR`:
+- View the script: <a href="../scripts/303-Copy-Certificates-from-Mmojo-Share.sh" target="_blank">303-Copy-Certificates-from-Mmojo-Share.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/303-Copy-Certificates-from-Mmojo-Share.sh
+  ```
 
 ---
 ### Proceed
