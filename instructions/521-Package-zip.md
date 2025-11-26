@@ -77,10 +77,10 @@ This script adds SSL certificates from the Mmojo Share to the package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the package.
-- View the script: <a href="../scripts/521-Add-Mmojo-Complete-to-Package.sh" target="_blank">521-Add-Mmojo-Complete-to-Package.sh</a>.
+- View the script: <a href="../scripts/521-Add-UI-to-Package.sh" target="_blank">521-Add-UI-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/521-Add-Mmojo-Complete-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/521-Add-UI-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -99,12 +99,12 @@ This script adds the chosen `.gguf` model to the package.
   ```
 
 ---
-### Add `default-args` File to Package
+### Add Args File to Package
 This script adds a `default-args` file to the package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/521-Add-default-args-to-Package.sh" target="_blank">521-Add-default-args-to-Package.sh</a>.
+- View the script: <a href="../scripts/521-Add-Args-to-Package.sh" target="_blank">521-Add-Args-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/521-Add-default-args-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/521-Add-Args-to-Package.sh
   ```
 
 ---
