@@ -12,7 +12,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $BUILD_DIR
 
-AARCH64_ARCH_LEVEL_PARAM=" -march=armv8-a " 
+AARCH64_ARCH_LEVEL_PARAM=" $ARCH_AARCH64_PERFORMANT " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
