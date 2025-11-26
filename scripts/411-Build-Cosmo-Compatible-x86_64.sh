@@ -45,12 +45,14 @@ export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
 export CC="x86_64-unknown-cosmo-cc \
-    -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
+    -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
+    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl"
 export AR="cosmoar"
+
+# -DCOSMOCC=1 
 
 # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
 cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
