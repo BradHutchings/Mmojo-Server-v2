@@ -21,7 +21,7 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Proceed
-- **Next:** [304. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Next:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
 - **Previous:** [302. Copy Models](302-Copy-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
