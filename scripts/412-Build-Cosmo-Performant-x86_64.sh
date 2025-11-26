@@ -38,7 +38,7 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-X86_64_ARCH_LEVEL_PARAM=" $ARCH_X86_64_PERFORMANT " 
+X86_64_ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
@@ -47,7 +47,7 @@ export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="x86_64-unknown-cosmo-cc \
     -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ \
-    -DCOSMMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
+    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl"
 export AR="cosmoar"
