@@ -49,7 +49,7 @@ fi
 echo "   Processor: $processor"
 echo "   Variation: $variation"
 echo "  arch param: $ARCH_LEVEL_PARAM"
-echo "subdirectory: $BUILD_SUBDIRECTORY
+echo "subdirectory: $BUILD_SUBDIRECTORY"
 
 unset CC
 unset CXX
