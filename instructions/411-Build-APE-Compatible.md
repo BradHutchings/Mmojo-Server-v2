@@ -229,8 +229,8 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
-$MMOJO_SERVER_SCRIPTS/411-Assemble-Cosmo-Compatible-APE.sh
-$MMOJO_SERVER_SCRIPTS/411-Test-Cosmo-Compatible-APE.sh
+$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
 ```
 
 ---
@@ -244,9 +244,9 @@ $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh
 $MMOJO_SERVER_SCRIPTS/411-410-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/411-Assemble-Cosmo-Compatible-APE.sh
+$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
 $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/411-Test-Cosmo-Compatible-APE.sh
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
 ```
 
 ---
