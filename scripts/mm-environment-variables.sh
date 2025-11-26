@@ -94,9 +94,19 @@ export TEST_DIR="$HOME/400-TEST-mmojo-server"
 export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
 export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
 export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
+
+# get rid of these
 export TEST_COSMO_X86_64="test-cosmo-x86_64"
 export TEST_COSMO_AARCH64="test-cosmo-aarch64"
+
 export TEST_COSMO_APE="test-cosmo-ape"
+export TEST_COSMO_COMPATIBLE_X86_64="test-cosmo-compatible-x86_64"
+export TEST_COSMO_COMPATIBLE_AARCH64="test-cosmo-compatible-aarch64"
+export TEST_COSMO_COMPATIBLE_APE="test-cosmo-compatible-ape"
+export TEST_COSMO_PERFORMANT_X86_64="test-cosmo-performant-x86_64"
+export TEST_COSMO_PERFORMANT_AARCH64="test-cosmo-performant-aarch64"
+export TEST_COSMO_PERFORMANT_APE="test-cosmo-performant-ape"
+
 export TEST_CPU="test-cpu"
 export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
