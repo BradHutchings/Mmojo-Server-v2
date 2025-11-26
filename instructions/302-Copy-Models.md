@@ -87,7 +87,7 @@ $MMOJO_SERVER_SCRIPTS/302-Copy-Models.sh
 
 ---
 ### Proceed
-- **Next:** [303. Build Cosmopolitan](303-Build-Cosmopolitan.md)
+- **Next:** [303. Copy Certificates](303-Copy-Certificates.md)
 - **Previous:** [301. Download Models](301-Download-Models.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 

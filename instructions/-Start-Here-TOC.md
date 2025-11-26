@@ -37,10 +37,11 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 
 - [301. Download Models](301-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
 - [302. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
-- [303. Build Cosmopolitan](303-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
-- [304. Build OpenSSL](304-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
-- [305. Install CUDA Toolkit](305-Install-CUDA-Toolkit.md) - Install NVIDIA's CUDA Toolkit.
-- [306. Build Vulkan SDK](306-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
+- [303. Copy Certificates](303-Copy-Certificates.md) - Copy SSL certificate files from your Mmojo share.
+- [304. Build Cosmopolitan](304-Build-Cosmopolitan.md) - Patch Cosmopolitan and build it.
+- [305. Build OpenSSL](305-Build-OpenSSL.md) - Build OpenSSL static libraries with Cosmopolitan.
+- [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md) - Install NVIDIA's CUDA Toolkit.
+- [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 ---
 ### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
@@ -49,18 +50,22 @@ Build Mmojo Server executables.
 - [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
-- [404. Build APE](404-Build-APE.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
-- [405. Build CPU (Native)](405-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
-- [406. Build CUDA](406-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
-- [407. Build Vulkan](407-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
+- [411. Build APE (Compatible)](411-Build-APE-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+- [412. Build APE (Performant)](412-Build-APE-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [421. Build CPU (Native)](421-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [431. Build CUDA](431-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
+- [441. Build Vulkan](441-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
 
 ---
 ### [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
 Package Mmojo Server for distribution and deployment.
 
-- [501. Package APE](501-Package-APE.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
-- [502. Package zip](502-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
-- [503. Package SEAS](503-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
+- [511. Package APE (Compatible)](511-Package-APE-Compatible.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+- [512. Package APE (Performant)](512-Package-APE-Performant.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+- [521. Package zip](521-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
+<!--
+- [521. Package SEAS](521-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
+-->
 
 ---
 [MIT License](/LICENSE)<br/>

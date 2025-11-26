@@ -15,7 +15,7 @@ Here are the things you need to do:
 - [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
-- [404. Build APE](404-Build-APE.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
+- [411. Build APE](411-Build-APE.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan.
 
 **Get Started:** [401. Prepare to Build](401-Prepare-to-Build.md)
 

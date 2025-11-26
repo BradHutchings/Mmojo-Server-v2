@@ -55,6 +55,10 @@
 // This could be automated by searching for "using json =" and inserting this block before.
 #include "mmojo-args.h"
 
+#define PROCESS_NAME "mmojo-server"
+#define ARGS_FILENAME "mmojo-server-args"
+#define SUPPORT_DIRECTORY_NAME "mmojo-server-support"
+
 // pre C++20 helpers.
 bool starts_with (std::string const &fullString, std::string const &beginning);
 bool ends_with (std::string const &fullString, std::string const &ending);
@@ -4563,7 +4567,7 @@ int main(int argc, char ** argv) {
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
     // Keep the build from showing up as ape in the process list.
-    pthread_setname_np(pthread_self(), "mmojo-server");
+    pthread_setname_np(pthread_self(), PROCESS_NAME);
 
     // This implements an args file feature inspired by llamafile's.
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
@@ -4577,10 +4581,16 @@ int main(int argc, char ** argv) {
     }
 
     // Args files if present. The names are different to remove confusion during packaging.
-    const std::string& argsFilename = "mmojo-server-args";
-    const std::string& supportDirectoryName = "mmojo-server-support";
-    const std::string& supportArgsFilename = "default-args";
-    const std::string& zipArgsPath = "/zip/default-args";
+    // original hard coded values -- upper case first letter so they don't get replaced by sed.
+    // const std::string& argsFilename = "Mmojo-server-args";
+    // const std::string& supportDirectoryName = "Mmojo-server-support";
+    // const std::string& supportArgsFilename = "Default-args";
+    // const std::string& zipArgsPath = "/zip/Default-args";
+
+    const std::string& argsFilename = ARGS_FILENAME;
+    const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
+    const std::string& supportArgsFilename = ARGS_FILENAME;
+    const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;

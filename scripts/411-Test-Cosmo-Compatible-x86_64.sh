@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script runs the debug build with arguments and assets in a 
-# mmojo-server-support directory.
+# This script runs the Cosmo x86_64 build with command-line arguments.
 #
 # See licensing note at end.
 ################################################################################
@@ -10,10 +9,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-THIS_TEST_DIR="$TEST_DIR/$TEST_DEBUG_MMOJO_SERVER_SUPPORT"
-mkdir -p $THIS_TEST_DIR
-rm -r -f $THIS_TEST_DIR/*
-cd $THIS_TEST_DIR
+THIS_TEST="$TEST_DIR/$TEST_COSMO_X86_64"
+mkdir -p $THIS_TEST
+rm -r -f $THIS_TEST/*
+cd $THIS_TEST
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v CHOSEN_MODEL ]]; then
@@ -28,13 +27,12 @@ fi
 
 THREADS_PARAM=""
 if [[ -v TEST_CPU_THREADS ]]; then
-  THREADS_PARAM="--threads${NL}$TEST_CPU_THREADS${NL}"
+  THREADS_PARAM=" --threads $TEST_CPU_THREADS "
 fi
 # echo "\$THREADS_PARAM: $THREADS_PARAM"
 # sleep 5s
 
-NL=$'\n'
-UI_PARAMS="--path${NL}$BUILD_DIR/Mmojo-Complete/${NL}--default-ui-endpoint${NL}/chat${NL}"
+UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
 if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
     # echo "Using chat UI."
     UI_PARAMS=""
@@ -44,29 +42,11 @@ fi
 
 rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
 rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
-mkdir -p $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 
 # --mlock is not needed to run this.
-cat << EOF > mmojo-server-support/mmojo-server-args
---model
-$MODELS_DIR/$MODEL_PARAM
---host
-0.0.0.0
---port
-8080
---ctx-size
-0
---threads-http
-8
---batch-size
-64
---batch-sleep-ms
-0
-$UI_PARAMS$THREADS_PARAM
-...
-EOF
-$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server
-
+$BUILD_DIR/$BUILD_COSMO_COMPATIBLE_X86_64/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
+    $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
+    
 printf "\nVerify that args file and support folder do not exist.\n"
 ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
