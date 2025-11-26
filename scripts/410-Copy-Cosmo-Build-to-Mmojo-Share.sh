@@ -46,9 +46,10 @@ if [ $processor == "aarch64" ]; then
     fi
 fi
 
-echo "   Processor: $processor"
-echo "   Variation: $variation"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo "         Processor: $processor"
+echo "         Variation: $variation"
+echo "Build Subdirectory: $BUILD_SUBDIRECTORY"
+echo "   Share Directory: $SHARE_DIRECTORY"
 
 if [ $BUILD_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
     if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
