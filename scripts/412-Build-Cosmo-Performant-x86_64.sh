@@ -38,7 +38,7 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v3 "
+X86_64_ARCH_LEVEL_PARAM=" $ARCH_X86_64_PERFORMANT " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
