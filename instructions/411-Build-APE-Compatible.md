@@ -162,6 +162,14 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an
   $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
   ```
 
+#### Test the Assembled APE
+If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/410-Test-Cosmo-APE.sh" target="_blank">410-Test-Cosmo-APE.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
+  ```
+
 <details>
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
 
