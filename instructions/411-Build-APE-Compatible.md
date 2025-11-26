@@ -46,10 +46,11 @@ If your build environment is x86_64, you can test this build. Requires previousl
   <summary><b>Optional: Copy x86_64 Build to Your Mmojo Share.</b></summary>
 
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
-- View the script: <a href="../scripts/411-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh" target="_blank">411-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/410-Copy-Cosmo-Build-to-Mmojo-Share.sh" target="_blank">410-Copy-Cosmo-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-x86_64-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/410-Copy-Cosmo-Build-to-Mmojo-Share.sh x86_64 compatible
+
   ```
 </details>
 
@@ -113,10 +114,10 @@ If your build environment is aarch64, you can test this build. Requires previous
   <summary><b>Optional: Copy aarch64 (arm64) Build to Your Mmojo Share.</b></summary>
 
 Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
-- View the script: <a href="../scripts/411-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh" target="_blank">411-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/410-Copy-Cosmo-Build-to-Mmojo-Share.sh" target="_blank">410-Copy-Cosmo-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-aarch64-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/410-Copy-Cosmo-Build-to-Mmojo-Share.sh aarch64 compatible
   ```
 </details>
 
