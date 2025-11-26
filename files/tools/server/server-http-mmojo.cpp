@@ -31,7 +31,12 @@
 // This could be automated by searhing for "loading.html.hpp" and replacing that line with this block.
 // #include "loading.html.hpp"
 #include "loading-mmojo.html.hpp"
+
+// pre C++20 helpers.
+bool starts_with (std::string const &fullString, std::string const &beginning);
+bool ends_with (std::string const &fullString, std::string const &ending);
 // Mmojo Server END
+
 
 
 //
