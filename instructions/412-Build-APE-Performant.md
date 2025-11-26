@@ -20,7 +20,7 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Build Mmojo Server for x86_64 (NEW)
+### Build Mmojo Server for x86_64
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../scripts/410-Build-with-Cosmo.sh" target="_blank">410-Build-with-Cosmo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -42,6 +42,18 @@ If your build environment is x86_64, you can test this build. Requires previousl
   ```
 </details>
 
+<details>
+  <summary><b>Optional: Copy x86_64 Build to Your Mmojo Share.</b></summary>
+
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+- View the script: <a href="../scripts/412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh" target="_blank">412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh
+  ```
+</details>
+
+<!--
 ---
 ### Build Mmojo Server for x86_64 (OLD)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
@@ -75,9 +87,10 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
   $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh
   ```
 </details>
+-->
 
 ---
-### Build Mmojo Server for aarch64 (arm64) (NEW)
+### Build Mmojo Server for aarch64 (arm64)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../scripts/410-Build-with-Cosmo.sh" target="_blank">410-Build-with-Cosmo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -99,6 +112,18 @@ If your build environment is aarch64, you can test this build. Requires previous
   ```
 </details>
 
+<details>
+  <summary><b>Optional: Copy aarch64 (arm64) Build to Your Mmojo Share.</b></summary>
+
+Copy this build to your Mmojo share for assembly into an APE later. This is particularly useful if you're building the x86_64 and aarch64 binaries in different build environments.
+- View the script: <a href="../scripts/412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh" target="_blank">412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh
+  ```
+</details>
+
+<!--
 ---
 ### Build Mmojo Server for aarch64 (arm64)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (arm64). Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
@@ -129,6 +154,7 @@ Copy this build to your Mmojo share for assembly into an APE later. This is part
   $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh
   ```
 </details>
+-->
 
 ---
 ### Assemble mmojo-server Actual Portable Executable (APE)
@@ -174,8 +200,8 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/412-Build-Cosmo-Performant-x86_64.sh
-$MMOJO_SERVER_SCRIPTS/412-Build-Cosmo-Performant-aarch64.sh
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 performant
 $MMOJO_SERVER_SCRIPTS/412-Assemble-Cosmo-Performant-APE.sh
 $MMOJO_SERVER_SCRIPTS/412-Test-Cosmo-Performant-APE.sh
 ```
@@ -187,9 +213,9 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/412-Build-Cosmo-Performant-x86_64.sh
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/412-Build-Cosmo-Performant-aarch64.sh
+$MMOJO_SERVER_SCRIPTS/412-410-Build-with-Cosmo.sh aarch64 performant
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh
 $MMOJO_SERVER_SCRIPTS/412-Assemble-Cosmo-Performant-APE.sh
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-APE-to-Mmojo-Share.sh
