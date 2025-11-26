@@ -20,7 +20,19 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Build Mmojo Server for x86_64
+### Build Mmojo Server for x86_64 (NEW)
+This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+- View the script: <a href="../scripts/410-Build-with-Cosmo.sh" target="_blank">410-Build-with-Cosmo.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
+  ```
+
+---
+### Build Mmojo Server for x86_64 (OLD)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../scripts/411-Build-Cosmo-Compatible-x86_64.sh" target="_blank">411-Build-Cosmo-Compatible-x86_64.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
