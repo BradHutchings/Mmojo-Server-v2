@@ -19,9 +19,9 @@ export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
 export CC="aarch64-unknown-cosmo-cc  \
-    -DCOSMOCC=1 -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
+    -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
 export CXX="aarch64-unknown-cosmo-c++ \
-    -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
+    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl/.aarch64/"
 export AR="cosmoar"
@@ -44,7 +44,7 @@ sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_AARCH64
 cmake -B $BUILD_COSMO_PERFORMANT_AARCH64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCOSMOCC=1
+    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64
 
 # Revert to original CMake system.
 # mv common/CMakeLists-orig.txt common/CMakeLists.txt
