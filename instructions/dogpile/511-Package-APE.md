@@ -99,7 +99,7 @@ This script adds the chosen `.gguf` model to the APE package.
 
 ---
 ### Add `dogpile-args` File to Package
-This script adds a `default-args` file to the APE package. If you a .gguf model above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
+This script adds a `dogpile-args` file to the APE package. If you a .gguf model above, the `dogpile-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../../scripts/dogpile/511-Add-Args-to-APE.sh" target="_blank">511-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
