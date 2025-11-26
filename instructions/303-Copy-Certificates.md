@@ -7,8 +7,8 @@ In this step, we will create a `300-Certificates` directory and copy certificate
 **Shortcut:** [Scroll down](#shortcut-copy-models).
 
 TO-DO:
-- Implement this step.
 - Use the certificates from here when building the APE and zip packages.
+- Path for getting defaults from repo. Not the certs I used in production for Mmojo Knowledge Appliance though.
 
 ---
 <details>
