@@ -215,7 +215,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-x86_64-to-Mmojo-Share.sh
-$MMOJO_SERVER_SCRIPTS/412-410-Build-with-Cosmo.sh aarch64 performant
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 performant
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-aarch64-to-Mmojo-Share.sh
 $MMOJO_SERVER_SCRIPTS/412-Assemble-Cosmo-Performant-APE.sh
 $MMOJO_SERVER_SCRIPTS/412-Copy-Cosmo-Performant-APE-to-Mmojo-Share.sh
