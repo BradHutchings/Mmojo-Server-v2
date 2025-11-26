@@ -302,7 +302,7 @@ bool server_http_context::init(const common_params & params) {
 
         // LOG_INF("-- %s%s\n", "endpoint: ", endpoint.c_str());
         
-        svr->Get(endpoint, [](const httplib::Request & req, httplib::Response & res) {
+        srv->Get(endpoint, [](const httplib::Request & req, httplib::Response & res) {
             if (req.get_header_value("Accept-Encoding").find("gzip") == std::string::npos) {
                 res.set_content("Error: gzip is not supported by this browser", "text/plain");
             } else {
@@ -315,7 +315,7 @@ bool server_http_context::init(const common_params & params) {
             return false;
         });
 
-        svr->Get(endpoint + "/", [](const httplib::Request & req, httplib::Response & res) {
+        srv->Get(endpoint + "/", [](const httplib::Request & req, httplib::Response & res) {
             res.set_redirect(req.path.substr(0, req.path.length() - 1));
             return false;
         });        
