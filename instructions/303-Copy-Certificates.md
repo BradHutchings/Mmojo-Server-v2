@@ -4,7 +4,7 @@ In this step, we will create a `300-Certificates` directory and copy certificate
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Shortcut:** [Scroll down](#shortcut-copy-models).
+**Shortcut:** [Scroll down](#shortcut-create-certificates-directory-copy-certificates-from-mmojo-share).
 
 TO-DO:
 - Use the certificates from here when building the APE and zip packages.
@@ -43,6 +43,17 @@ This script copies files from your Mmojo Share to the `$CERTIFICATES_DIR`:
   ```
   $MMOJO_SERVER_SCRIPTS/303-Copy-Certificates-from-Mmojo-Share.sh
   ```
+
+---
+### SHORTCUT: Create Certificates Directory, Copy Certificates from Mmojo Share
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+$MMOJO_SERVER_SCRIPTS/303-Create-Certificates-Directory.sh
+$MMOJO_SERVER_SCRIPTS/303-Copy-Certificates-from-Mmojo-Share.sh
+```
 
 ---
 ### Proceed
