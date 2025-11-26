@@ -12,7 +12,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $BUILD_DIR
 
-AARCH64_ARCH_LEVEL_PARAM=" $ARCH_AARCH64_PERFORMANT " 
+AARCH64_ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_PERFORMANT " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
@@ -21,7 +21,7 @@ export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 export CC="aarch64-unknown-cosmo-cc  \
     -nostdinc -O3 $AARCH64_ARCH_LEVEL_PARAM"
 export CXX="aarch64-unknown-cosmo-c++ \
-    -DCOSMMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
+    -nostdinc -nostdinc++ -O3 -Wno-format-truncation $AARCH64_ARCH_LEVEL_PARAM \
     -I$(pwd)/openssl/include \
     -L$(pwd)/openssl/.aarch64/"
 export AR="cosmoar"
