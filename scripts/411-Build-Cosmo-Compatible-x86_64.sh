@@ -52,8 +52,6 @@ export CXX="x86_64-unknown-cosmo-c++ \
     -L$(pwd)/openssl"
 export AR="cosmoar"
 
-# -DCOSMOCC=1 
-
 # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
 cp vendor/cpp-httplib/CMakeLists.txt vendor/cpp-httplib/CMakeLists-orig.txt
 
@@ -66,7 +64,7 @@ sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_COMPATIBLE_X86_64
 cmake -B $BUILD_COSMO_COMPATIBLE_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCOSMOCC=1
+    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64
 
 # Revert to original CMake system.
 # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
