@@ -31,6 +31,17 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
   $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant
   ```
 
+<details>
+  <summary><b>Optional: Test the x86_64 Build.</b></summary>
+
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/410-Test-Cosmo-Build.sh" target="_blank">410-Test-Cosmo-Build.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh X86_64 performant
+  ```
+</details>
+
 ---
 ### Build Mmojo Server for x86_64 (OLD)
 This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
@@ -76,6 +87,17 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for x86_64. No
   ```
   $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 performant
   ```
+
+<details>
+  <summary><b>Optional: Test the aarch64 Build.</b></summary>
+
+If your build environment is aarch64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/410-Test-Cosmo-Build.sh" target="_blank">410-Test-Cosmo-Build.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh aarch64 performant
+  ```
+</details>
 
 ---
 ### Build Mmojo Server for aarch64 (arm64)
