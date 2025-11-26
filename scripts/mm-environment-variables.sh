@@ -133,6 +133,12 @@ export PACKAGE_DOGPILE_EXE_FILE="dogpile.exe"
 export PACKAGE_DOGPILE_ARGS_FILE="dogpile-args"
 export PACKAGE_DOGPILE_SUPPORT_DIR="dogpile-support"
 
+export ARCH_X86_64_COMPATIBLE="x86-64"
+export ARCH_X86_64_PERFORMANT="x86-64-v3"
+# Raspberry Pi 5, Apple M1
+export ARCH_AARCH64_COMPATIBLE="armv8-a"
+export ARCH_AARCH64_PERFORMANT="armv8.4-a"
+
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
 export ZIPALIGN="$HOME/tools/mm-zipalign"
