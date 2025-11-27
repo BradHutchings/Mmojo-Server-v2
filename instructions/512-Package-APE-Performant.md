@@ -22,6 +22,9 @@ mm-update-local-mmojo-server-repo.sh
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
 - View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -32,14 +35,11 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/512-Create-Package-Directory.sh" target="_blank">512-Create-Package-Directory.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
+- View the script: <a href="../scripts/510-Create-Package-Directory.sh" target="_blank">510-Create-Package-Directory.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/512-Create-Package-Directory.sh
-  # Keep track of what we add below for the `default-args` file.
+  $MMOJO_SERVER_SCRIPTS/510-Create-Package-Directory.sh performant
+  # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
   unset SELECTED_MODEL
@@ -53,7 +53,7 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/510-Add-Certificates-to-APE.sh performant
-  # Keep track of what we add for the `default-args` file.
+  # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
 
@@ -66,7 +66,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/510-Add-UI-to-APE.sh performant
-  # Keep track of what we add for the `default-args` file.
+  # Keep track of what we add for the Args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
 
@@ -78,7 +78,7 @@ This script adds the chosen `.gguf` model to the APE package.
   ```
   if [ -v CHOSEN_MODEL ]; then
     $MMOJO_SERVER_SCRIPTS/510-Add-gguf-Model-to-APE.sh performant
-    # Keep track of what we add for the `default-args` file.
+    # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
   ```
@@ -88,13 +88,13 @@ This script adds the chosen `.gguf` model to the APE package.
 
 *`llama_model_load: error loading model: mmap failed: Invalid argument`*
 
-*Until I resolve this, the .gguf file will not be aligned, and the `default-args` file will have the `--no-mmap` flag set if a `.gguf` file is included. This can be overridden by the command-line argument `--mmap `, which is an addition to Mmojo Server.*
+*Until I resolve this, the .gguf file will not be aligned, and the Args file will have the `--no-mmap` flag set if a `.gguf` file is included. This can be overridden by the command-line argument `--mmap `, which is an addition to Mmojo Server.*
 
 *-Brad*
 
 ---
 ### Add Args File to Package
-This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
+This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/510-Add-Args-to-APE.sh" target="_blank">510-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
@@ -154,14 +154,12 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
-
----
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/512-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">512-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/510-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">510-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/512-Copy-APE-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/510-Copy-APE-Package-to-Mmojo-Share.sh performant
   ```
 
 ---

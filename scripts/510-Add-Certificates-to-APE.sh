@@ -17,16 +17,16 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
-PACKAGE_APE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
 if [ $variation == "performant" ]; then
-    PACKAGE_APE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
 fi
 
-echo "             Variation: $variation"
-echo "Package APE Subdirectory: $PACKAGE_APE_SUBDIRECTORY"
+echo "           Variation: $variation"
+echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 
-if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
-    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE_SUBDIRECTORY"
+if [ $PACKAGE_SUBDIRECTORY != "" ]; then
+    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
     if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
@@ -39,8 +39,14 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
     cp $CERTIFICATES_DIR/cert.key  $CERTS
     # cp $CERTIFICATES_DIR/selfsignCA.crt $CERTS
 
+    echo ""
+    echo "Adding certificates to $ZIP_FILE."
     cd $THIS_PACKAGE_DIR
     zip -0 -r -q $ZIP_FILE certs/*
+
+    echo ""
+    echo "Contents of $ZIP_FILE:"
+    unzip -l $ZIP_FILE 
 fi
 
 cd $HOME

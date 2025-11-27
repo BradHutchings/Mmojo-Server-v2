@@ -18,12 +18,15 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
 fi
 
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
 if [ $variation == "performant" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
 echo "           Variation: $variation"
 echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "   Build Subirectory: $BUILD_SUBDIRECTORY"
 
 if [ $PACKAGE_SUBDIRECTORY != "" ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
@@ -31,27 +34,20 @@ if [ $PACKAGE_SUBDIRECTORY != "" ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-
-    if [ -v CHOSEN_MODEL ]; then
-        echo "Chosen model: $CHOSEN_MODEL"
-        MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
-        if [ -f "$MODEL_FILE" ]; then
-            cd $MODELS_DIR
-
-            # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
-            # Punting on memort mapping for now.
-            echo ""
-            echo "Adding $MODEL_FILE to $ZIP_FILE."
-            zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
-
-            # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
-            # wants it to. Try to fix this another day.
-            # echo "mm-zipalign-ing $MODEL_FILE."
-            # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
-            # $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
-        fi
+    if [ ! -d "$THIS_PACKAGE_DIR" ]; then
+        mkdir -p "$THIS_PACKAGE_DIR"
     fi
+
+    echo ""
+    echo "Copying built $PACKAGE_MMOJO_SERVER_APE_FILE."
+    BUILT_FILE="$BUILD_DIR/$BUILD_SUBDIRECTORY/$PACKAGE_MMOJO_SERVER_APE_FILE"
+    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+    if [ -f "$BUILT_FILE" ]; then
+        cp $BUILT_FILE $ZIP_FILE
+    fi
+
+    echo "Removing extraneous time zone files from $PACKAGE_MMOJO_SERVER_ZIP_FILE."
+    zip -d -q $ZIP_FILE "/usr/*"
 
     echo ""
     echo "Contents of $ZIP_FILE:"

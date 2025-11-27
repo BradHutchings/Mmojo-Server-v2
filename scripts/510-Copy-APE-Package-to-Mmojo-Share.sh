@@ -6,10 +6,11 @@
 #
 # See licensing note at end.
 ################################################################################
+
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
+cd $PACKAGE_DIR
 
 variation=$1
 
@@ -17,45 +18,48 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
+PACKAGE_SUBDIRECTORY=""
+SHARE_DIRECTORY=""
+    
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+SHARE_DIRECTORY="$MMOJO_SHARE_PACKAGES_COMPATIBLE_APE"
 if [ $variation == "performant" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    SHARE_DIRECTORY="$MMOJO_SHARE_PACKAGES_PERFORMANT_APE"
 fi
 
 echo "           Variation: $variation"
 echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "    Share DDirectory: $SHARE_DIRECTORY"
 
-if [ $PACKAGE_SUBDIRECTORY != "" ]; then
+if [ $PACKAGE_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
     if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-
-    if [ -v CHOSEN_MODEL ]; then
-        echo "Chosen model: $CHOSEN_MODEL"
-        MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
-        if [ -f "$MODEL_FILE" ]; then
-            cd $MODELS_DIR
-
-            # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
-            # Punting on memort mapping for now.
-            echo ""
-            echo "Adding $MODEL_FILE to $ZIP_FILE."
-            zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
-
-            # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
-            # wants it to. Try to fix this another day.
-            # echo "mm-zipalign-ing $MODEL_FILE."
-            # $ZIPALIGN -a 4096 $ZIP_FILE $CHOSEN_MODEL
-            # $ZIPALIGN -a 65536 $ZIP_FILE $CHOSEN_MODEL
-        fi
+    THIS_SHARE_DIR="$SHARE_DIRECTORY"
+    SHARE_EXE_NAME="mmojo-server"
+    if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+        THIS_SHARE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+        SHARE_EXE_NAME+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+        mm-mount-mmojo-share.sh
+    fi
+    
+    if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+        echo "Creating directories on Mmojo Share."
+        sudo mkdir -p $MMOJO_SHARE_PACKAGES
+        sudo mkdir -p $THIS_SHARE_DIR
+
+        if [ -d "$THIS_SHARE_DIR" ]; then
+            echo "Copying mmojo-server to Mmojo Share."
+            # Should have been packaged with model name in it.
+            sudo cp -f $THIS_PACKAGE_DIR/mmojo-server $THIS_SHARE_DIR/$SHARE_EXE_NAME
+        fi
+    fi
 fi
 
 cd $HOME
