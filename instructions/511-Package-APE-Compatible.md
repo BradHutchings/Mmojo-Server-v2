@@ -158,10 +158,10 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/511-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">511-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/510-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">510-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/511-Copy-APE-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/510-Copy-APE-Package-to-Mmojo-Share.sh compatible
   ```
 
 ---
