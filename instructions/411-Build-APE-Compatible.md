@@ -175,10 +175,10 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
 
 Copy this assembled APE to your Mmojo share.
-- View the script: <a href="../scripts/411-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh" target="_blank">411-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/410-Copy-Cosmo-APE-to-Mmojo-Share.sh" target="_blank">410-Copy-Cosmo-APE-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/411-Copy-Cosmo-Compatible-APE-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/410-Copy-Cosmo-APE-to-Mmojo-Share.sh compatible
   ```
 </details>
 
