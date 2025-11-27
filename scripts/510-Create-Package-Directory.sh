@@ -26,7 +26,7 @@ fi
 
 echo "           Variation: $variation"
 echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
-echo "  Build Subirectory: $BUILD_SUBDIRECTORY"
+echo "   Build Subirectory: $BUILD_SUBDIRECTORY"
 
 if [ $PACKAGE_SUBDIRECTORY != "" ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
