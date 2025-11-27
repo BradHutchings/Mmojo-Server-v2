@@ -39,8 +39,10 @@ if [ $PACKAGE_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
     fi
 
     THIS_SHARE_DIR="$SHARE_DIRECTORY"
+    SHARE_EXE_NAME="mmojo-server"
     if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
         THIS_SHARE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+        SHARE_EXE_NAME+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
     if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
@@ -54,7 +56,8 @@ if [ $PACKAGE_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
 
         if [ -d "$THIS_SHARE_DIR" ]; then
             echo "Copying mmojo-server to Mmojo Share."
-            sudo cp -f $THIS_PACKAGE_DIR/mmojo-server $THIS_SHARE_DIR/mmojo-server
+            # Should have been packaged with model name in it.
+            sudo cp -f $THIS_PACKAGE_DIR/mmojo-server $THIS_SHARE_DIR/$SHARE_EXE_NAME
         fi
     fi
 fi
