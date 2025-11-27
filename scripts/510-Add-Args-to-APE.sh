@@ -82,14 +82,13 @@ cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 ...
 EOF
 
+    echo ""
     echo "$PACKAGE_MMOJO_SERVER_ARGS_FILE:"
     cat $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
-    # echo "Zipping contents of $PACKAGE_MMOJO_SERVER_ARGS_FILE"
+    echo ""
+    echo "Adding $PACKAGE_MMOJO_SERVER_ARGS_FILE file to $ZIP_FILE."
     zip -0 -r $ZIP_FILE $PACKAGE_MMOJO_SERVER_ARGS_FILE
-
-    # Trying to preserve alignment of .gguf -- doesn't fix mmap() problem.
-    # $ZIPALIGN -a 4096 $ZIP_FILE $PACKAGE_MMOJO_SERVER_ARGS_FILE
 
     echo ""
     echo "Contents of $ZIP_FILE:"
