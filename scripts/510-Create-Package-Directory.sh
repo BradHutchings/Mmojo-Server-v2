@@ -46,7 +46,7 @@ if [ $PACKAGE_SUBDIRECTORY != "" ]; then
         cp $BUILT_FILE $ZIP_FILE
     fi
 
-    echo "Removing extraneous time zone files from zip."
+    echo "Removing extraneous time zone files from $PACKAGE_MMOJO_SERVER_ZIP_FILE."
     zip -d -q $ZIP_FILE "/usr/*"
 
     echo ""
