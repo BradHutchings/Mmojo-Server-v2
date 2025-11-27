@@ -37,7 +37,7 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
     mkdir -p $CERTS
     cp $CERTIFICATES_DIR/cert.crt $CERTS
     cp $CERTIFICATES_DIR/cert.key  $CERTS
-    cp $CERTIFICATES_DIR/selfsignCA.crt $CERTS
+    # cp $CERTIFICATES_DIR/selfsignCA.crt $CERTS
 
     cd $THIS_PACKAGE_DIR
     zip -0 -r -q $ZIP_FILE certs/*
