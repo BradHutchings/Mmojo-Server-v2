@@ -38,7 +38,8 @@ if [ $PACKAGE_SUBDIRECTORY != "" ]; then
         mkdir -p "$THIS_PACKAGE_DIR"
     fi
 
-    echo "Copying built mmojo-server-ape."
+    echo ""
+    echo "Copying built $PACKAGE_MMOJO_SERVER_APE_FILE."
     BUILT_FILE="$BUILD_DIR/$BUILD_SUBDIRECTORY/$PACKAGE_MMOJO_SERVER_APE_FILE"
     ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
     if [ -f "$BUILT_FILE" ]; then
