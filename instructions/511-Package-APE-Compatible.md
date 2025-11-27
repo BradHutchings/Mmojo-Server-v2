@@ -32,14 +32,14 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/511-Create-Package-Directory.sh" target="_blank">511-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/510-Create-Package-Directory.sh" target="_blank">510-Create-Package-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/511-Create-Package-Directory.sh
-  # Keep track of what we add below for the `default-args` file.
+  $MMOJO_SERVER_SCRIPTS/510-Create-Package-Directory.sh compatible
+  # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
   unset SELECTED_MODEL
@@ -78,7 +78,7 @@ This script adds the chosen `.gguf` model to the APE package.
   ```
   if [ -v CHOSEN_MODEL ]; then
     $MMOJO_SERVER_SCRIPTS/510-Add-gguf-Model-to-APE.sh compatible
-    # Keep track of what we add for the `default-args` file.
+    # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
   ```
@@ -88,13 +88,13 @@ This script adds the chosen `.gguf` model to the APE package.
 
 *`llama_model_load: error loading model: mmap failed: Invalid argument`*
 
-*Until I resolve this, the .gguf file will not be aligned, and the `default-args` file will have the `--no-mmap` flag set if a `.gguf` file is included. This can be overridden by the command-line argument `--mmap `, which is an addition to Mmojo Server.*
+*Until I resolve this, the .gguf file will not be aligned, and the Args file will have the `--no-mmap` flag set if a `.gguf` file is included. This can be overridden by the command-line argument `--mmap `, which is an addition to Mmojo Server.*
 
 *-Brad*
 
 ---
 ### Add Args File to Package
-This script adds a `default-args` file to the APE package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
+This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/510-Add-Args-to-APE.sh" target="_blank">510-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
