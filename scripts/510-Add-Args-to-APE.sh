@@ -52,9 +52,9 @@ EOF
     if [ $ADDED_CERTS ]; then
 cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --ssl-key-file
-/zip/certs/mmojo.local.key
+/zip/certs/cert.key
 --ssl-cert-file
-/zip/certs/mmojo.local.crt
+/zip/certs/cert.crt
 EOF
     fi
 
