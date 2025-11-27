@@ -154,14 +154,12 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
-
----
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/512-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">512-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/510-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">510-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/512-Copy-APE-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/510-Copy-APE-Package-to-Mmojo-Share.sh performant
   ```
 
 ---
