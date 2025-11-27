@@ -13,7 +13,7 @@
 # See licensing note at end.
 ################################################################################
 
-export STARS="****************************************"
+export STARS="********************************************************************************"
 printf "\n$STARS\n*\n* STARTED: mm-environment-variables.sh.\n*\n$STARS\n\n"
 
 cd $HOME
@@ -23,14 +23,18 @@ unset CC
 unset CXX
 unset AR
 
+echo "Setting mm-scripts paths."
 export HOME_SCRIPTS="$HOME/mm-scripts"
 export TILDE_SCRIPTS="~/mm-scripts"
 
+echo "Setting mmojo-server paths."
 export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
+echo "Setting Mmojo Share paths."
 export MMOJO_SHARE_MOUNT_POINT="/mnt/mmojo"
+export MMOJO_SHARE_CERTIFICATES="$MMOJO_SHARE_MOUNT_POINT/certificates"
 export MMOJO_SHARE_BUILDS="$MMOJO_SHARE_MOUNT_POINT/builds"
 export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
 export MMOJO_SHARE_BUILDS_COMPATIBLE_APE="$MMOJO_SHARE_BUILDS/compatible-ape"
@@ -47,8 +51,10 @@ export MMOJO_SHARE_PACKAGES_ZIP="$MMOJO_SHARE_PACKAGES/zip"
 export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
 # Prefix is 300- so we can wipe them out quickly, and changing script numbers doesn't mess stuff up.
+echo "Setting Build Pieces paths."
 export MODELS_DIR="$HOME/300-MODELS"
 export MODEL_MAP="$MODELS_DIR/model-map.txt"
+export CERTIFICATES_DIR="$HOME/300-CERTIFICATES"
 export BUILD_COSMOPOLITAN_DIR="$HOME/300-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
 export BUILD_OPENSSSL_DIR="$HOME/300-BUILD-openssl"
@@ -64,6 +70,7 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
+echo "Setting Build paths."
 export BUILD_DIR="$HOME/400-BUILD-mmojo-server"
 export BUILD_DEBUG="build-debug"
 export BUILD_COSMO_X86_64="build-cosmo-x86_64"
@@ -74,7 +81,7 @@ export BUILD_COSMO_COMPATIBLE_AARCH64="build-cosmo-compatible-aarch64"
 export BUILD_COSMO_COMPATIBLE_APE="build-cosmo-compatible-ape"
 export BUILD_COSMO_PERFORMANT_X86_64="build-cosmo-performant-x86_64"
 export BUILD_COSMO_PERFORMANT_AARCH64="build-cosmo-performant-aarch64"
-export BUILD_COSMO_PERFORMANT_APE="build-performant-cosmo-ape"
+export BUILD_COSMO_PERFORMANT_APE="build-cosmo-performant-ape"
 export BUILD_CPU_NATIVE="build-cpu-native"
 export BUILD_CPU_COMPATIBLE="build-cpu-compatible"
 export BUILD_CPU_PERFORMANT="build-cpu-performant"
@@ -82,13 +89,24 @@ export BUILD_CUDA="build-cuda"
 export BUILD_VULKAN="build-vulkan"
 export BUILD_METAL="build-metal"
 
+echo "Setting Test paths."
 export TEST_DIR="$HOME/400-TEST-mmojo-server"
 export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
 export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
 export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
+
+# get rid of these
 export TEST_COSMO_X86_64="test-cosmo-x86_64"
 export TEST_COSMO_AARCH64="test-cosmo-aarch64"
+
 export TEST_COSMO_APE="test-cosmo-ape"
+export TEST_COSMO_COMPATIBLE_X86_64="test-cosmo-compatible-x86_64"
+export TEST_COSMO_COMPATIBLE_AARCH64="test-cosmo-compatible-aarch64"
+export TEST_COSMO_COMPATIBLE_APE="test-cosmo-compatible-ape"
+export TEST_COSMO_PERFORMANT_X86_64="test-cosmo-performant-x86_64"
+export TEST_COSMO_PERFORMANT_AARCH64="test-cosmo-performant-aarch64"
+export TEST_COSMO_PERFORMANT_APE="test-cosmo-performant-ape"
+
 export TEST_CPU="test-cpu"
 export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
@@ -98,6 +116,7 @@ unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
+echo "Setting Package paths."
 export PACKAGE_DIR="$HOME/500-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
 export PACKAGE_COMPATIBLE_APE="compatible-ape"
@@ -117,6 +136,7 @@ export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
 export PACKAGE_MMOJO_SERVER_ARGS_FILE="mmojo-server-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
+echo "Setting Dogpile paths."
 export DOGPILE_FILES="$MMOJO_SERVER_DIR/files/dogpile"
 export DOGPILE_SCRIPTS="$MMOJO_SERVER_DIR/scripts/dogpile"
 
@@ -133,15 +153,19 @@ export PACKAGE_DOGPILE_EXE_FILE="dogpile.exe"
 export PACKAGE_DOGPILE_ARGS_FILE="dogpile-args"
 export PACKAGE_DOGPILE_SUPPORT_DIR="dogpile-support"
 
+echo "Setting architectuire value for compilers."
 export ARCH_X86_64_COMPATIBLE="x86-64"
 export ARCH_X86_64_PERFORMANT="x86-64-v3"
+export ARCH_X86_64_NATIVE="native"
 # Raspberry Pi 5, Apple M1
 export ARCH_AARCH64_COMPATIBLE="armv8-a"
 export ARCH_AARCH64_PERFORMANT="armv8.4-a"
+export ARCH_AARCH64_NATIVE="native"
 
+# Keep these around for if the mmap issue with Cosmo gets resolved and we can align .gguf in an APE.
 # export BUILD_LLAMAFILE_DIR="$HOME/305-BUILD-llamafile"
 # export ZIPALIGN="$BUILD_LLAMAFILE_DIR/bin/zipalign"
-export ZIPALIGN="$HOME/tools/mm-zipalign"
+# export ZIPALIGN="$HOME/tools/mm-zipalign"
 
 # Run this script when user starts a session.
 SEARCH_STRING="\. mm-environment-variables.sh"

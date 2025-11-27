@@ -38,14 +38,14 @@ cd $BUILD_DIR
 # - Apple M3    -march=armv8.6-a    https://en.wikipedia.org/wiki/Apple_M3
 # - Apple M4    -march=armv9.2-a    https://en.wikipedia.org/wiki/Apple_M4
 
-X86_64_ARCH_LEVEL_PARAM=" -march=x86-64-v3 "
+X86_64_ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT " 
 
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
 # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
 # No need to specify them here.
 export CC="x86_64-unknown-cosmo-cc \
-    -DCOSMOCC=1 -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
+    -nostdinc -O3 $X86_64_ARCH_LEVEL_PARAM"
 export CXX="x86_64-unknown-cosmo-c++ \
     -DCOSMOCC=1 -nostdinc -nostdinc++ -O3 -Wno-format-truncation $X86_64_ARCH_LEVEL_PARAM  \
     -I$(pwd)/openssl/include \
@@ -64,7 +64,7 @@ sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 # Prepare the build folder
 rm -r -f $BUILD_DIR/$BUILD_COSMO_PERFORMANT_X86_64
 cmake -B $BUILD_COSMO_PERFORMANT_X86_64 -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCOSMOCC=1
+    -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=x86_64
 
 # Revert to original CMake system.
 # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
