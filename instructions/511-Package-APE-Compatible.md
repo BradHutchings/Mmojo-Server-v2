@@ -47,7 +47,7 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   ```
 
 ---
-### Add Certificatess to Package
+### Add Certificates to Package
 This script adds SSL certificates from the Mmojo Share to the APE package.
 - View the script: <a href="../scripts/510-Add-Certificates-to-APE.sh" target="_blank">510-Add-Certificates-to-APE.sh</a>.
 - Run the script.
