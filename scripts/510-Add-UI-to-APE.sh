@@ -42,6 +42,8 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
         cp $CA_FILE $WEBSITE/CA.crt
     fi
 
+    echo ""
+    echo "Adding Mmojo Complete UI to $ZIP_FILE."
     cd $THIS_PACKAGE_DIR
     zip -0 -r -q $ZIP_FILE Mmojo-Complete/*
 
