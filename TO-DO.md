@@ -2,8 +2,8 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;11&minus;27         | APE mmojo-server executable build and package names aren't quite right. Build name should have compatible / performant -- mmojo-server-compatible, mmojo-server-performant. Package name should have that + model name, if present. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
-| 2025&minus;11&minus;26         | Consolidate the APE packaging scripts with variation parameter. 511 and 512. Last one is `510-Copy-APE-Package-to-Mmojo-Share.sh` |
 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;26         | Next update of llama.cpp: Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
@@ -17,6 +17,7 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;11&minus;27 | 2025&minus;11&minus;26         | Consolidate the APE packaging scripts with variation parameter. 511 and 512. Last one is `510-Copy-APE-Package-to-Mmojo-Share.sh` |
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Not bothering. Too much work for too little gain. |
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;25         | For the APE builds, can I remove `-DCOSMOCC=1` from the compiles? CMake warns not used. Needed for C++ compiler, not for CMake.|
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;25         | Implement the Copy Certificates step. |
