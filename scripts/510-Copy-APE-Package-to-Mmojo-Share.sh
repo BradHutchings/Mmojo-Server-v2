@@ -33,6 +33,11 @@ echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "    Share DDirectory: $SHARE_DIRECTORY"
 
 if [ $PACKAGE_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
+    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+        THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+    fi
+
     if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         mm-mount-mmojo-share.sh
     fi
@@ -44,7 +49,7 @@ if [ $PACKAGE_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
 
         if [ -d "$SHARE_DIRECTORY" ]; then
             echo "Copying mmojo-server to Mmojo Share."
-            sudo cp -f $PACKAGE_DIR/$PACKAGE_SUBDIRECTORY/mmojo-server $SHARE_DIRECTORY/mmojo-server
+            sudo cp -f $THIS_PACKAGE_DIR/mmojo-server $SHARE_DIRECTORY/mmojo-server
         fi
     fi
 fi
