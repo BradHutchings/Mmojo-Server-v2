@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;11&minus;27         | APE build and packaging scripts need a `$branding` parameter so we can use the scripts for Dogpile. |
 | 2025&minus;11&minus;27         | APE mmojo-server executable build and package names aren't quite right. Build name should have compatible / performant -- mmojo-server-compatible, mmojo-server-performant. Package name should have that + model name, if present. Actual branding for distribution is a downstream decision. I.e. compatible might just be called `mmojo-server-[model]`, performant might be called `mmojo-server-turbo-[model]`. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
