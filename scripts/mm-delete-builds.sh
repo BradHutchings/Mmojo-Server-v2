@@ -6,15 +6,16 @@
 # See licensing note at end.
 ################################################################################
 
-export STARS="********************************************************************************"
-printf "\n$STARS\n*\n* STARTED: mm-environment-variables.sh.\n*\n$STARS\n\n"
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $HOME
 
+echo "Deleting $BUILD_DIR and $DOGPILE_BUILD_DIR."
 rm -r -f $BUILD_DIR
 rm -r -f $DOGPILE_BUILD_DIR
 
-printf "\n$STARS\n*\n* FINISHED: mm-environment-variables.sh.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
