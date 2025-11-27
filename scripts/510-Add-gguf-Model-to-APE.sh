@@ -41,7 +41,8 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
 
             # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
             # Punting on memort mapping for now.
-            echo "Zipping $MODEL_FILE."
+            echo ""
+            echo "Adding $MODEL_FILE to $ZIP_FILE."
             zip -0 -r -q $ZIP_FILE $CHOSEN_MODEL
 
             # Aligning the model to 65536 isn't allowing Cosmo libc mmap() to work as llama.cpp
