@@ -58,9 +58,11 @@ fi
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
+echo "    Branding: $branding"
 echo "  arch param: $ARCH_LEVEL_PARAM"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
 echo " building in: $THIS_BUILD_DIR"
+echo ""
 
 unset CC
 unset CXX
