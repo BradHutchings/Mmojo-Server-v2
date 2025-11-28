@@ -38,7 +38,7 @@ If your build environment is x86_64, you can test this build. Requires previousl
 - View the script: <a href="../scripts/410-Test-Cosmo-Build.sh" target="_blank">410-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh X86_64 compatible
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh X86_64 compatible $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -70,7 +70,7 @@ If your build environment is aarch64, you can test this build. Requires previous
 - View the script: <a href="../scripts/411-Test-Cosmo-Compatible-x86_64.sh" target="_blank">411-Test-Cosmo-Compatible-x86_64.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh aarch64 compatible
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-Build.sh aarch64 compatible $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -99,7 +99,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/410-Test-Cosmo-APE.sh" target="_blank">410-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
   ```
 
 <details>
