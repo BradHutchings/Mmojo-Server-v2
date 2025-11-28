@@ -26,7 +26,7 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
-if [ ! -v chat_ui ] || [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
+if [[ ! -v chat_ui ]] || [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
     echo "Resetting chat_ui."
     chat_ui="0"
 fi
