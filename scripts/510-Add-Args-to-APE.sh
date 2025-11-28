@@ -7,26 +7,37 @@
 # See licensing note at end.
 ################################################################################
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 variation=$1
+branding=$2
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-PACKAGE_APE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-if [ $variation == "performant" ]; then
-    PACKAGE_APE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+if [ "$branding" != "dogpile" ]; then
+    branding=""
 fi
 
-echo "               Variation: $variation"
-echo "Package APE Subdirectory: $PACKAGE_APE_SUBDIRECTORY"
+PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+if [ "$variation" == "performant" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+fi
 
-if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
-    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE_SUBDIRECTORY"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+ARGS_FILE="$PACKAGE_MMOJO_SERVER_ARGS_FILE"
+if [ "$branding" == "dogpile" ]; then
+    THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
+fi
+
+echo "             Variation: $variation"
+echo "              Branding: $branding"
+echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "This Package Directory: $THIS_PACKAGE_DIR"
+
+if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
     if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
@@ -34,7 +45,7 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
     ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 
     cd "$THIS_PACKAGE_DIR"
-cat << EOF > $PACKAGE_MMOJO_SERVER_ARGS_FILE
+cat << EOF > $ARGS_FILE
 --host
 127.0.0.1
 --port
@@ -50,7 +61,7 @@ cat << EOF > $PACKAGE_MMOJO_SERVER_ARGS_FILE
 EOF
 
     if [ $ADDED_CERTS ]; then
-cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
+cat << EOF >> $ARGS_FILE
 --ssl-key-file
 /zip/certs/cert.key
 --ssl-cert-file
@@ -59,7 +70,7 @@ EOF
     fi
 
     if [ $ADDED_MMOJO_COMPLETE ]; then
-cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
+cat << EOF >> $ARGS_FILE
 --path
 /zip/Mmojo-Complete
 --default-ui-endpoint
@@ -71,24 +82,24 @@ EOF
     # We need an enable mmap paramter to override this.
 
     if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
-cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
+cat << EOF >> $ARGS_FILE
 --no-mmap
 --model
 /zip/$CHOSEN_MODEL
 EOF
     fi
 
-cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
+cat << EOF >> $ARGS_FILE
 ...
 EOF
 
     echo ""
-    echo "$PACKAGE_MMOJO_SERVER_ARGS_FILE:"
-    cat $PACKAGE_MMOJO_SERVER_ARGS_FILE
+    echo "$ARGS_FILE:"
+    cat $ARGS_FILE
 
     echo ""
-    echo "Adding $PACKAGE_MMOJO_SERVER_ARGS_FILE file to $ZIP_FILE."
-    zip -0 -r $ZIP_FILE $PACKAGE_MMOJO_SERVER_ARGS_FILE
+    echo "Adding $ARGS_FILE file to $ZIP_FILE."
+    zip -0 -r $ZIP_FILE $ARGS_FILE
 
     echo ""
     echo "Contents of $ZIP_FILE:"
@@ -97,7 +108,7 @@ EOF
     echo ""
     echo "Cleaning up."
     mv $ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
-    rm -r -f Mmojo-Complete certs $PACKAGE_MMOJO_SERVER_ARGS_FILE
+    rm -r -f Mmojo-Complete certs $ARGS_FILE
 
     echo ""
     echo "Listing packaging directory: $THIS_PACKAGE_DIR"
@@ -106,7 +117,7 @@ fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
