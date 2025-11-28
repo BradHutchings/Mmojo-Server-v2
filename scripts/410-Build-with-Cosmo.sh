@@ -61,7 +61,7 @@ echo "   Variation: $variation"
 echo "    Branding: $branding"
 echo "  arch param: $ARCH_LEVEL_PARAM"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo " building in: $THIS_BUILD_DIR"
+echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
 echo ""
 
 unset CC
