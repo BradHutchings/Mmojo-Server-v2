@@ -96,10 +96,12 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     # --mlock is not needed to run this.
     EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE"
     echo "Launching $EXECUTABLE_PATH."
+    echo ""
     $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
         --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
-    
-    printf "\nVerify that args file and support folder do not exist.\n"
+
+    echo ""
+    echo "Verify that args file and support folder do not exist."
     ls -ald $ARGS_FILE
     ls -ald $SUPPORT_DIR
 fi
