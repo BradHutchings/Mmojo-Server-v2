@@ -26,12 +26,13 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
-if [[ ! -v chat_ui ]] || [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
+if [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
     echo "Resetting chat_ui."
     chat_ui="0"
 fi
 
 if [ $branding != "dogpile" ]; then
+    echo "Resetting branding."
     branding=""
 fi
 
