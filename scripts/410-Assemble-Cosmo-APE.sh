@@ -15,18 +15,18 @@ cd $BUILD_DIR
 variation=$1
 branding=$2
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ $branding != "dogpile" ]; then
+if [ "$branding" != "dogpile" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 APE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
-if [ $branding == "dogpile" ]; then
+if [ "$branding" == "dogpile" ]; then
     chat_ui=1
 	THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
@@ -47,8 +47,9 @@ echo "                  Branding: $branding"
 echo " Build x86_64 Subdirectory: $BUILD_X86_64_SUBDIRECTORY"
 echo "Build aarch64 Subdirectory: $BUILD_AARCH64_SUBDIRECTORY"
 echo "    Build APE Subdirectory: $BUILD_APE_SUBDIRECTORY"
+echo "               building in: $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY"
 
-if [ $BUILD_X86_64_SUBDIRECTORY != "" ] && [ $BUILD_AARCH64_SUBDIRECTORY != "" ] && [ $BUILD_APE_SUBDIRECTORY != "" ]; then
+if [ "$BUILD_X86_64_SUBDIRECTORY" != "" ] && [ "$BUILD_AARCH64_SUBDIRECTORY" != "" ] && [ "$BUILD_APE_SUBDIRECTORY" != "" ]; then
     mkdir -p $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
     export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
