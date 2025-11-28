@@ -59,15 +59,16 @@ echo "   Variation: $variation"
 echo "    Branding: $branding"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
 echo " building in: $THIS_BUILD_DIR"
+echo ""
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
 
     MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
     if [[ -v CHOSEN_MODEL ]]; then
-        echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
+        echo "       Model: $CHOSEN_MODEL."
         if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
-            echo "Model found."
+            echo "              Model found."
             MODEL_PARAM=$CHOSEN_MODEL
         fi
     fi    
@@ -93,8 +94,10 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     rm -r -f $SUPPORT_DIR
 
     # --mlock is not needed to run this.
-    $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
-        $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
+    EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE"
+    echo "Launching $EXECUTABLE_PATH
+    $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
+        --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
     
     printf "\nVerify that args file and support folder do not exist.\n"
     ls -ald $ARGS_FILE
