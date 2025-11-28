@@ -67,7 +67,7 @@ echo "   Variation: $variation"
 echo "     Chat UI: $chat_ui"
 echo "    Branding: $branding"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo "  testing in: $THIS_BUILD_DIR"
+echo "  testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
