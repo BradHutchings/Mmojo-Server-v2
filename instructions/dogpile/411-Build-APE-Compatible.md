@@ -85,7 +85,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../../scripts/410-Test-Cosmo-APE.sh" target="_blank">410-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible 1 dogpile
   ```
 
 ---
