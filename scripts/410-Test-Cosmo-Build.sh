@@ -9,10 +9,9 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
-
 processor=$1
 variation=$2
+branding=$3
 
 if [ $processor == "arm64" ]; then
     processor="aarch64"
@@ -26,35 +25,43 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
+if [ $branding != "dogpile" ]; then
+    $branding = ""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
+ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
+SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+if [ $branding == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
+    ARGS_FILE=$PACKAGE_DOGPILE_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_DOGPILE_SUPPORT_DIR
+fi
+
 BUILD_SUBDIRECTORY=""
-TEST_SUBDIRECTORY=""
 if [ $processor == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
-    TEST_SUBDIRECTORY="$TEST_COSMO_COMPATIBLE_X86_64"
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_X86_64"
-        TEST_SUBDIRECTORY="$TEST_COSMO_PERFORMANT_X86_64"
     fi
 fi
 if [ $processor == "aarch64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_AARCH64"
-    TEST_SUBDIRECTORY="$TEST_COSMO_COMPATIBLE_AARCH64"
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_AARCH64"
-        TEST_SUBDIRECTORY="$TEST_COSMO_PERFORMANT_AARCH64"
     fi
 fi
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
-echo "Build Subdirectory: $BUILD_SUBDIRECTORY"
-echo " Test Subdirectory: $TEST_SUBDIRECTORY"
+echo "    Branding: $branding"
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo " building in: $THIS_BUILD_DIR"
 
-if [ -d $BUILD_DIR/$xx ] && [ $TEST_SUBDIRECTORY != "" ]; then
-    THIS_TEST="$TEST_DIR/$TEST_SUBDIRECTORY"
-    mkdir -p $THIS_TEST
-    rm -r -f $THIS_TEST/*
-    cd $THIS_TEST
+if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
+    cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
 
     MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
     if [[ -v CHOSEN_MODEL ]]; then
@@ -82,16 +89,16 @@ if [ -d $BUILD_DIR/$xx ] && [ $TEST_SUBDIRECTORY != "" ]; then
     # echo "\$UI_PARAMS: $UI_PARAMS"
     # sleep 5s
 
-    rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
-    rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+    rm -f $ARGS_FILE
+    rm -r -f $SUPPORT_DIR
 
     # --mlock is not needed to run this.
-    $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
+    $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
         $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0
     
     printf "\nVerify that args file and support folder do not exist.\n"
-    ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
-    ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+    ls -ald $ARGS_FILE
+    ls -ald $SUPPORT_DIR
 fi
 
 cd $HOME
