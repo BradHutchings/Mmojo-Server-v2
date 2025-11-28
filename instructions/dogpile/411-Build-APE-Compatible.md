@@ -113,7 +113,7 @@ $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible 1 dogpile
 ---
 ### Proceed
 - **Next:** [412. Build APE (Performant)](412-Build-APE-Performant.md)
-- **Previous:** [403. Build Debug](411-Build-Debug.md)
+- **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
