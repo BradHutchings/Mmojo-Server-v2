@@ -107,7 +107,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible dogpile
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible dogpile
 $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible dogpile
-$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible dogpile
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible 1 dogpile
 ```
 
 ---
