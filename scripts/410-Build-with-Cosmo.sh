@@ -27,7 +27,7 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
 fi
 
 if [ "$branding" != "dogpile" ]; then
-    branding = ""
+    branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
