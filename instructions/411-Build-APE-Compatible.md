@@ -132,7 +132,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
-$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
 ```
 
 ---
@@ -148,7 +148,7 @@ $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Copy-Cosmo-Build-to-Mmojo-Share.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
 $MMOJO_SERVER_SCRIPTS/410-Copy-Cosmo-APE-to-Mmojo-Share.sh compatible
-$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
 ```
 
 ---
