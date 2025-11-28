@@ -14,19 +14,19 @@ processor=$1
 variation=$2
 branding=$3
 
-if [ $processor == "arm64" ]; then
+if [ "$processor" == "arm64" ]; then
     processor="aarch64"
 fi
 
-if [ $processor != "x86_64" ] && [ $processor != "aarch64" ]; then
+if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
     processor="x86_64"
 fi
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ $branding != "dogpile" ]; then
+if [ "$branding" != "dogpile" ]; then
     $branding = ""
 fi
 
