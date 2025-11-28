@@ -54,6 +54,8 @@ if [ $BUILD_X86_64_SUBDIRECTORY != "" ] && [ $BUILD_AARCH64_SUBDIRECTORY != "" ]
 
     # Thanks to Davide Eynard for the -M line to support Macs.
 
+	echo ""
+	echo "Creating $APE_FILE."
     apelink \
 	      -l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	      -l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
@@ -73,6 +75,10 @@ if [ $BUILD_X86_64_SUBDIRECTORY != "" ] && [ $BUILD_AARCH64_SUBDIRECTORY != "" ]
 
         # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
         # cp $BUILD_DIR/$BUILD_APE_SUBDIRECTORY/mm-zipalign-ape $HOME/mm-scripts/mm-zipalign
+
+	echo ""
+	echo "Listing $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY:"
+	ls -al $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
 
     export PATH=$SAVE_PATH
 fi
