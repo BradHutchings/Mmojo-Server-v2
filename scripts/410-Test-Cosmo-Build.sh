@@ -11,7 +11,8 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 processor=$1
 variation=$2
-branding=$3
+chat_ui=$3
+branding=$4
 
 if [ $processor == "arm64" ]; then
     processor="aarch64"
@@ -25,8 +26,12 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
+if [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
+    chat_ui=0
+fi
+
 if [ $branding != "dogpile" ]; then
-    $branding = ""
+    branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
@@ -34,6 +39,7 @@ EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
 SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 if [ $branding == "dogpile" ]; then
+    chat_ui=1
     THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
     ARGS_FILE=$PACKAGE_DOGPILE_ARGS_FILE
@@ -56,10 +62,10 @@ fi
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
+echo "     Chat UI: $chat_ui"
 echo "    Branding: $branding"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo " building in: $THIS_BUILD_DIR"
-echo ""
+echo "  testing in: $THIS_BUILD_DIR"
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
@@ -83,7 +89,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     # sleep 5s
 
     UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-    if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
+    if [ $chat_ui != 0 ]; then 
         # echo "Using chat UI."
         UI_PARAMS=""
     fi
