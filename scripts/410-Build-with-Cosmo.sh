@@ -27,11 +27,11 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
 fi
 
 if [ "$branding" != "dogpile" ]; then
-    $branding = ""
+    branding = ""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
-if [ $branding == "dogpile" ]; then
+if [ "$branding" == "dogpile" ]; then
     THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
 fi
 
@@ -69,7 +69,7 @@ unset CXX
 unset AR
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
-if [ $processor == "x86_64" ]; then
+if [ "$processor" == "x86_64" ]; then
     # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
     # No need to specify them here.
     export CC="x86_64-unknown-cosmo-cc \
@@ -81,7 +81,7 @@ if [ $processor == "x86_64" ]; then
     export AR="cosmoar"
 fi
 
-if [ $processor == "aarch64" ]; then
+if [ "$processor" == "aarch64" ]; then
     # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
     # No need to specify them here.
     export CC="aarch64-unknown-cosmo-cc  \
