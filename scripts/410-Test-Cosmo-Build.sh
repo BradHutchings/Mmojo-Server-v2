@@ -27,7 +27,8 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
 fi
 
 if [ ! -v chat_ui ] || [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
-    chat_ui=0
+    echo "Resetting chat_ui."
+    chat_ui="0"
 fi
 
 if [ $branding != "dogpile" ]; then
