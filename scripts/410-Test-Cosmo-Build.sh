@@ -40,7 +40,7 @@ THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
 SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
-if [ $branding == "dogpile" ]; then
+if [ "$branding" == "dogpile" ]; then
     chat_ui=1
     THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
@@ -49,15 +49,15 @@ if [ $branding == "dogpile" ]; then
 fi
 
 BUILD_SUBDIRECTORY=""
-if [ $processor == "x86_64" ]; then
+if [ "$processor" == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
-    if [ $variation == "performant" ]; then
+    if [ "$variation" == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_X86_64"
     fi
 fi
-if [ $processor == "aarch64" ]; then
+if [ "$processor" == "aarch64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_AARCH64"
-    if [ $variation == "performant" ]; then
+    if [ "$variation" == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_AARCH64"
     fi
 fi
@@ -91,7 +91,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     # sleep 5s
 
     UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-    if [ $chat_ui != 0 ]; then 
+    if [ "$chat_ui" != "0" ]; then 
         # echo "Using chat UI."
         UI_PARAMS=""
     fi
