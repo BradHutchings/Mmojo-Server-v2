@@ -30,9 +30,9 @@ if [ $branding != "dogpile" ]; then
     $branding = ""
 fi
 
-$THIS_BUILD_DIR = $BUILD_DIR
+THIS_BUILD_DIR=$BUILD_DIR
 if [ $branding == "dogpile" ]; then
-    $THIS_BUILD_DIR = $DOGPILE_BUILD_DIR
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
 fi
 
 cd $THIS_BUILD_DIR
