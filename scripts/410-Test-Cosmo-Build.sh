@@ -101,6 +101,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
 
     # --mlock is not needed to run this.
     EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE"
+    echo ""
     echo "Launching $EXECUTABLE_PATH."
     echo ""
     $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
