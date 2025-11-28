@@ -7,26 +7,35 @@
 # See licensing note at end.
 ################################################################################
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 variation=$1
+branding=$2
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-if [ $variation == "performant" ]; then
+if [ "$variation" == "performant" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
 fi
 
-echo "           Variation: $variation"
-echo "Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+if [ "$branding" == "dogpile" ]; then
+    THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+fi
 
-if [ $PACKAGE_SUBDIRECTORY != "" ]; then
-    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+echo "             Variation: $variation"
+echo "              Branding: $branding"
+echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "This Package Directory: $THIS_PACKAGE_DIR"
+
+if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
     if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
@@ -60,7 +69,7 @@ fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
