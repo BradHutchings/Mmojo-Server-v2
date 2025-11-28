@@ -14,24 +14,24 @@ variation=$2
 chat_ui=$3
 branding=$4
 
-if [ $processor == "arm64" ]; then
+if [ "$processor" == "arm64" ]; then
     processor="aarch64"
 fi
 
-if [ $processor != "x86_64" ] && [ $processor != "aarch64" ]; then
+if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
     processor="x86_64"
 fi
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
+if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
     echo "Resetting chat_ui."
     chat_ui="0"
 fi
 
-if [ $branding != "dogpile" ]; then
+if [ "$branding" != "dogpile" ]; then
     echo "Resetting branding."
     branding=""
 fi
