@@ -12,7 +12,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 processor=$1
 variation=$2
-brading=$3
+branding=$3
 
 if [ $processor == "arm64" ]; then
     processor="aarch64"
