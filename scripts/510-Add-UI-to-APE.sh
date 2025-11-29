@@ -26,12 +26,15 @@ if [ "$variation" == "performant" ]; then
 fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 if [ "$branding" == "dogpile" ]; then
     THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
 fi
 
 echo "             Variation: $variation"
 echo "              Branding: $branding"
+echo "              Zip File: $ZIP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
@@ -40,7 +43,7 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+    THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     WEBSITE="$THIS_PACKAGE_DIR/Mmojo-Complete"
     mkdir -p $WEBSITE
@@ -52,13 +55,13 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
     fi
 
     echo ""
-    echo "Adding Mmojo Complete UI to $ZIP_FILE."
+    echo "Adding Mmojo Complete UI to $THIS_ZIP_FILE."
     cd $THIS_PACKAGE_DIR
-    zip -0 -r -q $ZIP_FILE Mmojo-Complete/*
+    zip -0 -r -q $THIS_ZIP_FILE Mmojo-Complete/*
 
     echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    echo "Contents of $THIS_ZIP_FILE:"
+    unzip -l $THIS_ZIP_FILE 
 fi
 
 cd $HOME
