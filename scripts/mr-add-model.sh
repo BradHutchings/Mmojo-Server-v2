@@ -34,7 +34,7 @@ echo " \$model_file: $model_file"
 echo "\$archive_zip: $archive_zip"
 echo " \$models_dir: $models_dir"
 
-if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [-d "$models_dir" ] && [ -f $model_file ]; then
+if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -d "$models_dir" ] && [ -f $model_file ]; then
     echo ""
     echo "Copying $model_file to $models_dir."
     cp "$model_file" "$models_dir"
