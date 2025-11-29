@@ -13,7 +13,7 @@
 # [ link to Mmojo Runner info. ]
 #
 # What's in this archive:
-# - Presamble script
+# - Preamble script
 #   - unzips support assets, .gguf models, and application (if not already present)
 #   - runs application
 #
@@ -59,6 +59,7 @@ hw=$(uname -m)
 format=""
 app_name="[APP_NAME]"
 support_directory_name="[SUPPORT_DIRECTORY_NAME]"
+this_directory = "$(dirname $0)"
 
 case "$os" in
     Linux)
@@ -80,6 +81,16 @@ echo "                format: $format"
 echo "              app_name: $app_name"
 echo "support_directory_name: $support_directory_name"
 
+# if $app_name exists in the local directory and is executable, run it nohup, exit script.
+if [ -f "$this_directory/$app_name" ]; then
+    # is it executable?
+    if [ 1 ]; then
+        cd "$this_directory"
+        nohup $app_name &
+        exit
+    fi
+fi
+
 # Find candidates for app extraction
 format_hw="$format/$hw"
 candidates=$(unzip -j "$my_path" "$format_hw/*'")
@@ -87,6 +98,14 @@ candidates=$(unzip -j "$my_path" "$format_hw/*'")
 echo ""
 echo "Candidates:"
 echo $candidates
+
+# User chooses a candidate, or if there is just one, it's chosen without user intervention.
+
+# Unzip the support folder into the local directory.
+# Unzip the model(s) into the support folder.
+# Unzip the chosen candidate into the local directory as $app_name.
+# chmod the app a+x
+# Run the app.
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
