@@ -61,7 +61,7 @@ if [ "$BUILD_X86_64_SUBDIRECTORY" != "" ] && [ "$BUILD_AARCH64_SUBDIRECTORY" != 
 	      -l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	      -l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
 	      -o $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY/$APE_FILE \
-	      -M ./cosmocc/bin/ape-m1.c \
+	      -M $THIS_BUILD_DIR/cosmocc/bin/ape-m1.c \
         $THIS_BUILD_DIR/$BUILD_X86_64_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
         $THIS_BUILD_DIR/$BUILD_AARCH64_SUBDIRECTORY/bin/$EXECUTABLE_FILE
 
