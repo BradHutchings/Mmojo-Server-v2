@@ -26,6 +26,9 @@ case $runner_dir in
   (*)    runner_dir="$(pwd)/$runner_dir";;
 esac
 
+# Strip a trailing "/" from $runner_dir and $model_file if either has one.
+runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
+
 echo "            \$runner_dir: $runner_dir"
 echo "              \$app_name: $app_name"
 echo "\$support_directory_name: $support_directory_name"
@@ -36,6 +39,20 @@ if [ -d "$runner_dir" ]; then
     rm -r -f "$runner_dir"
 fi
 mkdir -p "$runner_dir"
+
+# Make a vars.sh file.
+echo ""
+echo "Creating vars.sh."
+cat << EOF > "$runner_dir/vars.sh"
+export app_name=$app_name
+export support_directory_name=$support_directory_name
+EOF
+
+echo ""
+echo "$runner_dir/vars.sh (first 10 lines):"
+echo "$STARS"
+head -n 10 "$runner_dir/vars.sh"
+echo "$STARS"
 
 # Copy the mr-preamble.sh into the directory. Customize with app name.
 echo ""
