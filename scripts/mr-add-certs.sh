@@ -52,8 +52,8 @@ if [ -d $certs_path ]; then
     echo ""
     echo "Copying .crt and .key files."
     mkdir -p "$support_dir/certs"
-    cp "$certs_path/*.crt" "$support_dir/certs"
-    cp "$certs_path/*.key" "$support_dir/certs"
+    cp "$certs_path"/*.crt "$support_dir/certs"
+    cp "$certs_path"/*.key "$support_dir/certs"
 
     echo ""
     echo "Adding certs to $archive_zip."
