@@ -24,6 +24,7 @@ case $runner_dir in
   ("/"*) ;;
   (*)    runner_dir="$(pwd)/$runner_dir";;
 esac
+runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 
 # source $runner_dir/vars.sh
 support_subdirectory="support"
