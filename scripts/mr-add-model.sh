@@ -27,7 +27,7 @@ esac
 
 # Strip a trailing "/" from $runner_dir and $model_file if either has one.
 runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
-model_file="$(dirname $certs_path)/$(basename $model_file)"
+model_file="$(dirname $model_file)/$(basename $model_file)"
 
 archive_zip="$runner_dir/archive.zip"
 models_dir="$runner_dir/models"
