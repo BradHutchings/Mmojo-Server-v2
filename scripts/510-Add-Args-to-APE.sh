@@ -47,7 +47,7 @@ echo "              App File: $APP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
-if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
+if [ -d "$THIS_PACKAGE_DIR" ]; then
     THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     cd "$THIS_PACKAGE_DIR"
