@@ -59,7 +59,7 @@ cp -r "$ui_source_dir"/* $ui_dir
 echo ""
 echo "Adding Mmojo Complete user interface to $archive_zip."
 cd $runner_dir
-zip -u -0 "$archive_zip" "$support_directory_name"/certs/*
+zip -u -0 "$archive_zip" "$support_directory_name/$(basename $ui_dir)"/*
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
