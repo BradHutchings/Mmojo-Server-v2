@@ -40,7 +40,7 @@ fi
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
-zip -l "$runner_dir/archive.zip"
+unzip -l "$runner_dir/archive.zip"
 
 echo ""
 echo "Files in $runner_dir:"
