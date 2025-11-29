@@ -12,7 +12,8 @@ Now that you have Dogpile built as an Actual Portable Executable (APE) file, you
 ---
 ### Package Dogpile
 Here are some packaging options:
-- [511. Package APE](511-Package-APE.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+- [511. Package APE (Compatible)](511-Package-APE-Compatible.md) - Package Dogpile as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+- [512. Package APE (Performant)](512-Package-APE-Performant.md) - Package Dogpile as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
 
 **Get Started:** [511. Package APE](511-Package-APE.md)
 
