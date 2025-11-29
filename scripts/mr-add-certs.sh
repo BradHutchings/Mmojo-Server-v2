@@ -25,8 +25,9 @@ case $runner_dir in
   (*)    runner_dir="$(pwd)/$runner_dir";;
 esac
 
-# Strip a trailing "/" from $runner_dir if it has one.
+# Strip a trailing "/" from $runner_dir and $certs_path if either has one.
 runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
+certs_path="$(dirname $certs_path)/$(basename $certs_path)"
 
 # source $runner_dir/vars.sh
 support_subdirectory="support"
