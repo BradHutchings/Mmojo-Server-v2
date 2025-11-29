@@ -26,12 +26,15 @@ if [ "$variation" == "performant" ]; then
 fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+APE_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 if [ "$branding" == "dogpile" ]; then
     THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    APE_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
 fi
 
 echo "             Variation: $variation"
 echo "              Branding: $branding"
+echo "              APE File: $APE_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
@@ -40,7 +43,7 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+    ZIP_FILE="$THIS_PACKAGE_DIR/$APE_FILE"
 
     CERTS="$THIS_PACKAGE_DIR/certs"
     mkdir -p $CERTS
