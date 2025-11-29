@@ -30,7 +30,7 @@ runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 certs_path="$(dirname $certs_path)/$(basename $certs_path)"
 
 # source $runner_dir/vars.sh
-support_subdirectory="support"
+support_directory_name="support"
 vars_file="$runner_dir/vars.sh"
 if [ -f "$vars_file" ]; then
     echo ""
@@ -39,7 +39,7 @@ if [ -f "$vars_file" ]; then
 fi
 
 archive_zip="$runner_dir/archive.zip"
-support_dir="$runner_dir/$support_subdirectory"
+support_dir="$runner_dir/$support_directory_name"
 
 echo ""
 echo " \$runner_dir: $runner_dir"
@@ -47,7 +47,6 @@ echo " \$certs_path: $certs_path"
 echo "\$archive_zip: $archive_zip"
 echo "\$support_dir: $support_dir"
 echo "   \$app_name: $app_name"
-# echo "\$support_directory_name: $support_directory_name"
 
 
 
