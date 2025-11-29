@@ -10,8 +10,6 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
-
 variation=$1
 branding=$2
 
@@ -50,8 +48,10 @@ echo "    Build APE Subdirectory: $BUILD_APE_SUBDIRECTORY"
 echo "               building in: $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY"
 
 if [ "$BUILD_X86_64_SUBDIRECTORY" != "" ] && [ "$BUILD_AARCH64_SUBDIRECTORY" != "" ] && [ "$BUILD_APE_SUBDIRECTORY" != "" ]; then
-    mkdir -p $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
-    export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+    # cd $THIS_BUILD_DIR
+	mkdir -p $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
+    # export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+    export PATH="$THIS_BUILD_DIR/cosmocc/bin:$SAVE_PATH"
 
     # Thanks to Davide Eynard for the -M line to support Macs.
 
