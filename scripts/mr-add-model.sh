@@ -26,16 +26,24 @@ case $runner_dir in
 esac
 
 archive_zip="$runner_dir/archive.zip"
+models_dir="$runner_dir/models"
 
 echo ""
 echo " \$runner_dir: $runner_dir"
 echo " \$model_file: $model_file"
 echo "\$archive_zip: $archive_zip"
+echo " \$models_dir: $models_dir"
 
-if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -f $model_file ]; then
+if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [-d "$models_dir" ] && [ -f $model_file ]; then
+    echo ""
+    echo "Copying $model_file to $models_dir."
+    cp "$model_file" "$models_dir"
+
+    echo ""
+    echo "Adding $(basename $model_file) to $archive_zip."
     SAVE_DIR=$(pwd)
-    cd $(dirname $model_file)
-    zip -u -0 "$archive_zip" "$(basename $model_file)"
+    cd "$runner_dir"
+    zip -u -0 "$archive_zip" "models/$(basename $model_file)"
 fi
 
 echo ""
