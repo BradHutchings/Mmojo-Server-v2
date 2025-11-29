@@ -44,6 +44,8 @@ echo " \$runner_dir: $runner_dir"
 echo " \$certs_path: $certs_path"
 echo "\$archive_zip: $archive_zip"
 echo "\$support_dir: $support_dir"
+echo "   \$app_name: $app_name"
+# echo "\$support_directory_name: $support_directory_name"
 
 
 
