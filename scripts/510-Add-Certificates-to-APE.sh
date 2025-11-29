@@ -43,10 +43,6 @@ echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
 if [ -d "$THIS_PACKAGE_DIR" ]; then
-    if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-        THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-    fi
-
     THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     CERTS="$THIS_PACKAGE_DIR/certs"
