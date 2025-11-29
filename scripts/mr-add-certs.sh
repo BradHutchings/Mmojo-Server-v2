@@ -62,7 +62,14 @@ if [ -d $certs_path ]; then
     
 elif [ -f $certs_path ]; then
     echo ""
-    echo "Can't handle individual files quite yet."
+    echo "Copying file $certs_path."
+    mkdir -p "$support_dir/certs"
+    cp "$certs_path" "$support_dir/certs"
+
+    echo ""
+    echo "Adding certs to $archive_zip."
+    cd $runner_dir
+    zip -u -0 "$archive_zip" "$support_directory_name"/certs/*
 fi
 
 echo ""
