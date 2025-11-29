@@ -48,11 +48,22 @@ echo "\$archive_zip: $archive_zip"
 echo "\$support_dir: $support_dir"
 echo "   \$app_name: $app_name"
 
+if [ -d $certs_path ]; then
+    echo ""
+    echo "Copying .crt and .key files."
+    mkdir -p "$support_dir/certs"
+    cp "$certs_path/*.crt" "$support_dir/certs"
+    cp "$certs_path/*.key" "$support_dir/certs"
 
-
-
-
-
+    echo ""
+    echo "Adding certs to $archive_zip."
+    cd $runner_dir
+    zip -u -0 "$archive_zip" "$support_directory_name/certs"
+    
+elif [ -f $certs_path ]; then
+    echo ""
+    echo "Can't handle individual files quite yet."
+fi
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
@@ -61,6 +72,8 @@ unzip -l "$runner_dir/archive.zip"
 echo ""
 echo "Files in $runner_dir:"
 ls -alR "$runner_dir"
+
+cd $HOME
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
