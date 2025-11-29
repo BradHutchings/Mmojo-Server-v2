@@ -29,16 +29,19 @@ fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
 THIS_BUILD_DIR="$BUILD_DIR/$BUILD_SUBDIRECTORY"
-APE_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+APE_FILE="$PACKAGE_MMOJO_SERVER_APE_FILE"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 if [ "$branding" == "dogpile" ]; then
     THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
     THIS_BUILD_DIR="$DOGPILE_BUILD_DIR/$BUILD_SUBDIRECTORY"
-    APE_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
+    APE_FILE="$PACKAGE_DOGPILE_APE_FILE"
+    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
 fi
 
 echo "             Variation: $variation"
 echo "              Branding: $branding"
 echo "              APE File: $APE_FILE"
+echo "              APE File: $ZIP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "     Build Subirectory: $BUILD_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
@@ -55,18 +58,18 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     echo ""
     echo "Copying built $APE_FILE."
-    BUILT_FILE="$THIS_BUILD_DIR/$APE_FILE"
-    ZIP_FILE="$THIS_PACKAGE_DIR/$APE_FILE"
-    if [ -f "$BUILT_FILE" ]; then
-        cp $BUILT_FILE $ZIP_FILE
+    THIS_BUILT_FILE="$THIS_BUILD_DIR/$APE_FILE"
+    THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
+    if [ -f "$THIS_BUILT_FILE" ]; then
+        cp $THIS_BUILT_FILE $THIS_ZIP_FILE
     fi
 
-    echo "Removing extraneous time zone files from $APE_FILE."
-    zip -d -q $ZIP_FILE "/usr/*"
+    echo "Removing extraneous time zone files from $THIS_ZIP_FILE."
+    zip -d -q $THIS_ZIP_FILE "/usr/*"
 
     echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    echo "Contents of $THIS_ZIP_FILE:"
+    unzip -l $THIS_ZIP_FILE 
 fi
 
 cd $HOME
