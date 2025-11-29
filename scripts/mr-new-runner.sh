@@ -45,11 +45,17 @@ echo ""
 echo "Creating an empty archive."
 mkdir -p "empty_dir"
 cd "empty_dir"
-zip -r "$runner_dir/archive.zip" . -i "*"
+# Can't create the zip directly in $runner_dir. Zip will error rather than warn of empty zip. Weird.
+zip -rj archive.zip . -i "*"
+mv archive.zip "$runner_dir"
 cd ..
 rm -r -f "empty_dir"
 echo "$runner_dir/archive.zip contents:"
 zip -l "$runner_dir/archive.zip"
+
+echo ""
+echo "Files in $runner_dir:"
+ls -al "$runner_dir"
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
