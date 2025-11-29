@@ -14,7 +14,7 @@ Here are some packaging options:
 - [521. Package SEAS](521-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
 -->
 
-**Get Started:** [511. Package APE](511-Package-APE.md)
+**Get Started:** [511. Package APE (Compatible)](511-Package-APE-Compatible.md)
 
 ---
 [MIT License](/LICENSE)<br/>
