@@ -32,7 +32,7 @@ Add a .gguf model to an existing archive:
   mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
   ```
 
-Add certificates directory to an existing archive:
+Add certificates directory &mdash; all `.crt` and `.key` files &mdash; to an existing archive:
 - View the script: <a href="../scripts/mr-add-certs.sh" target="_blank">mr-add-certs.sh</a>.
 - Run the script.
   ```
