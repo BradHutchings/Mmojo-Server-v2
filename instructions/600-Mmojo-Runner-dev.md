@@ -18,12 +18,16 @@ Perhaps the coolest feature should be (hopefully) that you as a developer can bu
 ### Bootstrapping
 Snippets I'm using while building this thing out.
 
-Make a new archive:
-```
-mr-new-runner.sh test-archive mmojo-server mmojo-server-support
-```
+Make a new archive.
+- View the script: <a href="../scripts/mr-new-runner.sh" target="_blank">mr-new-runner.sh</a>.
+- Run the script.
+  ```
+  mr-new-runner.sh test-archive mmojo-server mmojo-server-support
+  ```
 
 Add a .gguf model to an existing archive:
-```
-mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
-```
+- View the script: <a href="../scripts/mr-add-model.sh" target="_blank">mr-add-model.sh</a>.
+- Run the script.
+  ```
+  mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
+  ```
