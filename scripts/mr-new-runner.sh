@@ -10,6 +10,10 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
+if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
+    echo "mr_new_runner.sh [RUNNER_DIR] [APP_NAME] [SUPPORT_DIR_NAME]
+    echo "  Creates a new runner directory and preamble file."
+
 runner_dir=$1
 app_name=$2
 support_directory_name=$3
