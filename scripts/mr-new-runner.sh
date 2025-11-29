@@ -44,8 +44,8 @@ mkdir -p "$runner_dir"
 echo ""
 echo "Creating vars.sh."
 cat << EOF > "$runner_dir/vars.sh"
-export app_name=$app_name
-export support_directory_name=$support_directory_name
+export app_name="$app_name"
+export support_directory_name="$support_directory_name"
 EOF
 
 echo ""
