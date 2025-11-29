@@ -54,6 +54,10 @@ head -n 10 "$runner_dir/preamble.sh"
 echo "$STARS"
 
 echo ""
+echo "Create a models subdirectory for storing .gguf model files in archive.zip."
+mkdir -p "$runner_dir/models"
+
+echo ""
 echo "Creating an empty archive."
 rm -r -f "empty_dir"
 mkdir -p "empty_dir"
