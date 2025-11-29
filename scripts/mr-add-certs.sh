@@ -33,6 +33,8 @@ certs_path="$(dirname $certs_path)/$(basename $certs_path)"
 support_subdirectory="support"
 vars_file="$runner_dir/vars.sh"
 if [ -f "$vars_file" ]; then
+    echo ""
+    echo "Sourcing vars.sh"
     source $vars_file
 fi
 
