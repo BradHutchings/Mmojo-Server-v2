@@ -46,3 +46,10 @@ Add individual certificates to an existing archive:
   mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.crt
   mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.key
   ```
+
+Add user interface directory to an existing archive:
+- View the script: <a href="../scripts/mr-add-ui.sh" target="_blank">mr-add-ui.sh</a>.
+- Run the script.
+  ```
+  mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete
+  ```
