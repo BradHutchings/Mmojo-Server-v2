@@ -43,13 +43,14 @@ cat "$runner_dir/preamble.sh"
 
 echo ""
 echo "Creating an empty archive."
+rm -r -f "empty_dir"
 mkdir -p "empty_dir"
 cd "empty_dir"
 # Can't create the zip directly in $runner_dir. Zip will error rather than warn of empty zip. Weird.
 zip -rj archive.zip . -i "*"
 mv archive.zip "$runner_dir"
 cd ..
-rm -r -f "empty_dir"
+# rm -r -f "empty_dir"
 echo "Contents of $runner_dir/archive.zip:"
 zip -l "$runner_dir/archive.zip"
 
