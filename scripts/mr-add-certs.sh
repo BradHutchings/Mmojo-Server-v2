@@ -58,7 +58,7 @@ if [ -d $certs_path ]; then
     echo ""
     echo "Adding certs to $archive_zip."
     cd $runner_dir
-    zip -u -0 "$archive_zip" "$support_directory_name/certs"
+    zip -ur -0 "$archive_zip" "$support_directory_name/certs"
     
 elif [ -f $certs_path ]; then
     echo ""
