@@ -26,14 +26,20 @@ if [ "$variation" == "performant" ]; then
 fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
 ARGS_FILE="$PACKAGE_MMOJO_SERVER_ARGS_FILE"
 if [ "$branding" == "dogpile" ]; then
     THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
+    APP_FILE="$PACKAGE_DOGPILE_FILE"
     ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
 fi
 
 echo "             Variation: $variation"
 echo "              Branding: $branding"
+echo "              APE File: $APE_FILE"
+echo "              App File: $APP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
@@ -42,7 +48,7 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+    THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     cd "$THIS_PACKAGE_DIR"
 cat << EOF > $ARGS_FILE
@@ -98,16 +104,16 @@ EOF
     cat $ARGS_FILE
 
     echo ""
-    echo "Adding $ARGS_FILE file to $ZIP_FILE."
-    zip -0 -r $ZIP_FILE $ARGS_FILE
+    echo "Adding $ARGS_FILE file to $THIS_ZIP_FILE."
+    zip -0 -r $THIS_ZIP_FILE $ARGS_FILE
 
     echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    echo "Contents of $THIS_ZIP_FILE:"
+    unzip -l $THIS_ZIP_FILE 
 
     echo ""
     echo "Cleaning up."
-    mv $ZIP_FILE $PACKAGE_MMOJO_SERVER_FILE
+    mv $THIS_ZIP_FILE $APP_FILE
     rm -r -f Mmojo-Complete certs $ARGS_FILE
 
     echo ""
