@@ -14,7 +14,7 @@ cd $PACKAGE_DIR
 
 variation=$1
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
