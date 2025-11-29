@@ -26,15 +26,15 @@ if [ "$variation" == "performant" ]; then
 fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-APE_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 if [ "$branding" == "dogpile" ]; then
     THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-    APE_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
+    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
 fi
 
 echo "             Variation: $variation"
 echo "              Branding: $branding"
-echo "              APE File: $APE_FILE"
+echo "              Zip File: $ZIP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
@@ -43,7 +43,7 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
         THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
     fi
 
-    ZIP_FILE="$THIS_PACKAGE_DIR/$APE_FILE"
+    THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     CERTS="$THIS_PACKAGE_DIR/certs"
     mkdir -p $CERTS
@@ -54,11 +54,11 @@ if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
     echo ""
     echo "Adding certificates to $ZIP_FILE."
     cd $THIS_PACKAGE_DIR
-    zip -0 -r -q $ZIP_FILE certs/*
+    zip -0 -r -q $THIS_ZIP_FILE certs/*
 
     echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    echo "Contents of $THIS_ZIP_FILE:"
+    unzip -l $THIS_ZIP_FILE 
 fi
 
 cd $HOME
