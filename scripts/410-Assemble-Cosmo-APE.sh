@@ -48,9 +48,7 @@ echo "    Build APE Subdirectory: $BUILD_APE_SUBDIRECTORY"
 echo "               building in: $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY"
 
 if [ "$BUILD_X86_64_SUBDIRECTORY" != "" ] && [ "$BUILD_AARCH64_SUBDIRECTORY" != "" ] && [ "$BUILD_APE_SUBDIRECTORY" != "" ]; then
-    # cd $THIS_BUILD_DIR
 	mkdir -p $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
-    # export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
     export PATH="$THIS_BUILD_DIR/cosmocc/bin:$SAVE_PATH"
 
     # Thanks to Davide Eynard for the -M line to support Macs.
