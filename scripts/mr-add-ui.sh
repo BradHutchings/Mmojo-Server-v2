@@ -40,8 +40,7 @@ fi
 
 archive_zip="$runner_dir/archive.zip"
 support_dir="$runner_dir/$support_directory_name"
-# ui_source_dir="$MMOJO_SERVER_DIR/files/Mmojo-Complete"
-ui_dir="$support_dir/Mmojo-Complete"
+ui_dir="$support_dir/$(basename $ui_source_dir)"
 
 echo ""
 echo "   \$runner_dir: $runner_dir"
@@ -57,7 +56,7 @@ mkdir -p "$ui_dir"
 cp -r "$ui_source_dir"/* $ui_dir
 
 echo ""
-echo "Adding Mmojo Complete user interface to $archive_zip."
+echo "Adding user interface to $archive_zip."
 cd $runner_dir
 zip -u -0 "$archive_zip" "$support_directory_name/$(basename $ui_dir)"/*
 
