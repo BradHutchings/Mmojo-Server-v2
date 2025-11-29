@@ -2,6 +2,8 @@
 ### About Mmojo Runner
 What is this? It's going to be a polyglot format that can handle options for a particular platform and CPU. It stems from wanting one `mmojo-server` that contain both compatible and performant versions of the app for multiple platform and CPU family combinations. Or contain versions that can use your GPU.
 
+I think this is going to work. It might turn out to be a dud. Stay tuned!
+
 ---
 ### How Does it Work?
 There are a collection of scripts prefixed with `mr-` (for "Mmojo Runner") in your `$HOME/mm-scripts` directory. You use them to create an archive, add files to an archive, then attach the archive to a preamble script to yield a polyglot, i.e. an app that can run on multiple platforms and architectures.
