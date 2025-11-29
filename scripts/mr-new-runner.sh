@@ -16,9 +16,9 @@ if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
     exit 1
 fi
 
-runner_dir=$1
-app_name=$2
-support_directory_name=$3
+runner_dir="$1"
+app_name="$2"
+support_directory_name="$3"
 
 # Clear out a directory that was there. Make a new one.
 echo "Creating $runner_dir directory."
@@ -29,7 +29,7 @@ mkdir -p "$runner_dir"
 
 # Copy the mr-preamble.sh into the directory. Customize with app name.
 echo ""
-echo "Copying mr-preamble.sh to $runner_dir/preamble.sh.
+echo "Copying mr-preamble.sh to $runner_dir/preamble.sh."
 cp "$MMOJO_SERVER_SCRIPTS/mr-preamble.sh" "$runner_dir/preamble.sh"
 
 echo ""
