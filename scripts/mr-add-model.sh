@@ -35,7 +35,7 @@ echo "\$archive_zip: $archive_zip"
 if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -f $model_file ]; then
     SAVE_DIR=$(pwd)
     cd $(dirname $model_file)
-    zip "$archive_zip" "$(basename $model_file)"
+    zip -u -0 "$archive_zip" "$(basename $model_file)"
 fi
 
 echo ""
