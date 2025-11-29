@@ -41,6 +41,14 @@ echo ""
 echo "$runner_dir/preamble.sh:"
 cat "$runner_dir/preamble.sh"
 
+echo ""
+echo "Creating an empty archive."
+mkdir -p "empty_dir"
+zip -jr "$runner_dir/archive.zip" archive.zip empty_dir
+rm -r -f "empty_dir"
+echo "$runner_dir/archive.zip contents:"
+zip -l "$runner_dir/archive.zip"
+
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 ################################################################################
