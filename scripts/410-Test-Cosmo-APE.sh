@@ -13,15 +13,15 @@ variation=$1
 chat_ui=$2
 branding=$3
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ $chat_ui == "" ] || [ $chat_ui != "1" ]; then
+if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
     chat_ui=0
 fi
 
-if [ $branding != "dogpile" ]; then
+if [ "$branding" != "dogpile" ]; then
     branding=""
 fi
 
@@ -29,7 +29,7 @@ THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
 ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
 SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
-if [ $branding == "dogpile" ]; then
+if [ "$branding" == "dogpile" ]; then
     chat_ui=1
     THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGPILE_APE_FILE
@@ -38,7 +38,7 @@ if [ $branding == "dogpile" ]; then
 fi
 
 BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
-if [ $variation == "performant" ]; then
+if [ "$variation" == "performant" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
@@ -70,7 +70,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     # sleep 5s
 
     UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-    if [ $chat_ui != 0 ]; then 
+    if [ "$chat_ui" != 0 ]; then 
         # echo "Using chat UI."
         UI_PARAMS=""
     fi
