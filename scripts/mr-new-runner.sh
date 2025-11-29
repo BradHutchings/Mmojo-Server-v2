@@ -34,8 +34,8 @@ cp "$MMOJO_SERVER_SCRIPTS/mr-preamble.sh" "$runner_dir/preamble.sh"
 
 echo ""
 echo "Customizing $runner_dir/preamble.sh."
-sed -i -e "s/[APP_NAME]/$app_name/g" "$runner_dir/preamble.sh"
-sed -i -e "s/[SUPPORT_DIRECTORY_NAME]/$support_directory_name/g" "$runner_dir/preamble.sh"
+sed -i -e "s/\[APP_NAME\]/$app_name/g" "$runner_dir/preamble.sh"
+sed -i -e "s/\[SUPPORT_DIRECTORY_NAME\]/$support_directory_name/g" "$runner_dir/preamble.sh"
 
 echo ""
 echo "$runner_dir/preamble.sh:"
