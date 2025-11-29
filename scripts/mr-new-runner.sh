@@ -20,6 +20,16 @@ runner_dir="$1"
 app_name="$2"
 support_directory_name="$3"
 
+# Convert $runner_dir to an absolute path.
+case $runner_dir in
+  ("/"*) ;;
+  (*)    runner_dir="/$runner_dir";;
+esac
+
+echo "            \$runner_dir: $runner_dir"
+echo "              \$app_name: $app_name"
+echo "\$support_directory_name: $support_directory_name"
+
 # Clear out a directory that was there. Make a new one.
 echo "Creating $runner_dir directory."
 if [ -d "$runner_dir" ]; then
