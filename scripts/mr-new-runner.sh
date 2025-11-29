@@ -78,7 +78,7 @@ unzip -l "$runner_dir/archive.zip"
 
 echo ""
 echo "Files in $runner_dir:"
-ls -alr "$runner_dir"
+ls -alR "$runner_dir"
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
