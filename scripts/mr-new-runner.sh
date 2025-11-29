@@ -58,6 +58,10 @@ echo "Create a models subdirectory for storing .gguf model files in archive.zip.
 mkdir -p "$runner_dir/models"
 
 echo ""
+echo "Create a $support_directory_name subdirectory for storing support files in archive.zip."
+mkdir -p "$runner_dir/$support_directory_name"
+
+echo ""
 echo "Creating an empty archive."
 rm -r -f "empty_dir"
 mkdir -p "empty_dir"
