@@ -23,7 +23,7 @@ support_directory_name="$3"
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
   ("/"*) ;;
-  (*)    runner_dir="/$runner_dir";;
+  (*)    runner_dir="$(pwd)/$runner_dir";;
 esac
 
 echo "            \$runner_dir: $runner_dir"
