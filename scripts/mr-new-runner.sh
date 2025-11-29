@@ -60,7 +60,9 @@ cd "empty_dir"
 zip -rj archive.zip . -i "*"
 mv archive.zip "$runner_dir"
 cd ..
-# rm -r -f "empty_dir"
+rm -r -f "empty_dir"
+
+echo ""
 echo "Contents of $runner_dir/archive.zip:"
 zip -l "$runner_dir/archive.zip"
 
