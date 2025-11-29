@@ -49,7 +49,9 @@ sed -i -e "s/\[SUPPORT_DIRECTORY_NAME\]/$support_directory_name/g" "$runner_dir/
 
 echo ""
 echo "$runner_dir/preamble.sh (first 10 lines):"
+echo "$STARS"
 head -n 10 "$runner_dir/preamble.sh"
+echo "$STARS"
 
 echo ""
 echo "Creating an empty archive."
