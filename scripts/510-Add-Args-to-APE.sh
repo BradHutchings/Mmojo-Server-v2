@@ -36,18 +36,18 @@ if [ "$branding" == "dogpile" ]; then
     ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
 fi
 
+if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+fi
+
 echo "             Variation: $variation"
 echo "              Branding: $branding"
-echo "              APE File: $APE_FILE"
+echo "              Zip File: $ZIP_FILE"
 echo "              App File: $APP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 
 if [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
-    if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-        THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-    fi
-
     THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     cd "$THIS_PACKAGE_DIR"
