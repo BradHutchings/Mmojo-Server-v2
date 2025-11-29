@@ -51,7 +51,7 @@ echo "     Build Subirectory: $BUILD_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
 echo "  This Build Directory: $THIS_BUILD_DIR"
 
-if [ "$PACKAGE_SUBDIRECTORY" != "" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
+if [ "$THIS_PACKAGE_DIR" != "" ] && [ "$THIS_BUILD_DIR" != "" ]; then
     if [ ! -d "$THIS_PACKAGE_DIR" ]; then
         mkdir -p "$THIS_PACKAGE_DIR"
     fi
