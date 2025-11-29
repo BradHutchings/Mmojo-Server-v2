@@ -50,7 +50,7 @@ zip -rj archive.zip . -i "*"
 mv archive.zip "$runner_dir"
 cd ..
 rm -r -f "empty_dir"
-echo "$runner_dir/archive.zip contents:"
+echo "Contents of $runner_dir/archive.zip:"
 zip -l "$runner_dir/archive.zip"
 
 echo ""
