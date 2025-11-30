@@ -43,7 +43,6 @@ BUILD_SUBDIRECTORY=""
 if [ $processor == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_X86_64"
     ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_COMPATIBLE "
-    ARCH_LEVEL_PARAM=" -march=x86-64-v17  "
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT  "
