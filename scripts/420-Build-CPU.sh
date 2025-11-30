@@ -46,7 +46,7 @@ if [ $processor == "x86_64" ]; then
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT  "
-        ARCH_LEVEL_PARAM=" -march=x86-64-v4  "
+        ARCH_LEVEL_PARAM=" -march=x86-64-v17  "
     elif [ $variation == "native" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_NATIVE  "
