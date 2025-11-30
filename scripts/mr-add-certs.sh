@@ -74,6 +74,12 @@ if [ -d "$runner_dir" ] && [ -f "$cert_file" ] && [ -f "$key_file" ]; then
 fi
 
 echo ""
+echo "$runner_dir/vars.sh (first 10 lines):"
+echo "$STARS"
+head -n 10 "$runner_dir/vars.sh"
+echo "$STARS"
+
+echo ""
 echo "Contents of $runner_dir/archive.zip:"
 unzip -l "$runner_dir/archive.zip"
 
