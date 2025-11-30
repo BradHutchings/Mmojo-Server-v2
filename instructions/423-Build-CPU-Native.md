@@ -1,4 +1,4 @@
-## 421. Build CPU (Native)
+## 423. Build CPU (Native)
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with native CPU optimizations enabled, but no GPU support.
