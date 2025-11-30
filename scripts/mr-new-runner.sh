@@ -20,7 +20,7 @@ runner_dir="$1"
 app_name="$2"
 args_file_name="$3"
 args_root="$4"
-support_directory_name="$4"
+support_directory_name="$5"
 
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
