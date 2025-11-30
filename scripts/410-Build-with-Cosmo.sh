@@ -49,7 +49,11 @@ if [ $processor == "x86_64" ]; then
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT  "
-        GGML_PARAMS=""
+        # Reference that x86-64-v3 supports these:
+        # https://infotechys.com/x86-64-v3-architecture/
+        GGML_PARAMS="-DGGML_AVX=ON -DGGML_AVX2=ON -DGGML_BMI2=ON -DGGML_F16C=ON -DGGML_FMA=ON "
+        GGML_PARAMS+="-DGGML_SCHED_MAX_COPIES=4 -DGGML_SSE42=ON -DGGML_USE_CPU_REPACK=ON "
+        GGML_PARAMS+="-DGGML_USE_LLAMAFILE=ON -DGGML_USE_OPENMP=ON "
     fi
 fi
 if [ $processor == "aarch64" ]; then
@@ -61,6 +65,8 @@ if [ $processor == "aarch64" ]; then
         GGML_PARAMS=""
     fi
 fi
+
+GGML_PARAMS=""
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
