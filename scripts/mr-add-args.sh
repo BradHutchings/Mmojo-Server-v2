@@ -75,28 +75,28 @@ EOF
     if [ -v model ] && [ -f "$runner_dir/models/$model" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --model
-/$support_directory_name/$model
+/support/$model
 EOF
     fi
 
     if [ -v ssl_cert_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-cert-file
-/$support_directory_name/certs/$ssl_cert_file
+/support/certs/$ssl_cert_file
 EOF
     fi
 
     if [ -v ssl_key_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-key-file
-/$support_directory_name/certs/$ssl_key_file
+/support/certs/$ssl_key_file
 EOF
     fi
 
     if [ -v ui_directory ] && [ -d "$support_dir/$ui_directory" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --path
-/$support_directory_name/Mmojo-Complete
+/support/Mmojo-Complete
 --default-ui-endpoint
 chat
 EOF
