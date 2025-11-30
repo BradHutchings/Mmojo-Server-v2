@@ -31,7 +31,7 @@ support_directory_name="support"
 args_file_name="args"
 unset model
 unset ssl_cert_file
-unset ssl_cert_key
+unset ssl_key_file
 unset ui_directory
 vars_file="$runner_dir/vars.sh"
 if [ -f "$vars_file" ]; then
@@ -50,6 +50,10 @@ echo "   \$archive_zip: $archive_zip"
 echo "   \$support_dir: $support_dir"
 echo "      \$app_name: $app_name"
 echo "\$args_file_name: $args_file_name"
+echo "         \$model: $model"
+echo " \$ssl_cert_file: $ssl_cert_file"
+echo "  \$ssl_key_file: $ssl_key_file"
+echo "  \$ui_directory: $ui_directory"
 
 # Make the args file here
 if [ -d "$support_dir" ]; then
