@@ -3,9 +3,6 @@
 ################################################################################
 # This script adds certificates to a Mmojo Runner archive, updates vars.sh.
 #
-# Todo: This should really just take a cert and a key parameter, add those,
-# and sed the vars.sh file to note what they are. Args script will use that.
-#
 # See licensing note at end.
 ################################################################################
 
