@@ -107,7 +107,7 @@ EOF
     echo ""
     echo "Adding $args_file_name to $archive_zip."
     cd $runner_dir
-    zip -u -0 "$archive_zip" "$support_directory_name/$args_file_name"/*
+    zip -u -0 -q "$archive_zip" "$support_directory_name/$args_file_name"/*
 
     echo ""
     echo "Contents of $support_dir/$args_file_name:"
