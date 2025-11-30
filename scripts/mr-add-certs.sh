@@ -58,7 +58,7 @@ if [ -d "$runner_dir" ] && [ -f "$cert_file" ] && [ -f "$key_file" ]; then
     echo ""
     echo "Adding certs to $archive_zip."
     cd $runner_dir
-    zip -u -0 "$archive_zip" "$support_directory_name"/certs/*
+    zip -u -0 -q "$archive_zip" "$support_directory_name"/certs/*
 
     echo ""
     echo "Updating vars.sh."
