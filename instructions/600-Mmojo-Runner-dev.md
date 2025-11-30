@@ -15,7 +15,7 @@ Perhaps the coolest feature should be (hopefully) that you as a developer can bu
 -Brad
 
 ---
-### Constructing an Mmojo Runner &mdash; Model, Certificates, UI, Args File
+### Constructing a Mmojo Runner &mdash; Model, Certificates, UI, Args File
 Snippets I'm using while building this thing out.
 
 Make a new archive.
@@ -53,3 +53,11 @@ Add args file to an existing archive:
   ```
   mr-add-args.sh test-archive
   ```
+
+---
+### Assembling Polyglot
+- cat the preamble and the archive together to yield polyglot.
+
+---
+### Adding builds
+- scripts to add them to the polyglot. This way, we can pass the polyglot from build station to build station to add pieces.
