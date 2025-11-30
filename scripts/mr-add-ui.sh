@@ -17,7 +17,7 @@ fi
 
 runner_dir="$1"
 ui_source_dir="$2"
-ca_file="$2"
+ca_file="$3"
 
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
@@ -90,7 +90,7 @@ echo "$STARS"
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
