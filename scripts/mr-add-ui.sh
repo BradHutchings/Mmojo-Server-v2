@@ -61,9 +61,9 @@ zip -u -0 "$archive_zip" "$support_directory_name/$(basename $ui_dir)"/*
 
 echo ""
 echo "Updating vars.sh."
-sed '/ui_folder/d' "$runner_dir/vars.sh"
+sed '/ui_directory/d' "$runner_dir/vars.sh"
 cat << EOF >> "$runner_dir/vars.sh"
-export ui_folder="$(basename $ui_dir)"
+export ui_directory="$(basename $ui_dir)"
 EOF
 
 echo ""
