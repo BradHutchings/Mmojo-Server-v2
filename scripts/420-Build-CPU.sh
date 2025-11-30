@@ -87,10 +87,6 @@ echo ""
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
     cd $THIS_BUILD_DIR
 
-    # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
-
-    # TO-DO: Where does $ARCH_LEVEL_PARAM go?
-
     # This is dangerous if $BUILD_SUBDIRECTORY is ""! See "if" statement above.
     # -DGGML_NATIVE=ON
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
