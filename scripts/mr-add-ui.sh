@@ -63,6 +63,20 @@ cd $runner_dir
 zip -u -0 "$archive_zip" "$support_directory_name/$(basename $ui_dir)"/*
 
 echo ""
+echo "Updating vars.sh."
+sed '/ui_folder/d' "$runner_dir/vars.sh"
+cat << EOF >> "$runner_dir/vars.sh"
+export ui_folder="$app_name"
+export support_directory_name="$(basename $ui_dir)"
+EOF
+
+echo ""
+echo "$runner_dir/vars.sh (first 10 lines):"
+echo "$STARS"
+head -n 10 "$runner_dir/vars.sh"
+echo "$STARS"
+
+echo ""
 echo "Contents of $runner_dir/archive.zip:"
 unzip -l "$runner_dir/archive.zip"
 
