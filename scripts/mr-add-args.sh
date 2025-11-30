@@ -67,7 +67,6 @@ cat << EOF > "$support_dir/$args_file_name"
 --batch-sleep-ms
 0
 EOF
-    if 
 
     if [ -v model ] && [ -f "$runner_dir/models/$model" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
