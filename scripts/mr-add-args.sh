@@ -79,14 +79,14 @@ cat << EOF >> "$support_dir/$args_file_name"
 EOF
     fi
 
-    if [ -v $ssl_cert_file ]; then
+    if [ -v ssl_cert_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-cert-file
 /$support_directory_name/certs/$ssl_cert_file
 EOF
     fi
 
-    if [ -v $ssl_key_file ]; then
+    if [ -v ssl_key_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-key-file
 /$support_directory_name/certs/$ssl_key_file
