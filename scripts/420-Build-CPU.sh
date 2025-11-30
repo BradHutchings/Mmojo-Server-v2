@@ -38,8 +38,9 @@ if [ "$branding" == "dogpile" ]; then
     THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
 fi
 
-ARCH_LEVEL_PARAM=""
 BUILD_SUBDIRECTORY=""
+ARCH_LEVEL_PARAM=""
+GGML_PARAMS="-DGGML_AVX=OFF -DGGML_AVX2=OFF -DGGML_BMI2=OFF -DGGML_F16C=OFF -DGGML_FMA=OFF -DGGML_SCHED_MAX_COPIES=4 -DGGML_SSE42=OFF -DGGML_USE_CPU_REPACK=OFF -DGGML_USE_LLAMAFILE=OFF -DGGML_USE_OPENMP=OFF"
 if [ $processor == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_X86_64"
     ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_COMPATIBLE "
@@ -49,6 +50,7 @@ if [ $processor == "x86_64" ]; then
     elif [ $variation == "native" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_NATIVE  "
+        GGML_PARAMS=""
     fi
 fi
 if [ $processor == "aarch64" ]; then
@@ -60,6 +62,7 @@ if [ $processor == "aarch64" ]; then
     elif [ $variation == "native" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_AARCH64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_PERFORMANT  "
+        GGML_PARAMS=""
     fi
 fi
 
@@ -83,7 +86,7 @@ if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
     cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
         -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF -DCMAKE_C_FLAGS="$ARCH_LEVEL_PARAM" -DCMAKE_CXX_FLAGS="$ARCH_LEVEL_PARAM" \
-        -DCMAKE_VERBOSE_MAKEFILE=ON -DGGML_AVX=OFF -DGGML_AVX2=OFF
+        -DCMAKE_VERBOSE_MAKEFILE=ON $GGML_PARAMS
     cmake --build $BUILD_SUBDIRECTORY
 
     # Show off what we built
