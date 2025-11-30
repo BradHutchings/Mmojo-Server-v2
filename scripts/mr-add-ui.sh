@@ -67,18 +67,18 @@ export ui_directory="$(basename $ui_dir)"
 EOF
 
 echo ""
-echo "$runner_dir/vars.sh (first 10 lines):"
+echo "$runner_dir/vars.sh:"
 echo "$STARS"
-head -n 10 "$runner_dir/vars.sh"
+cat "$runner_dir/vars.sh"
 echo "$STARS"
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
 unzip -l "$runner_dir/archive.zip"
 
-echo ""
-echo "Files in $runner_dir:"
-ls -alR "$runner_dir"
+# echo ""
+# echo "Files in $runner_dir:"
+# ls -alR "$runner_dir"
 
 cd $HOME
 
