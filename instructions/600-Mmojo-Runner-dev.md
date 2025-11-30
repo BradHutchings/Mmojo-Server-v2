@@ -15,14 +15,14 @@ Perhaps the coolest feature should be (hopefully) that you as a developer can bu
 -Brad
 
 ---
-### Bootstrapping
+### Constructing an Mmojo Runner &mdash; Model, Certificates, UI, Args File
 Snippets I'm using while building this thing out.
 
 Make a new archive.
 - View the script: <a href="../scripts/mr-new-runner.sh" target="_blank">mr-new-runner.sh</a>.
 - Run the script.
   ```
-  mr-new-runner.sh test-archive mmojo-server mmojo-server-support
+  mr-new-runner.sh test-archive mmojo-server mmojo-server-args mmojo-server-support
   ```
 
 Add a .gguf model to an existing archive:
@@ -44,4 +44,11 @@ Add user interface directory to an existing archive:
 - Run the script.
   ```
   mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete
+  ```
+
+Add args file to an existing archive:
+- View the script: <a href="../scripts/mr-add-args.sh" target="_blank">mr-add-args.sh</a>.
+- Run the script.
+  ```
+  mr-add-args.sh test-archive
   ```
