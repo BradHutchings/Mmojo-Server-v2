@@ -1,8 +1,10 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates a directory and files to start work on a new Mmojo Runner
-# archive.
+# This script adds certificates to a Mmojo Runner archive.
+#
+# Todo: This should really just take a cert and a key parameter, add those,
+# and sed the vars.sh file to note what they are. Args script will use that.
 #
 # See licensing note at end.
 ################################################################################
