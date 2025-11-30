@@ -1,8 +1,10 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates a directory and files to start work on a new Mmojo Runner
-# archive.
+# This script add a UI folder to a Mmojo Runner archive.
+#
+# Todo: note the folder name by sed'ing the vars.sh file to delete previous
+# ui folder names and adding this one.
 #
 # See licensing note at end.
 ################################################################################
