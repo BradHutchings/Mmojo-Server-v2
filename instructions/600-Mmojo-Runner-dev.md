@@ -54,6 +54,15 @@ Add args file to an existing archive:
   mr-add-args.sh test-archive
   ```
 
+#### SHORTCUT
+```
+mr-new-runner.sh test-archive mmojo-server mmojo-server-args /support mmojo-server-support
+mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
+mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.crt $CERTIFICATES_DIR/cert.key
+mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete $CERTIFICATES_DIR/selfsignCA.crt
+mr-add-args.sh test-archive
+```
+
 ---
 ### Assembling Polyglot
 - cat the preamble and the archive together to yield polyglot.
