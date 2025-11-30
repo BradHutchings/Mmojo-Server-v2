@@ -11,7 +11,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
-$processor=$(uname -p)
+processor=$(uname -m)
 variation=$1
 branding=$2
 
