@@ -112,7 +112,8 @@ if [ -v CC ]; then
     # Prepare the build folder
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
     cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-      -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=$processor $GGML_PARAMS
+      -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=$processor \
+      -DCMAKE_VERBOSE_MAKEFILE=ON $GGML_PARAMS
 
     # Revert to original CMake system.
     # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
