@@ -13,7 +13,7 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
-$processor = $(uname -p)
+$processor=$(uname -p)
 variation=$1
 branding=$2
 
@@ -25,7 +25,7 @@ if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
     processor="x86_64"
 fi
 
-if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; && [ "$variation" != "native" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ] && [ "$variation" != "native" ]; then
     variation="native"
 fi
 
