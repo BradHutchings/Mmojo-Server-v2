@@ -59,14 +59,16 @@ EOF
 fi
 
 echo ""
-echo "$runner_dir/vars.sh:"
+echo "Contents of $runner_dir/vars.sh:"
 echo "$STARS"
 cat "$runner_dir/vars.sh"
 echo "$STARS"
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
+echo "$STARS"
 unzip -l "$runner_dir/archive.zip"
+echo "$STARS"
 
 # echo ""
 # echo "Files in $runner_dir:"
