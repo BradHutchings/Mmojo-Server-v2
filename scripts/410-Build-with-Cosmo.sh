@@ -39,12 +39,17 @@ cd $THIS_BUILD_DIR
 
 ARCH_LEVEL_PARAM=""
 BUILD_SUBDIRECTORY=""
+GGML_PARAMS="-DGGML_AVX=OFF -DGGML_AVX2=OFF -DGGML_BMI2=OFF -DGGML_F16C=OFF -DGGML_FMA=OFF "
+GGML_PARAMS+="-DGGML_SCHED_MAX_COPIES=4 -DGGML_SSE42=OFF -DGGML_USE_CPU_REPACK=OFF "
+GGML_PARAMS+="-DGGML_USE_LLAMAFILE=OFF -DGGML_USE_OPENMP=OFF"
+
 if [ $processor == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
     ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_COMPATIBLE "
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_X86_64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_X86_64_PERFORMANT  "
+        GGML_PARAMS=""
     fi
 fi
 if [ $processor == "aarch64" ]; then
@@ -53,6 +58,7 @@ if [ $processor == "aarch64" ]; then
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_AARCH64"
         ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_PERFORMANT  "
+        GGML_PARAMS=""
     fi
 fi
 
@@ -106,7 +112,7 @@ if [ -v CC ]; then
     # Prepare the build folder
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
     cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-      -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=$processor
+      -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=$processor $GGML_PARAMS
 
     # Revert to original CMake system.
     # The OpenSSL linking got moved to vendor/cpp-httplib/CMakeLists.txt.
