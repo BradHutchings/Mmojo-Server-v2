@@ -29,6 +29,10 @@ runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 # source $runner_dir/vars.sh
 support_directory_name="support"
 args_file_name="args"
+unset model
+unset ssl_cert_file
+unset ssl_cert_key
+unset ui_directory
 vars_file="$runner_dir/vars.sh"
 if [ -f "$vars_file" ]; then
     echo ""
@@ -48,10 +52,69 @@ echo "      \$app_name: $app_name"
 echo "\$args_file_name: $args_file_name"
 
 # Make the args file here
+if [ -d "$support_dir" ]; then
+cat << EOF > "$support_dir/$args_file_name"
+--host
+127.0.0.1
+--port
+8080
+--ctx-size
+0
+--threads-http
+8
+--batch-size
+64
+--batch-sleep-ms
+0
+EOF
+    if 
+fi
 
+    if [ -v model ] && [ -f "$runner_dir/models/$model" ]; then
+cat << EOF >> "$support_dir/$args_file_name"
+--model
+/$support_directory_name/$model
+EOF
+    fi
 
+    if [ -v $ssl_cert_file ]; then
+cat << EOF >> "$support_dir/$args_file_name"
+--ssl-cert-file
+/$support_directory_name/certs/$ssl_cert_file
+EOF
+    fi
 
+    if [ -v $ssl_key_file ]; then
+cat << EOF >> "$support_dir/$args_file_name"
+--ssl-key-file
+/$support_directory_name/certs/$ssl_key_file
+EOF
+    fi
 
+    if [ -v ui_directory ] && [ -d "$support_dir/$ui_directory" ]; then
+cat << EOF >> "$support_dir/$args_file_name"
+--path
+/$support_directory_name/Mmojo-Complete
+--default-ui-endpoint
+chat
+EOF
+    fi
+
+cat << EOF >> "$support_dir/$args_file_name"
+...
+EOF
+
+    echo ""
+    echo "Adding $args_file_name to $archive_zip."
+    cd $runner_dir
+    zip -u -0 "$archive_zip" "$support_directory_name/$args_file_name"/*
+
+    echo ""
+    echo "Contents of $support_dir/$args_file_name:"
+    echo $STARS
+    cat $support_dir/$args_file_name
+    echo $STARS
+fi
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
