@@ -1,8 +1,12 @@
 #!/bin/bash
 
 ################################################################################
-# This script creates a directory and files to start work on a new Mmojo Runner
-# archive.
+# This script adds a .ggug model to a Mmojo Runner archive.
+#
+# Todo: note the model name by sed'ing the vars.sh file to delete previous
+# model names and adding this one.  Args script will use that.
+#
+# Sticking it in /models looks forward to managing multiple models one day.
 #
 # See licensing note at end.
 ################################################################################
