@@ -87,7 +87,7 @@ rm -r -f "empty_dir"
 mkdir -p "empty_dir"
 cd "empty_dir"
 # Can't create the zip directly in $runner_dir. Zip will error rather than warn of empty zip. Weird.
-zip -rj archive.zip . -i "*"
+zip -rjq archive.zip . -i "*"
 mv archive.zip "$runner_dir"
 cd ..
 rm -r -f "empty_dir"
