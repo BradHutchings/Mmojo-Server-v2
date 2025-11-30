@@ -1,10 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script add a UI folder to a Mmojo Runner archive.
-#
-# Todo: note the folder name by sed'ing the vars.sh file to delete previous
-# ui folder names and adding this one.  Args script will use that.
+# This script add a UI folder to a Mmojo Runner archive, updates vars.sh.
 #
 # See licensing note at end.
 ################################################################################
