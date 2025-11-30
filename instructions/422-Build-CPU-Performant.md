@@ -1,4 +1,4 @@
-## 421. Build CPU (Performant)
+## 422. Build CPU (Performant)
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) to run run on a narrow, modern range of x86_64 and aarch64 machines.
