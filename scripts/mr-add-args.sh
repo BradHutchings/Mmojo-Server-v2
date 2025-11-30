@@ -68,7 +68,6 @@ cat << EOF > "$support_dir/$args_file_name"
 0
 EOF
     if 
-fi
 
     if [ -v model ] && [ -f "$runner_dir/models/$model" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
