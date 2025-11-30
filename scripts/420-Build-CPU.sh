@@ -71,22 +71,25 @@ echo "subdirectory: $BUILD_SUBDIRECTORY"
 echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
 echo ""
 
-cd $THIS_BUILD_DIR
+if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
+    cd $THIS_BUILD_DIR
 
-# TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
+    # TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
 
-# TO-DO: Where does $ARCH_LEVEL_PARAM go?
+    # TO-DO: Where does $ARCH_LEVEL_PARAM go?
 
-rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
-cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON -DCMAKE_C_FLAGS="$ARCH_LEVEL_PARAM" -DCMAKE_CXX_FLAGS="$ARCH_LEVEL_PARAM"
-cmake --build $BUILD_SUBDIRECTORY
+    # This is dangerous if $BUILD_SUBDIRECTORY is ""! See "if" statement above.
+    rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
+    cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+        -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON -DCMAKE_C_FLAGS="$ARCH_LEVEL_PARAM" -DCMAKE_CXX_FLAGS="$ARCH_LEVEL_PARAM"
+    cmake --build $BUILD_SUBDIRECTORY
 
-# Show off what we built
-printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
-printf "\$ ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/\n"
-ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
-printf "\n"
+    # Show off what we built
+    printf "\nBuild of CPU Test of llama.cpp is complete.\n\n"
+    printf "\$ ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/\n"
+    ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+    printf "\n"
+fi
 
 cd $HOME
 
