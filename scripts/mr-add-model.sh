@@ -48,7 +48,7 @@ if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -d "$models_dir" ] && [ -f $
     echo "Adding $(basename $model_file) to $archive_zip."
     SAVE_DIR=$(pwd)
     cd "$runner_dir"
-    zip -u -0 "$archive_zip" "models/$(basename $model_file)"
+    zip -u -0 -q "$archive_zip" "models/$(basename $model_file)"
 
     echo ""
     echo "Updating vars.sh."
