@@ -8,14 +8,27 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 variation=$1
+branding=$2
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
+fi
+
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
+APE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
+if [ "$branding" == "dogpile" ]; then
+    chat_ui=1
+	THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
+    APE_FILE=$PACKAGE_DOGPILE_APE_FILE
 fi
 
 BUILD_X86_64_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
@@ -28,23 +41,27 @@ if [ $variation == "performant" ]; then
 fi
 
 echo "                 Variation: $variation"
+echo "                  Branding: $branding"
 echo " Build x86_64 Subdirectory: $BUILD_X86_64_SUBDIRECTORY"
 echo "Build aarch64 Subdirectory: $BUILD_AARCH64_SUBDIRECTORY"
 echo "    Build APE Subdirectory: $BUILD_APE_SUBDIRECTORY"
+echo "               building in: $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY"
 
-if [ $BUILD_X86_64_SUBDIRECTORY != "" ] && [ $BUILD_AARCH64_SUBDIRECTORY != "" ] && [ $BUILD_APE_SUBDIRECTORY != "" ]; then
-    mkdir -p $BUILD_DIR/$BUILD_APE_SUBDIRECTORY
-    export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
+if [ "$BUILD_X86_64_SUBDIRECTORY" != "" ] && [ "$BUILD_AARCH64_SUBDIRECTORY" != "" ] && [ "$BUILD_APE_SUBDIRECTORY" != "" ]; then
+	mkdir -p $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
+    export PATH="$THIS_BUILD_DIR/cosmocc/bin:$SAVE_PATH"
 
     # Thanks to Davide Eynard for the -M line to support Macs.
 
+	echo ""
+	echo "Creating $APE_FILE."
     apelink \
 	      -l $BUILD_COSMOPOLITAN_DIR/o/x86_64/ape/ape.elf \
 	      -l $BUILD_COSMOPOLITAN_DIR/o/aarch64/ape/ape.elf \
-	      -o $BUILD_DIR/$BUILD_APE_SUBDIRECTORY/mmojo-server-ape \
-	      -M ./cosmocc/bin/ape-m1.c \
-        $BUILD_DIR/$BUILD_X86_64_SUBDIRECTORY/bin/mmojo-server \
-        $BUILD_DIR/$BUILD_AARCH64_SUBDIRECTORY/bin/mmojo-server
+	      -o $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY/$APE_FILE \
+	      -M $THIS_BUILD_DIR/cosmocc/bin/ape-m1.c \
+        $THIS_BUILD_DIR/$BUILD_X86_64_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
+        $THIS_BUILD_DIR/$BUILD_AARCH64_SUBDIRECTORY/bin/$EXECUTABLE_FILE
 
         # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
         # apelink \
@@ -58,12 +75,16 @@ if [ $BUILD_X86_64_SUBDIRECTORY != "" ] && [ $BUILD_AARCH64_SUBDIRECTORY != "" ]
         # Not using mm-ziplalign until we get the mmap() into `/zip/...` thing resolved.
         # cp $BUILD_DIR/$BUILD_APE_SUBDIRECTORY/mm-zipalign-ape $HOME/mm-scripts/mm-zipalign
 
+	echo ""
+	echo "Listing $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY:"
+	ls -al $THIS_BUILD_DIR/$BUILD_APE_SUBDIRECTORY
+
     export PATH=$SAVE_PATH
 fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

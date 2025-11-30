@@ -27,6 +27,9 @@ if [ -d "$MMOJO_SERVER_DIR" ]; then
   ### Links don't work - end up modifying repo files on chmod.
   cp $MMOJO_SERVER_SCRIPTS/mm-*.sh $HOME_SCRIPTS
   chmod a+x $HOME_SCRIPTS/mm-*.sh
+
+  cp $MMOJO_SERVER_SCRIPTS/mr-*.sh $HOME_SCRIPTS
+  chmod a+x $HOME_SCRIPTS/mr-*.sh
 else
   echo "The $MMOJO_SERVER_DIR directory does not exist."
 fi

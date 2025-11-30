@@ -7,31 +7,43 @@
 # See licensing note at end.
 ################################################################################
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 variation=$1
+branding=$2
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-PACKAGE_APE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-if [ $variation == "performant" ]; then
-    PACKAGE_APE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+if [ "$variation" == "performant" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+fi
+
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+if [ "$branding" == "dogpile" ]; then
+    THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
+fi
+
+if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
 fi
 
 echo "             Variation: $variation"
-echo "Package APE Subdirectory: $PACKAGE_APE_SUBDIRECTORY"
+echo "              Branding: $branding"
+echo "              Zip File: $ZIP_FILE"
+echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "This Package Directory: $THIS_PACKAGE_DIR"
 
-if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
-    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_APE_SUBDIRECTORY"
-    if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-        THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
-    fi
-
-    ZIP_FILE="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+if [ -d "$THIS_PACKAGE_DIR" ]; then
+    THIS_ZIP_FILE="$THIS_PACKAGE_DIR/$ZIP_FILE"
 
     WEBSITE="$THIS_PACKAGE_DIR/Mmojo-Complete"
     mkdir -p $WEBSITE
@@ -43,18 +55,18 @@ if [ $PACKAGE_APE_SUBDIRECTORY != "" ]; then
     fi
 
     echo ""
-    echo "Adding Mmojo Complete UI to $ZIP_FILE."
+    echo "Adding Mmojo Complete UI to $THIS_ZIP_FILE."
     cd $THIS_PACKAGE_DIR
-    zip -0 -r -q $ZIP_FILE Mmojo-Complete/*
+    zip -0 -r -q $THIS_ZIP_FILE Mmojo-Complete/*
 
     echo ""
-    echo "Contents of $ZIP_FILE:"
-    unzip -l $ZIP_FILE 
+    echo "Contents of $THIS_ZIP_FILE:"
+    unzip -l $THIS_ZIP_FILE 
 fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

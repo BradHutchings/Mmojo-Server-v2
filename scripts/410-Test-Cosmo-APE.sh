@@ -7,32 +7,49 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 variation=$1
+chat_ui=$2
+branding=$3
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-BUILD_APE_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
-TEST_APE_SUBDIRECTORY="$TEST_COSMO_COMPATIBLE_APE"
-if [ $variation == "performant" ]; then
-    BUILD_APE_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
-    TEST_APE_SUBDIRECTORY="$TEST_COSMO_PERFORMANT_APE"
+if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
+    chat_ui=0
 fi
 
-echo "             Variation: $variation"
-echo "Build APE Subdirectory: $BUILD_APE_SUBDIRECTORY"
-echo " Test APE Subdirectory: $TEST_APE_SUBDIRECTORY"
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
 
-if [ $BUILD_APE_SUBDIRECTORY != "" ] &&[ $TEST_APE_SUBDIRECTORY != "" ]; then
-    THIS_TEST="$TEST_DIR/$TEST_APE_SUBDIRECTORY"
-    mkdir -p $THIS_TEST
-    rm -r -f $THIS_TEST/*
-    cd $THIS_TEST
+THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
+ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
+SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+if [ "$branding" == "dogpile" ]; then
+    chat_ui=1
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGPILE_APE_FILE
+    ARGS_FILE=$PACKAGE_DOGPILE_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_DOGPILE_SUPPORT_DIR
+fi
+
+BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
+if [ "$variation" == "performant" ]; then
+    BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
+fi
+
+echo "   Variation: $variation"
+echo "     Chat UI: $chat_ui"
+echo "    Branding: $branding"
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo "  testing in: $THIS_BUILD_DIR"
+
+if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
+    cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
 
     MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
     if [[ -v CHOSEN_MODEL ]]; then
@@ -53,28 +70,32 @@ if [ $BUILD_APE_SUBDIRECTORY != "" ] &&[ $TEST_APE_SUBDIRECTORY != "" ]; then
     # sleep 5s
 
     UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-    if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
+    if [ "$chat_ui" != 0 ]; then 
         # echo "Using chat UI."
         UI_PARAMS=""
     fi
     # echo "\$UI_PARAMS: $UI_PARAMS"
     # sleep 5s
 
-    rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
-    rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+    rm -f $ARGS_FILE
+    rm -r -f $SUPPORT_DIR
 
     # --mlock is not needed to run this.
-    $BUILD_DIR/$BUILD_APE_SUBDIRECTORY/mmojo-server-ape --model $MODELS_DIR/$MODEL_PARAM \
-        $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
+    EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
+    echo ""
+    echo "Launching $EXECUTABLE_PATH."
+    echo ""
+    $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
+        --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
     
     printf "\nVerify that args file and support folder do not exist.\n"
-    ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
-    ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+    ls -ald $ARGS_FILE
+    ls -ald $SUPPORT_DIR
 fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

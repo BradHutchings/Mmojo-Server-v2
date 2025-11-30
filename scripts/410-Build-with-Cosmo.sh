@@ -8,24 +8,34 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
-
-cd $BUILD_DIR
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 processor=$1
 variation=$2
+branding=$3
 
-if [ $processor == "arm64" ]; then
+if [ "$processor" == "arm64" ]; then
     processor="aarch64"
 fi
 
-if [ $processor != "x86_64" ] && [ $processor != "aarch64" ]; then
+if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
     processor="x86_64"
 fi
 
-if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
+
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+fi
+
+cd $THIS_BUILD_DIR
 
 ARCH_LEVEL_PARAM=""
 BUILD_SUBDIRECTORY=""
@@ -48,15 +58,18 @@ fi
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
+echo "    Branding: $branding"
 echo "  arch param: $ARCH_LEVEL_PARAM"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo ""
 
 unset CC
 unset CXX
 unset AR
 export PATH="$(pwd)/cosmocc/bin:$SAVE_PATH"
 
-if [ $processor == "x86_64" ]; then
+if [ "$processor" == "x86_64" ]; then
     # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
     # No need to specify them here.
     export CC="x86_64-unknown-cosmo-cc \
@@ -68,7 +81,7 @@ if [ $processor == "x86_64" ]; then
     export AR="cosmoar"
 fi
 
-if [ $processor == "aarch64" ]; then
+if [ "$processor" == "aarch64" ]; then
     # Recent discovery -- cosmo-cc and cosmo-c++ can figure out the -I and -L related to cosmo.
     # No need to specify them here.
     export CC="aarch64-unknown-cosmo-cc  \
@@ -91,7 +104,7 @@ if [ -v CC ]; then
     sed -i -e '/error bad version/d' vendor/cpp-httplib/CMakeLists.txt
 
     # Prepare the build folder
-    rm -r -f $BUILD_DIR/$BUILD_SUBDIRECTORY
+    rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
     cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
       -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=$processor
 
@@ -104,8 +117,8 @@ if [ -v CC ]; then
 
     # Show off what we built
     printf "\nBuild of Cosmo $processor of llama.cpp is complete.\n\n"
-    printf "\$ ls -al $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/\n"
-    ls -al $BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+    printf "\$ ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/\n"
+    ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
     printf "\n"
 fi
 
@@ -116,7 +129,7 @@ unset AR
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
