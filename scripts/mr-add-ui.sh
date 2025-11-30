@@ -66,8 +66,7 @@ echo ""
 echo "Updating vars.sh."
 sed '/ui_folder/d' "$runner_dir/vars.sh"
 cat << EOF >> "$runner_dir/vars.sh"
-export ui_folder="$app_name"
-export support_directory_name="$(basename $ui_dir)"
+export ui_folder="$(basename $ui_dir)"
 EOF
 
 echo ""
