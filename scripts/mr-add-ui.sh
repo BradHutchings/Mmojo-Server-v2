@@ -7,7 +7,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
     echo "mr-add-certs.sh [RUNNER_DIR] [CERTS_PATH]"
@@ -17,6 +17,7 @@ fi
 
 runner_dir="$1"
 ui_source_dir="$2"
+ca_file="$2"
 
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
@@ -27,6 +28,7 @@ esac
 # Strip a trailing "/" from $runner_dir and $ui_source_dir if either has one.
 runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 ui_source_dir="$(dirname $ui_source_dir)/$(basename $ui_source_dir)"
+ca_file="$(dirname $ca_file)/$(basename $ca_file)"
 
 # source $runner_dir/vars.sh
 support_directory_name="support"
@@ -44,6 +46,7 @@ ui_dir="$support_dir/$(basename $ui_source_dir)"
 echo ""
 echo "   \$runner_dir: $runner_dir"
 echo "\$ui_source_dir: $ui_source_dir"
+echo "      \$ca_file: $ca_file"
 echo "  \$archive_zip: $archive_zip"
 echo "  \$support_dir: $support_dir"
 echo "       \$ui_dir: $ui_dir"
@@ -53,6 +56,9 @@ echo ""
 echo "Copying Mmojo Complete user interface."
 mkdir -p "$ui_dir"
 cp -r "$ui_source_dir"/* $ui_dir
+if [ -f $ca_file ]; then
+    cp $ca_file $ui_dir
+fi
 
 echo ""
 echo "Adding user interface to $archive_zip."
