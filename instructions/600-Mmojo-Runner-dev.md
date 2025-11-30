@@ -43,7 +43,7 @@ Add user interface directory to an existing archive:
 - View the script: <a href="../scripts/mr-add-ui.sh" target="_blank">mr-add-ui.sh</a>.
 - Run the script.
   ```
-  mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete
+  mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete $CERTIFICATES_DIR/selfsignCA.crt
   ```
 
 Add args file to an existing archive:
