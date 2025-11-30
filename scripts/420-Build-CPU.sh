@@ -70,7 +70,7 @@ if [ $processor == "aarch64" ]; then
         ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_PERFORMANT  "
     elif [ $variation == "native" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_AARCH64"
-        ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_PERFORMANT  "
+        ARCH_LEVEL_PARAM=" -march=$ARCH_AARCH64_NATIVE "
         GGML_PARAMS=""
     fi
 fi
