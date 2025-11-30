@@ -85,10 +85,10 @@ export BUILD_COSMO_PERFORMANT_APE="build-cosmo-performant-ape"
 
 export BUILD_CPU_COMPATIBLE_X86_64="build-cpu-compatible-x86_64"
 export BUILD_CPU_COMPATIBLE_AARCH64="build-cpu-compatible-aarch64"
-export BUILD_CPU_COMPATIBLE_APE="build-cpu-compatible-ape"
+export BUILD_CPU_COMPATIBLE_NATIVE="build-cpu-compatible-native"
 export BUILD_CPU_PERFORMANT_X86_64="build-cpu-performant-x86_64"
 export BUILD_CPU_PERFORMANT_AARCH64="build-cpu-performant-aarch64"
-export BUILD_CPU_PERFORMANT_APE="build-cpu-performant-ape"
+export BUILD_CPU_PERFORMANT_NATIVE="build-cpu-performant-native"
 
 # Get rid of these.
 export BUILD_CPU_NATIVE="build-cpu-native"
