@@ -1,7 +1,7 @@
 ## 422. Build CPU (Performant)
 ### About this Step
 
-In this step, we will build Mmojo Server (`mmojo-server`) to run run on a narrow, modern range of x86_64 and aarch64 machines.
+In this step, we will build Mmojo Server (`mmojo-server`) to run run on a narrow, modern range of x86_64 and aarch64 machines, with no GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
