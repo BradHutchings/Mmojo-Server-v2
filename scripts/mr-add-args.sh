@@ -122,9 +122,9 @@ echo ""
 echo "Contents of $runner_dir/archive.zip:"
 unzip -l "$runner_dir/archive.zip"
 
-echo ""
-echo "Files in $runner_dir:"
-ls -alR "$runner_dir"
+# echo ""
+# echo "Files in $runner_dir:"
+# ls -alR "$runner_dir"
 
 cd $HOME
 
