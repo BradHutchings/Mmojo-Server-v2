@@ -52,7 +52,20 @@ if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -d "$models_dir" ] && [ -f $
     SAVE_DIR=$(pwd)
     cd "$runner_dir"
     zip -u -0 "$archive_zip" "models/$(basename $model_file)"
+
+    echo ""
+    echo "Updating vars.sh."
+    sed '/model/d' "$runner_dir/vars.sh"
+    cat << EOF >> "$runner_dir/vars.sh"
+    export model="$(basename $model_file)"
+    EOF
 fi
+
+echo ""
+echo "$runner_dir/vars.sh (first 10 lines):"
+echo "$STARS"
+head -n 10 "$runner_dir/vars.sh"
+echo "$STARS"
 
 echo ""
 echo "Contents of $runner_dir/archive.zip:"
