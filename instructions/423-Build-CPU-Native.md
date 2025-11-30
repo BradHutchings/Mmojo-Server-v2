@@ -77,7 +77,7 @@ $MMOJO_SERVER_SCRIPTS/421-Test-CPU-Native.sh
 ---
 ### Proceed
 - **Next:** [431. Build CUDA](431-Build-CUDA.md)
-- **Previous:** [412. Build APE (Performant)](412-Build-APE-Performant.md)
+- **Previous:** [422. Build CPU (Performant)](422-Build-CPU-Performant.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
