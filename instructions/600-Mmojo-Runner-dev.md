@@ -22,7 +22,7 @@ Make a new archive.
 - View the script: <a href="../scripts/mr-new-runner.sh" target="_blank">mr-new-runner.sh</a>.
 - Run the script.
   ```
-  mr-new-runner.sh test-archive mmojo-server mmojo-server-args mmojo-server-support
+  mr-new-runner.sh test-archive mmojo-server mmojo-server-args /support mmojo-server-support
   ```
 
 Add a .gguf model to an existing archive:
