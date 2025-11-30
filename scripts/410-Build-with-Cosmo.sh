@@ -67,8 +67,6 @@ if [ $processor == "aarch64" ]; then
     fi
 fi
 
-GGML_PARAMS=""
-
 echo "   Processor: $processor"
 echo "   Variation: $variation"
 echo "    Branding: $branding"
