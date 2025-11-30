@@ -157,7 +157,7 @@ $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [423. Build CPU (Native)](423-Build-CPU-Native.md)
+- **Next:** [421. Build CPU (Compatible)](421-Build-CPU-Compatible.md)
 - **Previous:** [411. Build APE (Compatible)](411-APE-Compatible.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
