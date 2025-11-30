@@ -29,6 +29,7 @@ runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 # source $runner_dir/vars.sh
 support_directory_name="support"
 args_file_name="args"
+args_root="/root"
 unset model
 unset ssl_cert_file
 unset ssl_key_file
@@ -50,6 +51,7 @@ echo "   \$archive_zip: $archive_zip"
 echo "   \$support_dir: $support_dir"
 echo "      \$app_name: $app_name"
 echo "\$args_file_name: $args_file_name"
+echo "     \$args_root: $args_root"
 echo "         \$model: $model"
 echo " \$ssl_cert_file: $ssl_cert_file"
 echo "  \$ssl_key_file: $ssl_key_file"
@@ -75,28 +77,28 @@ EOF
     if [ -v model ] && [ -f "$runner_dir/models/$model" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --model
-/support/$model
+$args_root/$model
 EOF
     fi
 
     if [ -v ssl_cert_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-cert-file
-/support/certs/$ssl_cert_file
+$args_root/certs/$ssl_cert_file
 EOF
     fi
 
     if [ -v ssl_key_file ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --ssl-key-file
-/support/certs/$ssl_key_file
+$args_root/certs/$ssl_key_file
 EOF
     fi
 
     if [ -v ui_directory ] && [ -d "$support_dir/$ui_directory" ]; then
 cat << EOF >> "$support_dir/$args_file_name"
 --path
-/support/Mmojo-Complete
+$args_root/Mmojo-Complete
 --default-ui-endpoint
 chat
 EOF
