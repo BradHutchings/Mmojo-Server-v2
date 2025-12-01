@@ -1,10 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script adds a .ggug model to a Mmojo Runner archive.
-#
-# Todo: note the model name by sed'ing the vars.sh file to delete previous
-# model names and adding this one.  Args script will use that.
+# This script adds a .ggug model to a Mmojo Runner archive, updates vars.sh.
 #
 # Sticking it in /models looks forward to managing multiple models one day.
 #
@@ -51,16 +48,31 @@ if [ -d $runner_dir ] && [ -f "$archive_zip" ] && [ -d "$models_dir" ] && [ -f $
     echo "Adding $(basename $model_file) to $archive_zip."
     SAVE_DIR=$(pwd)
     cd "$runner_dir"
-    zip -u -0 "$archive_zip" "models/$(basename $model_file)"
+    zip -u -0 -q "$archive_zip" "models/$(basename $model_file)"
+
+    echo ""
+    echo "Updating vars.sh."
+    sed -i -e '/model/d' "$runner_dir/vars.sh"
+cat << EOF >> "$runner_dir/vars.sh"
+export model="$(basename $model_file)"
+EOF
 fi
 
 echo ""
-echo "Contents of $runner_dir/archive.zip:"
-unzip -l "$runner_dir/archive.zip"
+echo "Contents of $runner_dir/vars.sh:"
+echo "$STARS"
+cat "$runner_dir/vars.sh"
+echo "$STARS"
 
 echo ""
-echo "Files in $runner_dir:"
-ls -alR "$runner_dir"
+echo "Contents of $runner_dir/archive.zip:"
+echo "$STARS"
+unzip -l "$runner_dir/archive.zip"
+echo "$STARS"
+
+# echo ""
+# echo "Files in $runner_dir:"
+# ls -alR "$runner_dir"
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 

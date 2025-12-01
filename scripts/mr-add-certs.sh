@@ -1,16 +1,13 @@
 #!/bin/bash
 
 ################################################################################
-# This script adds certificates to a Mmojo Runner archive.
-#
-# Todo: This should really just take a cert and a key parameter, add those,
-# and sed the vars.sh file to note what they are. Args script will use that.
+# This script adds certificates to a Mmojo Runner archive, updates vars.sh.
 #
 # See licensing note at end.
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
     echo "mr-add-certs.sh [RUNNER_DIR] [CERTS_PATH]"
@@ -19,7 +16,8 @@ if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
 fi
 
 runner_dir="$1"
-certs_path="$2"
+cert_file="$2"
+key_file="$3"
 
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
@@ -27,9 +25,8 @@ case $runner_dir in
   (*)    runner_dir="$(pwd)/$runner_dir";;
 esac
 
-# Strip a trailing "/" from $runner_dir and $certs_path if either has one.
+# Strip a trailing "/" from $runner_dir if it has one.
 runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
-certs_path="$(dirname $certs_path)/$(basename $certs_path)"
 
 # source $runner_dir/vars.sh
 support_directory_name="support"
@@ -45,46 +42,53 @@ support_dir="$runner_dir/$support_directory_name"
 
 echo ""
 echo " \$runner_dir: $runner_dir"
-echo " \$certs_path: $certs_path"
+echo "  \$cert_file: $cert_file"
+echo "   \$key_file: $key_file"
 echo "\$archive_zip: $archive_zip"
 echo "\$support_dir: $support_dir"
 echo "   \$app_name: $app_name"
 
-if [ -d $certs_path ]; then
+if [ -d "$runner_dir" ] && [ -f "$cert_file" ] && [ -f "$key_file" ]; then
     echo ""
     echo "Copying .crt and .key files."
     mkdir -p "$support_dir/certs"
-    cp "$certs_path"/*.crt "$support_dir/certs"
-    cp "$certs_path"/*.key "$support_dir/certs"
+    cp "$cert_file" "$support_dir/certs"
+    cp "$key_file" "$support_dir/certs"
 
     echo ""
     echo "Adding certs to $archive_zip."
     cd $runner_dir
-    zip -u -0 "$archive_zip" "$support_directory_name"/certs/*
-    
-elif [ -f $certs_path ]; then
-    echo ""
-    echo "Copying file $certs_path."
-    mkdir -p "$support_dir/certs"
-    cp "$certs_path" "$support_dir/certs"
+    zip -u -0 -q "$archive_zip" "$support_directory_name"/certs/*
 
     echo ""
-    echo "Adding certs to $archive_zip."
-    cd $runner_dir
-    zip -u -0 "$archive_zip" "$support_directory_name"/certs/*
+    echo "Updating vars.sh."
+    sed -i -e '/ssl_cert_file/d' "$runner_dir/vars.sh"
+    sed -i -e '/ssl_key_file/d' "$runner_dir/vars.sh"
+cat << EOF >> "$runner_dir/vars.sh"
+export ssl_cert_file="certs/$(basename $cert_file)"
+export ssl_key_file="certs/$(basename $key_file)"
+EOF
 fi
 
 echo ""
-echo "Contents of $runner_dir/archive.zip:"
-unzip -l "$runner_dir/archive.zip"
+echo "Contents of $runner_dir/vars.sh:"
+echo "$STARS"
+cat "$runner_dir/vars.sh"
+echo "$STARS"
 
 echo ""
-echo "Files in $runner_dir:"
-ls -alR "$runner_dir"
+echo "Contents of $runner_dir/archive.zip:"
+echo "$STARS"
+unzip -l "$runner_dir/archive.zip"
+echo "$STARS"
+
+# echo ""
+# echo "Files in $runner_dir:"
+# ls -alR "$runner_dir"
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

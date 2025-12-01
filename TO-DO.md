@@ -2,8 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;11&minus;27         | APE build and packaging scripts need a `$branding` parameter so we can use the scripts for Dogpile. |
-| 2025&minus;11&minus;27         | APE mmojo-server executable build and package names aren't quite right. Build name should have compatible / performant -- mmojo-server-compatible, mmojo-server-performant. Package name should have that + model name, if present. Actual branding for distribution is a downstream decision. I.e. compatible might just be called `mmojo-server-[model]`, performant might be called `mmojo-server-turbo-[model]`. |
+| 2025&minus;11&minus;27         | /mmojo prefix for support folder needs to be /support and the same across banding. See https://github.com/BradHutchings/Mmojo-Server/blob/work-in-progress/scripts/521-Add-Args-to-Package.sh - Fix mmojo-server.cpp. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
@@ -13,11 +12,15 @@
 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. |
 | 2025&minus;11&minus;23         | `mmojo-server-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
 
+
+
 ---
 ### Finished
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;11&minus;29 | 2025&minus;11&minus;27         | APE build and packaging scripts need a `$branding` parameter so we can use the scripts for Dogpile. |
+| 2025&minus;11&minus;29 | 2025&minus;11&minus;27         | APE mmojo-server executable build and package names aren't quite right. Build name should have compatible / performant -- mmojo-server-compatible, mmojo-server-performant. Package name should have that + model name, if present. Actual branding for distribution is a downstream decision. I.e. compatible might just be called `mmojo-server-[model]`, performant might be called `mmojo-server-turbo-[model]`. |
 | 2025&minus;11&minus;27 | 2025&minus;11&minus;26         | Consolidate the APE packaging scripts with variation parameter. 511 and 512. Last one is `510-Copy-APE-Package-to-Mmojo-Share.sh` |
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;21         | Pick performance level for Cosmo library and OpenSSL. Not bothering. Too much work for too little gain. |
 | 2025&minus;11&minus;26 | 2025&minus;11&minus;25         | For the APE builds, can I remove `-DCOSMOCC=1` from the compiles? CMake warns not used. Needed for C++ compiler, not for CMake.|

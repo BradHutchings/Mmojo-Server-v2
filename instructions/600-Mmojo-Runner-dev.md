@@ -15,14 +15,14 @@ Perhaps the coolest feature should be (hopefully) that you as a developer can bu
 -Brad
 
 ---
-### Bootstrapping
+### Constructing a Mmojo Runner &mdash; Model, Certificates, UI, Args File
 Snippets I'm using while building this thing out.
 
 Make a new archive.
 - View the script: <a href="../scripts/mr-new-runner.sh" target="_blank">mr-new-runner.sh</a>.
 - Run the script.
   ```
-  mr-new-runner.sh test-archive mmojo-server mmojo-server-support
+  mr-new-runner.sh test-archive mmojo-server mmojo-server-args /support mmojo-server-support
   ```
 
 Add a .gguf model to an existing archive:
@@ -32,24 +32,41 @@ Add a .gguf model to an existing archive:
   mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
   ```
 
-Add certificates directory &mdash; all `.crt` and `.key` files &mdash; to an existing archive:
-- View the script: <a href="../scripts/mr-add-certs.sh" target="_blank">mr-add-certs.sh</a>.
-- Run the script.
-  ```
-  mr-add-certs.sh test-archive $CERTIFICATES_DIR
-  ```
-
 Add individual certificates to an existing archive:
 - View the script: <a href="../scripts/mr-add-certs.sh" target="_blank">mr-add-certs.sh</a>.
 - Run the script.
   ```
-  mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.crt
-  mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.key
+  mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.crt $CERTIFICATES_DIR/cert.key
   ```
 
 Add user interface directory to an existing archive:
 - View the script: <a href="../scripts/mr-add-ui.sh" target="_blank">mr-add-ui.sh</a>.
 - Run the script.
   ```
-  mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete
+  mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete $CERTIFICATES_DIR/selfsignCA.crt
   ```
+- Note: The Mmojo Complete UI is not customized with the updated date. Can't touch the repo. Might want to copy Mmojo Complete into it's own 300 thing on cloning the repo or mm-update. Maybe an mm-update-mmojo-complete? Builds would use that copy, not the repo.
+
+Add args file to an existing archive:
+- View the script: <a href="../scripts/mr-add-args.sh" target="_blank">mr-add-args.sh</a>.
+- Run the script.
+  ```
+  mr-add-args.sh test-archive
+  ```
+
+#### SHORTCUT
+```
+mr-new-runner.sh test-archive mmojo-server mmojo-server-args /support mmojo-server-support
+mr-add-model.sh test-archive 300-MODELS/Google-Gemma-1B-Instruct-v3-q8_0.gguf
+mr-add-certs.sh test-archive $CERTIFICATES_DIR/cert.crt $CERTIFICATES_DIR/cert.key
+mr-add-ui.sh test-archive $MMOJO_SERVER_DIR/files/Mmojo-Complete $CERTIFICATES_DIR/selfsignCA.crt
+mr-add-args.sh test-archive
+```
+
+---
+### Assembling Polyglot
+- cat the preamble and the archive together to yield polyglot.
+
+---
+### Adding builds
+- scripts to add them to the polyglot. This way, we can pass the polyglot from build station to build station to add pieces.

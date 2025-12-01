@@ -8,7 +8,7 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3 $4 $5.\n*\n$STARS\n\n"
 
 if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
     echo "mr_new_runner.sh [RUNNER_DIR] [APP_NAME] [SUPPORT_DIR_NAME]"
@@ -18,7 +18,9 @@ fi
 
 runner_dir="$1"
 app_name="$2"
-support_directory_name="$3"
+args_file_name="$3"
+args_root="$4"
+support_directory_name="$5"
 
 # Convert $runner_dir to an absolute path.
 case $runner_dir in
@@ -31,6 +33,8 @@ runner_dir="$(dirname $runner_dir)/$(basename $runner_dir)"
 
 echo "            \$runner_dir: $runner_dir"
 echo "              \$app_name: $app_name"
+echo "        \$args_file_name: $args_file_name"
+echo "             \$args_root: $args_root"
 echo "\$support_directory_name: $support_directory_name"
 
 # Clear out a directory that was there. Make a new one.
@@ -45,6 +49,8 @@ echo ""
 echo "Creating vars.sh."
 cat << EOF > "$runner_dir/vars.sh"
 export app_name="$app_name"
+export args_file_name="$args_file_name"
+export args_root="$args_root"
 export support_directory_name="$support_directory_name"
 EOF
 
@@ -84,7 +90,7 @@ rm -r -f "empty_dir"
 mkdir -p "empty_dir"
 cd "empty_dir"
 # Can't create the zip directly in $runner_dir. Zip will error rather than warn of empty zip. Weird.
-zip -rj archive.zip . -i "*"
+zip -rjq archive.zip . -i "*"
 mv archive.zip "$runner_dir"
 cd ..
 rm -r -f "empty_dir"
@@ -97,7 +103,7 @@ echo ""
 echo "Files in $runner_dir:"
 ls -alR "$runner_dir"
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3 $4.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
