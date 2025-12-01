@@ -31,15 +31,12 @@ sed -i -e '/log.h/a \    mmojo-args.h\n\    mmojo-args.c' common/CMakeLists.txt
 sed -i -e 's/add_subdirectory(server)/add_subdirectory(server)\n\tif (COSMOCC)\n\t\tadd_subdirectory(zipalign)\n\tendif()/g' tools/CMakeLists.txt
 sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/server-http.cpp/server-http-mmojo.cpp/g' tools/server/CMakeLists.txt
+
+# This is different from mmojo-server
 sed -i -e 's/set(TARGET llama-server)/set(TARGET dogpile)/g' tools/server/CMakeLists.txt
 
 # What to do about this?!?
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
-
-# In tools/server/server-mmojo.cpp, customize for Dogpile
-sed -i -e 's/PROCESS_NAME\ \"mmojo-server\"/PROCESS_NAME\ \"dogpile\"/g' tools/server/server-mmojo.cpp
-sed -i -e 's/ARGS_FILENAME\ \"mmojo-server-args\"/ARGS_FILENAME\ \"dogpile-args\"/g' tools/server/server-mmojo.cpp
-sed -i -e 's/SUPPORT_DIRECTORY_NAME\ \"mmojo-server-support\"/SUPPORT_DIRECTORY_NAME\ \"dogpile-support\"/g' tools/server/server-mmojo.cpp
 
 # In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
 sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
