@@ -26,13 +26,13 @@ mm-update-local-mmojo-server-repo.sh
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../../scripts/dogpile/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
+- View the script: <a href="../scripts/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $DOGPILE_SCRIPTS/401-Clone-Repos.sh
+  $MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
   ```
 
 ---
