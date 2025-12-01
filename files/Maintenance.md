@@ -21,6 +21,14 @@ These are the instructions for maintaining the files rooted in this directory. T
      - Mmojo Server - [tools/server/server-mmojo.cpp](/files/tools/server/server-mmojo.cpp)
      - Mmojo Server - [tools/server/server-mmojo.cpp](/files/tools/server/server-mmojo.cpp)
 
+   - llama.cpp - [tools/server/server-http.cpp](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/server-http.cpp)
+     - Mmojo Server - [tools/server/server-http-mmojo.cpp](/files/tools/server/server-http-mmojo.cpp)
+     - Mmojo Server - [tools/server/server-http-mmojo.cpp](/files/tools/server/server-http-mmojo.cpp)
+
+   - llama.cpp - [tools/server/server-context.cpp](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/server-context.cpp)
+     - Mmojo Server - [tools/server/server-context-mmojo.cpp](/files/tools/server/server-context-mmojo.cpp)
+     - Mmojo Server - [tools/server/server-context-mmojo.cpp](/files/tools/server/server-context-mmojo.cpp)
+
 3. Compare last modified dates of the originals and patched files. Discard tab triplets where the original is older.
    <img width="304" height="82" alt="image" src="https://github.com/user-attachments/assets/f8814cc1-e244-4ac5-a4d5-e61fa9f339ad" />
 
