@@ -54,8 +54,8 @@ sed -i -e 's/server-http.cpp/server-http-mmojo.cpp/g' tools/server/CMakeLists.tx
 sed -i -e "s/set(TARGET llama-server)/set(TARGET $EXECUTABLE_FILE)/g" tools/server/CMakeLists.txt
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
 
-# In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
-sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
+# In tools/server/server-context-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
+sed -i -e 's/defer(/defer_task(/g' tools/server/server-context-mmojo.cpp
 sed -i -e 's/server_queue::defer(/server_queue::defer_task(/g' tools/server/server-queue.cpp
 sed -i -e 's/void\ defer(/void\ defer_task(/g' tools/server/server-queue.h
 
