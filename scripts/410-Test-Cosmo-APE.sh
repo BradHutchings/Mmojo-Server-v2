@@ -42,11 +42,15 @@ if [ "$variation" == "performant" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
-echo "   Variation: $variation"
-echo "     Chat UI: $chat_ui"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo "  testing in: $THIS_BUILD_DIR"
+echo "        Variation: $variation"
+echo "          Chat UI: $chat_ui"
+echo "         Branding: $branding"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "  executable file: $EXECUTABLE_FILE"
+echo "        args file: $ARGS_FILE"
+echo "support directory: $SUPPORT_DIR"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
