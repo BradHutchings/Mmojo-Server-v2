@@ -10,9 +10,21 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
+branding=$1
 
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
 APP_NAME='Mmojo Chat'
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+    APP_NAME='Dogpile'
+fi
+
+cd $THIS_BUILD_DIR
+
 sed -i -e "s/>llama.cpp<\/h1>/>$APP_NAME<\/h1>/g" tools/server/webui/src/lib/components/app/chat/ChatScreen/ChatScreen.svelte
 sed -i -e "s/>llama.cpp<\/h1>/>$APP_NAME<\/h1>/g" tools/server/webui/src/lib/components/app/chat/ChatSidebar/ChatSidebar.svelte
 cp tools/server/public/loading-mmojo.html ./loading-mmojo.html
@@ -23,10 +35,12 @@ npm run build
 cd $SAVE_WD
 mv loading-mmojo.html tools/server/public/loading-mmojo.html
 
-TODAY=$(date +%Y-%m-%d)
-cp -r Mmojo-Complete Mmojo-Complete-original
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/scripts.js
-sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/bookmark-scripts.js
+if [ "$branding" != "dogpile" ]; then
+    TODAY=$(date +%Y-%m-%d)
+    cp -r Mmojo-Complete Mmojo-Complete-original
+    sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/scripts.js
+    sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/bookmark-scripts.js
+fi
 
 cd $HOME
 
