@@ -77,7 +77,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
-$MMOJO_SERVER_SCRIPTS/401-Fix-llama-cpp.sh dogpile
+$MMOJO_SERVER_SCRIPTS/401-Patch-llama-cpp.sh dogpile
 $DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
 $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh dogpile
 ```
