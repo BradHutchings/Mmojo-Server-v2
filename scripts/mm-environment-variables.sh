@@ -73,8 +73,6 @@ fi
 echo "Setting Build paths."
 export BUILD_DIR="$HOME/400-BUILD-mmojo-server"
 export BUILD_DEBUG="build-debug"
-export BUILD_COSMO_X86_64="build-cosmo-x86_64"
-export BUILD_COSMO_AARCH64="build-cosmo-aarch64"
 export BUILD_COSMO_APE="build-cosmo-ape"
 export BUILD_COSMO_COMPATIBLE_X86_64="build-cosmo-compatible-x86_64"
 export BUILD_COSMO_COMPATIBLE_AARCH64="build-cosmo-compatible-aarch64"
