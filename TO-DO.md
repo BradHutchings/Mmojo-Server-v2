@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package an master APE and graft a model on later. |
 | 2025&minus;11&minus;27         | /mmojo prefix for support folder needs to be /support and the same across banding. See https://github.com/BradHutchings/Mmojo-Server/blob/work-in-progress/scripts/521-Add-Args-to-Package.sh - Fix mmojo-server.cpp. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
