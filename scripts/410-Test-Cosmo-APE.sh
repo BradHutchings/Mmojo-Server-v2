@@ -51,6 +51,7 @@ echo "        args file: $ARGS_FILE"
 echo "support directory: $SUPPORT_DIR"
 echo "     subdirectory: $BUILD_SUBDIRECTORY"
 echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo ""
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
