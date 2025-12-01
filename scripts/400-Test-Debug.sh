@@ -11,7 +11,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 args=$1
 chat_ui=$2
-branding=$2
+branding=$3
 
 if [ "$args" != "command-line" ] && [ "$args" != "args-file" ] && [ "$args" != "support-directory" ]; then
     args="command-line"
