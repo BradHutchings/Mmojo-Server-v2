@@ -69,9 +69,9 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant
-$MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh performant
-$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant
+$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh native
+$MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh native
+$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh native
 ```
 
 ---

@@ -25,14 +25,29 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
-if [ -d "$BUILD_DIR" ]; then
-    rm -r -f $BUILD_DIR
+branding=$1
+
+if [ "$branding" != "dogpile" ]; then
+    branding=""
 fi
 
-git clone https://github.com/ggml-org/llama.cpp $BUILD_DIR
-cd $BUILD_DIR
+THIS_BUILD_DIR=$BUILD_DIR
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+fi
+
+if [ -d "$THIS_BUILD_DIR" ]; then
+    rm -r -f $THIS_BUILD_DIR
+fi
+
+echo "  Branding: $branding"
+echo "cloning in: $THIS_BUILD_DIR/"
+echo ""
+
+git clone https://github.com/ggml-org/llama.cpp $THIS_BUILD_DIR
+cd $THIS_BUILD_DIR
 git clone https://github.com/google/minja.git google-minja
 git clone https://github.com/yhirose/cpp-httplib.git cpp-httplib
 git clone https://github.com/mackron/miniaudio.git miniaudio
@@ -51,7 +66,7 @@ git checkout 583cb83416467e8abf9b37349dcf1f6a0083745a
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

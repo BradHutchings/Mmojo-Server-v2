@@ -77,7 +77,7 @@ $MMOJO_SERVER_SCRIPTS/441-Test-Vulkan.sh
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [441. Build CUDA](441-Build-CUDA.md)
+- **Previous:** [431. Build CUDA](431-Build-CUDA.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---

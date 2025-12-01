@@ -100,13 +100,15 @@ export BUILD_VULKAN="build-vulkan"
 export BUILD_METAL="build-metal"
 
 echo "Setting Test paths."
+# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
 export TEST_DIR="$HOME/400-TEST-mmojo-server"
+
+# DELETE THESE SOON
 export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
 export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
 export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
 
-# get rid of these. Testing should be in-place in the build folders.
-export TEST_CPU="test-cpu"
+# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
 export TEST_CUDA="test-cuda"
 export TEST_VULKAN="test-vulkan"
 
@@ -156,7 +158,7 @@ echo "Setting architectuire value for compilers."
 export ARCH_X86_64_COMPATIBLE="x86-64"
 export ARCH_X86_64_PERFORMANT="x86-64-v3"
 export ARCH_X86_64_NATIVE="native"
-# Raspberry Pi 5, Apple M1
+# Raspberry Pi 5, Apple M1 (armv8.4-a), NVIDIA Jetson Orin Nano (armv8.2-a -- same features as armv8.1-a)
 export ARCH_AARCH64_COMPATIBLE="armv8-a"
 export ARCH_AARCH64_PERFORMANT="armv8.4-a"
 export ARCH_AARCH64_NATIVE="native"

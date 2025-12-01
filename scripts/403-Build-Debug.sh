@@ -11,26 +11,48 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
-cd $BUILD_DIR
+branding=$1
 
-# TO-DO: Some way to add -DCMAKE_VERBOSE_MAKEFILE=ON  on the fly to all these.
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
 
-rm -r -f $BUILD_DIR/$BUILD_DEBUG
-cmake -B $BUILD_DEBUG -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
-    -DCMAKE_BUILD_TYPE=Debug # -DCMAKE_VERBOSE_MAKEFILE=ON 
-cmake --build $BUILD_DEBUG
+THIS_BUILD_DIR=$BUILD_DIR
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+fi
 
-# Show off what we built
-printf "\nBuild of debug version of llama.cpp is complete.\n\n"
-printf "\$ ls -al $BUILD_DIR/$BUILD_DEBUG/bin/\n"
-ls -al $BUILD_DIR/$BUILD_DEBUG/bin
-printf "\n"
+BUILD_SUBDIRECTORY=$BUILD_DEBUG
+VERBOSE="OFF"
+
+echo "    Branding: $branding"
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo ""
+
+if [ "$BUILD_SUBDIRECTORY" != "" ]; then
+    cd $THIS_BUILD_DIR
+
+    rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
+    cmake -B $BUILD_SUBDIRECTORY -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF -DLLAMA_OPENSSL=ON \
+        -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=$VERBOSE 
+    cmake --build $BUILD_SUBDIRECTORY
+
+    echo ""
+    echo "Build of debug version of llama.cpp is complete."
+    
+    # Show off what we built
+    echo ""
+    echo "\$ ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/"
+    ls -al $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+    echo ""
+fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

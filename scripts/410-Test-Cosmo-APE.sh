@@ -18,7 +18,7 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
 fi
 
 if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
-    chat_ui=0
+    chat_ui="0"
 fi
 
 if [ "$branding" != "dogpile" ]; then
@@ -42,11 +42,16 @@ if [ "$variation" == "performant" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
-echo "   Variation: $variation"
-echo "     Chat UI: $chat_ui"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo "  testing in: $THIS_BUILD_DIR"
+echo "        Variation: $variation"
+echo "          Chat UI: $chat_ui"
+echo "         Branding: $branding"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "  executable file: $EXECUTABLE_FILE"
+echo "        args file: $ARGS_FILE"
+echo "support directory: $SUPPORT_DIR"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo ""
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY

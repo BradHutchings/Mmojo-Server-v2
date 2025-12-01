@@ -52,7 +52,9 @@ Build Mmojo Server executables.
 - [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
 - [411. Build APE (Compatible)](411-Build-APE-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
 - [412. Build APE (Performant)](412-Build-APE-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
-- [421. Build CPU (Native)](421-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [421. Build CPU (Compatible)](421-Build-CPU-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
+- [422. Build CPU (Performant)](422-Build-CPU-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
+- [423. Build CPU (Native)](423-Build-CPU-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 - [431. Build CUDA](431-Build-CUDA.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with CUDA GPU support.
 - [441. Build Vulkan](441-Build-Vulkan.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform with Vulkan GPU support.
 
