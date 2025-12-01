@@ -158,7 +158,7 @@ echo "Setting architectuire value for compilers."
 export ARCH_X86_64_COMPATIBLE="x86-64"
 export ARCH_X86_64_PERFORMANT="x86-64-v3"
 export ARCH_X86_64_NATIVE="native"
-# Raspberry Pi 5, Apple M1
+# Raspberry Pi 5, Apple M1 (armv8.4-a), NVIDIA Jetson Orin Nano (armv8.2-a -- same features as armv8.1-a)
 export ARCH_AARCH64_COMPATIBLE="armv8-a"
 export ARCH_AARCH64_PERFORMANT="armv8.4-a"
 export ARCH_AARCH64_NATIVE="native"
