@@ -57,9 +57,11 @@ cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
 cp -r $BUILD_OPENSSSL_DIR/openssl .
 
 # Roll the llama.cpp repo back to last known working.
-# Up through: https://github.com/ggml-org/llama.cpp/commit/583cb83416467e8abf9b37349dcf1f6a0083745a
-# 583cb83416467e8abf9b37349dcf1f6a0083745a 
-git checkout 583cb83416467e8abf9b37349dcf1f6a0083745a 
+# Up through: https://github.com/ggml-org/llama.cpp/commit/9810cb82476e605bef45f9c51009c9989873ff89
+# 9810cb82476e605bef45f9c51009c9989873ff89 
+git checkout 9810cb82476e605bef45f9c51009c9989873ff89 
+
+# Previous: 583cb83416467e8abf9b37349dcf1f6a0083745a
 
 # To see where you're checked out:
 # git log -1
