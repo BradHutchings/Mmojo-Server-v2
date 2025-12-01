@@ -122,11 +122,12 @@ EOF
 
     elif [ "$args" == "support-directory" ]; then
         mkdir -p $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
 
         # Write out $ARGS_FILE
 cat << EOF > $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR/$ARGS_FILE
 --model
-$MODELS_DIR/$MODEL_PARAM
+/support/$MODEL_PARAM
 --host
 0.0.0.0
 --port
