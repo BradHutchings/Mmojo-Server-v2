@@ -13,7 +13,7 @@ args=$1
 chat_ui=$2
 branding=$2
 
-if [ "$args" != "command-line" ] && [ "$args" != "file" ] && [ "$args" != "directory" ]; then
+if [ "$args" != "command-line" ] && [ "$args" != "args-file" ] && [ "$args" != "support-directory" ]; then
     args="command-line"
 fi
 
@@ -91,7 +91,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
         ls -ald $ARGS_FILE
         ls -ald $SUPPORT_DIR
         
-    elif [ "$args" == "file" ]; then
+    elif [ "$args" == "args-file" ]; then
         # Write out $ARGS_FILE
 cat << EOF > $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$ARGS_FILE
 --model
@@ -120,7 +120,7 @@ EOF
         ls -ald $ARGS_FILE
         ls -ald $SUPPORT_DIR
 
-    elif [ "$args" == "directory" ]; then
+    elif [ "$args" == "support-directory" ]; then
         mkdir -p $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
 
         # Write out $ARGS_FILE
