@@ -52,7 +52,7 @@ Customize the web UI, rebuild all the web files.
 - View the script: <a href="../../scripts/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh
+  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh dogpile
   ```
 
 <!--
@@ -79,7 +79,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
 $MMOJO_SERVER_SCRIPTS/401-Fix-llama-cpp.sh dogpile
 $DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
-$MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh
+$MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh dogpile
 ```
 
 ---
