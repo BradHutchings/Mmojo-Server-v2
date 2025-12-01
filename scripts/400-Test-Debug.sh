@@ -69,7 +69,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
     # sleep 5s
 
     UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-    if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
+    if [ ! -z $chat_ui ] && [ $chat_ui != 0 ]; then 
         # echo "Using chat UI."
         UI_PARAMS=""
     fi
