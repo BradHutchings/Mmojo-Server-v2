@@ -18,7 +18,7 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
 fi
 
 if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
-    chat_ui=0
+    chat_ui="0"
 fi
 
 if [ "$branding" != "dogpile" ]; then
