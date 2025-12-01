@@ -8,12 +8,30 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+
+branding=$1
+
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
+fi
+
+echo "         Branding: $branding"
+echo "  executable file: $EXECUTABLE_FILE"
+echo "       cloning in: $THIS_BUILD_DIR"
+echo ""
 
 # This copies the $MMOJO_SERVER_FILES tree into the $BUILD_DIR tree.
-cp -r $MMOJO_SERVER_FILES/* $BUILD_DIR/
+cp -r $MMOJO_SERVER_FILES/* $THIS_BUILD_DIR/
 
-cd $BUILD_DIR
+cd $THIS_BUILD_DIR
 
 # Cosmo compatibility
 sed -i -e 's/#if defined(_WIN32) || defined(__COSMOPOLITAN__)/#if defined(_WIN32)/g' miniaudio/miniaudio.h
@@ -32,7 +50,7 @@ sed -i -e '/log.h/a \    mmojo-args.h\n\    mmojo-args.c' common/CMakeLists.txt
 # sed -i -e 's/add_subdirectory(server)/add_subdirectory(server)\n\tif (COSMOCC)\n\t\tadd_subdirectory(zipalign)\n\tendif()/g' tools/CMakeLists.txt
 sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/server-http.cpp/server-http-mmojo.cpp/g' tools/server/CMakeLists.txt
-sed -i -e 's/set(TARGET llama-server)/set(TARGET mmojo-server)/g' tools/server/CMakeLists.txt
+sed -i -e "s/set(TARGET llama-server)/set(TARGET $EXECUTABLE_FILE)/g" tools/server/CMakeLists.txt
 sed -i -e 's/loading.html/loading-mmojo.html/g' tools/server/CMakeLists.txt
 
 # In tools/server/server-mmojo.cpp, replace "defer(" with "defer_task(" to make Cosmo STL happy.
