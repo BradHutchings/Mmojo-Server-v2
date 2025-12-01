@@ -58,9 +58,6 @@ sed -i -e 's/defer(/defer_task(/g' tools/server/server-mmojo.cpp
 sed -i -e 's/server_queue::defer(/server_queue::defer_task(/g' tools/server/server-queue.cpp
 sed -i -e 's/void\ defer(/void\ defer_task(/g' tools/server/server-queue.h
 
-server_queue::defer
-void defer(
-
 # Future: Just patch common/argc.cpp and eliminate common/argc-mmojo.cpp
 # Future: Move loading-mmojo.html to loading.html instead of mangling server-mmojo.cpp. Will this work with .hpp, etc?
 
