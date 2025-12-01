@@ -21,32 +21,32 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Build Debug Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/400-Build-Debug.sh" target="_blank">400-Build-Debug.sh</a>.
+- View the script: <a href="../scripts/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/400-Build-Debug.sh
+  $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
   ```
 
 ---
 ### Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/400-Test-Debug.sh" target="_blank">400-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/400-Test-Debug.sh command-line
+  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line
   ```
 
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/400-Test-Debug.sh" target="_blank">400-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/400-Test-Debug.sh args-file
+  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh args-file
   ```
 </details>
 
@@ -54,10 +54,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/400-Test-Debug.sh" target="_blank">400-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/400-Test-Debug.sh support-directory
+  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh support-directory
   ```
 </details>
 
@@ -69,7 +69,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug-Command-Line.sh
+$MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line
 ```
 
 ---
