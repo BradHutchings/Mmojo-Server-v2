@@ -13,7 +13,8 @@ CopyModel() {
   MODEL_FILE=$1
   if [ ! -f $MODEL_FILE ]; then 
     echo "Copying $MODEL_FILE."
-    cp -v /mnt/mmojo/models/$MODEL_FILE .
+    # cp -v /mnt/mmojo/models/$MODEL_FILE .
+    rsync -ah --progress /mnt/mmojo/models/$MODEL_FILE .
     chmod a-x $MODEL_FILE
   fi
 }
