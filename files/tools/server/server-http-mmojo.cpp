@@ -37,8 +37,6 @@ bool starts_with (std::string const &fullString, std::string const &beginning);
 bool ends_with (std::string const &fullString, std::string const &ending);
 // Mmojo Server END
 
-
-
 //
 // HTTP implementation using cpp-httplib
 //
@@ -163,15 +161,22 @@ bool server_http_context::init(const common_params & params) {
             return true;
         }
 
-        // Check for API key in the header
-        auto auth_header = req.get_header_value("Authorization");
+        // Check for API key in the Authorization header
+        std::string req_api_key = req.get_header_value("Authorization");
+        if (req_api_key.empty()) {
+            // retry with anthropic header
+            req_api_key = req.get_header_value("X-Api-Key");
+        }
 
+        // remove the "Bearer " prefix if needed
         std::string prefix = "Bearer ";
-        if (auth_header.substr(0, prefix.size()) == prefix) {
-            std::string received_api_key = auth_header.substr(prefix.size());
-            if (std::find(api_keys.begin(), api_keys.end(), received_api_key) != api_keys.end()) {
-                return true; // API key is valid
-            }
+        if (req_api_key.substr(0, prefix.size()) == prefix) {
+            req_api_key = req_api_key.substr(prefix.size());
+        }
+
+        // validate the API key
+        if (std::find(api_keys.begin(), api_keys.end(), req_api_key) != api_keys.end()) {
+            return true; // API key is valid
         }
 
         // API key is invalid or not provided
@@ -286,7 +291,7 @@ bool server_http_context::init(const common_params & params) {
             });
         }
     }
-
+  
     // Mmojo Server START
     // This can be automated by searching for "register API routes" and inserting this block before. -Brad 2025-11-05
     // LOG_INF("%s%s\n", "default_ui_endpoint: ", params.default_ui_endpoint.c_str());
@@ -321,6 +326,7 @@ bool server_http_context::init(const common_params & params) {
         });        
     }
     // Mmojo Server END    
+  
     return true;
 }
 
