@@ -42,6 +42,10 @@ if [ -d "$THIS_BUILD_DIR" ]; then
     rm -r -f $THIS_BUILD_DIR
 fi
 
+echo "  Branding: $branding"
+echo "cloning in: $THIS_BUILD_DIR/"
+echo ""
+
 git clone https://github.com/ggml-org/llama.cpp $THIS_BUILD_DIR
 cd $THIS_BUILD_DIR
 git clone https://github.com/google/minja.git google-minja
