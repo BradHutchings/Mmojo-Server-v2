@@ -41,7 +41,7 @@ This looks like lots of fun.
 - View the script: <a href="../../scripts/dogpile/401-Fix-llama-cpp.sh" target="_blank">401-Fix-llama-cpp.sh</a>.
 - Run the script.
   ```
-  $DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/401-Fix-llama-cpp.sh dogpile
   $DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
   ```
 
@@ -76,7 +76,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
-$DOGPILE_SCRIPTS/401-Fix-llama-cpp.sh dogpile
+$MMOJO_SERVER_SCRIPTS/401-Fix-llama-cpp.sh dogpile
 $DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
 $DOGPILE_SCRIPTS/401-Customize-webui.sh
 ```
