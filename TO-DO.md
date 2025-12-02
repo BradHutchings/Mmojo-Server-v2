@@ -5,7 +5,7 @@
 | 2025&minus;12&minus;01         | Build and test options in an `mm-build-test-options.sh` script, called by `mm-environment-variables.sh`. I could put `--parallel` for CMake, prefered LLM to use in testing, use chat UI, etc. |
 | 2025&minus;12&minus;01         | 411-Build-APE-Compatible.md --> 411-Build-APEs-Compatible.md, etc. Also, Dogpile versions. Idea is we build all the llama.cpp targets as APEs. |
 | 2025&minus;12&minus;01         | 421-Build-CPU-Compatible.md --> 421-Build-Apps-Compatible.md, etc. Idea is we build all the llama.cpp targets as build platform apps. Platform-Apps?? |
-| 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Apps.md intro pages. |
+| 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Apps.md intro pages. (These are stubbed now.) |
 | 2025&minus;12&minus;01         | mm-choose-gpus.sh needs to let user choose what they previously chose easily. |
 | 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package a master APE and graft a model on later. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
