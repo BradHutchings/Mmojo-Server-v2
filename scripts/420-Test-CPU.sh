@@ -9,11 +9,12 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 processor=$(uname -m)
 variation=$1
-branding=$2
+gpus=$2
+branding=$3
 
 if [ "$processor" == "arm64" ]; then
     processor="aarch64"
@@ -53,6 +54,8 @@ if [ $processor == "aarch64" ]; then
         BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_AARCH64"
     fi
 fi
+
+BUILD_SUBDIRECTORY+="$gpus"
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
