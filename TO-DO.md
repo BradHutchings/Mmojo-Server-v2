@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;01         | Build and test options in an `mm-build-test-options.sh` script, called by `mm-environment-variables.sh`. I could put `--parallel` for CMake, prefered LLM to use in testing, use chat UI, etc. |
 | 2025&minus;12&minus;01         | 411-Build-APE-Compatible.md --> 411-Build-APEs-Compatible.md, etc. Also, Dogpile versions. Idea is we build all the llama.cpp targets as APEs. |
 | 2025&minus;12&minus;01         | 421-Build-CPU-Compatible.md --> 421-Build-Apps-Compatible.md, etc. Idea is we build all the llama.cpp targets as build platform apps. Platform-Apps?? |
 | 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Apps.md intro pages. |
