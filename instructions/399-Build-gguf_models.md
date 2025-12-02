@@ -1,4 +1,4 @@
-## 500. Build gguf Models
+## 400. Build gguf Models
 ### About this Section
 Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server. This is experimental right now, and will be turned into a proper section soon.
 
@@ -9,7 +9,7 @@ TO-DO:
 
 ---
 ### Before You Get Started
-Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned. That's in this step: [401. Prepare to Build](401-Prepare-to-Build.md). When this section is organized better, we'll actually clone it here first.
+Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned. That's in this step: [501. Prepare to Build](501-Prepare-to-Build.md). When this section is organized better, we'll actually clone it here first.
 
 ---
 ### Mistal AI's Ministral 3 3B Reasoning 2512
