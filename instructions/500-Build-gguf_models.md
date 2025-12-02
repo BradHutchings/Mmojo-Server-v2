@@ -1,4 +1,4 @@
-## 400. Make gguf Models
+## 500. Build gguf Models
 ### About this Section
 Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server. This is experimental right now, and will be turned into a proper section soon.
 
