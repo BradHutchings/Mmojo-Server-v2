@@ -16,16 +16,26 @@ if [ ! -d "$PACKAGE_DIR" ]; then
     mkdir -p "$PACKAGE_DIR"
 fi
 
-if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ] && [ -v CHOSEN_BUILD_INFO ]; then
+echo "CHOSEN_BUILD : $CHOSEN_BUILD"
+echo "CHOSEN_BUILD_PATH : $CHOSEN_BUILD_PATH"
+echo "CHOSEN_BUILD_INFO : $CHOSEN_BUILD_INFO"
+
+if [[ -v CHOSEN_BUILD ]] && [[ -v CHOSEN_BUILD_PATH ]] && [[ -v CHOSEN_BUILD_INFO ]]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
     SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
 
+    echo "Creating $THIS_PACKAGE_DIR."
     if [ -d $THIS_PACKAGE_DIR ]; then
         rm -r -f $THIS_PACKAGE_DIR
     fi
     mkdir -p "$THIS_PACKAGE_DIR"
-        
+
+    echo ""
+    echo "Copying build."
     cp $CHOSEN_BUILD_PATH $THIS_PACKAGE_DIR
+
+    echo ""
+    echo "Creating $SUPPORT_DIR."
     mkdir -p "$SUPPORT_DIR"
 
     TOUCH_FILE="Build-$CHOSEN_BUILD_INFO"

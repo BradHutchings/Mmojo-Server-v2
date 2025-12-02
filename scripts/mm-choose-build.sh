@@ -14,17 +14,29 @@ unset CHOSEN_BUILD_PATH
 unset CHOSEN_BUILD_INFO
 
 build_paths=()
-build_names=()
 build_paths+=("$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server")
-build_paths+=("$BUILD_DIR/$BUILD_COSMO_APE/mmojo-server-ape")
-build_paths+=("$BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_COSMO_COMPATIBLE_APE/mmojo-server-ape")
+build_paths+=("$BUILD_DIR/$BUILD_COSMO_PERFORMANT_APE/mmojo-server-ape")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_COMPATIBLE_X86_64/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_PERFORMANT_X86_64/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_NATIVE_X86_64/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_COMPATIBLE_AARCH64/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_PERFORMANT_AARCH64/bin/mmojo-server")
+build_paths+=("$BUILD_DIR/$BUILD_CPU_NATIVE_AARCH64/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_CUDA/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_VULKAN/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_METAL/bin/mmojo-server")
 
+build_names=()
 build_names+=("DEBUG")
-build_names+=("APE")
-build_names+=("CPU-Native")
+build_names+=("APE-Compatible")
+build_names+=("APE-Performant")
+build_names+=("CPU-Compatible-x86_64")
+build_names+=("CPU-Performant-x86_64")
+build_names+=("CPU-Native-x86_64")
+build_names+=("CPU-Compatible-aarch64")
+build_names+=("CPU-Performant-aarch64")
+build_names+=("CPU-Native-aarch64")
 build_names+=("CUDA")
 build_names+=("VULKAN")
 build_names+=("METAL")
@@ -41,8 +53,21 @@ for build_path in "${build_paths[@]}"; do
   i=$((i+1))
 done
 
+# List the builds and their paths.
+if true; then
+  echo ""
+  echo "Build names and paths."
+  i=0
+  for build_path in "${build_paths[@]}"; do
+    echo "$i. ${build_names[$i]} -- $build_path"
+    i=$((i+1))
+  done
+fi
+
 # List the available builds and their paths.
-if false; then
+if true; then
+  echo ""
+  echo "Available build names and paths."
   i=0
   for build_path in "${available_build_paths[@]}"; do
     echo "$i. ${available_build_names[$i]} -- $build_path"
@@ -50,51 +75,37 @@ if false; then
   done
 fi
 
+echo ""
 echo "These builds are available to package:"
 
 PS3="Please choose a build:"
 select choice in "${available_build_names[@]}"; do
-  export CHOSEN_BUILD=$choice
-  echo "\$choice: $choice."
-  case $choice in
-    "DEBUG")
-      export CHOSEN_BUILD_PATH=${build_paths[0]}
-      break
-      ;;
-    "APE")
-      export CHOSEN_BUILD_PATH=${build_paths[1]}
-      break
-      ;;
-    "CPU-Native")
-      export CHOSEN_BUILD_PATH=${build_paths[2]}
-      break
-      ;;
-    "CUDA")
-      export CHOSEN_BUILD_PATH=${build_paths[3]}
-      break
-      ;;
-    "VULKAN")
-      export CHOSEN_BUILD_PATH=${build_paths[4]}
-      break
-      ;;
-    "METAL")
-      export CHOSEN_BUILD_PATH=${build_paths[5]}
-      break
-      ;;
-    *)
-      unset CHOSEN_BUILD
-      unset CHOSEN_BUILD_PATH
-      unset CHOSEN_BUILD_INFO
-      break
-      ;;
-  esac
+    export CHOSEN_BUILD=$choice
+    echo "\$choice: $choice."
+
+    if [[ -n "$choice" ]]; then
+        # Find the index of the selected item
+        for i in "${!build_names[@]}"; do
+            if [[ "${build_names[$i]}" == "$choice" ]]; then
+                echo "You selected: $choice (index: $i)"
+                export CHOSEN_BUILD_PATH=${build_paths[$i]}
+                break # Exit the inner loop once found
+            fi
+        done
+        break # Exit the select loop
+    else
+        unset CHOSEN_BUILD
+        unset CHOSEN_BUILD_PATH
+        unset CHOSEN_BUILD_INFO
+        break
+    fi
 done
 
 if [ -v CHOSEN_BUILD ]; then
     cbi=$CHOSEN_BUILD
-    if [ "$cbi" != "APE" ]; then
-        cbi+="-$(uname -m)-$(uname -s)"
-    fi
+    # if [ "$cbi" != "APE" ]; then
+    #    cbi+="-$(uname -m)-$(uname -s)"
+    # fi
     export CHOSEN_BUILD_INFO=$cbi
 fi
 
