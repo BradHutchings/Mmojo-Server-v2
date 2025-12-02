@@ -9,7 +9,7 @@ TO-DO:
 
 ---
 ### Before You Get Started
-Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned. That's in this step: [401. Prepare to Build](401-Prepare-to-Build.md). 
+Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned. That's in this step: [401. Prepare to Build](401-Prepare-to-Build.md). When this section is organized better, we'll actually clone it here first.
 
 ---
 ### Mistal AI's Ministral 3 3B Reasoning 2512
