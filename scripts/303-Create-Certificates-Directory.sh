@@ -20,7 +20,7 @@ cd $CERTIFICATES_DIR
 echo ""
 echo "Creating sample certs with mkcert."
 fqdn="mmojo.local"
-mkcert $fqdn > /dev/null
+mkcert $fqdn > /dev/null 2>&1
 mv "$fqdn.pem" cert.crt
 mv "$fqdn-key.pem" cert.key
 cp "$(mkcert -CAROOT)/rootCA.pem" selfsignCA.crt
