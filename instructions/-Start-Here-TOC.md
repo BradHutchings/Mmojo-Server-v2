@@ -59,7 +59,7 @@ Build Mmojo Server executables.
 - [423. Build Executables (Native)](423-Build-Executables-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 
 ---
-### [500. Build gguyf Models](500-Build-gguf_models.md)
+### [500. Build gguf Models](500-Build-gguf_models.md)
 Use llama.cpp to build .gguf` models from Hugging Face repositories.
 
 ---
