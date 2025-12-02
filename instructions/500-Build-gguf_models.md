@@ -3,7 +3,28 @@
 Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server. This is experimental right now, and will be turned into a proper section soon.
 
 ---
+### Google's Gemma E3B Instruct v3n
+This isn't supported by llama.cpp quite yet.
+```
+MODEL='"Google-Gemma-E3B-Instruct-v3n"
+MODEL_TYPE="q8_0"
+MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
+GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
+
+mkdir -p $BUILD_MODELS_DIR
+if [ ! -d $GGUF_DIR ]; then
+    git clone $MODEL_GIT $GGUF_DIR
+fi
+python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
+    --outfile $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf \
+    --outtype $MODEL_TYPE
+
+cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
+```
+
+---
 ### Mistal AI's Ministral 3 3B Instruct 2512
+This isn't supported by llama.cpp quite yet.
 ```
 MODEL='Mistral-AI-Ministral-3B-Instruct-v3-2512'
 MODEL_TYPE='q8_0'
