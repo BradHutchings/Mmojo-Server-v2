@@ -157,7 +157,7 @@ $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [420. Build Apps](420-Build-Apps.md)
+- **Next:** [420. Build Executables](420-Build-Executables.md)
 - **Previous:** [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
