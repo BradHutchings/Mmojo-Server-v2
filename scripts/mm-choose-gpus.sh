@@ -26,18 +26,18 @@ if command -v vulkaninfo >/dev/null 2>&1; then
     has_vulkan=1
 fi
 
-if (( has_cuda == 1 )); then                                     gpu_combos+="CUDA"
-if (( has_cuda == 1 && has_hip == 1 )); then                     gpu_combos+="CUDA + HIP"
-if (( has_cuda == 1 && has_hip == 1 && has_vulkan == 1 )); then  gpu_combos+="CUDA + HIP + VULKAN"
-if (( has_cuda == 1 && has_vulkan == 1 )); then                  gpu_combos+="CUDA + VULKAN"
-if (( has_hip == 1 )); then                                      gpu_combos+="HIP"
-if (( has_hip == 1 && has_vulkan == 1 )); then                   gpu_combos+="HIP + VULKAN"
-if (( has_vulkan == 1 )); then                                   gpu_combos+="VULKAN"
+if (( has_cuda == 1 )); then                                     gpu_combos+="CUDA";                   fi
+if (( has_cuda == 1 && has_hip == 1 )); then                     gpu_combos+="CUDA + HIP";             fi
+if (( has_cuda == 1 && has_hip == 1 && has_vulkan == 1 )); then  gpu_combos+="CUDA + HIP + VULKAN";    fi
+if (( has_cuda == 1 && has_vulkan == 1 )); then                  gpu_combos+="CUDA + VULKAN";          fi
+if (( has_hip == 1 )); then                                      gpu_combos+="HIP";                    fi
+if (( has_hip == 1 && has_vulkan == 1 )); then                   gpu_combos+="HIP + VULKAN";           fi
+if (( has_vulkan == 1 )); then                                   gpu_combos+="VULKAN";                 fi
 
 if [ ${#gpu_combos[@]} > 0 ]; then
     echo "Please pick the GPU combination you want your build to support:"
     select choice in "${gpu_combos[@]}"; do
-        echo "You chose: $coice"
+        echo "You chose: $choice"
         break
     done
 else
