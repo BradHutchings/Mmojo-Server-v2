@@ -20,7 +20,7 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Choose GPUs to Include in Build
-This script has you choose GPU support to include in the build.
+This script has you choose GPU support to include in the build. If you've already chosen GPUs, you do not have to choose the again.
 
 - View the script: <a href="../scripts/mm-choose-gpus.sh" target="_blank">mm-choose-gpus.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -30,6 +30,8 @@ This script has you choose GPU support to include in the build.
   ```
   . mm-choose-gpus.sh
   ```
+
+*I will make this easier to navigate soon! -Brad*
 
 ---
 ### Build CPU Mmojo Server for Build Environment Platform
