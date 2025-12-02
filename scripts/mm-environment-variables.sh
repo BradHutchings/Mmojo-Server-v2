@@ -97,19 +97,6 @@ export BUILD_CUDA="build-cuda"
 export BUILD_VULKAN="build-vulkan"
 export BUILD_METAL="build-metal"
 
-echo "Setting Test paths."
-# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
-export TEST_DIR="$HOME/400-TEST-mmojo-server"
-
-# DELETE THESE SOON
-export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
-export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
-export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
-
-# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
-export TEST_CUDA="test-cuda"
-export TEST_VULKAN="test-vulkan"
-
 # Reset this when we update environment variables.
 unset TEST_MODEL
 unset TEST_CPU_THREADS
