@@ -1,4 +1,4 @@
-## 423. Build Apps (Native)
+## 423. Build Executables (Native)
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform with native CPU optimizations enabled, but no GPU support.
@@ -94,7 +94,7 @@ $MMOJO_SERVER_SCRIPTS/420-Test-Apps.sh native $CHOSEN_GPUS
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [422. Build Apps (Performant)](422-Build-Apps-Performant.md)
+- **Previous:** [422. Build Executables (Performant)](422-Build-Executables-Performant.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
