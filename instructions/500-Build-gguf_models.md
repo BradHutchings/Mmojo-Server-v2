@@ -3,7 +3,7 @@
 Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server. This is experimental right now, and will be turned into a proper section soon.
 
 ---
-### Google's Gemma E3B Instruct v3n
+### Google's Gemma E2B Instruct v3n
 This is a gated LLM. You will need to request permission to access it:
 
 https://huggingface.co/google/gemma-3n-E2B-it
