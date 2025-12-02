@@ -53,8 +53,21 @@ for build_path in "${build_paths[@]}"; do
   i=$((i+1))
 done
 
+# List the builds and their paths.
+if true; then
+  echo ""
+  echo "Build names and paths."
+  i=0
+  for build_path in "${build_paths[@]}"; do
+    echo "$i. ${build_names[$i]} -- $build_path"
+    i=$((i+1))
+  done
+fi
+
 # List the available builds and their paths.
-if false; then
+if true; then
+  echo ""
+  echo "Available build names and paths."
   i=0
   for build_path in "${available_build_paths[@]}"; do
     echo "$i. ${available_build_names[$i]} -- $build_path"
@@ -62,6 +75,7 @@ if false; then
   done
 fi
 
+echo ""
 echo "These builds are available to package:"
 
 PS3="Please choose a build:"
