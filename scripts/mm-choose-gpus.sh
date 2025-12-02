@@ -40,6 +40,9 @@ if [ ${#gpu_combos[@]} > 0 ]; then
         echo "You chose: $choice"
         break
     done
+    echo "You chose: $choice"
+    xxx=="-${choice/ + /-}"
+    echo "You chose: $xxx"
 else
     echo "Could not find dev kits for CUDA, HIP, or VULKAN."
 fi
