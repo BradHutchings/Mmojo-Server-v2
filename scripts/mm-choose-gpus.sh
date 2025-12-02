@@ -32,6 +32,7 @@ if command -v vulkaninfo >/dev/null 2>&1; then
 fi
 # Metal???
 
+gpu_combos+=("None")
 if (( has_cuda == 1 )); then                                     gpu_combos+=("CUDA");                   fi
 if (( has_cuda == 1 && has_hip == 1 )); then                     gpu_combos+=("CUDA + HIP");             fi
 if (( has_cuda == 1 && has_hip == 1 && has_vulkan == 1 )); then  gpu_combos+=("CUDA + HIP + VULKAN");    fi
@@ -47,14 +48,19 @@ if [ ${#gpu_combos[@]} > 0 ]; then
         break
     done
     echo "You chose: $choice"
-    gpus="-${choice/ + /-}"
-    gpus="${gpus/CUDA/CUD}"
-    gpus="${gpus/HIP/HIP}"
-    gpus="${gpus/VULKAN/VUL}"
-    gpus="${gpus/METAL/MET}"
-    gpus=${gpus,,}
-    echo "GPUs: $gpus"
-
+    if [ "$choice" == "None" ]; then
+        gpus=""
+        choice=""
+    else
+        gpus="-${choice/ + /-}"
+        gpus="${gpus/CUDA/CUD}"
+        gpus="${gpus/HIP/HIP}"
+        gpus="${gpus/VULKAN/VUL}"
+        gpus="${gpus/METAL/MET}"
+        gpus=${gpus,,}
+        echo "GPUs: $gpus"
+    fi
+    
     export CHOSEN_GPUS=$gpus
     export CHOSEN_GPUS_NAMES=$choice
 else
