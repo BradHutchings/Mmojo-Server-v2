@@ -1,11 +1,21 @@
 ## 410. Build APEs
 ### About this Step
-This is a placeholder for an introduction to building APEs. We'll have shortcut here for building both the compatible and perfortmant APEs. We'll talk about how we build all the llama.cpp targets as Actuial Portable Executables (APEs).
+In the following two steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets as Actual Portable Executable (APEs). These exexcutables run on x86_64 and aarch64 (arm64) across Linux, macOS, Windows, FreeBSD, and some other operating systems. They do not offer GPU support.
+- **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
+- **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
 
-**Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
+**Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments.
 
-**Shortcut:** [Scroll down](#shortcut-build-and-assemble-ape-test-ape).
-
+---
+### SHORTCUT: Build Compatible and Performant APEs
+```
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
+$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant
+$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 performant
+$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant
+```
 
 ---
 ### Proceed
