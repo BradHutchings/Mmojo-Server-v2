@@ -1,7 +1,6 @@
 ## 421. Build Executables (Compatible)
 ### About this Step
-
-In this step, we will build Mmojo Server (`mmojo-server`) to run on the widest variety of x86_64 and aarch64 machines, with no GPU support.
+In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the widest variety of x86_64 and aarch64 machines, with optional GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -20,7 +19,7 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Choose GPUs to Include in Build
-This script has you choose GPU support to include in the build. If you've already chosen GPUs, you do not have to choose the again.
+This script has you choose GPU support to include in the build. If you've already chosen GPUs, you do not have to choose them again.
 
 - View the script: <a href="../scripts/mm-choose-gpus.sh" target="_blank">mm-choose-gpus.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -34,7 +33,7 @@ This script has you choose GPU support to include in the build. If you've alread
 *I will make this easier to navigate soon! -Brad*
 
 ---
-### Build CPU Mmojo Server for Build Environment Platform
+### Build Mmojo Server and other llama.cpp Apps
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../scripts/420-Build-Executables.sh" target="_blank">420-Build-Executables.sh</a>.
 - Run the script.
@@ -43,7 +42,7 @@ This script uses cmake to build Mmojo Server:
   ```
 
 ---
-### Test the Build
+### Test Mmojo Server
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/420-Test-Server.sh" target="_blank">420-Test-Server.sh</a>.
 - Run the script.
@@ -53,13 +52,13 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 
 ---
 <details>
-  <summary><b>Optional: Copy CPU Build to Mmojo Share.</b></summary>
+  <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
-Copy this build to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/420-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">420-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
+Copy these builds to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/420-Copy-Executables-to-Mmojo-Share.sh" target="_blank">420-Copy-Executables-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
   ```
 </details>
 
@@ -84,7 +83,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 . mm-choose-gpus.sh
 $MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
 $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh compatible $CHOSEN_GPUS
 ```
 
