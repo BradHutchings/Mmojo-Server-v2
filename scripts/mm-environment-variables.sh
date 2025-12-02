@@ -93,8 +93,11 @@ unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
+echo "Setting Build Models paths."
+export BUILD_MODELS_DIR="$HOME/500-BUILD-MODELS"
+
 echo "Setting Package paths."
-export PACKAGE_DIR="$HOME/500-PACKAGE-mmojo-server"
+export PACKAGE_DIR="$HOME/600-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
 export PACKAGE_COMPATIBLE_APE="compatible-ape"
 export PACKAGE_PERFORMANT_APE="performant-ape"
