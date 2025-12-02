@@ -35,16 +35,16 @@ EOF
 if [ $ADDED_CERTS ]; then
 cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --ssl-key-file
-/mmojo/certs/mmojo.local.key
+/support/certs/mmojo.local.key
 --ssl-cert-file
-/mmojo/certs/mmojo.local.crt
+/support/certs/mmojo.local.crt
 EOF
 fi
 
 if [ $ADDED_MMOJO_COMPLETE ]; then
 cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --path
-/mmojo/Mmojo-Complete
+/support/Mmojo-Complete
 --default-ui-endpoint
 chat
 EOF
@@ -53,7 +53,7 @@ fi
 if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
 cat << EOF >> $PACKAGE_MMOJO_SERVER_ARGS_FILE
 --model
-/mmojo/$CHOSEN_MODEL
+/support/$CHOSEN_MODEL
 EOF
 fi
 
