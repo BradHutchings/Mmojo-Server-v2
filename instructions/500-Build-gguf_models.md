@@ -29,7 +29,27 @@ cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 
 ---
 ### Mistal AI's Ministral 3 3B Instruct 2512
-This isn't supported by llama.cpp quite yet.
+This might work!
+```
+MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
+MODEL_TYPE='q8_0'
+MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
+GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
+
+mkdir -p $BUILD_MODELS_DIR
+if [ ! -d $GGUF_DIR ]; then
+    git clone $MODEL_GIT $GGUF_DIR
+fi
+python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
+    --outfile $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf \
+    --outtype $MODEL_TYPE
+
+cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
+```
+
+---
+### Mistal AI's Ministral 3 3B Instruct 2512
+This isn't supported by llama.cpp because of FP8 weights.
 ```
 MODEL='Mistral-AI-Ministral-3B-Instruct-v3-2512'
 MODEL_TYPE='q8_0'
