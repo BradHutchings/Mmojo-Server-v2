@@ -153,8 +153,8 @@ $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [412. Build APE (Performant)](412-Build-APE-Performant.md)
-- **Previous:** [403. Build Debug](403-Build-Debug.md)
+- **Next:** [412. Build APEs (Performant)](412-Build-APEs-Performant.md)
+- **Previous:** [410. Build APEs](410-Build-APEs.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
