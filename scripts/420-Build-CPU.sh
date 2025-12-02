@@ -11,11 +11,12 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 processor=$(uname -m)
 variation=$1
-branding=$2
+gpus=$2
+branding=$3
 
 if [ "$processor" == "arm64" ]; then
     processor="aarch64"
@@ -75,8 +76,14 @@ if [ $processor == "aarch64" ]; then
     fi
 fi
 
+if [[ "$gpus" == *"CUD"* ]]; then        GGML_PARAMS+=" -GGML_CUDA=ON";    fi
+if [[ "$gpus" == *"HIP"* ]]; then        GGML_PARAMS+=" -GGML_HIP=ON";     fi
+if [[ "$gpus" == *"VUL"* ]]; then        GGML_PARAMS+=" -GGML_VULKAN=ON";  fi
+if [[ "$gpus" == *"MET"* ]]; then        GGML_PARAMS+=" -GGML_METAL=ON";   fi
+
 echo "   Processor: $processor"
 echo "   Variation: $variation"
+echo "        GPUs: $gpus"
 echo "    Branding: $branding"
 echo "  arch param: $ARCH_LEVEL_PARAM"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
@@ -104,7 +111,7 @@ fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
