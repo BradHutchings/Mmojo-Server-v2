@@ -59,14 +59,17 @@ Build Mmojo Server executables.
 - [423. Build Executables (Native)](423-Build-Executables-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 
 ---
-### [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
+### 400. Build gguf Models (Coming Soon)
+
+---
+### [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 Package Mmojo Server for distribution and deployment.
 
-- [511. Package APE (Compatible)](511-Package-APE-Compatible.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
-- [512. Package APE (Performant)](512-Package-APE-Performant.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
-- [521. Package zip](521-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
+- [611. Package APE (Compatible)](611-Package-APE-Compatible.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+- [612. Package APE (Performant)](612-Package-APE-Performant.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+- [621. Package zip](621-Package-zip.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
 <!--
-- [521. Package SEAS](521-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
+- [621. Package SEAS](621-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
 -->
 
 ---
