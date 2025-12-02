@@ -15,15 +15,19 @@ if [ -d "$CERTIFICATES_DIR" ]; then
 fi
 
 mkdir -p $CERTIFICATES_DIR
-cd  $CERTIFICATES_DIR
+cd $CERTIFICATES_DIR
 
 echo ""
 echo "Creating sample certs with mkcert."
 fqdn="mmojo.local"
-mkcert $fqdn
+mkcert $fqdn > /dev/null
 mv "$fqdn.pem" cert.crt
 mv "$fqdn-key.pem" cert.key
 cp "$(mkcert -CAROOT)/rootCA.pem" selfsignCA.crt
+
+echo ""
+echo "Directory $CERTIFICATES_DIR:"
+ls -al $CERTIFICATES_DIR
 
 cd $HOME
 
