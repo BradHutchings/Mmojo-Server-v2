@@ -11,10 +11,11 @@ TO-DO:
 ### Mistal AI's Ministral 3 3B Reasoning 2512
 This works because it is BF16 weights. The instruct versions of Ministral have quantized FP8 weights that llama.cpp maintainer says they probably won't support.
 ```
-MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
+MODEL_NAME='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
+MODEL_EXTENSION="mis-min-3B-rea-v3-2512"
 MODEL_TYPE='q8_0'
 MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
+GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
@@ -36,10 +37,11 @@ https://huggingface.co/google/gemma-3n-E2B-it
 While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will be asked to enter your account name and API key twice when cloning this repo.
 
 ```
-MODEL="Google-Gemma-E2B-Instruct-v3n"
+MODEL_NAME="Google-Gemma-E2B-Instruct-v3n"
+MODEL_EXTENSION="goo-gem-E2B-ins-v3n"
 MODEL_TYPE="q8_0"
 MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
+GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
@@ -49,7 +51,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
     --outfile $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf \
     --outtype $MODEL_TYPE
 
-cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
+cp $GGUF_DIR/$MODEL_NAME-$MODEL_TYPE.gguf $MODELS_DIR
 ```
 
 <!--
@@ -57,10 +59,11 @@ cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 ### Mistal AI's Ministral 3 3B Instruct 2512
 This isn't supported by llama.cpp because of FP8 weights.
 ```
-MODEL='Mistral-AI-Ministral-3B-Instruct-v3-2512'
+MODEL_NAME='Mistral-AI-Ministral-3B-Instruct-v3-2512'
+MODEL_EXTENSION="mis-min-3B-ins-v3-2512"
 MODEL_TYPE='q8_0'
 MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512.git"
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
+GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
@@ -70,7 +73,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
     --outfile $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf \
     --outtype $MODEL_TYPE
 
-cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
+cp $GGUF_DIR/$MODEL_NAME-$MODEL_TYPE.gguf $MODELS_DIR
 ```
 -->
 ---
