@@ -226,25 +226,25 @@ int main(int argc, char ** argv, char ** envp) {
     // fix params -- model, path, ssl-key-file, ssl-cert-file
     // if they are relative paths, fix to absolute relative to working directory
     if (supportPath != "") {
-        const std::string& mmojoRootPath = "/mmojo/";
-        if (starts_with(params.model.path, mmojoRootPath)) {
-            printf("--model path starts with %s.\n",  mmojoRootPath.c_str());
-            std::string s = params.model.path.replace(0, mmojoRootPath.length(), supportPath);
+        const std::string& supportRootPath = "/support/";
+        if (starts_with(params.model.path, supportRootPath)) {
+            printf("--model path starts with %s.\n",  supportRootPath.c_str());
+            std::string s = params.model.path.replace(0, supportRootPath.length(), supportPath);
             printf("  - new model path: %s\n", s.c_str());
         }
-        if (starts_with(params.public_path, mmojoRootPath)) {
-            printf("--path path starts with %s.\n",  mmojoRootPath.c_str());
-            std::string s = params.public_path.replace(0, mmojoRootPath.length(), supportPath);
+        if (starts_with(params.public_path, supportRootPath)) {
+            printf("--path path starts with %s.\n",  supportRootPath.c_str());
+            std::string s = params.public_path.replace(0, supportRootPath.length(), supportPath);
             printf("  - new path path: %s\n", s.c_str());
         }
-        if (starts_with(params.ssl_file_key, mmojoRootPath)) {
-            printf("--ssl-key-file path starts with %s.\n",  mmojoRootPath.c_str());
-            std::string s = params.ssl_file_key.replace(0, mmojoRootPath.length(), supportPath);
+        if (starts_with(params.ssl_file_key, supportRootPath)) {
+            printf("--ssl-key-file path starts with %s.\n",  supportRootPath.c_str());
+            std::string s = params.ssl_file_key.replace(0, supportRootPath.length(), supportPath);
             printf("  - new ssl-key-file path: %s\n", s.c_str());
         }
-        if (starts_with(params.ssl_file_cert, mmojoRootPath)) {
-            printf("--ssl-cert-file path starts with %s.\n",  mmojoRootPath.c_str());
-            std::string s = params.ssl_file_cert.replace(0, mmojoRootPath.length(), supportPath);
+        if (starts_with(params.ssl_file_cert, supportRootPath)) {
+            printf("--ssl-cert-file path starts with %s.\n",  supportRootPath.c_str());
+            std::string s = params.ssl_file_cert.replace(0, supportRootPath.length(), supportPath);
             printf("  - new ssl-cert-file path: %s\n", s.c_str());
         }
     }
