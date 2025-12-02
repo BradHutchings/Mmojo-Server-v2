@@ -1,4 +1,4 @@
-## 621. Package zip
+## 621. Package Executable
 
 ---
 ### About this Step
