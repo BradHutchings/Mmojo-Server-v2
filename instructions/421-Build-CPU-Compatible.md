@@ -59,7 +59,7 @@ Copy this build to your Mmojo Share for packaging later.
 - View the script: <a href="../scripts/420-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">420-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh compatible
+  $MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
   ```
 </details>
 
