@@ -76,10 +76,28 @@ if [ $processor == "aarch64" ]; then
     fi
 fi
 
-if [[ "$gpus" == *"cud"* ]]; then        GGML_PARAMS+=" -DGGML_CUDA=ON";    fi
-if [[ "$gpus" == *"hip"* ]]; then        GGML_PARAMS+=" -DGGML_HIP=ON";     fi
-if [[ "$gpus" == *"vul"* ]]; then        GGML_PARAMS+=" -DGGML_VULKAN=ON";  fi
-if [[ "$gpus" == *"met"* ]]; then        GGML_PARAMS+=" -DGGML_METAL=ON";   fi
+if [[ "$gpus" == *"cud"* ]]; then
+    GGML_PARAMS+=" -DGGML_CUDA=ON";
+    # CUDA version reference: https://developer.nvidia.com/cuda-gpus
+    # Does supporting a lower version work for higher versions?
+    # 86 = GeForce RTX 3050, 87 = Jetson, 89 = GeForce RTX 4050
+    GGML_PARAMS+=" -DCMAKE_CUDA_ARCHITECTURES=\"86;87;89\""
+fi
+if [[ "$gpus" == *"hip"* ]]; then
+    GGML_PARAMS+=" -DGGML_HIP=ON";
+    # Need to sort out GPU support here. Looks more complicated than CUDA.
+    # https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md#hip
+    # List of targets: https://llvm.org/docs/AMDGPUUsage.html#processors
+fi
+if [[ "$gpus" == *"vul"* ]]; then
+    GGML_PARAMS+=" -DGGML_VULKAN=ON";
+fi
+if [[ "$gpus" == *"met"* ]]; then
+    GGML_PARAMS+=" -DGGML_METAL=ON";
+else
+    # Metal is on by default in macOS builds.
+    GGML_PARAMS+=" -DGGML_METAL=OFF";
+fi
 BUILD_SUBDIRECTORY+="$gpus"
 
 echo "   Processor: $processor"
