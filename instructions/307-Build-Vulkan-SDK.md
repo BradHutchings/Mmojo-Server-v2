@@ -41,6 +41,8 @@ This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR`
   . mm-environment-variables.sh
   ```
 
+***Note:** You may need to confirm installation of packages and wade through a pink outgoing mail configuration screen.*
+
 ---
 ### Verify that Vulkan is Installed
 Run this command to verify that Vulkan is installed and see which GPUs on your system it recognizes.
