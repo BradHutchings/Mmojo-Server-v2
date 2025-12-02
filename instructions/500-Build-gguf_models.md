@@ -28,8 +28,8 @@ cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 ```
 
 ---
-### Mistal AI's Ministral 3 3B Instruct 2512
-This might work!
+### Mistal AI's Ministral 3 3B Reasoning 2512
+This might work because it is BF16 weights.
 ```
 MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
 MODEL_TYPE='q8_0'
