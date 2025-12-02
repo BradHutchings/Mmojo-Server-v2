@@ -97,6 +97,10 @@ $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh native $CHOSEN_GPUS
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
+### Next Section
+- **Next Section:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
+
+---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
