@@ -13,7 +13,7 @@ unset CHOSEN_GPUS
 
 gpu_combos=()
 has_cuda=0
-has_hip=0
+has_hip=1
 has_vulkan=0
 
 if command -v nvcc >/dev/null 2>&1; then
@@ -41,7 +41,7 @@ if [ ${#gpu_combos[@]} > 0 ]; then
         break
     done
     echo "You chose: $choice"
-    xxx=="-${choice/ + /-}"
+    xxx="-${choice/ + /-}"
     echo "You chose: $xxx"
 else
     echo "Could not find dev kits for CUDA, HIP, or VULKAN."
