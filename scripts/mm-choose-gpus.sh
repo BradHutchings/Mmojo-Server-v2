@@ -16,13 +16,13 @@ has_cuda=0
 has_hip=0
 has_vulkan=0
 
-if command -v nvcc >/dev/null 2>&1;; then
+if command -v nvcc >/dev/null 2>&1; then
     has_cuda=1
 fi
-if command -v hipconfig >/dev/null 2>&1;; then
+if command -v hipconfig >/dev/null 2>&1; then
     has_hip=1
 fi
-if command -v vulkaninfo >/dev/null 2>&1;; then
+if command -v vulkaninfo >/dev/null 2>&1; then
     has_vulkan=1
 fi
 
