@@ -23,7 +23,7 @@ mm-update-local-mmojo-server-repo.sh
 
 ---
 ### Create Certificates Directory
-This script creates the `$CERTIFICATES_DIR`:
+This script creates the `$CERTIFICATES_DIR` and uses the `mkcert` utility to create a fake certificate authority and certificates we can use as placeholders in builds.
 - View the script: <a href="../scripts/303-Create-Certificates-Directory.sh" target="_blank">303-Create-Certificates-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
