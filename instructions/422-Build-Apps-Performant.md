@@ -1,4 +1,4 @@
-## 422. Build CPU (Performant)
+## 422. Build Apps (Performant)
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) to run run on a narrow, modern range of x86_64 and aarch64 machines, with no GPU support.
@@ -90,8 +90,8 @@ $MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant $CHOSEN_GPUS
 
 ---
 ### Proceed
-- **Next:** [423. Build CPU (Native)](423-Build-CPU-Native.md)
-- **Previous:** [421. Build CPU (Compatible)](421-Build-CPU-Compatible.md)
+- **Next:** [423. Build Apps (Native)](423-Build-Apps-Native.md)
+- **Previous:** [421. Build Apps (Compatible)](421-Build-Apps-Compatible.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
