@@ -88,7 +88,7 @@ select choice in "${available_build_names[@]}"; do
         for i in "${!build_names[@]}"; do
             if [[ "${build_names[$i]}" == "$choice" ]]; then
                 echo "You selected: $choice (index: $i)"
-                CHOSEN_BUILD_PATH=${build_paths[$i]}
+                export CHOSEN_BUILD_PATH=${build_paths[$i]}
                 break # Exit the inner loop once found
             fi
         done
