@@ -112,6 +112,10 @@ $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant 1 dogpile
 - **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
 
 ---
+### Next Section
+- **Next Section:** [600. Package Dogpile](600-Package-Dogpile.md)
+
+---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
