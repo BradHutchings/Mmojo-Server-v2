@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;02         | See if latest Cosmo commit solves the 400 problem in server &mdash; [Commit Details](https://github.com/jart/cosmopolitan/commit/b444b3a6e0d442162f800142a349371386b374c6). Still need to keep a slow roll on Cosmo changes. |
 | 2025&minus;12&minus;02         | `410-Assemble-Cosmo-APE.sh` needs to be `410-Assemble-APEs.sh`, needs to assemble more than just `mmojo-server-ape`. |
 | 2025&minus;12&minus;02         | Find the right source and dest folder in `420-Copy-Executables-to-Share.sh`. Using old logic right now. Does not work. |
 | 2025&minus;12&minus;01         | Build and test options in an `mm-build-test-options.sh` script, called by `mm-environment-variables.sh`. I could put `--parallel` for CMake, prefered LLM to use in testing, use chat UI, etc. |
