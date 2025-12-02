@@ -44,23 +44,23 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 ---
-### [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
-Build Mmojo Server executables.
-
-- [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
-- [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
-- [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
-- [410. Build APEs](410-Build-APEs.md) - Explains APEs and how to build them.
-- [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-- [412. Build APEs (Performant)](412-Build-APEs-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
-- [420. Build Executables](420-Build-Executables.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
-- [421. Build Executables (Compatible)](421-Build-Executables-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
-- [422. Build Executables (Performant)](422-Build-Executables-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
-- [423. Build Executables (Native)](423-Build-Executables-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+### [400. Build gguf Models](400-Build-gguf_models.md)
+Use llama.cpp to build .gguf` models from Hugging Face repositories.
 
 ---
-### [500. Build gguf Models](500-Build-gguf_models.md)
-Use llama.cpp to build .gguf` models from Hugging Face repositories.
+### [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+Build Mmojo Server executables.
+
+- [501. Prepare to Build](501-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
+- [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
+- [503. Build Debug](503-Build-Debug.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platformm that can be used to test features and changes.
+- [510. Build APEs](510-Build-APEs.md) - Explains APEs and how to build them.
+- [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+- [512. Build APEs (Performant)](512-Build-APEs-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [520. Build Executables](520-Build-Executables.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
+- [521. Build Executables (Compatible)](521-Build-Executables-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
+- [522. Build Executables (Performant)](522-Build-Executables-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
+- [523. Build Executables (Native)](523-Build-Executables-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 
 ---
 ### [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
