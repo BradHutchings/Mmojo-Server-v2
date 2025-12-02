@@ -80,6 +80,7 @@ if [[ "$gpus" == *"CUD"* ]]; then        GGML_PARAMS+=" -GGML_CUDA=ON";    fi
 if [[ "$gpus" == *"HIP"* ]]; then        GGML_PARAMS+=" -GGML_HIP=ON";     fi
 if [[ "$gpus" == *"VUL"* ]]; then        GGML_PARAMS+=" -GGML_VULKAN=ON";  fi
 if [[ "$gpus" == *"MET"* ]]; then        GGML_PARAMS+=" -GGML_METAL=ON";   fi
+BUILD_SUBDIRECTORY+="$gpus"
 
 echo "   Processor: $processor"
 echo "   Variation: $variation"
