@@ -2,6 +2,11 @@
 ### About this Section
 Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server. This is experimental right now, and will be turned into a proper section soon.
 
+TO-DO:
+- Each model should be its own page. If it makes it in here, it's qualified. We'll also have a page of models to do or known to not work (and why).
+- There should be a script with better error handling that each model uses.
+- The script needs to add the model to the model map after copying. That will let us use the model in packaging.
+
 ---
 ### Google's Gemma E2B Instruct v3n
 This is a gated LLM. You will need to request permission to access it:
@@ -47,6 +52,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
 cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 ```
 
+<!--
 ---
 ### Mistal AI's Ministral 3 3B Instruct 2512
 This isn't supported by llama.cpp because of FP8 weights.
@@ -66,7 +72,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
 
 cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 ```
-
+-->
 ---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
