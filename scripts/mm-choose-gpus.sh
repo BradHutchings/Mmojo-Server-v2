@@ -46,6 +46,7 @@ if [ ${#gpu_combos[@]} > 0 ]; then
     gpus="${gpus/HIP/HIP}"
     gpus="${gpus/VULKAN/VUL}"
     gpus="${gpus/METAL/MET}"
+    gpus=${gpus,,}
     echo "GPUs: $gpus"
 
     export CHOSEN_GPUS=$gpus
