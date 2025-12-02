@@ -74,7 +74,7 @@ $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [411. Build APE (Compatible)](411-Build-APE-Compatible.md)
+- **Next:** [410. Build APEs](410-Build-APEs.md)
 - **Previous:** [402. Prepare to Test](402-Prepare-to-Test.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
