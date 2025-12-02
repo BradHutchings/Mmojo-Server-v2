@@ -86,7 +86,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 . mm-choose-gpus.sh
 $MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Mmojo-Share.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
 $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh native $CHOSEN_GPUS
 ```
 
