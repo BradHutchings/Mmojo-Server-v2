@@ -88,6 +88,8 @@ if [[ "$gpus" == *"hip"* ]]; then
     # Need to sort out GPU support here. Looks more complicated than CUDA.
     # https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md#hip
     # List of targets: https://llvm.org/docs/AMDGPUUsage.html#processors
+    # For now, this should build for the card you have installed. Not ideal.
+    # Vulkan looks like an easier route to AMD cards.
 fi
 if [[ "$gpus" == *"vul"* ]]; then
     GGML_PARAMS+=" -DGGML_VULKAN=ON";
