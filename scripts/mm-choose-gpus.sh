@@ -10,6 +10,7 @@ SCRIPT_NAME=$(basename -- "$0")
 printf "\n**********\n*\n* STARTED: mm-choose-build.sh.\n*\n**********\n\n"
 
 unset CHOSEN_GPUS
+unset CHOSEN_GPUS_NAMES
 
 gpu_combos=()
 has_cuda=0
@@ -41,8 +42,15 @@ if [ ${#gpu_combos[@]} > 0 ]; then
         break
     done
     echo "You chose: $choice"
-    xxx="-${choice/ + /-}"
-    echo "You chose: $xxx"
+    gpus="-${choice/ + /-}"
+    gpus="-${gpus/CUDA/CUD}"
+    gpus="-${gpus/HIP/HIP}"
+    gpus="-${gpus/VULKAN/VUL}"
+    gpus="-${gpus/METAL/MET}"
+    echo "GPUs: $gpus"
+
+    export CHOSEN_GPUS=$gpus
+    export CHOSEN_GPUS_NAMES=$choice
 else
     echo "Could not find dev kits for CUDA, HIP, or VULKAN."
 fi
