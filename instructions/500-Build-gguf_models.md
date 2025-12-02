@@ -6,7 +6,7 @@ Let's use llama.cpp and Hugging Face to build some .gguf models we can use with 
 ### Google's Gemma E3B Instruct v3n
 This isn't supported by llama.cpp quite yet.
 ```
-MODEL='"Google-Gemma-E3B-Instruct-v3n"
+MODEL="Google-Gemma-E3B-Instruct-v3n"
 MODEL_TYPE="q8_0"
 MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
