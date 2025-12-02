@@ -9,7 +9,7 @@ TO-DO:
 
 ---
 ### Mistal AI's Ministral 3 3B Reasoning 2512
-This might work because it is BF16 weights.
+This works because it is BF16 weights. The instruct versions of Ministral have quantized FP8 weights that llama.cpp maintainer says they probably won't support.
 ```
 MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
 MODEL_TYPE='q8_0'
