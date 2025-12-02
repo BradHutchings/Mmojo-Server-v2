@@ -25,7 +25,7 @@ $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh native $CHOSEN_GPUS
 ---
 ### Proceed
 - **Next:** [421. Build Executables (Compatible)](421-Build-Executables-Compatible.md)
-- **Previous:** [412. Build APEs (Performant)](403-Build-APEs-Performant.md)
+- **Previous:** [412. Build APEs (Performant)](412-Build-APEs-Performant.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
