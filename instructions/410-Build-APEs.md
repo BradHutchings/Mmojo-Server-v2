@@ -9,7 +9,7 @@ This is a placeholder for an introduction to building APEs. We'll have shortcut 
 
 ---
 ### Proceed
-- **Next:** [411. Build APE (Compatible)](411-Build-APE-Compatible.md)
+- **Next:** [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
