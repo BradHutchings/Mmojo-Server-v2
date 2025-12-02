@@ -90,7 +90,7 @@ $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh compatible $CHOSEN_GPUS
 ---
 ### Proceed
 - **Next:** [422. Build Executables (Performant)](422-Build-Executables-Performant.md)
-- **Previous:** [420. Build Executables](412-Build-Executables.md)
+- **Previous:** [420. Build Executables](420-Build-Executables.md)
 - **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
 
 ---
