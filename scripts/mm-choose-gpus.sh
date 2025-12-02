@@ -38,15 +38,14 @@ if (( has_vulkan == 1 )); then                                   gpu_combos+=("V
 if [ ${#gpu_combos[@]} > 0 ]; then
     echo "Please pick the GPU combination you want your build to support:"
     select choice in "${gpu_combos[@]}"; do
-        echo "You chose: $choice"
         break
     done
     echo "You chose: $choice"
     gpus="-${choice/ + /-}"
-    gpus="-${gpus/CUDA/CUD}"
-    gpus="-${gpus/HIP/HIP}"
-    gpus="-${gpus/VULKAN/VUL}"
-    gpus="-${gpus/METAL/MET}"
+    gpus="${gpus/CUDA/CUD}"
+    gpus="${gpus/HIP/HIP}"
+    gpus="${gpus/VULKAN/VUL}"
+    gpus="${gpus/METAL/MET}"
     echo "GPUs: $gpus"
 
     export CHOSEN_GPUS=$gpus
