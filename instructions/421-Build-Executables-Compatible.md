@@ -55,10 +55,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
 Copy these builds to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/420-Copy-Executables-to-Mmojo-Share.sh" target="_blank">420-Copy-Executables-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/420-Copy-Executables-to-Share.sh" target="_blank">420-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
   ```
 </details>
 
@@ -83,7 +83,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 . mm-choose-gpus.sh
 $MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Mmojo-Share.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
 $MMOJO_SERVER_SCRIPTS/420-Test-Server.sh compatible $CHOSEN_GPUS
 ```
 
