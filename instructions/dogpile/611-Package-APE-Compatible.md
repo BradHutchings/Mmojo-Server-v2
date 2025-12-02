@@ -1,4 +1,4 @@
-## 511. Package APE (Compatible)
+## 611. Package APE (Compatible)
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Package-Dogpile.md).
 
@@ -35,13 +35,13 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `dogpile-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/510-Create-Package-Directory.sh" target="_blank">510-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Create-Package-Directory.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh compatible dogpile
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -53,10 +53,10 @@ This script creates the package directories, copies the `dogpile-ape` file you p
 ---
 ### Add Certificates to Package
 This script adds SSL certificates from the Mmojo Share to the APE package.
-- View the script: <a href="../scripts/510-Add-Certificates-to-APE.sh" target="_blank">510-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Add-Certificates-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible dogpile
   # Keep track of what we add for the args file.
   export ADDED_CERTS=1
   ```
@@ -68,10 +68,10 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/510-Add-UI-to-APE.sh" target="_blank">510-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Add-UI-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh compatible dogpile
   # Keep track of what we add for the args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -80,11 +80,11 @@ This script adds the Mmojo Complete user interface to the APE package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the APE package.
-- View the script: <a href="../scripts/510-Add-gguf-Model-to-APE.sh" target="_blank">510-Add-gguf-Model-to-APE.sh</a>.
+- View the script: <a href="../scripts/610-Add-gguf-Model-to-APE.sh" target="_blank">610-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/510-Add-gguf-Model-to-APE.sh compatible dogpile
+    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh compatible dogpile
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -102,10 +102,10 @@ This script adds the chosen `.gguf` model to the APE package.
 ---
 ### Add Args File to Package
 This script adds a Args file to the APE package. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/510-Add-Args-to-APE.sh" target="_blank">510-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Add-Args-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh compatible dogpile
   ```
 
 ---
@@ -165,18 +165,18 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/510-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">510-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Copy-APE-Package-to-Mmojo-Share.sh compatible
+  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh compatible
   ```
 -->
 
 ---
 ### Proceed
-- **Next:** [512. Package APE (Performant)](512-Package-APE-Performant.md)
+- **Next:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [500. Package Dogpile](500-Package-Dogpile.md)
+- **Up:** [600. Package Dogpile](600-Package-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
