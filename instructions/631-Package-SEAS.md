@@ -1,4 +1,4 @@
-## 531. Package SEAS
+## 631. Package SEAS
 ### About this Step
 
 ---
@@ -15,8 +15,8 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [521. Package zip](521-Package-zip.md)
-- **Up:** [500. Package Mmojo Server](500-Package-Mmojo-Server.md)
+- **Previous:** [621. Package zip](621-Package-zip.md)
+- **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
