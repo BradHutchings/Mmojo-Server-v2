@@ -1,6 +1,6 @@
 ## 410. Build APEs
 ### About this Step
-This is a placeholder for an introduction to building APEs. We'll have shortcut here for building both the compatible and perfortmant APEs.
+This is a placeholder for an introduction to building APEs. We'll have shortcut here for building both the compatible and perfortmant APEs. We'll talk about how we build all the llama.cpp targets as Actuial Portable Executables (APEs).
 
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments. The resulting APE file will be copied to your Mmojo SMB share.
 
