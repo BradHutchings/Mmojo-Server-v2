@@ -8,6 +8,7 @@ In the following two steps, we will build Mmojo Server (`mmojo-server`) and othe
 
 ---
 ### SHORTCUT: Build Compatible and Performant APEs
+Before using this shortcut, please work through the steps of building the compatible and performant APEs a few times so that you can become familiar with what they do.
 ```
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible
