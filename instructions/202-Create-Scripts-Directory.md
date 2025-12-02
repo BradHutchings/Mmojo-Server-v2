@@ -18,11 +18,6 @@ export PATH="\$PATH:$HOME_SCRIPTS"
 EOF
 fi
 
-cat << EOF >> $HOME/.bashrc
-alias mm-env=". mm-environment-variables.sh"
-mm-env
-EOF
-
 source $HOME/.bashrc
 echo $PATH
 ```
