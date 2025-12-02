@@ -16,10 +16,10 @@ Here are the things you need to do:
 - [410. Build APEs](410-Build-APEs.md) - Explains APEs and how to build them.
 - [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
 - [412. Build APEs (Performant)](412-Build-APEs-Performant.md) - Build `mmojo-server-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
-- [420. Build Apps](420-Build-Apps.md) - Explains build platform apps and how to build them. Now with GPU choices and support.
-- [421. Build Apps (Compatible)](421-Build-Apps-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
-- [422. Build Apps (Performant)](422-Build-Apps-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
-- [423. Build Apps (Native)](423-Build-Apps-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+- [420. Build Executables](420-Build-Executables.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
+- [421. Build Executables (Compatible)](421-Build-Executables-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
+- [422. Build Executables (Performant)](422-Build-Executables-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
+- [423. Build Executables (Native)](423-Build-Executables-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 
 **Get Started:** [401. Prepare to Build](401-Prepare-to-Build.md)
 
