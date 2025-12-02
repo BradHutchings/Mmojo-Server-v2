@@ -11,7 +11,7 @@ https://huggingface.co/google/gemma-3n-E2B-it
 While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will be asked to enter your account name and API key twice when cloning this repo.
 
 ```
-MODEL="Google-Gemma-E3B-Instruct-v3n"
+MODEL="Google-Gemma-E2B-Instruct-v3n"
 MODEL_TYPE="q8_0"
 MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
