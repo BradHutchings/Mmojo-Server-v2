@@ -2,6 +2,10 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;01         | 411-Build-APE-Compatible.md --> 411-Build-APEs-Compatible.md, etc. Also, Dogpile versions. Idea is we build all the llama.cpp targets as APEs. |
+| 2025&minus;12&minus;01         | 421-Build-CPU-Compatible.md --> 421-Build-Apps-Compatible.md, etc. Idea is we build all the llama.cpp targets as build platform apps. Platform-Apps?? |
+| 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Apps.md intro pages. |
+| 2025&minus;12&minus;01         | mm-choose-gpus.sh needs to let user choose what they previously chose easily. |
 | 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package a master APE and graft a model on later. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
@@ -10,6 +14,8 @@
 | 2025&minus;11&minus;23         | Do I still need to rollback the new llama.cpp webui so I can run it non-root-path? I do as of latest commit of llama.cpp I'm letting through. [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md) |
 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. |
 | 2025&minus;11&minus;23         | `mmojo-server-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
+
+
 
 ---
 ### Finished
