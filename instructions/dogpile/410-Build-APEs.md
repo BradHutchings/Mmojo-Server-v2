@@ -23,6 +23,20 @@ $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant dogpile
 ```
 
 ---
+### SHORTCUT: Test Compatible APE Mmojo Server
+After you build all the APEs, you can test the compatible APE:
+```
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible 1 dogpile
+```
+
+---
+### SHORTCUT: Test Performant APE Mmojo Server
+After you build all the APEs, you can test the performant APE:
+```
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant 1 dogpile
+```
+
+---
 ### Proceed
 - **Next:** [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
