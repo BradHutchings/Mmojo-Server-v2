@@ -4,7 +4,12 @@ Let's use llama.cpp and Hugging Face to build some .gguf models we can use with 
 
 ---
 ### Google's Gemma E3B Instruct v3n
-This isn't supported by llama.cpp quite yet.
+This is a gated LLM. You will need to request permission to access it:
+
+https://huggingface.co/google/gemma-3n-E2B-it
+
+While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will need to enter your account name and API key twice when cloning this repo.
+
 ```
 MODEL="Google-Gemma-E3B-Instruct-v3n"
 MODEL_TYPE="q8_0"
