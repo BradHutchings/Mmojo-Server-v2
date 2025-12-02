@@ -19,15 +19,27 @@ mm-update-local-mmojo-server-repo.sh
 </details>
 
 ---
-### Build CPU Mmojo Server for Build Environment Platform
-This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/420-Build-CPU.sh" target="_blank">420-Build-CPU.sh</a>.
+### Choose GPUs to Include in Build
+This script has you choose GPU support to include in the build. If you've already chosen GPUs, you do not have to choose the again.
+
+- View the script: <a href="../scripts/mm-choose-gpus.sh" target="_blank">mm-choose-gpus.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant
+  . mm-choose-gpus.sh
+  ```
+
+*I will make this easier to navigate soon! -Brad*
+
+---
+### Build CPU Mmojo Server for Build Environment Platform
+This script uses cmake to build Mmojo Server:
+- View the script: <a href="../scripts/420-Build-CPU.sh" target="_blank">420-Build-CPU.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant $CHOSEN_GPUS
   ```
 
 ---
@@ -36,7 +48,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - View the script: <a href="../scripts/420-Test-CPU.sh" target="_blank">420-Test-CPU.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant
+  $MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant $CHOSEN_GPUS
   ```
 
 ---
@@ -47,7 +59,7 @@ Copy this build to your Mmojo Share for packaging later.
 - View the script: <a href="../scripts/420-Copy-CPU-Build-to-Mmojo-Share.sh" target="_blank">420-Copy-CPU-Build-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh performant
+  $MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh performant $CHOSEN_GPUS
   ```
 </details>
 
@@ -58,8 +70,9 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant
-$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant
+. mm-choose-gpus.sh
+$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant $CHOSEN_GPUS
 ```
 
 ---
@@ -69,9 +82,10 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant
-$MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh performant
-$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant
+. mm-choose-gpus.sh
+$MMOJO_SERVER_SCRIPTS/420-Build-CPU.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Copy-CPU-Build-to-Mmojo-Share.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/420-Test-CPU.sh performant $CHOSEN_GPUS
 ```
 
 ---
