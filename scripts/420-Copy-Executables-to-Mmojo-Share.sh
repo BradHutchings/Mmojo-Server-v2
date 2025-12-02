@@ -4,6 +4,9 @@
 # This script copies the CPU build of mmojo-server to the right place on the 
 # Mmojo Share.
 #
+# TO-DO:
+# - Copy all executables, as advertised. Or have a parameter for that.
+#
 # See licensing note at end.
 ################################################################################
 
