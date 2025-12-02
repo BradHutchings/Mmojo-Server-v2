@@ -15,10 +15,13 @@ mkdir -p $HOME_SCRIPTS
 if [[ "${PATH}" != *"${HOME_SCRIPTS}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
 cat << EOF >> $HOME/.bashrc
 export PATH="\$PATH:$HOME_SCRIPTS"
+EOF
+fi
+
+cat << EOF >> $HOME/.bashrc
 alias mm-env=". mm-environment-variables.sh"
 mm-env
 EOF
-fi
 
 source $HOME/.bashrc
 echo $PATH
