@@ -19,6 +19,18 @@ $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant
 ```
 
 ---
+### SHORTCUT: Test Compatible APE
+```
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+```
+
+---
+### SHORTCUT: Test Performant APE
+```
+$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
+```
+
+---
 ### Proceed
 - **Next:** [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md)
 - **Previous:** [403. Build Debug](403-Build-Debug.md)
