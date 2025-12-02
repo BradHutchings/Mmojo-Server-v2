@@ -8,17 +8,12 @@ TO-DO:
 - The script needs to add the model to the model map after copying. That will let us use the model in packaging.
 
 ---
-### Google's Gemma E2B Instruct v3n
-This is a gated LLM. You will need to request permission to access it:
-
-https://huggingface.co/google/gemma-3n-E2B-it
-
-While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will be asked to enter your account name and API key twice when cloning this repo.
-
+### Mistal AI's Ministral 3 3B Reasoning 2512
+This might work because it is BF16 weights.
 ```
-MODEL="Google-Gemma-E2B-Instruct-v3n"
-MODEL_TYPE="q8_0"
-MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
+MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
+MODEL_TYPE='q8_0'
+MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
@@ -33,12 +28,17 @@ cp $GGUF_DIR/$MODEL-$MODEL_TYPE.gguf $MODELS_DIR
 ```
 
 ---
-### Mistal AI's Ministral 3 3B Reasoning 2512
-This might work because it is BF16 weights.
+### Google's Gemma E2B Instruct v3n
+This is a gated LLM. You will need to request permission to access it:
+
+https://huggingface.co/google/gemma-3n-E2B-it
+
+While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will be asked to enter your account name and API key twice when cloning this repo.
+
 ```
-MODEL='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
-MODEL_TYPE='q8_0'
-MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
+MODEL="Google-Gemma-E2B-Instruct-v3n"
+MODEL_TYPE="q8_0"
+MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
