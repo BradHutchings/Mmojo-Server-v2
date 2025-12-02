@@ -25,7 +25,7 @@ sudo apt install -y \
     libxrandr-dev libzstd-dev ninja-build npm pkg-config \
     python3 python3-pip python3-tk qt5-qmake qtbase5-dev \
     qtbase5-dev-tools qtcreator tk-dev wayland-protocols xz-utils \
-    zip zlib1g-dev cifs-utils
+    zip zlib1g-dev cifs-utils mkcert
 
 echo ""
 echo "Reinstalling nodejs and npm because recompiling the current llama.cpp webui doesn't like what we have."
