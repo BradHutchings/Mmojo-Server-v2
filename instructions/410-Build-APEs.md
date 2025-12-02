@@ -20,12 +20,14 @@ $MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant
 
 ---
 ### SHORTCUT: Test Compatible APE Mmojo Server
+After you build all the APEs, you can test the compatible APE:
 ```
 $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
 ```
 
 ---
 ### SHORTCUT: Test Performant APE Mmojo Server
+After you build all the APEs, you can test the performant APE:
 ```
 $MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 ```
