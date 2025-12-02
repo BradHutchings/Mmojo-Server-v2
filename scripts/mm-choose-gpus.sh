@@ -3,6 +3,9 @@
 ################################################################################
 # This script lets the user choose which GPU support to include in a build.
 #
+# TO-DO:
+# - Figure out has_metal.
+#
 # See licensing note at end.
 ################################################################################
 
