@@ -11,6 +11,7 @@ In the following three steps, we will build Mmojo Server (`mmojo-server`) and ot
 
 ---
 ### SHORTCUT: Build Compatible, Performant, and Native Executables with Optional GPU Support
+Before using this shortcut, please work through the steps of building the compatible, performant, and native executables a few times so that you can become familiar with what they do.
 ```
 . mm-choose-gpus.sh
 $MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh compatible $CHOSEN_GPUS
