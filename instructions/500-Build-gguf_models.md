@@ -8,6 +8,10 @@ TO-DO:
 - The script needs to add the model to the model map after copying. That will let us use the model in packaging.
 
 ---
+### Before You Get Started
+Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned. That's in this step: [401. Prepare to Build](401-Prepare-to-Build.md). 
+
+---
 ### Mistal AI's Ministral 3 3B Reasoning 2512
 This works because it is BF16 weights. The instruct versions of Ministral have quantized FP8 weights that llama.cpp maintainer says they probably won't support.
 ```
