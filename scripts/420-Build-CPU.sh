@@ -76,10 +76,10 @@ if [ $processor == "aarch64" ]; then
     fi
 fi
 
-if [[ "$gpus" == *"cud"* ]]; then        GGML_PARAMS+=" -GGML_CUDA=ON";    fi
-if [[ "$gpus" == *"hip"* ]]; then        GGML_PARAMS+=" -GGML_HIP=ON";     fi
-if [[ "$gpus" == *"vul"* ]]; then        GGML_PARAMS+=" -GGML_VULKAN=ON";  fi
-if [[ "$gpus" == *"met"* ]]; then        GGML_PARAMS+=" -GGML_METAL=ON";   fi
+if [[ "$gpus" == *"cud"* ]]; then        GGML_PARAMS+=" -DGGML_CUDA=ON";    fi
+if [[ "$gpus" == *"hip"* ]]; then        GGML_PARAMS+=" -DGGML_HIP=ON";     fi
+if [[ "$gpus" == *"vul"* ]]; then        GGML_PARAMS+=" -DGGML_VULKAN=ON";  fi
+if [[ "$gpus" == *"met"* ]]; then        GGML_PARAMS+=" -DGGML_METAL=ON";   fi
 BUILD_SUBDIRECTORY+="$gpus"
 
 echo "   Processor: $processor"
