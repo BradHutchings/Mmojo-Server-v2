@@ -100,6 +100,8 @@ else
     # Metal is on by default in macOS builds.
     GGML_PARAMS+=" -DGGML_METAL=OFF";
 fi
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo ""
 BUILD_SUBDIRECTORY+="$gpus"
 
 echo "   Processor: $processor"
