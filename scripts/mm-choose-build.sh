@@ -14,7 +14,6 @@ unset CHOSEN_BUILD_PATH
 unset CHOSEN_BUILD_INFO
 
 build_paths=()
-build_names=()
 build_paths+=("$BUILD_DIR/$BUILD_DEBUG/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_COSMO_COMPATIBLE_APE/mmojo-server-ape")
 build_paths+=("$BUILD_DIR/$BUILD_COSMO_PERFORMANT_APE/mmojo-server-ape")
@@ -28,6 +27,7 @@ build_paths+=("$BUILD_DIR/$BUILD_CUDA/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_VULKAN/bin/mmojo-server")
 build_paths+=("$BUILD_DIR/$BUILD_METAL/bin/mmojo-server")
 
+build_names=()
 build_names+=("DEBUG")
 build_names+=("APE-Compatible")
 build_names+=("APE-Performant")
@@ -74,10 +74,10 @@ select choice in "${available_build_names[@]}"; do
         for i in "${!build_names[@]}"; do
             if [[ "${build_names[$i]}" == "$choice" ]]; then
                 echo "You selected: $choice (index: $i)"
+                CHOSEN_BUILD_PATH=$build_paths[$i]
                 break # Exit the inner loop once found
             fi
         done
-        CHOSEN_BUILD_PATH=$build_paths[$i]
         break # Exit the select loop
     else
         unset CHOSEN_BUILD
