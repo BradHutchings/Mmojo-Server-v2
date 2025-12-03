@@ -1,10 +1,7 @@
 ## Disorganized To-Do List
 
-CHOSEN_MODEL_SHORT_NAME
-
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;12&minus;03         | Change `CHOSEN_MODEL_SHORT_NAME` to `CHOSEN_MODEL_MNEMONIC`. |
 | 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
@@ -28,6 +25,7 @@ CHOSEN_MODEL_SHORT_NAME
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;12&minus;03 | 2025&minus;12&minus;03         | Change `CHOSEN_MODEL_SHORT_NAME` to `CHOSEN_MODEL_MNEMONIC`. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;02         | `410-Assemble-Cosmo-APE.sh` needs to be `410-Assemble-APEs.sh`, needs to assemble more than just `mmojo-server-ape`. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;01         | 411-Build-APE-Compatible.md --> 411-Build-APEs-Compatible.md, etc. Also, Dogpile versions. Idea is we build all the llama.cpp targets as APEs. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;03         | Fix or add *Update Local Mmojo Server Repo* to each page. `mm-env` |
