@@ -17,7 +17,7 @@ Let's prepare an Actual Portable Executable (APE) for distribution. You will sta
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 
