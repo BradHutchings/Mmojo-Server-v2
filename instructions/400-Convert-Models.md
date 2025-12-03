@@ -11,7 +11,7 @@ TO-DO:
 ### Before You Get Started
 Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned.
 
-This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_MODELS_DIR` directory:
+This script clones the llama.cpp repo and repos upon which it depends into the `$CONVERT_MODELS_DIR` directory:
 - View the script: <a href="../scripts/401-Clone-Repo.sh" target="_blank">401-Clone-Repo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
@@ -33,9 +33,9 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $M
 ```
 <!--
 ```
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
+GGUF_DIR="$CONVERT_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
-mkdir -p $BUILD_MODELS_DIR
+mkdir -p $CONVERT_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
     git clone $MODEL_GIT $GGUF_DIR
 fi
@@ -67,9 +67,9 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $M
 
 <!--
 ```
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
+GGUF_DIR="$CONVERT_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
-mkdir -p $BUILD_MODELS_DIR
+mkdir -p $CONVERT_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
     git clone $MODEL_GIT $GGUF_DIR
 fi
@@ -90,9 +90,9 @@ MODEL_NAME='Mistral-AI-Ministral-3B-Instruct-v3-2512'
 MODEL_EXTENSION="mis-min-3B-ins-v3-2512"
 MODEL_TYPE='q8_0'
 MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512.git"
-GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
+GGUF_DIR="$CONVERT_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
-mkdir -p $BUILD_MODELS_DIR
+mkdir -p $CONVERT_MODELS_DIR
 if [ ! -d $GGUF_DIR ]; then
     git clone $MODEL_GIT $GGUF_DIR
 fi
