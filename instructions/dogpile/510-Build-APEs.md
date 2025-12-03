@@ -1,4 +1,4 @@
-## 410. Build APEs
+## 510. Build APEs
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
@@ -14,33 +14,33 @@ In the following two steps, we will build the Dogpile server (`dogpile`) and oth
 ### SHORTCUT: Build Compatible and Performant APEs
 Before using this shortcut, please work through the steps of building the compatible and performant APEs a few times so that you can become familiar with what they do.
 ```
-$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 compatible dogpile
-$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 compatible dogpile
-$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh compatible dogpile
-$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh X86_64 performant dogpile
-$MMOJO_SERVER_SCRIPTS/410-Build-with-Cosmo.sh aarch64 performant dogpile
-$MMOJO_SERVER_SCRIPTS/410-Assemble-Cosmo-APE.sh performant dogpile
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible dogpile
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible dogpile
+$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible dogpile
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 performant dogpile
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 performant dogpile
+$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh performant dogpile
 ```
 
 ---
 ### SHORTCUT: Test Compatible APE Mmojo Server
 After you build all the APEs, you can test the compatible APE:
 ```
-$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh compatible 1 dogpile
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible 1 dogpile
 ```
 
 ---
 ### SHORTCUT: Test Performant APE Mmojo Server
 After you build all the APEs, you can test the performant APE:
 ```
-$MMOJO_SERVER_SCRIPTS/410-Test-Cosmo-APE.sh performant 1 dogpile
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
 ```
 
 ---
 ### Proceed
-- **Next:** [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md)
-- **Previous:** [403. Build Debug](403-Build-Debug.md)
-- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next:** [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md)
+- **Previous:** [503. Build Debug](503-Build-Debug.md)
+- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
