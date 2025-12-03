@@ -2,6 +2,14 @@
 ### About this Section
 Let's download and convert Google Gemma models from Hugging Face.
 
+We will be using this script to clone each repo, convert the model, copy the model your `$MODELS_DIR` directory, and update the model map at `$MODELS_MAP`.
+- View the script: <a href="../scripts/400-Convert-HF-to-gguf-Model.sh" target="_blank">400-Convert-HF-to-gguf-Model.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+
+In the future, this script will also copy your converted model to your Mmojo Share if it is mounted.
+
 ---
 ### Hugging Face Account
 Google requires that you have a Hugging Face account and that your account has permission to download their gated models. Please:
