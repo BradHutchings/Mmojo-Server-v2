@@ -1,4 +1,4 @@
-## 400. Build Dogpile
+## 500. Build Dogpile
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. You can build Mmojo Server without the Mmojo Server customizations like Mmojo Complete and SSL certificates, and package it in an APE file of a different name. I'm working on some very minor customization details like the process name reported to the operating system and the name of the support directory. If you'd like to become a sponsor of Mmojo Server, this is a zero-work on your part branding opportunity.
 
@@ -12,14 +12,14 @@ We're ready to build `dogpile` executables. First, we'll build a native version 
 ---
 ### Build Dogpile
 Here are the things you need to do:
-- [401. Prepare to Build](401-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
-- [402. Prepare to Test](402-Prepare-to-Test.md) - Set some environment variables to customize test runs.
-- [403. Build Debug](403-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
-- [410. Build APEs](410-Build-APEs.md) - Explains APEs and how to build them.
-- [411. Build APEs (Compatible)](411-Build-APEs-Compatible.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-- [412. Build APEs (Performant)](412-Build-APEs-Performant.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [501. Prepare to Build](501-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
+- [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
+- [503. Build Debug](503-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
+- [510. Build APEs](510-Build-APEs.md) - Explains APEs and how to build them.
+- [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+- [512. Build APEs (Performant)](512-Build-APEs-Performant.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
 
-**Get Started:** [401. Prepare to Build](401-Prepare-to-Build.md)
+**Get Started:** [501. Prepare to Build](501-Prepare-to-Build.md)
 
 ---
 [MIT License](/LICENSE)<br/>
