@@ -51,3 +51,8 @@ MODEL_REPO="https://huggingface.co/mistralai/Ministral-3-14B-Reasoning-2512"
 $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+---
+### Proceed
+- **Next:** This is the last step in this section.
+- **Previous:** [403. Meta Llama](403-Meta-Llama.md)
+- **Up:** [400. Convert Models](400-Convert-Models.md)
