@@ -18,14 +18,14 @@ model_mnemonic=$3
 model_repo=$4
 
 GGUF_DIR="$BUILD_MODELS_DIR/$model_name-$model_type"
-GGUF_FILE="$MODEL_NAME-$MODEL_TYPE.gguf"
+GGUF_FILE="$model_name-$model_type.gguf"
 
 echo "    model_name: $model_name"
 echo "    model_type: $model_type"
 echo "model_mnemonic: $model_mnemonic"
 echo "    model_repo: $model_repo"
 echo "      GGUF_DIR: $GGUF_DIR"
-echo "      GGUF_FILE: $GGUF_DIR"
+echo "     GGUF_FILE: $GGUF_FILE"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
     mkdir -p $BUILD_MODELS_DIR
