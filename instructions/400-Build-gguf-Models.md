@@ -23,7 +23,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 
 ---
 ### Mistal AI's Ministral 3 3B Reasoning 2512
-This works because it is BF16 weights. The instruct versions of Ministral have quantized FP8 weights that llama.cpp maintainer says they probably won't support.
+It may take 20 or 30 minutes to clone the Hugging Face repo, even on fast Internet.
 ```
 MODEL_NAME='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
 MODEL_MNEMONIC="mis-min-3B-rea-v3-2512"
@@ -54,6 +54,8 @@ This is a gated LLM. You will need to request permission to access it:
 https://huggingface.co/google/gemma-3n-E2B-it
 
 While you are on the Hugging Face site and awaiting permission from Google, get an API key for your acoount. You will be asked to enter your account name and API key twice when cloning this repo.
+
+It may take 20 or 30 minutes to clone the Hugging Face repo, even on fast Internet.
 
 ```
 MODEL_NAME="Google-Gemma-E2B-Instruct-v3n"
