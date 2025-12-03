@@ -25,7 +25,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 - Run the script.
   ```
   unset CHOSEN_MODEL
-  unset CHOSEN_MODEL_SHORT_NAME
+  unset CHOSEN_MODEL_MNEMONIC
   . mm-choose-model.sh
   ```
 
@@ -108,7 +108,7 @@ Now we can test run `mmojo-server`, listening on localhost:8080. This should be 
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
 ```
@@ -136,7 +136,7 @@ If you'd like it to listen on all available interfaces, you can connect from a b
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
 ```
