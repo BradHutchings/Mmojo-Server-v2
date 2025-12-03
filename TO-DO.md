@@ -2,7 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;12&minus;03         | Rewrite [105. Build Targets](instructions/105-Packaging-for-Deployment.md) |
+| 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
 | 2025&minus;12&minus;02         | See if latest Cosmo commit solves the 400 problem in server &mdash; [Commit Details](https://github.com/jart/cosmopolitan/commit/b444b3a6e0d442162f800142a349371386b374c6). Still need to keep a slow roll on Cosmo changes. |
