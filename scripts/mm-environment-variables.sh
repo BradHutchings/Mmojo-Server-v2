@@ -70,8 +70,11 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
+echo "Setting Build Models paths."
+export BUILD_MODELS_DIR="$HOME/400-BUILD-MODELS"
+
 echo "Setting Build paths."
-export BUILD_DIR="$HOME/400-BUILD-mmojo-server"
+export BUILD_DIR="$HOME/500-BUILD-mmojo-server"
 export BUILD_DEBUG="build-debug"
 export BUILD_COSMO_APE="build-cosmo-ape"
 export BUILD_COSMO_COMPATIBLE_X86_64="build-cosmo-compatible-x86_64"
@@ -92,9 +95,6 @@ export BUILD_EXECUTABLE_NATIVE_AARCH64="build-executable-native-aarch64"
 unset TEST_MODEL
 unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
-
-echo "Setting Build Models paths."
-export BUILD_MODELS_DIR="$HOME/500-BUILD-MODELS"
 
 echo "Setting Package paths."
 export PACKAGE_DIR="$HOME/600-PACKAGE-mmojo-server"
@@ -120,9 +120,8 @@ echo "Setting Dogpile paths."
 export DOGPILE_FILES="$MMOJO_SERVER_DIR/files/dogpile"
 export DOGPILE_SCRIPTS="$MMOJO_SERVER_DIR/scripts/dogpile"
 
-export DOGPILE_BUILD_DIR="$HOME/400-BUILD-dogpile"
-export DOGPILE_TEST_DIR="$HOME/400-TEST-dogpile"
-export DOGPILE_PACKAGE_DIR="$HOME/500-PACKAGE-dogpile"
+export DOGPILE_BUILD_DIR="$HOME/500-BUILD-dogpile"
+export DOGPILE_PACKAGE_DIR="$HOME/600-PACKAGE-dogpile"
 
 export PACKAGE_DOGPILE_FILE="dogpile"
 export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"
