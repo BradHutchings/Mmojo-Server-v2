@@ -1,4 +1,4 @@
-## 402. Prepare to Test
+## 502. Prepare to Test
 ### About this Step
 
 In this step, we will set some environment variables to customize testing.
@@ -61,9 +61,9 @@ export TEST_WITH_CHAT_UI=1
 
 ---
 ### Proceed
-- **Next:** [403. Build Debug](403-Build-Debug.md)
-- **Previous:** [401. Prepare to Build](401-Prepare-to-Build.md)
-- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next:** [503. Build Debug](503-Build-Debug.md)
+- **Previous:** [501. Prepare to Build](501-Prepare-to-Build.md)
+- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
