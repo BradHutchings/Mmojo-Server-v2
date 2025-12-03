@@ -18,12 +18,14 @@ model_mnemonic=$3
 model_repo=$4
 
 GGUF_DIR="$BUILD_MODELS_DIR/$model_name-$model_type"
+GGUF_FILE="$MODEL_NAME-$MODEL_TYPE.gguf"
 
 echo "    model_name: $model_name"
 echo "    model_type: $model_type"
 echo "model_mnemonic: $model_mnemonic"
 echo "    model_repo: $model_repo"
 echo "      GGUF_DIR: $GGUF_DIR"
+echo "      GGUF_FILE: $GGUF_DIR"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
     mkdir -p $BUILD_MODELS_DIR
@@ -36,14 +38,20 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
     echo ""
     echo "Converting to $model_name-$model_type.gguf."
     python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
-        --outfile $GGUF_DIR/$model_name-$model_type.gguf \
+        --outfile $GGUF_DIR/$GGUF_FILE \
         --outtype $model_type
 
     if [ -d "$MODELS_DIR" ]; then
         echo ""
         echo "Copying to $MODELS_DIR."
-        rsync -ah --progress $GGUF_DIR/$MODEL_NAME-$MODEL_TYPE.gguf $MODELS_DIR
+        rsync -ah --progress $GGUF_DIR/$GGUF_FILE $MODELS_DIR
     fi
+
+    if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
+cat << EOF >> $MODEL_MAP
+$GGUF_FILE $model_mnemonic
+EOF
+    fi        
 fi
 
 cd $HOME
