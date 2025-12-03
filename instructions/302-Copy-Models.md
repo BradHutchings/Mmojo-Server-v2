@@ -1,6 +1,6 @@
 ## 302. Copy Models
 ### About this Step
-In this step, we will copy models from the Mmojo Share.
+In this step, we will copy models from the Mmojo Share. If you don't have and models to copy, you can build some from Hugging Face repos in a few steps.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 

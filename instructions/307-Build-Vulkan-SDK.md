@@ -41,12 +41,24 @@ This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR`
   . mm-environment-variables.sh
   ```
 
+***Note:** You may need to confirm installation of packages and wade through a pink outgoing mail configuration screen.*
+
 ---
 ### Verify that Vulkan is Installed
 Run this command to verify that Vulkan is installed and see which GPUs on your system it recognizes.
 ```
 vulkaninfo --summary
 ```
+
+---
+### Alternative Easy Install
+Building the Vulkan SDK can take a couple of hourse. This quick install on Debian / Ubuntu *might* get a build working for you. I'm testing this.
+```
+sudo apt install libvulkan-dev glslc vulkan-tools
+```
+
+***Reference:** https://github.com/ggml-org/llama.cpp/commit/16cc3c606efe1640a165f666df0e0dc7cc2ad869*
+
 
 ---
 ### Proceed
@@ -56,7 +68,7 @@ vulkaninfo --summary
 
 ---
 ### Next Section
-- **Next Section:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next Section:** [400. Build gguf Models](400-Build-gguf-Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>

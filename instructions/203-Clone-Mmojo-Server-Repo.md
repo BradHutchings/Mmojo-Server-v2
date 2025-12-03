@@ -26,9 +26,12 @@ git clone https://github.com/BradHutchings/mmojo-server.git $MMOJO_SERVER_DIR
 # mm-update-local-mmojo-server-repo.sh copies mm- scripts to $HOME/mm-scripts
 . $MMOJO_SERVER_SCRIPTS/mm-update-local-mmojo-server-repo.sh
 
-# mm-update-local-mmojo-server-repo.sh might have changed the variables, so set them again.
-# This time, use the copy of the script in $HOME/mm-scripts
-. mm-environment-variables.sh
+cat << EOF >> $HOME/.bashrc
+alias mm-env=". mm-environment-variables.sh"
+mm-env
+EOF
+
+source $HOME/.bashrc
 
 printf "\n**********\n*\n* FINISHED: Clone the Mmojo Server Repo.\n*\n**********\n\n"
 ```

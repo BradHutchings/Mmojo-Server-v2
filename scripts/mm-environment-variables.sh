@@ -70,8 +70,11 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
+echo "Setting Build Models paths."
+export BUILD_MODELS_DIR="$HOME/400-BUILD-MODELS"
+
 echo "Setting Build paths."
-export BUILD_DIR="$HOME/400-BUILD-mmojo-server"
+export BUILD_DIR="$HOME/500-BUILD-mmojo-server"
 export BUILD_DEBUG="build-debug"
 export BUILD_COSMO_APE="build-cosmo-ape"
 export BUILD_COSMO_COMPATIBLE_X86_64="build-cosmo-compatible-x86_64"
@@ -81,34 +84,12 @@ export BUILD_COSMO_PERFORMANT_X86_64="build-cosmo-performant-x86_64"
 export BUILD_COSMO_PERFORMANT_AARCH64="build-cosmo-performant-aarch64"
 export BUILD_COSMO_PERFORMANT_APE="build-cosmo-performant-ape"
 
-export BUILD_CPU_COMPATIBLE_X86_64="build-cpu-compatible-x86_64"
-export BUILD_CPU_COMPATIBLE_AARCH64="build-cpu-compatible-aarch64"
-export BUILD_CPU_PERFORMANT_X86_64="build-cpu-performant-x86_64"
-export BUILD_CPU_PERFORMANT_AARCH64="build-cpu-performant-aarch64"
-export BUILD_CPU_NATIVE_X86_64="build-cpu-native-x86_64"
-export BUILD_CPU_NATIVE_AARCH64="build-cpu-native-aarch64"
-
-# Get rid of these.
-export BUILD_CPU_NATIVE="build-cpu-native"
-export BUILD_CPU_COMPATIBLE="build-cpu-compatible"
-export BUILD_CPU_PERFORMANT="build-cpu-performant"
-
-export BUILD_CUDA="build-cuda"
-export BUILD_VULKAN="build-vulkan"
-export BUILD_METAL="build-metal"
-
-echo "Setting Test paths."
-# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
-export TEST_DIR="$HOME/400-TEST-mmojo-server"
-
-# DELETE THESE SOON
-export TEST_DEBUG_COMMAND_LINE="test-debug-command-line"
-export TEST_DEBUG_MMOJO_SERVER_ARGS="test-debug-mmojo-server-args"
-export TEST_DEBUG_MMOJO_SERVER_SUPPORT="test-debug-mmojo-server-support"
-
-# DELETE THIS AFTER FIXING Test CUDA and Test VULKAN
-export TEST_CUDA="test-cuda"
-export TEST_VULKAN="test-vulkan"
+export BUILD_EXECUTABLE_COMPATIBLE_X86_64="build-executable-compatible-x86_64"
+export BUILD_EXECUTABLE_COMPATIBLE_AARCH64="build-executable-compatible-aarch64"
+export BUILD_EXECUTABLE_PERFORMANT_X86_64="build-executable-performant-x86_64"
+export BUILD_EXECUTABLE_PERFORMANT_AARCH64="build-executable-performant-aarch64"
+export BUILD_EXECUTABLE_NATIVE_X86_64="build-executable-native-x86_64"
+export BUILD_EXECUTABLE_NATIVE_AARCH64="build-executable-native-aarch64"
 
 # Reset this when we update environment variables.
 unset TEST_MODEL
@@ -116,7 +97,7 @@ unset TEST_CPU_THREADS
 unset TEST_WITH_CHAT_UI
 
 echo "Setting Package paths."
-export PACKAGE_DIR="$HOME/500-PACKAGE-mmojo-server"
+export PACKAGE_DIR="$HOME/600-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
 export PACKAGE_COMPATIBLE_APE="compatible-ape"
 export PACKAGE_PERFORMANT_APE="performant-ape"
@@ -139,9 +120,8 @@ echo "Setting Dogpile paths."
 export DOGPILE_FILES="$MMOJO_SERVER_DIR/files/dogpile"
 export DOGPILE_SCRIPTS="$MMOJO_SERVER_DIR/scripts/dogpile"
 
-export DOGPILE_BUILD_DIR="$HOME/400-BUILD-dogpile"
-export DOGPILE_TEST_DIR="$HOME/400-TEST-dogpile"
-export DOGPILE_PACKAGE_DIR="$HOME/500-PACKAGE-dogpile"
+export DOGPILE_BUILD_DIR="$HOME/500-BUILD-dogpile"
+export DOGPILE_PACKAGE_DIR="$HOME/600-PACKAGE-dogpile"
 
 export PACKAGE_DOGPILE_FILE="dogpile"
 export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"

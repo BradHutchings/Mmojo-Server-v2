@@ -33,8 +33,6 @@ This script creates the `$CERTIFICATES_DIR` and uses the `mkcert` utility to cre
   $MMOJO_SERVER_SCRIPTS/303-Create-Certificates-Directory.sh
   ```
 
-*This script needs to copy some default certs from the repo into this new folder.*
-
 ---
 ### Copy Certificate Files from Mmojo Share
 This script copies files from your Mmojo Share to the `$CERTIFICATES_DIR`:

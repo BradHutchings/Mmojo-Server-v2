@@ -2,6 +2,13 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
+| 2025&minus;12&minus;02         | See if latest Cosmo commit solves the 400 problem in server &mdash; [Commit Details](https://github.com/jart/cosmopolitan/commit/b444b3a6e0d442162f800142a349371386b374c6). Still need to keep a slow roll on Cosmo changes. |
+| 2025&minus;12&minus;02         | `410-Assemble-Cosmo-APE.sh` needs to be `410-Assemble-APEs.sh`, needs to assemble more than just `mmojo-server-ape`. |
+| 2025&minus;12&minus;02         | Find the right source and dest folder in `420-Copy-Executables-to-Share.sh`. Using old logic right now. Does not work. |
+| 2025&minus;12&minus;01         | Build and test options in an `mm-build-test-options.sh` script, called by `mm-environment-variables.sh`. I could put `--parallel` for CMake, prefered LLM to use in testing, use chat UI, etc. |
+| 2025&minus;12&minus;01         | 411-Build-APE-Compatible.md --> 411-Build-APEs-Compatible.md, etc. Also, Dogpile versions. Idea is we build all the llama.cpp targets as APEs. |
+| 2025&minus;12&minus;01         | mm-choose-gpus.sh needs to let user choose what they previously chose easily. |
 | 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package a master APE and graft a model on later. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
@@ -11,11 +18,15 @@
 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. |
 | 2025&minus;11&minus;23         | `mmojo-server-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
 
+
+
 ---
 ### Finished
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;12&minus;02 | 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Executables.md intro pages. |
+| 2025&minus;12&minus;02 | 2025&minus;12&minus;01         | 421-Build-CPU-Compatible.md --> 421-Build-Executables-Compatible.md, etc. Idea is we build all the llama.cpp targets as build platform executables. |
 | 2025&minus;12&minus;01 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
 | 2025&minus;12&minus;01 | 2025&minus;11&minus;27         | /mmojo prefix for support folder needs to be /support and the same across banding. See https://github.com/BradHutchings/Mmojo-Server/blob/work-in-progress/scripts/521-Add-Args-to-Package.sh - Fix mmojo-server.cpp. |
 | 2025&minus;12&minus;01 | 2025&minus;12&minus;01         | `branding` parameter for the 401 scripts. No need to have duplicates.|

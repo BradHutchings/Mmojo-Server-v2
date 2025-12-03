@@ -1,0 +1,105 @@
+#!/bin/bash
+
+################################################################################
+# This script copies the CPU build of mmojo-server to the right place on the 
+# Mmojo Share.
+#
+# TO-DO:
+# - Use processor, variation, gpus, and branding to determine source and
+#   destination.
+# - Copy all executables, as advertised. Or have a parameter for that.
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
+
+processor=$(uname -m)
+variation=$1
+gpus=$2
+branding=$3
+
+if [ "$processor" == "arm64" ]; then
+    processor="aarch64"
+fi
+
+if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
+    processor="x86_64"
+fi
+
+if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ] && [ "$variation" != "native" ]; then
+    variation="native"
+fi
+
+if [ "$branding" != "dogpile" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+if [ "$branding" == "dogpile" ]; then
+    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+fi
+
+BUILD_SUBDIRECTORY=""
+VERBOSE="OFF"
+
+if [ $processor == "x86_64" ]; then
+    BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_X86_64"
+    if [ $variation == "performant" ]; then
+        BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_X86_64"
+    elif [ $variation == "native" ]; then
+        BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_X86_64"
+    fi
+fi
+if [ $processor == "aarch64" ]; then
+    BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_AARCH64"
+    if [ $variation == "performant" ]; then
+        BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_AARCH64"
+    elif [ $variation == "native" ]; then
+        BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_AARCH64"
+    fi
+fi
+
+BUILD_SUBDIRECTORY+="$gpus"
+
+echo "   Processor: $processor"
+echo "   Variation: $variation"
+echo "        GPUs: $gpus"
+echo "    Branding: $branding"
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo ""
+
+if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
+    # THIS NEEDS TO FIND RIGHT DIRECTORY ON MMOJO SHARE
+    mm-mount-mmojo-share.sh
+
+    if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+        echo "Creating directories on Mmojo Share."
+        sudo mkdir -p $MMOJO_SHARE_BUILDS
+        sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU_NATIVE
+
+        # TO-DO: What CPU options/level?
+        ARCH=$(uname -m)
+
+        if [ -d "$MMOJO_SHARE_BUILDS_CPU_NATIVE" ]; then
+            echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
+            sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU_NATIVE/mmojo-server-cpu-native-$ARCH
+        fi
+    fi
+fi
+
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################

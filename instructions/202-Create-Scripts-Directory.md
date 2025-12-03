@@ -15,8 +15,6 @@ mkdir -p $HOME_SCRIPTS
 if [[ "${PATH}" != *"${HOME_SCRIPTS}"* ]] && [[ "${PATH}" != *"${TILDE_SCRIPTS}"* ]]; then
 cat << EOF >> $HOME/.bashrc
 export PATH="\$PATH:$HOME_SCRIPTS"
-alias mm-env=". mm-environment-variables.sh"
-mm-env
 EOF
 fi
 

@@ -1,0 +1,99 @@
+## 521. Build Executables (Compatible)
+### About this Step
+In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the widest variety of x86_64 and aarch64 machines, with optional GPU support.
+
+**Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
+
+**Shortcut:** [Scroll down](#shortcut-build-cpu-test).
+
+---
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+. mm-environment-variables.sh
+```
+</details>
+
+---
+### Choose GPUs to Include in Build
+This script has you choose GPU support to include in the build. If you've already chosen GPUs, you do not have to choose them again.
+
+- View the script: <a href="../scripts/mm-choose-gpus.sh" target="_blank">mm-choose-gpus.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script.
+  ```
+  . mm-choose-gpus.sh
+  ```
+
+*I will make this easier to navigate soon! -Brad*
+
+---
+### Build Mmojo Server and other llama.cpp Apps
+This script uses cmake to build Mmojo Server:
+- View the script: <a href="../scripts/520-Build-Executables.sh" target="_blank">520-Build-Executables.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
+  ```
+
+---
+### Test Mmojo Server
+Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
+- View the script: <a href="../scripts/520-Test-Server.sh" target="_blank">520-Test-Server.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+  ```
+
+---
+<details>
+  <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
+
+Copy these builds to your Mmojo Share for packaging later. 
+- View the script: <a href="../scripts/520-Copy-Executables-to-Share.sh" target="_blank">520-Copy-Executables-to-Share.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
+  ```
+</details>
+
+---
+### SHORTCUT: Build CPU, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+. mm-choose-gpus.sh
+$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+```
+
+---
+### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
+I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
+```
+################################################################################
+# SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
+################################################################################
+. mm-choose-gpus.sh
+$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+```
+
+---
+### Proceed
+- **Next:** [522. Build Executables (Performant)](522-Build-Executables-Performant.md)
+- **Previous:** [520. Build Executables](520-Build-Executables.md)
+- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
