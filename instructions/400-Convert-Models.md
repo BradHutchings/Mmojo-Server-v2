@@ -22,7 +22,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
   ```
 
 ---
-### Mistal AI's Ministral 3 3B Reasoning 2512
+### Mistral AI's Ministral 3 3B Reasoning 2512
 It may take 20 or 30 minutes to clone the Hugging Face repo, even on fast Internet.
 ```
 MODEL_NAME='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
