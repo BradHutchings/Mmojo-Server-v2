@@ -1,6 +1,6 @@
-## 401. Prepare to Build
+## 501. Prepare to Build
 ### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
 
 ---
 ### About this Step
@@ -26,33 +26,33 @@ mm-update-local-mmojo-server-repo.sh
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../scripts/401-Clone-Repos.sh" target="_blank">401-Clone-Repos.sh</a>.
+- View the script: <a href="../scripts/501-Clone-Repos.sh" target="_blank">501-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh dogpile
   ```
 
 ---
 ### Patch llama.cpp Source Code and Build Code, Customize for Dogpile
 This looks like lots of fun.
-- View the script: <a href="../../scripts/401-Patch-llama-cpp.sh" target="_blank">401-Patch-llama-cpp.sh</a>.
-- View the script: <a href="../../scripts/401-Customize-llama-cpp.sh" target="_blank">401-Customize-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
 - Run the scripts.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Patch-llama-cpp.sh dogpile
-  $DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
+  $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile
+  $DOGPILE_SCRIPTS/501-Customize-llama-cpp.sh
   ```
 
 ---
 ### Customize WebUI
 Customize the web UI, rebuild all the web files.
-- View the script: <a href="../../scripts/401-Customize-webui.sh" target="_blank">401-Customize-webui.sh</a>.
+- View the script: <a href="../../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh dogpile
   ```
 
 <!--
@@ -76,17 +76,17 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/401-Clone-Repos.sh dogpile
-$MMOJO_SERVER_SCRIPTS/401-Patch-llama-cpp.sh dogpile
-$DOGPILE_SCRIPTS/401-Customize-llama-cpp.sh
-$MMOJO_SERVER_SCRIPTS/401-Customize-webui.sh dogpile
+$MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh dogpile
+$MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile
+$DOGPILE_SCRIPTS/501-Customize-llama-cpp.sh
+$MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh dogpile
 ```
 
 ---
 ### Proceed
-- **Next:** [402. Prepare to Test](402-Prepare-to-Test.md)
+- **Next:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
+- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
