@@ -1,4 +1,4 @@
-## 420. Build Executables
+## 520. Build Executables
 ### About this Step
 In the following three steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the CPU of your build environment, with optional GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
@@ -14,37 +14,37 @@ In the following three steps, we will build Mmojo Server (`mmojo-server`) and ot
 Before using this shortcut, please work through the steps of building the compatible, performant, and native executables a few times so that you can become familiar with what they do.
 ```
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh performant $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/420-Build-Executables.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh native $CHOSEN_GPUS
 ```
 
 ---
 ### SHORTCUT: Test Compatible Executable Mmojo Server
 After you build all the APEs, you can test the compatible executable:
 ```
-$MMOJO_SERVER_SCRIPTS/420-Test-Server.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
 ```
 
 ---
 ### SHORTCUT: Test Performant Executable Mmojo Server
 After you build all the APEs, you can test the performant executable:
 ```
-$MMOJO_SERVER_SCRIPTS/420-Test-Server.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh performant $CHOSEN_GPUS
 ```
 
 ---
 ### SHORTCUT: Test Native Executable Mmojo Server
 After you build all the APEs, you can test the native executable:
 ```
-$MMOJO_SERVER_SCRIPTS/420-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh native $CHOSEN_GPUS
 ```
 
 ---
 ### Proceed
-- **Next:** [421. Build Executables (Compatible)](421-Build-Executables-Compatible.md)
-- **Previous:** [412. Build APEs (Performant)](412-Build-APEs-Performant.md)
-- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next:** [521. Build Executables (Compatible)](521-Build-Executables-Compatible.md)
+- **Previous:** [512. Build APEs (Performant)](512-Build-APEs-Performant.md)
+- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
