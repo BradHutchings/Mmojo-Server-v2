@@ -18,7 +18,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Clone-Reps.sh
+  $MMOJO_SERVER_SCRIPTS/401-Clone-Repo.sh
   ```
 
 ---
