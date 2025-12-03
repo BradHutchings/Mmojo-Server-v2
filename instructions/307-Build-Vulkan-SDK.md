@@ -58,7 +58,7 @@ vulkaninfo --summary
 
 ---
 ### Next Section
-- **Next Section:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next Section:** [400. Build gguf Models](400-Build-gguf Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>
