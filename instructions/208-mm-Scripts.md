@@ -1,4 +1,4 @@
-## 209. `mm-` Scripts
+## 208. `mm-` Scripts
 ### About this Step
 This isn't so much a step, as it is a reference to the scripts that were copied to your `$HOME/mm-scripts` directory.
 - They all have the prefix `mm-`.
@@ -49,3 +49,13 @@ This isn't so much a step, as it is a reference to the scripts that were copied 
 - `mm-work-in-progress-branch.sh` &mdash; Switches to the `eork-in-progress` branch of the local Mmojo Server repo, copies `mm-` scripts to `$HOME/mm-scripts`.
    - You probably do not want to be on this branch unless you're working with Brad on whatever he is working on.
    - Danger: The actual `work-in-progress` branch is deleted and re-created ever time that branch is merged into the `main` branch. You may need to re-clone the repo and switch to the `work-in-progress` branch to continue using it.
+
+---
+### Proceed
+- **Next:** This is the last step in this section.
+- **Previous:** [207. Install Dependencies](207-Install-Dependencies.md)
+- **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
+
+---
+### Next Section
+- **Next Section:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
