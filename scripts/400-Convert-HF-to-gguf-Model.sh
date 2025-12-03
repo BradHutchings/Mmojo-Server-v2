@@ -41,17 +41,18 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
         --outfile $GGUF_DIR/$GGUF_FILE \
         --outtype $model_type
 
-    if [ -d "$MODELS_DIR" ]; then
+    if [ -f $GGUF_DIR/$GGUF_FILE ] && [ -d "$MODELS_DIR" ]; then
         echo ""
         echo "Copying to $MODELS_DIR."
         rsync -ah --progress $GGUF_DIR/$GGUF_FILE $MODELS_DIR
-    fi
 
-    if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
+        if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
 cat << EOF >> $MODEL_MAP
 $GGUF_FILE $model_mnemonic
 EOF
-    fi        
+        fi        
+    fi
+
 fi
 
 cd $HOME
