@@ -1,7 +1,5 @@
 ## Disorganized To-Do List
 
-CHOSEN_MODEL_SHORT_NAME
-
 | Added              | Item      |
 | :-------------           | :------    |
 | 2025&minus;12&minus;03         | Change `CHOSEN_MODEL_SHORT_NAME` to `CHOSEN_MODEL_MNEMONIC`. |
