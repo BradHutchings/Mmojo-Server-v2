@@ -1,4 +1,4 @@
-## 403. Build Debug
+## 503. Build Debug
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or GPU-enabled builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
@@ -21,32 +21,32 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Build Debug Mmojo Server for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
+- View the script: <a href="../scripts/503-Build-Debug.sh" target="_blank">503-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
+  $MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh
   ```
 
 ---
 ### Test the Build - Command-Line Arguments
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
   ```
 
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh args-file $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh args-file $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -54,10 +54,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh support-directory $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh support-directory $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -68,15 +68,15 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh
+$MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
 ### Proceed
-- **Next:** [410. Build APEs](410-Build-APEs.md)
-- **Previous:** [402. Prepare to Test](402-Prepare-to-Test.md)
-- **Up:** [400. Build Mmojo Server](400-Build-Mmojo-Server.md)
+- **Next:** [510. Build APEs](510-Build-APEs.md)
+- **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
+- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
