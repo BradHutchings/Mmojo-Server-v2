@@ -70,8 +70,8 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
-echo "Setting Build Models paths."
-export BUILD_MODELS_DIR="$HOME/400-BUILD-MODELS"
+echo "Setting Convert Models paths."
+export CONVERT_MODELS_DIR="$HOME/400-CONVERT-MODELS"
 
 echo "Setting Build paths."
 export BUILD_DIR="$HOME/500-BUILD-mmojo-server"

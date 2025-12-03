@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script clones these repos to set up a $BUILD_MODELS_DIR:
+# This script clones these repos to set up a $CONVERT_MODELS_DIR:
 # - llama.cpp
 #   - https://github.com/ggml-org/llama.cpp
 #
@@ -14,15 +14,15 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-if [ -d "$BUILD_MODELS_DIR" ]; then
-    rm -r -f $BUILD_MODELS_DIR
+if [ -d "$CONVERT_MODELS_DIR" ]; then
+    rm -r -f $CONVERT_MODELS_DIR
 fi
 
-echo "cloning in: $BUILD_MODELS_DIR/"
+echo "cloning in: $CONVERT_MODELS_DIR/"
 echo ""
 
-git clone https://github.com/ggml-org/llama.cpp $BUILD_MODELS_DIR
-cd $BUILD_MODELS_DIR
+git clone https://github.com/ggml-org/llama.cpp $CONVERT_MODELS_DIR
+cd $CONVERT_MODELS_DIR
 
 # git clone https://github.com/google/minja.git google-minja
 # git clone https://github.com/yhirose/cpp-httplib.git cpp-httplib

@@ -17,7 +17,7 @@ model_type=$2
 model_mnemonic=$3
 model_repo=$4
 
-GGUF_DIR="$BUILD_MODELS_DIR/$model_name-$model_type"
+GGUF_DIR="$CONVERT_MODELS_DIR/_$model_name-$model_type"
 GGUF_FILE="$model_name-$model_type.gguf"
 
 echo "    model_name: $model_name"
@@ -28,7 +28,7 @@ echo "      GGUF_DIR: $GGUF_DIR"
 echo "     GGUF_FILE: $GGUF_FILE"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
-    mkdir -p $BUILD_MODELS_DIR
+    mkdir -p $CONVERT_MODELS_DIR
     if [ ! -d $GGUF_DIR ]; then
         echo ""
         echo "Cloning $model_repo."
@@ -46,6 +46,8 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
         echo "Copying to $MODELS_DIR."
         rsync -ah --progress $GGUF_DIR/$GGUF_FILE $MODELS_DIR
 
+        echo ""
+        echo "Updating $MODEL_MAP."
         if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
 cat << EOF >> $MODEL_MAP
 $GGUF_FILE $model_mnemonic

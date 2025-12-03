@@ -23,7 +23,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 - Run the script.
   ```
   unset CHOSEN_MODEL
-  unset CHOSEN_MODEL_SHORT_NAME
+  unset CHOSEN_MODEL_MNEMONIC
   . mm-choose-model.sh
   ```
 

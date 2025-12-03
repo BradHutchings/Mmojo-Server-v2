@@ -30,6 +30,7 @@ Before you can build Mmojo Server, you need a build environment. Depending on wh
 - [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
 - [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
 - [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
+- [208. mm- Scripts](208-mm-Scripts.md) - All about those `mm-` scripts in your `$HOME/mm-scripts` directory.
 
 ---
 ### [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
@@ -44,8 +45,8 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 ---
-### [400. Build gguf Models](400-Build-gguf_models.md)
-Use llama.cpp to build .gguf` models from Hugging Face repositories.
+### [400. Convert Models](400-Convert-Models.md)
+Use llama.cpp to convert models from Hugging Face repositories into `.gguf` files that Mmojo Server can use.
 
 ---
 ### [500. Build Mmojo Server](500-Build-Mmojo-Server.md)

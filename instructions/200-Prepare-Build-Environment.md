@@ -26,6 +26,7 @@ Here are the things you need to do:
 - [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
 - [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
 - [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
+- [208. mm- Scripts](208-mm-Scripts.md) - All about those `mm-` scripts in your `$HOME/mm-scripts` directory.
 
 **Get Started:** [201. Prepare WSL](201-Prepare-WSL.md)
 

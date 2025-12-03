@@ -11,7 +11,7 @@ SCRIPT_NAME=$(basename -- "$0")
 # printf "\n**********\n*\n* STARTED: $SCRIPT_NAME.\n*\n**********\n\n"
 
 unset CHOSEN_MODEL
-unset CHOSEN_MODEL_SHORT_NAME
+unset CHOSEN_MODEL_MNEMONIC
 
 echo ""
 echo "These models are available to package:"
@@ -32,9 +32,9 @@ select filename in *.gguf; do
 done
 
 if [ -v CHOSEN_MODEL ]; then
-  export CHOSEN_MODEL_SHORT_NAME=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
+  export CHOSEN_MODEL_MNEMONIC=$(grep $CHOSEN_MODEL $MODEL_MAP | awk '{print $2}')
   echo ""
-  echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_SHORT_NAME"
+  echo "You chose: $CHOSEN_MODEL - $CHOSEN_MODEL_MNEMONIC"
   echo ""
 fi
 

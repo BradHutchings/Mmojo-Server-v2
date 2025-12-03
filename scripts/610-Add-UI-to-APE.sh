@@ -32,8 +32,8 @@ if [ "$branding" == "dogpile" ]; then
     ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
 fi
 
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "             Variation: $variation"
