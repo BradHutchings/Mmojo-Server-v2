@@ -20,13 +20,9 @@ This script installs system updates and dependencies you will need:
 
 ---
 ### Proceed
-- **Next:** This is the last step in this section.
+- **Next:** [208. `mm-` Scripts](208-mm-Scripts.md)
 - **Previous:** [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
-
----
-### Next Section
-- **Next Section:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
 [MIT License](/LICENSE)<br/>
