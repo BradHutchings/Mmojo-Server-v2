@@ -91,7 +91,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     echo "Launching $EXECUTABLE_PATH."
     echo ""
     $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
-        --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
+        --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
     
     printf "\nVerify that args file and support folder do not exist.\n"
     ls -ald $ARGS_FILE
