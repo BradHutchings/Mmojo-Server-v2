@@ -2,7 +2,6 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;12&minus;03         | Fix or add *Update Local Mmojo Server Repo* to each page. `mm-env` |
 | 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
@@ -28,6 +27,7 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;12&minus;03 | 2025&minus;12&minus;03         | Fix or add *Update Local Mmojo Server Repo* to each page. `mm-env` |
 | 2025&minus;12&minus;02 | 2025&minus;12&minus;01         | 410-Build-APEs.md and 420-Build-Executables.md intro pages. |
 | 2025&minus;12&minus;02 | 2025&minus;12&minus;01         | 421-Build-CPU-Compatible.md --> 421-Build-Executables-Compatible.md, etc. Idea is we build all the llama.cpp targets as build platform executables. |
 | 2025&minus;12&minus;01 | 2025&minus;11&minus;25         | Default certs to put in the certs directory. Should be generic certs and empty CA file. Investigate `mkcert` for making a CA and placeholders. |
