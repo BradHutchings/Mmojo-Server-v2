@@ -46,6 +46,8 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
         echo "Copying to $MODELS_DIR."
         rsync -ah --progress $GGUF_DIR/$GGUF_FILE $MODELS_DIR
 
+        echo ""
+        echo "Updating $MODEL_MAP."
         if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
 cat << EOF >> $MODEL_MAP
 $GGUF_FILE $model_mnemonic
