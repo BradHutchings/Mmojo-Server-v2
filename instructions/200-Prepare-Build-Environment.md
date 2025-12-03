@@ -28,7 +28,6 @@ Here are the things you need to do:
 - [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
 - [208. mm- Scripts](208-mm-Scripts.md) - All about those `mm-` scripts in your `$HOME/mm-scripts` directory.
 
-
 **Get Started:** [201. Prepare WSL](201-Prepare-WSL.md)
 
 ---
