@@ -49,20 +49,16 @@ This script creates the package directories, copies the `dogpile-ape` file you p
   unset ADDED_MODEL
   ```
 
-<!--
 ---
 ### Add Certificates to Package
-This script adds SSL certificates from the Mmojo Share to the APE package.
+This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
 - View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant dogpile
-  # Keep track of what we add for the args file.
+  # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
-
-*Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
--->
 
 <!--
 ---
