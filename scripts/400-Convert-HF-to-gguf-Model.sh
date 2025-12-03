@@ -17,7 +17,7 @@ model_type=$2
 model_mnemonic=$3
 model_repo=$4
 
-GGUF_DIR="$CONVERT_MODELS_DIR/$model_name-$model_type"
+GGUF_DIR="$CONVERT_MODELS_DIR/_$model_name-$model_type"
 GGUF_FILE="$model_name-$model_type.gguf"
 
 echo "    model_name: $model_name"
