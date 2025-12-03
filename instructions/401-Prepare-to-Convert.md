@@ -21,7 +21,7 @@ mm-env
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../scripts/501-Clone-Repos.sh" target="_blank">501-Clone-Repos.sh</a>.
+- View the script: <a href="../scripts/401-Clone-Repo.sh" target="_blank">401-Clone-Repo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
