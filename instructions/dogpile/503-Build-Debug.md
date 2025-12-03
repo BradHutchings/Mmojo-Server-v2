@@ -1,6 +1,6 @@
-## 403. Build Debug
+## 503. Build Debug
 ### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
+**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
 
 ---
 ### About this Step
@@ -26,22 +26,22 @@ mm-update-local-mmojo-server-repo.sh
 ---
 ### Build Debug Dogpile for Build Environment Platform
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../../scripts/403-Build-Debug.sh" target="_blank">403-Build-Debug.sh</a>.
+- View the script: <a href="../../scripts/503-Build-Debug.sh" target="_blank">503-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh dogpile
   ```
 
 ---
 ### Test the Build
 Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../../scripts/403-Test-Debug.sh" target="_blank">403-Test-Debug.sh</a>.
+- View the script: <a href="../../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 dogpile
   ```
 
 ---
@@ -51,15 +51,15 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/403-Build-Debug.sh dogpile
-$MMOJO_SERVER_SCRIPTS/403-Test-Debug.sh command-line 1 dogpile
+$MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh dogpile
+$MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 dogpile
 ```
 
 ---
 ### Proceed
-- **Next:** [410. Build APEs](410-Build-APEs.md)
-- **Previous:** [402. Prepare to Test](402-Prepare-to-Test.md)
-- **Up:** [400. Build Dogpile](400-Build-Dogpile.md)
+- **Next:** [510. Build APEs](510-Build-APEs.md)
+- **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
+- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
 
 ---
 [MIT License](/LICENSE)<br/>
