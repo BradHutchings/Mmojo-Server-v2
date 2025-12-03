@@ -6,7 +6,7 @@ If you have already prepared your build environment, skip ahead to:
 - [400. Convert Models](400-Convert-Models.md)
 
 ---
-### Preparing Your Build Environment
+### Gather Build Pieces
 Here are the things you need to do:
 - [301. Download Models](301-Download-Models.md) - Download `.gguf` model files from Hugging Face and copy them to your Mmojo share.
 - [302. Copy Models](302-Copy-Models.md) - Copy `.gguf` model files from your Mmojo share.
