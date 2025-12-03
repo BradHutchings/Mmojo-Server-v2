@@ -28,7 +28,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 - Run the script.
   ```
   unset CHOSEN_MODEL
-  unset CHOSEN_MODEL_SHORT_NAME
+  unset CHOSEN_MODEL_MNEMONIC
   . mm-choose-model.sh
   ```
 
@@ -105,8 +105,8 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
 ```
@@ -133,8 +133,8 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-if [ -v CHOSEN_MODEL_SHORT_NAME ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_SHORT_NAME"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
 ```
