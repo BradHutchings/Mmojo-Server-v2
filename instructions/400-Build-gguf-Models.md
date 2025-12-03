@@ -26,9 +26,13 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 This works because it is BF16 weights. The instruct versions of Ministral have quantized FP8 weights that llama.cpp maintainer says they probably won't support.
 ```
 MODEL_NAME='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
-MODEL_EXTENSION="mis-min-3B-rea-v3-2512"
+MODEL_MNEMONIC="mis-min-3B-rea-v3-2512"
 MODEL_TYPE='q8_0'
-MODEL_GIT="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
+MODEL_REPO="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
+$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_MNEMONIC $MODEL_TYPE $MODEL_REPO
+```
+<!--
+```
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
@@ -41,6 +45,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
 
 cp $GGUF_DIR/$MODEL_NAME-$MODEL_TYPE.gguf $MODELS_DIR
 ```
+-->
 
 ---
 ### Google's Gemma E2B Instruct v3n
@@ -52,9 +57,14 @@ While you are on the Hugging Face site and awaiting permission from Google, get 
 
 ```
 MODEL_NAME="Google-Gemma-E2B-Instruct-v3n"
-MODEL_EXTENSION="goo-gem-E2B-ins-v3n"
+MODEL_MNEMONIC="goo-gem-E2B-ins-v3n"
 MODEL_TYPE="q8_0"
-MODEL_GIT="https://huggingface.co/google/gemma-3n-E2B-it.git"
+MODEL_REPO="https://huggingface.co/google/gemma-3n-E2B-it.git"
+$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_MNEMONIC $MODEL_TYPE $MODEL_REPO
+```
+
+<!--
+```
 GGUF_DIR="$BUILD_MODELS_DIR/$MODEL_NAME-$MODEL_TYPE"
 
 mkdir -p $BUILD_MODELS_DIR
@@ -67,6 +77,7 @@ python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
 
 cp $GGUF_DIR/$MODEL_NAME-$MODEL_TYPE.gguf $MODELS_DIR
 ```
+-->
 
 <!--
 ---
