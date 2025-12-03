@@ -51,6 +51,16 @@ vulkaninfo --summary
 ```
 
 ---
+### Alternative Easy Install
+Building the Vulkan SDK can take a couple of hourse. This quick install on Debian / Ubuntu *might* get a build working for you. I'm testing this.
+```
+sudo apt install libvulkan-dev glslc vulkan-tools
+```
+
+***Reference:** https://github.com/ggml-org/llama.cpp/commit/16cc3c606efe1640a165f666df0e0dc7cc2ad869*
+
+
+---
 ### Proceed
 - **Next:** This is the last step in this section.
 - **Previous:** [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md)
