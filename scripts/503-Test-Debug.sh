@@ -84,7 +84,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
     if [ "$args" == "command-line" ]; then
         # --mlock is not needed to run this.
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
-            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 0 
+            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
 
         echo ""
         echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
