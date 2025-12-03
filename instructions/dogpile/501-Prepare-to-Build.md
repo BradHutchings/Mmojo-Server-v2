@@ -55,7 +55,6 @@ Customize the web UI, rebuild all the web files.
   $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh dogpile
   ```
 
-<!--
 #### Uh. Oh. npm Spit Out Errors
 
 You may have an earlier version of `npm` and `nodejs` installed on your build machine than are required for that customization step. If you're running Linux or macOS, these steps should clean that up. This reinstall is already in this step: [207. Install Dependencies](../207-Install-Dependencies.md). I'm leaving this workaround here until I'm sure it's not needed.
@@ -67,7 +66,6 @@ sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
 ```
--->
 
 ---
 ### SHORTCUT: Run All the Above Scripts 
