@@ -102,5 +102,15 @@ MODEL_REPO="https://huggingface.co/google/gemma-3-12b-it"
 $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+---
+### Proceed
+- **Next:** [403. Meta Llama](402-Meta-Llama.md)
+- **Previous:** [401. Prepare to Convert](401-Prepare-to-Convert.md)
+- **Up:** [400. Convert Models](400-Convert-Models.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
 
 
