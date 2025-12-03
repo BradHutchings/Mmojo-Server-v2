@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;03         | Fix or add *Update Local Mmojo Server Repo* to each page. `mm-env` |
 | 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
