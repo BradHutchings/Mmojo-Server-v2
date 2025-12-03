@@ -44,8 +44,8 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 ---
-### [400. Build gguf Models](400-Build-gguf_models.md)
-Use llama.cpp to build .gguf` models from Hugging Face repositories.
+### [400. Convert Models](400-Convert-Models.md)
+Use llama.cpp to convert models from Hugging Face repositories into `.gguf` files that Mmojo Server can use.
 
 ---
 ### [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
