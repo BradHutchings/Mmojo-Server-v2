@@ -88,3 +88,8 @@ MODEL_REPO="https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
 $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+---
+### Proceed
+- **Next:** [403. Mistral AI Ministral](403-Mistral-AI-Ministral.md)
+- **Previous:** [402. Google Gemma](402-Google-Gemma.md)
+- **Up:** [400. Convert Models](400-Convert-Models.md)
