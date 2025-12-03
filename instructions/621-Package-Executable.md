@@ -9,6 +9,7 @@ Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-
 - Shortcut after picking build and gguf.
 - Choosing the build doesn't find GPU-enabled builds.
 - Test localhost and public interfaces before copying to Mmojo Server.
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
@@ -16,7 +17,7 @@ Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 
