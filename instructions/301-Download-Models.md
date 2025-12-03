@@ -15,7 +15,7 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 

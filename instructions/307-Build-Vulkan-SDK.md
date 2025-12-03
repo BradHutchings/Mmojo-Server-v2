@@ -15,9 +15,25 @@ Vulkan is a newer industry standard API to help applications work seamlessly wit
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
+
+---
+### Ubuntu / Debian
+Building the Vulkan SDK can take a couple of hourse. This quick install on Debian / Ubuntu *should* get a build working for you. Try this first.
+```
+sudo apt install libvulkan-dev glslc vulkan-tools
+```
+
+Run this command to verify that Vulkan is installed and see which GPUs on your system it recognizes.
+```
+vulkaninfo --summary
+```
+
+When you get to the [521. Build Executables Compatible](521-Build-Executables-Compatible.md) step, try building with Vulkan GPU support. If the build gets through creating Vulkan shaders, you have what you need. Otherwise, proceed below.
+
+***Reference:** [llama.cpp commit 16cc3c6](https://github.com/ggml-org/llama.cpp/commit/16cc3c606efe1640a165f666df0e0dc7cc2ad869)*
 
 ---
 ### Fast Builds
@@ -49,16 +65,6 @@ Run this command to verify that Vulkan is installed and see which GPUs on your s
 ```
 vulkaninfo --summary
 ```
-
----
-### Alternative Easy Install
-Building the Vulkan SDK can take a couple of hourse. This quick install on Debian / Ubuntu *might* get a build working for you. I'm testing this.
-```
-sudo apt install libvulkan-dev glslc vulkan-tools
-```
-
-***Reference:** https://github.com/ggml-org/llama.cpp/commit/16cc3c606efe1640a165f666df0e0dc7cc2ad869*
-
 
 ---
 ### Proceed

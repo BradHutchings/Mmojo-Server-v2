@@ -13,7 +13,7 @@ In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp ta
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 

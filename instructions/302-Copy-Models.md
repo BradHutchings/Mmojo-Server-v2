@@ -13,7 +13,7 @@ In this step, we will copy models from the Mmojo Share. If you don't have and mo
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 

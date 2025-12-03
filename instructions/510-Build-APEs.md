@@ -7,6 +7,17 @@ In the following two steps, we will build Mmojo Server (`mmojo-server`) and othe
 **Where:** Perform this step in either or both your x86_64 and your aarch64 (arm64) build environments.
 
 ---
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+mm-env
+```
+</details>
+
+---
 ### SHORTCUT: Build Compatible and Performant APEs
 Before using this shortcut, please work through the steps of building the compatible and performant APEs a few times so that you can become familiar with what they do.
 ```

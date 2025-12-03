@@ -15,7 +15,7 @@ The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating sy
 Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
 ```
 mm-update-local-mmojo-server-repo.sh
-. mm-environment-variables.sh
+mm-env
 ```
 </details>
 
