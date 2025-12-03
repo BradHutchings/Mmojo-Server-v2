@@ -8,6 +8,17 @@ TO-DO:
 - The script needs to add the model to the model map after copying. That will let us use the model in packaging.
 
 ---
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+mm-env
+```
+</details>
+
+---
 ### Before You Get Started
 Before you can clone Hugging Face Repos and convert them into .gguf models, you need to have the llama.cpp Github repo cloned.
 
