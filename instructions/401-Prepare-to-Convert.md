@@ -32,7 +32,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 
 ---
 ### Proceed
-- **Next:** [502. Prepare to Test](502-Prepare-to-Test.md)
+- **Next:** [402. Google Gemma](402-Google-Gemma.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [400. Convert Models](400-Convert-Models.md)
 
