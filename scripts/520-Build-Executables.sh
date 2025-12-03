@@ -81,7 +81,7 @@ if [[ "$gpus" == *"cud"* ]]; then
     # CUDA version reference: https://developer.nvidia.com/cuda-gpus
     # Does supporting a lower version work for higher versions?
     # 86 = GeForce RTX 3050, 87 = Jetson, 89 = GeForce RTX 4050
-    GGML_PARAMS+=" -DCMAKE_CUDA_ARCHITECTURES=\"86;87;89\""
+    GGML_PARAMS+=" -DCMAKE_CUDA_ARCHITECTURES=86;87;89"
 fi
 if [[ "$gpus" == *"hip"* ]]; then
     GGML_PARAMS+=" -DGGML_HIP=ON";
