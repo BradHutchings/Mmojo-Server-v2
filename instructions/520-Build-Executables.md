@@ -10,6 +10,17 @@ In the following three steps, we will build Mmojo Server (`mmojo-server`) and ot
 **Shortcut:** [Scroll down](#shortcut-build-cpu-test).
 
 ---
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+mm-env
+```
+</details>
+
+---
 ### SHORTCUT: Build Compatible, Performant, and Native Executables with Optional GPU Support
 Before using this shortcut, please work through the steps of building the compatible, performant, and native executables a few times so that you can become familiar with what they do.
 ```
