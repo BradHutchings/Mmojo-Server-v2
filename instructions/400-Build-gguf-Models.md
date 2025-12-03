@@ -29,7 +29,7 @@ MODEL_NAME='Mistral-AI-Ministral-3B-Reasoning-v3-2512'
 MODEL_MNEMONIC="mis-min-3B-rea-v3-2512"
 MODEL_TYPE='q8_0'
 MODEL_REPO="https://huggingface.co/mistralai/Ministral-3-3B-Reasoning-2512.git"
-$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_MNEMONIC $MODEL_TYPE $MODEL_REPO
+$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 <!--
 ```
@@ -62,7 +62,7 @@ MODEL_NAME="Google-Gemma-E2B-Instruct-v3n"
 MODEL_MNEMONIC="goo-gem-E2B-ins-v3n"
 MODEL_TYPE="q8_0"
 MODEL_REPO="https://huggingface.co/google/gemma-3n-E2B-it.git"
-$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_MNEMONIC $MODEL_TYPE $MODEL_REPO
+$MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
 <!--
