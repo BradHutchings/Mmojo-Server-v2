@@ -19,7 +19,9 @@ if [ -d "$CONVERT_MODELS_DIR" ]; then
 fi
 
 mkdir -p $CONVERT_MODELS_DIR
-wget https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py -o "$CONVERT_MODELS_DIR/convert_hf_to_gguf.py
+url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py"
+filename="convert_hf_to_gguf.py"
+wget $url -o "$CONVERT_MODELS_DIR/$filename"
 
 exit
 
