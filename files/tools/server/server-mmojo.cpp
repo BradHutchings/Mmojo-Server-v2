@@ -83,7 +83,7 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename
             if (ends_with(filename, extension)) {
                 printf("- %s\n", entry->d_name);
                 ggufFilename = directoryPath;
-                if (!ends_with(ggufFilename, slash) {
+                if (!ends_with(ggufFilename, slash)) {
                     ggufFilename += slash;
                 }
                 ggufFilename += entry->d_name;
