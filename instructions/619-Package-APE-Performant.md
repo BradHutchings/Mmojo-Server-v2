@@ -1,11 +1,11 @@
-## 619. Package APE (Performant)
+## 619. Package Naked APE (Performant)
 ### About this Step
 
 **EXPERIMENTAL**
 
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
-We are not adding a gguf to this. There will be a step to take this package and add ggufs to it. Then we have to re-explain the process.
+**Naked** means there is no gguf file in this APE. You can just deploy a naked APE with a gguf file in the same folder &mdash; maybe even a hard or soft link &mdash; or zip a gguf onto a naked APE to get a fully contained server. If we use the found file feature, we should automatically set mmap to on as well -- back to server-mmojo.cpp for that.
 
 ---
 <details>
