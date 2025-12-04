@@ -36,6 +36,7 @@
 // This could be automated by searching for "using json =" and inserting this block before.
 #include <linux/limits.h>
 #include <sys/stat.h>
+#include <dirent.h>
 #include "mmojo-args.h"
 
 #define PROCESS_NAME "mmojo-server"
@@ -113,6 +114,31 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
     };
 }
 
+// Mmojo Server START
+void PrintGgufsInDirectory(char* directoryPath);
+void PrintGgufsInDirectory(char* directoryPath) {
+    DIR *dir;
+    struct dirent *entry;
+
+    // Open the directory
+    dir = opendir(directoryPath);
+    if (dir != NULL) {
+        printf("Files in %s:\n", directoryPath);
+        while ((entry = readdir(dir)) != NULL) {
+            // Skip "." and ".." entries
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+                continue;
+            }
+            printf("- %s\n", entry->d_name);
+        }
+        closedir(dir);
+    }
+    else {
+        perror("Error opening directory");
+    }
+}
+// Mmojo Server END
+
 int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
@@ -176,6 +202,10 @@ int main(int argc, char ** argv, char ** envp) {
     printf("-     supportPath: %s\n", supportPath.c_str());
     printf("- supportArgsPath: %s\n", supportArgsPath.c_str());
     printf("-     zipArgsPath: %s\n", zipArgsPath.c_str());
+
+    printf("\n");
+    PrintGgufsInDirectory("/zip");
+    PrintGgufsInDirectory(path.c_str());
 
     struct stat buffer1;
     if (stat(path.c_str(), &buffer1) == 0) {
