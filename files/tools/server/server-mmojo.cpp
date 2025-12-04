@@ -115,8 +115,8 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
 }
 
 // Mmojo Server START
-void PrintGgufsInDirectory(char* directoryPath);
-void PrintGgufsInDirectory(char* directoryPath) {
+void PrintGgufsInDirectory(const char* directoryPath);
+void PrintGgufsInDirectory(const char* directoryPath) {
     DIR *dir;
     struct dirent *entry;
 
