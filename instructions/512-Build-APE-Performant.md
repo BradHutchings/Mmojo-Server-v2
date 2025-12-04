@@ -1,4 +1,4 @@
-## 512. Build APEs (Performant)
+## 512. Build APE (Performant)
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on a narrower, more modern range of x86_64 and aarch64 machines.
 
@@ -158,7 +158,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 ---
 ### Proceed
 - **Next:** [520. Build Executables](520-Build-Executables.md)
-- **Previous:** [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md)
+- **Previous:** [511. Build APE (Compatible)](511-Build-APE-Compatible.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
