@@ -46,7 +46,7 @@
 // pre C++20 helpers.
 bool starts_with (std::string const &fullString, std::string const &beginning);
 bool ends_with (std::string const &fullString, std::string const &ending);
-void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename);
+void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
 
 bool starts_with (std::string const &fullString, std::string const &beginning) {
     if (fullString.length() >= beginning.length()) {
@@ -66,7 +66,7 @@ bool ends_with (std::string const &fullString, std::string const &ending) {
     } 
 }
 
-void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename) {
+void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     ggufFilename = "";
   
     DIR *dir;
@@ -83,14 +83,14 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename
           
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
-            const std::string& slash = "";
+            const std::string& slash = "/";
             if (ends_with(filename, extension)) {
                 printf("- %s\n", entry->d_name);
-                ggufFilename = directoryPath;
-                if (!ends_with(ggufFilename, slash)) {
-                    ggufFilename += slash;
+                ggufPath = directoryPath;
+                if (!ends_with(ggufPath, slash)) {
+                    ggufPath += slash;
                 }
-                ggufFilename += entry->d_name;
+                ggufPath += entry->d_name;
                 break;
             }
         }
