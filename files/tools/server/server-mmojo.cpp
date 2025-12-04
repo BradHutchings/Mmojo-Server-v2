@@ -125,11 +125,11 @@ void PrintGgufsInDirectory(const char* directoryPath) {
     if (dir != NULL) {
         printf("Files in %s:\n", directoryPath);
         while ((entry = readdir(dir)) != NULL) {
-            // Skip "." and ".." entries
-            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
-                continue;
+            const std::string& filename = entry->d_name;
+            const std::string& extension = ".gguf";            
+            if (ends_with(filename, extension) {
+                printf("- %s\n", entry->d_name);
             }
-            printf("- %s\n", entry->d_name);
         }
         closedir(dir);
     }
