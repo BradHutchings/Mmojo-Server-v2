@@ -46,6 +46,7 @@
 // pre C++20 helpers.
 bool starts_with (std::string const &fullString, std::string const &beginning);
 bool ends_with (std::string const &fullString, std::string const &ending);
+void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename);
 
 bool starts_with (std::string const &fullString, std::string const &beginning) {
     if (fullString.length() >= beginning.length()) {
@@ -64,6 +65,36 @@ bool ends_with (std::string const &fullString, std::string const &ending) {
         return false;
     } 
 }
+
+void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename) {
+    ggufFilename = "";
+  
+    DIR *dir;
+    struct dirent *entry;
+
+    // Open the directory
+    dir = opendir(directoryPath.c_str());
+    if (dir != NULL) {
+        printf("Looking for .gguf in %s:\n", directoryPath);
+        while ((entry = readdir(dir)) != NULL) {
+            const std::string& filename = entry->d_name;
+            const std::string& extension = ".gguf";            
+            if (ends_with(filename, extension)) {
+                printf("- %s\n", entry->d_name);
+                ggufFilename = directoryPath;
+                ggufFilename += "/";
+                ggufFilename += entry->d_name;
+                break;
+            }
+        }
+        closedir(dir);
+    }
+    else {
+        perror("Error opening directory");
+    }
+}
+
+
 // Mmojo Server END
 
 static std::function<void(int)> shutdown_handler;
@@ -179,21 +210,17 @@ int main(int argc, char ** argv, char ** envp) {
     #endif
     
     // Args files if present. The names are different to remove confusion during packaging.
-    // original hard coded values -- upper case first letter so they don't get replaced by sed.
-    // const std::string& argsFilename = "Mmojo-server-args";
-    // const std::string& supportDirectoryName = "Mmojo-server-support";
-    // const std::string& supportArgsFilename = "Default-args";
-    // const std::string& zipArgsPath = "/zip/Default-args";
-
     const std::string& argsFilename = ARGS_FILENAME;
     const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
     const std::string& supportArgsFilename = ARGS_FILENAME;
     const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
+    const std::string& zipPath = "/zip";
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
     std::string supportPath = path + supportDirectoryName + "/";
     std::string supportArgsPath = supportPath + supportArgsFilename;
+    std::string firstGguf = "";
 
     #if 1
     printf("Paths of things we care about:\n");
@@ -204,8 +231,17 @@ int main(int argc, char ** argv, char ** envp) {
     printf("-     zipArgsPath: %s\n", zipArgsPath.c_str());
 
     printf("\n");
-    PrintGgufsInDirectory("/zip");
-    PrintGgufsInDirectory(path.c_str());
+    if (firstGguf == "") {
+        find_first_gguf(path, firstGguf);
+    }
+    if (firstGguf == "") {
+        find_first_gguf(supportPath, firstGguf);
+    }
+    if (firstGguf == "") {
+        find_first_gguf(zipPath, firstGguf);
+    }
+
+    printf("First .gguf found:%s\n\n", firstGguf.c_str());
 
     struct stat buffer1;
     if (stat(path.c_str(), &buffer1) == 0) {
