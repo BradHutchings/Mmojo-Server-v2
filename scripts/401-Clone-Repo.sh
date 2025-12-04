@@ -18,6 +18,11 @@ if [ -d "$CONVERT_MODELS_DIR" ]; then
     rm -r -f $CONVERT_MODELS_DIR
 fi
 
+mkdir -p $CONVERT_MODELS_DIR
+wget https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py -o "$CONVERT_MODELS_DIR/convert_hf_to_gguf.py
+
+exit
+
 echo "cloning in: $CONVERT_MODELS_DIR/"
 echo ""
 
