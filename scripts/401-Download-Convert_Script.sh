@@ -21,33 +21,9 @@ fi
 mkdir -p $CONVERT_MODELS_DIR
 url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py"
 filename="convert_hf_to_gguf.py"
+
+echo "Downloading $filename."
 wget $url -o "$CONVERT_MODELS_DIR/$filename"
-
-exit
-
-echo "cloning in: $CONVERT_MODELS_DIR/"
-echo ""
-
-git clone https://github.com/ggml-org/llama.cpp $CONVERT_MODELS_DIR
-cd $CONVERT_MODELS_DIR
-
-# git clone https://github.com/google/minja.git google-minja
-# git clone https://github.com/yhirose/cpp-httplib.git cpp-httplib
-# git clone https://github.com/mackron/miniaudio.git miniaudio
-# git clone https://github.com/nothings/stb.git stb
-# git clone https://github.com/nlohmann/json.git nlohmann-json
-# cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
-# cp -r $BUILD_OPENSSSL_DIR/openssl .
-
-# Roll the llama.cpp repo back to last known working.
-# Up through: https://github.com/ggml-org/llama.cpp/commit/61bde8e21f4a1f9a98c9205831ca3e55457b4c78
-# 61bde8e21f4a1f9a98c9205831ca3e55457b4c78 
-# git checkout 61bde8e21f4a1f9a98c9205831ca3e55457b4c78 
-
-# Previous: 9810cb82476e605bef45f9c51009c9989873ff89
-
-# To see where you're checked out:
-# git log -1
 
 cd $HOME
 
