@@ -128,12 +128,16 @@ int main(int argc, char ** argv, char ** envp) {
     pathChar[0] = '\0';
 
     #ifdef COSMOCC
+        printf("Getting working directory path for Cosmo build.\n");
+  
         // When we run inside an ape, the parent directory of the executable will not help us.
         // So we will fall back to using the working directory.
         if (getcwd(pathChar, sizeof(pathChar) - 1)) {
             strcat(pathChar, "/");
         }
     #else
+        printf("Getting parent directory path for regular application build.\n");
+
         // When we are just launched normally, we want the parent directory of the executable.
         char exe_path[PATH_MAX];
         ssize_t len = readlink("/proc/self/exe", pathChar, sizeof(pathChar) - 1);
