@@ -16,8 +16,8 @@ Here are the things you need to do:
 - [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [503. Build Debug](503-Build-Debug.md) - Build an unoptimized `dogpile` for the CPU of the build environment platformm that can be used to test features and changes.
 - [510. Build APEs](510-Build-APEs.md) - Explains APEs and how to build them.
-- [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-- [512. Build APEs (Performant)](512-Build-APEs-Performant.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [511. Build APE (Compatible)](511-Build-APE-Compatible.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+- [512. Build APE (Performant)](512-Build-APE-Performant.md) - Build `dogpile-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
 
 **Get Started:** [501. Prepare to Build](501-Prepare-to-Build.md)
 
