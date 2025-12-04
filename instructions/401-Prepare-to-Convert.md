@@ -31,6 +31,16 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
   ```
 
 ---
+### Set up a Credential Store for git
+Many of the Hugging Face repos are gated and require you to enter your account name and an API key to access them. You can save a lot of repeated copy/paste effort by setting up a git credential store. **NOTE: THIS IS NOT VERY SECURE!!**
+
+```
+# THIS IS NOT A SECURE WAY TO HANDLE YOUR HUGGING FACE CREDENTIALS!!
+git config --global credential.helper store
+```
+
+
+---
 ### Proceed
 - **Next:** [402. Google Gemma](402-Google-Gemma.md)
 - **Previous:** This is the first step in this section.
