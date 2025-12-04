@@ -59,7 +59,6 @@ This script creates the package directories.
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
-  unset SELECTED_MODEL
   unset ADDED_MODEL
   ```
 
