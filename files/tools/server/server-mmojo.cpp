@@ -75,7 +75,7 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename
     // Open the directory
     dir = opendir(directoryPath.c_str());
     if (dir != NULL) {
-        printf("Looking for .gguf in %s:\n", directoryPath);
+        printf("Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
@@ -222,6 +222,18 @@ int main(int argc, char ** argv, char ** envp) {
     std::string supportArgsPath = supportPath + supportArgsFilename;
     std::string firstGguf = "";
 
+    if (firstGguf == "") {
+        find_first_gguf(path, firstGguf);
+    }
+    if (firstGguf == "") {
+        find_first_gguf(supportPath, firstGguf);
+    }
+    #ifdef COSMOCC
+    if (firstGguf == "") {
+        find_first_gguf(zipPath, firstGguf);
+    }
+    #endif
+
     #if 1
     printf("Paths of things we care about:\n");
     printf("-            path: %s\n", path.c_str());
@@ -229,20 +241,9 @@ int main(int argc, char ** argv, char ** envp) {
     printf("-     supportPath: %s\n", supportPath.c_str());
     printf("- supportArgsPath: %s\n", supportArgsPath.c_str());
     printf("-     zipArgsPath: %s\n", zipArgsPath.c_str());
-
+    printf("        firstGguf: %s\n", firstGguf.c_str());
     printf("\n");
-    if (firstGguf == "") {
-        find_first_gguf(path, firstGguf);
-    }
-    if (firstGguf == "") {
-        find_first_gguf(supportPath, firstGguf);
-    }
-    if (firstGguf == "") {
-        find_first_gguf(zipPath, firstGguf);
-    }
-
-    printf("First .gguf found:%s\n\n", firstGguf.c_str());
-
+  
     struct stat buffer1;
     if (stat(path.c_str(), &buffer1) == 0) {
         printf("-            path exists: %s\n", path.c_str());
