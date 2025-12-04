@@ -127,7 +127,7 @@ void PrintGgufsInDirectory(const char* directoryPath) {
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
-            if (ends_with(filename, extension) {
+            if (ends_with(filename, extension)) {
                 printf("- %s\n", entry->d_name);
             }
         }
