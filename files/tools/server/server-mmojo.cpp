@@ -225,7 +225,6 @@ int main(int argc, char ** argv, char ** envp) {
     printf("- supportArgsPath: %s\n", supportArgsPath.c_str());
     printf("-     zipArgsPath: %s\n", zipArgsPath.c_str());
     printf("        firstGguf: %s\n", firstGguf.c_str());
-    printf("\n");
   
     struct stat buffer1;
     if (stat(path.c_str(), &buffer1) == 0) {
@@ -240,6 +239,7 @@ int main(int argc, char ** argv, char ** envp) {
     if (stat(zipArgsPath.c_str(), &buffer1) == 0) {
         printf("-     zipArgsPath exists: %s\n", zipArgsPath.c_str());
     }
+    printf("\n");
     #endif
     
     // mmojo-server-support/default-args will be an option for platform optimized builds.
@@ -291,7 +291,7 @@ int main(int argc, char ** argv, char ** envp) {
 
     if (starts_with(params.model.path, zipPathSlash)) {
         // if the gguf is in the zip file, we have to turn off use_map.
-        printf("The model file is in /zip, so turning off use_mmap.\n");
+        printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
         params.use_mmap = false;
     }
   
