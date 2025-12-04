@@ -1,4 +1,4 @@
-ev/*
+/*
   server-mmojo.cpp is a derivative for tools/server/server.cpp.
 
   This file has been modified to implement Mmojo Server specific
@@ -147,7 +147,7 @@ int main(int argc, char ** argv, char ** envp) {
             // Find the last '/' to get the directory
             char *last_slash = strrchr(pathChar, '/');
             if (last_slash != NULL) {
-                *last_slash = '\0'; // Null-terminate at the last slash
+                *(last_slash + 1) = '\0'; // Null-terminate at the last slash
             }
         }
     #endif
