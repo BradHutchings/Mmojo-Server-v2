@@ -1,4 +1,4 @@
-/*
+ev/*
   server-mmojo.cpp is a derivative for tools/server/server.cpp.
 
   This file has been modified to implement Mmojo Server specific
@@ -139,7 +139,6 @@ int main(int argc, char ** argv, char ** envp) {
         printf("Getting parent directory path for regular application build.\n");
 
         // When we are just launched normally, we want the parent directory of the executable.
-        char exe_path[PATH_MAX];
         ssize_t len = readlink("/proc/self/exe", pathChar, sizeof(pathChar) - 1);
 
         if (len != -1) {
