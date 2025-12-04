@@ -127,10 +127,28 @@ int main(int argc, char ** argv, char ** envp) {
     char pathChar[PATH_MAX];
     pathChar[0] = '\0';
 
-    if (getcwd(pathChar, sizeof(pathChar) - 1)) {
-        strcat(pathChar, "/");
-    }
+    #ifdef COSMOCC
+        // When we run inside an ape, the parent directory of the executable will not help us.
+        // So we will fall back to using the working directory.
+        if (getcwd(pathChar, sizeof(pathChar) - 1)) {
+            strcat(pathChar, "/");
+        }
+    #else
+        // When we are just launched normally, we want the parent directory of the executable.
+        char exe_path[PATH_MAX];
+        ssize_t len = readlink("/proc/self/exe", pathChar, sizeof(pathChar) - 1);
 
+        if (len != -1) {
+            pathChar[len] = '\0'; // Null-terminate the string
+
+            // Find the last '/' to get the directory
+            char *last_slash = strrchr(pathChar, '/');
+            if (last_slash != NULL) {
+                *last_slash = '\0'; // Null-terminate at the last slash
+            }
+        }
+    #endif
+    
     // Args files if present. The names are different to remove confusion during packaging.
     // original hard coded values -- upper case first letter so they don't get replaced by sed.
     // const std::string& argsFilename = "Mmojo-server-args";
