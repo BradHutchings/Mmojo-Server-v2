@@ -197,7 +197,7 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string& supportArgsFilename = ARGS_FILENAME;
     const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
     const std::string& zipPath = "/zip";
-    const std::string& zipPathSlash = "/zip/"
+    const std::string& zipPathSlash = "/zip/";
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
