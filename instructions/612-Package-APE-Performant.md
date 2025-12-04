@@ -42,7 +42,6 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
-  unset SELECTED_MODEL
   unset ADDED_MODEL
   ```
 
