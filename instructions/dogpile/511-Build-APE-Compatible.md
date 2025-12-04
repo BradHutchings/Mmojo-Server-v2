@@ -1,4 +1,4 @@
-## 511. Build APEs (Compatible)
+## 511. Build APE (Compatible)
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
@@ -112,7 +112,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible 1 dogpile
 
 ---
 ### Proceed
-- **Next:** [512. Build APEs (Performant)](512-Build-APEs-Performant.md)
+- **Next:** [512. Build APE (Performant)](512-Build-APE-Performant.md)
 - **Previous:** [510. Build APEs](510-Build-APEs.md)
 - **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
 
