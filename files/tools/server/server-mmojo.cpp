@@ -77,6 +77,10 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename
     if (dir != NULL) {
         printf("Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
+            if (directoryPath == "/zip") {
+                printf("Considering: %s\n", entry->d_name);
+            }
+          
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
             const std::string& slash = "";
