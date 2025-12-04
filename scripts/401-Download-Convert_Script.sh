@@ -14,10 +14,6 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-if [ -d "$CONVERT_MODELS_DIR" ]; then
-    rm -r -f $CONVERT_MODELS_DIR
-fi
-
 mkdir -p $CONVERT_MODELS_DIR
 url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py"
 filename="convert_hf_to_gguf.py"
