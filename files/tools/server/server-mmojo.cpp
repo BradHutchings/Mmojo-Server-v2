@@ -302,9 +302,11 @@ int main(int argc, char ** argv, char ** envp) {
         return 1;
     }
 
-    // If we have no model at this point, use the firstGguf.
-    if (params.model == "") {
-        params.model = firstGguf;
+    // If we have no model path at this point, use the firstGguf.
+    // I think I have all the possibilities for specifying a model covered here.
+    if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
+        (params.model.hf_repo == "") && (params.model.hf_file == "")) {
+        params.model.path = firstGguf;
     }
   
     // TODO: should we have a separate n_parallel parameter for the server?
