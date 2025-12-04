@@ -23,7 +23,7 @@ This script download the latest convert script from the llama.cpp repo into `$CO
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/401-Download-Convert_Script.sh
   ```
