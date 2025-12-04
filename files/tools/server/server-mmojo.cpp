@@ -287,15 +287,11 @@ int main(int argc, char ** argv, char ** envp) {
     if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
         (params.model.hf_repo == "") && (params.model.hf_file == "")) {
         params.model.path = firstGguf;
-        if (firstGgufInZip) {
-            // if the gguf is in the zip file, we have to turn off 
-            params.use_mmap = false;
-        }
     }
 
     if (starts_with(params.model.path, zipPathSlash)) {
         // if the gguf is in the zip file, we have to turn off use_map.
-        printf("The model file is in /zip, so turning off use_mmap.\n";
+        printf("The model file is in /zip, so turning off use_mmap.\n");
         params.use_mmap = false;
     }
   
