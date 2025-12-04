@@ -1,7 +1,7 @@
 ## 401. Prepare to Convert
 ### About this Step
 
-In this step, we will download the convert script from the llama.cpp repo so we can do model conversion.
+In this step, we will download the latest convert script from the llama.cpp repo so we can do model conversion.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -18,7 +18,7 @@ mm-env
 
 ---
 ### Download Convert Script
-This script download the convert script from the llama.cpp repo into `$CONVERT_MODELS_DIR` directory:
+This script download the latest convert script from the llama.cpp repo into `$CONVERT_MODELS_DIR` directory:
 - View the script: <a href="../scripts/401-Download-Convert_Script.sh" target="_blank">401-Download-Convert_Script.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
