@@ -67,7 +67,7 @@ bool ends_with (std::string const &fullString, std::string const &ending) {
 }
 
 void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
-    ggufFilename = "";
+    ggufPath = "";
   
     DIR *dir;
     struct dirent *entry;
@@ -77,9 +77,9 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     if (dir != NULL) {
         printf("Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
-            if (directoryPath == "/zip") {
-                printf("Considering: %s\n", entry->d_name);
-            }
+            // if (directoryPath == "/zip") {
+            //     printf("Considering: %s\n", entry->d_name);
+            // }
           
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
@@ -152,31 +152,6 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
     };
 }
 
-// Mmojo Server START
-void PrintGgufsInDirectory(const char* directoryPath);
-void PrintGgufsInDirectory(const char* directoryPath) {
-    DIR *dir;
-    struct dirent *entry;
-
-    // Open the directory
-    dir = opendir(directoryPath);
-    if (dir != NULL) {
-        printf("Files in %s:\n", directoryPath);
-        while ((entry = readdir(dir)) != NULL) {
-            const std::string& filename = entry->d_name;
-            const std::string& extension = ".gguf";            
-            if (ends_with(filename, extension)) {
-                printf("- %s\n", entry->d_name);
-            }
-        }
-        closedir(dir);
-    }
-    else {
-        perror("Error opening directory");
-    }
-}
-// Mmojo Server END
-
 int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
@@ -222,6 +197,7 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string& supportArgsFilename = ARGS_FILENAME;
     const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
     const std::string& zipPath = "/zip";
+    const std::string& zipPathSlash = "/zip/"
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
@@ -311,6 +287,16 @@ int main(int argc, char ** argv, char ** envp) {
     if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
         (params.model.hf_repo == "") && (params.model.hf_file == "")) {
         params.model.path = firstGguf;
+        if (firstGgufInZip) {
+            // if the gguf is in the zip file, we have to turn off 
+            params.use_mmap = false;
+        }
+    }
+
+    if (starts_with(params.model.path, zipPathSlash)) {
+        // if the gguf is in the zip file, we have to turn off use_map.
+        printf("The model file is in /zip, so turning off use_mmap.\n";
+        params.use_mmap = false;
     }
   
     // TODO: should we have a separate n_parallel parameter for the server?
