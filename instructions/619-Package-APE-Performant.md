@@ -24,6 +24,8 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
 - View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
 - Run the script.
   ```
+  unset CHOSEN_MODEL
+  unset CHOSEN_MODEL_MNEMONIC
   $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
