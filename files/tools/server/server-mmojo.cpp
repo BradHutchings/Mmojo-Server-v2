@@ -79,10 +79,13 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufFilename
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
+            const std::string& slash = "";
             if (ends_with(filename, extension)) {
                 printf("- %s\n", entry->d_name);
                 ggufFilename = directoryPath;
-                ggufFilename += "/";
+                if (!ends_with(ggufFilename, slash) {
+                    ggufFilename += slash;
+                }
                 ggufFilename += entry->d_name;
                 break;
             }
@@ -299,6 +302,11 @@ int main(int argc, char ** argv, char ** envp) {
         return 1;
     }
 
+    // If we have no model at this point, use the firstGguf.
+    if (params.model == "") {
+        params.model = firstGguf;
+    }
+  
     // TODO: should we have a separate n_parallel parameter for the server?
     //       https://github.com/ggml-org/llama.cpp/pull/16736#discussion_r2483763177
     // TODO: this is a common configuration that is suitable for most local use cases
