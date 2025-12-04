@@ -1,7 +1,7 @@
 ## 401. Prepare to Convert
 ### About this Step
 
-In this step, we will clone the llama.cpp repo and leave it uncustomized so we can do model conversion.
+In this step, we will download the convert script from the llama.cpp repo so we can do model conversion.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
