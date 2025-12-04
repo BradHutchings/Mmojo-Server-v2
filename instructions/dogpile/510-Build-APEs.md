@@ -49,7 +49,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
 
 ---
 ### Proceed
-- **Next:** [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md)
+- **Next:** [511. Build APE (Compatible)](511-Build-APE-Compatible.md)
 - **Previous:** [503. Build Debug](503-Build-Debug.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
