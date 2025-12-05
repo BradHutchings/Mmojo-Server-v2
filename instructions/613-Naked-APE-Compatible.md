@@ -1,4 +1,4 @@
-## 613. Package Naked APE (Compatible)
+## 613. Naked APE (Compatible)
 ### About this Step
 
 **EXPERIMENTAL**
@@ -127,8 +127,8 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [614. Package Naked APE (Performant)](614-Package-Naked-APE-Performant.md)
-- **Previous:** [611. Package APE (Performant)](611-Package-APE-Performant.md)
+- **Next:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
+- **Previous:** [611. APE (Performant)](611-APE-Performant.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
