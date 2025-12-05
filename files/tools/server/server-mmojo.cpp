@@ -103,6 +103,30 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     }
 }
 
+void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
+    executablePath = argv_0;
+    const std::string slash = "/";
+
+    printf("- get_executable_path()\n");
+    printf("  - argv_0: %s\n", argv_0);
+    if (!executablePath.has_root_path()) {
+        printf("  - executablePath does not have a root path.\n");
+  
+        char workingDirectory[PATH_MAX];
+        workingDirectory[0] = '\0';
+
+        if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
+            strcat(workingDirectory, "/");
+            printf("  - workingDirectory: %s\n", workingDirectory);
+
+            executablePath = workingDirectory;
+            executablePath += argv_0;
+        }
+    }
+    printf("  - executablePath: %s\n", executablePath.c_str());
+}
+
+#if 0
 void get_executable_path(const char* argv_0, std::string& executablePath) {
     executablePath = argv_0;
     const std::string slash = "/";
@@ -125,7 +149,7 @@ void get_executable_path(const char* argv_0, std::string& executablePath) {
     }
     printf("  - executablePath: %s\n", executablePath.c_str());
 }
-
+#endif
 // Mmojo Server END
 
 static std::function<void(int)> shutdown_handler;
@@ -194,9 +218,8 @@ int main(int argc, char ** argv, char ** envp) {
     printf("argv[1]: %s\n", argv[1]);
     printf("argv[2]: %s\n", argv[2]);
 
-    std::string executablePath = "";
+    std::filesystem::path executablePath = "";
     get_executable_path(argv[0], executablePath);
-    printf("executablePath: %s", executablePath.c_str());
     
     // Args files if present. The names are different to remove confusion during packaging.
     const std::string argsFilename = ARGS_FILENAME;
