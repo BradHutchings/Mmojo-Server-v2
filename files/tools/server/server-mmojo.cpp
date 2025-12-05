@@ -48,7 +48,8 @@
 bool starts_with (const std::string &fullString, const std::string &beginning);
 bool ends_with (const std::string &fullString, const std::string &ending);
 void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
-void get_ape_path(const std::string& argv_1, std::string& apePath);
+// void get_ape_path(const std::string& argv_1, std::string& apePath);
+void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
 
 bool starts_with (const std::string &fullString, const std::string &beginning) {
     if (fullString.length() >= beginning.length()) {
