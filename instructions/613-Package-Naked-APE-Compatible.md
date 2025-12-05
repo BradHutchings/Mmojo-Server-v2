@@ -127,7 +127,7 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [621. Package Executable](621-Package-Executable.md)
+- **Next:** [614. Package Naked APE (Performant)](614-Package-Naked-APE-Performant.md)
 - **Previous:** [611. Package APE (Compatible)](611-Package-APE-Compatible.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
