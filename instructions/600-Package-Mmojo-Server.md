@@ -14,7 +14,7 @@ Here are some packaging options:
 - [614. Package APE (Performant)](614-Naked-APE-Performant.md) - This is a performant APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
 - [620. Package Platform Executable](620-Package-Platform-Executable.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
 
-**Get Started:** [611. Package APE (Compatible)](611-Package-APE-Compatible.md)
+**Get Started:** [610. Package APEs](610-Package-APEs)
 
 ---
 [MIT License](/LICENSE)<br/>
