@@ -214,9 +214,6 @@ int main(int argc, char ** argv, char ** envp) {
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
     // Path parameters passed on command line or in args files are relative to the working directory.
 
-    char pathChar[PATH_MAX];
-    pathChar[0] = '\0';
-
     printf("argv[0]: %s\n", argv[0]);
     printf("argv[1]: %s\n", argv[1]);
     printf("argv[2]: %s\n", argv[2]);
@@ -230,13 +227,17 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string argsFilename = ARGS_FILENAME;
     const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
     const std::string supportArgsFilename = ARGS_FILENAME;
-    const std::string zipArgsPath = "/zip/" ARGS_FILENAME;
-    const std::string zipPath = "/zip";
-    const std::string zipPathSlash = "/zip/";
+    // const std::string zipArgsPath = "/zip/" ARGS_FILENAME;
+    // const std::string zipPath = "/zip";
+    // const std::string zipPathSlash = "/zip/";
 
     std::filesystem::path argsPath = executableParentPath;      argsPath += argsFilename;
-    std::filesystem::path supportPath = executableParentPath;   supportPath += supportDirectoryName + "/";
-    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath += supportArgsFilename;
+    std::filesystem::path supportPath = executableParentPath;   supportPath /= supportDirectoryName;
+    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= supportArgsFilename;
+    std::filesystem::path zipPath = "/zip";
+    std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
+    
+    const std::string zipPathSlash = "/zip/";
     std::string firstGguf = "";
 
     if (firstGguf == "") {
