@@ -1,4 +1,4 @@
-## 620. Package Platform Executable
+## 620. Platform Packages
 
 ---
 ### About this Step
