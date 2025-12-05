@@ -263,7 +263,7 @@ int main(int argc, char ** argv, char ** envp) {
   
     struct stat buffer1;
     if (stat(executableParentPath.c_str(), &buffer1) == 0) {
-        printf("- executableParentPath exists: %s\n", path.c_str());
+        printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
     }
     if (stat(argsPath.c_str(), &buffer1) == 0) {
         printf("-              argsPath exists: %s\n", argsPath.c_str());
