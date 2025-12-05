@@ -234,9 +234,9 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string zipPath = "/zip";
     const std::string zipPathSlash = "/zip/";
 
-    std::filesystem::path argsPath = executableParentPath + argsFilename;
-    std::filesystem::path supportPath = executableParentPath + supportDirectoryName + "/";
-    std::filesystem::path supportArgsPath = supportPath + supportArgsFilename;
+    std::filesystem::path argsPath = executableParentPath;      argsPath += argsFilename;
+    std::filesystem::path supportPath = executableParentPath;   supportPath += supportDirectoryName + "/";
+    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath += supportArgsFilename;
     std::string firstGguf = "";
 
     if (firstGguf == "") {
