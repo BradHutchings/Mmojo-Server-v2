@@ -1,11 +1,11 @@
-## 619. Package Naked APE (Performant)
+## 614. Package Naked APE (Performant)
 ### About this Step
 
 **EXPERIMENTAL**
 
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
-**Naked** means there is no gguf file in this APE. You can just deploy a naked APE with a gguf file in the same folder &mdash; maybe even a hard or soft link &mdash; or zip a gguf onto a naked APE to get a fully contained server. If we use the found file feature, we should automatically set mmap to on as well -- back to server-mmojo.cpp for that.
+**Naked** means there is no gguf file in this APE. You can just deploy a naked APE with a gguf file in the same folder &mdash; maybe even a hard or soft link &mdash; or zip a gguf onto a naked APE to get a fully contained server.
 
 ---
 <details>
@@ -71,11 +71,10 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-fi
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
+cd $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
+cd $HOME
 ```
 
 After starting up and loading the model, it should display:
@@ -100,11 +99,10 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-fi
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
+cd $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
+cd $HOME
 ```
 
 After starting up and loading the model, it should display:
