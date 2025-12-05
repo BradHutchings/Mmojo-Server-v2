@@ -9,6 +9,8 @@ Now that you have Mmojo Server built as an Actual Portable Executable (APE) file
 Here are some packaging options:
 - [611. Package APE (Compatible)](611-Package-APE-Compatible.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
 - [612. Package APE (Performant)](612-Package-APE-Performant.md) - Package Mmojo Server as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+- [613. Package Naked APE (Compatible)](613-Package-Naked-APE-Compatible.md) - This is a compatible APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
+- [614. Package Naked APE (Performant)](614-Package-Naked-APE-Performant.md) - This is a performant APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
 - [621. Package Executable](621-Package-Executable.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
 <!--
 - [621. Package SEAS](621-Package-SEAS.md) - Package Mmojo Server as a Self-Extracting Application Support (SEAS) file, that extracts its support files on first run.
