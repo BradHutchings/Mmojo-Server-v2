@@ -61,7 +61,7 @@ Build Mmojo Server executables.
 - [520. Build Executables](520-Build-Executables.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
   - [521. Executable (Compatible)](521-Executable-Compatible.md) - Build a `mmojo-server` for the base CPU of the build environment platform.
   - [522. Executable (Performant)](522-Executable-Performant.md) - Build a `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
-- [523. Executable (Native)](523-Executable-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
+  - [523. Executable (Native)](523-Executable-Native.md) - Build an optimized `mmojo-server` for the CPU of the build environment platform.
 
 ---
 ### [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
