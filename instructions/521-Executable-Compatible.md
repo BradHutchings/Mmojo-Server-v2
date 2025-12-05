@@ -1,4 +1,4 @@
-## 521. Build Executable (Compatible)
+## 521. Executable (Compatible)
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the widest variety of x86_64 and aarch64 machines, with optional GPU support.
 
@@ -89,7 +89,7 @@ $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
 
 ---
 ### Proceed
-- **Next:** [522. Build Executable (Performant)](522-Build-Executable-Performant.md)
+- **Next:** [522. Executable (Performant)](522-Executable-Performant.md)
 - **Previous:** [520. Build Executables](520-Build-Executables.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
