@@ -107,7 +107,7 @@ void get_ape_path(const std::string& argv_1, std::string& apePath) {
     apePath = "";
   
     #define MAX_CMDLINE_LEN 4096
-    pid_t pid = atoi(argv[1]);
+    pid_t pid = atoi(argv_1);
     char path[256];
     char cmdline_content[MAX_CMDLINE_LEN];
 
