@@ -1,4 +1,4 @@
-## 523. Build Executable (Native)
+## 523. Executable (Native)
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the CPU of your build environment platform with native CPU optimizations enabled, and with optional GPU support.
 
@@ -93,7 +93,7 @@ $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh native $CHOSEN_GPUS
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [522. Build Executable (Performant)](522-Build-Executable-Performant.md)
+- **Previous:** [522. Executable (Performant)](522-Executable-Performant.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
