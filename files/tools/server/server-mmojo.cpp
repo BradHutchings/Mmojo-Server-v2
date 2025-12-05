@@ -191,8 +191,8 @@ int main(int argc, char ** argv, char ** envp) {
     // printf("argv[1]: %s\n", argv[1]);
     // printf("argv[2]: %s\n", argv[2]);
 
-    std::filesystem::path executablePath = "";
-    std::filesystem::path executableParentPath = "";
+    std::filesystem::path executablePath;
+    std::filesystem::path executableParentPath;
     get_executable_path(argv[0], executablePath);
     executableParentPath = executablePath.parent_path();
     
@@ -207,7 +207,7 @@ int main(int argc, char ** argv, char ** envp) {
     std::filesystem::path zipPath = "/zip";
     std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
     
-    std::filesystem::path firstGgufPath = "";
+    std::filesystem::path firstGgufPath;
 
     if (firstGgufPath.empty()) {
         find_first_gguf(executableParentPath, firstGgufPath);
