@@ -154,7 +154,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
 ---
 ### Proceed
 - **Next:** [512. APE (Performant)](512-APE-Performant.md)
-- **Previous:** [510. Build APEs](510-Build-APEs.md)
+- **Previous:** [510. APE Builds](510-APE-Builds.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
