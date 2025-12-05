@@ -61,7 +61,7 @@ export TEST_WITH_CHAT_UI=1
 
 ---
 ### Proceed
-- **Next:** [503. Build Debug](503-Build-Debug.md)
+- **Next:** [503. Debug Build](503-Debug-Build.md)
 - **Previous:** [501. Prepare to Build](501-Prepare-to-Build.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
