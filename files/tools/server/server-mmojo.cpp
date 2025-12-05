@@ -47,7 +47,7 @@
 // pre C++20 helpers.
 bool starts_with (const std::string &fullString, const std::string &beginning);
 bool ends_with (const std::string &fullString, const std::string &ending);
-void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
+void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath);
 // void get_ape_path(const std::string& argv_1, std::string& apePath);
 void get_executable_path(const char* argv_0, std::filesystem::path& executablePath);
 
@@ -69,6 +69,36 @@ bool ends_with (const std::string &fullString, const std::string &ending) {
     } 
 }
 
+void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath) {
+    ggufPath = "";
+  
+    DIR *dir;
+    struct dirent *entry;
+
+    // Open the directory
+    dir = opendir(directoryPath.c_str());
+    if (dir != NULL) {
+        printf("Looking for .gguf in %s:\n", directoryPath.c_str());
+        while ((entry = readdir(dir)) != NULL) {
+            const std::string& filename = entry->d_name;
+            const std::string& extension = ".gguf";            
+            const std::string& slash = "/";
+            if (ends_with(filename, extension)) {
+                printf("- %s\n", entry->d_name);
+                ggufPath = directoryPath;
+                ggufPath /= entry->d_name;
+                break;
+            }
+        }
+        closedir(dir);
+    }
+    else {
+        perror("Error opening directory");
+    }
+}
+
+#if 0
+void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
 void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     ggufPath = "";
   
@@ -103,6 +133,7 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
         perror("Error opening directory");
     }
 }
+#endif
 
 void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
     executablePath = argv_0;
@@ -235,17 +266,17 @@ int main(int argc, char ** argv, char ** envp) {
     std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
     
     const std::string zipPathSlash = "/zip/";
-    std::string firstGguf = "";
+    std::filesystem::path firstGgufPath = "";
 
-    if (firstGguf == "") {
-        find_first_gguf(executableParentPath, firstGguf);
+    if (firstGgufPath.empty()) {
+        find_first_gguf(executableParentPath, firstGgufPath);
     }
-    if (firstGguf == "") {
-        find_first_gguf(supportPath, firstGguf);
+    if (firstGgufPath.empty()) {
+        find_first_gguf(supportPath, firstGgufPath);
     }
     #ifdef COSMOCC
-    if (firstGguf == "") {
-        find_first_gguf(zipPath, firstGguf);
+    if (firstGgufPath.empty()) {
+        find_first_gguf(zipPath, firstGgufPath);
     }
     #endif
 
@@ -257,7 +288,7 @@ int main(int argc, char ** argv, char ** envp) {
     printf("-          supportPath: %s\n", supportPath.c_str());
     printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
     printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
-    printf("             firstGguf: %s\n", firstGguf.c_str());
+    printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
   
     if (std::filesystem::exists(executableParentPath)) {
         printf("- NEW executableParentPath exists: %s\n", executableParentPath.c_str());
@@ -334,11 +365,11 @@ int main(int argc, char ** argv, char ** envp) {
     }
 
     // Mmojo Server START
-    // If we have no model path at this point, use the firstGguf.
+    // If we have no model path at this point, use the firstGgufPath.
     // I think I have all the possibilities for specifying a model covered here.
     if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
         (params.model.hf_repo == "") && (params.model.hf_file == "")) {
-        params.model.path = firstGguf;
+        params.model.path = firstGgufPath;
     }
 
     if (starts_with(params.model.path, zipPathSlash)) {
