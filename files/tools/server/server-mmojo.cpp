@@ -78,6 +78,7 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
     // Open the directory
     dir = opendir(directoryPath.c_str());
     if (dir != NULL) {
+        printf("\n");
         printf("Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
@@ -99,8 +100,8 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
 
 void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
     executablePath = argv_0;
-    const std::string slash = "/";
 
+    printf("\n");
     printf("- get_executable_path()\n");
     printf("  - argv_0: %s\n", argv_0);
     if (!executablePath.has_root_path()) {
@@ -201,7 +202,6 @@ int main(int argc, char ** argv, char ** envp) {
     std::filesystem::path zipPath = "/zip";
     std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
     
-    const std::string zipPathSlash = "/zip/";
     std::filesystem::path firstGgufPath = "";
 
     if (firstGgufPath.empty()) {
@@ -217,6 +217,7 @@ int main(int argc, char ** argv, char ** envp) {
     #endif
 
     #if 1
+    printf("\n");
     printf("Paths of things we care about:\n");
     printf("-       executablePath: %s\n", executablePath.c_str());
     printf("- executableParentPath: %s\n", executableParentPath.c_str());
@@ -287,11 +288,14 @@ int main(int argc, char ** argv, char ** envp) {
         params.model.path = firstGgufPath;
     }
 
+    #if 0
+    const std::string zipPathSlash = "/zip/";
     if (starts_with(params.model.path, zipPathSlash)) {
         // if the gguf is in the zip file, we have to turn off use_map.
         printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
         params.use_mmap = false;
     }
+    #endif
     // Mmojo Server END
   
     // TODO: should we have a separate n_parallel parameter for the server?
@@ -310,6 +314,7 @@ int main(int argc, char ** argv, char ** envp) {
         params.model_alias = params.model.name;
     }
 
+    #if 0
     // Mmojo Server START
     // This could be automated by looking for "common_init();" and inserting this block immediately after. -Brad 2025-11-05
     // fix params -- model, path, ssl-key-file, ssl-cert-file
@@ -338,6 +343,7 @@ int main(int argc, char ** argv, char ** envp) {
         }
     }
     // Mmojo Server END
+    #endif
   
     common_init();
 
