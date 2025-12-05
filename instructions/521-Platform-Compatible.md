@@ -90,7 +90,7 @@ $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
 ---
 ### Proceed
 - **Next:** [522. Platform (Performant)](522-Platform-Performant.md)
-- **Previous:** [520. Build Platform](520-Build-Platform.md)
+- **Previous:** [520. Platform Builds](520-Platform-Builds.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
