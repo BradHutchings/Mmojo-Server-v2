@@ -227,11 +227,8 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string argsFilename = ARGS_FILENAME;
     const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
     const std::string supportArgsFilename = ARGS_FILENAME;
-    // const std::string zipArgsPath = "/zip/" ARGS_FILENAME;
-    // const std::string zipPath = "/zip";
-    // const std::string zipPathSlash = "/zip/";
 
-    std::filesystem::path argsPath = executableParentPath;      argsPath += argsFilename;
+    std::filesystem::path argsPath = executableParentPath;      argsPath /= argsFilename;
     std::filesystem::path supportPath = executableParentPath;   supportPath /= supportDirectoryName;
     std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= supportArgsFilename;
     std::filesystem::path zipPath = "/zip";
@@ -262,6 +259,20 @@ int main(int argc, char ** argv, char ** envp) {
     printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
     printf("             firstGguf: %s\n", firstGguf.c_str());
   
+    if (std::filesystem::exists(executableParentPath)) {
+        printf("- NEW executableParentPath exists: %s\n", executableParentPath.c_str());
+    }
+    if (std::filesystem::exists(argsPath)) {
+        printf("- NEW argsPath exists: %s\n", argsPath.c_str());
+    }
+    if (std::filesystem::exists(supportArgsPath)) {
+        printf("- NEW supportArgsPath exists: %s\n", supportArgsPath.c_str());
+    }
+    if (std::filesystem::exists(executableParentPath)) {
+        printf("- NEW zipArgsPath exists: %s\n", zipArgsPath.c_str());
+    }
+
+    /*
     struct stat buffer1;
     if (stat(executableParentPath.c_str(), &buffer1) == 0) {
         printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
@@ -275,6 +286,7 @@ int main(int argc, char ** argv, char ** envp) {
     if (stat(zipArgsPath.c_str(), &buffer1) == 0) {
         printf("-           zipArgsPath exists: %s\n", zipArgsPath.c_str());
     }
+    */
     printf("\n");
     #endif
     
@@ -285,14 +297,16 @@ int main(int argc, char ** argv, char ** envp) {
     // At this point, argc, argv represent:
     //     command (User supplied args)
 
-    if (stat (argsPath.c_str(), &buffer) == 0) {
+    // if (stat (argsPath.c_str(), &buffer) == 0) {
+    if (std::filesystem::exists(argsPath)) {
         argc = mmojo_args(argsPath.c_str(), &argv);
     }
 
     // At this point, argc, argv represent:
     //     command (argsPath args) (User supplied args)
 
-    if (stat (supportArgsPath.c_str(), &buffer) == 0) {
+    // if (stat (supportArgsPath.c_str(), &buffer) == 0) {
+    if (std::filesystem::exists(supportArgsPath)) {
         argc = mmojo_args(supportArgsPath.c_str(), &argv);
     }
 
@@ -300,7 +314,8 @@ int main(int argc, char ** argv, char ** envp) {
     //     command (supportArgsPath args) (argsPath args) (User supplied args)
 
     #ifdef COSMOCC
-    if (stat (zipArgsPath.c_str(), &buffer) == 0) {
+    // if (stat (zipArgsPath.c_str(), &buffer) == 0) {
+    if (std::filesystem::exists(zipArgsPath)) {
         argc = mmojo_args(zipArgsPath.c_str(), &argv);
     }
 
