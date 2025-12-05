@@ -45,11 +45,12 @@
 #define SUPPORT_DIRECTORY_NAME "mmojo-server-support"
 
 // pre C++20 helpers.
-bool starts_with (std::string const &fullString, std::string const &beginning);
-bool ends_with (std::string const &fullString, std::string const &ending);
+bool starts_with (const std::string &fullString, const std::string &beginning);
+bool ends_with (const std::string &fullString, const std::string &ending);
 void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
+void get_ape_path(const std::string& argv_1, std::string& apePath);
 
-bool starts_with (std::string const &fullString, std::string const &beginning) {
+bool starts_with (const std::string &fullString, const std::string &beginning) {
     if (fullString.length() >= beginning.length()) {
         return (0 == fullString.compare (0, beginning.length(), beginning));
     }
@@ -58,7 +59,7 @@ bool starts_with (std::string const &fullString, std::string const &beginning) {
     } 
 }
 
-bool ends_with (std::string const &fullString, std::string const &ending) {
+bool ends_with (const std::string &fullString, const std::string &ending) {
     if (fullString.length() >= ending.length()) {
         return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
     }
@@ -102,6 +103,38 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     }
 }
 
+void get_ape_path(const std::string& argv_1, std::string& apePath) {
+    apePath = "";
+  
+    #define MAX_CMDLINE_LEN 4096
+    pid_t pid = atoi(argv[1]);
+    char path[256];
+    char cmdline_content[MAX_CMDLINE_LEN];
+
+    snprintf(path, sizeof(path), "/proc/%d/cmdline", pid);
+    printf("cmdlin path: %s\n", path);
+
+    FILE *fp = fopen(path, "r");
+    if (fp != NULL) {
+        size_t bytes_read = fread(cmdline_content, 1, sizeof(cmdline_content) - 1, fp);
+        fclose(fp);
+
+        if (bytes_read > 0) {
+            cmdline_content[bytes_read] = '\0'; // Null-terminate the buffer
+
+            // Replace null terminators with spaces for display
+            for (size_t i = 0; i < bytes_read; i++) {
+                if (cmdline_content[i] == '\0') {
+                    cmdline_content[i] = ' ';
+                }
+            }
+            printf("Command line for PID %d: %s\n", pid, cmdline_content);
+        }
+    }
+    else {
+        perror("Failed to open cmdline file");
+    }
+}
 
 // Mmojo Server END
 
@@ -169,6 +202,10 @@ int main(int argc, char ** argv, char ** envp) {
 
     #ifdef COSMOCC
         printf("Getting working directory path for Cosmo build.\n");
+
+        std::string& apePath = "";
+        get_ape_path(argv[1], apePath);
+        printf("apePath: %s\n, apePath.c_str());
   
         // When we run inside an ape, the parent directory of the executable will not help us.
         // So we will fall back to using the working directory.
