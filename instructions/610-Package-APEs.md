@@ -3,7 +3,7 @@
 In the following five steps, we will package Mmojo-Server for deployment as actual portable executables.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
 - **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
-- **Naked** means the APEs do not contain a `.gguf` file. One can be grafted on later using `zip` without modifying the `mmojo-server-args` file.
+- **Naked** means the APEs do not contain a `.gguf` file. One can be grafted on later using `zip` without modifying the `mmojo-server-args` file. You can also release a naked APE and have users copy the model they want to use into its directory.
 
 **Where:** Perform these steps in either or both your x86_64 and your aarch64 (arm64) build environments.
 
