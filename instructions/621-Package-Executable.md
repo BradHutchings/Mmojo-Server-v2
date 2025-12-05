@@ -131,7 +131,7 @@ Copy this zip package to your Mmojo share.
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
+- **Previous:** [614. Package Naked APE (Performant)](614-Package-Naked-APE-Performant.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
