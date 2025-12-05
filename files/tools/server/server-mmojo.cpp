@@ -37,6 +37,7 @@
 #include <linux/limits.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <unistd.h>
 #include "mmojo-args.h"
 
 #define PROCESS_NAME "mmojo-server"
