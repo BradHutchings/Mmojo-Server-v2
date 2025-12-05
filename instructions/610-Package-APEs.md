@@ -1,0 +1,30 @@
+## 610. Package APEs
+### About this Step
+In the following five steps, we will package Mmojo-Server for deployment as actual portable executables.
+- **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
+- **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
+- **Naked** means the APEs do not contain a `.gguf` file. One can be grafted on later without modifying the `mmojo-server-args` file.
+
+**Where:** Perform these steps in either or both your x86_64 and your aarch64 (arm64) build environments.
+
+---
+<details>
+  <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
+  
+Have you updated your local clone of the Mmojo Server Repo today? If not, run this first:
+```
+mm-update-local-mmojo-server-repo.sh
+mm-env
+```
+</details>
+
+---
+### Proceed
+- **Next:** [611. APE (Compatible)](611-APE-Compatible.md)
+- **Previous:** This is the first step in this section.
+- **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
+
+---
+[MIT License](/LICENSE)<br/>
+Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
+[https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
