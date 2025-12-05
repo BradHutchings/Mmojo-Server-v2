@@ -1,4 +1,4 @@
-## 611. Package APE (Compatible)
+## 611. APE (Compatible)
 
 ### About this Step
 
@@ -165,8 +165,8 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
-- **Previous:** This is the first step in this section.
+- **Next:** [612. APE (Performant)](612-APE-Performant.md)
+- **Previous:** [610. Package APEs](610-Package-APEs.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
