@@ -1,4 +1,4 @@
-## 503. Build Debug
+## 503. Debug Build
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or GPU-enabled builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
@@ -74,7 +74,7 @@ $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [510. Build APEs](510-Build-APEs.md)
+- **Next:** [510. APE Builds](510-APE-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
