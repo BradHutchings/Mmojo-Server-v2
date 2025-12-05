@@ -222,7 +222,9 @@ int main(int argc, char ** argv, char ** envp) {
     printf("argv[2]: %s\n", argv[2]);
 
     std::filesystem::path executablePath = "";
+    std::filesystem::path executableParentPath = "";
     get_executable_path(argv[0], executablePath);
+    executableParentPath = executablePath.parent_path();
     
     // Args files if present. The names are different to remove confusion during packaging.
     const std::string argsFilename = ARGS_FILENAME;
@@ -232,10 +234,9 @@ int main(int argc, char ** argv, char ** envp) {
     const std::string zipPath = "/zip";
     const std::string zipPathSlash = "/zip/";
 
-    std::string path = pathChar;
-    std::string argsPath = path + argsFilename;
-    std::string supportPath = path + supportDirectoryName + "/";
-    std::string supportArgsPath = supportPath + supportArgsFilename;
+    std::filesystem::path argsPath = executableParentPath + argsFilename;
+    std::filesystem::path supportPath = executableParentPath + supportDirectoryName + "/";
+    std::filesystem::path supportArgsPath = supportPath + supportArgsFilename;
     std::string firstGguf = "";
 
     if (firstGguf == "") {
@@ -252,26 +253,26 @@ int main(int argc, char ** argv, char ** envp) {
 
     #if 1
     printf("Paths of things we care about:\n");
-    printf("-  executablePath: %s\n", executablePath.c_str());
-    printf("-            path: %s\n", path.c_str());
-    printf("-        argsPath: %s\n", argsPath.c_str());
-    printf("-     supportPath: %s\n", supportPath.c_str());
-    printf("- supportArgsPath: %s\n", supportArgsPath.c_str());
-    printf("-     zipArgsPath: %s\n", zipArgsPath.c_str());
-    printf("        firstGguf: %s\n", firstGguf.c_str());
+    printf("-       executablePath: %s\n", executablePath.c_str());
+    printf("- executableParentPath: %s\n", executableParentPath.c_str());
+    printf("-             argsPath: %s\n", argsPath.c_str());
+    printf("-          supportPath: %s\n", supportPath.c_str());
+    printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
+    printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
+    printf("             firstGguf: %s\n", firstGguf.c_str());
   
     struct stat buffer1;
-    if (stat(path.c_str(), &buffer1) == 0) {
-        printf("-            path exists: %s\n", path.c_str());
+    if (stat(executableParentPath.c_str(), &buffer1) == 0) {
+        printf("- executableParentPath exists: %s\n", path.c_str());
     }
     if (stat(argsPath.c_str(), &buffer1) == 0) {
-        printf("-        argsPath exists: %s\n", argsPath.c_str());
+        printf("-              argsPath exists: %s\n", argsPath.c_str());
     }
     if (stat(supportArgsPath.c_str(), &buffer1) == 0) {
-        printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
+        printf("-       supportArgsPath exists: %s\n", supportArgsPath.c_str());
     }
     if (stat(zipArgsPath.c_str(), &buffer1) == 0) {
-        printf("-     zipArgsPath exists: %s\n", zipArgsPath.c_str());
+        printf("-           zipArgsPath exists: %s\n", zipArgsPath.c_str());
     }
     printf("\n");
     #endif
@@ -316,6 +317,7 @@ int main(int argc, char ** argv, char ** envp) {
         return 1;
     }
 
+    // Mmojo Server START
     // If we have no model path at this point, use the firstGguf.
     // I think I have all the possibilities for specifying a model covered here.
     if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
@@ -328,6 +330,7 @@ int main(int argc, char ** argv, char ** envp) {
         printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
         params.use_mmap = false;
     }
+    // Mmojo Server END
   
     // TODO: should we have a separate n_parallel parameter for the server?
     //       https://github.com/ggml-org/llama.cpp/pull/16736#discussion_r2483763177
