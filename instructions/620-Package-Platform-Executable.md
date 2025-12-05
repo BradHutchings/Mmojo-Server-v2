@@ -1,4 +1,4 @@
-## 621. Package Executable
+## 620. Package Platform Executable
 
 ---
 ### About this Step
@@ -131,7 +131,7 @@ Copy this zip package to your Mmojo share.
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [614. Package Naked APE (Performant)](614-Package-Naked-APE-Performant.md)
+- **Previous:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
