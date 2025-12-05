@@ -97,44 +97,6 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
     }
 }
 
-#if 0
-void find_first_gguf(const std::string& directoryPath, std::string& ggufPath);
-void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
-    ggufPath = "";
-  
-    DIR *dir;
-    struct dirent *entry;
-
-    // Open the directory
-    dir = opendir(directoryPath.c_str());
-    if (dir != NULL) {
-        printf("Looking for .gguf in %s:\n", directoryPath.c_str());
-        while ((entry = readdir(dir)) != NULL) {
-            // if (directoryPath == "/zip") {
-            //     printf("Considering: %s\n", entry->d_name);
-            // }
-          
-            const std::string& filename = entry->d_name;
-            const std::string& extension = ".gguf";            
-            const std::string& slash = "/";
-            if (ends_with(filename, extension)) {
-                printf("- %s\n", entry->d_name);
-                ggufPath = directoryPath;
-                if (!ends_with(ggufPath, slash)) {
-                    ggufPath += slash;
-                }
-                ggufPath += entry->d_name;
-                break;
-            }
-        }
-        closedir(dir);
-    }
-    else {
-        perror("Error opening directory");
-    }
-}
-#endif
-
 void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
     executablePath = argv_0;
     const std::string slash = "/";
@@ -148,42 +110,16 @@ void get_executable_path(const char* argv_0, std::filesystem::path& executablePa
         workingDirectory[0] = '\0';
 
         if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
-            strcat(workingDirectory, "/");
             printf("  - workingDirectory: %s\n", workingDirectory);
 
             executablePath = workingDirectory;
-            executablePath += argv_0;
+            executablePath /= argv_0;
         }
     }
     printf("  - executablePath: %s\n", executablePath.c_str());
     executablePath = executablePath.lexically_normal();
     printf("  - normalized: %s\n", executablePath.c_str());
 }
-
-#if 0
-void get_executable_path(const char* argv_0, std::string& executablePath) {
-    executablePath = argv_0;
-    const std::string slash = "/";
-
-    printf("- get_executable_path()\n");
-    printf("  - argv_0: %s\n", argv_0);
-    if (!starts_with(executablePath, slash)) {
-        printf("  - executablePath does not start with /.\n");
-  
-        char workingDirectory[PATH_MAX];
-        workingDirectory[0] = '\0';
-
-        if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
-            strcat(workingDirectory, "/");
-            printf("  - workingDirectory: %s\n", workingDirectory);
-
-            executablePath = workingDirectory;
-            executablePath += argv_0;
-        }
-    }
-    printf("  - executablePath: %s\n", executablePath.c_str());
-}
-#endif
 // Mmojo Server END
 
 static std::function<void(int)> shutdown_handler;
@@ -245,9 +181,9 @@ int main(int argc, char ** argv, char ** envp) {
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
     // Path parameters passed on command line or in args files are relative to the working directory.
 
-    printf("argv[0]: %s\n", argv[0]);
-    printf("argv[1]: %s\n", argv[1]);
-    printf("argv[2]: %s\n", argv[2]);
+    // printf("argv[0]: %s\n", argv[0]);
+    // printf("argv[1]: %s\n", argv[1]);
+    // printf("argv[2]: %s\n", argv[2]);
 
     std::filesystem::path executablePath = "";
     std::filesystem::path executableParentPath = "";
@@ -255,13 +191,13 @@ int main(int argc, char ** argv, char ** envp) {
     executableParentPath = executablePath.parent_path();
     
     // Args files if present. The names are different to remove confusion during packaging.
-    const std::string argsFilename = ARGS_FILENAME;
-    const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
-    const std::string supportArgsFilename = ARGS_FILENAME;
+    // const std::string argsFilename = ARGS_FILENAME;
+    // const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
+    // const std::string supportArgsFilename = ARGS_FILENAME;
 
-    std::filesystem::path argsPath = executableParentPath;      argsPath /= argsFilename;
-    std::filesystem::path supportPath = executableParentPath;   supportPath /= supportDirectoryName;
-    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= supportArgsFilename;
+    std::filesystem::path argsPath = executableParentPath;      argsPath /= ARGS_FILENAME;
+    std::filesystem::path supportPath = executableParentPath;   supportPath /= SUPPORT_DIRECTORY_NAME;
+    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= ARGS_FILENAME;
     std::filesystem::path zipPath = "/zip";
     std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
     
@@ -291,44 +227,25 @@ int main(int argc, char ** argv, char ** envp) {
     printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
   
     if (std::filesystem::exists(executableParentPath)) {
-        printf("- NEW executableParentPath exists: %s\n", executableParentPath.c_str());
-    }
-    if (std::filesystem::exists(argsPath)) {
-        printf("- NEW argsPath exists: %s\n", argsPath.c_str());
-    }
-    if (std::filesystem::exists(supportArgsPath)) {
-        printf("- NEW supportArgsPath exists: %s\n", supportArgsPath.c_str());
-    }
-    if (std::filesystem::exists(executableParentPath)) {
-        printf("- NEW zipArgsPath exists: %s\n", zipArgsPath.c_str());
-    }
-
-    /*
-    struct stat buffer1;
-    if (stat(executableParentPath.c_str(), &buffer1) == 0) {
         printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
     }
-    if (stat(argsPath.c_str(), &buffer1) == 0) {
-        printf("-              argsPath exists: %s\n", argsPath.c_str());
+    if (std::filesystem::exists(argsPath)) {
+        printf("- argsPath exists: %s\n", argsPath.c_str());
     }
-    if (stat(supportArgsPath.c_str(), &buffer1) == 0) {
-        printf("-       supportArgsPath exists: %s\n", supportArgsPath.c_str());
+    if (std::filesystem::exists(supportArgsPath)) {
+        printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
     }
-    if (stat(zipArgsPath.c_str(), &buffer1) == 0) {
-        printf("-           zipArgsPath exists: %s\n", zipArgsPath.c_str());
+    if (std::filesystem::exists(zipArgsPath)) {
+        printf("- zipArgsPath exists: %s\n", zipArgsPath.c_str());
     }
-    */
     printf("\n");
     #endif
     
     // mmojo-server-support/default-args will be an option for platform optimized builds.
-    // const std::string& supportArgsFilename = "mmojo-server-support/default-args";
-    struct stat buffer;
 
     // At this point, argc, argv represent:
     //     command (User supplied args)
 
-    // if (stat (argsPath.c_str(), &buffer) == 0) {
     if (std::filesystem::exists(argsPath)) {
         argc = mmojo_args(argsPath.c_str(), &argv);
     }
@@ -336,7 +253,6 @@ int main(int argc, char ** argv, char ** envp) {
     // At this point, argc, argv represent:
     //     command (argsPath args) (User supplied args)
 
-    // if (stat (supportArgsPath.c_str(), &buffer) == 0) {
     if (std::filesystem::exists(supportArgsPath)) {
         argc = mmojo_args(supportArgsPath.c_str(), &argv);
     }
@@ -345,7 +261,6 @@ int main(int argc, char ** argv, char ** envp) {
     //     command (supportArgsPath args) (argsPath args) (User supplied args)
 
     #ifdef COSMOCC
-    // if (stat (zipArgsPath.c_str(), &buffer) == 0) {
     if (std::filesystem::exists(zipArgsPath)) {
         argc = mmojo_args(zipArgsPath.c_str(), &argv);
     }
