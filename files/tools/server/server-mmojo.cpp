@@ -203,7 +203,7 @@ int main(int argc, char ** argv, char ** envp) {
     #ifdef COSMOCC
         printf("Getting working directory path for Cosmo build.\n");
 
-        std::string& apePath = "";
+        std::string apePath = "";
         get_ape_path(argv[1], apePath);
         printf("apePath: %s\n", apePath.c_str());
   
@@ -230,12 +230,12 @@ int main(int argc, char ** argv, char ** envp) {
     #endif
     
     // Args files if present. The names are different to remove confusion during packaging.
-    const std::string& argsFilename = ARGS_FILENAME;
-    const std::string& supportDirectoryName = SUPPORT_DIRECTORY_NAME;
-    const std::string& supportArgsFilename = ARGS_FILENAME;
-    const std::string& zipArgsPath = "/zip/" ARGS_FILENAME;
-    const std::string& zipPath = "/zip";
-    const std::string& zipPathSlash = "/zip/";
+    const std::string argsFilename = ARGS_FILENAME;
+    const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
+    const std::string supportArgsFilename = ARGS_FILENAME;
+    const std::string zipArgsPath = "/zip/" ARGS_FILENAME;
+    const std::string zipPath = "/zip";
+    const std::string zipPathSlash = "/zip/";
 
     std::string path = pathChar;
     std::string argsPath = path + argsFilename;
