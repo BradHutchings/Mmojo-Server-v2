@@ -47,6 +47,10 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 ---
 ### [400. Convert Models](400-Convert-Models.md)
 Use llama.cpp to convert models from Hugging Face repositories into `.gguf` files that Mmojo Server can use.
+- [401. Prepare to Connvert](401-Prepare-to-Convert.md) - Clone the llama.cpp GitHub repo, and leave it uncustomized so we can convert with it.
+- [402. Google Gemma](402-Google-Gemma.md) - Clone Google's Gemma Repos on Hugging Face, convert to `.gguf` models.
+- [403. Meta Llama](403-Meta-Llama.md) - Clone Meta's Llama Repos on Hugging Face, convert to `.gguf` models.
+- [404. Mistral AI Ministral](404-Mistral-AI-Ministral.md) - Clone Mistral AI's Ministral Repos on Hugging Face, convert to `.gguf` models.
 
 ---
 ### [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
