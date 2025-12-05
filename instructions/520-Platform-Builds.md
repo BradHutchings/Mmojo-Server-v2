@@ -1,4 +1,4 @@
-## 520. Build Platform
+## 520. Platform Builds
 ### About this Step
 In the following three steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the CPU of your build environment, with optional GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
