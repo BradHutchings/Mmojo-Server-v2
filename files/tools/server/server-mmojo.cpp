@@ -205,7 +205,7 @@ int main(int argc, char ** argv, char ** envp) {
 
         std::string& apePath = "";
         get_ape_path(argv[1], apePath);
-        printf("apePath: %s\n, apePath.c_str());
+        printf("apePath: %s\n", apePath.c_str());
   
         // When we run inside an ape, the parent directory of the executable will not help us.
         // So we will fall back to using the working directory.
