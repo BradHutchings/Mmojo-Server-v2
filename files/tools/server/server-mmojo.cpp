@@ -70,7 +70,7 @@ bool ends_with (const std::string &fullString, const std::string &ending) {
 }
 
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath) {
-    ggufPath = "";
+    ggufPath.clear();
   
     DIR *dir;
     struct dirent *entry;
@@ -99,24 +99,29 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
 }
 
 void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
-    executablePath = argv_0;
-
-    printf("\n");
-    printf("- get_executable_path()\n");
-    printf("  - argv_0: %s\n", argv_0);
-    if (!executablePath.has_root_path()) {
-        printf("  - executablePath does not have a root path.\n");
+    executablePath.clear();
+    if (argv_0 != NULL) {
+        executablePath = argv_0;
   
-        char workingDirectory[PATH_MAX];
-        workingDirectory[0] = '\0';
+        printf("\n");
+        printf("- get_executable_path()\n");
+        printf("  - argv_0: %s\n", argv_0);
 
-        if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
-            printf("  - workingDirectory: %s\n", workingDirectory);
+        if (!executablePath.has_root_path()) {
+            printf("  - executablePath does not have a root path.\n");
+  
+            char workingDirectory[PATH_MAX];
+            workingDirectory[0] = '\0';
 
-            executablePath = workingDirectory;
-            executablePath /= argv_0;
+            if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
+                printf("  - workingDirectory: %s\n", workingDirectory);
+
+                executablePath = workingDirectory;
+                executablePath /= argv_0;
+            }
         }
     }
+  
     printf("  - executablePath: %s\n", executablePath.c_str());
     executablePath = executablePath.lexically_normal();
     printf("  - normalized: %s\n", executablePath.c_str());
