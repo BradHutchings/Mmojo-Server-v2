@@ -103,37 +103,27 @@ void find_first_gguf(const std::string& directoryPath, std::string& ggufPath) {
     }
 }
 
-void get_ape_path(const std::string& argv_1, std::string& apePath) {
-    apePath = "";
+void get_executable_path(const char* argv_0, std::string& executablePath) {
+    executablePath = argv_0;
+    const std::string slash = "/";
+
+    printf("- get_executable_path()\n");
+    printf("  - argv_0: %s\n", argv_0);
+    if (!starts_with(executablePath, slash)) {
+        printf("  - executablePath does not start with /.\n");
   
-    #define MAX_CMDLINE_LEN 4096
-    pid_t pid = getpid();
-    char path[256];
-    char cmdline_content[MAX_CMDLINE_LEN];
+        char workingDirectory[PATH_MAX];
+        workingDirectory[0] = '\0';
 
-    snprintf(path, sizeof(path), "/proc/%d/cmdline", pid);
-    printf("cmdlin path: %s\n", path);
+        if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
+            strcat(workingDirectory, "/");
+            printf("  - workingDirectory: %s\n", workingDirectory);
 
-    FILE *fp = fopen(path, "r");
-    if (fp != NULL) {
-        size_t bytes_read = fread(cmdline_content, 1, sizeof(cmdline_content) - 1, fp);
-        fclose(fp);
-
-        if (bytes_read > 0) {
-            cmdline_content[bytes_read] = '\0'; // Null-terminate the buffer
-
-            // Replace null terminators with spaces for display
-            for (size_t i = 0; i < bytes_read; i++) {
-                if (cmdline_content[i] == '\0') {
-                    cmdline_content[i] = ' ';
-                }
-            }
-            printf("Command line for PID %d: %s\n", pid, cmdline_content);
+            executablePath = workingDirectory;
+            executablePath += argv_0;
         }
     }
-    else {
-        perror("Failed to open cmdline file");
-    }
+    printf("  - executablePath: %s\n", executablePath.c_str());
 }
 
 // Mmojo Server END
@@ -204,34 +194,9 @@ int main(int argc, char ** argv, char ** envp) {
     printf("argv[1]: %s\n", argv[1]);
     printf("argv[2]: %s\n", argv[2]);
 
-    #ifdef COSMOCC
-        printf("Getting working directory path for Cosmo build.\n");
-
-        std::string apePath = "";
-        get_ape_path(argv[1], apePath);
-        printf("apePath: %s\n", apePath.c_str());
-  
-        // When we run inside an ape, the parent directory of the executable will not help us.
-        // So we will fall back to using the working directory.
-        if (getcwd(pathChar, sizeof(pathChar) - 1)) {
-            strcat(pathChar, "/");
-        }
-    #else
-        printf("Getting parent directory path for regular application build.\n");
-
-        // When we are just launched normally, we want the parent directory of the executable.
-        ssize_t len = readlink("/proc/self/exe", pathChar, sizeof(pathChar) - 1);
-
-        if (len != -1) {
-            pathChar[len] = '\0'; // Null-terminate the string
-
-            // Find the last '/' to get the directory
-            char *last_slash = strrchr(pathChar, '/');
-            if (last_slash != NULL) {
-                *(last_slash + 1) = '\0'; // Null-terminate at the last slash
-            }
-        }
-    #endif
+    std::string executablePath = "";
+    get_executable_path(argv[0], executablePath);
+    printf("executablePath: %s", executablePath.c_str());
     
     // Args files if present. The names are different to remove confusion during packaging.
     const std::string argsFilename = ARGS_FILENAME;
@@ -261,6 +226,7 @@ int main(int argc, char ** argv, char ** envp) {
 
     #if 1
     printf("Paths of things we care about:\n");
+    printf("-  executablePath: %s\n", executablePath.c_str());
     printf("-            path: %s\n", path.c_str());
     printf("-        argsPath: %s\n", argsPath.c_str());
     printf("-     supportPath: %s\n", supportPath.c_str());
