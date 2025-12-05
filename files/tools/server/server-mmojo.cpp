@@ -240,7 +240,7 @@ int main(int argc, char ** argv, char ** envp) {
     std::string firstGguf = "";
 
     if (firstGguf == "") {
-        find_first_gguf(path, firstGguf);
+        find_first_gguf(executableParentPath, firstGguf);
     }
     if (firstGguf == "") {
         find_first_gguf(supportPath, firstGguf);
