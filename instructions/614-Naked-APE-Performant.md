@@ -128,7 +128,7 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [620. Package Platform Executable](620-Package-Platform-Executable.md)
+- **Next:** [620. Platform Packages](620-Platform-Packages.md)
 - **Previous:** [613. Naked-APE (Compatible)](613-Naked-APE-Compatible.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
