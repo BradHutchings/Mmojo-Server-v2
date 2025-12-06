@@ -47,9 +47,9 @@
 // pre C++20 helpers.
 bool starts_with (const std::string &fullString, const std::string &beginning);
 bool ends_with (const std::string &fullString, const std::string &ending);
+void get_important_paths(const char* argv_0, std::filesystem::path& executablePath, std::filesystem::path& workingDirectoryPath);
+//  void get_executable_path(const char* argv_0, std::filesystem::path& executablePath);
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath);
-// void get_ape_path(const std::string& argv_1, std::string& apePath);
-void get_executable_path(const char* argv_0, std::filesystem::path& executablePath);
 
 bool starts_with (const std::string &fullString, const std::string &beginning) {
     if (fullString.length() >= beginning.length()) {
@@ -68,6 +68,75 @@ bool ends_with (const std::string &fullString, const std::string &ending) {
         return false;
     } 
 }
+
+void get_important_paths(const char* argv_0, std::filesystem::path& executablePath, std::filesystem::path& workingDirectoryPath);
+    printf("\n");
+    printf("- get_important_paths()\n");
+
+    executablePath.clear();
+    workingDirectoryPath.clear();
+
+    if (argv_0 != NULL) {
+        printf("  - argv_0: %s\n", argv_0);
+        executablePath = argv_0;
+
+        char workingDirectory[PATH_MAX];
+        workingDirectory[0] = '\0';
+
+        if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
+            printf("  - workingDirectory: %s\n", workingDirectory);
+
+            workingDirectoryPath = workingDirectory;
+        }
+
+        if (!executablePath.has_root_path()) {
+            executablePath = workingDirectory;
+            executablePath /= argv_0;
+        }
+    }
+
+    printf("  - Raw paths:\n";
+    printf("    - workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
+    printf("    -       executablePath: %s\n", executablePath.c_str());
+
+    workingDirectoryPath = workingDirectoryPath.lexically_normal();
+    executablePath = executablePath.lexically_normal();
+
+    printf("  - Normalized paths:\n";
+    printf("    - workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
+    printf("    -       executablePath: %s\n", executablePath.c_str());
+}
+
+/*
+void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
+    executablePath.clear();
+    if (argv_0 != NULL) {
+        executablePath = argv_0;
+  
+        //  printf("\n");
+        //  printf("- get_executable_path()\n");
+        //  printf("  - argv_0: %s\n", argv_0);
+
+        if (!executablePath.has_root_path()) {
+            //  printf("  - executablePath does not have a root path.\n");
+  
+            char workingDirectory[PATH_MAX];
+            workingDirectory[0] = '\0';
+
+            if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
+                //  printf("  - workingDirectory: %s\n", workingDirectory);
+
+                executablePath = workingDirectory;
+                executablePath /= argv_0;
+            }
+        }
+    }
+  
+    printf("  - executablePath: %s\n", executablePath.c_str());
+    executablePath = executablePath.lexically_normal();
+    printf("  - normalized: %s\n", executablePath.c_str());
+}
+*/
 
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath) {
     ggufPath.clear();
@@ -99,34 +168,6 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
     }
 }
 
-void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
-    executablePath.clear();
-    if (argv_0 != NULL) {
-        executablePath = argv_0;
-  
-        printf("\n");
-        printf("- get_executable_path()\n");
-        printf("  - argv_0: %s\n", argv_0);
-
-        if (!executablePath.has_root_path()) {
-            printf("  - executablePath does not have a root path.\n");
-  
-            char workingDirectory[PATH_MAX];
-            workingDirectory[0] = '\0';
-
-            if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
-                printf("  - workingDirectory: %s\n", workingDirectory);
-
-                executablePath = workingDirectory;
-                executablePath /= argv_0;
-            }
-        }
-    }
-  
-    printf("  - executablePath: %s\n", executablePath.c_str());
-    executablePath = executablePath.lexically_normal();
-    printf("  - normalized: %s\n", executablePath.c_str());
-}
 // Mmojo Server END
 
 static std::function<void(int)> shutdown_handler;
@@ -186,100 +227,97 @@ int main(int argc, char ** argv, char ** envp) {
     // Keep the build from showing up as ape in the process list.
     pthread_setname_np(pthread_self(), PROCESS_NAME);
 
-    // This implements an args file feature inspired by llamafile's.
-    // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
-    // Path parameters passed on command line or in args files are relative to the working directory.
-
-    // printf("argv[0]: %s\n", argv[0]);
-    // printf("argv[1]: %s\n", argv[1]);
-    // printf("argv[2]: %s\n", argv[2]);
-
-    std::filesystem::path executablePath;
-    std::filesystem::path executableParentPath;
-    get_executable_path(argv[0], executablePath);
-    executableParentPath = executablePath.parent_path();
+    //  Find paths we need.
+        std::filesystem::path executablePath;
+        std::filesystem::path executableParentPath;
+        std::filesystem::path workingDirectoryPath;
+        get_important_paths(argv[0], executablePath, workingDirectoryPath);
+        executableParentPath = executablePath.parent_path();
     
-    // Args files if present. The names are different to remove confusion during packaging.
-    // const std::string argsFilename = ARGS_FILENAME;
-    // const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
-    // const std::string supportArgsFilename = ARGS_FILENAME;
+        // Args files if present. The names are different to remove confusion during packaging.
+        std::filesystem::path argsPath = executableParentPath;      argsPath /= ARGS_FILENAME;
+        std::filesystem::path supportPath = executableParentPath;   supportPath /= SUPPORT_DIRECTORY_NAME;
+        std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= ARGS_FILENAME;
+        std::filesystem::path zipPath = "/zip";
+        std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
 
-    std::filesystem::path argsPath = executableParentPath;      argsPath /= ARGS_FILENAME;
-    std::filesystem::path supportPath = executableParentPath;   supportPath /= SUPPORT_DIRECTORY_NAME;
-    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= ARGS_FILENAME;
-    std::filesystem::path zipPath = "/zip";
-    std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
-    
-    std::filesystem::path firstGgufPath;
+    // Find a .gguf model to use as a last resort before going into router mode.
+    // This makes the naked APEs possible.
+        std::filesystem::path firstGgufPath;
 
-    if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath)) {
-        find_first_gguf(executableParentPath, firstGgufPath);
-    }
-    if (firstGgufPath.empty() && std::filesystem::exists(supportPath)) {
-        find_first_gguf(supportPath, firstGgufPath);
-    }
-    #ifdef COSMOCC
-    if (firstGgufPath.empty() && std::filesystem::exists(zipPath)) {
-        find_first_gguf(zipPath, firstGgufPath);
-    }
-    #endif
+        if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath)) {
+            find_first_gguf(executableParentPath, firstGgufPath);
+        }
+        if (firstGgufPath.empty() && std::filesystem::exists(supportPath)) {
+            find_first_gguf(supportPath, firstGgufPath);
+        }
+        #ifdef COSMOCC
+        if (firstGgufPath.empty() && std::filesystem::exists(zipPath)) {
+            find_first_gguf(zipPath, firstGgufPath);
+        }
+        #endif
 
     #if 1
-    printf("\n");
-    printf("Paths of things we care about:\n");
-    printf("-       executablePath: %s\n", executablePath.c_str());
-    printf("- executableParentPath: %s\n", executableParentPath.c_str());
-    printf("-             argsPath: %s\n", argsPath.c_str());
-    printf("-          supportPath: %s\n", supportPath.c_str());
-    printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
-    printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
-    printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
+    // Path diagnostics
+        printf("Paths of things we care about:\n");
+        printf("-       executablePath: %s\n", executablePath.c_str());
+        printf("- executableParentPath: %s\n", executableParentPath.c_str());
+        printf("- workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
+        printf("-             argsPath: %s\n", argsPath.c_str());
+        printf("-          supportPath: %s\n", supportPath.c_str());
+        printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
+        printf("-              zipPath: %s\n", zipPath.c_str());
+        printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
+        printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
+        printf("\n");
+
+        printf("These paths exist:\n");
+        if (std::filesystem::exists(executableParentPath)) {
+            printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
+        }
+        if (std::filesystem::exists(argsPath)) {
+            printf("- argsPath exists: %s\n", argsPath.c_str());
+        }
+        if (std::filesystem::exists(supportArgsPath)) {
+            printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
+        }
+        if (std::filesystem::exists(zipArgsPath)) {
+            printf("- zipArgsPath exists: %s\n", zipArgsPath.c_str());
+        }
+    #endif
   
-    if (std::filesystem::exists(executableParentPath)) {
-        printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
-    }
-    if (std::filesystem::exists(argsPath)) {
-        printf("- argsPath exists: %s\n", argsPath.c_str());
-    }
-    if (std::filesystem::exists(supportArgsPath)) {
-        printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
-    }
-    if (std::filesystem::exists(zipArgsPath)) {
-        printf("- zipArgsPath exists: %s\n", zipArgsPath.c_str());
-    }
-    printf("\n");
-    #endif
+    // Implement an args file feature inspired by llamafile's.
+    // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
+
+        // At this point, argc, argv represent:
+        //     command (User supplied args)
+
+        if (std::filesystem::exists(argsPath)) {
+            argc = mmojo_args(argsPath.c_str(), &argv);
+        }
+
+        // At this point, argc, argv represent:
+        //     command (argsPath args) (User supplied args)
+
+        if (std::filesystem::exists(supportArgsPath)) {
+            argc = mmojo_args(supportArgsPath.c_str(), &argv);
+        }
+
+        // At this point, argc, argv represent:
+        //     command (supportArgsPath args) (argsPath args) (User supplied args)
+
+        #ifdef COSMOCC
+        if (std::filesystem::exists(zipArgsPath)) {
+            argc = mmojo_args(zipArgsPath.c_str(), &argv);
+        }
+
+        // At this point, argc, argv represent:
+        //     command (zipArgsPath args) (supportArgsPath args) (argsPath args) (User supplied args)
+        #endif
     
-    // mmojo-server-support/default-args will be an option for platform optimized builds.
+        // Yep, this is counterintuitive, but how the mmojo_args command works.
 
-    // At this point, argc, argv represent:
-    //     command (User supplied args)
-
-    if (std::filesystem::exists(argsPath)) {
-        argc = mmojo_args(argsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (argsPath args) (User supplied args)
-
-    if (std::filesystem::exists(supportArgsPath)) {
-        argc = mmojo_args(supportArgsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (supportArgsPath args) (argsPath args) (User supplied args)
-
-    #ifdef COSMOCC
-    if (std::filesystem::exists(zipArgsPath)) {
-        argc = mmojo_args(zipArgsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (zipArgsPath args) (supportArgsPath args) (argsPath args) (User supplied args)
-    #endif
-    
-    // Yep, this is counterintuitive, but how the cosmo_args command works.
-    // Mmojo Server END
+  // Mmojo Server END
   
     // own arguments required by this example
     common_params params;
@@ -289,21 +327,22 @@ int main(int argc, char ** argv, char ** envp) {
     }
 
     // Mmojo Server START
-    // If we have no model path at this point, use the firstGgufPath.
-    // I think I have all the possibilities for specifying a model covered here.
-    if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
-        (params.model.hf_repo == "") && (params.model.hf_file == "")) {
-        params.model.path = firstGgufPath;
-    }
+        // If we have no model path at this point, use the firstGgufPath.
+        // I think I have all the possibilities for specifying a model covered here.
+        if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
+            (params.model.hf_repo == "") && (params.model.hf_file == "")) {
+          
+            params.model.path = firstGgufPath;
+        }
 
-    const std::string zipPathSlash = "/zip/";
-    #ifdef COSMOCC
-    if (starts_with(params.model.path, zipPathSlash)) {
-        // if the gguf is in the zip file, we have to turn off use_map.
-        printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
-        params.use_mmap = false;
-    }
-    #endif
+        #ifdef COSMOCC
+        const std::string zipPathSlash = "/zip/";
+        if (starts_with(params.model.path, zipPathSlash)) {
+            // if the gguf is in the zip file, we have to turn off use_map.
+            printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
+            params.use_mmap = false;
+        }
+        #endif
     // Mmojo Server END
 
   // TODO: should we have a separate n_parallel parameter for the server?
