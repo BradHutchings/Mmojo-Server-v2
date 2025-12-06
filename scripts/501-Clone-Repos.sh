@@ -65,9 +65,10 @@ cd ..
 # Roll the llama.cpp repo back to last known working.
 # Up through: https://github.com/ggml-org/llama.cpp/commit/933414c0b6f21af269bdb4fa2fa1b257b9c0fc53
 # 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53 
-# git checkout 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53 
+git checkout 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53 
 
-git checkout 37adc9c6ba6057bfe7c036c201abe85471d854a1
+# This worked:
+# git checkout 37adc9c6ba6057bfe7c036c201abe85471d854a1
 
 # Previous: 61bde8e21f4a1f9a98c9205831ca3e55457b4c78
 
