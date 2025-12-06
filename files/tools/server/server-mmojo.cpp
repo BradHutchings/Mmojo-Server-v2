@@ -69,7 +69,7 @@ bool ends_with (const std::string &fullString, const std::string &ending) {
     } 
 }
 
-void get_important_paths(const char* argv_0, std::filesystem::path& executablePath, std::filesystem::path& workingDirectoryPath);
+void get_important_paths(const char* argv_0, std::filesystem::path& executablePath, std::filesystem::path& workingDirectoryPath) {
     printf("\n");
     printf("- get_important_paths()\n");
 
