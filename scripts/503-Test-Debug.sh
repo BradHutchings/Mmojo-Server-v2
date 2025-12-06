@@ -85,7 +85,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
     if [ "$args" == "find" ]; then
         cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
-            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
 
         echo ""
         echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
