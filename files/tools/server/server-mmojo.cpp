@@ -190,11 +190,11 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
 
 int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
-    printf("\n\n----------Mmojo Server----------------------------------------------------------\n\n");
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
+        printf("\n\n----------START: Mmojo Server---------------------------------------------------\n\n");
 
     // Keep the build from showing up as ape in the process list.
-    pthread_setname_np(pthread_self(), PROCESS_NAME);
+        pthread_setname_np(pthread_self(), PROCESS_NAME);
 
     //  Find paths we need.
         std::filesystem::path executablePath;
@@ -302,6 +302,8 @@ int main(int argc, char ** argv, char ** envp) {
     
         // Yep, this is counterintuitive, but how the mmojo_args command works.
 
+        printf("\n\n----------END: Mmojo Server-----------------------------------------------------\n\n");
+
     // Mmojo Server END
   
     // own arguments required by this example
@@ -312,14 +314,16 @@ int main(int argc, char ** argv, char ** envp) {
     }
 
     // Mmojo Server START
+        printf("\n\n----------START: Mmojo Server---------------------------------------------------\n\n");
+        printf("- Checking for missing model and model inside APE zip.\n");
+
         // If we have no model path at this point, use the firstGgufPath.
         // I think I have all the possibilities for specifying a model covered here.
         if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
             (params.model.hf_repo == "") && (params.model.hf_file == "") && 
             std::filesystem::exists(firstGgufPath)) {
 
-            printf("\n");
-            printf("- Using firstGgufPath for model: %s\n", firstGgufPath.c_str());
+            printf("  - Using firstGgufPath for model: %s\n", firstGgufPath.c_str());
             params.model.path = firstGgufPath;
         }
 
@@ -327,13 +331,12 @@ int main(int argc, char ** argv, char ** envp) {
         const std::string zipPathSlash = "/zip/";
         if (starts_with(params.model.path, zipPathSlash)) {
             // if the gguf is in the zip file, we have to turn off use_map.
-            printf("\n");
-            printf("- The model file is in /zip, so turning off use_mmap.\n\n");
+            printf("  - The model file is in /zip, so turning off use_mmap.\n\n");
             params.use_mmap = false;
         }
         #endif
 
-        printf("\n\n----------Mmojo Server----------------------------------------------------------\n\n");
+        printf("\n\n----------END: Mmojo Server-----------------------------------------------------\n\n");
     // Mmojo Server END
 
   // TODO: should we have a separate n_parallel parameter for the server?
