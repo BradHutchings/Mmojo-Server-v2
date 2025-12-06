@@ -1,3 +1,20 @@
+/*
+  arg-mmojo.cpp is a derivative for common/arg.cpp.
+
+  This file has been modified to implement Mmojo Server specific
+  Modifications are surrounded by:
+    // Mmojo Server START
+    // Mmojo Server END
+    
+  Original arg.cpp file:
+      https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/common/arg.cpp
+
+  -Brad 2025-12-05
+  --
+  Brad Hutchings
+  brad@bradhutchings.com
+*/
+
 #include "arg.h"
 
 #include "chat.h"
@@ -3228,7 +3245,7 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
         }
     ).set_examples({LLAMA_EXAMPLE_SERVER}));
 
-    // mmojo-server START
+    // Mmojo Server START
     // This could be automated by searching for "return ctx_arg" and inserting this block with newline padding directly before. -Brad 2025-11-05
     add_opt(common_arg(
         {"--default-ui-endpoint"}, "STRING",
@@ -3256,7 +3273,7 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
         }
     ).set_examples({LLAMA_EXAMPLE_SERVER}));
 
-    // mmojo-server END
+    // Mmojo Server START
 
     return ctx_arg;
 }
