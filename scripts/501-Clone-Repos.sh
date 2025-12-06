@@ -57,7 +57,7 @@ cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
 cp -r $BUILD_OPENSSSL_DIR/openssl .
 
 cd cpp-jttplib
-git checkout dbd5ca4bf2da438da1c6dcd0ba7c725f7f2cc7b7
+git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7
 cd ..
 
 # Roll the llama.cpp repo back to last known working.
