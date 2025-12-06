@@ -189,10 +189,6 @@ int main(int argc, char ** argv, char ** envp) {
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
     // Path parameters passed on command line or in args files are relative to the working directory.
 
-    // printf("argv[0]: %s\n", argv[0]);
-    // printf("argv[1]: %s\n", argv[1]);
-    // printf("argv[2]: %s\n", argv[2]);
-
     std::filesystem::path executablePath;
     std::filesystem::path executableParentPath;
     get_executable_path(argv[0], executablePath);
@@ -223,6 +219,7 @@ int main(int argc, char ** argv, char ** envp) {
     }
     #endif
 
+#if 0
     #if 1
     printf("\n");
     printf("Paths of things we care about:\n");
@@ -276,7 +273,7 @@ int main(int argc, char ** argv, char ** envp) {
     // At this point, argc, argv represent:
     //     command (zipArgsPath args) (supportArgsPath args) (argsPath args) (User supplied args)
     #endif
-    
+#endif    
     // Yep, this is counterintuitive, but how the cosmo_args command works.
     // Mmojo Server END
 
