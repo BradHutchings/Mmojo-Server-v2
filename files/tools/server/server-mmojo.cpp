@@ -184,6 +184,7 @@ int main(int argc, char ** argv, char ** envp) {
 
     // Keep the build from showing up as ape in the process list.
     pthread_setname_np(pthread_self(), PROCESS_NAME);
+#if 0
 
     // This implements an args file feature inspired by llamafile's.
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
@@ -219,7 +220,6 @@ int main(int argc, char ** argv, char ** envp) {
     }
     #endif
 
-#if 0
     #if 1
     printf("\n");
     printf("Paths of things we care about:\n");
