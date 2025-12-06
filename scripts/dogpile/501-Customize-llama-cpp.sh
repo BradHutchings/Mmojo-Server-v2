@@ -16,6 +16,7 @@ cd $DOGPILE_BUILD_DIR
 sed -i -e 's/PROCESS_NAME\ \"mmojo-server\"/PROCESS_NAME\ \"dogpile\"/g' tools/server/server-mmojo.cpp
 sed -i -e 's/ARGS_FILENAME\ \"mmojo-server-args\"/ARGS_FILENAME\ \"dogpile-args\"/g' tools/server/server-mmojo.cpp
 sed -i -e 's/SUPPORT_DIRECTORY_NAME\ \"mmojo-server-support\"/SUPPORT_DIRECTORY_NAME\ \"dogpile-support\"/g' tools/server/server-mmojo.cpp
+sed -i -e 's/PRODUCT_NAME\ \"Mmojo Server\"/PRODUCT_NAME\ \"Dogpile\"/g' tools/server/server-mmojo.cpp
 
 cd $HOME
 
