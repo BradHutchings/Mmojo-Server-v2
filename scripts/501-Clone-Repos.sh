@@ -56,9 +56,9 @@ git clone https://github.com/nlohmann/json.git nlohmann-json
 cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
 cp -r $BUILD_OPENSSSL_DIR/openssl .
 
-cd cpp-jttplib
-git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7
-cd ..
+// cd cpp-jttplib
+// git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7
+// cd ..
 
 # Roll the llama.cpp repo back to last known working.
 # Up through: https://github.com/ggml-org/llama.cpp/commit/933414c0b6f21af269bdb4fa2fa1b257b9c0fc53
