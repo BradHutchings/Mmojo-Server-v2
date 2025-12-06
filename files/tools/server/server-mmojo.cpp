@@ -48,7 +48,6 @@
 bool starts_with (const std::string &fullString, const std::string &beginning);
 bool ends_with (const std::string &fullString, const std::string &ending);
 void get_important_paths(const char* argv_0, std::filesystem::path& executablePath, std::filesystem::path& workingDirectoryPath);
-//  void get_executable_path(const char* argv_0, std::filesystem::path& executablePath);
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath);
 
 bool starts_with (const std::string &fullString, const std::string &beginning) {
@@ -107,41 +106,10 @@ void get_important_paths(const char* argv_0, std::filesystem::path& executablePa
     printf("    -       executablePath: %s\n", executablePath.c_str());
 }
 
-/*
-void get_executable_path(const char* argv_0, std::filesystem::path& executablePath) {
-    executablePath.clear();
-    if (argv_0 != NULL) {
-        executablePath = argv_0;
-  
-        //  printf("\n");
-        //  printf("- get_executable_path()\n");
-        //  printf("  - argv_0: %s\n", argv_0);
-
-        if (!executablePath.has_root_path()) {
-            //  printf("  - executablePath does not have a root path.\n");
-  
-            char workingDirectory[PATH_MAX];
-            workingDirectory[0] = '\0';
-
-            if (getcwd(workingDirectory, sizeof(workingDirectory) - 1)) {
-                //  printf("  - workingDirectory: %s\n", workingDirectory);
-
-                executablePath = workingDirectory;
-                executablePath /= argv_0;
-            }
-        }
-    }
-  
-    printf("  - executablePath: %s\n", executablePath.c_str());
-    executablePath = executablePath.lexically_normal();
-    printf("  - normalized: %s\n", executablePath.c_str());
-}
-*/
-
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath) {
     ggufPath.clear();
     printf("\n");
-    printf("find_first_gguf() in %s:\n", directoryPath.c_str());
+    printf("- find_first_gguf() in %s:\n", directoryPath.c_str());
   
     DIR *dir;
     struct dirent *entry;
@@ -149,13 +117,13 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
     // Open the directory
     dir = opendir(directoryPath.c_str());
     if (dir != NULL) {
-        printf("Looking for .gguf in %s:\n", directoryPath.c_str());
+        printf("  - Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
             const std::string& extension = ".gguf";            
             const std::string& slash = "/";
             if (ends_with(filename, extension)) {
-                printf("- %s\n", entry->d_name);
+                printf("  - %s\n", entry->d_name);
                 ggufPath = directoryPath;
                 ggufPath /= entry->d_name;
                 break;
@@ -259,6 +227,7 @@ int main(int argc, char ** argv, char ** envp) {
 
     #if 1
     // Path diagnostics
+        printf("\n");
         printf("Paths of things we care about:\n");
         printf("-       executablePath: %s\n", executablePath.c_str());
         printf("- executableParentPath: %s\n", executableParentPath.c_str());
@@ -269,8 +238,8 @@ int main(int argc, char ** argv, char ** envp) {
         printf("-              zipPath: %s\n", zipPath.c_str());
         printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
         printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
-        printf("\n");
 
+        printf("\n");
         printf("These paths exist:\n");
         if (std::filesystem::exists(executableParentPath)) {
             printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
@@ -330,8 +299,11 @@ int main(int argc, char ** argv, char ** envp) {
         // If we have no model path at this point, use the firstGgufPath.
         // I think I have all the possibilities for specifying a model covered here.
         if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
-            (params.model.hf_repo == "") && (params.model.hf_file == "")) {
-          
+            (params.model.hf_repo == "") && (params.model.hf_file == "") && 
+            std::filesystem::exists(firstGgufPath)) {
+
+            print("\n");
+            printf("- Using firstGgufPath for model: %s\n", firstGgufPath.c_str());
             params.model.path = firstGgufPath;
         }
 
@@ -339,7 +311,8 @@ int main(int argc, char ** argv, char ** envp) {
         const std::string zipPathSlash = "/zip/";
         if (starts_with(params.model.path, zipPathSlash)) {
             // if the gguf is in the zip file, we have to turn off use_map.
-            printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
+            printf("\n");
+            printf("- The model file is in /zip, so turning off use_mmap.\n\n");
             params.use_mmap = false;
         }
         #endif
@@ -367,25 +340,30 @@ int main(int argc, char ** argv, char ** envp) {
     // if they are relative paths, fix to absolute relative to working directory
     if (supportPath != "") {
         const std::string& supportRootPath = "/support/";
+      
         if (starts_with(params.model.path, supportRootPath)) {
+            printf("\n");
             printf("--model path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.model.path.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new model path: %s\n", s.c_str());
+            params.model.path.replace(0, supportRootPath.length(), supportPath);
+            printf("  - new model path: %s\n", params.model.path.c_str());
         }
         if (starts_with(params.public_path, supportRootPath)) {
+            printf("\n");
             printf("--path path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.public_path.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new path path: %s\n", s.c_str());
+            params.public_path.replace(0, supportRootPath.length(), supportPath);
+            printf("  - new path path: %s\n", params.public_path.c_str());
         }
         if (starts_with(params.ssl_file_key, supportRootPath)) {
+            printf("\n");
             printf("--ssl-key-file path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.ssl_file_key.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new ssl-key-file path: %s\n", s.c_str());
+            params.ssl_file_key.replace(0, supportRootPath.length(), supportPath);
+            printf("  - new ssl-key-file path: %s\n", params.ssl_file_key.c_str());
         }
         if (starts_with(params.ssl_file_cert, supportRootPath)) {
+            printf("\n");
             printf("--ssl-cert-file path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.ssl_file_cert.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new ssl-cert-file path: %s\n", s.c_str());
+            params.ssl_file_cert.replace(0, supportRootPath.length(), supportPath);
+            printf("  - new ssl-cert-file path: %s\n", params.ssl_file_cert.c_str());
         }
     }
     // Mmojo Server END
