@@ -302,7 +302,7 @@ int main(int argc, char ** argv, char ** envp) {
             (params.model.hf_repo == "") && (params.model.hf_file == "") && 
             std::filesystem::exists(firstGgufPath)) {
 
-            print("\n");
+            printf("\n");
             printf("- Using firstGgufPath for model: %s\n", firstGgufPath.c_str());
             params.model.path = firstGgufPath;
         }
