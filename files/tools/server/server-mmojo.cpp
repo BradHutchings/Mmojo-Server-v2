@@ -179,106 +179,7 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
 }
 
 int main(int argc, char ** argv, char ** envp) {
-    // Mmojo Server START
-    // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
-    // Keep the build from showing up as ape in the process list.
-    pthread_setname_np(pthread_self(), PROCESS_NAME);
-
-    // This implements an args file feature inspired by llamafile's.
-    // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
-    // Path parameters passed on command line or in args files are relative to the working directory.
-
-    // printf("argv[0]: %s\n", argv[0]);
-    // printf("argv[1]: %s\n", argv[1]);
-    // printf("argv[2]: %s\n", argv[2]);
-
-    std::filesystem::path executablePath;
-    std::filesystem::path executableParentPath;
-    get_executable_path(argv[0], executablePath);
-    executableParentPath = executablePath.parent_path();
-    
-    // Args files if present. The names are different to remove confusion during packaging.
-    // const std::string argsFilename = ARGS_FILENAME;
-    // const std::string supportDirectoryName = SUPPORT_DIRECTORY_NAME;
-    // const std::string supportArgsFilename = ARGS_FILENAME;
-
-    std::filesystem::path argsPath = executableParentPath;      argsPath /= ARGS_FILENAME;
-    std::filesystem::path supportPath = executableParentPath;   supportPath /= SUPPORT_DIRECTORY_NAME;
-    std::filesystem::path supportArgsPath = supportPath;        supportArgsPath /= ARGS_FILENAME;
-    std::filesystem::path zipPath = "/zip";
-    std::filesystem::path zipArgsPath = zipPath;                zipArgsPath /= ARGS_FILENAME;
-    
-    std::filesystem::path firstGgufPath;
-
-    if (firstGgufPath.empty()) {
-        find_first_gguf(executableParentPath, firstGgufPath);
-    }
-    if (firstGgufPath.empty()) {
-        find_first_gguf(supportPath, firstGgufPath);
-    }
-    #ifdef COSMOCC
-    if (firstGgufPath.empty()) {
-        find_first_gguf(zipPath, firstGgufPath);
-    }
-    #endif
-
-    #if 1
-    printf("\n");
-    printf("Paths of things we care about:\n");
-    printf("-       executablePath: %s\n", executablePath.c_str());
-    printf("- executableParentPath: %s\n", executableParentPath.c_str());
-    printf("-             argsPath: %s\n", argsPath.c_str());
-    printf("-          supportPath: %s\n", supportPath.c_str());
-    printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
-    printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
-    printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
-  
-    if (std::filesystem::exists(executableParentPath)) {
-        printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
-    }
-    if (std::filesystem::exists(argsPath)) {
-        printf("- argsPath exists: %s\n", argsPath.c_str());
-    }
-    if (std::filesystem::exists(supportArgsPath)) {
-        printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
-    }
-    if (std::filesystem::exists(zipArgsPath)) {
-        printf("- zipArgsPath exists: %s\n", zipArgsPath.c_str());
-    }
-    printf("\n");
-    #endif
-    
-    // mmojo-server-support/default-args will be an option for platform optimized builds.
-
-    // At this point, argc, argv represent:
-    //     command (User supplied args)
-
-    if (std::filesystem::exists(argsPath)) {
-        argc = mmojo_args(argsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (argsPath args) (User supplied args)
-
-    if (std::filesystem::exists(supportArgsPath)) {
-        argc = mmojo_args(supportArgsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (supportArgsPath args) (argsPath args) (User supplied args)
-
-    #ifdef COSMOCC
-    if (std::filesystem::exists(zipArgsPath)) {
-        argc = mmojo_args(zipArgsPath.c_str(), &argv);
-    }
-
-    // At this point, argc, argv represent:
-    //     command (zipArgsPath args) (supportArgsPath args) (argsPath args) (User supplied args)
-    #endif
-    
-    // Yep, this is counterintuitive, but how the cosmo_args command works.
-    // Mmojo Server END
   
     // own arguments required by this example
     common_params params;
@@ -287,25 +188,7 @@ int main(int argc, char ** argv, char ** envp) {
         return 1;
     }
 
-    // Mmojo Server START
-    // If we have no model path at this point, use the firstGgufPath.
-    // I think I have all the possibilities for specifying a model covered here.
-    if ((params.model.path == "") && (params.model.url == "") && (params.model.docker_repo == "") &&  
-        (params.model.hf_repo == "") && (params.model.hf_file == "")) {
-        params.model.path = firstGgufPath;
-    }
-
-    #if 0
-    const std::string zipPathSlash = "/zip/";
-    if (starts_with(params.model.path, zipPathSlash)) {
-        // if the gguf is in the zip file, we have to turn off use_map.
-        printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
-        params.use_mmap = false;
-    }
-    #endif
-    // Mmojo Server END
- 
-    // TODO: should we have a separate n_parallel parameter for the server?
+  // TODO: should we have a separate n_parallel parameter for the server?
     //       https://github.com/ggml-org/llama.cpp/pull/16736#discussion_r2483763177
     // TODO: this is a common configuration that is suitable for most local use cases
     //       however, overriding the parameters is a bit confusing - figure out something more intuitive
@@ -320,37 +203,6 @@ int main(int argc, char ** argv, char ** envp) {
     if (params.model_alias.empty() && !params.model.name.empty()) {
         params.model_alias = params.model.name;
     }
-
-    #if 0
-    // Mmojo Server START
-    // This could be automated by looking for "common_init();" and inserting this block immediately after. -Brad 2025-11-05
-    // fix params -- model, path, ssl-key-file, ssl-cert-file
-    // if they are relative paths, fix to absolute relative to working directory
-    if (supportPath != "") {
-        const std::string& supportRootPath = "/support/";
-        if (starts_with(params.model.path, supportRootPath)) {
-            printf("--model path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.model.path.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new model path: %s\n", s.c_str());
-        }
-        if (starts_with(params.public_path, supportRootPath)) {
-            printf("--path path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.public_path.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new path path: %s\n", s.c_str());
-        }
-        if (starts_with(params.ssl_file_key, supportRootPath)) {
-            printf("--ssl-key-file path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.ssl_file_key.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new ssl-key-file path: %s\n", s.c_str());
-        }
-        if (starts_with(params.ssl_file_cert, supportRootPath)) {
-            printf("--ssl-cert-file path starts with %s.\n",  supportRootPath.c_str());
-            std::string s = params.ssl_file_cert.replace(0, supportRootPath.length(), supportPath);
-            printf("  - new ssl-cert-file path: %s\n", s.c_str());
-        }
-    }
-    // Mmojo Server END
-    #endif
   
     common_init();
 
