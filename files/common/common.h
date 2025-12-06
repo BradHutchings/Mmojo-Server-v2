@@ -1,3 +1,20 @@
+/*
+  common.h is a derivative for common/common.h.
+
+  This file has been modified to implement Mmojo Server specific
+  Modifications are surrounded by:
+    // Mmojo Server START
+    // Mmojo Server END
+    
+  Original server.cpp file:
+      https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/common/common.h
+
+  -Brad 2025-11-09
+  --
+  Brad Hutchings
+  brad@bradhutchings.com
+*/
+
 // Various helper functions and utilities
 
 #pragma once
@@ -11,6 +28,10 @@
 #include <string_view>
 #include <vector>
 #include <map>
+
+#if defined(_WIN32) && !defined(_WIN32_WINNT)
+#define _WIN32_WINNT 0x0A00
+#endif
 
 #ifdef _WIN32
 #define DIRECTORY_SEPARATOR '\\'
@@ -301,11 +322,13 @@ struct common_params {
     int32_t n_predict             =    -1; // new tokens to predict
     int32_t n_ctx                 =  4096; // context size
     int32_t n_batch               =  2048; // logical batch size for prompt processing (must be >=32 to use BLAS)
-    // mmojo-server START
+    
+    // Mmojo Server START
     // This could be automated by searching for "int32_t n_batch " and inserting this block immediately below. -Brad 2025-11-05
     int32_t n_batch_sleep_ms          =     0; // delay in milliseconds after processing each batch.
     std::string default_ui_endpoint   =    ""; // endpoint for chat UI
-    // mmojo-server END
+    // Mmojo Server END
+
     int32_t n_ubatch              =   512; // physical batch size for prompt processing (must be >=32 to use BLAS)
     int32_t n_keep                =     0; // number of tokens to keep from initial prompt
     int32_t n_chunks              =    -1; // max number of chunks to process (-1 = unlimited)
@@ -490,6 +513,7 @@ struct common_params {
     bool log_json = false;
 
     std::string slot_save_path;
+    std::string media_path; // path to directory for loading media files
 
     float slot_prompt_similarity = 0.1f;
 
@@ -640,8 +664,9 @@ std::string string_from(const struct llama_context * ctx, const struct llama_bat
 // Filesystem utils
 //
 
-bool fs_validate_filename(const std::string & filename);
+bool fs_validate_filename(const std::string & filename, bool allow_subdirs = false);
 bool fs_create_directory_with_parents(const std::string & path);
+bool fs_is_directory(const std::string & path);
 
 std::string fs_get_cache_directory();
 std::string fs_get_cache_file(const std::string & filename);
