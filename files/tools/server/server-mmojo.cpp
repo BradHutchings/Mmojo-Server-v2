@@ -71,6 +71,8 @@ bool ends_with (const std::string &fullString, const std::string &ending) {
 
 void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem::path& ggufPath) {
     ggufPath.clear();
+    printf("\n");
+    printf("find_first_gguf() in %s:\n", directoryPath.c_str());
   
     DIR *dir;
     struct dirent *entry;
@@ -78,7 +80,6 @@ void find_first_gguf(const std::filesystem::path& directoryPath, std::filesystem
     // Open the directory
     dir = opendir(directoryPath.c_str());
     if (dir != NULL) {
-        printf("\n");
         printf("Looking for .gguf in %s:\n", directoryPath.c_str());
         while ((entry = readdir(dir)) != NULL) {
             const std::string& filename = entry->d_name;
@@ -211,14 +212,14 @@ int main(int argc, char ** argv, char ** envp) {
     
     std::filesystem::path firstGgufPath;
 
-    if (firstGgufPath.empty()) {
+    if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath) {
         find_first_gguf(executableParentPath, firstGgufPath);
     }
-    if (firstGgufPath.empty()) {
+    if (firstGgufPath.empty() && std::filesystem::exists(supportPath) {
         find_first_gguf(supportPath, firstGgufPath);
     }
     #ifdef COSMOCC
-    if (firstGgufPath.empty()) {
+    if (firstGgufPath.empty() && std::filesystem::exists(zipPath) {
         find_first_gguf(zipPath, firstGgufPath);
     }
     #endif
@@ -295,8 +296,8 @@ int main(int argc, char ** argv, char ** envp) {
         params.model.path = firstGgufPath;
     }
 
-    #if 1
     const std::string zipPathSlash = "/zip/";
+    #ifdef COSMOCC
     if (starts_with(params.model.path, zipPathSlash)) {
         // if the gguf is in the zip file, we have to turn off use_map.
         printf("\nThe model file is in /zip, so turning off use_mmap.\n\n");
