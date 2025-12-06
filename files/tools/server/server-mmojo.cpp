@@ -190,6 +190,7 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
 
 int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
+    printf("\n\n----------Mmojo Server----------------------------------------------------------\n\n");
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
     // Keep the build from showing up as ape in the process list.
@@ -228,31 +229,46 @@ int main(int argc, char ** argv, char ** envp) {
     #if 1
     // Path diagnostics
         printf("\n");
-        printf("Paths of things we care about:\n");
-        printf("-       executablePath: %s\n", executablePath.c_str());
-        printf("- executableParentPath: %s\n", executableParentPath.c_str());
-        printf("- workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
-        printf("-             argsPath: %s\n", argsPath.c_str());
-        printf("-          supportPath: %s\n", supportPath.c_str());
-        printf("-      supportArgsPath: %s\n", supportArgsPath.c_str());
-        printf("-              zipPath: %s\n", zipPath.c_str());
-        printf("-          zipArgsPath: %s\n", zipArgsPath.c_str());
-        printf("         firstGgufPath: %s\n", firstGgufPath.c_str());
+        printf("- Paths of things we care about:\n");
+        printf("  -       executablePath: %s\n", executablePath.c_str());
+        printf("  - executableParentPath: %s\n", executableParentPath.c_str());
+        printf("  - workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
+        printf("  -             argsPath: %s\n", argsPath.c_str());
+        printf("  -          supportPath: %s\n", supportPath.c_str());
+        printf("  -      supportArgsPath: %s\n", supportArgsPath.c_str());
+        printf("  -              zipPath: %s\n", zipPath.c_str());
+        printf("  -          zipArgsPath: %s\n", zipArgsPath.c_str());
+        printf("  -        firstGgufPath: %s\n", firstGgufPath.c_str());
 
         printf("\n");
-        printf("These paths exist:\n");
+        printf("- These paths exist:\n");
+        if (std::filesystem::exists(executablePath)) {
+            printf("  -       executablePath exists: %s\n", executablePath.c_str());
+        }
         if (std::filesystem::exists(executableParentPath)) {
-            printf("- executableParentPath exists: %s\n", executableParentPath.c_str());
+            printf("  - executableParentPath exists: %s\n", executableParentPath.c_str());
+        }
+        if (std::filesystem::exists(workingDirectoryPath)) {
+            printf("  - workingDirectoryPath exists: %s\n", workingDirectoryPath.c_str());
         }
         if (std::filesystem::exists(argsPath)) {
-            printf("- argsPath exists: %s\n", argsPath.c_str());
+            printf("  -             argsPath exists: %s\n", argsPath.c_str());
+        }
+        if (std::filesystem::exists(supportPath)) {
+            printf("  -          supportPath exists: %s\n", supportPath.c_str());
         }
         if (std::filesystem::exists(supportArgsPath)) {
-            printf("- supportArgsPath exists: %s\n", supportArgsPath.c_str());
+            printf("  -      supportArgsPath exists: %s\n", supportArgsPath.c_str());
+        }
+        if (std::filesystem::exists(zipPath)) {
+            printf("  -              zipPath exists: %s\n", zipPath.c_str());
         }
         if (std::filesystem::exists(zipArgsPath)) {
-            printf("- zipArgsPath exists: %s\n", zipArgsPath.c_str());
-        }
+            printf("  -          zipArgsPath exists: %s\n", zipArgsPath.c_str());
+        }  
+        if (std::filesystem::exists(firstGgufPath)) {
+            printf("  -        firstGgufPath exists: %s\n", firstGgufPath.c_str());
+        }  
     #endif
   
     // Implement an args file feature inspired by llamafile's.
@@ -286,7 +302,7 @@ int main(int argc, char ** argv, char ** envp) {
     
         // Yep, this is counterintuitive, but how the mmojo_args command works.
 
-  // Mmojo Server END
+    // Mmojo Server END
   
     // own arguments required by this example
     common_params params;
@@ -316,6 +332,8 @@ int main(int argc, char ** argv, char ** envp) {
             params.use_mmap = false;
         }
         #endif
+
+        printf("\n\n----------Mmojo Server----------------------------------------------------------\n\n");
     // Mmojo Server END
 
   // TODO: should we have a separate n_parallel parameter for the server?
