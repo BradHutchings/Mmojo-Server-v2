@@ -151,9 +151,11 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
         try {
             return func(req);
         } catch (const std::invalid_argument & e) {
+            // treat invalid_argument as invalid request (400)
             error = ERROR_TYPE_INVALID_REQUEST;
             message = e.what();
         } catch (const std::exception & e) {
+            // treat other exceptions as server error (500)
             error = ERROR_TYPE_SERVER;
             message = e.what();
         } catch (...) {
@@ -277,7 +279,7 @@ int main(int argc, char ** argv, char ** envp) {
     
     // Yep, this is counterintuitive, but how the cosmo_args command works.
     // Mmojo Server END
-
+  
     // own arguments required by this example
     common_params params;
 
@@ -302,7 +304,7 @@ int main(int argc, char ** argv, char ** envp) {
     }
     #endif
     // Mmojo Server END
-  
+ 
     // TODO: should we have a separate n_parallel parameter for the server?
     //       https://github.com/ggml-org/llama.cpp/pull/16736#discussion_r2483763177
     // TODO: this is a common configuration that is suitable for most local use cases
