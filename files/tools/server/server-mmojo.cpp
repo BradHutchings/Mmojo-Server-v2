@@ -212,14 +212,14 @@ int main(int argc, char ** argv, char ** envp) {
     
     std::filesystem::path firstGgufPath;
 
-    if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath) {
+    if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath)) {
         find_first_gguf(executableParentPath, firstGgufPath);
     }
-    if (firstGgufPath.empty() && std::filesystem::exists(supportPath) {
+    if (firstGgufPath.empty() && std::filesystem::exists(supportPath)) {
         find_first_gguf(supportPath, firstGgufPath);
     }
     #ifdef COSMOCC
-    if (firstGgufPath.empty() && std::filesystem::exists(zipPath) {
+    if (firstGgufPath.empty() && std::filesystem::exists(zipPath)) {
         find_first_gguf(zipPath, firstGgufPath);
     }
     #endif
