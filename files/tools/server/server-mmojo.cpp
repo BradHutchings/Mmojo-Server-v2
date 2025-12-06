@@ -95,14 +95,14 @@ void get_important_paths(const char* argv_0, std::filesystem::path& executablePa
         }
     }
 
-    printf("  - Raw paths:\n";
+    printf("  - Raw paths:\n");
     printf("    - workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
     printf("    -       executablePath: %s\n", executablePath.c_str());
 
     workingDirectoryPath = workingDirectoryPath.lexically_normal();
     executablePath = executablePath.lexically_normal();
 
-    printf("  - Normalized paths:\n";
+    printf("  - Normalized paths:\n");
     printf("    - workingDirectoryPath: %s\n", workingDirectoryPath.c_str());
     printf("    -       executablePath: %s\n", executablePath.c_str());
 }
