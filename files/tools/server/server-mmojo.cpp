@@ -182,9 +182,10 @@ int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
 
+#if 0
+
     // Keep the build from showing up as ape in the process list.
     pthread_setname_np(pthread_self(), PROCESS_NAME);
-#if 0
 
     // This implements an args file feature inspired by llamafile's.
     // It does not require Cosmo anymore, as the mmojo_args function is part of mmojo-server now.
