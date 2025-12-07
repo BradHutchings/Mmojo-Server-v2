@@ -41,27 +41,23 @@ This script creates the package directories, copies the `dogpile-ape` file you p
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh compatible attired dogpile
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
   unset ADDED_MODEL
   ```
 
-<!--
 ---
 ### Add Certificates to Package
-This script adds SSL certificates from the Mmojo Share to the APE package.
-- View the script: <a href="../../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
+- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible attired
   # Keep track of what we add for the args file.
   export ADDED_CERTS=1
   ```
-
-*Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
--->
 
 <!--
 ---
@@ -70,7 +66,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh compatible attired dogpile
   # Keep track of what we add for the args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -83,7 +79,7 @@ This script adds the chosen `.gguf` model to the APE package.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh compatible dogpile
+    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh compatible attired dogpile
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -104,7 +100,7 @@ This script adds a Args file to the APE package. We clean up files that were cop
 - View the script: <a href="../../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh compatible attired dogpile
   ```
 
 ---
