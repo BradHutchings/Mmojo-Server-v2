@@ -172,6 +172,19 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 -->
 
 ---
+### Review the Package
+Let's look at what you packaged:
+```
+THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+fi
+echo ""
+echo "$THIS_PACKAGE_DIR:"
+ls -al $THIS_PACKAGE_DIR
+```
+
+---
 ### Proceed
 - **Next:** [612. APE (Performant)](612-APE-Performant.md)
 - **Previous:** [610. APE Packages](610-APE-Packages.md)
