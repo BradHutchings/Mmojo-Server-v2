@@ -80,6 +80,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     rm -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$ARGS_FILE
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+    rm -r -f $TEST_WORKING_DIR
 
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
 
@@ -108,11 +109,13 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
         mkdir -p $TEST_WORKING_DIR
         cp $MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
 
+        cd $TEST_WORKING_DIR
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
             $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
 
         echo ""
         echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
+        cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
         ls -ald $ARGS_FILE
         ls -ald $SUPPORT_DIR
 
