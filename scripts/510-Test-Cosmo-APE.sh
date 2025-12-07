@@ -10,11 +10,18 @@ SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 variation=$1
-chat_ui=$2
-branding=$3
+gguf=$2
+chat_ui=$3
+branding=$4
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
+fi
+
+if [ "$gguf" != "command-line" ] && [ "$gguf" != "find-executable-dir" ] && \
+    [ "$gguf" != "find-working-dir" ] && [ "$gguf" != "find-ape" ]; then
+    
+    gguf="command-line"
 fi
 
 if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
@@ -84,18 +91,77 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
 
     rm -f $ARGS_FILE
     rm -r -f $SUPPORT_DIR
+    rm -r -f $TEST_WORKING_DIR
+    rm -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/*.gguf
+    rm -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/*.zip
 
-    # --mlock is not needed to run this.
-    EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
-    echo ""
-    echo "Launching $EXECUTABLE_PATH."
-    echo ""
-    $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
-        --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+    if [ "$gguf" == "command-line" ]; then
+        # --mlock is not needed to run this.
+        EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
+        echo ""
+        echo "Launching $EXECUTABLE_PATH."
+        echo ""
+        $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
+            --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
     
-    printf "\nVerify that args file and support folder do not exist.\n"
-    ls -ald $ARGS_FILE
-    ls -ald $SUPPORT_DIR
+        printf "\nVerify that args file and support folder do not exist.\n"
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$gguf" == "find-executable-dir" ]; then
+        # --mlock is not needed to run this.
+        cp "$MODELS_DIR/$MODEL_PARAM" "$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY" 
+        
+        EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
+        echo ""
+        echo "Launching $EXECUTABLE_PATH."
+        echo ""
+        $EXECUTABLE_PATH $UI_PARAMS $THREADS_PARAM \
+            --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+    
+        printf "\nVerify that args file and support folder do not exist.\n"
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$gguf" == "find-working-dir" ]; then
+        # --mlock is not needed to run this.
+        mkdir -p $TEST_WORKING_DIR
+        cp $MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
+
+        cd $TEST_WORKING_DIR
+        EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
+        echo ""
+        echo "Launching $EXECUTABLE_PATH."
+        echo ""
+        $EXECUTABLE_PATH $UI_PARAMS $THREADS_PARAM \
+            --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+    
+        printf "\nVerify that args file and support folder do not exist.\n"
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$gguf" == "find-ape" ]; then
+        # --mlock is not needed to run this.
+        EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
+        HAS_GGUF_EXECUTABLE_PATH="$EXECUTABLE_PATH-has-gguf"
+        THIS_ZIP_FILE="$HAS_GGUF_EXECUTABLE_PATH.zip"
+        cp "$EXECUTABLE_PATH" "$THIS_ZIP_FILE"
+
+        cd $MODELS_DIR
+        zip -0 -r -q "$THIS_ZIP_FILE" "$MODEL_PARAM"
+        mv "$THIS_ZIP_FILE" "$HAS_GGUF_EXECUTABLE_PATH"
+        
+        echo ""
+        echo "Launching $HAS_GGUF_EXECUTABLE_PATH."
+        echo ""
+        $HAS_GGUF_EXECUTABLE_PATH $UI_PARAMS $THREADS_PARAM \
+            --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+    
+        printf "\nVerify that args file and support folder do not exist.\n"
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    fi
 fi
 
 cd $HOME
