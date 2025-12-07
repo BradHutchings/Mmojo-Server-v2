@@ -39,7 +39,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ### Patch llama.cpp Source Code and Build Code, Customize for Dogpile
 This looks like lots of fun.
 - View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
-- View the script: <a href="../scripts/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
+- View the script: <a href="../../dogpile/scripts/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
 - Run the scripts.
   ```
   $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile
