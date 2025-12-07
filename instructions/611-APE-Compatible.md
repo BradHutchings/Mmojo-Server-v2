@@ -104,7 +104,7 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC]; then
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
