@@ -61,6 +61,39 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
 </details>
 
+<details>
+  <summary><b>Optional: Test the Build &mdash; fing .gguf model in executable directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-executable-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
+<details>
+  <summary><b>Optional: Test the Build &mdash; fing .gguf model in working directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-working-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
+<details>
+  <summary><b>Optional: Test the Build &mdash; fing .gguf model in support directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-support-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
 ---
 ### SHORTCUT: Build Debug, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to build and test a debug build:
