@@ -91,6 +91,9 @@ export BUILD_EXECUTABLE_PERFORMANT_AARCH64="build-executable-performant-aarch64"
 export BUILD_EXECUTABLE_NATIVE_X86_64="build-executable-native-x86_64"
 export BUILD_EXECUTABLE_NATIVE_AARCH64="build-executable-native-aarch64"
 
+echo "Setting Test paths."
+export TEST_WORKING_DIR="$HOME/500-TEST-working-directory"
+
 # Reset this when we update environment variables.
 unset TEST_MODEL
 unset TEST_CPU_THREADS
