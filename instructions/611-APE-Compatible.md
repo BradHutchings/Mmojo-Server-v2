@@ -155,7 +155,7 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 ### Review the Package
 Let's look at what you packaged:
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
