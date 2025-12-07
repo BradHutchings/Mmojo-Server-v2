@@ -25,6 +25,9 @@ mm-env
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
 - View the script: <a href="../../scripts/mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -36,9 +39,6 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ### Create Package Directory
 This script creates the package directories, copies the `dogpile-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
 - View the script: <a href="../../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh compatible attired dogpile
