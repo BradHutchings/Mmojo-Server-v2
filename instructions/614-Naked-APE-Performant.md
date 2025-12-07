@@ -26,7 +26,7 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   ```
   unset CHOSEN_MODEL
   unset CHOSEN_MODEL_MNEMONIC
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant naked
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -40,7 +40,7 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 - View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant naked
   # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
@@ -51,7 +51,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant naked
   # Keep track of what we add for the Args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -62,7 +62,7 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 - View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant naked
   ```
 
 ---
@@ -70,7 +70,7 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
 cd $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
@@ -98,7 +98,7 @@ If you're building in WSL, your Windows web browser should be able to connect to
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
 cd $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
