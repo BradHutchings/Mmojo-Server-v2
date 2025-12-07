@@ -1,6 +1,6 @@
 ## 502. Prepare to Test
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](500-Build-Doghouse.md).
 
 ---
 ### About this Step
@@ -54,7 +54,7 @@ export TEST_CPU_THREADS=8
 ### Proceed
 - **Next:** [503. Debug Build](503-Debug-Build.md)
 - **Previous:** [501. Prepare to Build](501-Prepare-to-Build.md)
-- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
+- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>
