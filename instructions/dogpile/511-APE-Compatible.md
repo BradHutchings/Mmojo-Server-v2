@@ -80,12 +80,13 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an
 
   ```
 
+---
 #### Test the Assembled APE
 If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 dogpile
   ```
 
 ---
@@ -107,7 +108,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible dogpile
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible dogpile
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible dogpile
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible 1 dogpile
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 dogpile
 ```
 
 ---
