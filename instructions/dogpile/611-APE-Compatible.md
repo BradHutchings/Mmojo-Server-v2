@@ -24,7 +24,7 @@ mm-env
 ---
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
-- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- View the script: <a href="../../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -35,7 +35,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `dogpile-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
+- View the script: <a href="../../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -52,7 +52,7 @@ This script creates the package directories, copies the `dogpile-ape` file you p
 ---
 ### Add Certificates to Package
 This script adds SSL certificates from the Mmojo Share to the APE package.
-- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible dogpile
@@ -67,7 +67,7 @@ This script adds SSL certificates from the Mmojo Share to the APE package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh compatible dogpile
@@ -79,7 +79,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the APE package.
-- View the script: <a href="../scripts/610-Add-gguf-Model-to-APE.sh" target="_blank">610-Add-gguf-Model-to-APE.sh</a>.
+- View the script: <a href="../../scripts/610-Add-gguf-Model-to-APE.sh" target="_blank">610-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
@@ -101,7 +101,7 @@ This script adds the chosen `.gguf` model to the APE package.
 ---
 ### Add Args File to Package
 This script adds a Args file to the APE package. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh compatible dogpile
