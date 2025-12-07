@@ -107,9 +107,9 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
   ```
 
 <details>
-  <summary><b>Optional: Test the Assembled APE with `,gguf` Model in APE.</b></summary>
+  <summary><b>Optional: Test the Assembled APE with `.gguf` Model in APE.</b></summary>
 
-Test the Assembled APE with `,gguf` Model in APE.
+Test the Assembled APE with `.gguf` Model in APE.
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
