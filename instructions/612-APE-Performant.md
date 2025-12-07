@@ -149,6 +149,19 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
+---
+### Review the Package
+Let's look at what you packaged:
+```
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+fi
+cd $THIS_PACKAGE_DIR
+ls -al
+```
+
+---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
 - View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
