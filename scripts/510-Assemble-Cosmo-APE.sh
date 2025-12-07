@@ -17,18 +17,18 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 APE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
-if [ "$branding" == "dogpile" ]; then
+if [ "$branding" == "doghouse" ]; then
     chat_ui=1
-	THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
-    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
-    APE_FILE=$PACKAGE_DOGPILE_APE_FILE
+	THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+    APE_FILE=$PACKAGE_DOGHOUSE_APE_FILE
 fi
 
 BUILD_X86_64_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
