@@ -47,6 +47,12 @@ if [ "$branding" == "dogpile" ]; then
     ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
 fi
 
+if [ "$variation" != "compatible" ]; then
+    APP_FILE+="-comp"
+elif [ "$variation" != "performant" ]; then
+    APP_FILE+="-perf"
+fi
+
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
