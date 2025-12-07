@@ -1,10 +1,10 @@
 ## 511. APE (Compatible)
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](400-Build-Doghouse.md).
 
 ---
 ### About this Step
-In this step, we will build Dogpile for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file (`dogpile-ape`) which can run cross platform and cross artchitecture.
+In this step, we will build Doghouse for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file (`doghouse-ape`) which can run cross platform and cross artchitecture.
 
 The APE will run on x86 and ARM CPUs, and Windows, Linux, and macOS operating systems. As a zip file, the APE can also hold configuration files and .gguf models. The APE will not perform as well as platform-specifc builds. It does not have the most optimized GGML CPU code and does not use GGML GPU options. Tradeoffs.
 
@@ -25,15 +25,15 @@ mm-env
 </details>
 
 ---
-### Build Dogpile for x86_64
-This script uses CMake to build Dogpile with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+### Build Doghouse for x86_64
+This script uses CMake to build Doghouse with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="../../scripts/510-Build-with-Cosmo.sh" target="_blank">510-Build-with-Cosmo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible doghouse
   ```
 
 <details>
@@ -43,20 +43,20 @@ If your build environment is x86_64, you can test this build. Requires previousl
 - View the script: <a href="../../scripts/510-Test-Cosmo-Build.sh" target="_blank">510-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh X86_64 compatible 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh X86_64 compatible 1 doghouse
   ```
 </details>
 
 ---
-### Build Dogpile for aarch64 (arm64)
-This script uses CMake to build Dogpile with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
+### Build Doghouse for aarch64 (arm64)
+This script uses CMake to build Doghouse with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
 - View the script: <a href="....//scripts/510-Build-with-Cosmo.sh" target="_blank">510-Build-with-Cosmo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible doghouse
   ```
 
 <details>
@@ -66,17 +66,17 @@ If your build environment is aarch64, you can test this build. Requires previous
 - View the script: <a href="../../scripts/510-Test-Cosmo-Build.sh" target="_blank">510-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh aarch64 compatible 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh aarch64 compatible 1 doghouse
   ```
 </details>
 
 ---
-### Assemble dogpile Actual Portable Executable (APE)
+### Assemble doghouse Actual Portable Executable (APE)
 Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an Actual Portable Executable (APE) file.
 - View the script: <a href="../../scripts/510-Assemble-Cosmo-APE.sh" target="_blank">510-Assemble-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible doghouse
 
   ```
 
@@ -85,7 +85,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 doghouse
   ```
 
 ---
@@ -104,17 +104,17 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible dogpile
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible dogpile
-$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible dogpile
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 dogpile
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible doghouse
+$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible doghouse
+$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible doghouse
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 doghouse
 ```
 
 ---
 ### Proceed
 - **Next:** [512. APE (Performant)](512-APE-Performant.md)
 - **Previous:** [510. APE Builds](510-APE-Builds.md)
-- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
+- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>
