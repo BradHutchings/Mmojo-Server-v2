@@ -21,7 +21,7 @@ if [ "$attire" != "attired" ] && [ "$attire" != "naked" ]; then
     attire="attired"
 fi
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
@@ -38,9 +38,9 @@ fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
 ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-if [ "$branding" == "dogpile" ]; then
-    THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-    ZIP_FILE="$PACKAGE_DOGPILE_ZIP_FILE"
+if [ "$branding" == "doghouse" ]; then
+    THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE="$PACKAGE_DOGHOUSE_ZIP_FILE"
 fi
 
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then

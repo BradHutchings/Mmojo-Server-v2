@@ -1,10 +1,10 @@
 ## 501. Prepare to Build
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](500-Build-Doghouse.md).
 
 ---
 ### About this Step
-In this step, we will clone the Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and customize things for building Dogpile.
+In this step, we will clone the Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and customize things for building Doghouse.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -32,18 +32,18 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh doghouse
   ```
 
 ---
-### Patch llama.cpp Source Code and Build Code, Customize for Dogpile
+### Patch llama.cpp Source Code and Build Code, Customize for Doghouse
 This looks like lots of fun.
 - View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
-- View the script: <a href="../../scripts/dogpile/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/doghouse/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
 - Run the scripts.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile
-  $DOGPILE_SCRIPTS/501-Customize-llama-cpp.sh
+  $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh doghouse
+  $DOGHOUSE_SCRIPTS/501-Customize-llama-cpp.sh
   ```
 
 ---
@@ -52,7 +52,7 @@ Customize the web UI, rebuild all the web files.
 - View the script: <a href="../../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh doghouse
   ```
 
 #### Uh. Oh. npm Spit Out Errors
@@ -74,17 +74,17 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh dogpile
-$MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile
-$DOGPILE_SCRIPTS/501-Customize-llama-cpp.sh
-$MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh dogpile
+$MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh doghouse
+$MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh doghouse
+$DOGHOUSE_SCRIPTS/501-Customize-llama-cpp.sh
+$MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh doghouse
 ```
 
 ---
 ### Proceed
 - **Next:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
+- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>

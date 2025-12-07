@@ -1,6 +1,6 @@
-## 611. APE (Performant)
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Package-Dogpile.md).
+## 611. APE (Compatible)
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](500-Package-Doghouse.md).
 
 ---
 ### About this Step
@@ -24,7 +24,7 @@ mm-env
 ---
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
-- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- View the script: <a href="../../scripts/mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -37,11 +37,11 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 
 ---
 ### Create Package Directory
-This script creates the package directories, copies the `dogpile-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
+This script creates the package directories, copies the `doghouse-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
 - View the script: <a href="../../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant attired dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh compatible attired doghouse
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -54,8 +54,8 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 - View the script: <a href="../../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant attired dogpile
-  # Keep track of what we add for the Args file.
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible attired doghouse
+  # Keep track of what we add for the args file.
   export ADDED_CERTS=1
   ```
 
@@ -66,7 +66,7 @@ This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant attired dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh compatible attired doghouse
   # Keep track of what we add for the args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -79,7 +79,7 @@ This script adds the chosen `.gguf` model to the APE package.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh performant attired dogpile
+    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh compatible attired doghouse
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -100,16 +100,16 @@ This script adds a Args file to the APE package. We clean up files that were cop
 - View the script: <a href="../../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant attired dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh compatible attired doghouse
   ```
 
 ---
 ### Test Run on localhost
 
-Now we can test run `dogpile`, listening on localhost:8080. This should be a script file.
+Now we can test run `doghouse`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-APP_FILE="$PACKAGE_DOGPILE_FILE-perf"
+THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_DOGHOUSE_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
@@ -131,15 +131,15 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - [http://localhost:8080](http://127.0.0.1:8080)
 
-If you're building in WSL, your Windows web browser should be able to connect to Dogpile with the localhost links above.
+If you're building in WSL, your Windows web browser should be able to connect to Doghouse with the localhost links above.
 
 ---
 ### Test Run on Public Interfaces
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-APP_FILE="$PACKAGE_DOGPILE_FILE-perf"
+THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_DOGHOUSE_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
@@ -167,7 +167,7 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 - View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh compatible
   ```
 -->
 
@@ -175,7 +175,7 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 ### Review the Package
 Let's look at what you packaged:
 ```
-THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
@@ -186,9 +186,9 @@ ls -al $THIS_PACKAGE_DIR
 
 ---
 ### Proceed
-- **Next:** This is the last step in this section.
-- **Previous:** [611. APE (Compatible)](611-APE-Compatible.md)
-- **Up:** [600. Package Dogpile](600-Package-Dogpile.md)
+- **Next:** [612. APE (Performant)](612-APE-Performant.md)
+- **Previous:** [610. APE Packages](610-APE-Packages.md)
+- **Up:** [600. Package Doghouse](600-Package-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>

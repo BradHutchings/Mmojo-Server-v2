@@ -1,12 +1,12 @@
 ## 503. Debug Build
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](500-Build-Doghouse.md).
 
 ---
 ### About this Step
 **This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
 
-In this step, we will build Dogpile (`dogpile`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds, you can and should use this build to test and debug features of Dogpile that are not specific to any particular build. CPU optimizations are turned off.
+In this step, we will build Doghouse (`doghouse`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds, you can and should use this build to test and debug features of Doghouse that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -24,7 +24,7 @@ mm-env
 </details>
 
 ---
-### Build Debug Dogpile for Build Environment Platform
+### Build Debug Doghouse for Build Environment Platform
 This script uses cmake to build Mmojo Server:
 - View the script: <a href="../../scripts/503-Build-Debug.sh" target="_blank">503-Build-Debug.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -32,7 +32,7 @@ This script uses cmake to build Mmojo Server:
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh dogpile
+  $MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh doghouse
   ```
 
 ---
@@ -41,7 +41,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 doghouse
   ```
 
 ---
@@ -51,15 +51,15 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh dogpile
-$MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 dogpile
+$MMOJO_SERVER_SCRIPTS/503-Build-Debug.sh doghouse
+$MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 doghouse
 ```
 
 ---
 ### Proceed
 - **Next:** [510. APE Builds](510-APE-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
-- **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
+- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>

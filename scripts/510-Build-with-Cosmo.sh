@@ -26,13 +26,13 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
 fi
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
-if [ "$branding" == "dogpile" ]; then
-    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
+if [ "$branding" == "doghouse" ]; then
+    THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
 fi
 
 cd $THIS_BUILD_DIR

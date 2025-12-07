@@ -11,9 +11,9 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 cd $HOME
 
-echo "Deleting $BUILD_DIR and $DOGPILE_BUILD_DIR."
+echo "Deleting $BUILD_DIR and $DOGHOUSE_BUILD_DIR."
 rm -r -f $BUILD_DIR
-rm -r -f $DOGPILE_BUILD_DIR
+rm -r -f $DOGHOUSE_BUILD_DIR
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 

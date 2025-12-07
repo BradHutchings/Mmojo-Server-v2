@@ -23,7 +23,7 @@ if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
     chat_ui="0"
 fi
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
@@ -31,12 +31,12 @@ THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
 SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
-if [ "$branding" == "dogpile" ]; then
+if [ "$branding" == "doghouse" ]; then
     chat_ui=1
-    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
-    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
-    ARGS_FILE=$PACKAGE_DOGPILE_ARGS_FILE
-    SUPPORT_DIR=$PACKAGE_DOGPILE_SUPPORT_DIR
+    THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+    ARGS_FILE=$PACKAGE_DOGHOUSE_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_DOGHOUSE_SUPPORT_DIR
 fi
 
 BUILD_SUBDIRECTORY=$BUILD_DEBUG
