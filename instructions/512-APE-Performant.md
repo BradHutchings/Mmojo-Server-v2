@@ -107,6 +107,17 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
   ```
 
 <details>
+  <summary><b>Optional: Test the Assembled APE with `,gguf` Model in APE.</b></summary>
+
+Test the Assembled APE with `,gguf` Model in APE.
+- View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant find-ape $TEST_WITH_CHAT_UI
+  ```
+</details>
+
+<details>
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
 
 Copy this assembled APE to your Mmojo share.
