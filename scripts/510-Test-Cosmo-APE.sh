@@ -50,6 +50,7 @@ if [ "$variation" == "performant" ]; then
 fi
 
 echo "        Variation: $variation"
+echo "             GGUF: $gguf"
 echo "          Chat UI: $chat_ui"
 echo "         Branding: $branding"
 echo "     subdirectory: $BUILD_SUBDIRECTORY"
