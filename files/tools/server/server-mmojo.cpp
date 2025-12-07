@@ -43,6 +43,7 @@
 #define PROCESS_NAME "mmojo-server"
 #define ARGS_FILENAME "mmojo-server-args"
 #define SUPPORT_DIRECTORY_NAME "mmojo-server-support"
+#define PRODUCT_NAME "Mmojo Server"
 
 // pre C++20 helpers.
 bool starts_with (const std::string &fullString, const std::string &beginning);
@@ -191,7 +192,7 @@ static server_http_context::handler_t ex_wrapper(server_http_context::handler_t 
 int main(int argc, char ** argv, char ** envp) {
     // Mmojo Server START
     // This could be automated by looking for "int main(" and inserting this block immediately after. -Brad 2025-11-05
-        printf("\n\n----------START: Mmojo Server---------------------------------------------------\n\n");
+        printf("\n\n----------START: " PRODUCT_NAME " ---------------------------------------------------\n\n");
 
     // Keep the build from showing up as ape in the process list.
         pthread_setname_np(pthread_self(), PROCESS_NAME);
@@ -302,7 +303,7 @@ int main(int argc, char ** argv, char ** envp) {
     
         // Yep, this is counterintuitive, but how the mmojo_args command works.
 
-        printf("\n\n----------END: Mmojo Server-----------------------------------------------------\n\n");
+        printf("\n\n----------END: " PRODUCT_NME " -----------------------------------------------------\n\n");
 
     // Mmojo Server END
   
@@ -314,7 +315,7 @@ int main(int argc, char ** argv, char ** envp) {
     }
 
     // Mmojo Server START
-        printf("\n\n----------START: Mmojo Server---------------------------------------------------\n\n");
+        printf("\n\n----------START: " PRODUCT_NAME " ---------------------------------------------------\n\n");
         printf("- Checking for missing model and model inside APE zip.\n");
 
         // If we have no model path at this point, use the firstGgufPath.
@@ -336,7 +337,7 @@ int main(int argc, char ** argv, char ** envp) {
         }
         #endif
 
-        printf("\n\n----------END: Mmojo Server-----------------------------------------------------\n\n");
+        printf("\n\n----------END: " PRODUCT_NME " -----------------------------------------------------\n\n");
     // Mmojo Server END
 
   // TODO: should we have a separate n_parallel parameter for the server?
