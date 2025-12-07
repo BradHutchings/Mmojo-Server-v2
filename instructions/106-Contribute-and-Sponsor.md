@@ -6,7 +6,7 @@ Like the project that inspired Mmojo Server, people will come to depend on Mmojo
 
 ---
 ### Sponsor
-If you'd like to sponsor my work financially, please email me. I offer build instructions for a branded version of Mmojo Server. A prototype is called **Dogpile**, which is North American English slang for "a disordely heap of people formed around one person whom the others jump." You can build it now by following the instructions to [200. Prepare the Build Environment](200-Prepare-Build-Environment.md) and [300. Gather Build Pieces](300-Gather-Build-Pieces.md), then jumping over to [500. Build Dogpile](dogpile/500-Build-Dogpile.md). Your sponsoring brand could have a cool open source LLM server too!
+If you'd like to sponsor my work financially, please email me. I offer build instructions for a branded version of Mmojo Server. A prototype is called **Doghouse**, which is North American English slang for "a disordely heap of people formed around one person whom the others jump." You can build it now by following the instructions to [200. Prepare the Build Environment](200-Prepare-Build-Environment.md) and [300. Gather Build Pieces](300-Gather-Build-Pieces.md), then jumping over to [500. Build Doghouse](doghouse/500-Build-Doghouse.md). Your sponsoring brand could have a cool open source LLM server too!
 
 -Brad<br/>
 --<br/>
