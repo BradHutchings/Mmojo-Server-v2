@@ -215,17 +215,20 @@ int main(int argc, char ** argv, char ** envp) {
     // This makes the naked APEs possible.
         std::filesystem::path firstGgufPath;
 
+        #ifdef COSMOCC
+        if (firstGgufPath.empty() && std::filesystem::exists(zipPath)) {
+            find_first_gguf(zipPath, firstGgufPath);
+        }
+        #endif
         if (firstGgufPath.empty() && std::filesystem::exists(executableParentPath)) {
             find_first_gguf(executableParentPath, firstGgufPath);
         }
         if (firstGgufPath.empty() && std::filesystem::exists(supportPath)) {
             find_first_gguf(supportPath, firstGgufPath);
         }
-        #ifdef COSMOCC
-        if (firstGgufPath.empty() && std::filesystem::exists(zipPath)) {
-            find_first_gguf(zipPath, firstGgufPath);
+        if (firstGgufPath.empty() && std::filesystem::exists(workingDirectoryPath)) {
+            find_first_gguf(workingDirectoryPath, firstGgufPath);
         }
-        #endif
 
     #if 1
     // Path diagnostics
