@@ -12,15 +12,15 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 branding=$1
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
-if [ "$branding" == "dogpile" ]; then
-    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
-    EXECUTABLE_FILE=$PACKAGE_DOGPILE_FILE
+if [ "$branding" == "doghouse" ]; then
+    THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
 fi
 
 echo "         Branding: $branding"
