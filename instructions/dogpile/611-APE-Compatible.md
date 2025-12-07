@@ -109,8 +109,10 @@ This script adds a Args file to the APE package. We clean up files that were cop
 Now we can test run `dogpile`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_DOGPILE_FILE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE
 ```
@@ -137,8 +139,10 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_DOGPILE_FILE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 $THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE --host 0.0.0.0
 ```
