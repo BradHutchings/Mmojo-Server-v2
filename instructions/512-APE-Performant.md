@@ -38,7 +38,7 @@ If your build environment is x86_64, you can test this build. Requires previousl
 - View the script: <a href="../scripts/510-Test-Cosmo-Build.sh" target="_blank">510-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh X86_64 performant command-line $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh X86_64 performant $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -103,7 +103,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line $TEST_WITH_CHAT_UI
   ```
 
 <details>
