@@ -1,4 +1,4 @@
-## 503. Build Debug
+## 503. Debug Build
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Build-Dogpile.md).
 
