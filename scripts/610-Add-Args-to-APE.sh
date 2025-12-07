@@ -47,9 +47,9 @@ if [ "$branding" == "dogpile" ]; then
     ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
 fi
 
-if [ "$variation" != "compatible" ]; then
+if [ "$variation" == "compatible" ]; then
     APP_FILE+="-comp"
-elif [ "$variation" != "performant" ]; then
+elif [ "$variation" == "performant" ]; then
     APP_FILE+="-perf"
 fi
 
