@@ -54,7 +54,7 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 - View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible attired
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible attired dogpile
   # Keep track of what we add for the args file.
   export ADDED_CERTS=1
   ```
