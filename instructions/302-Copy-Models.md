@@ -6,6 +6,8 @@ In this step, we will copy models from the Mmojo Share. If you don't have and mo
 
 **Shortcut:** [Scroll down](#shortcut-copy-models).
 
+***Note:** This step will be going away soon. The 400 section is about creating `.gguf` models from Hugging Face models. It will be supplemented with some `mm-` scripts to backup and restore models to/from your Mmojo Share.*
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>
