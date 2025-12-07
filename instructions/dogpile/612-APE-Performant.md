@@ -1,4 +1,4 @@
-## 611. Package APE (Performant)
+## 611. APE (Performant)
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Package-Dogpile.md).
 
@@ -169,8 +169,8 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
-- **Previous:** This is the first step in this section.
+- **Next:** This is the last step in this section.
+- **Previous:** [611. APE (Compatible)](611-APE-Compatible.md)
 - **Up:** [600. Package Dogpile](600-Package-Dogpile.md)
 
 ---
