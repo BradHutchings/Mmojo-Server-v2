@@ -114,7 +114,7 @@ if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
-$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE
+$THIS_PACKAGE_DIR/$APP_FILE
 ```
 
 After starting up and loading the model, it should display:
@@ -144,7 +144,7 @@ if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
-$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE --host 0.0.0.0
+$THIS_PACKAGE_DIR/$APP_FILE --host 0.0.0.0
 ```
 
 After starting up and loading the model, it should display:
