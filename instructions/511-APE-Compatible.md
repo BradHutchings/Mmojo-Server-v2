@@ -99,7 +99,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
   ```
 
 <details>
