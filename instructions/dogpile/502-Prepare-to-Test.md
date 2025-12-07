@@ -52,7 +52,7 @@ export TEST_CPU_THREADS=8
 
 ---
 ### Proceed
-- **Next:** [503. Build Debug](503-Build-Debug.md)
+- **Next:** [503. Debug Build](503-Debug-Build.md)
 - **Previous:** [501. Prepare to Build](501-Prepare-to-Build.md)
 - **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
 
