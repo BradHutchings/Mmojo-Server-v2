@@ -303,7 +303,7 @@ int main(int argc, char ** argv, char ** envp) {
     
         // Yep, this is counterintuitive, but how the mmojo_args command works.
 
-        printf("\n\n----------END: " PRODUCT_NME " -----------------------------------------------------\n\n");
+        printf("\n\n----------END: " PRODUCT_NAME  " -----------------------------------------------------\n\n");
 
     // Mmojo Server END
   
@@ -337,7 +337,7 @@ int main(int argc, char ** argv, char ** envp) {
         }
         #endif
 
-        printf("\n\n----------END: " PRODUCT_NME " -----------------------------------------------------\n\n");
+        printf("\n\n----------END: " PRODUCT_NAME " -----------------------------------------------------\n\n");
     // Mmojo Server END
 
   // TODO: should we have a separate n_parallel parameter for the server?
