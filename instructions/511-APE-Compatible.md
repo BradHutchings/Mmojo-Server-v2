@@ -103,13 +103,13 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
   ```
 
 <details>
-  <summary><b>Optional: Test the Assembled APE with `,gguf` Model in APE.</b></summary>
+  <summary><b>Optional: Test the Assembled APE with `.gguf` Model in APE.</b></summary>
 
-Test the Assembled APE with `,gguf` Model in APE.
+Test the Assembled APE with `.gguf` Model in APE.
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant find-ape $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible find-ape $TEST_WITH_CHAT_UI
   ```
 </details>
 
@@ -143,7 +143,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
@@ -159,7 +159,7 @@ $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Copy-Cosmo-Build-to-Mmojo-Share.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible
 $MMOJO_SERVER_SCRIPTS/510-Copy-Cosmo-APE-to-Mmojo-Share.sh compatible
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
