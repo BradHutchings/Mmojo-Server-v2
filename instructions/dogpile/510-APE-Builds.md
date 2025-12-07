@@ -1,4 +1,4 @@
-## 510. Build APEs
+## 510. APE Builds
 ### About Dogpile
 **Dogpile** is an example of a branded developer experience. [Read more about Dogpile](400-Build-Dogpile.md).
 
@@ -49,8 +49,8 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
 
 ---
 ### Proceed
-- **Next:** [511. Build APE (Compatible)](511-Build-APE-Compatible.md)
-- **Previous:** [503. Build Debug](503-Build-Debug.md)
+- **Next:** [511. APE (Compatible)](511-APE-Compatible.md)
+- **Previous:** [503. Debug Build](503-Debug-Build.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
