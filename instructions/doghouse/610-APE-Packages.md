@@ -1,6 +1,6 @@
 ## 610. APE Packages
 ### About this Step
-In the following five steps, we will package Dogpile for deployment as actual portable executables.
+In the following five steps, we will package Doghouse for deployment as actual portable executables.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
 - **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
 - **Naked** means the APEs do not contain a `.gguf` file. One can be grafted on later using `zip` without modifying the `mmojo-server-args` file. You can also release a naked APE and have users copy the model they want to use into its directory.
@@ -22,7 +22,7 @@ mm-env
 ### Proceed
 - **Next:** [611. APE (Compatible)](611-APE-Compatible.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [600. Package Dogpile](600-Package-Dogpile.md)
+- **Up:** [600. Package Doghouse](600-Package-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>
