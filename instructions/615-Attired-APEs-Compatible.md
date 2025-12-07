@@ -1,5 +1,7 @@
 ## 615. Attired APEs (Compatible)
 ### About this Step
+**IN PROGRESS**
+
 You have packaged a naked APE (compatible). Now you can simply graft a `.gguf` model onto the naked APE to make a self-contained LLM server. You graft it on using the `zip` tool to add the `.gguf` model to the zip archive which is the naked APE. You'll will do this for each of the models in the `$MODELS_DIR` directory.
 
 ---
