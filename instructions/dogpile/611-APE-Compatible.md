@@ -24,7 +24,7 @@ mm-env
 ---
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
-- View the script: <a href="../../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- View the script: <a href="../../scripts/mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -51,7 +51,7 @@ This script creates the package directories, copies the `dogpile-ape` file you p
 ---
 ### Add Certificates to Package
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
-- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh compatible attired dogpile
