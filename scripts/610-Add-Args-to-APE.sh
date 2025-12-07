@@ -49,6 +49,7 @@ fi
 
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "             Variation: $variation"
