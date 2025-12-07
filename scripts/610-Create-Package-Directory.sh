@@ -7,13 +7,18 @@
 # See licensing note at end.
 ################################################################################
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 variation=$1
-branding=$2
+attire=$2
+branding=$3
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
+fi
+
+if [ "$attire" != "attired" ] && [ "$attire" != "naked" ]; then
+    attire="attired"
 fi
 
 if [ "$branding" != "dogpile" ]; then
@@ -21,9 +26,15 @@ if [ "$branding" != "dogpile" ]; then
 fi
 
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+if [ "$attire" == "naked" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+fi
 BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
 if [ $variation == "performant" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    if [ "$attire" == "naked" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_NAKED_APE"
+    fi
     BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
@@ -43,9 +54,10 @@ if [ -v CHOSEN_MODEL_MNEMONIC ]; then
 fi
 
 echo "             Variation: $variation"
+echo "                Attire: $attire"
 echo "              Branding: $branding"
 echo "              APE File: $APE_FILE"
-echo "              APE File: $ZIP_FILE"
+echo "              Zip File: $ZIP_FILE"
 echo "  Package Subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "     Build Subirectory: $BUILD_SUBDIRECTORY"
 echo "This Package Directory: $THIS_PACKAGE_DIR"
@@ -74,7 +86,7 @@ fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
