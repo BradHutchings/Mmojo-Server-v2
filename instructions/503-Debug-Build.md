@@ -1,4 +1,4 @@
-## 503. Build Debug
+## 503. Debug Build
 ### About this Step
 
 In this step, we will build Mmojo Server (`mmojo-server`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds or GPU-enabled builds, you can and should use this build to test and debug features of Mmojo Server that are not specific to any particular build. CPU optimizations are turned off.
@@ -61,6 +61,39 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
   ```
 </details>
 
+<details>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in executable directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-executable-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
+<details>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in working directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-working-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
+<details>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in support directory.</b></summary>
+
+Requires previously downloaded model to the `$MODELS_DIR` directory.
+- View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
+- Run the script.
+  ```
+  $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh find-support-dir $TEST_WITH_CHAT_UI
+  ```
+</details>
+
 ---
 ### SHORTCUT: Build Debug, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to build and test a debug build:
@@ -74,7 +107,7 @@ $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [510. Build APEs](510-Build-APEs.md)
+- **Next:** [510. APE Builds](510-APE-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 

@@ -13,7 +13,9 @@ args=$1
 chat_ui=$2
 branding=$3
 
-if [ "$args" != "command-line" ] && [ "$args" != "args-file" ] && [ "$args" != "support-directory" ]; then
+if [ "$args" != "command-line" ] && [ "$args" != "find-executable-dir" ] && \
+    [ "$args" != "find-working-dir" ] && [ "$args" != "find-support-dir" ] &&  \
+    [ "$args" != "args-file" ] && [ "$args" != "support-directory" ]; then
     args="command-line"
 fi
 
@@ -78,6 +80,8 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     rm -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$ARGS_FILE
     rm -r -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+    rm -r -f $TEST_WORKING_DIR
+    rm -f $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/*.gguf
 
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
 
@@ -85,6 +89,43 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
         # --mlock is not needed to run this.
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
             $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
+
+        echo ""
+        echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$args" == "find-executable-dir" ]; then
+        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+
+        $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
+            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
+
+        echo ""
+        echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$args" == "find-working-dir" ]; then
+        mkdir -p $TEST_WORKING_DIR
+        cp $MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
+
+        cd $TEST_WORKING_DIR
+        $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
+            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
+
+        echo ""
+        echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."
+        cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+        ls -ald $ARGS_FILE
+        ls -ald $SUPPORT_DIR
+
+    elif [ "$args" == "find-support-dir" ]; then
+        mkdir -p $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+
+        $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
+            $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
 
         echo ""
         echo "Verify that $ARGS_FILE does not exist and $SUPPORT_DIR does not exist."

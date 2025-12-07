@@ -1,4 +1,4 @@
-## 511. Build APEs (Compatible)
+## 511. APE (Compatible)
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on the widest variety of x86_64 and aarch64 machines.
 
@@ -99,8 +99,19 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
   ```
+
+<details>
+  <summary><b>Optional: Test the Assembled APE with `.gguf` Model in APE.</b></summary>
+
+Test the Assembled APE with `.gguf` Model in APE.
+- View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible find-ape $TEST_WITH_CHAT_UI
+  ```
+</details>
 
 <details>
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
@@ -132,7 +143,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
@@ -148,13 +159,13 @@ $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Copy-Cosmo-Build-to-Mmojo-Share.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible
 $MMOJO_SERVER_SCRIPTS/510-Copy-Cosmo-APE-to-Mmojo-Share.sh compatible
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
 ### Proceed
-- **Next:** [512. Build APEs (Performant)](512-Build-APEs-Performant.md)
-- **Previous:** [510. Build APEs](510-Build-APEs.md)
+- **Next:** [512. APE (Performant)](512-APE-Performant.md)
+- **Previous:** [510. APE Builds](510-APE-Builds.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---

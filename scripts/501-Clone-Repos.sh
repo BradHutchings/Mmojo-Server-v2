@@ -56,12 +56,21 @@ git clone https://github.com/nlohmann/json.git nlohmann-json
 cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
 cp -r $BUILD_OPENSSSL_DIR/openssl .
 
-# Roll the llama.cpp repo back to last known working.
-# Up through: https://github.com/ggml-org/llama.cpp/commit/61bde8e21f4a1f9a98c9205831ca3e55457b4c78
-# 61bde8e21f4a1f9a98c9205831ca3e55457b4c78 
-git checkout 61bde8e21f4a1f9a98c9205831ca3e55457b4c78 
+cd cpp-httplib
+# git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7 # worked!
+# git checkout dbd5ca4bf2da438da1c6dcd0ba7c725f7f2cc7b7 $ failed
+git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
+cd ..
 
-# Previous: 9810cb82476e605bef45f9c51009c9989873ff89
+# Roll the llama.cpp repo back to last known working.
+# Up through: https://github.com/ggml-org/llama.cpp/commit/933414c0b6f21af269bdb4fa2fa1b257b9c0fc53
+# 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53 
+git checkout 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53 
+
+# This worked:
+# git checkout 37adc9c6ba6057bfe7c036c201abe85471d854a1
+
+# Previous: 61bde8e21f4a1f9a98c9205831ca3e55457b4c78
 
 # To see where you're checked out:
 # git log -1

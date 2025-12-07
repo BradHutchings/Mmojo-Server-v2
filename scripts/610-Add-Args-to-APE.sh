@@ -7,13 +7,18 @@
 # See licensing note at end.
 ################################################################################
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 variation=$1
-branding=$2
+attire=$2
+branding=$3
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
+fi
+
+if [ "$attire" != "attired" ] && [ "$attire" != "naked" ]; then
+    attire="attired"
 fi
 
 if [ "$branding" != "dogpile" ]; then
@@ -21,8 +26,14 @@ if [ "$branding" != "dogpile" ]; then
 fi
 
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+if [ "$attire" == "naked" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+fi
 if [ "$variation" == "performant" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    if [ "$attire" == "naked" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_NAKED_APE"
+    fi
 fi
 
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
@@ -36,11 +47,19 @@ if [ "$branding" == "dogpile" ]; then
     ARGS_FILE="$PACKAGE_DOGPILE_ARGS_FILE"
 fi
 
+if [ "$variation" == "compatible" ]; then
+    APP_FILE+="-comp"
+elif [ "$variation" == "performant" ]; then
+    APP_FILE+="-perf"
+fi
+
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "             Variation: $variation"
+echo "                Attire: $attire"
 echo "              Branding: $branding"
 echo "              Zip File: $ZIP_FILE"
 echo "              App File: $APP_FILE"
@@ -87,7 +106,7 @@ EOF
     # Memory mapping through Coscmo libc does not work. If we add a model, make sure we don't use mmap.
     # We need an enable mmap paramter to override this.
 
-    if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ]; then
+    if [ $ADDED_MODEL ] && [ -v CHOSEN_MODEL ] && [ "$attire" == "attired" ]; then
 cat << EOF >> $ARGS_FILE
 --no-mmap
 --model
@@ -123,7 +142,7 @@ fi
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

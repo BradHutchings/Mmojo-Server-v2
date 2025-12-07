@@ -91,6 +91,9 @@ export BUILD_EXECUTABLE_PERFORMANT_AARCH64="build-executable-performant-aarch64"
 export BUILD_EXECUTABLE_NATIVE_X86_64="build-executable-native-x86_64"
 export BUILD_EXECUTABLE_NATIVE_AARCH64="build-executable-native-aarch64"
 
+echo "Setting Test paths."
+export TEST_WORKING_DIR="$HOME/500-TEST-working-directory"
+
 # Reset this when we update environment variables.
 unset TEST_MODEL
 unset TEST_CPU_THREADS
@@ -101,6 +104,8 @@ export PACKAGE_DIR="$HOME/600-PACKAGE-mmojo-server"
 export PACKAGE_APE="ape"
 export PACKAGE_COMPATIBLE_APE="compatible-ape"
 export PACKAGE_PERFORMANT_APE="performant-ape"
+export PACKAGE_COMPATIBLE_NAKED_APE="compatible-naked-ape"
+export PACKAGE_PERFORMANT_NAKED_APE="performant-naked-ape"
 export PACKAGE_ZIP="zip"
 export PACKAGE_SEAS="seas"
 
@@ -127,6 +132,8 @@ export PACKAGE_DOGPILE_FILE="dogpile"
 export PACKAGE_DOGPILE_APE_FILE="dogpile-ape"
 export PACKAGE_DOGPILE_COMPATIBLE_APE_FILE="dogpile-compatible-ape"
 export PACKAGE_DOGPILE_PERFORMANT_APE_FILE="dogpile-performant-ape"
+export PACKAGE_DOGPILE_COMPATIBLE_NAKED_APE_FILE="dogpile-compatible-naked-ape"
+export PACKAGE_DOGPILE_PERFORMANT_NAKED_APE_FILE="dogpile-performant-naked-ape"
 export PACKAGE_DOGPILE_ZIP_FILE="dogpile.zip"
 export PACKAGE_DOGPILE_EXE_FILE="dogpile.exe"
 export PACKAGE_DOGPILE_ARGS_FILE="dogpile-args"

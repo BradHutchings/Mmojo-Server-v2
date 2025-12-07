@@ -1,4 +1,4 @@
-## 621. Package Executable
+## 620. Platform Packages
 
 ---
 ### About this Step
@@ -59,7 +59,6 @@ This script creates the package directories.
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
-  unset SELECTED_MODEL
   unset ADDED_MODEL
   ```
 
@@ -132,7 +131,7 @@ Copy this zip package to your Mmojo share.
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
+- **Previous:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---

@@ -12,10 +12,11 @@ Now that you have Dogpile built as an Actual Portable Executable (APE) file, you
 ---
 ### Package Dogpile
 Here are some packaging options:
-- [611. Package APE (Compatible)](611-Package-APE-Compatible.md) - Package Dogpile as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
-- [612. Package APE (Performant)](612-Package-APE-Performant.md) - Package Dogpile as an Actual Portable Executable (APE) file, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures. The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+- [610. APE Packages](610-APE-Packages.md) - Package Dogpile as Actual Portable Executable (APE) files, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+  - [611. APE (Compatible)](611-APE-Compatible.md) - The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+  - [612. APE (Performant)](612-APE-Performant.md) - The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
 
-**Get Started:** [611. Package APE (Compatible)](611-Package-APE-Compatible.md)
+**Get Started:** [610. APE Packages](610-APE-Packages.md)
 
 ---
 [MIT License](/LICENSE)<br/>

@@ -26,7 +26,7 @@ mm-env
 Clone llama.cpp repo and repos upon which it depends into a `$BUILD_LLAMA_CPP_DIR` directory.
 
 This script clones the llama.cpp repo and repos upon which it depends into the `$BUILD_LLAMA_CPP_DIR` directory:
-- View the script: <a href="../scripts/501-Clone-Repos.sh" target="_blank">501-Clone-Repos.sh</a>.
+- View the script: <a href="../../scripts/501-Clone-Repos.sh" target="_blank">501-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
@@ -39,7 +39,7 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
 ### Patch llama.cpp Source Code and Build Code, Customize for Dogpile
 This looks like lots of fun.
 - View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
-- View the script: <a href="../../scripts/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
+- View the script: <a href="../../scripts/dogpile/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
 - Run the scripts.
   ```
   $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh dogpile

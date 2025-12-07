@@ -1,4 +1,4 @@
-## 512. Build APEs (Performant)
+## 512. APE (Performant)
 ### About this Step
 In this step, we will build Mmojo Server (`mmojo-server-ape`) for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on a narrower, more modern range of x86_64 and aarch64 machines.
 
@@ -103,8 +103,19 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line $TEST_WITH_CHAT_UI
   ```
+
+<details>
+  <summary><b>Optional: Test the Assembled APE with `.gguf` Model in APE.</b></summary>
+
+Test the Assembled APE with `.gguf` Model in APE.
+- View the script: <a href="../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
+- Run the script:
+  ```
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant find-ape $TEST_WITH_CHAT_UI
+  ```
+</details>
 
 <details>
   <summary><b>Optional: Copy Assembled APE to Your Mmojo Share.</b></summary>
@@ -157,8 +168,8 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [520. Build Executables](520-Build-Executables.md)
-- **Previous:** [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md)
+- **Next:** [520. Platform Builds](520-Platform-Builds.md)
+- **Previous:** [511. APE (Compatible)](511-APE-Compatible.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---

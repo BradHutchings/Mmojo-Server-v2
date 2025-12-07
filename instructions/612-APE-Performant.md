@@ -1,11 +1,6 @@
-## 611. Package APE (Performant)
-### About Dogpile
-**Dogpile** is an example of a branded developer experience. [Read more about Dogpile](500-Package-Dogpile.md).
-
----
+## 612. APE (Performant)
 ### About this Step
-
-Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add a `.gguf` model file, and add a configuration file. You will test run it.
+Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a `.gguf` model file, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
 **TO-DO**:
 - Shortcut after picking gguf.
@@ -25,6 +20,9 @@ mm-env
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
 - View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -34,18 +32,14 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 
 ---
 ### Create Package Directory
-This script creates the package directories, copies the `dogpile-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
+This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
 - View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
-  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
-    <br/>
-    <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant attired
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
-  unset SELECTED_MODEL
   unset ADDED_MODEL
   ```
 
@@ -55,23 +49,21 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 - View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant attired
   # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
 
-<!--
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant dogpile
-  # Keep track of what we add for the args file.
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant attired
+  # Keep track of what we add for the Args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
--->
 
 ---
 ### Add `.gguf` Model to Package
@@ -80,7 +72,7 @@ This script adds the chosen `.gguf` model to the APE package.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh performant dogpile
+    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh performant attired
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -97,23 +89,25 @@ This script adds the chosen `.gguf` model to the APE package.
 
 ---
 ### Add Args File to Package
-This script adds a Args file to the APE package. We clean up files that were copied into the `package-ape` directory.
+This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant dogpile
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant attired
   ```
 
 ---
 ### Test Run on localhost
 
-Now we can test run `dogpile`, listening on localhost:8080. This should be a script file.
+Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
-$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE
+$THIS_PACKAGE_DIR/$APP_FILE
 ```
 
 After starting up and loading the model, it should display:
@@ -130,18 +124,20 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - [http://localhost:8080](http://127.0.0.1:8080)
 
-If you're building in WSL, your Windows web browser should be able to connect to Dogpile with the localhost links above.
+If you're building in WSL, your Windows web browser should be able to connect to the Mmojo Server with the localhost links above.
 
 ---
 ### Test Run on Public Interfaces
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$DOGPILE_PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
-$THIS_PACKAGE_DIR/$PACKAGE_DOGPILE_FILE --host 0.0.0.0
+$THIS_PACKAGE_DIR/$APP_FILE --host 0.0.0.0
 ```
 
 After starting up and loading the model, it should display:
@@ -157,22 +153,33 @@ If you added SSL certificates, you can connect to the server with `https`:
 If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
-<!--
+---
+### Review the Package
+Let's look at what you packaged:
+```
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
+fi
+echo ""
+echo "$THIS_PACKAGE_DIR:"
+ls -al $THIS_PACKAGE_DIR
+```
+
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
 - View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant attired
   ```
--->
 
 ---
 ### Proceed
-- **Next:** [612. Package APE (Performant)](612-Package-APE-Performant.md)
-- **Previous:** This is the first step in this section.
-- **Up:** [600. Package Dogpile](600-Package-Dogpile.md)
+- **Next:** [613. Naked APE (Compatible)](613-Naked-APE-Compatible.md)
+- **Previous:** [611. APE (Compatible)](611-APE-Compatible.md)
+- **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
 [MIT License](/LICENSE)<br/>

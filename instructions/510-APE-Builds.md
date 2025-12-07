@@ -1,4 +1,4 @@
-## 510. Build APEs
+## 510. APE Builds
 ### About this Step
 In the following two steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets as Actual Portable Executable (APEs). These exexcutables run on x86_64 and aarch64 (arm64) across Linux, macOS, Windows, FreeBSD, and some other operating systems. They do not offer GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
@@ -45,8 +45,8 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [511. Build APEs (Compatible)](511-Build-APEs-Compatible.md)
-- **Previous:** [503. Build Debug](503-Build-Debug.md)
+- **Next:** [511. APE (Compatible)](511-APE-Compatible.md)
+- **Previous:** [503. Debug Build](503-Debug-Build.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
