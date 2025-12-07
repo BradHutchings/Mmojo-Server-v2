@@ -54,8 +54,6 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
   export ADDED_CERTS=1
   ```
 
-*Note: I use these certificates in my Mmojo Knowledge Appliance. I will document why and how to create these certificates soon.*
-
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
