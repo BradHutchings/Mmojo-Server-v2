@@ -62,7 +62,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 </details>
 
 <details>
-  <summary><b>Optional: Test the Build &mdash; fing .gguf model in executable directory.</b></summary>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in executable directory.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
@@ -73,7 +73,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 </details>
 
 <details>
-  <summary><b>Optional: Test the Build &mdash; fing .gguf model in working directory.</b></summary>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in working directory.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
@@ -84,7 +84,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 </details>
 
 <details>
-  <summary><b>Optional: Test the Build &mdash; fing .gguf model in support directory.</b></summary>
+  <summary><b>Optional: Test the Build &mdash; find .gguf model in support directory.</b></summary>
 
 Requires previously downloaded model to the `$MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
