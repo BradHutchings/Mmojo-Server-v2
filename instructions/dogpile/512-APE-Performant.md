@@ -80,7 +80,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../../scripts/510-Test-Cosmo-APE.sh" target="_blank">510-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
+  $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line 1 dogpile
   ```
 
 ---
@@ -102,7 +102,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 performant dogpile
 $MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 performant dogpile
 $MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh performant dogpile
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
+$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line 1 dogpile
 ```
 
 ---
