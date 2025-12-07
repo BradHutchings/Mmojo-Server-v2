@@ -12,15 +12,15 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 branding=$1
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
 APP_NAME='Mmojo Chat'
-if [ "$branding" == "dogpile" ]; then
-    THIS_BUILD_DIR=$DOGPILE_BUILD_DIR
-    APP_NAME='Dogpile'
+if [ "$branding" == "doghouse" ]; then
+    THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    APP_NAME='Doghouse'
 fi
 
 cd $THIS_BUILD_DIR
@@ -39,7 +39,7 @@ npm run build
 cd $SAVE_WD
 mv loading-mmojo.html tools/server/public/loading-mmojo.html
 
-if [ "$branding" != "dogpile" ]; then
+if [ "$branding" != "doghouse" ]; then
     TODAY=$(date +%Y-%m-%d)
     cp -r Mmojo-Complete Mmojo-Complete-original
     sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/scripts.js
