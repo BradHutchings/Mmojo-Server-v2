@@ -1,4 +1,4 @@
-## 512. Build APE (Performant)
+## 512. APE (Performant)
 ### About this Step
 In this step, we will build Dogpile for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on a narrower, more modern range of x86_64 and aarch64 machines.
 
@@ -108,7 +108,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant 1 dogpile
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [511. Build APE (Compatible)](511-Build-APE-Compatible.md)
+- **Previous:** [511. APE (Compatible)](511-APE-Compatible.md)
 - **Up:** [500. Build Dogpile](500-Build-Dogpile.md)
 
 ---
