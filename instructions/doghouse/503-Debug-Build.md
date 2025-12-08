@@ -4,8 +4,6 @@
 
 ---
 ### About this Step
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
-
 In this step, we will build Doghouse (`doghouse`) for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds, you can and should use this build to test and debug features of Doghouse that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
