@@ -50,7 +50,7 @@ If your build environment is x86_64, you can test this build. Requires previousl
 ---
 ### Build Doghouse for aarch64 (arm64)
 This script uses CMake to build Doghouse with `cosmocc` for x86_64. Note that we make a temporary change to `common/CMakeLists.txt` to statically link with OpenSSL libraries.
-- View the script: <a href="....//scripts/520-Build-with-Cosmo.sh" target="_blank">520-Build-with-Cosmo.sh</a>.
+- View the script: <a href="../../scripts/520-Build-with-Cosmo.sh" target="_blank">520-Build-with-Cosmo.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
