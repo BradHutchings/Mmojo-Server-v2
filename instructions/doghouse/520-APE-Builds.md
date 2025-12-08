@@ -25,26 +25,26 @@ mm-env
 ### SHORTCUT: Build Compatible and Performant APEs
 Before using this shortcut, please work through the steps of building the compatible and performant APEs a few times so that you can become familiar with what they do.
 ```
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 performant doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 performant doghouse
-$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh performant doghouse
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh X86_64 compatible doghouse
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 compatible doghouse
+$MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh compatible doghouse
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh X86_64 performant doghouse
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 performant doghouse
+$MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh performant doghouse
 ```
 
 ---
 ### SHORTCUT: Test Compatible APE Mmojo Server
 After you build all the APEs, you can test the compatible APE:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 doghouse
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line 1 doghouse
 ```
 
 ---
 ### SHORTCUT: Test Performant APE Mmojo Server
 After you build all the APEs, you can test the performant APE:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line 1 doghouse
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant command-line 1 doghouse
 ```
 
 ---
