@@ -11,7 +11,7 @@ Welcome to Mmojo Server version 2! This project makes building and packaging the
 - Coordinate testing and packaging across CPU and OS platforms with a file share on your network.
 - Instructions (aka "documentation") are extensive, continually maintained, and easy to follow.
 - Mmojo Complete completion-style user interface can be the default UI, with chat-style UI as an end-user option.
-- Build the new, less branded, less opinionated **Dogpile** LLM server. Even better, become a sponsor of Mmojo Server, and I'll make a branded open source server with your name on it!
+- Build the new, less branded, less opinionated **Doghouse** LLM server. Even better, become a sponsor of Mmojo Server, and I'll make a branded open source server with your name on it!
 - Mmojo Server version 2 is no longer a Github fork of llama.cpp. Instead, it incorporates a locally cloned llama.cpp repository into its build sequence.
 
 End-users should be able to easily get started with the APE build, then upgrade to an optimized CPU/GPU build for their computer. Developers building Mmojo Server should expect a similar experience.
