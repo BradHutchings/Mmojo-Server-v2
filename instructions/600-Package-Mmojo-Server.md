@@ -14,7 +14,7 @@ Here are some packaging options:
   - [623. Naked APE (Compatible)](623-Naked-APE-Compatible.md) - This is a compatible APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
   - [624. Naked APE (Performant)](624-Naked-APE-Performant.md) - This is a performant APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!<br/><br/>
 
-**Get Started:** [610. APE Packages](610-APE-Packages.md)
+**Get Started:** [610. Platform Packages](610-Platform-Packages.md)
 
 ---
 [MIT License](/LICENSE)<br/>
