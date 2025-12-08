@@ -35,22 +35,22 @@ This script has you choose GPU support to include in the build. If you've alread
 ---
 ### Build Mmojo Server and other llama.cpp Apps
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/520-Build-Executables.sh" target="_blank">520-Build-Executables.sh</a>.
+- View the script: <a href="../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
   ```
 
 ---
 ### Test Mmojo Server
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/520-Test-Server.sh" target="_blank">520-Test-Server.sh</a>.
+- View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
   ```
 
 ---
@@ -58,10 +58,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
 Copy these builds to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/520-Copy-Executables-to-Share.sh" target="_blank">520-Copy-Executables-to-Share.sh</a>.
+- View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
   ```
 </details>
 
@@ -73,8 +73,8 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
 ```
 
 ---
@@ -85,9 +85,9 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
 ```
 
 ---
