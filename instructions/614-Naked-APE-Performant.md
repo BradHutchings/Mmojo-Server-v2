@@ -68,9 +68,9 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
-cd $THIS_PACKAGE_DIR
-$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
+$THIS_PACKAGE_DIR/$APP_FILE
 cd $HOME
 ```
 
@@ -96,9 +96,9 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
-cd $THIS_PACKAGE_DIR
-$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
+$THIS_PACKAGE_DIR/$APP_FILE --host 0.0.0.0
 cd $HOME
 ```
 
