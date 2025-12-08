@@ -1,4 +1,4 @@
-## 612. APE (Performant)
+## 622. APE (Performant)
 ### About this Step
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a `.gguf` model file, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
@@ -177,8 +177,8 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 
 ---
 ### Proceed
-- **Next:** [613. Naked APE (Compatible)](613-Naked-APE-Compatible.md)
-- **Previous:** [611. APE (Compatible)](611-APE-Compatible.md)
+- **Next:** [623. Naked APE (Compatible)](623-Naked-APE-Compatible.md)
+- **Previous:** [621. APE (Compatible)](621-APE-Compatible.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
