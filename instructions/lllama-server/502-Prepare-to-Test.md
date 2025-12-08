@@ -54,7 +54,7 @@ export TEST_CPU_THREADS=8
 ### Proceed
 - **Next:** [503. Debug Build](503-Debug-Build.md)
 - **Previous:** [501. Prepare to Build](501-Prepare-to-Build.md)
-- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
+- **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
