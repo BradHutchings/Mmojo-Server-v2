@@ -33,10 +33,10 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directory
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/620-Create-Package-Directory.sh" target="_blank">620-Create-Package-Directory.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Create-Package-Directory.sh performant attired
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -46,10 +46,10 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
 ---
 ### Add Certificates to Package
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
-- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Certificates-to-APE.sh" target="_blank">620-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Add-Certificates-to-APE.sh performant attired
   # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
@@ -57,10 +57,10 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-UI-to-APE.sh" target="_blank">620-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Add-UI-to-APE.sh performant attired
   # Keep track of what we add for the Args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -68,11 +68,11 @@ This script adds the Mmojo Complete user interface to the APE package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the APE package.
-- View the script: <a href="../scripts/610-Add-gguf-Model-to-APE.sh" target="_blank">610-Add-gguf-Model-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-gguf-Model-to-APE.sh" target="_blank">620-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh performant attired
+    $MMOJO_SERVER_SCRIPTS/620-Add-gguf-Model-to-APE.sh performant attired
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -90,10 +90,10 @@ This script adds the chosen `.gguf` model to the APE package.
 ---
 ### Add Args File to Package
 This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Args-to-APE.sh" target="_blank">620-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Add-Args-to-APE.sh performant attired
   ```
 
 ---
@@ -169,10 +169,10 @@ ls -al $THIS_PACKAGE_DIR
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/620-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">620-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Copy-APE-Package-to-Mmojo-Share.sh performant attired
   ```
 
 ---
