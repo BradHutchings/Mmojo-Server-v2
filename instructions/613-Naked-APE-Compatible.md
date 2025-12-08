@@ -119,9 +119,6 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 Let's look at what you packaged. Please igonore any `.gguf` file in the listing. It was copied there for testing.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_NAKED_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-fi
 echo ""
 echo "$THIS_PACKAGE_DIR:"
 ls -al $THIS_PACKAGE_DIR
