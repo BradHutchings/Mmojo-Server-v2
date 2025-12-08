@@ -16,14 +16,14 @@ mm-env
 </details>
 
 ---
-### Create Package Directory
+### Create Package APE
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/610-Create-Package-APE.sh" target="_blank">610-Create-Package-APE.sh</a>.
 - Run the script.
   ```
   unset CHOSEN_MODEL
   unset CHOSEN_MODEL_MNEMONIC
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-APE.sh performant naked
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -32,7 +32,7 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   ```
 
 ---
-### Add Certificates to Package
+### Add Certificates to APE
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
 - View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
 - Run the script.
@@ -43,7 +43,7 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
   ```
 
 ---
-### Add Mmojo Complete UI to Package
+### Add Mmojo Complete UI to APE
 This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
 - Run the script.
@@ -54,7 +54,7 @@ This script adds the Mmojo Complete user interface to the APE package.
   ```
 
 ---
-### Add Args File to Package
+### Add Args File to APE
 This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
 - Run the script.
@@ -116,7 +116,7 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
 ---
-### Review the Package
+### Review the APE Directory
 Let's look at what you packaged. Please igonore any `.gguf` file in the listing. It was copied there for testing.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
