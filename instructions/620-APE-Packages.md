@@ -1,4 +1,4 @@
-## 610. APE Packages
+## 620. APE Packages
 ### About this Step
 In the following five steps, we will package Mmojo-Server for deployment as actual portable executables.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
@@ -20,8 +20,8 @@ mm-env
 
 ---
 ### Proceed
-- **Next:** [611. APE (Compatible)](611-APE-Compatible.md)
-- **Previous:** This is the first step in this section.
+- **Next:** [621. APE (Compatible)](621-APE-Compatible.md)
+- **Previous:** [610. Platform Packages](610-Platform-Packages.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
