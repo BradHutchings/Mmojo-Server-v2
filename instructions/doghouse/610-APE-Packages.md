@@ -1,4 +1,8 @@
 ## 610. APE Packages
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](400-Build-Doghouse.md).
+
+---
 ### About this Step
 In the following five steps, we will package Doghouse for deployment as actual portable executables.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
