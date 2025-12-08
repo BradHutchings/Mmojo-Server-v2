@@ -33,10 +33,10 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package APE
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/620-Create-Package-Directory.sh" target="_blank">620-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/620-Create-Package-APE.sh" target="_blank">620-Create-Package-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/620-Create-Package-Directory.sh compatible attired
+  $MMOJO_SERVER_SCRIPTS/620-Create-Package-APE.sh compatible attired
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
