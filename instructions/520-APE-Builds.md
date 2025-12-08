@@ -46,7 +46,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line $TEST_WITH_C
 ---
 ### Proceed
 - **Next:** [521. APE (Compatible)](521-APE-Compatible.md)
-- **Previous:** [503. Debug Build](503-Debug-Build.md)
+- **Previous:** [513. Platform (Native)](513-Platform-Native.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
