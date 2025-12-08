@@ -1,4 +1,4 @@
-## 620. Platform Packages
+## 610. Platform Packages
 
 ---
 ### About this Step
@@ -130,8 +130,8 @@ Copy this zip package to your Mmojo share.
 
 ---
 ### Proceed
-- **Next:** This is the last step in this section.
-- **Previous:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
+- **Next:** [620. APE Packages](620-APE-Packages.md)
+- **Previous:** This is the first step in this section.
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---
