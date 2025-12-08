@@ -1,4 +1,4 @@
-## 512. APE (Performant)
+## 522. APE (Performant)
 ### About Doghouse
 **Doghouse** is an example of a branded developer experience. [Read more about Doghouse](400-Build-Doghouse.md).
 
@@ -112,7 +112,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line 1 doghouse
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [511. APE (Compatible)](511-APE-Compatible.md)
+- **Previous:** [521. APE (Compatible)](521-APE-Compatible.md)
 - **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
