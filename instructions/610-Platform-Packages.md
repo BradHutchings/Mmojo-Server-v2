@@ -22,7 +22,6 @@ mm-env
 ---
 ### Choose a `mmojo-server` Build to Package
 This script has you choose one of the `mmojo-server` apps you've built.
-
 - View the script: <a href="../scripts/mm-choose-build.sh" target="_blank">mm-choose-build.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
@@ -49,7 +48,6 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directories
 This script creates the package directories.
-
 - View the script: <a href="../scripts/610-Create-Package-Directories.sh" target="_blank">610-Create-Package-Directories.sh</a>.
 - Run the script.
   ```
@@ -62,7 +60,7 @@ This script creates the package directories.
 
 ---
 ### Add Certs to Package
-This script adds SSL certificates from the Mmojo Share to the package.
+This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the package.
 - View the script: <a href="../scripts/610-Add-Certs-to-Package.sh" target="_blank">610-Add-Certs-to-Package.sh</a>.
 - Run the script.
   ```
