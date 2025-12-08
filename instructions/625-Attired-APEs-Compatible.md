@@ -1,4 +1,4 @@
-## 615. Attired APEs (Compatible)
+## 625. Attired APEs (Compatible)
 ### About this Step
 **IN PROGRESS**
 
@@ -33,8 +33,8 @@ Let's run through the process manually, using the `Google-Gemma-1B-Instruct-v3-q
 
 ---
 ### Proceed
-- **Next:** [615. Attired APEs (Performant)](614-Attired-APE-Performant.md)
-- **Previous:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
+- **Next:** [626. Attired APEs (Performant)](626-Attired-APE-Performant.md)
+- **Previous:** [624. Naked APE (Performant)](624-Naked-APE-Performant.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---
