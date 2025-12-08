@@ -2,6 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
+| 2025&minus;12&minus;07         | 510 should be platform builds, 620 APE builds. 610/620 as well. |
 | 2025&minus;12&minus;07         | Audit mm-environment-variables.sh. Is there any unused garbage left? |
 | 2025&minus;12&minus;07         | Unbranded build llama.cpp 500/600 track. Easiest way to build and deploy llama-cpp. |
 | 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
