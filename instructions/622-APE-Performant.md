@@ -17,7 +17,7 @@ mm-env
 </details>
 
 ---
-### Choose `.gguf` Model to Add to Package
+### Choose `.gguf` Model to Add to APE
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
 - View the script: <a href="../scripts/mm-choose-model.sh" target="_blank">mm-choose-model.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -31,12 +31,12 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
   ```
 
 ---
-### Create Package Directory
+### Create Package APE
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/620-Create-Package-Directory.sh" target="_blank">620-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/620-Create-Package-APE.sh" target="_blank">620-Create-Package-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/620-Create-Package-Directory.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Create-Package-APE.sh performant attired
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -44,7 +44,7 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   ```
 
 ---
-### Add Certificates to Package
+### Add Certificates to APE
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
 - View the script: <a href="../scripts/620-Add-Certificates-to-APE.sh" target="_blank">620-Add-Certificates-to-APE.sh</a>.
 - Run the script.
@@ -55,7 +55,7 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
   ```
 
 ---
-### Add Mmojo Complete UI to Package
+### Add Mmojo Complete UI to APE
 This script adds the Mmojo Complete user interface to the APE package.
 - View the script: <a href="../scripts/620-Add-UI-to-APE.sh" target="_blank">620-Add-UI-to-APE.sh</a>.
 - Run the script.
@@ -66,7 +66,7 @@ This script adds the Mmojo Complete user interface to the APE package.
   ```
 
 ---
-### Add `.gguf` Model to Package
+### Add `.gguf` Model to APE
 This script adds the chosen `.gguf` model to the APE package.
 - View the script: <a href="../scripts/620-Add-gguf-Model-to-APE.sh" target="_blank">620-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
@@ -88,7 +88,7 @@ This script adds the chosen `.gguf` model to the APE package.
 *-Brad*
 
 ---
-### Add Args File to Package
+### Add Args File to APE
 This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
 - View the script: <a href="../scripts/620-Add-Args-to-APE.sh" target="_blank">620-Add-Args-to-APE.sh</a>.
 - Run the script.
@@ -154,7 +154,7 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
 ---
-### Review the Package
+### Review the APE Directory
 Let's look at what you packaged:
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
