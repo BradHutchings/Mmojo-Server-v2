@@ -67,9 +67,9 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_NAKED_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
-cd $THIS_PACKAGE_DIR
-$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE
+$THIS_PACKAGE_DIR/$APP_FILE
 cd $HOME
 ```
 
@@ -95,9 +95,9 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_NAKED_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
-cd $THIS_PACKAGE_DIR
-$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_FILE --host 0.0.0.0
+$THIS_PACKAGE_DIR/$APP_FILE --host 0.0.0.0
 cd $HOME
 ```
 
@@ -119,9 +119,6 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 Let's look at what you packaged. Please igonore any `.gguf` file in the listing. It was copied there for testing.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_NAKED_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-fi
 echo ""
 echo "$THIS_PACKAGE_DIR:"
 ls -al $THIS_PACKAGE_DIR

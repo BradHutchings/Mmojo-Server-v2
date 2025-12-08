@@ -1,10 +1,10 @@
 ## 501. Prepare to Build
-### About Doghouse
-**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](500-Build-Doghouse.md).
+### About llama-server
+**llama-server** is ... [Read more about llama-server](500-Build-llana-server.md).
 
 ---
 ### About this Step
-In this step, we will clone the Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and customize things for building Doghouse.
+In this step, we will clone the Mmojo-Server repo, and fix problems that affect building with Cosmopolitan. While additional code from Mmojo Server are kept, no additional branding is applied. Your builds will be mostly indistinguishable from building llama.cpp from scratch.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -23,36 +23,35 @@ mm-env
 
 ---
 ### Clone Repos
-Clone llama.cpp repo and repos upon which it depends into a `$DOGHOUSE_BUILD_DIR` directory.
+Clone llama.cpp repo and repos upon which it depends into a `$LLAMA_CPP_BUILD_DIR` directory.
 
-This script clones the llama.cpp repo and repos upon which it depends into the `$DOGHOUSE_BUILD_DIR` directory:
+This script clones the llama.cpp repo and repos upon which it depends into the `$LLAMA_CPP_BUILD_DIR` directory:
 - View the script: <a href="../../scripts/501-Clone-Repos.sh" target="_blank">501-Clone-Repos.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh doghouse
+  $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh llama-server
   ```
 
 ---
-### Patch llama.cpp Source Code and Build Code, Customize for Doghouse
+### Patch llama.cpp Source Code and Build Code
 This looks like lots of fun.
 - View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
-- View the script: <a href="../../scripts/doghouse/501-Customize-llama-cpp.sh" target="_blank">501-Customize-llama-cpp.sh</a>.
 - Run the scripts.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh doghouse
-  $DOGHOUSE_SCRIPTS/501-Customize-llama-cpp.sh
+  $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh llama-server
   ```
 
+<!--
 ---
 ### Customize WebUI
 Customize the web UI, rebuild all the web files.
 - View the script: <a href="../../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh doghouse
+  $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh llama-server
   ```
 
 #### Uh. Oh. npm Spit Out Errors
@@ -66,6 +65,7 @@ sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
 ```
+-->
 
 ---
 ### SHORTCUT: Run All the Above Scripts 
@@ -74,17 +74,16 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh doghouse
-$MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh doghouse
-$DOGHOUSE_SCRIPTS/501-Customize-llama-cpp.sh
-$MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh doghouse
+$MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh llama-server
+$MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh llama-server
+$MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh llama-server
 ```
 
 ---
 ### Proceed
 - **Next:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
+- **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
 [MIT License](/LICENSE)<br/>

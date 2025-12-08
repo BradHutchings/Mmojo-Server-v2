@@ -8,6 +8,8 @@ If you already have models downloaded and copied to your Mmojo share, please pro
 
 **Shortcut:** [Scroll down](#shortcut-download-models).
 
+***Note:** This step will be going away soon. The 400 section is about creating `.gguf` models from Hugging Face models. It will be supplemented with some `mm-` scripts to backup and restore models to/from your Mmojo Share.*
+
 ---
 <details>
   <summary><b>Update Local Mmojo Server Repo</b> &mdash; Expand if you haven't today.</summary>

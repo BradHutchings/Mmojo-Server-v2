@@ -67,7 +67,7 @@ This script uses cmake CMake to build Mmojo Server with `cosmocc` for aarch64 (a
   <summary><b>Optional: Test the aarch64 (arm64) Build.</b></summary>
 
 If your build environment is aarch64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
-- View the script: <a href="../scripts/511-Test-Cosmo-Compatible-x86_64.sh" target="_blank">511-Test-Cosmo-Compatible-x86_64.sh</a>.
+- View the script: <a href="../scripts/510-Test-Cosmo-Build.sh" target="_blank">510-Test-Cosmo-Build.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
   $MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-Build.sh aarch64 compatible $TEST_WITH_CHAT_UI

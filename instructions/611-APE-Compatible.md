@@ -102,7 +102,7 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
-APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
@@ -132,7 +132,7 @@ If you're building in WSL, your Windows web browser should be able to connect to
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
-APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
