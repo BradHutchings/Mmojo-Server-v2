@@ -1,4 +1,8 @@
 ## 512. APE (Performant)
+### About Doghouse
+**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](400-Build-Doghouse.md).
+
+---
 ### About this Step
 In this step, we will build Doghouse for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on a narrower, more modern range of x86_64 and aarch64 machines.
 
