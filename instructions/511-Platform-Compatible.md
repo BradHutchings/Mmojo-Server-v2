@@ -35,10 +35,10 @@ This script has you choose GPU support to include in the build. If you've alread
 ---
 ### Build Mmojo Server and other llama.cpp Apps
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
+- View the script: <a href="../scripts/510-Build-for-Platform.sh" target="_blank">510-Build-for-Platform.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS"
+  $MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS"
   ```
 
 ---
@@ -70,7 +70,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS"
 $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS"
 ```
 
@@ -82,7 +82,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS"
 $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible "$CHOSEN_GPUS"
 $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS"
 ```
