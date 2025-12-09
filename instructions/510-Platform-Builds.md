@@ -34,21 +34,21 @@ $MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS"
 ### SHORTCUT: Test Compatible Executable Mmojo Server
 After you build all the APEs, you can test the compatible executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
 ```
 
 ---
 ### SHORTCUT: Test Performant Executable Mmojo Server
 After you build all the APEs, you can test the performant executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
 ```
 
 ---
 ### SHORTCUT: Test Native Executable Mmojo Server
 After you build all the APEs, you can test the native executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
 ```
 
 ---
