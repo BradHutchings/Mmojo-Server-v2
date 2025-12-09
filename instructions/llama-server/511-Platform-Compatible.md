@@ -38,7 +38,7 @@ This script uses cmake to build `llama-server`:
 - View the script: <a href="../../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible $CHOSEN_GPUS llama-server
+  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS" llama-server
   ```
 
 ---
@@ -47,7 +47,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - View the script: <a href="../../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible $CHOSEN_GPUS llama-server
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" llama-server
   ```
 
 ---
@@ -70,8 +70,8 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible $CHOSEN_GPUS llama-server
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible $CHOSEN_GPUS llama-server
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" llama-server
 ```
 
 ---
@@ -82,9 +82,9 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible $CHOSEN_GPUS llama-server
-$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS llama-server
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible $CHOSEN_GPUS llama-server
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" llama-server
 ```
 
 ---
