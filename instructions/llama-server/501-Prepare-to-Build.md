@@ -34,6 +34,9 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
   ```
   $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh llama-server
   ```
+---
+### Customize, or Nah?
+If you'd like additional source code enhancements from Mmojo Server, you should customize. If not, you should stop here and start building.
 
 ---
 ### Patch llama.cpp Source Code and Build Code
