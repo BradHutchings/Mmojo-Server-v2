@@ -44,7 +44,6 @@ This looks like lots of fun.
   $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh llama-server
   ```
 
-<!--
 ---
 ### Customize WebUI
 Customize the web UI, rebuild all the web files.
@@ -65,7 +64,6 @@ sudo apt install nodejs npm -y
 sudo npm install -g node@latest
 sudo npm install -g npm@latest
 ```
--->
 
 ---
 ### SHORTCUT: Run All the Above Scripts 
