@@ -9,12 +9,13 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3 $4.\n*\n$STARS\n\n"
 
 processor=$(uname -m)
 variation=$1
 gpus=$2
-branding=$3
+chat_ui=$3
+branding=$4
 
 if [ "$processor" == "arm64" ]; then
     processor="aarch64"
@@ -26,6 +27,11 @@ fi
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ] && [ "$variation" != "native" ]; then
     variation="native"
+fi
+
+if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
+    echo "Resetting chat_ui."
+    chat_ui="0"
 fi
 
 if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
@@ -70,6 +76,7 @@ BUILD_SUBDIRECTORY+="$gpus"
 
 echo "        Processor: $processor"
 echo "        Variation: $variation"
+echo "          Chat UI: $chat_ui"
 echo "         Branding: $branding"
 echo "     subdirectory: $BUILD_SUBDIRECTORY"
 echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
@@ -97,7 +104,7 @@ fi
 # sleep 5s
 
 UI_PARAMS=" --path $BUILD_DIR/Mmojo-Complete/ --default-ui-endpoint /chat "
-if [ ! -z $TEST_WITH_CHAT_UI ] && [ $TEST_WITH_CHAT_UI != 0 ]; then 
+if [ "$chat_ui" != "0" ]; then 
     # echo "Using chat UI."
     UI_PARAMS=""
 fi
@@ -119,7 +126,7 @@ ls -ald $SUPPORT_DIR
 
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3 $4.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
