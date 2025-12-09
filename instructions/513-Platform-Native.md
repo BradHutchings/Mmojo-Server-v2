@@ -41,7 +41,7 @@ This script uses cmake to build Mmojo Server:
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native "$CHOSEN_GPUS"
   ```
 
 ---
@@ -50,7 +50,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS"
   ```
 
 ---
@@ -61,7 +61,7 @@ Copy these builds to your Mmojo Share for packaging later.
 - View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native "$CHOSEN_GPUS"
   ```
 </details>
 
@@ -73,8 +73,8 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS"
 ```
 
 ---
@@ -85,9 +85,9 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS"
 ```
 
 ---
