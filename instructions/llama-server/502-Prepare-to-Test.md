@@ -32,7 +32,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 
 ---
 ### Optional: Choose CPU Threads
-By default, Mmojo Server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
+By default, llama-server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
 
 Use default &mdash; half of available threads:
 ```
