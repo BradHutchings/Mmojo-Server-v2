@@ -12,7 +12,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 branding=$1
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
@@ -21,6 +21,9 @@ APP_NAME='Mmojo Chat'
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
     APP_NAME='Doghouse'
+elif [ "$branding" == "llama-server" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    APP_NAME='llama.cpp'
 fi
 
 cd $THIS_BUILD_DIR
