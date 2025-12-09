@@ -91,7 +91,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" 1 llama-serve
 ### Proceed
 - **Next:** [512. Platform (Performant)](512-Platform-Performant.md)
 - **Previous:** [510. Platform Builds](510-Platform-Builds.md)
-- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+- **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
 [MIT License](/LICENSE)<br/>
