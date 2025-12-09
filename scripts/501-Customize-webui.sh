@@ -42,7 +42,7 @@ npm run build
 cd $SAVE_WD
 mv loading-mmojo.html tools/server/public/loading-mmojo.html
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     TODAY=$(date +%Y-%m-%d)
     cp -r Mmojo-Complete Mmojo-Complete-original
     sed -i -e "s/\[\[UPDATED\]\]/$TODAY/g" Mmojo-Complete/scripts.js
