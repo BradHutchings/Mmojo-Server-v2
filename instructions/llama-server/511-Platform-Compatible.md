@@ -44,7 +44,7 @@ This script uses cmake to build `llama-server`:
 ---
 ### Test llama-server
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
+- View the script: <a href="../../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible $CHOSEN_GPUS llama-server
