@@ -12,9 +12,9 @@ Here are the things you need to do:
 - [501. Prepare to Build](501-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [503. Debug Build](503-Debug-Build.md) - Build an unoptimized `doghouse` for the CPU of the build environment platformm that can be used to test features and changes.
-- [520. APE Builds](520-APE-Builds.md) - Explains APEs and how to build them.
-- [521. APE (Compatible)](521-APE-Compatible.md) - Build `doghouse-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-- [522. APE (Performant)](522-APE-Performant.md) - Build `doghouse-ape` as an Actually Portable Executable (APE) with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.
+- [520. APE Builds](520-APE-Builds.md) - Explains Actual Portable Executables (APEs) and how to build them.
+  - [521. APE (Compatible)](521-APE-Compatible.md) - Build `doghouse-ape` as an APE with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+  - [522. APE (Performant)](522-APE-Performant.md) - Build `doghouse-ape` as an APE with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.<br/><br/>
 
 **Get Started:** [501. Prepare to Build](501-Prepare-to-Build.md)
 
