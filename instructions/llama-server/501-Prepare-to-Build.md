@@ -4,7 +4,7 @@
 
 ---
 ### About this Step
-In this step, we will clone the Mmojo-Server repo, and fix problems that affect building with Cosmopolitan. While additional code from Mmojo Server are kept, no additional branding is applied. Your builds will be mostly indistinguishable from building llama.cpp from scratch.
+In this step, we will clone the Mmojo-Server repo, then optionally fix problems that affect building with Cosmopolitan and packaging for distribution. While additional code from Mmojo Server are kept, no additional branding is applied. Your builds will be mostly indistinguishable from building llama.cpp from scratch.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -36,11 +36,11 @@ This script clones the llama.cpp repo and repos upon which it depends into the `
   ```
 ---
 ### Customize, or Nah?
-If you'd like additional source code enhancements from Mmojo Server, you should customize. If not, you should stop here and start building.
+If you'd like additional source code enhancements from Mmojo Server, you should patch and customize with the two scripts below. If not, you should stop here and start building.
 
 ---
-### Patch llama.cpp Source Code and Build Code
-This looks like lots of fun.
+### Optional: Patch llama.cpp Source Code and Build Code
+If you want to build Actual Portable Executable (APE) files with Cosmopolitan or package conveniently for distribution, you need to patch some of the llama.cpp code with this script.
 - View the script: <a href="../../scripts/501-Patch-llama-cpp.sh" target="_blank">501-Patch-llama-cpp.sh</a>.
 - Run the scripts.
   ```
@@ -48,8 +48,8 @@ This looks like lots of fun.
   ```
 
 ---
-### Customize WebUI
-Customize the web UI, rebuild all the web files.
+### Optional: Customize WebUI
+If you want to customize the WebUI to use **llama-server** as the title, run this script.
 - View the script: <a href="../../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
