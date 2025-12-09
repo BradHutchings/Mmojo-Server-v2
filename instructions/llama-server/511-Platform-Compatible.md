@@ -35,7 +35,7 @@ This script has you choose GPU support to include in the build. If you've alread
 ---
 ### Build llama-server and other llama.cpp Apps
 This script uses cmake to build `llama-server`:
-- View the script: <a href="../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
+- View the script: <a href="../../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
 - Run the script.
   ```
   $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh compatible $CHOSEN_GPUS llama-server
@@ -55,7 +55,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
 Copy these builds to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
+- View the script: <a href="../../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
   $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
