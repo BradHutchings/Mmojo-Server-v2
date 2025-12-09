@@ -33,10 +33,19 @@ if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
+ARGS_FILE=$PACKAGE_MMOJO_SERVER_ARGS_FILE
+SUPPORT_DIR=$PACKAGE_MMOJO_SERVER_SUPPORT_DIR
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+    ARGS_FILE=$PACKAGE_DOGHOUSE_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_DOGHOUSE_SUPPORT_DIR
 elif [ "$branding" == "llama-server" ]; then
     THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
+    ARGS_FILE=$PACKAGE_LLAMA_SERVER_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_LLAMA_SERVER_SUPPORT_DIR
 fi
 
 BUILD_SUBDIRECTORY=""
@@ -59,11 +68,14 @@ fi
 
 BUILD_SUBDIRECTORY+="$gpus"
 
-echo "   Processor: $processor"
-echo "   Variation: $variation"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo "  testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "        Processor: $processor"
+echo "        Variation: $variation"
+echo "         Branding: $branding"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "  executable file: $EXECUTABLE_FILE"
+echo "        args file: $ARGS_FILE"
+echo "support directory: $SUPPORT_DIR"
 echo ""
 
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
@@ -94,15 +106,16 @@ fi
 
 cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
 
-rm -f $PACKAGE_MMOJO_SERVER_ARGS_FILE
-rm -r -f $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+rm -f $ARGS_FILE
+rm -r -f $SUPPORT_DIR
 
-$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server --model $MODELS_DIR/$MODEL_PARAM \
+$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768
-    
-printf "\nVerify that 'mmojo-server-args' and 'mmojo-server-support' do not exist.\n"
-ls -ald $PACKAGE_MMOJO_SERVER_ARGS_FILE
-ls -ald $PACKAGE_MMOJO_SERVER_SUPPORT_DIR
+
+echo ""
+echo "Verify that args file and support folder do not exist."
+ls -ald $ARGS_FILE
+ls -ald $SUPPORT_DIR
 
 cd $HOME
 
