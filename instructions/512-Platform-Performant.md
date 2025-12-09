@@ -1,6 +1,6 @@
-## 521. Platform (Compatible)
+## 512. Platform (Performant)
 ### About this Step
-In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the widest variety of x86_64 and aarch64 machines, with optional GPU support.
+In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on a narrow, modern range of x86_64 and aarch64 machines, with optional GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
@@ -35,19 +35,19 @@ This script has you choose GPU support to include in the build. If you've alread
 ---
 ### Build Mmojo Server and other llama.cpp Apps
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/520-Build-Executables.sh" target="_blank">520-Build-Executables.sh</a>.
+- View the script: <a href="../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh performant $CHOSEN_GPUS
   ```
 
 ---
 ### Test Mmojo Server
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/520-Test-Server.sh" target="_blank">520-Test-Server.sh</a>.
+- View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant $CHOSEN_GPUS
   ```
 
 ---
@@ -55,10 +55,10 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
 Copy these builds to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/520-Copy-Executables-to-Share.sh" target="_blank">520-Copy-Executables-to-Share.sh</a>.
+- View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh performant $CHOSEN_GPUS
   ```
 </details>
 
@@ -70,8 +70,8 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant $CHOSEN_GPUS
 ```
 
 ---
@@ -82,15 +82,15 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/520-Build-Executables.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/520-Test-Server.sh compatible $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh performant $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant $CHOSEN_GPUS
 ```
 
 ---
 ### Proceed
-- **Next:** [522. Platform (Performant)](522-Platform-Performant.md)
-- **Previous:** [520. Platform Builds](520-Platform-Builds.md)
+- **Next:** [513. Platform (Native)](513-Platform-Native.md)
+- **Previous:** [511. Platform (Compatible)](511-Platform-Compatible.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---

@@ -1,10 +1,6 @@
-## 510. APE Builds
-### About Doghouse
-**Doghouse** is an example of a branded developer experience. [Read more about Doghouse](400-Build-Doghouse.md).
-
----
+## 520. APE Builds
 ### About this Step
-In the following two steps, we will build the Doghouse server (`doghouse`) and other llama.cpp targets as Actual Portable Executable (APEs). These exexcutables run on x86_64 and aarch64 (arm64) across Linux, macOS, Windows, FreeBSD, and some other operating systems. They do not offer GPU support.
+In the following two steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets as Actual Portable Executable (APEs). These exexcutables run on x86_64 and aarch64 (arm64) across Linux, macOS, Windows, FreeBSD, and some other operating systems. They do not offer GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
 - **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
 
@@ -25,32 +21,32 @@ mm-env
 ### SHORTCUT: Build Compatible and Performant APEs
 Before using this shortcut, please work through the steps of building the compatible and performant APEs a few times so that you can become familiar with what they do.
 ```
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh compatible doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh X86_64 performant doghouse
-$MMOJO_SERVER_SCRIPTS/510-Build-with-Cosmo.sh aarch64 performant doghouse
-$MMOJO_SERVER_SCRIPTS/510-Assemble-Cosmo-APE.sh performant doghouse
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh X86_64 compatible
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 compatible
+$MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh compatible
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh X86_64 performant
+$MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 performant
+$MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh performant
 ```
 
 ---
 ### SHORTCUT: Test Compatible APE Mmojo Server
 After you build all the APEs, you can test the compatible APE:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh compatible command-line 1 doghouse
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
 ### SHORTCUT: Test Performant APE Mmojo Server
 After you build all the APEs, you can test the performant APE:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Cosmo-APE.sh performant command-line 1 doghouse
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant command-line $TEST_WITH_CHAT_UI
 ```
 
 ---
 ### Proceed
-- **Next:** [511. APE (Compatible)](511-APE-Compatible.md)
-- **Previous:** [503. Debug Build](503-Debug-Build.md)
+- **Next:** [521. APE (Compatible)](521-APE-Compatible.md)
+- **Previous:** [513. Platform (Native)](513-Platform-Native.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---

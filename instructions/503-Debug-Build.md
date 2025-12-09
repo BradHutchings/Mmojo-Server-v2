@@ -107,7 +107,7 @@ $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line $TEST_WITH_CHAT_UI
 
 ---
 ### Proceed
-- **Next:** [510. APE Builds](510-APE-Builds.md)
+- **Next:** [510. Platform Builds](510-Platform-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 

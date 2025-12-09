@@ -1,8 +1,8 @@
-## 615. Attired APEs (Performant)
+## 625. Attired APEs (Compatible)
 ### About this Step
 **IN PROGRESS**
 
-You have packaged a naked APE (performant). Now you can simply graft a `.gguf` model onto the naked APE to make a self-contained LLM server. You graft it on using the `zip` tool to add the `.gguf` model to the zip archive which is the naked APE. You'll will do this for each of the models in the `$MODELS_DIR` directory.
+You have packaged a naked APE (compatible). Now you can simply graft a `.gguf` model onto the naked APE to make a self-contained LLM server. You graft it on using the `zip` tool to add the `.gguf` model to the zip archive which is the naked APE. You'll will do this for each of the models in the `$MODELS_DIR` directory.
 
 ---
 ### Manual Process
@@ -33,8 +33,8 @@ Let's run through the process manually, using the `Google-Gemma-1B-Instruct-v3-q
 
 ---
 ### Proceed
-- **Next:** [620. Platform Packages](620-Platform-Packages.md)
-- **Previous:** [615. Attired APEs (Compatible)](614-Attired-APE-Compatible.md)
+- **Next:** [626. Attired APEs (Performant)](626-Attired-APE-Performant.md)
+- **Previous:** [624. Naked APE (Performant)](624-Naked-APE-Performant.md)
 - **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
 
 ---

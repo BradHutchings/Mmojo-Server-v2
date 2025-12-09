@@ -59,24 +59,24 @@ Build Mmojo Server executables.
 - [501. Prepare to Build](501-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [503. Debug Build](503-Debug-Build.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platform that can be used to test features and changes.<br/><br/>
-- [510. APE Builds](510-APE-Builds.md) - Explains Actual Portable Executables (APEs) and how to build them.
-  - [511. APE (Compatible)](511-APE-Compatible.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-  - [512. APE (Performant)](512-APE-Performant.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.<br/><br/>
-- [520. Platform Builds](520-Platform-Builds.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
-  - [521. Platform (Compatible)](521-Platform-Compatible.md) - Build `mmojo-server` for the base CPU of the build environment platform.
-  - [522. Platform (Performant)](522-Platform-Performant.md) - Build `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
-  - [523. Platform (Native)](523-Platform-Native.md) - Build `mmojo-server` highly optimized for the CPU of the build environment platform.
+- [510. Platform Builds](510-Platform-Builds.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
+  - [511. Platform (Compatible)](511-Platform-Compatible.md) - Build `mmojo-server` for the base CPU of the build environment platform.
+  - [512. Platform (Performant)](512-Platform-Performant.md) - Build `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
+  - [513. Platform (Native)](513-Platform-Native.md) - Build `mmojo-server` highly optimized for the CPU of the build environment platform.<br/><br/>
+- [520. APE Builds](520-APE-Builds.md) - Explains Actual Portable Executables (APEs) and how to build them.
+  - [521. APE (Compatible)](521-APE-Compatible.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+  - [522. APE (Performant)](522-APE-Performant.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.<br/><br/>
 
 ---
 ### [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 Package Mmojo Server for distribution and deployment.
 
-- [610. APE Packages](610-APE-Packages.md) - Package Mmojo Server as Actual Portable Executable (APE) files, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
-  - [611. APE (Compatible)](611-APE-Compatible.md) - The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
-  - [612. APE (Performant)](612-APE-Performant.md) - The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
-  - [613. Naked APE (Compatible)](613-Naked-APE-Compatible.md) - This is a compatible APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
-  - [614. Naked APE (Performant)](614-Naked-APE-Performant.md) - This is a performant APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!<br/><br/>
-- [620. Platform Packages](620-Platform-Packages.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.
+- [610. Platform Packages](610-Platform-Packages.md) - Package Mmojo Server as a `.zip` file that can be unzipped into a directory containing the Mmojo Server executable and supporting files.<br/><br/>
+- [620. APE Packages](620-APE-Packages.md) - Package Mmojo Server as Actual Portable Executable (APE) files, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+  - [621. APE (Compatible)](621-APE-Compatible.md) - The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+  - [622. APE (Performant)](622-APE-Performant.md) - The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+  - [623. Naked APE (Compatible)](623-Naked-APE-Compatible.md) - This is a compatible APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!
+  - [624. Naked APE (Performant)](624-Naked-APE-Performant.md) - This is a performant APE with no `.gguf` file. You can `zip` a `.gguf` file onto it or copy one into the working directory, and it will just find it. No need to update the `mmojo-server-args` file!<br/><br/>
 
 ---
 [MIT License](/LICENSE)<br/>

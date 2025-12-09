@@ -12,11 +12,11 @@ Now that you have Doghouse built as an Actual Portable Executable (APE) file, yo
 ---
 ### Package Doghouse
 Here are some packaging options:
-- [610. APE Packages](610-APE-Packages.md) - Package Doghouse as Actual Portable Executable (APE) files, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
-  - [611. APE (Compatible)](611-APE-Compatible.md) - The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
-  - [612. APE (Performant)](612-APE-Performant.md) - The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
+- [620. APE Packages](620-APE-Packages.md) - Package Doghouse as Actual Portable Executable (APE) files, which can run on several operating systems spanning x86_64 and aarch64 (ARM64) arcitectures.
+  - [621. APE (Compatible)](621-APE-Compatible.md) - The "compatible" APE runs (slowly) on a wide variery of x86_64 and aarch64 (arm64) machines.
+  - [622. APE (Performant)](622-APE-Performant.md) - The "performant" APE runs faster, but only on later model x86_64 machines and high end aarch64 (arm64) machines like Apple's M*-based Macs.
 
-**Get Started:** [610. APE Packages](610-APE-Packages.md)
+**Get Started:** [620. APE Packages](620-APE-Packages.md)
 
 ---
 [MIT License](/LICENSE)<br/>

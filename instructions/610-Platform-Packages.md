@@ -1,6 +1,4 @@
-## 620. Platform Packages
-
----
+## 610. Platform Packages
 ### About this Step
 Let's prepare a `.zip` file containing a `mmojo-server` executable and a `mmojo-server-support` directory for distribution. You will start with one of the `mmojo-server` apps you built, add certificates, add the Mmojo Complete user interface, add a add a `.gguf` model file, and add a configuration file. You will test run it, zip it up, then copy it to your Mmojo Share. 
 
@@ -24,7 +22,6 @@ mm-env
 ---
 ### Choose a `mmojo-server` Build to Package
 This script has you choose one of the `mmojo-server` apps you've built.
-
 - View the script: <a href="../scripts/mm-choose-build.sh" target="_blank">mm-choose-build.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
@@ -40,7 +37,7 @@ This script has you choose one of the `mmojo-server` apps you've built.
 ---
 ### Choose `.gguf` Model to Add to Package
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions.
-- View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
+- View the script: <a href="../scripts/mm-choose-model.sh" target="_blank">mm-choose-model.sh</a>.
 - Run the script.
   ```
   unset CHOSEN_MODEL
@@ -51,11 +48,10 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 ---
 ### Create Package Directories
 This script creates the package directories.
-
-- View the script: <a href="../scripts/621-Create-Package-Directories.sh" target="_blank">621-Create-Package-Directories.sh</a>.
+- View the script: <a href="../scripts/610-Create-Package-Directories.sh" target="_blank">610-Create-Package-Directories.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Create-Package-Directories.sh
+  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directories.sh
   # Keep track of what we add below for the `default-args` file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -64,11 +60,11 @@ This script creates the package directories.
 
 ---
 ### Add Certs to Package
-This script adds SSL certificates from the Mmojo Share to the package.
-- View the script: <a href="../scripts/621-Add-Certs-to-Package.sh" target="_blank">621-Add-Certs-to-Package.sh</a>.
+This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the package.
+- View the script: <a href="../scripts/610-Add-Certs-to-Package.sh" target="_blank">610-Add-Certs-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Add-Certs-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/610-Add-Certs-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_CERTS=1
   ```
@@ -78,10 +74,10 @@ This script adds SSL certificates from the Mmojo Share to the package.
 ---
 ### Add Mmojo Complete UI to Package
 This script adds the Mmojo Complete user interface to the package.
-- View the script: <a href="../scripts/621-Add-UI-to-Package.sh" target="_blank">621-Add-UI-to-Package.sh</a>.
+- View the script: <a href="../scripts/610-Add-UI-to-Package.sh" target="_blank">610-Add-UI-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Add-UI-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-Package.sh
   # Keep track of what we add for the `default-args` file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -89,11 +85,11 @@ This script adds the Mmojo Complete user interface to the package.
 ---
 ### Add `.gguf` Model to Package
 This script adds the chosen `.gguf` model to the package.
-- View the script: <a href="../scripts/621-Add-gguf-Model-to-Package.sh" target="_blank">621-Add-gguf-Model-to-Package.sh</a>.
+- View the script: <a href="../scripts/610-Add-gguf-Model-to-Package.sh" target="_blank">610-Add-gguf-Model-to-Package.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/621-Add-gguf-Model-to-Package.sh
+    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-Package.sh
     # Keep track of what we add for the `default-args` file.
     export ADDED_MODEL=1
   fi
@@ -102,36 +98,36 @@ This script adds the chosen `.gguf` model to the package.
 ---
 ### Add Args File to Package
 This script adds a `default-args` file to the package. If you added certs and/or the Mmojo Complete UI above, the `default-args` file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/621-Add-Args-to-Package.sh" target="_blank">621-Add-Args-to-Package.sh</a>.
+- View the script: <a href="../scripts/610-Add-Args-to-Package.sh" target="_blank">610-Add-Args-to-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Add-Args-to-Package.sh
+  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-Package.sh
   ```
 
 ---
 ### Zip the Package
 This script zips the package into a `.zip` file and moves the file to `$HOME/500-PACKAGE`.
-- View the script: <a href="../scripts/621-Zip-Package.sh" target="_blank">621-Zip-Package.sh</a>.
+- View the script: <a href="../scripts/610-Zip-Package.sh" target="_blank">610-Zip-Package.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Zip-Package.sh
+  $MMOJO_SERVER_SCRIPTS/610-Zip-Package.sh
   ```
 
 <details>
   <summary><b>Optional: Copy Zip Package to Your Mmojo Share.</b></summary>
 
 Copy this zip package to your Mmojo share.
-- View the script: <a href="../scripts/621-Copy-Zip-Package-to-Mmojo-Share.sh" target="_blank">621-Copy-Zip-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/610-Copy-Zip-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-Zip-Package-to-Mmojo-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/621-Copy-Zip-Package-to-Mmojo-Share.sh
+  $MMOJO_SERVER_SCRIPTS/610-Copy-Zip-Package-to-Mmojo-Share.sh
   ```
 </details>
 
 ---
 ### Proceed
-- **Next:** This is the last step in this section.
-- **Previous:** [614. Naked APE (Performant)](614-Naked-APE-Performant.md)
+- **Next:** [620. APE Packages](620-APE-Packages.md)
+- **Previous:** This is the first step in this section.
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---

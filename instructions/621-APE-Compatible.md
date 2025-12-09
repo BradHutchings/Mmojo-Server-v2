@@ -1,4 +1,4 @@
-## 612. APE (Performant)
+## 621. APE (Compatible)
 ### About this Step
 Let's prepare an Actual Portable Executable (APE) for distribution. You will start with the APE file you built, remove extraneous timezone files from it, add certificates, add the Mmojo Complete user interface, add a `.gguf` model file, and add a configuration file. You will test run it, then copy it to your Mmojo Share. 
 
@@ -17,7 +17,7 @@ mm-env
 </details>
 
 ---
-### Choose `.gguf` Model to Add to Package
+### Choose `.gguf` Model to Add to APE
 Choose a model. The models from your `$HOME/300-MODELS` directory are available for you to use. This is its own script in your `$HOME/scripts` directory because it sets an environment variable and is resused in these instructions. We choose the model first so we can include its short name in the package folder name and the APE file name.
 - View the script: <a href="../scripts/ mm-choose-model.sh" target="_blank"> mm-choose-model.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
@@ -31,12 +31,12 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
   ```
 
 ---
-### Create Package Directory
+### Create Package APE
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/610-Create-Package-Directory.sh" target="_blank">610-Create-Package-Directory.sh</a>.
+- View the script: <a href="../scripts/620-Create-Package-APE.sh" target="_blank">620-Create-Package-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-Directory.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Create-Package-APE.sh compatible attired
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -44,35 +44,35 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
   ```
 
 ---
-### Add Certificates to Package
+### Add Certificates to APE
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
-- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Certificates-to-APE.sh" target="_blank">620-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant attired
-  # Keep track of what we add for the Args file.
+  $MMOJO_SERVER_SCRIPTS/620-Add-Certificates-to-APE.sh compatible attired
+  # Keep track of what we add for the args file.
   export ADDED_CERTS=1
   ```
 
 ---
-### Add Mmojo Complete UI to Package
+### Add Mmojo Complete UI to APE
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-UI-to-APE.sh" target="_blank">620-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant attired
-  # Keep track of what we add for the Args file.
+  $MMOJO_SERVER_SCRIPTS/620-Add-UI-to-APE.sh compatible attired
+  # Keep track of what we add for the args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
 
 ---
-### Add `.gguf` Model to Package
+### Add `.gguf` Model to APE
 This script adds the chosen `.gguf` model to the APE package.
-- View the script: <a href="../scripts/610-Add-gguf-Model-to-APE.sh" target="_blank">610-Add-gguf-Model-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-gguf-Model-to-APE.sh" target="_blank">620-Add-gguf-Model-to-APE.sh</a>.
 - Run the script.
   ```
   if [ -v CHOSEN_MODEL ]; then
-    $MMOJO_SERVER_SCRIPTS/610-Add-gguf-Model-to-APE.sh performant attired
+    $MMOJO_SERVER_SCRIPTS/620-Add-gguf-Model-to-APE.sh compatible attired
     # Keep track of what we add for the Args file.
     export ADDED_MODEL=1
   fi
@@ -88,12 +88,12 @@ This script adds the chosen `.gguf` model to the APE package.
 *-Brad*
 
 ---
-### Add Args File to Package
+### Add Args File to APE
 This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Args-to-APE.sh" target="_blank">620-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Add-Args-to-APE.sh compatible attired
   ```
 
 ---
@@ -101,8 +101,8 @@ This script adds a Args file to the APE package. If you added certs and/or the M
 
 Now we can test run `mmojo-server`, listening on localhost:8080. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
@@ -131,8 +131,8 @@ If you're building in WSL, your Windows web browser should be able to connect to
 
 If you'd like it to listen on all available interfaces, you can connect from a browser on another computer. This should be a script file.
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
-APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
+APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-comp"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
     APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
@@ -154,10 +154,10 @@ If you did not add SSL cxertificates, you can connect to the server with `http`:
 - http://[host-name-or-ip]:8080
 
 ---
-### Review the Package
+### Review the APE Directory
 Let's look at what you packaged:
 ```
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_APE"
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
 fi
@@ -169,16 +169,16 @@ ls -al $THIS_PACKAGE_DIR
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/620-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">620-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant attired
+  $MMOJO_SERVER_SCRIPTS/620-Copy-APE-Package-to-Mmojo-Share.sh compatible attired
   ```
 
 ---
 ### Proceed
-- **Next:** [613. Naked APE (Compatible)](613-Naked-APE-Compatible.md)
-- **Previous:** [611. APE (Compatible)](611-APE-Compatible.md)
+- **Next:** [622. APE (Performant)](622-APE-Performant.md)
+- **Previous:** [620. APE Packages](620-APE-Packages.md)
 - **Up:** [600. Package Mmojo Server](600-Package-Mmojo-Server.md)
 
 ---

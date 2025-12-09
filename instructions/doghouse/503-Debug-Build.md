@@ -55,7 +55,7 @@ $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 doghouse
 
 ---
 ### Proceed
-- **Next:** [510. APE Builds](510-APE-Builds.md)
+- **Next:** [520. APE Builds](520-APE-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 

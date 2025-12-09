@@ -13,13 +13,13 @@ Here are the things you need to do:
 - [501. Prepare to Build](501-Prepare-to-Build.md) - Clone llama.cpp repo, fix some things, and copy some things.
 - [502. Prepare to Test](502-Prepare-to-Test.md) - Set some environment variables to customize test runs.
 - [503. Debug Build](503-Debug-Build.md) - Build an unoptimized `mmojo-server` for the CPU of the build environment platform that can be used to test features and changes.<br/><br/>
-- [510. APE Builds](510-APE-Builds.md) - Explains Actual Portable Executables (APEs) and how to build them.
-  - [511. APE (Compatible)](511-APE-Compatible.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
-  - [512. APE (Performant)](512-APE-Performant.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.<br/><br/>
-- [520. Platform Builds](520-Platform-Builds.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
-  - [521. Platform (Compatible)](521-Platform-Compatible.md) - Build `mmojo-server` for the base CPU of the build environment platform.
-  - [522. Platform (Performant)](522-Platform-Performant.md) - Build `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
-  - [523. Platform (Native)](523-Platform-Native.md) - Build `mmojo-server` highly optimized for the CPU of the build environment platform.<br/><br/>
+- [510. Platform Builds](510-Platform-Builds.md) - Explains build-platform executables and how to build them. Now with GPU choices and support.
+  - [511. Platform (Compatible)](511-Platform-Compatible.md) - Build `mmojo-server` for the base CPU of the build environment platform.
+  - [512. Platform (Performant)](512-Platform-Performant.md) - Build `mmojo-server` for recent CPUs from the CPU family of the build environment platform.
+  - [513. Platform (Native)](513-Platform-Native.md) - Build `mmojo-server` highly optimized for the CPU of the build environment platform.<br/><br/>
+- [520. APE Builds](520-APE-Builds.md) - Explains Actual Portable Executables (APEs) and how to build them.
+  - [521. APE (Compatible)](521-APE-Compatible.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is widely compatible with x86_64 and aarch64 (arm64) systems, but not very performant.
+  - [522. APE (Performant)](522-APE-Performant.md) - Build `mmojo-server-ape` as an APE with Cosmopolitan. This build is compatible with recent x86_64 and aarch64 (arm64) systems and more performant.<br/><br/>
 
 **Get Started:** [501. Prepare to Build](501-Prepare-to-Build.md)
 
