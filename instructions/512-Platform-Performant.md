@@ -63,7 +63,7 @@ Copy these builds to your Mmojo Share for packaging later.
 </details>
 
 ---
-### SHORTCUT: Build CPU, Test
+### SHORTCUT: Build Mmojo Server, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
@@ -75,7 +75,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant $CHOSEN_GPUS
 ```
 
 ---
-### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
+### SHORTCUT: Build Mmojo Server, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
