@@ -38,7 +38,7 @@ Most importantly, naked executables allow end-users to try .gguf models I have n
 
 ***Note:** "Naked APE" should make you chuckle. So should "Attired APE", which I will [introduce in due course](625-Attired-APEs-Compatible.md).*
 
-***Note:** This is an original Mmojo Server feature. So when you copy it for your LLM server and can't come up with an original name, a note of credit would be appreciated.*
+***Note:** This is an original Mmojo Server feature. So when you copy it for your LLM server and/or can't come up with an original name, a note of credit would be appreciated.*
 
 - There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
 - There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accommodate this feature.
