@@ -1,6 +1,6 @@
 ## 502. Prepare to Test
-### About llama-server
-**llama-server** is ... [Read more about llama-server](500-Build-llana-server.md).
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
 
 ---
 ### About this Step
@@ -32,7 +32,7 @@ Choose a model. The models from your `$HOME/300-MODELS` directory are available 
 
 ---
 ### Optional: Choose CPU Threads
-By default, Mmojo Server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
+By default, llama-server will use half of the CPU threads available. For benchmarking, you may want to set a different value.
 
 Use default &mdash; half of available threads:
 ```

@@ -15,20 +15,24 @@ chat_ui=$3
 branding=$4
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
 if [ "$gguf" != "command-line" ] && [ "$gguf" != "find-executable-dir" ] && \
     [ "$gguf" != "find-working-dir" ] && [ "$gguf" != "find-ape" ]; then
     
+    echo "Resetting gguf."
     gguf="command-line"
 fi
 
 if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
+    echo "Resetting chat_ui."
     chat_ui="0"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
+    echo "Resetting branding."
     branding=""
 fi
 
@@ -42,6 +46,11 @@ if [ "$branding" == "doghouse" ]; then
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_APE_FILE
     ARGS_FILE=$PACKAGE_DOGHOUSE_ARGS_FILE
     SUPPORT_DIR=$PACKAGE_DOGHOUSE_SUPPORT_DIR
+elif [ "$llama-server" == "doghouse" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
+    ARGS_FILE=$PACKAGE_LLAMA_SERVER_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_LLAMA_SERVER_SUPPORT_DIR
 fi
 
 BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"

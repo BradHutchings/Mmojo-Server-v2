@@ -2,6 +2,9 @@
 ### About this Section
 We're ready to build `mmojo-server` executables. First, we'll build a native version for the build environment platfrom that can be used to test features and changes. Then, we'll build an Actually Portable Executable (APE) with Cosmopolitan that will run anywhere. After that, we'll build unoptimized linux builds for x86_64 and aarch64 (arm64) platforms, as well as optimized builds for specific devices like macOS and Raspberry Pi.
 
+#### Experimental &mdash; llama-server
+If you would like to build a vanilla llama-server with a traditional chat-style interface, check out the [llama-server track](llama-server/500-Build-llama-server.md). This is the easiest way to build llama-server and other llama.cpp executables for your computer. I keep up with the ever-evolving llama.cpp so you don't have to.
+
 #### Experimental &mdash; Doghouse
 If you would like to build a less branded and opinionated version of llama.cpp, I offer **Doghouse**. It's intended as an example branded server I am offering to paid sponsors of Mmojo Server. Let's work out a sponsorship deal and what you'd like in your custom branded server!
 

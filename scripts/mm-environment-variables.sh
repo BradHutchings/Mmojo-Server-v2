@@ -139,6 +139,25 @@ export PACKAGE_DOGHOUSE_EXE_FILE="doghouse.exe"
 export PACKAGE_DOGHOUSE_ARGS_FILE="doghouse-args"
 export PACKAGE_DOGHOUSE_SUPPORT_DIR="doghouse-support"
 
+echo "Setting llama-server paths."
+export LLAMA_SERVER_BUILD_DIR
+export LLAMA_SERVER_FILES="$MMOJO_SERVER_DIR/files/llama-server"
+export LLAMA_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts/llama-server"
+
+export LLAMA_SERVER_BUILD_DIR="$HOME/500-BUILD-llama-server"
+export LLAMA_SERVER_PACKAGE_DIR="$HOME/600-PACKAGE-llama-server"
+
+export PACKAGE_LLAMA_SERVER_FILE="llama-server"
+export PACKAGE_LLAMA_SERVER_APE_FILE="llama-server-ape"
+export PACKAGE_LLAMA_SERVER_COMPATIBLE_APE_FILE="llama-server-compatible-ape"
+export PACKAGE_LLAMA_SERVER_PERFORMANT_APE_FILE="llama-server-performant-ape"
+export PACKAGE_LLAMA_SERVER_COMPATIBLE_NAKED_APE_FILE="llama-server-compatible-naked-ape"
+export PACKAGE_LLAMA_SERVER_PERFORMANT_NAKED_APE_FILE="llama-server-performant-naked-ape"
+export PACKAGE_LLAMA_SERVER_ZIP_FILE="llama-server.zip"
+export PACKAGE_LLAMA_SERVER_EXE_FILE="llama-server.exe"
+export PACKAGE_LLAMA_SERVER_ARGS_FILE="llama-server-args"
+export PACKAGE_LLAMA_SERVER_SUPPORT_DIR="llama-server-support"
+
 echo "Setting architectuire value for compilers."
 export ARCH_X86_64_COMPATIBLE="x86-64"
 export ARCH_X86_64_PERFORMANT="x86-64-v3"

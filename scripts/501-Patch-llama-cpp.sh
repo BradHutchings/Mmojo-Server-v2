@@ -12,7 +12,7 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 branding=$1
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
@@ -21,6 +21,9 @@ EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+elif [ "$branding" == "llama-server" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
 fi
 
 echo "         Branding: $branding"
@@ -46,7 +49,7 @@ fi
 sed -i -e 's/arg.cpp/arg-mmojo.cpp/g' common/CMakeLists.txt
 sed -i -e 's/common.cpp/common-mmojo.cpp/g' common/CMakeLists.txt
 sed -i -e '/log.h/a \    mmojo-args.h\n\    mmojo-args.c' common/CMakeLists.txt
-# Not bothering zipalign for now. -Brad 2025-11-23
+# Not bothering with zipalign for now. -Brad 2025-11-23
 # sed -i -e 's/add_subdirectory(server)/add_subdirectory(server)\n\tif (COSMOCC)\n\t\tadd_subdirectory(zipalign)\n\tendif()/g' tools/CMakeLists.txt
 sed -i -e 's/server.cpp/server-mmojo.cpp/g' tools/server/CMakeLists.txt
 sed -i -e 's/server-context.cpp/server-context-mmojo.cpp/g' tools/server/CMakeLists.txt

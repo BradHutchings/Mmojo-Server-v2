@@ -1,10 +1,14 @@
-## 512. Platform (Performant)
+## 511. Platform (Compatible)
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
 ### About this Step
-In this step, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on a narrow, modern range of x86_64 and aarch64 machines, with optional GPU support.
+In this step, we will build `llama-server` and other llama.cpp targets to run on the widest variety of x86_64 and aarch64 machines, with optional GPU support.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Shortcut:** [Scroll down](#shortcut-build-cpu-test).
+**Shortcut:** [Scroll down](#shortcut-build-llama-server-test).
 
 ---
 <details>
@@ -33,21 +37,21 @@ This script has you choose GPU support to include in the build. If you've alread
 *I will make this easier to navigate soon! -Brad*
 
 ---
-### Build Mmojo Server and other llama.cpp Apps
-This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/510-Build-for-Platform.sh" target="_blank">510-Build-for-Platform.sh</a>.
+### Build llama-server and other llama.cpp Apps
+This script uses cmake to build `llama-server`:
+- View the script: <a href="../../scripts/510-Build-for-Platform.sh" target="_blank">510-Build-for-Platform.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh performant "$CHOSEN_GPUS"
+  $MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS" llama-server
   ```
 
 ---
-### Test Mmojo Server
+### Test llama-server
 Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
-- View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
+- View the script: <a href="../../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" 1 llama-server
   ```
 
 ---
@@ -55,43 +59,43 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
   <summary><b>Optional: Copy Executables to Mmojo Share.</b></summary>
 
 Copy these builds to your Mmojo Share for packaging later. 
-- View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
+- View the script: <a href="../../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh performant "$CHOSEN_GPUS"
+  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible $CHOSEN_GPUS
   ```
 </details>
 
 ---
-### SHORTCUT: Build Mmojo Server, Test
+### SHORTCUT: Build llama-server, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh performant "$CHOSEN_GPUS"
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" 1 llama-server
 ```
 
 ---
-### SHORTCUT: Build Mmojo Server, Copy to Mmojo Share, Test
+### SHORTCUT: Build llama-server, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh performant "$CHOSEN_GPUS"
-$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh performant "$CHOSEN_GPUS"
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" 1 llama-server
 ```
 
 ---
 ### Proceed
-- **Next:** [513. Platform (Native)](513-Platform-Native.md)
-- **Previous:** [511. Platform (Compatible)](511-Platform-Compatible.md)
-- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+- **Next:** [512. Platform (Performant)](512-Platform-Performant.md)
+- **Previous:** [510. Platform Builds](510-Platform-Builds.md)
+- **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
 [MIT License](/LICENSE)<br/>

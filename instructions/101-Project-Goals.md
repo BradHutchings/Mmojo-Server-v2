@@ -4,7 +4,9 @@ Mmojo Server was inspired by Mozilla Foundation's llamafile, which built llama.c
 
 Unfortunately, Mozilla Foundation stopped actively supporting llamafile around the fall of 2024. This meant that support for new models rolled out in llama.cpp was not incorporated into llamafile. This turned out to be the greatest weakness of llamafile. If nobody kept it up to date with the additions to and changes in llama.cpp, it just wasn't that interesting. This is the main organizing principle for Mmojo Server. It has to offer the run everywhere feature of llamafile, but has to be maintainable, especially the llama.cpp part.
 
-*Llamafile was recently adopted by Mozilla Foundation subsidiary (?) Mozilla.ai. There is a new promise of keeping it up to date. I've discussed both the Mmojo Server and llamafile project with a member of their team extensively, and didn't leave the discussion thinking they were fixing the underlying problem of focus. YMMV.*
+While Mozilla Foundation subsidiary (?) Mozilla.ai has recently picked up and promised to revive work on llamafile, I think the best direct replacement is the [llama-server track](llama-server/500-Build-llama-server.md) in this repo. Read the [100. Overview](100-Overview.md) section, set up your build environment with the [200. Prepare Build Environment](200-Prepare-Build-Environment.md) and [300. Gather Build Pieces](300-Gather-Build-Pieces.md) sections, then jump over to the [llama-server track](llama-server/500-Build-llama-server.md) to build llama-server as standsalone executables and APE files.
+
+I have spoken to a reperesentative of Mozilla.ai about potential ways of working together. I'm not confident they can add any value to what I've done or am doing. YMMV.
 
 ---
 ### Project Goals

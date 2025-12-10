@@ -14,10 +14,12 @@ variation=$1
 branding=$2
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
+    echo "Resetting branding."
     branding=""
 fi
 
@@ -29,6 +31,10 @@ if [ "$branding" == "doghouse" ]; then
 	THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
     APE_FILE=$PACKAGE_DOGHOUSE_APE_FILE
+elif [ "$llama-server" == "doghouse" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
+    APE_FILE=$PACKAGE_LLAMA_SERVER_APE_FILE
 fi
 
 BUILD_X86_64_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"

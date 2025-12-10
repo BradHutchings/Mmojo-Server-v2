@@ -1,11 +1,9 @@
 ## 503. Debug Build
-### About llama-server
-**llama-server** is ... [Read more about llama-server](500-Build-llana-server.md).
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
 
 ---
 ### About this Step
-**This is an experimental section for a differently branded version without the UI customizations. It probably does not work.**
-
 In this step, we will build `llama-server` for the CPU of your build environment platform without any GPU support. Even if you're more interested in APE builds, you can and should use this build to test and debug features of `llama-server` that are not specific to any particular build. CPU optimizations are turned off.
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
@@ -57,7 +55,7 @@ $MMOJO_SERVER_SCRIPTS/503-Test-Debug.sh command-line 1 llama-server
 
 ---
 ### Proceed
-- **Next:** [510. APE Builds](510-APE-Builds.md)
+- **Next:** [510. Platform Builds](510-Platform-Builds.md)
 - **Previous:** [502. Prepare to Test](502-Prepare-to-Test.md)
 - **Up:** [500. Build llama-server](500-Build-llama-server.md)
 

@@ -19,20 +19,25 @@ if [ "$processor" == "arm64" ]; then
 fi
 
 if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
+    echo "Resetting processor."
     processor="x86_64"
 fi
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
+    echo "Resetting branding."
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+elif [ "$llama-server" == "doghouse" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
 fi
 
 cd $THIS_BUILD_DIR

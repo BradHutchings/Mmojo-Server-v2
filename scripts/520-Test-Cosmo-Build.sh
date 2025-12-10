@@ -19,10 +19,12 @@ if [ "$processor" == "arm64" ]; then
 fi
 
 if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
+    echo "Resetting processor."
     processor="x86_64"
 fi
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
@@ -31,7 +33,7 @@ if [ "$chat_ui" == "" ] || [ "$chat_ui" != "1" ]; then
     chat_ui="0"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     echo "Resetting branding."
     branding=""
 fi
@@ -46,6 +48,11 @@ if [ "$branding" == "doghouse" ]; then
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
     ARGS_FILE=$PACKAGE_DOGHOUSE_ARGS_FILE
     SUPPORT_DIR=$PACKAGE_DOGHOUSE_SUPPORT_DIR
+elif [ "$llama-server" == "doghouse" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
+    ARGS_FILE=$PACKAGE_LLAMA_SERVER_ARGS_FILE
+    SUPPORT_DIR=$PACKAGE_LLAMA_SERVER_SUPPORT_DIR
 fi
 
 BUILD_SUBDIRECTORY=""
@@ -62,12 +69,16 @@ if [ "$processor" == "aarch64" ]; then
     fi
 fi
 
-echo "   Processor: $processor"
-echo "   Variation: $variation"
-echo "     Chat UI: $chat_ui"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo "  testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "        Processor: $processor"
+echo "        Variation: $variation"
+echo "          Chat UI: $chat_ui"
+echo "         Branding: $branding"
+echo "     subdirectory: $BUILD_SUBDIRECTORY"
+echo "       testing in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "  executable file: $EXECUTABLE_FILE"
+echo "        args file: $ARGS_FILE"
+echo "support directory: $SUPPORT_DIR"
+echo ""
 
 if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY

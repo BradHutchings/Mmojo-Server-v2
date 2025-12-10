@@ -31,6 +31,20 @@ These are a way to specify command line defaults and aggregate support files, li
 - There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accommodate this feature.
 
 ---
+### "Naked" Executables
+This is going to sound silly, but the most exhausting task &mdash; from the start &mdash; in shipping a fleet of llamafile builds was writing or customizing a `default-args` file with a reference to a specific `.gguf` model for each llamafile that I wanted to package and ship. I have solved this with the idea of a "naked APE". It doesn't have a model specified. It just finds the first one it can. It searches the `/zip` directory &mdash; items added to the archive &mdash; then the executable directory, then the working directory. The find a model logic has been extended beyond APE files to all executables and will be supported in my future packaging scheme.
+
+Most importantly, naked executables allow end-users to try .gguf models I have not tested with Mmojo Server. The models users try may not be supported, but if they are, I'm not in the way. They don't need a developer to make a model that works work for them.
+
+***Note:** "Naked APE" should make you chuckle. So should "Attired APE", which I will [introduce in due course](625-Attired-APEs-Compatible.md).*
+
+***Note:** This is an original Mmojo Server feature. So when you copy it for your LLM server and/or can't come up with an original name, a note of credit would be appreciated.*
+
+- There are additions to [server-mmojo.cpp](/files/tools/server/server-mmojo.cpp) to accommodate this feature.
+- There is an additional file [mmojo-args.h](/files/common/mmojo-args.h) to accommodate this feature.
+- There is an additional file [mmojo-args.cpp](/files/common/mmojo-args.cpp) to accommodate this feature.
+
+---
 ### Mmojo Complete - Completion User Interface
 I hold a currently unpopular opinion that chat interfaces are an abomination. Not in how they're implemented, but in that they make users pretend to have a conversation with a computer in order to extract knowledge from an LLM. I provide an original and powerful Mmojo Complete user interface that can be used as the default user interface, with llama.cpp's traditional chat interface as an option for end-users.
 

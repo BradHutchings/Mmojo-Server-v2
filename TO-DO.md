@@ -2,9 +2,10 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;12&minus;07         | 510 should be platform builds, 620 APE builds. 610/620 as well. |
+| 2025&minus;12&minus;10         | GGML params for aarch64 aren't implemented yet for performant builds - default to all off. 520-Build-with-Cosmo.sh and 510-Build-for-Platform.sh. |
+| 2025&minus;12&minus;09         | In build and test scripts, test for existence of the main build directory for the brand. If it's not there, we haven't cloned llama.cpp for that brand yet. |
 | 2025&minus;12&minus;07         | Audit mm-environment-variables.sh. Is there any unused garbage left? |
-| 2025&minus;12&minus;07         | Unbranded build llama-sercer 500/600 track. Easiest way to build and deploy llama-server. |
+| 2025&minus;12&minus;07         | Unbranded build llama-server 500/600 track. Easiest way to build and deploy llama-server. |
 | 2025&minus;12&minus;03         | Rewrite [105. Packaging for Deployment](instructions/105-Packaging-for-Deployment.md) |
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
@@ -27,6 +28,7 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;12&minus;08 | 2025&minus;12&minus;07         | 510 should be platform builds, 620 APE builds. 610/620 as well. |
 | 2025&minus;12&minus;07 | 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package a master APE and graft a model on later. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;03         | Change `CHOSEN_MODEL_SHORT_NAME` to `CHOSEN_MODEL_MNEMONIC`. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;02         | `410-Assemble-Cosmo-APE.sh` needs to be `410-Assemble-APEs.sh`, needs to assemble more than just `mmojo-server-ape`. |

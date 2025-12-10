@@ -1,6 +1,14 @@
 ## 510. Platform Builds
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
+### About llama-server
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
 ### About this Step
-In the following three steps, we will build Mmojo Server (`mmojo-server`) and other llama.cpp targets to run on the CPU of your build environment, with optional GPU support.
+In the following three steps, we will build `llama-server` and other llama.cpp targets to run on the CPU of your build environment, with optional GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
 - **Performant** builds run on newer x86_64 processors and Apple M* aarch64 processors.
 - **Native** builds run on the processor in your build environment.
@@ -25,37 +33,37 @@ mm-env
 Before using this shortcut, please work through the steps of building the compatible, performant, and native executables a few times so that you can become familiar with what they do.
 ```
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS"
-$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh performant "$CHOSEN_GPUS"
-$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh compatible "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh performant "$CHOSEN_GPUS" llama-server
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS" llama-server
 ```
 
 ---
 ### SHORTCUT: Test Compatible Executable Mmojo Server
 After you build all the APEs, you can test the compatible executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh compatible "$CHOSEN_GPUS" 1 llama-server
 ```
 
 ---
 ### SHORTCUT: Test Performant Executable Mmojo Server
 After you build all the APEs, you can test the performant executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh performant "$CHOSEN_GPUS" 1 llama-server
 ```
 
 ---
 ### SHORTCUT: Test Native Executable Mmojo Server
 After you build all the APEs, you can test the native executable:
 ```
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" 1 llama-server
 ```
 
 ---
 ### Proceed
 - **Next:** [511. Platform (Compatible)](511-Platform-Compatible.md)
 - **Previous:** [503. Debug Build](503-Debug-Build.md)
-- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+- **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
 [MIT License](/LICENSE)<br/>

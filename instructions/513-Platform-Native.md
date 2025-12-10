@@ -35,13 +35,13 @@ This script has you choose GPU support to include in the build. If you've alread
 ---
 ### Build Mmojo Server and other llama.cpp Apps
 This script uses cmake to build Mmojo Server:
-- View the script: <a href="../scripts/510-Build-Executables.sh" target="_blank">510-Build-Executables.sh</a>.
+- View the script: <a href="../scripts/510-Build-for-Platform.sh" target="_blank">510-Build-for-Platform.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS"
   ```
 
 ---
@@ -50,7 +50,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory. We test wit
 - View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
   ```
 
 ---
@@ -61,33 +61,33 @@ Copy these builds to your Mmojo Share for packaging later.
 - View the script: <a href="../scripts/510-Copy-Executables-to-Share.sh" target="_blank">510-Copy-Executables-to-Share.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
+  $MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native "$CHOSEN_GPUS"
   ```
 </details>
 
 ---
-### SHORTCUT: Build CPU, Test
+### SHORTCUT: Build Mmojo Server, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
 ```
 
 ---
-### SHORTCUT: Build CPU, Copy to Mmojo Share, Test
+### SHORTCUT: Build Mmojo Server, Copy to Mmojo Share, Test
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet:
 ```
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 . mm-choose-gpus.sh
-$MMOJO_SERVER_SCRIPTS/510-Build-Executables.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native $CHOSEN_GPUS
-$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native $CHOSEN_GPUS
+$MMOJO_SERVER_SCRIPTS/510-Build-for-Platform.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Copy-Executables-to-Share.sh native "$CHOSEN_GPUS"
+$MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" "$TEST_WITH_CHAT_UI"
 ```
 
 ---
