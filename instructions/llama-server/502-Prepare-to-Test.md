@@ -1,5 +1,5 @@
 ## 502. Prepare to Test
-### About llama-server
+### About the Build llama-server Track
 **llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
 
 ---
