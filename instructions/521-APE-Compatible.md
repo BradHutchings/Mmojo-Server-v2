@@ -38,7 +38,7 @@ If your build environment is x86_64, you can test this build. Requires previousl
 - View the script: <a href="../scripts/520-Test-Cosmo-Build.sh" target="_blank">520-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-Build.sh X86_64 compatible $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-Build.sh X86_64 compatible "$TEST_WITH_CHAT_UI"
   ```
 </details>
 
@@ -70,7 +70,7 @@ If your build environment is aarch64, you can test this build. Requires previous
 - View the script: <a href="../scripts/520-Test-Cosmo-Build.sh" target="_blank">520-Test-Cosmo-Build.sh</a>.
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-Build.sh aarch64 compatible $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-Build.sh aarch64 compatible "$TEST_WITH_CHAT_UI"
   ```
 </details>
 
@@ -99,7 +99,7 @@ If your build environment is x86_64 or aarch64, you can test the assembled APE. 
 - View the script: <a href="../scripts/520-Test-Cosmo-APE.sh" target="_blank">520-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line "$TEST_WITH_CHAT_UI"
   ```
 
 <details>
@@ -109,7 +109,7 @@ Test the Assembled APE with `.gguf` Model in APE.
 - View the script: <a href="../scripts/520-Test-Cosmo-APE.sh" target="_blank">520-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
-  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible find-ape $TEST_WITH_CHAT_UI
+  $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible find-ape "$TEST_WITH_CHAT_UI"
   ```
 </details>
 
@@ -143,7 +143,7 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh X86_64 compatible
 $MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh compatible
-$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line "$TEST_WITH_CHAT_UI"
 ```
 
 ---
@@ -159,7 +159,7 @@ $MMOJO_SERVER_SCRIPTS/520-Build-with-Cosmo.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/520-Copy-Cosmo-Build-to-Mmojo-Share.sh aarch64 compatible
 $MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh compatible
 $MMOJO_SERVER_SCRIPTS/520-Copy-Cosmo-APE-to-Mmojo-Share.sh compatible
-$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line $TEST_WITH_CHAT_UI
+$MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line "$TEST_WITH_CHAT_UI"
 ```
 
 ---
