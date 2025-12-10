@@ -14,10 +14,12 @@ variation=$1
 branding=$2
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
 if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
+    echo "Resetting branding."
     branding=""
 fi
 
