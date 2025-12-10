@@ -1,4 +1,8 @@
 ## 521. APE (Compatible)
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
 ### About this Step
 In this step, we will build `llama-server-ape` for x86_64 and aarch64 (arm64). We will then package them in an Actual Portable Executable (APE) file which can run cross platform and cross artchitecture. This build will run on the widest variety of x86_64 and aarch64 machines.
 
