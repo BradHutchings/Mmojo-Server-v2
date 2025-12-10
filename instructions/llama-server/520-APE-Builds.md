@@ -1,4 +1,8 @@
 ## 520. APE Builds
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
 ### About this Step
 In the following two steps, we will build `llama-server` and other llama.cpp targets as Actual Portable Executable (APEs). These exexcutables run on x86_64 and aarch64 (arm64) across Linux, macOS, Windows, FreeBSD, and some other operating systems. They do not offer GPU support.
 - **Compatible** builds run on a wide range of x86_64 and aarch64 processors.
