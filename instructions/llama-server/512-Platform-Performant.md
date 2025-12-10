@@ -1,4 +1,8 @@
 ## 512. Platform (Performant)
+### About the Build llama-server Track
+**llama-server** is the project upon which Mmojo Server builds. [Read more about llama-server](500-Build-llana-server.md).
+
+---
 ### About this Step
 In this step, we will build `llama-server` and other llama.cpp targets to run on a narrow, modern range of x86_64 and aarch64 machines, with optional GPU support.
 
