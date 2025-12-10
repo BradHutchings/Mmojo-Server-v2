@@ -19,10 +19,12 @@ if [ "$processor" == "arm64" ]; then
 fi
 
 if [ "$processor" != "x86_64" ] && [ "$processor" != "aarch64" ]; then
+    echo "Resetting processor."
     processor="x86_64"
 fi
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
+    echo "Resetting variation."
     variation="compatible"
 fi
 
