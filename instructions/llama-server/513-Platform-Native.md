@@ -92,7 +92,7 @@ $MMOJO_SERVER_SCRIPTS/510-Test-Server.sh native "$CHOSEN_GPUS" 1 llama-server
 
 ---
 ### Proceed
-- **Next:** This is the last step in this section.
+- **Next:** [520. APE Builds](520-APE-Builds.md)
 - **Previous:** [512. Platform (Performant)](512-Platform-Performant.md)
 - **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
