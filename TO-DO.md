@@ -2,7 +2,7 @@
 
 | Added              | Item      |
 | :-------------           | :------    |
-| 2025&minus;12&minus;10         | GGML params for aarch64 aren't implemented yet. 520-Build-with-Cosmo.sh and 510-Build-for-Platform.sh. |
+| 2025&minus;12&minus;10         | GGML params for aarch64 aren't implemented yet for performant builds - default to all off. 520-Build-with-Cosmo.sh and 510-Build-for-Platform.sh. |
 | 2025&minus;12&minus;09         | In build and test scripts, test for existence of the main build directory for the brand. If it's not there, we haven't cloned llama.cpp for that brand yet. |
 | 2025&minus;12&minus;07         | Audit mm-environment-variables.sh. Is there any unused garbage left? |
 | 2025&minus;12&minus;07         | Unbranded build llama-server 500/600 track. Easiest way to build and deploy llama-server. |
