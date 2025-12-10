@@ -4,7 +4,7 @@ In this step, we will build `llama-server` and other llama.cpp targets to run on
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
-**Shortcut:** [Scroll down](#shortcut-build-cpu-test).
+**Shortcut:** [Scroll down](#shortcut-build-llama-server-test).
 
 ---
 <details>
