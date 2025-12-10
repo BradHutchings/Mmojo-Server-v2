@@ -1,6 +1,4 @@
 ## 500. Build llama-server
-** THIS BUILD/PACKAGE TRACK IS A WORK IN PROGRESS.**
-
 ### About llama-server
 **llama-server** is the project upon which Mmojo Server builds. This build and package track is intended to be the easiest way to build llama.cpp, especially for developers who don't build it on a continual basis.
 
