@@ -84,7 +84,7 @@ if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
         # TO-DO: What CPU options/level?
         ARCH=$(uname -m)
 
-        if [ -d "$MMOJO_SHARE_BUILDS_CPU_NATIVE" ]; then
+        if [ -d "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY" ]; then
             echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
             sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
         fi
