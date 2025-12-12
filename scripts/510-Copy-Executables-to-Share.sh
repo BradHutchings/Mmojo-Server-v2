@@ -77,15 +77,15 @@ if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         echo "Creating directories on Mmojo Share."
-        sudo mkdir -p $MMOJO_SHARE_BUILDS
-        sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU_NATIVE
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS"
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 
         # TO-DO: What CPU options/level?
         ARCH=$(uname -m)
 
         if [ -d "$MMOJO_SHARE_BUILDS_CPU_NATIVE" ]; then
             echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
-            sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU_NATIVE/mmojo-server-cpu-native-$ARCH
+            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
         fi
     fi
 fi
