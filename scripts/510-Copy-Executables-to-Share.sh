@@ -78,8 +78,9 @@ echo "  copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 echo ""
 
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
-    # THIS NEEDS TO FIND RIGHT DIRECTORY ON MMOJO SHARE
-    mm-mount-mmojo-share.sh
+    if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+        mm-mount-mmojo-share.sh
+    fi
 
     if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         echo "Creating directories on Mmojo Share."
