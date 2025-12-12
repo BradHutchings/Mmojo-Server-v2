@@ -69,6 +69,7 @@ echo "        GPUs: $gpus"
 echo "    Branding: $branding"
 echo "subdirectory: $BUILD_SUBDIRECTORY"
 echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "  copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 echo ""
 
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
