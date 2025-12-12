@@ -33,6 +33,7 @@ elif [ "$branding" == "llama-server" ]; then
     THIS_PACKAGE_DIR=$LLAMA_SERVER_PACKAGE_DIR
     EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_APEFILE
 fi
+EXE_FILE="$EXECUTABLE_FILE.exe"
 
 PACKAGE_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
 if [ -v CHOSEN_MODEL_MNEMONIC]; then
@@ -45,6 +46,7 @@ echo "   subdirectory: $PACAKAGE_SUBDIRECTORY"
 echo "   packaging in: $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY"
 echo "     copying to: $MMOJO_SHARE_BUILDS/$PACAKAGE_SUBDIRECTORY"
 echo "executable file: $EXECUTABLE_FILE"
+echo "      .exe file: $EXE_FILE"
 echo ""
 
 if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACAKAGE_SUBDIRECTORY" != "" ]; then
@@ -61,6 +63,7 @@ if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACAKAGE_SUBDIRECTORY" != "" ]; then
             echo "Copying mmojo-server to Mmojo Share."
             # Should have been packaged with model name in it.
             sudo cp -f $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACAKAGE_SUBDIRECTORY
+            sudo cp -f $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACAKAGE_SUBDIRECTORY/$EXE_FILE
         fi
     fi
 fi
