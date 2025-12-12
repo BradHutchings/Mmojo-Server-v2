@@ -32,13 +32,18 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ] && [ "$v
     variation="native"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+elif [ "$branding" == "llama-server" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
 fi
 
 BUILD_SUBDIRECTORY=""
@@ -86,7 +91,7 @@ if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
         if [ -d "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY" ]; then
             echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
-            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
+            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
         fi
     fi
 fi
