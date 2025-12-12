@@ -68,13 +68,14 @@ fi
 
 BUILD_SUBDIRECTORY+="$gpus"
 
-echo "   Processor: $processor"
-echo "   Variation: $variation"
-echo "        GPUs: $gpus"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
-echo "  copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
+echo "      Processor: $processor"
+echo "      Variation: $variation"
+echo "           GPUs: $gpus"
+echo "       Branding: $branding"
+echo "   subdirectory: $BUILD_SUBDIRECTORY"
+echo "    building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "     copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
+echo "executable file: $EXECUTABLE_FILE"
 echo ""
 
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
