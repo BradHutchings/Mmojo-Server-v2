@@ -32,6 +32,7 @@ elif [ "$branding" == "llama-server" ]; then
     THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
     EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_APE_FILE
 fi
+EXE_FILE="$EXECUTABLE_FILE.exe"
 
 BUILD_SUBDIRECTORY=""
     
@@ -40,11 +41,13 @@ if [ $variation == "performant" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_APE"
 fi
 
-echo "         Variation: $variation"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
-echo "  copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
+echo "      Variation: $variation"
+echo "       Branding: $branding"
+echo "   subdirectory: $BUILD_SUBDIRECTORY"
+echo "    building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "     copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
+echo "executable file: $EXECUTABLE_FILE"
+echo "      .exe file: $EXE_FILE"
 echo ""
 
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
@@ -58,8 +61,9 @@ if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
         sudo mkdir -p "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 
         if [ -d "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY" ]; then
-            echo "Copying mmojo-server-$processor to Mmojo Share."
+            echo "Copying $EXECUTABLE_FILE to Mmojo Share."
             sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
+            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY/$EXE_FILE
         fi
     fi
 fi
