@@ -1,4 +1,4 @@
-## 207. Install Dependencies
+## 208. Install Dependencies
 ### About this Step
 Install system package updates, then install packages we will need for our build system.
 
@@ -20,8 +20,8 @@ This script installs system updates and dependencies you will need:
 
 ---
 ### Proceed
-- **Next:** [208. mm-Scripts](208-mm-Scripts.md)
-- **Previous:** [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md)
+- **Next:** [209. mm-Scripts](209-mm-Scripts.md)
+- **Previous:** [207. Mount Mmojo Share](207-Mount-Mmojo-Share.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
