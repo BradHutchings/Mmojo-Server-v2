@@ -1,4 +1,4 @@
-## 204. Set Timezone
+## 205. Set Timezone
 ### About this Step
 The Mmojo Complete user interface indicates a build date in its Settings panel. Set your build system's time zone so that the displayed build date is local to you.
 
@@ -38,8 +38,8 @@ Reference: [Timedatectl can control your Linux time and time zone](https://www.n
 
 ---
 ### Proceed
-- **Next:** [205. Create Mmojo Share](205-Create-Mmojo-Share.md)
-- **Previous:** [203. Clone Mmojo Server Repo](203-Clone-Mmojo-Server-Repo.md)
+- **Next:** [206. Create Mmojo Share](206-Create-Mmojo-Share.md)
+- **Previous:** [204. Clone Mmojo Server Repo](204-Clone-Mmojo-Server-Repo.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
