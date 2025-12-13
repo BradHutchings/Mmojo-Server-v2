@@ -1,4 +1,4 @@
-## 203. Clone Mmojo Server Repo
+## 204. Clone Mmojo Server Repo
 ### About this Step
 Let's get started by cloning the Mmojo Server repository from Github, so we have scripts available to do all the documented steps.
 
@@ -44,8 +44,8 @@ $HOME/mm-scripts/mm-clone-mmojo-server-repo.sh
 
 ---
 ### Proceed
-- **Next:** [204. Set Timezone](204-Set-Timezone.md)
-- **Previous:** [202. Create Scripts Directory](202-Create-Scripts-Directory.md)
+- **Next:** [205. Set Timezone](205-Set-Timezone.md)
+- **Previous:** [203. Create Scripts Directory](203-Create-Scripts-Directory.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---
