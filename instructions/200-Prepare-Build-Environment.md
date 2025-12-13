@@ -20,13 +20,14 @@ If you have already prepared your build environments, skip ahead to:
 ### Preparing Your Build Environment
 Here are the things you need to do:
 - [201. Prepare WSL](201-Prepare-WSL.md) - Prepare your Windows Subsystem for Linux (WSL) environment if you're using one.
-- [202. Create Scripts Directory](202-Create-Scripts-Directory.md) - Create `$HOME/mmscripts` directory, then add it to your `$PATH`.
-- [203. Clone Mmojo Server Repo](203-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
-- [204. Set Timezone](204-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
-- [205. Create Mmojo Share](205-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
-- [206. Mount Mmojo Share](206-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
-- [207. Install Dependencies](207-Install-Dependencies.md) - Install packages needed for your build system.
-- [208. mm- Scripts](208-mm-Scripts.md) - All about those `mm-` scripts in your `$HOME/mm-scripts` directory.
+- [202. Prepare macOS](202-Prepare-macOS.md) - Prepare your macOS environment if you're using one.
+- [203. Create Scripts Directory](203-Create-Scripts-Directory.md) - Create `$HOME/mmscripts` directory, then add it to your `$PATH`.
+- [204. Clone Mmojo Server Repo](204-Clone-Mmojo-Server-Repo.md) - Clone Mmojo Server Repo for setup and build scripts.
+- [205. Set Timezone](205-Set-Timezone.md) - Set your build system's time zone so Completion UI reflects correct build date.
+- [206. Create Mmojo Share](206-Create-Mmojo-Share.md) - Create a file share to support multiple build environments.
+- [207. Mount Mmojo Share](207-Mount-Mmojo-Share.md) - Mount a file share to support multiple build environments.
+- [208. Install Dependencies](208-Install-Dependencies.md) - Install packages needed for your build system.
+- [209. mm- Scripts](209-mm-Scripts.md) - All about those `mm-` scripts in your `$HOME/mm-scripts` directory.
 
 **Get Started:** [201. Prepare WSL](201-Prepare-WSL.md)
 
