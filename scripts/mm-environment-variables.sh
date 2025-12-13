@@ -33,7 +33,11 @@ export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
 echo "Setting Mmojo Share paths."
+if [ "$(uname -s)" = "Darwin" ]; then
+export MMOJO_SHARE_MOUNT_POINT="/Volumes/mmojo"
+else
 export MMOJO_SHARE_MOUNT_POINT="/mnt/mmojo"
+fi
 export MMOJO_SHARE_CERTIFICATES="$MMOJO_SHARE_MOUNT_POINT/certificates"
 export MMOJO_SHARE_BUILDS="$MMOJO_SHARE_MOUNT_POINT/builds"
 export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
