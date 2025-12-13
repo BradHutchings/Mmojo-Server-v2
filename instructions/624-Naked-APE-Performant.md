@@ -131,7 +131,7 @@ This script copies the packaged `mmojo-server` to your Mmojo Share.
 - View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant
+  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant naked
   ```
 
 ---
