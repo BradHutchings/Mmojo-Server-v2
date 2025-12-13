@@ -13,10 +13,15 @@ printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
 cd $PACKAGE_DIR
 
 variation=$1
-branding=$2
+attire=$2
+branding=$3
 
 if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ]; then
     variation="compatible"
+fi
+
+if [ "$attire" != "attired" ] && [ "$attire" != "naked" ]; then
+    attire="attired"
 fi
 
 if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
@@ -27,7 +32,6 @@ THIS_PACKAGE_DIR=$PACKAGE_DIR
 EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_APE_FILE
 if [ "$branding" == "doghouse" ]; then
     THIS_PACKAGE_DIR=$DOGHOUSE_PACKAGE_DIR
-    PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_APE_FILE
 elif [ "$branding" == "llama-server" ]; then
     THIS_PACKAGE_DIR=$LLAMA_SERVER_PACKAGE_DIR
@@ -35,16 +39,31 @@ elif [ "$branding" == "llama-server" ]; then
 fi
 EXE_FILE="$EXECUTABLE_FILE.exe"
 
-PACKAGE_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
+PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+if [ "$attire" == "attired" ]; then
+    if [ "$variation" == "compatible" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+    elif [ "$variation" == "performant" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
+    fi
+elif [ "$attire" == "naked" ]; then
+    if [ "$variation" == "compatible" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+    elif [ "$variation" == "performant" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+    fi
+fi
+
+if [ "$attire" == "attired" ] && [ -v CHOSEN_MODEL_MNEMONIC ]; then
     PACKAGE_SUBDIRECTORY+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "      Variation: $variation"
+echo "         Attire: $attire"
 echo "       Branding: $branding"
 echo "   subdirectory: $PACKAGE_SUBDIRECTORY"
 echo "   packaging in: $THIS_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-echo "     copying to: $MMOJO_SHARE_BUILDS/$PACKAGE_SUBDIRECTORY"
+echo "     copying to: $MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY"
 echo "executable file: $EXECUTABLE_FILE"
 echo "      .exe file: $EXE_FILE"
 echo ""
