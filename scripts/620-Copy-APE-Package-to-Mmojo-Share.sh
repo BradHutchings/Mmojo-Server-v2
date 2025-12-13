@@ -36,15 +36,15 @@ fi
 EXE_FILE="$EXECUTABLE_FILE.exe"
 
 PACKAGE_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_APE"
-if [ -v CHOSEN_MODEL_MNEMONIC]; then
+if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     PACKAGE_SUBDIRECTORY+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "      Variation: $variation"
 echo "       Branding: $branding"
-echo "   subdirectory: $PACAKAGE_SUBDIRECTORY"
-echo "   packaging in: $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY"
-echo "     copying to: $MMOJO_SHARE_BUILDS/$PACAKAGE_SUBDIRECTORY"
+echo "   subdirectory: $PACKAGE_SUBDIRECTORY"
+echo "   packaging in: $THIS_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+echo "     copying to: $MMOJO_SHARE_BUILDS/$PACKAGE_SUBDIRECTORY"
 echo "executable file: $EXECUTABLE_FILE"
 echo "      .exe file: $EXE_FILE"
 echo ""
