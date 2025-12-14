@@ -21,7 +21,7 @@ if [ "$attire" != "attired" ] && [ "$attire" != "naked" ]; then
     attire="attired"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
@@ -45,6 +45,11 @@ if [ "$branding" == "doghouse" ]; then
     ZIP_FILE="$PACKAGE_DOGHOUSE_ZIP_FILE"
     APP_FILE="$PACKAGE_DOGHOUSE_FILE"
     ARGS_FILE="$PACKAGE_DOGHOUSE_ARGS_FILE"
+elif [ "$branding" == "llama-server" ]; then
+    THIS_PACKAGE_DIR=$LLAMA_SERVER_PACKAGE_DIR
+    ZIP_FILE="$PACKAGE_LLAMA_SERVER_ZIP_FILE"
+    APP_FILE="$PACKAGE_LLAMA_SERVER_FILE"
+    ARGS_FILE="$PACKAGE_LLAMA_SERVER_ARGS_FILE"
 fi
 
 if [ "$variation" == "compatible" ]; then
@@ -55,7 +60,7 @@ fi
 
 if [ -v CHOSEN_MODEL_MNEMONIC ]; then
     THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-    APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
+    # APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "             Variation: $variation"
