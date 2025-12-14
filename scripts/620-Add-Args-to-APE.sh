@@ -36,6 +36,10 @@ if [ "$variation" == "performant" ]; then
     fi
 fi
 
+if [ "$attire" == "attired" ] && [ -v CHOSEN_MODEL_MNEMONIC ]; then
+    PACKAGE_SUBDIRECTORY+="-$CHOSEN_MODEL_MNEMONIC"
+fi
+
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
 ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
 APP_FILE="$PACKAGE_MMOJO_SERVER_FILE"
@@ -56,11 +60,6 @@ if [ "$variation" == "compatible" ]; then
     APP_FILE+="-comp"
 elif [ "$variation" == "performant" ]; then
     APP_FILE+="-perf"
-fi
-
-if [ -v CHOSEN_MODEL_MNEMONIC ]; then
-    THIS_PACKAGE_DIR+="-$CHOSEN_MODEL_MNEMONIC"
-    # APP_FILE+="-$CHOSEN_MODEL_MNEMONIC"
 fi
 
 echo "             Variation: $variation"
