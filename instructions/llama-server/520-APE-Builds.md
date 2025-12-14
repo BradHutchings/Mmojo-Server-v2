@@ -34,14 +34,14 @@ $MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh performant llama-server
 ```
 
 ---
-### SHORTCUT: Test Compatible APE Mmojo Server
+### SHORTCUT: Test Compatible APE llama-server
 After you build all the APEs, you can test the compatible APE:
 ```
 $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line "$TEST_WITH_CHAT_UI" llama-server
 ```
 
 ---
-### SHORTCUT: Test Performant APE Mmojo Server
+### SHORTCUT: Test Performant APE llama-server
 After you build all the APEs, you can test the performant APE:
 ```
 $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant command-line "$TEST_WITH_CHAT_UI" llama-server
