@@ -50,6 +50,11 @@ elif [ "$branding" == "llama-server" ]; then
     THIS_PACKAGE_DIR="$LLAMA_SERVER_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
     EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_APE_FILE
 fi
+if [ "$variation" == "compatible" ]; then
+    EXECUTABLE_FILE+="-comp"
+elif [ "$variation" == "performant" ]; then
+    EXECUTABLE_FILE+="-perf"
+fi
 EXE_FILE="$EXECUTABLE_FILE.exe"
 
 echo "      Variation: $variation"
