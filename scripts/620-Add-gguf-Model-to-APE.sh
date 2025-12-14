@@ -25,16 +25,6 @@ if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
-THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
-if [ "$branding" == "doghouse" ]; then
-    THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
-    ZIP_FILE="$PACKAGE_DOGHOUSE_ZIP_FILE"
-elif [ "$branding" == "llama-server" ]; then
-    THIS_PACKAGE_DIR=$LLAMA_SERVER_PACKAGE_DIR
-    ZIP_FILE=$PACKAGE_LLAMA_SERVER_ZIP_FILE
-fi
-
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
 if [ "$attire" == "naked" ]; then
     PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
@@ -48,6 +38,16 @@ fi
 
 if [ "$attire" == "attired" ] && [ -v CHOSEN_MODEL_MNEMONIC ]; then
     PACKAGE_SUBDIRECTORY+="-$CHOSEN_MODEL_MNEMONIC"
+fi
+
+THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+ZIP_FILE="$PACKAGE_MMOJO_SERVER_ZIP_FILE"
+if [ "$branding" == "doghouse" ]; then
+    THIS_PACKAGE_DIR="$DOGHOUSE_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE="$PACKAGE_DOGHOUSE_ZIP_FILE"
+elif [ "$branding" == "llama-server" ]; then
+    THIS_PACKAGE_DIR="$LLAMA_SERVER_PACKAGE_DIR$PACKAGE_SUBDIRECTORY"
+    ZIP_FILE=$PACKAGE_LLAMA_SERVER_ZIP_FILE
 fi
 
 echo "             Variation: $variation"
