@@ -177,6 +177,10 @@ $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant "$TEST_WITH_CHAT_UI" llam
 - **Up:** [500. Build llama-server](500-Build-llama-server.md)
 
 ---
+### Next Section
+- **Next Section:** [600. Package llama-server](600-Package-llama-server.md)
+
+---
 [MIT License](/LICENSE)<br/>
 Copyright (c) 2025 [Brad Hutchings](mailto:brad@bradhutchings.com)<br/>
 [https://github.com/BradHutchings/Mmojo-Server](https://github.com/BradHutchings/Mmojo-Server)
