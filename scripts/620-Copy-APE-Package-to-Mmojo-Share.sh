@@ -78,7 +78,7 @@ if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
         sudo mkdir -p "$MMOJO_SHARE_PACKAGES"
         sudo mkdir -p "$MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY"
 
-        if [ -d "$THIS_SHARE_DIR" ]; then
+        if [ -d "$MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY" ]; then
             echo "Copying mmojo-server to Mmojo Share."
             # Should have been packaged with model name in it.
             sudo cp -f $THIS_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY
