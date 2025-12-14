@@ -68,7 +68,7 @@ echo "executable file: $EXECUTABLE_FILE"
 echo "      .exe file: $EXE_FILE"
 echo ""
 
-if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACAKAGE_SUBDIRECTORY" != "" ]; then
+if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACKAGE_SUBDIRECTORY" != "" ]; then
     if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         mm-mount-mmojo-share.sh
     fi
@@ -76,13 +76,13 @@ if [ -d "$THIS_PACKAGE_DIR" ] && [ "$PACAKAGE_SUBDIRECTORY" != "" ]; then
     if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         echo "Creating directories on Mmojo Share."
         sudo mkdir -p "$MMOJO_SHARE_PACKAGES"
-        sudo mkdir -p "$MMOJO_SHARE_PACKAGES/$PACAKAGE_SUBDIRECTORY"
+        sudo mkdir -p "$MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY"
 
         if [ -d "$THIS_SHARE_DIR" ]; then
             echo "Copying mmojo-server to Mmojo Share."
             # Should have been packaged with model name in it.
-            sudo cp -f $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACAKAGE_SUBDIRECTORY
-            sudo cp -f $THIS_PACKAGE_DIR/$PACAKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACAKAGE_SUBDIRECTORY/$EXE_FILE
+            sudo cp -f $THIS_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY
+            sudo cp -f $THIS_PACKAGE_DIR/$PACKAGE_SUBDIRECTORY/$EXECUTABLE_FILE $MMOJO_SHARE_PACKAGES/$PACKAGE_SUBDIRECTORY/$EXE_FILE
         fi
     fi
 fi
