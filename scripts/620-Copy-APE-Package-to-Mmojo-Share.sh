@@ -10,8 +10,6 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
-cd $PACKAGE_DIR
-
 variation=$1
 attire=$2
 branding=$3
@@ -35,22 +33,18 @@ if [ "$branding" == "doghouse" ]; then
     EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_APE_FILE
 elif [ "$branding" == "llama-server" ]; then
     THIS_PACKAGE_DIR=$LLAMA_SERVER_PACKAGE_DIR
-    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_APEFILE
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_APE_FILE
 fi
 EXE_FILE="$EXECUTABLE_FILE.exe"
 
 PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-if [ "$attire" == "attired" ]; then
-    if [ "$variation" == "compatible" ]; then
-        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-    elif [ "$variation" == "performant" ]; then
-        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_APE"
-    fi
-elif [ "$attire" == "naked" ]; then
-    if [ "$variation" == "compatible" ]; then
-        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
-    elif [ "$variation" == "performant" ]; then
-        PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+if [ "$attire" == "naked" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_COMPATIBLE_NAKED_APE"
+fi
+if [ "$variation" == "performant" ]; then
+    PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_APE"
+    if [ "$attire" == "naked" ]; then
+        PACKAGE_SUBDIRECTORY="$PACKAGE_PERFORMANT_NAKED_APE"
     fi
 fi
 
