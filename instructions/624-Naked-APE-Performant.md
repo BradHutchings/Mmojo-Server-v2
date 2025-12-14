@@ -18,12 +18,12 @@ mm-env
 ---
 ### Create Package APE
 This script creates the package directories, copies the `mmojo-server-ape` file you previously built and assembled, removes extraneous timezone files from it, and displays the contents for your review.
-- View the script: <a href="../scripts/610-Create-Package-APE.sh" target="_blank">610-Create-Package-APE.sh</a>.
+- View the script: <a href="../scripts/620-Create-Package-APE.sh" target="_blank">620-Create-Package-APE.sh</a>.
 - Run the script.
   ```
   unset CHOSEN_MODEL
   unset CHOSEN_MODEL_MNEMONIC
-  $MMOJO_SERVER_SCRIPTS/610-Create-Package-APE.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/620-Create-Package-APE.sh performant naked
   # Keep track of what we add below for the Args file.
   unset ADDED_CERTS
   unset ADDED_MMOJO_COMPLETE
@@ -34,10 +34,10 @@ This script creates the package directories, copies the `mmojo-server-ape` file 
 ---
 ### Add Certificates to APE
 This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE package.
-- View the script: <a href="../scripts/610-Add-Certificates-to-APE.sh" target="_blank">610-Add-Certificates-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Certificates-to-APE.sh" target="_blank">620-Add-Certificates-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Certificates-to-APE.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/620-Add-Certificates-to-APE.sh performant naked
   # Keep track of what we add for the Args file.
   export ADDED_CERTS=1
   ```
@@ -45,10 +45,10 @@ This script adds SSL certificates from `$HOME/300-CERTIFICATES` to the APE packa
 ---
 ### Add Mmojo Complete UI to APE
 This script adds the Mmojo Complete user interface to the APE package.
-- View the script: <a href="../scripts/610-Add-UI-to-APE.sh" target="_blank">610-Add-UI-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-UI-to-APE.sh" target="_blank">620-Add-UI-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-UI-to-APE.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/620-Add-UI-to-APE.sh performant naked
   # Keep track of what we add for the Args file.
   export ADDED_MMOJO_COMPLETE=1
   ```
@@ -56,10 +56,10 @@ This script adds the Mmojo Complete user interface to the APE package.
 ---
 ### Add Args File to APE
 This script adds a Args file to the APE package. If you added certs and/or the Mmojo Complete UI above, the Args file will reflect that. We clean up files that were copied into the `package-ape` directory.
-- View the script: <a href="../scripts/610-Add-Args-to-APE.sh" target="_blank">610-Add-Args-to-APE.sh</a>.
+- View the script: <a href="../scripts/620-Add-Args-to-APE.sh" target="_blank">620-Add-Args-to-APE.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Add-Args-to-APE.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/620-Add-Args-to-APE.sh performant naked
   ```
 
 ---
@@ -128,10 +128,10 @@ ls -al $THIS_PACKAGE_DIR
 ---
 ### Copy `mmojo-server` APE to Mmojo Share
 This script copies the packaged `mmojo-server` to your Mmojo Share.
-- View the script: <a href="../scripts/610-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">610-Copy-APE-Package-to-Mmojo-Share.sh</a>.
+- View the script: <a href="../scripts/620-Copy-APE-Package-to-Mmojo-Share.sh" target="_blank">620-Copy-APE-Package-to-Mmojo-Share.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/610-Copy-APE-Package-to-Mmojo-Share.sh performant naked
+  $MMOJO_SERVER_SCRIPTS/620-Copy-APE-Package-to-Mmojo-Share.sh performant naked
   ```
 
 ---
