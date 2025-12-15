@@ -1,4 +1,4 @@
-## 208. `mm-` Scripts
+## 209. `mm-` Scripts
 ### About this Step
 This isn't so much a step, as it is a reference to the scripts that were copied to your `$HOME/mm-scripts` directory.
 - They all have the prefix `mm-`.
@@ -53,7 +53,7 @@ This isn't so much a step, as it is a reference to the scripts that were copied 
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [207. Install Dependencies](207-Install-Dependencies.md)
+- **Previous:** [208. Install Dependencies](208-Install-Dependencies.md)
 - **Up:** [200. Prepare Build Environment](200-Prepare-Build-Environment.md)
 
 ---

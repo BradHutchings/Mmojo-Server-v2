@@ -8,12 +8,13 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 cd $BUILD_DIR
 
 processor=$1
 variation=$2
+branding=$3
 
 if [ $processor == "arm64" ]; then
     processor="aarch64"
@@ -27,55 +28,61 @@ if [ $variation != "compatible" ] && [ $variation != "performant" ]; then
     variation="compatible"
 fi
 
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
+    branding=""
+fi
+
+THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
+if [ "$branding" == "doghouse" ]; then
+    THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+elif [ "$branding" == "llama-server" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
+fi
+
 BUILD_SUBDIRECTORY=""
-SHARE_DIRECTORY=""
 if [ $processor == "x86_64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_X86_64"
-    SHARE_DIRECTORY="$MMOJO_SHARE_BUILDS_COMPATIBLE_APE"
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_X86_64"
-        SHARE_DIRECTORY="$MMOJO_SHARE_BUILDS_PERFORMANT_APE"
     fi
 fi
 if [ $processor == "aarch64" ]; then
     BUILD_SUBDIRECTORY="$BUILD_COSMO_COMPATIBLE_AARCH64"
-    SHARE_DIRECTORY="$MMOJO_SHARE_BUILDS_COMPATIBLE_APE"
     if [ $variation == "performant" ]; then
         BUILD_SUBDIRECTORY="$BUILD_COSMO_PERFORMANT_AARCH64"
-        SHARE_DIRECTORY="$MMOJO_SHARE_BUILDS_PERFORMANT_APE"
     fi
 fi
 
 echo "         Processor: $processor"
 echo "         Variation: $variation"
-echo "Build Subdirectory: $BUILD_SUBDIRECTORY"
-echo "   Share Directory: $SHARE_DIRECTORY"
+echo "          Branding: $branding"
+echo "subdirectory: $BUILD_SUBDIRECTORY"
+echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "  copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 
-if [ $BUILD_SUBDIRECTORY != "" ] && [ $SHARE_DIRECTORY != "" ]; then
+if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
     if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         mm-mount-mmojo-share.sh
     fi
     
     if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         echo "Creating directories on Mmojo Share."
-        sudo mkdir -p $MMOJO_SHARE_BUILDS
-        sudo mkdir -p $SHARE_DIRECTORY
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS"
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 
-        if [ -d "$SHARE_DIRECTORY" ]; then
+        if [ -d "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY" ]; then
             echo "Copying mmojo-server-$processor to Mmojo Share."
-            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server $SHARE_DIRECTORY/mmojo-server-$processor
+            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/mmojo-server $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
         fi
     fi
 fi
 
-export PATH=$SAVE_PATH
-unset CC
-unset CXX
-unset AR
-
 cd $HOME
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1 $2 $3.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by

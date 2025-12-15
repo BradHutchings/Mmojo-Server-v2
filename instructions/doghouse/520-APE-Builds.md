@@ -34,14 +34,14 @@ $MMOJO_SERVER_SCRIPTS/520-Assemble-Cosmo-APE.sh performant doghouse
 ```
 
 ---
-### SHORTCUT: Test Compatible APE Mmojo Server
+### SHORTCUT: Test Compatible APE Doghouse
 After you build all the APEs, you can test the compatible APE:
 ```
 $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh compatible command-line 1 doghouse
 ```
 
 ---
-### SHORTCUT: Test Performant APE Mmojo Server
+### SHORTCUT: Test Performant APE Doghouse
 After you build all the APEs, you can test the performant APE:
 ```
 $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant command-line 1 doghouse
@@ -51,7 +51,7 @@ $MMOJO_SERVER_SCRIPTS/520-Test-Cosmo-APE.sh performant command-line 1 doghouse
 ### Proceed
 - **Next:** [521. APE (Compatible)](521-APE-Compatible.md)
 - **Previous:** [503. Debug Build](503-Debug-Build.md)
-- **Up:** [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
+- **Up:** [500. Build Doghouse](500-Build-Doghouse.md)
 
 ---
 [MIT License](/LICENSE)<br/>

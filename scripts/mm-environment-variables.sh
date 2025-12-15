@@ -33,7 +33,11 @@ export MMOJO_SERVER_FILES="$MMOJO_SERVER_DIR/files"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 
 echo "Setting Mmojo Share paths."
+if [ "$(uname -s)" = "Darwin" ]; then
+export MMOJO_SHARE_MOUNT_POINT="/Volumes/mmojo"
+else
 export MMOJO_SHARE_MOUNT_POINT="/mnt/mmojo"
+fi
 export MMOJO_SHARE_CERTIFICATES="$MMOJO_SHARE_MOUNT_POINT/certificates"
 export MMOJO_SHARE_BUILDS="$MMOJO_SHARE_MOUNT_POINT/builds"
 export MMOJO_SHARE_BUILDS_APE="$MMOJO_SHARE_BUILDS/ape"
@@ -101,6 +105,7 @@ unset TEST_WITH_CHAT_UI
 
 echo "Setting Package paths."
 export PACKAGE_DIR="$HOME/600-PACKAGE-mmojo-server"
+
 export PACKAGE_APE="ape"
 export PACKAGE_COMPATIBLE_APE="compatible-ape"
 export PACKAGE_PERFORMANT_APE="performant-ape"
@@ -111,48 +116,32 @@ export PACKAGE_SEAS="seas"
 
 export PACKAGE_MMOJO_SERVER_FILE="mmojo-server"
 export PACKAGE_MMOJO_SERVER_APE_FILE="mmojo-server-ape"
-# export PACKAGE_MMOJO_SERVER_COMPATIBLE_APE_FILE="mmojo-server-compatible-ape"
-# export PACKAGE_MMOJO_SERVER_PERFORMANT_APE_FILE="mmojo-server-performant-ape"
 export PACKAGE_MMOJO_SERVER_ZIP_FILE="mmojo-server.zip"
 export PACKAGE_MMOJO_SERVER_EXE_FILE="mmojo-server.exe"
-
-# Change this to "mmojo-server-args", update server-mmojo.cpp.
-# export PACKAGE_DEFAULT_ARGS_FILE="default-args"
 export PACKAGE_MMOJO_SERVER_ARGS_FILE="mmojo-server-args"
 export PACKAGE_MMOJO_SERVER_SUPPORT_DIR="mmojo-server-support"
 
-echo "Setting Doghouse paths."
+echo "Setting Doghouse paths and filenames."
 export DOGHOUSE_FILES="$MMOJO_SERVER_DIR/files/doghouse"
 export DOGHOUSE_SCRIPTS="$MMOJO_SERVER_DIR/scripts/doghouse"
-
 export DOGHOUSE_BUILD_DIR="$HOME/500-BUILD-doghouse"
 export DOGHOUSE_PACKAGE_DIR="$HOME/600-PACKAGE-doghouse"
 
 export PACKAGE_DOGHOUSE_FILE="doghouse"
 export PACKAGE_DOGHOUSE_APE_FILE="doghouse-ape"
-export PACKAGE_DOGHOUSE_COMPATIBLE_APE_FILE="doghouse-compatible-ape"
-export PACKAGE_DOGHOUSE_PERFORMANT_APE_FILE="doghouse-performant-ape"
-export PACKAGE_DOGHOUSE_COMPATIBLE_NAKED_APE_FILE="doghouse-compatible-naked-ape"
-export PACKAGE_DOGHOUSE_PERFORMANT_NAKED_APE_FILE="doghouse-performant-naked-ape"
 export PACKAGE_DOGHOUSE_ZIP_FILE="doghouse.zip"
 export PACKAGE_DOGHOUSE_EXE_FILE="doghouse.exe"
 export PACKAGE_DOGHOUSE_ARGS_FILE="doghouse-args"
 export PACKAGE_DOGHOUSE_SUPPORT_DIR="doghouse-support"
 
-echo "Setting llama-server paths."
-export LLAMA_SERVER_BUILD_DIR
+echo "Setting llama-server paths and filenames."
 export LLAMA_SERVER_FILES="$MMOJO_SERVER_DIR/files/llama-server"
 export LLAMA_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts/llama-server"
-
 export LLAMA_SERVER_BUILD_DIR="$HOME/500-BUILD-llama-server"
 export LLAMA_SERVER_PACKAGE_DIR="$HOME/600-PACKAGE-llama-server"
 
 export PACKAGE_LLAMA_SERVER_FILE="llama-server"
 export PACKAGE_LLAMA_SERVER_APE_FILE="llama-server-ape"
-export PACKAGE_LLAMA_SERVER_COMPATIBLE_APE_FILE="llama-server-compatible-ape"
-export PACKAGE_LLAMA_SERVER_PERFORMANT_APE_FILE="llama-server-performant-ape"
-export PACKAGE_LLAMA_SERVER_COMPATIBLE_NAKED_APE_FILE="llama-server-compatible-naked-ape"
-export PACKAGE_LLAMA_SERVER_PERFORMANT_NAKED_APE_FILE="llama-server-performant-naked-ape"
 export PACKAGE_LLAMA_SERVER_ZIP_FILE="llama-server.zip"
 export PACKAGE_LLAMA_SERVER_EXE_FILE="llama-server.exe"
 export PACKAGE_LLAMA_SERVER_ARGS_FILE="llama-server-args"

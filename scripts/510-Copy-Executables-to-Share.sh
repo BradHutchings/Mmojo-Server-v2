@@ -32,60 +32,68 @@ if [ "$variation" != "compatible" ] && [ "$variation" != "performant" ] && [ "$v
     variation="native"
 fi
 
-if [ "$branding" != "doghouse" ]; then
+if [ "$branding" != "doghouse" ] && [ "$branding" != "llama-server" ]; then
     branding=""
 fi
 
 THIS_BUILD_DIR=$BUILD_DIR
+EXECUTABLE_FILE=$PACKAGE_MMOJO_SERVER_FILE
 if [ "$branding" == "doghouse" ]; then
     THIS_BUILD_DIR=$DOGHOUSE_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_DOGHOUSE_FILE
+elif [ "$branding" == "llama-server" ]; then
+    THIS_BUILD_DIR=$LLAMA_SERVER_BUILD_DIR
+    EXECUTABLE_FILE=$PACKAGE_LLAMA_SERVER_FILE
 fi
 
 BUILD_SUBDIRECTORY=""
 VERBOSE="OFF"
 
 if [ $processor == "x86_64" ]; then
-    BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_X86_64"
+    BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_COMPATIBLE_X86_64"
     if [ $variation == "performant" ]; then
-        BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_X86_64"
+        BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_PERFORMANT_X86_64"
     elif [ $variation == "native" ]; then
-        BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_X86_64"
+        BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_NATIVE_X86_64"
     fi
 fi
 if [ $processor == "aarch64" ]; then
-    BUILD_SUBDIRECTORY="$BUILD_CPU_COMPATIBLE_AARCH64"
+    BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_COMPATIBLE_AARCH64"
     if [ $variation == "performant" ]; then
-        BUILD_SUBDIRECTORY="$BUILD_CPU_PERFORMANT_AARCH64"
+        BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_PERFORMANT_AARCH64"
     elif [ $variation == "native" ]; then
-        BUILD_SUBDIRECTORY="$BUILD_CPU_NATIVE_AARCH64"
+        BUILD_SUBDIRECTORY="$BUILD_EXECUTABLE_NATIVE_AARCH64"
     fi
 fi
 
 BUILD_SUBDIRECTORY+="$gpus"
 
-echo "   Processor: $processor"
-echo "   Variation: $variation"
-echo "        GPUs: $gpus"
-echo "    Branding: $branding"
-echo "subdirectory: $BUILD_SUBDIRECTORY"
-echo " building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "      Processor: $processor"
+echo "      Variation: $variation"
+echo "           GPUs: $gpus"
+echo "       Branding: $branding"
+echo "   subdirectory: $BUILD_SUBDIRECTORY"
+echo "    building in: $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY"
+echo "     copying to: $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
+echo "executable file: $EXECUTABLE_FILE"
 echo ""
 
 if [ -d "$THIS_BUILD_DIR" ] && [ "$BUILD_SUBDIRECTORY" != "" ]; then
-    # THIS NEEDS TO FIND RIGHT DIRECTORY ON MMOJO SHARE
-    mm-mount-mmojo-share.sh
+    if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+        mm-mount-mmojo-share.sh
+    fi
 
     if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
         echo "Creating directories on Mmojo Share."
-        sudo mkdir -p $MMOJO_SHARE_BUILDS
-        sudo mkdir -p $MMOJO_SHARE_BUILDS_CPU_NATIVE
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS"
+        sudo mkdir -p "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY"
 
         # TO-DO: What CPU options/level?
         ARCH=$(uname -m)
 
-        if [ -d "$MMOJO_SHARE_BUILDS_CPU_NATIVE" ]; then
+        if [ -d "$MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY" ]; then
             echo "Copying mmojo-server-cpu-$ARCH to Mmojo Share."
-            sudo cp -f $BUILD_DIR/$BUILD_CPU_NATIVE/bin/mmojo-server $MMOJO_SHARE_BUILDS_CPU_NATIVE/mmojo-server-cpu-native-$ARCH
+            sudo cp -f $BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE $MMOJO_SHARE_BUILDS/$BUILD_SUBDIRECTORY
         fi
     fi
 fi
