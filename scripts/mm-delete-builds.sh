@@ -14,7 +14,7 @@ cd $HOME
 echo "Deleting $BUILD_DIR and $DOGHOUSE_BUILD_DIR."
 rm -r -f $BUILD_DIR
 rm -r -f $DOGHOUSE_BUILD_DIR
-rm -r -f $LLANMA_SERVER_BUILD_DIR
+rm -r -f $LLAMA_SERVER_BUILD_DIR
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
