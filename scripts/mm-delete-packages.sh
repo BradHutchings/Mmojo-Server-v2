@@ -14,6 +14,7 @@ cd $HOME
 echo "Deleting $PACKAGE_DIR and $DOGHOUSE_PACKAGE_DIR."
 rm -r -f $PACKAGE_DIR
 rm -r -f $DOGHOUSE_PACKAGE_DIR
+rm -r -f $LLAMA_SERVER_PACKAGE_DIR
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
