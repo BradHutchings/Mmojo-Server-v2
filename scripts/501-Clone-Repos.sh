@@ -58,13 +58,13 @@ git clone https://github.com/nlohmann/json.git nlohmann-json
 cp -r $BUILD_COSMOPOLITAN_DIR/cosmocc .
 cp -r $BUILD_OPENSSSL_DIR/openssl .
 
-# cpp-httplib fixed whatever problem they introduced. -Brad 2025-12-16
-# cd cpp-httplib
+# cpp-httplib has still not fixed whatever problem they introduced. -Brad 2025-12-16
+cd cpp-httplib
 # git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7 # worked!
 # git checkout dbd5ca4bf2da438da1c6dcd0ba7c725f7f2cc7b7 $ failed
-# git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
+git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
 
-# cd ..
+cd ..
 # Roll the llama.cpp repo back to last known working.
 # Up through: https://github.com/ggml-org/llama.cpp/commit/9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d
 # 9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d 
