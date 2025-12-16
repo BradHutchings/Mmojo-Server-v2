@@ -64,7 +64,7 @@ cp -r $BUILD_OPENSSSL_DIR/openssl .
 # git checkout dbd5ca4bf2da438da1c6dcd0ba7c725f7f2cc7b7 $ failed
 # git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
 
-cd ..
+# cd ..
 # Roll the llama.cpp repo back to last known working.
 # Up through: https://github.com/ggml-org/llama.cpp/commit/9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d
 # 9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d 
