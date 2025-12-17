@@ -28,7 +28,7 @@ sudo apt install -y \
     zip zlib1g-dev cifs-utils mkcert git-lfs
 
 echo ""
-echo "Installing python packages."
+echo "Installing python packages to support convert_hf_to_gguf.py."
 pip3 install transformers torch sentencepiece gguf unsloth-zoo unsloth --break-system-packages
 
 echo ""
