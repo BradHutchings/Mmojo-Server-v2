@@ -19,7 +19,7 @@ url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/conv
 filename="convert_hf_to_gguf.py"
 
 echo "Downloading $filename."
-wget $url -o "$LOCAL_MODELS_DIR/$filename"
+wget $url -O "$LOCAL_MODELS_DIR/$filename"
 
 cd $HOME
 
