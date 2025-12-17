@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script clones these repos to set up a $CONVERT_MODELS_DIR:
+# This script clones these repos to set up a $LOCAL_MODELS_DIR:
 # - llama.cpp
 #   - https://github.com/ggml-org/llama.cpp
 #
@@ -14,20 +14,11 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-echo "RENAME THIS SCRIPT!!"
-
 mkdir -p $LOCAL_MODELS_DIR
 cd $LOCAL_MODELS_DIR
 
 echo "Cloning llama.cpp locally for gguf python stack."
 git clone https://github.com/ggml-org/llama.cpp $LOCAL_MODELS_DIR/llama.cpp
-
-
-# url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py"
-# filename="convert_hf_to_gguf.py"
-
-# echo "Downloading $filename."
-# wget $url -O "$LOCAL_MODELS_DIR/$filename"
 
 cd $HOME
 
