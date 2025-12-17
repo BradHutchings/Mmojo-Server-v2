@@ -29,7 +29,7 @@ sudo apt install -y \
 
 echo ""
 echo "Installing python packages."
-pip3 install transformers torch sentencepiece gguf --break-system-packages
+pip3 install transformers torch sentencepiece gguf unsloth-zoo unsloth --break-system-packages
 
 echo ""
 echo "Reinstalling nodejs and npm because recompiling the current llama.cpp webui doesn't like what we have."
