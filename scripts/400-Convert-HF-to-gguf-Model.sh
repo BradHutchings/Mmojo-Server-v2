@@ -38,7 +38,7 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
 
     echo ""
     echo "Converting to $model_name-$model_type.gguf."
-    python3 $LOCAL_MODELS_DIR/convert_hf_to_gguf.py $GGUF_DIR \
+    python3 $LOCAL_MODELS_DIR/llama.cpp/convert_hf_to_gguf.py $GGUF_DIR \
         --outfile $GGUF_DIR/$GGUF_FILE \
         --outtype $model_type
 
