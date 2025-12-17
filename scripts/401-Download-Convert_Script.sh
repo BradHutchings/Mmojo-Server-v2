@@ -14,12 +14,12 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-mkdir -p $CONVERT_MODELS_DIR
+mkdir -p $LOCAL_MODELS_DIR
 url="https://raw.githubusercontent.com/ggml-org/llama.cpp/refs/heads/master/convert_hf_to_gguf.py"
 filename="convert_hf_to_gguf.py"
 
 echo "Downloading $filename."
-wget $url -o "$CONVERT_MODELS_DIR/$filename"
+wget $url -o "$LOCAL_MODELS_DIR/$filename"
 
 cd $HOME
 
