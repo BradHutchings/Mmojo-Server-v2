@@ -74,7 +74,7 @@ vulkaninfo --summary
 
 ---
 ### Next Section
-- **Next Section:** [400. Convert Models](400-Convert-Models.md)
+- **Next Section:** [400. Gather Models](400-Gather-Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>
