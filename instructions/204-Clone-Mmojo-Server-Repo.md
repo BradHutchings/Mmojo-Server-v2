@@ -11,7 +11,6 @@ As we work, we will update our local copy of the repo at the start of each secti
 
 Clone the Mmojo Server repo:
 ```
-printf "\n**********\n*\n* START: mm-clone-mmojo-server-repo.sh.\n*\n**********\n\n"
 export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 cd $HOME
@@ -34,8 +33,6 @@ mm-env
 EOF1
 source $HOME/.bashrc
 fi
-
-printf "\n**********\n*\n* FINISHED: mm-clone-mmojo-server-repo.sh.\n*\n**********\n\n"
 ```
 
 ---
