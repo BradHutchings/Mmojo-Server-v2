@@ -1,6 +1,17 @@
-printf "\n$STARS\n*\n* STARTED: mm-clone-mmojo-server-repo.sh.\n*\n$STARS\n\n"
-export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
-export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
+#!/bin/bash
+
+################################################################################
+# This script backs up the models in the 400-MODELS directory to Mmojo Share.
+# It only backs up models that are not on the share.
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+
+# export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
+# export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 cd $HOME
 if [ "$MMOJO_SERVER_DIR" ]; then
   rm -r -f $MMOJO_SERVER_DIR
@@ -22,4 +33,16 @@ EOF1
 source $HOME/.bashrc
 fi
 
-printf "\n$STARS\n*\n* FINISHED: mm-clone-mmojo-server-repo.sh.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################
