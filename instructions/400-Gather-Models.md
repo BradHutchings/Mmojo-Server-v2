@@ -1,6 +1,6 @@
-## 400. Build gguf Models
+## 400. Gather Models
 ### About this Section
-Let's use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server.
+Let's gather pre-built models from the Mmojo Share and use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server.
 
 If you have already prepared your build environment, skip ahead to: 
 - [500. Build Mmojo Server](500-Build-Mmojo-Server.md)
