@@ -29,7 +29,8 @@ sudo apt install -y \
 
 echo ""
 echo "Installing python packages to support convert_hf_to_gguf.py."
-pip3 install transformers torch sentencepiece gguf unsloth-zoo unsloth --break-system-packages
+pip3 install transformers torch sentencepiece gguf --break-system-packages
+# ?? unsloth-zoo unsloth
 
 echo ""
 echo "Reinstalling nodejs and npm because recompiling the current llama.cpp webui doesn't like what we have."
