@@ -56,8 +56,6 @@ export MOUNT_MMOJO_SHARE_SCRIPT="mm-mount-mmojo-share.sh"
 
 # Prefix is 300- so we can wipe them out quickly, and changing script numbers doesn't mess stuff up.
 echo "Setting Build Pieces paths."
-export MODELS_DIR="$HOME/300-MODELS"
-export MODEL_MAP="$MODELS_DIR/model-map.txt"
 export CERTIFICATES_DIR="$HOME/300-CERTIFICATES"
 export BUILD_COSMOPOLITAN_DIR="$HOME/300-BUILD-cosmopolitan"
 export COSMOCC_DIR="$BUILD_COSMOPOLITAN_DIR/cosmocc"
@@ -74,8 +72,20 @@ if [ -e "$VULKAN_SETUP_ENV" ]; then
   source $VULKAN_SETUP_ENV
 fi
 
+# THESE WILL GET FOLDED INTO $LOCAL_MODELS_DIR
+export MODELS_DIR="$HOME/300-MODELS"
+export MODEL_MAP="$MODELS_DIR/model-map.txt"
+
+# THIS WILL GET FOLDED INTO $LOCAL_MODELS_DIR
 echo "Setting Convert Models paths."
 export CONVERT_MODELS_DIR="$HOME/400-CONVERT-MODELS"
+
+echo "Setting Local and Share Models paths."
+export LOCAL_MODELS_DIR="$HOME/400-MODELS"
+export LOCAL_MODEL_MAP="$LOCAL_MODELS_DIR/model-map.txt"
+
+export MMOJO_SHARE_MODELS_DIR="$MMOJO_SHARE_MOUNT_POINT/models"
+export MMOJO_SHARE_MODEL_MAP="$MMOJO_SHARE_MODELS_DIR/model-map.txt"
 
 echo "Setting Build paths."
 export BUILD_DIR="$HOME/500-BUILD-mmojo-server"
