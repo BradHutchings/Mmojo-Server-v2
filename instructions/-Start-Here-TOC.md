@@ -46,8 +46,8 @@ Prepare things needed to build Mmojo Server executables. **You only need to do t
 - [307. Build Vulkan SDK](307-Build-Vulkan-SDK.md) - Build Vulkan SDK for platform optimized builds.
 
 ---
-### [400. Convert Models](400-Convert-Models.md)
-Use llama.cpp to convert models from Hugging Face repositories into `.gguf` files that Mmojo Server can use.
+### [400. Gather Models](400-Gather-Models.md)
+Gather pre-built models from the Mmojo Share and use llama.cpp and Hugging Face to build some .gguf models we can use with Mmojo Server.
 - [401. Prepare to Connvert](401-Prepare-to-Convert.md) - Clone the llama.cpp GitHub repo, and leave it uncustomized so we can convert with it.
 - [402. Google Gemma](402-Google-Gemma.md) - Clone Google's Gemma Repos on Hugging Face, convert to `.gguf` models.
 - [403. Meta Llama](403-Meta-Llama.md) - Clone Meta's Llama Repos on Hugging Face, convert to `.gguf` models.
