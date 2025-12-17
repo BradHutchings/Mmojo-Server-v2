@@ -1,4 +1,4 @@
-printf "\n**********\n*\n* START: mm-clone-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* STARTED: mm-clone-mmojo-server-repo.sh.\n*\n$STARS\n\n"
 export MMOJO_SERVER_DIR="$HOME/200-mmojo-server"
 export MMOJO_SERVER_SCRIPTS="$MMOJO_SERVER_DIR/scripts"
 cd $HOME
@@ -22,4 +22,4 @@ EOF1
 source $HOME/.bashrc
 fi
 
-printf "\n**********\n*\n* FINISHED: mm-clone-mmojo-server-repo.sh.\n*\n**********\n\n"
+printf "\n$STARS\n*\n* FINISHED: mm-clone-mmojo-server-repo.sh.\n*\n$STARS\n\n"
