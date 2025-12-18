@@ -1,4 +1,4 @@
-## 402. Meta Llama
+## 404. Meta Llama
 ### About this Section
 Let's download and convert Meta's Llama models from Hugging Face.
 
@@ -95,6 +95,6 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 
 ---
 ### Proceed
-- **Next:** [404. Mistral AI Ministral](404-Mistral-AI-Ministral.md)
-- **Previous:** [402. Google Gemma](402-Google-Gemma.md)
+- **Next:** [405. Mistral AI Ministral](405-Mistral-AI-Ministral.md)
+- **Previous:** [403. Google Gemma](403-Google-Gemma.md)
 - **Up:** [400. Convert Models](400-Convert-Models.md)
