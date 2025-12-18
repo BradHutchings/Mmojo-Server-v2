@@ -21,7 +21,7 @@ This isn't so much a step, as it is a reference to the scripts that were copied 
     ```
     . mm-choose-gpus.sh
     ```
-- `mm-choose-model.sh` &mdash; User chooses a model from the `$HOME/$MODELS_DIR` directory for use by a test or package script.
+- `mm-choose-model.sh` &mdash; User chooses a model from the `$HOME/$LOCAL_MODELS_DIR` directory for use by a test or package script.
   - Sets shell variables `$CHOSEN_MODEL` and `$CHOSEN_MODEL_MNEMONIC`.
   - Call with a `. ` preceeding because you need to set variables in the shell instance you are running.
     ```
