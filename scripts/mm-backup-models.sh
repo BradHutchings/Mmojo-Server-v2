@@ -10,9 +10,9 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-echo "THIS IS A WORK IN PROGRESS. NOT FULL IMPLEMENTED YET. -Brad"
-
 cd $HOME
+
+backed_up_one=0
 
 # mount the mmojo share
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
@@ -39,6 +39,7 @@ BackupModel() {
 sudo cat << EOF >> $MMOJO_SHARE_MODEL_MAP
 $MODEL_FILE $MODEL_MNEMONIC
 EOF
+        backed_up_one=1
     fi
 }
 
@@ -62,6 +63,11 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ] &
         # echo "mnemonic: ${mnemonics["$key"]}"
         BackupModel $key ${mnemonics["$key"]}
     done
+fi
+
+if [ ! $backed_up_one ]; then
+    echo ""
+    echo "There are no new models to back up."
 fi
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
