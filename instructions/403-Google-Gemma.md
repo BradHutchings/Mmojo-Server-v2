@@ -112,7 +112,7 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 ### Proceed
 - **Next:** [404. Meta Llama](404-Meta-Llama.md)
 - **Previous:** [402. Prepare to Convert](402-Prepare-to-Convert.md)
-- **Up:** [400. Convert Models](400-Convert-Models.md)
+- **Up:** [400. Gather Models](400-Gather-Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>
