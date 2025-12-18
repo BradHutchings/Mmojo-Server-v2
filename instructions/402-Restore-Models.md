@@ -5,13 +5,9 @@
 ### About this Step
 In this step, you will copy `,gguf` models previously backed up to your Mmojo Share to this build environment.
 
-from ou some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
-
 If you would like to convert some Hugging Face models, please proceed to [410. Convert Models](402-Convert-Models.md).
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
-
-**Shortcut:** [Scroll down](#shortcut-download-models).
 
 ---
 <details>
@@ -21,6 +17,27 @@ Have you updated your local clone of the Mmojo Server Repo today? If not, run th
 ```
 mm-update-local-mmojo-server-repo.sh
 mm-env
+```
+</details>
+
+---
+### Restore Models
+This script mounts your Mmojo Share, looks for the `/models` subdirectory, and looks the `/models/restore-model-map.txt` file. If that file does not exist, it copies the `/models/model-map.txt` file and comments out models after the first two. You can edit that file to pick which models get restored.
+- View the script: <a href="../scripts/mm-restore-models.sh" target="_blank">mm-restore-models.sh</a>.
+  - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
+    <br/>
+    <br/>
+- Run the script. We run with `.` so variables can be defined and exported.
+  ```
+  mm-restore-models.sh
+  ```
+
+<details>
+  <summary><b>Edit the `restore-model-map.txt` File</b></summary>
+  
+You can edit the `restore-model-map.txt` file with this command:
+```
+nano $MMOJO_SHARE_RESTORE_MODEL_MAP
 ```
 </details>
 
