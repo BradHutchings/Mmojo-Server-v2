@@ -38,7 +38,7 @@ This script uses cmake CMake to build llama-server with `cosmocc` for x86_64. No
 <details>
   <summary><b>Optional: Test the x86_64 Build.</b></summary>
 
-If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64, you can test this build. Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../../scripts/520-Test-Cosmo-Build.sh" target="_blank">520-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
@@ -73,7 +73,7 @@ This script uses cmake CMake to build llama-server with `cosmocc` for x86_64. No
 <details>
   <summary><b>Optional: Test the aarch64 Build.</b></summary>
 
-If your build environment is aarch64, you can test this build. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is aarch64, you can test this build. Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../../scripts/520-Test-Cosmo-Build.sh" target="_blank">520-Test-Cosmo-Build.sh</a>.
 - Run the script.
   ```
@@ -103,7 +103,7 @@ Now that we have x86_64 and aarch64 (ARM64) builds, we can assemble them into an
   ```
 
 #### Test the Assembled APE
-If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$MODELS_DIR` directory.
+If your build environment is x86_64 or aarch64, you can test the assembled APE. Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../../scripts/520-Test-Cosmo-APE.sh" target="_blank">520-Test-Cosmo-APE.sh</a>.
 - Run the script:
   ```
