@@ -30,15 +30,15 @@ fi
 
 BackupModel() {
     MODEL_FILE=$1
-    if [ ! -f $MODEL_FILE ]; then 
-        echo "Copying $MODEL_FILE."
-        # cp -v /mnt/mmojo/models/$MODEL_FILE .
-        # rsync -ah --progress /mnt/mmojo/models/$MODEL_FILE .
-        # chmod a-x $MODEL_FILE
+    MODEL_MNEMONIC=$2
+    if [ ! -f "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE" ]; then 
+        echo "Backing up $MODEL_FILE ($MODEL_MNEMONIC) to $MMOJO_SHARE_MODELS_DIR."
+        rsync -ah --progress "$LOCAL_MODELS_DIR/$MODEL_FILE" "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
+        chmod a-x "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
     fi
 }
 
-if [ -f $LOCAL_MODEL_MAP ]; then
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ] && [ -f $LOCAL_MODEL_MAP ]; then
     # iterate over the local LOCAL_MODEL_MAP
         # if a model in the LOCAL_MODEL_MAP isn't in the MMOJO_SHARE_MODEL_MAP, copy the model, copy to the share and 
         # add to the share MODEL_MAP.
@@ -52,8 +52,8 @@ if [ -f $LOCAL_MODEL_MAP ]; then
         fi
     done < "$LOCAL_MODEL_MAP"
 
-    for key in "${!apefiles[@]}"; do
-        BackupModel $key 
+    for key in "${!mnemonics[@]}"; do
+        BackupModel $key mnemonics["${key}"]
     done
 fi
 
