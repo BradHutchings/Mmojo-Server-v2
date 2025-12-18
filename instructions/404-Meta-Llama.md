@@ -97,4 +97,4 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 ### Proceed
 - **Next:** [405. Mistral AI Ministral](405-Mistral-AI-Ministral.md)
 - **Previous:** [403. Google Gemma](403-Google-Gemma.md)
-- **Up:** [400. Convert Models](400-Convert-Models.md)
+- **Up:** [400. Gather Models](400-Gather-Models.md)
