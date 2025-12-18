@@ -121,7 +121,7 @@ This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo 
 
 ---
 ### Proceed
-- **Next:** [410. Convert Models](410-Convert-Models.md)
+- **Next:** [402. Restore Models](402-Restore-Models.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [400. Gather Models](400-Gather-Models.md)
 
