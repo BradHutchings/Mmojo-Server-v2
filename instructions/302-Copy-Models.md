@@ -1,4 +1,7 @@
 ## 302. Copy Models
+
+**THIS IS GOING TO MOVE TO THE 400 SECTION AND USE THE `$LOCAL_MODELS_DIR` DIRECTORY.**
+
 ### About this Step
 In this step, we will copy models from the Mmojo Share. If you don't have and models to copy, you can build some from Hugging Face repos in a few steps.
 
