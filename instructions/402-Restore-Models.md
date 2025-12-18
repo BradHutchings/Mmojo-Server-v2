@@ -3,7 +3,7 @@
 **THIS STEP IS NOT IMPLEMENTED YET. -BRAD**
 
 ### About this Step
-In this step, you will copy `,gguf` models previously backed up to your Mmojo Share to this build environment.
+In this step, you will copy `.gguf` models previously backed up to your Mmojo Share to this build environment.
 
 If you would like to convert some Hugging Face models, please proceed to [410. Convert Models](402-Convert-Models.md).
 
