@@ -63,6 +63,17 @@ This script downloads the models from Hugging Face:
   $MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
   ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### SHORTCUT: Download Models
 I really think you should run through these scripts one at a time the first few times you build, so you can familiarize yourself with the process and know what goes where. But, now that you've run through a few times, you can use the shortcut snippet to download two models I offer on Hugging Face.
@@ -73,6 +84,17 @@ I really think you should run through these scripts one at a time the first few 
 $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Download Tested Models
@@ -85,6 +107,17 @@ $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
 $MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Proceed
