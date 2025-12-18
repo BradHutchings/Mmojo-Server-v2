@@ -36,6 +36,9 @@ BackupModel() {
         echo "Backing up $MODEL_FILE ($MODEL_MNEMONIC) to $MMOJO_SHARE_MODELS_DIR."
         sudo rsync -ah --progress "$LOCAL_MODELS_DIR/$MODEL_FILE" "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
         sudo chmod a-x "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
+sudo cat << EOF >> $MMOJO_SHARE_MODEL_MAP
+$MODEL_FILE $MODEL_MNEMONIC
+EOF
     fi
 }
 
@@ -54,10 +57,10 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ] &
     done < "$LOCAL_MODEL_MAP"
 
     for key in "${!mnemonics[@]}"; do
-        echo ""
-        echo "key: $key"
-        echo "mnemonic:  ${mnemonics["$key"]}"
-        # BackupModel $key $mnemonics["$key"]
+        # echo ""
+        # echo "key: $key"
+        # echo "mnemonic: ${mnemonics["$key"]}"
+        BackupModel $key ${mnemonics["$key"]}
     done
 fi
 
