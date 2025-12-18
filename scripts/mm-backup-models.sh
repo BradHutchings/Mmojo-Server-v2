@@ -32,6 +32,7 @@ BackupModel() {
     MODEL_FILE=$1
     MODEL_MNEMONIC=$2
     if [ ! -f "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE" ]; then 
+        echo ""
         echo "Backing up $MODEL_FILE ($MODEL_MNEMONIC) to $MMOJO_SHARE_MODELS_DIR."
         sudo rsync -ah --progress "$LOCAL_MODELS_DIR/$MODEL_FILE" "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
         sudo chmod a-x "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE"
