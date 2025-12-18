@@ -33,6 +33,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Meta's Llama Maverick 17B Instruct v4
 **Hugging Face Repo:** https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
@@ -47,6 +58,17 @@ MODEL_REPO="https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Meta's Llama 1B Instruct v3.2
@@ -63,6 +85,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Meta's Llama 3B Instruct v3.2
 **Hugging Face Repo:** https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct
@@ -78,6 +111,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Meta's Llama 11B Vision Instruct v3.2
 **Hugging Face Repo:** https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct
@@ -92,6 +136,17 @@ MODEL_REPO="https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Proceed
