@@ -1,0 +1,72 @@
+#!/bin/bash
+
+################################################################################
+# This script backs up the models in the 400-MODELS directory to Mmojo Share.
+# It only backs up models that are not on the share.
+#
+# See licensing note at end.
+################################################################################
+
+SCRIPT_NAME=$(basename -- "$0")
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+
+echo "THIS IS A WORK IN PROGRESS. NOT FULL IMPLEMENTED YET. -Brad"
+
+cd $HOME
+
+# mount the mmojo share
+if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+    mm-mount-mmojo-share.sh
+fi
+
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+    mkdir -p $MMOJO_SHARE_MODELS_DIR
+fi
+
+# Create $LOCAL_MODELS_DIR is needed.
+if [ ! -d $LOCAL_MODELS_DIR ]; then
+    mkdir -p $LOCAL_MODELS_DIR
+fi
+
+BackupModel() {
+    MODEL_FILE=$1
+    if [ ! -f $MODEL_FILE ]; then 
+        echo "Copying $MODEL_FILE."
+        # cp -v /mnt/mmojo/models/$MODEL_FILE .
+        # rsync -ah --progress /mnt/mmojo/models/$MODEL_FILE .
+        # chmod a-x $MODEL_FILE
+    fi
+}
+
+if [ -f $LOCAL_MODEL_MAP ]; then
+    # iterate over the local LOCAL_MODEL_MAP
+        # if a model in the LOCAL_MODEL_MAP isn't in the MMOJO_SHARE_MODEL_MAP, copy the model, copy to the share and 
+        # add to the share MODEL_MAP.
+
+    unset mnemonics
+    declare -A mnemonics
+
+    while IFS=$' ' read -r gguf mnemonic ; do
+        if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
+            mnemonics["${gguf}"]="${mnemonic}"
+        fi
+    done < "$LOCAL_MODEL_MAP"
+
+    for key in "${!apefiles[@]}"; do
+        BackupModel $key 
+    done
+fi
+
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+
+################################################################################
+#  This is an original script for the Mmojo Server repo. It is covered by
+#  the repo's MIT-style LICENSE:
+#
+#  https://github.com/BradHutchings/Mmojo-Server/blob/main/LICENSE
+#
+#  Copyright (c) 2025 Brad Hutchings.
+#  --
+#  Brad Hutchings
+#  brad@bradhutchings.com
+################################################################################

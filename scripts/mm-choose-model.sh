@@ -17,7 +17,7 @@ echo ""
 echo "These models are available to package:"
 PS3="Please choose a model:"
 
-cd $MODELS_DIR
+cd $LOCAL_MODELS_DIR
 select filename in *.gguf; do
   case $filename in
     "")

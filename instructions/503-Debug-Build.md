@@ -32,7 +32,7 @@ This script uses cmake to build Mmojo Server:
 
 ---
 ### Test the Build - Command-Line Arguments
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
@@ -42,7 +42,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-args File.</b></summary>
 
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
@@ -53,7 +53,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 <details>
   <summary><b>Optional: Test the Build &mdash; mmojo-server-support Directory.</b></summary>
 
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
@@ -64,7 +64,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 <details>
   <summary><b>Optional: Test the Build &mdash; find .gguf model in executable directory.</b></summary>
 
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
@@ -75,7 +75,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 <details>
   <summary><b>Optional: Test the Build &mdash; find .gguf model in working directory.</b></summary>
 
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```
@@ -86,7 +86,7 @@ Requires previously downloaded model to the `$MODELS_DIR` directory.
 <details>
   <summary><b>Optional: Test the Build &mdash; find .gguf model in support directory.</b></summary>
 
-Requires previously downloaded model to the `$MODELS_DIR` directory.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory.
 - View the script: <a href="../scripts/503-Test-Debug.sh" target="_blank">503-Test-Debug.sh</a>.
 - Run the script.
   ```

@@ -28,8 +28,9 @@ sudo apt install -y \
     zip zlib1g-dev cifs-utils mkcert git-lfs
 
 echo ""
-echo "Installing python packages."
+echo "Installing python packages to support convert_hf_to_gguf.py."
 pip3 install transformers torch sentencepiece --break-system-packages
+# ?? unsloth-zoo unsloth gguf
 
 echo ""
 echo "Reinstalling nodejs and npm because recompiling the current llama.cpp webui doesn't like what we have."

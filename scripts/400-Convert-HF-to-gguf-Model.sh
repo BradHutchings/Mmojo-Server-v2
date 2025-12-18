@@ -18,7 +18,7 @@ model_mnemonic=$3
 model_repo=$4
 
 # $model_type doesn't go in the $GGUF_DIR so we can reuse the download to create different versions.
-GGUF_DIR="$CONVERT_MODELS_DIR/$model_name"
+GGUF_DIR="$LOCAL_MODELS_DIR/$model_name"
 GGUF_FILE="$model_name-$model_type.gguf"
 
 echo "    model_name: $model_name"
@@ -29,7 +29,7 @@ echo "      GGUF_DIR: $GGUF_DIR"
 echo "     GGUF_FILE: $GGUF_FILE"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
-    mkdir -p $CONVERT_MODELS_DIR
+    mkdir -p $LOCAL_MODELS_DIR
     if [ ! -d $GGUF_DIR ]; then
         echo ""
         echo "Cloning $model_repo."
@@ -38,19 +38,19 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
 
     echo ""
     echo "Converting to $model_name-$model_type.gguf."
-    python3 $BUILD_DIR/convert_hf_to_gguf.py $GGUF_DIR \
+    python3 $LOCAL_MODELS_DIR/llama.cpp/convert_hf_to_gguf.py $GGUF_DIR \
         --outfile $GGUF_DIR/$GGUF_FILE \
         --outtype $model_type
 
-    if [ -f $GGUF_DIR/$GGUF_FILE ] && [ -d "$MODELS_DIR" ]; then
+    if [ -f $GGUF_DIR/$GGUF_FILE ] && [ -d "$LOCAL_MODELS_DIR" ]; then
         echo ""
-        echo "Copying to $MODELS_DIR."
-        rsync -ah --progress $GGUF_DIR/$GGUF_FILE $MODELS_DIR
+        echo "Copying to $LOCAL_MODELS_DIR."
+        rsync -ah --progress $GGUF_DIR/$GGUF_FILE $LOCAL_MODELS_DIR
 
         echo ""
-        echo "Updating $MODEL_MAP."
-        if ! grep -q "$GGUF_FILE" "$MODEL_MAP"; then
-cat << EOF >> $MODEL_MAP
+        echo "Updating $LOCAL_MODEL_MAP."
+        if ! grep -q "$GGUF_FILE" "$LOCAL_MODEL_MAP"; then
+cat << EOF >> $LOCAL_MODEL_MAP
 $GGUF_FILE $model_mnemonic
 EOF
         fi        

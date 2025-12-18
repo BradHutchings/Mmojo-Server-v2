@@ -43,7 +43,7 @@ This script uses cmake to build Mmojo Server:
 
 ---
 ### Test Mmojo Server
-Requires previously downloaded model to the `$MODELS_DIR` directory. We test with command-line arguments.
+Requires previously downloaded model to the `$LOCAL_MODELS_DIR` directory. We test with command-line arguments.
 - View the script: <a href="../scripts/510-Test-Server.sh" target="_blank">510-Test-Server.sh</a>.
 - Run the script.
   ```

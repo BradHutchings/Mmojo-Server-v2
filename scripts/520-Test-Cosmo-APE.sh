@@ -76,7 +76,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
     if [[ -v CHOSEN_MODEL ]]; then
         echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
-        if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
+        if [ -f "$LOCAL_MODELS_DIR/$CHOSEN_MODEL" ]; then
             echo "Model found."
             MODEL_PARAM=$CHOSEN_MODEL
         fi
@@ -111,7 +111,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
         echo ""
         echo "Launching $EXECUTABLE_PATH."
         echo ""
-        $EXECUTABLE_PATH --model $MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
+        $EXECUTABLE_PATH --model $LOCAL_MODELS_DIR/$MODEL_PARAM $UI_PARAMS $THREADS_PARAM \
             --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
     
         printf "\nVerify that args file and support folder do not exist.\n"
@@ -120,7 +120,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
 
     elif [ "$gguf" == "find-executable-dir" ]; then
         # --mlock is not needed to run this.
-        cp "$MODELS_DIR/$MODEL_PARAM" "$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY" 
+        cp "$LOCAL_MODELS_DIR/$MODEL_PARAM" "$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY" 
         
         EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
         echo ""
@@ -136,7 +136,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
     elif [ "$gguf" == "find-working-dir" ]; then
         # --mlock is not needed to run this.
         mkdir -p $TEST_WORKING_DIR
-        cp $MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
+        cp $LOCAL_MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
 
         cd $TEST_WORKING_DIR
         EXECUTABLE_PATH="$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/$EXECUTABLE_FILE"
@@ -157,7 +157,7 @@ if [ -d $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY ]; then
         THIS_ZIP_FILE="$HAS_GGUF_EXECUTABLE_PATH.zip"
         cp "$EXECUTABLE_PATH" "$THIS_ZIP_FILE"
 
-        cd $MODELS_DIR
+        cd $LOCAL_MODELS_DIR
         zip -0 -r -q "$THIS_ZIP_FILE" "$MODEL_PARAM"
         mv "$THIS_ZIP_FILE" "$HAS_GGUF_EXECUTABLE_PATH"
         
