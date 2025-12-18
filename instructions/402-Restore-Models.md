@@ -1,6 +1,6 @@
 ## 402. Restore Models
 
-**THIS STEP IS NOT IMPLEMENTED YET. -BRAD**
+**SCRIPTS IN THIS STEP ARE NOT FULLY IMPLEMENTED YET. -BRAD**
 
 ### About this Step
 In this step, you will copy `.gguf` models previously backed up to your Mmojo Share to this build environment.
@@ -33,7 +33,7 @@ This script mounts your Mmojo Share, looks for the `/models` subdirectory, and l
   ```
 
 <details>
-  <summary><b>Edit the `restore-model-map.txt` File</b></summary>
+  <summary><b>Optional: Edit the Restore Model Map File</b></summary>
   
 You can edit the `restore-model-map.txt` file with this command:
 ```
