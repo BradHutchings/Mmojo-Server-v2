@@ -24,6 +24,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Mistral AI's Ministral 8B Reasoning v3-2512
 **Hugging Face Repo:** https://huggingface.co/mistralai/Ministral-3-8B-Reasoning-2512
@@ -39,6 +50,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Mistral AI's Ministral 14B Reasoning v3-2512
 **Hugging Face Repo:** https://huggingface.co/mistralai/Ministral-3-14B-Reasoning-2512
@@ -53,6 +75,17 @@ MODEL_REPO="https://huggingface.co/mistralai/Ministral-3-14B-Reasoning-2512"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Proceed
