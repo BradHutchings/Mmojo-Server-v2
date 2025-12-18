@@ -1,4 +1,7 @@
 ## 301. Download Models
+
+**THIS IS GOING TO MOVE TO THE 400 SECTION AND USE THE `$LOCAL_MODELS_DIR` DIRECTORY.**
+
 ### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
