@@ -58,4 +58,4 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 ### Proceed
 - **Next:** This is the last step in this section.
 - **Previous:** [404. Meta Llama](404-Meta-Llama.md)
-- **Up:** [400. Convert Models](400-Convert-Models.md)
+- **Up:** [400. Gather Models](400-Gather-Models.md)
