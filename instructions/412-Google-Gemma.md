@@ -1,4 +1,4 @@
-## 403. Google Gemma
+## 412. Google Gemma
 ### About this Section
 Let's download and convert Google's Gemma models from Hugging Face.
 
@@ -110,8 +110,8 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 
 ---
 ### Proceed
-- **Next:** [404. Meta Llama](404-Meta-Llama.md)
-- **Previous:** [402. Prepare to Convert](402-Prepare-to-Convert.md)
+- **Next:** [413. Meta Llama](413-Meta-Llama.md)
+- **Previous:** [411. Prepare to Convert](411-Prepare-to-Convert.md)
 - **Up:** [400. Gather Models](400-Gather-Models.md)
 
 ---
