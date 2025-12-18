@@ -57,10 +57,10 @@ nano $LOCAL_MODEL_MAP
 ---
 ### Download Models
 This script downloads the models from Hugging Face:
-- View the script: <a href="../scripts/301-Download-Models.sh" target="_blank">301-Download-Models.sh</a>.
+- View the script: <a href="../scripts/401-Download-Models.sh" target="_blank">401-Download-Models.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+  $MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
   ```
 
 ---
@@ -70,8 +70,8 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+$MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
 ```
 
 ---
@@ -81,14 +81,14 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Model-Map.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+$MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
+$MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
 ```
 
 ---
 ### Proceed
-- **Next:** [402. Prepare to Convert](402-Prepare-to-Convert.md)
+- **Next:** [410. Convert Models](410-Convert-Models.md)
 - **Previous:** This is the first step in this section.
 - **Up:** [400. Gather Models](400-Gather-Models.md)
 
