@@ -38,10 +38,10 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
 If you plan to create `mmojo-server-one` Actual Portable Executables (APEs) with embedded models, you should download some models that are tested to work with `mmojo-server`. We'll download a model map from Hugging Face.
 
 This script downloads the model map from Hugging Face:
-- View the script: <a href="../scripts/301-Download-Model-Map.sh" target="_blank">301-Download-Model-Map.sh</a>.
+- View the script: <a href="../scripts/401-Download-Model-Map.sh" target="_blank">401-Download-Model-Map.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Download-Model-Map.sh
+  $MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
   ```
 </details>
 
