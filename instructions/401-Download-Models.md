@@ -48,9 +48,9 @@ This script downloads the model map from Hugging Face:
 <details>
   <summary><b>Optional: Edit the Model Map.</b></summary>
 
-All these models will take a long time to download, so you can edit the model map and remove models you don't want.
+All these models will take a long time to download, so you can edit the model map and remove models you don't want to download now.
 ```
-nano $MODEL_MAP
+nano $LOCAL_MODEL_MAP
 ```
 </details>
 
