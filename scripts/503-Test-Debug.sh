@@ -61,7 +61,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
     MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
     if [[ -v CHOSEN_MODEL ]]; then
         echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
-        if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
+        if [ -f "$LOCAL_MODELS_DIR/$CHOSEN_MODEL" ]; then
             echo "Model found."
             MODEL_PARAM=$CHOSEN_MODEL
         fi
@@ -93,7 +93,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     if [ "$args" == "command-line" ]; then
         # --mlock is not needed to run this.
-        $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
+        $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $LOCAL_MODELS_DIR/$MODEL_PARAM \
             $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 
 
         echo ""
@@ -102,7 +102,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
         ls -ald $SUPPORT_DIR
 
     elif [ "$args" == "find-executable-dir" ]; then
-        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
+        cp $LOCAL_MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin
 
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
             $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
@@ -114,7 +114,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     elif [ "$args" == "find-working-dir" ]; then
         mkdir -p $TEST_WORKING_DIR
-        cp $MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
+        cp $LOCAL_MODELS_DIR/$MODEL_PARAM $TEST_WORKING_DIR
 
         cd $TEST_WORKING_DIR
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
@@ -128,7 +128,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
 
     elif [ "$args" == "find-support-dir" ]; then
         mkdir -p $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
-        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+        cp $LOCAL_MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
 
         $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE \
             $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768 --no-mmap
@@ -142,7 +142,7 @@ if [ "$BUILD_SUBDIRECTORY" != "" ]; then
         # Write out $ARGS_FILE
 cat << EOF > $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$ARGS_FILE
 --model
-$MODELS_DIR/$MODEL_PARAM
+$LOCAL_MODELS_DIR/$MODEL_PARAM
 --host
 0.0.0.0
 --port
@@ -169,7 +169,7 @@ EOF
 
     elif [ "$args" == "support-directory" ]; then
         mkdir -p $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
-        cp $MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
+        cp $LOCAL_MODELS_DIR/$MODEL_PARAM $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR
 
         # Write out $ARGS_FILE
 cat << EOF > $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$SUPPORT_DIR/$ARGS_FILE
