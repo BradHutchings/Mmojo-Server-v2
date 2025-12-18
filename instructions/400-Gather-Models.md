@@ -11,12 +11,15 @@ If you have already prepared your build environment, skip ahead to:
 ### Convert Models
 Here are the things you need to do:
 
-- [401. Prepare to Convert](401-Prepare-to-Convert.md) - Clone the llama.cpp GitHub repo, and leave it uncustomized so we can convert with it.
-- [402. Google Gemma](402-Google-Gemma.md) - Clone Google's Gemma Repos on Hugging Face, convert to `.gguf` models.
-- [403. Meta Llama](403-Meta-Llama.md) - Clone Meta's Llama Repos on Hugging Face, convert to `.gguf` models.
-- [404. Mistral AI Ministral](404-Mistral-AI-Ministral.md) - Clone Mistral AI's Ministral Repos on Hugging Face, convert to `.gguf` models.
+- [401. Download Models](401-Download-Models.md) - Download popular `.gguf` models from Hugging Face.
+- [402. Restore Models](402-Restore-Models.md) - Restore models previously backed up to your Mmojo Share.
+- [410. Convert Models](410-Convert-Models.md) - Convert Hugging Face models to `.gguf` models, the model format for llama.cpp.
+- [411. Prepare to Convert](411-Prepare-to-Convert.md) - Clone the llama.cpp GitHub repo, and leave it uncustomized so we can convert with it.
+- [412. Google Gemma](412-Google-Gemma.md) - Clone Google's Gemma Repos on Hugging Face, convert to `.gguf` models.
+- [413. Meta Llama](413-Meta-Llama.md) - Clone Meta's Llama Repos on Hugging Face, convert to `.gguf` models.
+- [414. Mistral AI Ministral](414-Mistral-AI-Ministral.md) - Clone Mistral AI's Ministral Repos on Hugging Face, convert to `.gguf` models.
 
-**Get Started:** [401. Prepare to Convert](401-Prepare-to-Convert.md)
+**Get Started:** [401. Download Models](401-Download-Models.md)
 
 
 
