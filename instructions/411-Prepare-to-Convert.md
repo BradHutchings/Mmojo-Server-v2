@@ -19,13 +19,13 @@ mm-env
 ---
 ### Clone llama.cpp
 This script clones the llama.cpp repo into `$LOCAL_MODELS_DIR` directory. We use a vanilla copy for converting Hugging Face models to `.gguf` files.
-- View the script: <a href="../scripts/401-Clone-llama-cpp.sh" target="_blank">401-Clone-llama-cpp.sh</a>.
+- View the script: <a href="../scripts/410-Clone-llama-cpp.sh" target="_blank">410-Clone-llama-cpp.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Clone-llama-cpp.sh
+  $MMOJO_SERVER_SCRIPTS/410-Clone-llama-cpp.sh
   ```
 
 ---
