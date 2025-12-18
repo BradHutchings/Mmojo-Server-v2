@@ -33,6 +33,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Google's Gemma E4B Instruct v3n
 **Hugging Face Repo:** https://huggingface.co/google/gemma-3n-E4B-it
@@ -47,6 +58,17 @@ MODEL_REPO="https://huggingface.co/google/gemma-3n-E4B-it.git"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Google's Gemma 270M Instruct v3
@@ -63,6 +85,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Google's Gemma 1B Instruct v3
 **Hugging Face Repo:** https://huggingface.co/google/gemma-3-1b-it
@@ -77,6 +110,17 @@ MODEL_REPO="https://huggingface.co/google/gemma-3-1b-it"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Google's Gemma 4B Instruct v3
@@ -93,6 +137,17 @@ $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
+
 ---
 ### Google's Gemma 12B Instruct v3
 **Hugging Face Repo:** https://huggingface.co/google/gemma-3-12b-it
@@ -107,6 +162,17 @@ MODEL_REPO="https://huggingface.co/google/gemma-3-12b-it"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
     $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Proceed
