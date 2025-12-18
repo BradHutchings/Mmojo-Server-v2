@@ -2,7 +2,7 @@
 ### About this Step
 **IN PROGRESS**
 
-You have packaged a naked APE (compatible). Now you can simply graft a `.gguf` model onto the naked APE to make a self-contained LLM server. You graft it on using the `zip` tool to add the `.gguf` model to the zip archive which is the naked APE. You'll will do this for each of the models in the `$MODELS_DIR` directory.
+You have packaged a naked APE (compatible). Now you can simply graft a `.gguf` model onto the naked APE to make a self-contained LLM server. You graft it on using the `zip` tool to add the `.gguf` model to the zip archive which is the naked APE. You'll will do this for each of the models in the `$LOCAL_MODELS_DIR` directory.
 
 ---
 ### Manual Process
@@ -20,7 +20,7 @@ Let's run through the process manually, using the `Google-Gemma-1B-Instruct-v3-q
     ```
 - Attire the APE:
   ```
-  cd $MODELS_DIR
+  cd $LOCAL_MODELS_DIR
   zip -0 -r -q "$THIS_ZIP_FILE" "Google-Gemma-1B-Instruct-v3-q8_0.gguf"
   cd $HOME
   ```
