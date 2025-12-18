@@ -62,9 +62,9 @@ if [ -d "$THIS_PACKAGE_DIR" ] && [ "$attire" == "attired" ]; then
 
     if [ -v CHOSEN_MODEL ]; then
         echo "Chosen model: $CHOSEN_MODEL"
-        MODEL_FILE="$MODELS_DIR/$CHOSEN_MODEL"
+        MODEL_FILE="$LOCAL_MODELS_DIR/$CHOSEN_MODEL"
         if [ -f "$MODEL_FILE" ]; then
-            cd $MODELS_DIR
+            cd $LOCAL_MODELS_DIR
 
             # mmap() in cosmo libc appears to have a problem with how llama.cpp is calling it.
             # Punting on memort mapping for now.
