@@ -1,4 +1,4 @@
-## 404. Mistral AI Ministral
+## 405. Mistral AI Ministral
 ### About this Section
 Let's download and convert Mistral AI's Ministral models from Hugging Face.
 
@@ -57,5 +57,5 @@ $MMOJO_SERVER_SCRIPTS/400-Convert-HF-to-gguf-Model.sh \
 ---
 ### Proceed
 - **Next:** This is the last step in this section.
-- **Previous:** [403. Meta Llama](403-Meta-Llama.md)
+- **Previous:** [404. Meta Llama](404-Meta-Llama.md)
 - **Up:** [400. Convert Models](400-Convert-Models.md)
