@@ -151,5 +151,5 @@ This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo 
 ---
 ### Proceed
 - **Next:** [414. Mistral AI Ministral](414-Mistral-AI-Ministral.md)
-- **Previous:** [413. Google Gemma](413-Google-Gemma.md)
+- **Previous:** [412. Google Gemma](412-Google-Gemma.md)
 - **Up:** [400. Gather Models](400-Gather-Models.md)
