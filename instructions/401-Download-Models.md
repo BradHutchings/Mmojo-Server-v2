@@ -1,4 +1,4 @@
-## 301. Download Models
+## 401. Download Models
 
 ### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
@@ -23,13 +23,13 @@ mm-env
 ---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
-- View the script: <a href="../scripts/301-Create-Models-Directory.sh" target="_blank">301-Create-Models-Directory.sh</a>.
+- View the script: <a href="../scripts/401-Create-Models-Directory.sh" target="_blank">401-Create-Models-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
   ```
 
 <details>
