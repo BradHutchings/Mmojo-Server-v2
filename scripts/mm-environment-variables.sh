@@ -86,6 +86,7 @@ export LOCAL_MODEL_MAP="$LOCAL_MODELS_DIR/model-map.txt"
 
 export MMOJO_SHARE_MODELS_DIR="$MMOJO_SHARE_MOUNT_POINT/models"
 export MMOJO_SHARE_MODEL_MAP="$MMOJO_SHARE_MODELS_DIR/model-map.txt"
+export MMOJO_SHARE_RESTORE_MODEL_MAP="$MMOJO_SHARE_MODELS_DIR/restore-model-map.txt"
 
 echo "Setting Build paths."
 export BUILD_DIR="$HOME/500-BUILD-mmojo-server"
