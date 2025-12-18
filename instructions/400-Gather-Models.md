@@ -17,7 +17,7 @@ Here are the things you need to do:
   - [411. Prepare to Convert](411-Prepare-to-Convert.md) - Clone the llama.cpp GitHub repo, and leave it uncustomized so we can convert with it.
   - [412. Google Gemma](412-Google-Gemma.md) - Clone Google's Gemma Repos on Hugging Face, convert to `.gguf` models.
   - [413. Meta Llama](413-Meta-Llama.md) - Clone Meta's Llama Repos on Hugging Face, convert to `.gguf` models.
-  - [414. Mistral AI Ministral](414-Mistral-AI-Ministral.md) - Clone Mistral AI's Ministral Repos on Hugging Face, convert to `.gguf` models.
+  - [414. Mistral AI Ministral](414-Mistral-AI-Ministral.md) - Clone Mistral AI's Ministral Repos on Hugging Face, convert to `.gguf` models.<br/><br/>
 
 **Get Started:** [401. Download Models](401-Download-Models.md)
 
