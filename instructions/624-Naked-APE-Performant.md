@@ -69,7 +69,7 @@ Now we can test run `mmojo-server`, listening on localhost:8080. This should be 
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
 APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
-cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
+cp $LOCAL_MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$APP_FILE
 cd $HOME
 ```
@@ -97,7 +97,7 @@ If you'd like it to listen on all available interfaces, you can connect from a b
 ```
 THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_PERFORMANT_NAKED_APE"
 APP_FILE="$PACKAGE_MMOJO_SERVER_FILE-perf"
-cp $MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
+cp $LOCAL_MODELS_DIR/Google-Gemma-1B-Instruct-v3-q8_0.gguf $THIS_PACKAGE_DIR
 $THIS_PACKAGE_DIR/$APP_FILE --host 0.0.0.0
 cd $HOME
 ```
