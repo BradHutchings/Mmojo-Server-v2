@@ -1,4 +1,4 @@
-## 401. Prepare to Convert
+## 402. Prepare to Convert
 ### About this Step
 
 In this step, we will download the latest convert script from the llama.cpp repo so we can do model conversion.
@@ -40,9 +40,9 @@ git config --global credential.helper store
 
 ---
 ### Proceed
-- **Next:** [402. Google Gemma](402-Google-Gemma.md)
-- **Previous:** This is the first step in this section.
-- **Up:** [400. Convert Models](400-Convert-Models.md)
+- **Next:** [403. Google Gemma](403-Google-Gemma.md)
+- **Previous:** [401. Download Models](401-Download-Models.md)
+- **Up:** [400. Gather Models](400-Gather-Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>
