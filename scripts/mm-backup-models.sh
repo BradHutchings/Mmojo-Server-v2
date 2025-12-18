@@ -65,7 +65,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ] &
     done
 fi
 
-if [ ! $backed_up_one ]; then
+if [ "$backed_up_one" == "0" ]; then
     echo ""
     echo "There are no new models to back up."
 fi
