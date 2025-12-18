@@ -54,7 +54,10 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ] &
     done < "$LOCAL_MODEL_MAP"
 
     for key in "${!mnemonics[@]}"; do
-        BackupModel $key $mnemonics["$key"]
+        echo ""
+        echo "key: $key"
+        echo "mnemonic:  ${mnemonics["$key"]}"
+        # BackupModel $key $mnemonics["$key"]
     done
 fi
 
