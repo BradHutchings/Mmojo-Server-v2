@@ -39,6 +39,11 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
             cp "$MMOJO_SHARE_MODEL_MAP" "$MMOJO_SHARE_RESTORE_MODEL_MAP"
         fi
     fi
+
+    if [ -f "$MMOJO_SHARE_RESTORE_MODEL_MAP" ] || [ "$count" -gt 0 ]; then
+        echo ""
+        echo "Restoring the first $count models that aren't in $LOCAL_MODELS_DIR."
+    fi
 fi
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
