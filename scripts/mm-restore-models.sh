@@ -61,7 +61,11 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
             echo ""
             echo "Considering: $key -- $mnemonic"
 
-            if [ "$restored" -lt "$count" ]; then
+            if [ ! -f "$MMOJO_SHARE_MODELS_DIR/$key" ]; then
+                echo "File does not exist in $MMOJO_SHARE_MODELS_DIR."
+            elif [ ! -f "$LOCAL_MODELS_DIR/$key" ]; then
+                echo "File already exists in $LOCAL_MODELS_DIR."
+            elif [ "$restored" -lt "$count" ]; then
                 # RestoreModel $key $mnemonic
                 echo "Restoring: $key -- $mnemonic"
                 ((restored++))
