@@ -43,6 +43,25 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
     if [ -f "$MMOJO_SHARE_RESTORE_MODEL_MAP" ] && [ "$count" -gt 0 ]; then
         echo ""
         echo "Restoring the first $count models that aren't in $LOCAL_MODELS_DIR."
+
+        restored=0
+        unset mnemonics
+        declare -A mnemonics
+
+        while IFS=$' ' read -r gguf mnemonic ; do
+            if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
+                mnemonics["${gguf}"]="${mnemonic}"
+            fi
+        done < "$MMOJO_SHARE_RESTORE_MODEL_MAP"
+
+        for key in "${!mnemonics[@]}"; do
+            echo ""
+            echo "Considering: $key -- ${mnemonics["$key"]}"
+            # BackupModel $key ${mnemonics["$key"]}
+        done
+    
+    
+    
     fi
 fi
 
