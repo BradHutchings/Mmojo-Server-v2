@@ -57,10 +57,10 @@ nano $LOCAL_MODEL_MAP
 ---
 ### Download Models
 This script downloads the models from Hugging Face:
-- View the script: <a href="../scripts/401-Download-Models.sh" target="_blank">401-Download-Models.sh</a>.
+- View the script: <a href="../scripts/mm-download-models.sh" target="_blank">mm-download-models.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
+  mm-download-models.sh
   ```
 
 <details>
