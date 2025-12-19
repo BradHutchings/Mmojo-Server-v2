@@ -1,4 +1,4 @@
-## 305. Build OpenSSL
+## 303. Build OpenSSL
 ### About this Step
 We need to build our own `libssl.a` and `libcrypto.a` becuase:
 1. Actual Portable Executable (APE) does not support dynamic loading of libraries.
@@ -35,8 +35,8 @@ This script clones the openssl repo to `$BUILD_OPENSSSL_DIR`, then builds it:
 
 ---
 ### Proceed
-- **Next:** [306. Install CUDA Toolkit](306-Install-CUDA-Toolkit.md)
-- **Previous:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
+- **Next:** [304. Install CUDA Toolkit](304-Install-CUDA-Toolkit.md)
+- **Previous:** [302. Build Cosmopolitan](302-Build-Cosmopolitan.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
