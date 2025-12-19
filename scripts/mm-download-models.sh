@@ -21,7 +21,9 @@ DownloadModel() {
     if [ ! -f $MODEL_FILE ]; then
         wget $URL --show-progress --quiet -O $MODEL_FILE
         if [ -f $MODEL_FILE ]; then
-            sed -i -e "/$MODEL_FILE/d" $LOCAL_MODEL_MAP
+            if [ -f "$LOCAL_MODEL_MAP" ]; then
+                sed -i -e "/$MODEL_FILE/d" $LOCAL_MODEL_MAP
+            fi
 sudo cat << EOF >> $LOCAL_MODEL_MAP
 $MODEL_FILE $MODEL_MNEMONIC
 EOF
@@ -42,7 +44,6 @@ done < "$LOCAL_DOWNLOAD_MODEL_MAP"
 
 for key in "${!mnemonics[@]}"; do
     mnemonic=${mnemonics["$key"]}
-    DownloadModel $key $mnemonic
 
     echo ""
     echo "Considering: $key -- $mnemonic"
