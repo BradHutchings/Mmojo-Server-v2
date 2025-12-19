@@ -82,7 +82,7 @@ I really think you should run through these scripts one at a time the first few 
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
+mm-download-models.sh 2
 ```
 
 <details>
@@ -105,7 +105,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
 $MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
-$MMOJO_SERVER_SCRIPTS/401-Download-Models.sh
+mm-download-models.sh 2
 ```
 
 <details>
