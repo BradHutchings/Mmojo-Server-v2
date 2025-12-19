@@ -21,8 +21,7 @@ RestoreModel() {
     MODEL_FILE=$1
     MODEL_MNEMONIC=$2
     if [ ! -f "$LOCAL_MODELS_DIR/$MODEL_FILE" ]; then 
-        echo ""
-        echo "Resoring $MODEL_FILE ($MODEL_MNEMONIC) to $LOCAL_MODELS_DIR."
+        echo "Restoring $MODEL_FILE ($MODEL_MNEMONIC) to $LOCAL_MODELS_DIR."
         sudo rsync -ah --progress "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE" "$LOCAL_MODELS_DIR/$MODEL_FILE"
         sudo chmod a-x "$LOCAL_MODELS_DIR/$MODEL_FILE"
         sed -i -e "/$MODEL_FILE/d" $LOCAL_MODEL_MAP
