@@ -12,7 +12,7 @@ SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 MODEL_MAP_URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/model-map.txt"
-wget $MODEL_MAP_URL --quiet -O $LOCAL_MODEL_MAP
+wget $MODEL_MAP_URL --quiet -O $LOCAL_DOWNLOAD_MODEL_MAP
 
 printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
