@@ -63,7 +63,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
             if [ "$restored" -lt "$count" ]; then
                 # RestoreModel $key $mnemonic
                 echo "Restoring: $key -- $mnemonic"
-                restored=$restored+1
+                ((restored++))
             fi
         done
     
