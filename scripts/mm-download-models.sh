@@ -57,7 +57,7 @@ for key in "${!mnemonics[@]}"; do
         DownloadModel $key $mnemonic
         # echo "Downloading: $key -- $mnemonic"
         if [ -f "$LOCAL_MODELS_DIR/$key" ]; then
-            ((restored++))
+            ((downloaded++))
         fi
     fi
 done
