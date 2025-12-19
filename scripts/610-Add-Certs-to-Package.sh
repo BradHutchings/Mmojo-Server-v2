@@ -10,6 +10,11 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
+if [ ! -d $MMOJO_SHARE_MOUNT_POINT ]; then
+    echo "You have not created your Mmojo Share mount point."
+    exit 1
+fi
+
 if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
     THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
     SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
