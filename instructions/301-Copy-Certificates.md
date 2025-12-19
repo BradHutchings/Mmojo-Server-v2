@@ -1,4 +1,4 @@
-## 303. Copy Certificates
+## 301. Copy Certificates
 ### About this Step
 In this step, we will create a `300-Certificates` directory and copy certificates from your Mmojo Share.
 
@@ -55,8 +55,8 @@ $MMOJO_SERVER_SCRIPTS/303-Copy-Certificates-from-Mmojo-Share.sh
 
 ---
 ### Proceed
-- **Next:** [304. Build Cosmopolitan](304-Build-Cosmopolitan.md)
-- **Previous:** [302. Copy Models](302-Copy-Models.md)
+- **Next:** [302. Build Cosmopolitan](302-Build-Cosmopolitan.md)
+- **Previous:** This is the first step in this section.
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
