@@ -10,9 +10,18 @@ SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
 DownloadModel() {
-  MODEL_FILE=$1
-  URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
-  if [ ! -f $MODEL_FILE ]; then wget $URL --show-progress --quiet -O $MODEL_FILE ; fi
+    MODEL_FILE=$1
+    MODEL_MNEMONIC=$2
+    URL="https://huggingface.co/bradhutchings/Mmojo-Server/resolve/main/models/$MODEL_FILE?download=true"
+    if [ ! -f $MODEL_FILE ]; then
+        wget $URL --show-progress --quiet -O $MODEL_FILE
+        if [ -f $MODEL_FILE ]; then
+            sed -i -e "/$MODEL_FILE/d" $LOCAL_MODEL_MAP
+sudo cat << EOF >> $LOCAL_MODEL_MAP
+$MODEL_FILE $MODEL_MNEMONIC
+EOF
+        fi
+    fi
 }
 
 cd $LOCAL_MODELS_DIR
@@ -23,10 +32,11 @@ while IFS=$' ' read -r gguf mnemonic ; do
   if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
     mnemonics["${gguf}"]="${mnemonic}"
   fi
-done < "$LOCAL_MODEL_MAP"
+done < "$LOCAL_DOWNLOAD_MODEL_MAP"
 
 for key in "${!mnemonics[@]}"; do
-  DownloadModel $key 
+    mnemonic=${mnemonics["$key"]}
+    DownloadModel $key $mnemonic
 done
 
 cd $HOME
