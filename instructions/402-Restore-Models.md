@@ -19,14 +19,14 @@ mm-env
 
 ---
 ### Restore Models
-This script mounts your Mmojo Share, looks for the `/models` subdirectory, and looks the `/models/restore-model-map.txt` file. If that file does not exist, it copies the `/models/model-map.txt` file and comments out models after the first two. You can edit that file to pick which models get restored.
+This script mounts your Mmojo Share, looks for the `/models` subdirectory, and looks the `/models/restore-model-map.txt` file. If that file does not exist, it copies the `/models/model-map.txt` file. You can edit that file to pick which models get restored and the order they get restored. The `2` command-line paramter tells the script to restore the first two available models than are not available locally.
 - View the script: <a href="../scripts/mm-restore-models.sh" target="_blank">mm-restore-models.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
-- Run the script. We run with `.` so variables can be defined and exported.
+- Run the script to restore the first two available models than are not available locally.
   ```
-  mm-restore-models.sh
+  mm-restore-models.sh 2
   ```
 
 <details>
