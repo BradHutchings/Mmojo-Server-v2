@@ -7,7 +7,12 @@
 ################################################################################
 
 SCRIPT_NAME=$(basename -- "$0")
-printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
+
+count=$1
+if [ -z "$count" ] || [[ "$count" -lt 1 ]]; then
+    count=1
+fi
 
 DownloadModel() {
     MODEL_FILE=$1
@@ -25,6 +30,7 @@ EOF
 }
 
 cd $LOCAL_MODELS_DIR
+downloaded=0
 unset mnemonics
 declare -A mnemonics
 
@@ -37,6 +43,21 @@ done < "$LOCAL_DOWNLOAD_MODEL_MAP"
 for key in "${!mnemonics[@]}"; do
     mnemonic=${mnemonics["$key"]}
     DownloadModel $key $mnemonic
+
+    echo ""
+    echo "Considering: $key -- $mnemonic"
+
+    if [ -f "$LOCAL_MODELS_DIR/$key" ]; then
+        echo "File already exists in $LOCAL_MODELS_DIR."
+    elif [ "$downloaded" -ge "$count" ]; then
+        echo "Already downloaded $count models."
+    else
+        DownloadModel $key $mnemonic
+        # echo "Downloading: $key -- $mnemonic"
+        if [ -f "$LOCAL_MODELS_DIR/$key" ]; then
+            ((restored++))
+        fi
+    fi
 done
 
 cd $HOME
@@ -44,7 +65,7 @@ cd $HOME
 echo -e "\nLocal models directory:"
 ls -al $LOCAL_MODELS_DIR/*.gguf
 
-printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME.\n*\n$STARS\n\n"
+printf "\n$STARS\n*\n* FINISHED: $SCRIPT_NAME $1.\n*\n$STARS\n\n"
 
 ################################################################################
 #  This is an original script for the Mmojo Server repo. It is covered by
