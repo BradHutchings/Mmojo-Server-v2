@@ -47,13 +47,13 @@ Otherwise, we'll use the default 4.
 ---
 ### Download Vulkan, Build Locally
 This script downloads the latest tested Vulkan source into a `$BUILD_VULKAN_DIR` directory, then build Vulkan. Build this once, and leave the `$BUILD_VULKAN_DIR` directory between Mmojo Server builds. This takes about an hour on a fast PC (e.g. 12th generation i9) and several hours on a slow PC (e.g. Raspberry Pi 5).
-- View the script: <a href="../scripts/307-Download-Build-vulkan.sh" target="_blank">307-Download-Build-vulkan.sh</a>.
+- View the script: <a href="../scripts/305-Download-Build-vulkan.sh" target="_blank">305-Download-Build-vulkan.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/307-Download-Build-vulkan.sh
+  $MMOJO_SERVER_SCRIPTS/305-Download-Build-vulkan.sh
   . mm-environment-variables.sh
   ```
 
