@@ -89,9 +89,6 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
                 fi
             fi
         done
-    
-    
-    
     fi
 fi
 
