@@ -50,7 +50,7 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
 
         while IFS=$' ' read -r gguf mnemonic ; do
             # Comment and blank lines are filtered here.
-            if [[ "$gguf" != "#" ]] && [[ -n "$gguf" ]]; then
+            if [[ "$gguf" != "#*" ]] && [[ -n "$gguf" ]]; then
                 mnemonics["${gguf}"]="${mnemonic}"
             fi
         done < "$MMOJO_SHARE_RESTORE_MODEL_MAP"
