@@ -60,7 +60,9 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
             echo ""
             echo "Considering: $key -- $mnemonic"
 
-            if [ "$restored" -lt "$count" ]; then
+            if [[ $key == #* ]]; then
+                echo "Skipping, commented."
+            elif [ "$restored" -lt "$count" ]; then
                 # RestoreModel $key $mnemonic
                 echo "Restoring: $key -- $mnemonic"
                 ((restored++))
