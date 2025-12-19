@@ -32,7 +32,6 @@ EOF
     fi
 }
 
-
 # mount the mmojo share
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     mm-mount-mmojo-share.sh
