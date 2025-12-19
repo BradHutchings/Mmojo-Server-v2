@@ -3,7 +3,7 @@
 ### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
-If you would like to convert some Hugging Face models, please proceed to [402. Prepare to Convert](402-Prepare-to-Convert.md).
+If you would like to convert some Hugging Face models, please proceed to [410. Convert Models](410-Convert-Models.md).
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
