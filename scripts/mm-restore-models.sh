@@ -25,6 +25,7 @@ RestoreModel() {
         echo "Resoring $MODEL_FILE ($MODEL_MNEMONIC) to $LOCAL_MODELS_DIR."
         sudo rsync -ah --progress "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE" "$LOCAL_MODELS_DIR/$MODEL_FILE"
         sudo chmod a-x "$LOCAL_MODELS_DIR/$MODEL_FILE"
+        sed -i -e '/$MODEL_FILE/d' $LOCAL_MODEL_MAP
 sudo cat << EOF >> $LOCAL_MODEL_MAP
 $MODEL_FILE $MODEL_MNEMONIC
 EOF
