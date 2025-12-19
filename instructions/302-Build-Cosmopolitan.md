@@ -1,4 +1,4 @@
-## 304. Build Cosmopolitan
+## 302. Build Cosmopolitan
 ### About this Step
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
@@ -40,8 +40,8 @@ sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
 
 ---
 ### Proceed
-- **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
-- **Previous:** [303. Copy Certificates](303-Copy-Certificates.md)
+- **Next:** [303. Build OpenSSL](303-Build-OpenSSL.md)
+- **Previous:** [301. Copy Certificates](301-Copy-Certificates.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---
