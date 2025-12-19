@@ -9,6 +9,11 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
+if [ ! -d $MMOJO_SHARE_MOUNT_POINT ]; then
+    echo "You have not created your Mmojo Share mount point."
+    exit 1
+fi
+
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     mm-mount-mmojo-share.sh
 fi
