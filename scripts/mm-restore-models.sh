@@ -17,6 +17,21 @@ fi
 
 cd $HOME
 
+RestoreModel() {
+    MODEL_FILE=$1
+    MODEL_MNEMONIC=$2
+    if [ ! -f "$LOCAL_MODELS_DIR/$MODEL_FILE" ]; then 
+        echo ""
+        echo "Resoring $MODEL_FILE ($MODEL_MNEMONIC) to $LOCAL_MODELS_DIR."
+        sudo rsync -ah --progress "$MMOJO_SHARE_MODELS_DIR/$MODEL_FILE" "$LOCAL_MODELS_DIR/$MODEL_FILE"
+        sudo chmod a-x "$LOCAL_MODELS_DIR/$MODEL_FILE"
+sudo cat << EOF >> $LOCAL_MODEL_MAP
+$MODEL_FILE $MODEL_MNEMONIC
+EOF
+    fi
+}
+
+
 # mount the mmojo share
 if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
     mm-mount-mmojo-share.sh
@@ -68,9 +83,11 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
             elif [ "$restored" -ge "$count" ]; then
                 echo "Already restored $count models."
             else
-                # RestoreModel $key $mnemonic
-                echo "Restoring: $key -- $mnemonic"
-                ((restored++))
+                RestoreModel $key $mnemonic
+                # echo "Restoring: $key -- $mnemonic"
+                if [ -f "$LOCAL_MODELS_DIR/$key" ]; then
+                    ((restored++))
+                fi
             fi
         done
     
