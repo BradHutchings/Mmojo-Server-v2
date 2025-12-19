@@ -55,9 +55,16 @@ if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]] && [ -d $MMOJO_SHARE_MODELS_DIR ]; 
         done < "$MMOJO_SHARE_RESTORE_MODEL_MAP"
 
         for key in "${!mnemonics[@]}"; do
+            mnemonic=${mnemonics["$key"]}
+
             echo ""
-            echo "Considering: $key -- ${mnemonics["$key"]}"
-            # BackupModel $key ${mnemonics["$key"]}
+            echo "Considering: $key -- $mnemonic"
+
+            if [ "$restored" -lt "$count" ]; then
+                # RestoreModel $key $mnemonic
+                echo "Restoring: $key -- $mnemonic"
+                restored=$restored+1
+            fi
         done
     
     
