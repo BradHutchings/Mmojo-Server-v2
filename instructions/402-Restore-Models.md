@@ -1,7 +1,4 @@
 ## 402. Restore Models
-
-**SCRIPTS IN THIS STEP ARE NOT FULLY IMPLEMENTED YET. -BRAD**
-
 ### About this Step
 In this step, you will copy `.gguf` models previously backed up to your Mmojo Share to this build environment.
 
