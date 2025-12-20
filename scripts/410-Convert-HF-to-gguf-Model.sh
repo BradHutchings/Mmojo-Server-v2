@@ -4,8 +4,6 @@
 # This script converts a Hugging Face repo with safetensor files into a .gguf 
 # model.
 #
-# https://github.com/ggml-org/llama.cpp
-#
 # See licensing note at end.
 ################################################################################
 
