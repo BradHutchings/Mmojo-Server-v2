@@ -939,6 +939,7 @@ std::string fs_get_cache_directory() {
         cache_directory = std::getenv("LOCALAPPDATA");
 #elif defined(__EMSCRIPTEN__)
         GGML_ABORT("not implemented on this platform");
+      
 // Mmojo Server START
 // This could be automated by searching for "error Unknown architecture" and inserting the block 2 lines before. -Brad 2025-11-05
 #elif defined(COSMOCC)
@@ -954,6 +955,7 @@ std::string fs_get_cache_directory() {
         }
         
 // Mmojo Server END
+      
 #else
 #  error Unknown architecture
 #endif
@@ -1124,7 +1126,7 @@ common_init_result::common_init_result(common_params & params) :
     auto cparams = common_context_params_to_llama(params);
 
     if (params.fit_params) {
-        LOG_INF("%s: fitting params to device memory, to report bugs during this step use -fit off (or --verbose if you can't)\n", __func__);
+        LOG_INF("%s: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on\n", __func__);
         llama_params_fit(params.model.path.c_str(), &mparams, &cparams,
             params.tensor_split, params.tensor_buft_overrides.data(), params.fit_params_target, params.fit_params_min_ctx,
             params.verbosity >= 4 ? GGML_LOG_LEVEL_DEBUG : GGML_LOG_LEVEL_ERROR);
