@@ -1,14 +1,13 @@
-## 301. Download Models
+## 401. Download Models
+
 ### About this Step
 In this step, we will download some `gguf` files we will need from Hugging Face and copy them to our Mmojo share for later use.
 
-If you already have models downloaded and copied to your Mmojo share, please proceed to: [302. Copy Models](302-Copy-Models.md).
+If you would like to convert some Hugging Face models, please proceed to [410. Convert Models](410-Convert-Models.md).
 
 **Where:** Perform this step in both your x86_64 and your aarch64 (arm64) build environments.
 
 **Shortcut:** [Scroll down](#shortcut-download-models).
-
-***Note:** This step will be going away soon. The 400 section is about creating `.gguf` models from Hugging Face models. It will be supplemented with some `mm-` scripts to backup and restore models to/from your Mmojo Share.*
 
 ---
 <details>
@@ -24,13 +23,13 @@ mm-env
 ---
 ### Create Models Directory
 This script creates the `$MODELS_DIR` and adds a simple model map to it:
-- View the script: <a href="../scripts/301-Create-Models-Directory.sh" target="_blank">301-Create-Models-Directory.sh</a>.
+- View the script: <a href="../scripts/401-Create-Models-Directory.sh" target="_blank">401-Create-Models-Directory.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script. We run with `.` so variables can be defined and exported.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
+  $MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
   ```
 
 <details>
@@ -39,30 +38,41 @@ This script creates the `$MODELS_DIR` and adds a simple model map to it:
 If you plan to create `mmojo-server-one` Actual Portable Executables (APEs) with embedded models, you should download some models that are tested to work with `mmojo-server`. We'll download a model map from Hugging Face.
 
 This script downloads the model map from Hugging Face:
-- View the script: <a href="../scripts/301-Download-Model-Map.sh" target="_blank">301-Download-Model-Map.sh</a>.
+- View the script: <a href="../scripts/401-Download-Model-Map.sh" target="_blank">401-Download-Model-Map.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Download-Model-Map.sh
+  $MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
   ```
 </details>
 
 <details>
   <summary><b>Optional: Edit the Model Map.</b></summary>
 
-All these models will take a long time to download, so you can edit the model map and remove models you don't want.
+All these models will take a long time to download, so you can edit the model map and remove models you don't want to download now.
 ```
-nano $MODEL_MAP
+nano $LOCAL_MODEL_MAP
 ```
 </details>
 
 ---
 ### Download Models
-This script downloads the models from Hugging Face:
-- View the script: <a href="../scripts/301-Download-Models.sh" target="_blank">301-Download-Models.sh</a>.
+This script downloads two models from Hugging Face:
+- View the script: <a href="../scripts/mm-download-models.sh" target="_blank">mm-download-models.sh</a>.
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+  mm-download-models.sh 2
   ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Download Models
@@ -71,9 +81,20 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+$MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
+mm-download-models.sh 2
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### SHORTCUT: Download Tested Models
@@ -82,16 +103,27 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 # SHORTCUT: DON'T DO THIS IF YOU ALREADY RAN SCRIPTS ABOVE!
 ################################################################################
-$MMOJO_SERVER_SCRIPTS/301-Create-Models-Directory.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Model-Map.sh
-$MMOJO_SERVER_SCRIPTS/301-Download-Models.sh
+$MMOJO_SERVER_SCRIPTS/401-Create-Models-Directory.sh
+$MMOJO_SERVER_SCRIPTS/401-Download-Model-Map.sh
+mm-download-models.sh 2
 ```
+
+<details>
+  <summary><b>Optional: Backup models to Mmojo Share</b></summary>
+
+This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo Share.
+- View the script: <a href="../scripts/mm-backup-models.sh" target="_blank">mm-backup-models.sh</a>.
+- Run the script.
+  ```
+  mm-backup-models.sh
+  ```
+</details>
 
 ---
 ### Proceed
-- **Next:** [302. Copy Models](302-Copy-Models.md)
+- **Next:** [402. Restore Models](402-Restore-Models.md)
 - **Previous:** This is the first step in this section.
-- **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
+- **Up:** [400. Gather Models](400-Gather-Models.md)
 
 ---
 [MIT License](/LICENSE)<br/>

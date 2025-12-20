@@ -88,7 +88,7 @@ echo ""
 MODEL_PARAM="Google-Gemma-1B-Instruct-v3-q8_0.gguf"
 if [[ -v CHOSEN_MODEL ]]; then
     echo "\$CHOSEN_MODEL: $CHOSEN_MODEL."
-    if [ -f "$MODELS_DIR/$CHOSEN_MODEL" ]; then
+    if [ -f "$LOCAL_MODELS_DIR/$CHOSEN_MODEL" ]; then
         echo "Model found."
         MODEL_PARAM=$CHOSEN_MODEL
     fi
@@ -116,7 +116,7 @@ cd $THIS_BUILD_DIR/$BUILD_SUBDIRECTORY
 rm -f $ARGS_FILE
 rm -r -f $SUPPORT_DIR
 
-$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $MODELS_DIR/$MODEL_PARAM \
+$THIS_BUILD_DIR/$BUILD_SUBDIRECTORY/bin/$EXECUTABLE_FILE --model $LOCAL_MODELS_DIR/$MODEL_PARAM \
     $UI_PARAMS $THREADS_PARAM --host 0.0.0.0 --port 8080 --batch-size 64 --threads-http 8 --ctx-size 32768
 
 echo ""

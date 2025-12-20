@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# This script adds certs from the Mmojo Share to the mmojo-server-support
-# subdirectory of the package directory.
+# This script copies certifcates from the Mmojo Share.
 #
 # See licensing note at end.
 ################################################################################
@@ -15,27 +14,15 @@ if [ ! -d $MMOJO_SHARE_MOUNT_POINT ]; then
     exit 1
 fi
 
-if [ -v CHOSEN_BUILD ] && [ -v CHOSEN_BUILD_PATH ]; then
-    THIS_PACKAGE_DIR="$PACKAGE_DIR/$PACKAGE_ZIP-$CHOSEN_BUILD_INFO"
-    SUPPORT_DIR="$THIS_PACKAGE_DIR/$PACKAGE_MMOJO_SERVER_SUPPORT_DIR"
+if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+    mm-mount-mmojo-share.sh
+fi
 
-    if [ -d "$THIS_PACKAGE_DIR" ] && [ -d "$SUPPORT_DIR" ]; then
-        if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-            echo "Adding certificate files."
-            CERTS="$SUPPORT_DIR/certs"
-            mkdir -p $CERTS
-            cp $CERTIFICATES_DIR/cert.crt $CERTS
-            cp $CERTIFICATES_DIR/cert.key $CERTS
-            # cp $CERTIFICATES_DIR/selfsignCA.crt $CERTS
-
-            echo ""
-            echo "$SUPPORT_DIR:"
-            ls -al "$SUPPORT_DIR"
-
-            echo ""
-            echo "$SUPPORT_DIR/certs:"
-            ls -al "$SUPPORT_DIR/certs"
-        fi
+if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
+    if [ -d $MMOJO_SHARE_CERTIFICATES ]; then
+        cp $MMOJO_SHARE_CERTIFICATES/cert.crt $CERTIFICATES_DIR
+        cp $MMOJO_SHARE_CERTIFICATES/cert.key  $CERTIFICATES_DIR
+        cp $MMOJO_SHARE_CERTIFICATES/selfsignCA.crt $CERTIFICATES_DIR
     fi
 fi
 

@@ -1,4 +1,4 @@
-## 304. Build Cosmopolitan
+## 302. Build Cosmopolitan
 ### About this Step
 In this step, we will clone the Cosmopolitan repo, fix known problems, and build it. You don't need to do this every time you build Mmojo Server.
 
@@ -20,13 +20,13 @@ mm-env
 Clone Cosmopolitan repo into a `$BUILD_COSMOPOLITAN_DIR` directory, fix bugs, then build Cosmopolitan. Build this once, and leave the `$BUILD_COSMOPOLITAN_DIR` directory between builds.
 
 This script clones the Cosmopolitan repo to `$BUILD_COSMOPOLITAN_DIR`:
-- View the script: <a href="../scripts/304-Clone-Build-Cosmopolian.sh" target="_blank">304-Clone-Build-Cosmopolian.sh</a>.
+- View the script: <a href="../scripts/302-Clone-Build-Cosmopolian.sh" target="_blank">302-Clone-Build-Cosmopolian.sh</a>.
   - *On Github, you may need to right-click and choose "Open link in new tab" to open the "View script" links in a new tab.*
     <br/>
     <br/>
 - Run the script.
   ```
-  $MMOJO_SERVER_SCRIPTS/304-Clone-Build-Cosmopolian.sh
+  $MMOJO_SERVER_SCRIPTS/302-Clone-Build-Cosmopolian.sh
   ```
 
 ---
@@ -40,8 +40,8 @@ sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/WSLInterop-late'
 
 ---
 ### Proceed
-- **Next:** [305. Build OpenSSL](305-Build-OpenSSL.md)
-- **Previous:** [303. Copy Certificates](303-Copy-Certificates.md)
+- **Next:** [303. Build OpenSSL](303-Build-OpenSSL.md)
+- **Previous:** [301. Copy Certificates](301-Copy-Certificates.md)
 - **Up:** [300. Gather Build Pieces](300-Gather-Build-Pieces.md)
 
 ---

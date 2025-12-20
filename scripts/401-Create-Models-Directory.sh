@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ################################################################################
-# This script copies certifcates from the Mmojo Share.
+# This script creates the models directory and creates a model map file in that
+# directory. The model map file tell us what models are available to download or
+# copy.
 #
 # See licensing note at end.
 ################################################################################
@@ -9,16 +11,15 @@
 SCRIPT_NAME=$(basename -- "$0")
 printf "\n$STARS\n*\n* STARTED: $SCRIPT_NAME.\n*\n$STARS\n\n"
 
-if [[ ! $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-    mm-mount-mmojo-share.sh
-fi
+mkdir -p $LOCAL_MODELS_DIR
+cd $LOCAL_MODELS_DIR
 
-if [[ $(findmnt $MMOJO_SHARE_MOUNT_POINT) ]]; then
-    if [ -d $MMOJO_SHARE_CERTIFICATES ]; then
-        cp $MMOJO_SHARE_CERTIFICATES/cert.crt $CERTIFICATES_DIR
-        cp $MMOJO_SHARE_CERTIFICATES/cert.key  $CERTIFICATES_DIR
-        cp $MMOJO_SHARE_CERTIFICATES/selfsignCA.crt $CERTIFICATES_DIR
-    fi
+if ! test -f "$LOCAL_DOWNLOAD_MODEL_MAP"; then
+cat << EOF > "$LOCAL_DOWNLOAD_MODEL_MAP"
+Google-Gemma-270M-Instruct-v3-q8_0.gguf Goo-Gem-1B-Ins-v3
+Google-Gemma-1B-Instruct-v3-q8_0.gguf Goo-Gem-1B-Ins-v3
+Google-Gemma-4B-Instruct-v3-q8_0.gguf Goo-Gem-4B-Ins-v3
+EOF
 fi
 
 cd $HOME
