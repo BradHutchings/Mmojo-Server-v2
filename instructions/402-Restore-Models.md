@@ -34,7 +34,16 @@ This script mounts your Mmojo Share, looks for the `/models` subdirectory, and l
   
 You can edit the `restore-model-map.txt` file with this command:
 ```
-nano $MMOJO_SHARE_RESTORE_MODEL_MAP
+sudo nano $MMOJO_SHARE_RESTORE_MODEL_MAP
+```
+</details>
+
+<details>
+  <summary><b>Optional: Delete the Restore Model Map File</b></summary>
+  
+Deleting the restore model map file will force the `mm-restore-models.sh` script to recreate it. You can delete the `restore-model-map.txt` file with this command:
+```
+sudo rm $MMOJO_SHARE_RESTORE_MODEL_MAP
 ```
 </details>
 
