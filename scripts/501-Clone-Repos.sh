@@ -66,11 +66,14 @@ git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
 
 cd ..
 # Roll the llama.cpp repo back to last known working.
-# Up through: https://github.com/ggml-org/llama.cpp/commit/9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d
-# 9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d 
-git checkout 9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d 
+# Up through: https://github.com/ggml-org/llama.cpp/commit/52ab19df633f3de5d4db171a16f2d9edd2342fec
+# 52ab19df633f3de5d4db171a16f2d9edd2342fec
 
-# Previous: 933414c0b6f21af269bdb4fa2fa1b257b9c0fc53
+# Verified: 2025-12-20
+git checkout 52ab19df633f3de5d4db171a16f2d9edd2342fec 
+
+# Verified: 2025-12-16
+# Previous: 9d52f17ae33e8df958e20f3f1b13bfec53ab5a1d
 
 # To see where you're checked out:
 # git log -1
