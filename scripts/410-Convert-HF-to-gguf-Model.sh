@@ -15,36 +15,40 @@ model_type=$2
 model_mnemonic=$3
 model_repo=$4
 
-# $model_type doesn't go in the $GGUF_DIR so we can reuse the download to create different versions.
-GGUF_DIR="$LOCAL_MODELS_DIR/$model_name"
+# $model_type doesn't go in the $MODEL_SOURCE_DIR so we can reuse the download to create different versions.
+MODEL_SOURCE_DIR="$LOCAL_MODELS_DIR/$model_name"
 GGUF_FILE="$model_name-$model_type.gguf"
 
 echo "    model_name: $model_name"
 echo "    model_type: $model_type"
 echo "model_mnemonic: $model_mnemonic"
 echo "    model_repo: $model_repo"
-echo "      GGUF_DIR: $GGUF_DIR"
+echo "      MODEL_SOURCE_DIR: $MODEL_SOURCE_DIR"
 echo "     GGUF_FILE: $GGUF_FILE"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
-    mkdir -p $LOCAL_MODELS_DIR
-    if [ ! -d $GGUF_DIR ]; then
+    mkdir -p "$LOCAL_MODELS_DIR"
+
+    if [ -d "$MODEL_SOURCE_DIR" ] && [ ! -f "$MODEL_SOURCE_DIR/cloned" ]; then
+        echo "Deleting existing model directory that doesn't look complete."
+        rm -r -f "$MODEL_SOURCE_DIR"
+    fi
+    
+    if [ ! -d "$MODEL_SOURCE_DIR" ]; then
         echo ""
         echo "Cloning $model_repo."
-        git clone $model_repo $GGUF_DIR
+        git clone "$model_repo" "$MODEL_SOURCE_DIR"
+        rm -r -f "$MODEL_SOURCE_DIR/.git"
+        touch "$MODEL_SOURCE_DIR/cloned"
     fi
 
     echo ""
     echo "Converting to $model_name-$model_type.gguf."
-    python3 $LOCAL_MODELS_DIR/llama.cpp/convert_hf_to_gguf.py $GGUF_DIR \
-        --outfile $GGUF_DIR/$GGUF_FILE \
-        --outtype $model_type
+    python3 "$LOCAL_MODELS_DIR/llama.cpp/convert_hf_to_gguf.py" "$MODEL_SOURCE_DIR" \
+        --outfile "$LOCAL_MODELS_DIR/$GGUF_FILE" \
+        --outtype "$model_type"
 
-    if [ -f $GGUF_DIR/$GGUF_FILE ] && [ -d "$LOCAL_MODELS_DIR" ]; then
-        echo ""
-        echo "Copying to $LOCAL_MODELS_DIR."
-        rsync -ah --progress $GGUF_DIR/$GGUF_FILE $LOCAL_MODELS_DIR
-
+    if [ -f "$LOCAL_MODELS_DIR/$GGUF_FILE" ]; then
         echo ""
         echo "Updating $LOCAL_MODEL_MAP."
         if ! grep -q "$GGUF_FILE" "$LOCAL_MODEL_MAP"; then
