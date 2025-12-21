@@ -37,6 +37,8 @@ This backs up all new models in the `$LOCAL_MODELS_DIR` directory to your Mmojo 
 
 ---
 ### Microsoft's Phi 3.8B Vision Instruct v3.5
+**THIS MODEL DOESN'T WORK. NOT SUPPORTED BY LLAMA.CPP.**
+
 **Hugging Face Repo:** https://huggingface.co/microsoft/Phi-3.5-vision-instruct
 
 It may take 10 minutes to clone the Hugging Face repo, even on fast Internet.
