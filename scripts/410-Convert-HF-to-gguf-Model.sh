@@ -17,14 +17,14 @@ model_repo=$4
 
 # $model_type doesn't go in the $MODEL_SOURCE_DIR so we can reuse the download to create different versions.
 MODEL_SOURCE_DIR="$LOCAL_MODELS_DIR/$model_name"
-GGUF_FILE="$model_name-$model_type.gguf"
+MODEL_FILE="$model_name-$model_type.gguf"
 
-echo "    model_name: $model_name"
-echo "    model_type: $model_type"
-echo "model_mnemonic: $model_mnemonic"
-echo "    model_repo: $model_repo"
-echo "      MODEL_SOURCE_DIR: $MODEL_SOURCE_DIR"
-echo "     GGUF_FILE: $GGUF_FILE"
+echo "      model_name: $model_name"
+echo "      model_type: $model_type"
+echo "  model_mnemonic: $model_mnemonic"
+echo "      model_repo: $model_repo"
+echo "MODEL_SOURCE_DIR: $MODEL_SOURCE_DIR"
+echo "      MODEL_FILE: $MODEL_FILE"
 
 if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != "" ] && [ "$model_repo" != "" ]; then
     mkdir -p "$LOCAL_MODELS_DIR"
@@ -45,17 +45,16 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
     echo ""
     echo "Converting to $model_name-$model_type.gguf."
     python3 "$LOCAL_MODELS_DIR/llama.cpp/convert_hf_to_gguf.py" "$MODEL_SOURCE_DIR" \
-        --outfile "$LOCAL_MODELS_DIR/$GGUF_FILE" \
+        --outfile "$LOCAL_MODELS_DIR/$MODEL_FILE" \
         --outtype "$model_type"
 
-    if [ -f "$LOCAL_MODELS_DIR/$GGUF_FILE" ]; then
+    if [ -f "$LOCAL_MODELS_DIR/$MODEL_FILE" ]; then
         echo ""
         echo "Updating $LOCAL_MODEL_MAP."
-        if ! grep -q "$GGUF_FILE" "$LOCAL_MODEL_MAP"; then
+        sed -i -e "/$MODEL_FILE/d" $LOCAL_MODEL_MAP
 cat << EOF >> $LOCAL_MODEL_MAP
-$GGUF_FILE $model_mnemonic
+$MODEL_FILE $model_mnemonic
 EOF
-        fi        
     fi
 
 fi
