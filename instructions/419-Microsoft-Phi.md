@@ -11,6 +11,8 @@ In the future, this script will also copy your converted model to your Mmojo Sha
 
 ---
 ### Microsoft's Phi (Mini) 3.8B Flash Reasoning v4
+**THIS MODEL DOESN'T WORK. NOT SUPPORTED BY LLAMA.CPP.**
+
 **Hugging Face Repo:** https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning
 
 It may take 10 minutes to clone the Hugging Face repo, even on fast Internet.
