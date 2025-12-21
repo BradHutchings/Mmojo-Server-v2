@@ -30,6 +30,7 @@ if [ "$model_name" != "" ] && [ "$model_type" != "" ] && [ "$model_mnemonic" != 
     mkdir -p "$LOCAL_MODELS_DIR"
 
     if [ -d "$MODEL_SOURCE_DIR" ] && [ ! -f "$MODEL_SOURCE_DIR/cloned" ]; then
+        echo ""
         echo "Deleting existing model directory that doesn't look complete."
         rm -r -f "$MODEL_SOURCE_DIR"
     fi
