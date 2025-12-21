@@ -101,7 +101,7 @@ MODEL_MNEMONIC="mic-phi-16B-rea-plu-v4"
 MODEL_TYPE="q8_0"
 MODEL_REPO="https://huggingface.co/microsoft/Phi-4-reasoning-plus"
 $MMOJO_SERVER_SCRIPTS/410-Convert-HF-to-gguf-Model.sh \
-    $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO```
+    $MODEL_NAME $MODEL_TYPE $MODEL_MNEMONIC $MODEL_REPO
 ```
 
 <details>
