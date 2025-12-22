@@ -1,7 +1,5 @@
 ## 206. Create Mmojo Share
 
-**THIS PAGE NEEDS TO HAVE STEPS INCLIUDED FOR INSTALLING AND CONFIGURING SAMBA. -Brad 2025-11-02**
-
 ---
 ### About the Step
 The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
@@ -13,11 +11,24 @@ If you have a Mmojo Share already set up, skip ahead to the next step: [206. Mou
 **Where:** Perform this step on a computer on your network reachable by other build environments on your network.
 
 ---
-### Create Mmojo Share
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
+### Enable File Sharing and Create Mmojo Share &mdash; Windows 10/11
+If you plan to build in a WSL enivoronment, setting up your Mmojo Share on the host computer is a good approach.
 
-Details will be here.
+Here is a good video that shows how to enable file sharing and create an SMB share on Windows 10 and 11.
 
+https://www.youtube.com/watch?v=c_ZlwFktayQ
+
+The video's recommendation to turn password protected sharing off may be workable for a private home network. If you do this, you won't have to manage users for the SMB share.
+
+---
+### Install Samba and Create Mmojo Share &mdash; Ubuntu and other Debian Linux
+Here is the official Ubunutu tutorial for installing Samba and creating a share.
+
+https://ubuntu.com/tutorials/install-and-configure-samba#1-overview
+
+If you're building in your WSL environment, that is not a good place to set up a file share because you will likely rebuild that encvironment from scratch often. You want a place that can hold the files you keep permanently.
+
+---
 ### Create Directories on Mmojo Share
 Make the directories we'll use.
 
