@@ -1,7 +1,5 @@
 ## 206. Create Mmojo Share
 
-**THIS PAGE NEEDS TO HAVE STEPS INCLIUDED FOR INSTALLING AND CONFIGURING SAMBA. -Brad 2025-12-22**
-
 ---
 ### About the Step
 The Mmojo Share is a file share where I keep files for local access and completed builds. It lets me build different items on different build platforms. I use a Ubuntu 24.04 virtual machine to build and test x86_64 and cosmo builds. I use a Raspberry Pi for building and testing ARM64 and Pi specific builds. The Mmojo Share lets me keep .gguf models to test with locally and is where I copy completed and packaged builds. Your Mmojo Share will help you organize your builds as well.
@@ -14,7 +12,6 @@ If you have a Mmojo Share already set up, skip ahead to the next step: [206. Mou
 
 ---
 ### Enable File Sharing and Create Mmojo Share &mdash; Windows 10/11
-
 If you plan to build in a WSL enivoronment, setting up your Mmojo Share on the host computer is a good approach.
 
 Here is a good video that shows how to enable file sharing and create an SMB share on Windows 10 and 11.
@@ -25,9 +22,11 @@ The video's recommendation to turn password protected sharing off may be workabl
 
 ---
 ### Install Samba and Create Mmojo Share &mdash; Ubuntu and other Debian Linux
-Create an SMB share on a computer on your network. It should have a user and password so you can access it from your build systems. Write down the hostname of the computer, and the user that can access the share. You will be prompted for the share's password when you actually mount it.
+Here is the official Ubunutu tutorial for installing Samba and creating a share.
 
-Details will be here.
+https://ubuntu.com/tutorials/install-and-configure-samba#1-overview
+
+If you're building in your WSL environment, that is not a good place to set up a file share because you will likely rebuild that encvironment from scratch often. You want a place that can hold the files you keep permanently.
 
 ---
 ### Create Directories on Mmojo Share
