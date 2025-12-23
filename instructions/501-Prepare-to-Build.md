@@ -55,7 +55,7 @@ Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI d
 #### Required
 -->
 
-Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
+Customize the web UI, rebuild all the web files.
 - View the script: <a href="../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
