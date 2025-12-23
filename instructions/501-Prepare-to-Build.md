@@ -43,6 +43,7 @@ This looks like lots of fun.
 
 ---
 ### Customize WebUI
+<!--
 #### Suggested
 Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
 - View the script: <a href="../scripts/501-Rollback-webui.sh" target="_blank">501-Rollback-webui.sh</a>.
@@ -52,6 +53,8 @@ Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI d
   ```
 
 #### Required
+-->
+
 Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
 - View the script: <a href="../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
