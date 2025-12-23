@@ -10,15 +10,12 @@
 | 2025&minus;12&minus;03         | Rewrite [104. Build Targets](instructions/104-Build-Targets.md). |
 | 2025&minus;12&minus;02         | `mm-choose-build.sh` does not find GPU enabled builds. |
 | 2025&minus;12&minus;02         | See if latest Cosmo commit solves the 400 problem in server &mdash; [Commit Details](https://github.com/jart/cosmopolitan/commit/b444b3a6e0d442162f800142a349371386b374c6). Still need to keep a slow roll on Cosmo changes. |
-| 2025&minus;12&minus;02         | Find the right source and dest folder in `420-Copy-Executables-to-Share.sh`. Using old logic right now. Does not work. |
 | 2025&minus;12&minus;01         | Build and test options in an `mm-build-test-options.sh` script, called by `mm-environment-variables.sh`. I could put `--parallel` for CMake, prefered LLM to use in testing, use chat UI, etc. |
 | 2025&minus;12&minus;01         | mm-choose-gpus.sh needs to let user choose what they previously chose easily. |
 | 2025&minus;11&minus;27         | Go through all scripts and make sure descriptions are correct. Some have been copied, not edited. |
 | 2025&minus;11&minus;23         | First paragraph is wrong about what we're going to build. [400-Build-Mmojo-Server.md](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/400-Build-Mmojo-Server.md) |
 | 2025&minus;11&minus;26         | Next update of llama.cpp: Can I just copy loading-mmojo.html to loading.html and forget about changes in server-mmojo.cpp? |
 | 2025&minus;11&minus;21         | Is it safe to use the latest Cosmo again? Changes started mid-November and broke the build of the Cosmo library. No. We get 400 responses to our API requests when running the server. Nothing shows up in building before that. Grrrr. Answer: NO. 2025-12-16. |
-| 2025&minus;11&minus;23         | Do I still need to rollback the new llama.cpp webui so I can run it non-root-path? I do as of latest commit of llama.cpp I'm letting through. [401. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/401-Prepare-to-Build.md) |
-| 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. |
 | 2025&minus;11&minus;23         | `mmojo-server-args` should be a json/yaml file. It's a cool solution inherited from Cosmo and llamafile, but it's also awkward. See the top of the `main()` function in [`server-mmojo.cpp`](https://github.com/BradHutchings/Mmojo-Server/blob/main/files/tools/server/server-mmojo.cpp). It bends my brain every time I look at it. LOL. |
 
 
@@ -28,6 +25,9 @@
 
 | Resolved              | Added              | Issue      |
 | :-------------           | :------    | :------    |
+| 2025&minus;12&minus;23 | 2025&minus;12&minus;02         | Find the right source and dest folder in `420-Copy-Executables-to-Share.sh`. Using old logic right now. Does not work. Fixed. Works well now. |
+| 2025&minus;12&minus;23 | 2025&minus;11&minus;23         | Instructions to [205. Create Mmojo Share](205-Create-Mmojo-Share.md). I have a draft of these in the Knowledge Appliance Recipe. Should create folders and populate certs too. Ended up using links to 4rd party video (Windows) and guide (Ubuntu).|
+| 2025&minus;12&minus;23 | 2025&minus;11&minus;23         | Do I still need to rollback the new llama.cpp webui so I can run it non-root-path? I do as of latest commit of llama.cpp I'm letting through. [501. Prepare to Build](https://github.com/BradHutchings/Mmojo-Server/blob/main/instructions/501-Prepare-to-Build.md) They fixed the problem in llama.cpp. Yay!|
 | 2025&minus;12&minus;08 | 2025&minus;12&minus;07         | 510 should be platform builds, 620 APE builds. 610/620 as well. |
 | 2025&minus;12&minus;07 | 2025&minus;12&minus;01         | If mmojo-server does not have a model to load after parsing zip, support folder, args file, and command line, should look for first zip available in zip, support, or executable / working directory. This would let me package a master APE and graft a model on later. |
 | 2025&minus;12&minus;03 | 2025&minus;12&minus;03         | Change `CHOSEN_MODEL_SHORT_NAME` to `CHOSEN_MODEL_MNEMONIC`. |

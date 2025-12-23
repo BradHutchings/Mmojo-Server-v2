@@ -1,5 +1,7 @@
-## 501. Prepare to Build
+## 501. Prepare to Build (pre-Svelte)
 ### About this Step
+
+**THIS IS HERE TO KEEP THE ROLLBACK TO PRE-SVELTE-UI STEP AVAILABLE. IT LOOKS LIKE NON-ROOT-PATH HOSTING OF THE CHAT-UI HAS BEEN FIXED AT SOME POINT. THIS IS HERE IN CASE THAT STOPS WORKING. -BRAD 2025-12-23**
 
 In this step, we will clone this Mmojo-Server repo, fix problems that affect building with Cosmopolitan, and add some features for Mmojo Server.
 
@@ -43,7 +45,6 @@ This looks like lots of fun.
 
 ---
 ### Customize WebUI
-<!--
 #### Suggested
 Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI doesn't like running on non-root web server path. We'll remove this step when the new UI is fixed upstream in llama.cpp.
 - View the script: <a href="../scripts/501-Rollback-webui.sh" target="_blank">501-Rollback-webui.sh</a>.
@@ -53,9 +54,7 @@ Rollback the `tools/server/webui` to the pre-Svelte version. The new Svelte UI d
   ```
 
 #### Required
--->
-
-Customize the web UI, rebuild all the web files.
+Customize the web UI, rebuild all the web files. If you did the **Suggested** step above, you will see 2 `sed` errors.
 - View the script: <a href="../scripts/501-Customize-webui.sh" target="_blank">501-Customize-webui.sh</a>.
 - Run the script.
   ```
@@ -85,6 +84,7 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh
 $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh
+$MMOJO_SERVER_SCRIPTS/501-Rollback-webui.sh
 $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh
 ```
 
