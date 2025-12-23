@@ -85,7 +85,6 @@ I really think you should run through these scripts one at a time the first few 
 ################################################################################
 $MMOJO_SERVER_SCRIPTS/501-Clone-Repos.sh
 $MMOJO_SERVER_SCRIPTS/501-Patch-llama-cpp.sh
-$MMOJO_SERVER_SCRIPTS/501-Rollback-webui.sh
 $MMOJO_SERVER_SCRIPTS/501-Customize-webui.sh
 ```
 
