@@ -2779,9 +2779,18 @@ private:
 
         SRV_DBG("%s", "run slots completed\n");
     }
+    
+    int get_slot_n_ctx() {
+        return slots.back().n_ctx;
+    }
+
+    server_response_reader get_response_reader() {
+        return server_response_reader(queue_tasks, queue_results, HTTP_POLLING_SECONDS);
+    }
 
     // Mmojo Server START
-    // This could be automated by searching for "get_slot_n_ctx() {" and inserting this before. -Brad 2025-12-29
+    // This could be automated by searching for "get_response_reader() {" and inserting this after. -Brad 2025-12-29
+    public:
     json model_meta() const {
         char general_architecture[64];
         char general_type[64];
@@ -2830,13 +2839,6 @@ private:
     }
     // Mmojo Server END
 
-    int get_slot_n_ctx() {
-        return slots.back().n_ctx;
-    }
-
-    server_response_reader get_response_reader() {
-        return server_response_reader(queue_tasks, queue_results, HTTP_POLLING_SECONDS);
-    }
 };
 
 //
@@ -3610,9 +3612,10 @@ void server_routes::init_routes() {
       
         // Mmojo Server START
         json model_meta = nullptr;
-        if (is_ready()) {
+        // We lost is_ready() around 2025-12-29. -Brad
+        //  if (is_ready()) {
             model_meta = ctx_server.model_meta();
-        }
+        //  }
         // Replace "meta" in json models below
         //   {"meta",     model_meta},
         // Mmojo Server END
