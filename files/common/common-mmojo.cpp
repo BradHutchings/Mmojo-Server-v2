@@ -268,7 +268,7 @@ bool set_process_priority(enum ggml_sched_priority prio) {
         case GGML_SCHED_PRIO_REALTIME: p = -20; break;
     }
 
-    if (!setpriority(PRIO_PROCESS, 0, p)) {
+    if (setpriority(PRIO_PROCESS, 0, p) != 0) {
         LOG_WRN("failed to set process priority %d : %s (%d)\n", prio, strerror(errno), errno);
         return false;
     }
@@ -939,7 +939,7 @@ std::string fs_get_cache_directory() {
         cache_directory = std::getenv("LOCALAPPDATA");
 #elif defined(__EMSCRIPTEN__)
         GGML_ABORT("not implemented on this platform");
-      
+
 // Mmojo Server START
 // This could be automated by searching for "error Unknown architecture" and inserting the block 2 lines before. -Brad 2025-11-05
 #elif defined(COSMOCC)
@@ -955,7 +955,7 @@ std::string fs_get_cache_directory() {
         }
         
 // Mmojo Server END
-      
+
 #else
 #  error Unknown architecture
 #endif
@@ -1111,6 +1111,8 @@ static void common_init_sampler_from_model(
 struct common_init_result::impl {
     impl() = default;
     ~impl() = default;
+
+    // note: the order in which model, context, etc. are declared matters because their destructors will be called bottom-to-top
 
     llama_model_ptr   model;
     llama_context_ptr context;
@@ -1373,10 +1375,7 @@ struct llama_model_params common_model_params_to_llama(common_params & params) {
         mparams.devices = params.devices.data();
     }
 
-    if (params.n_gpu_layers != -1) {
-        mparams.n_gpu_layers = params.n_gpu_layers;
-    }
-
+    mparams.n_gpu_layers    = params.n_gpu_layers;
     mparams.main_gpu        = params.main_gpu;
     mparams.split_mode      = params.split_mode;
     mparams.tensor_split    = params.tensor_split;
