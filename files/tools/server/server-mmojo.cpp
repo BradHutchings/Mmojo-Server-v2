@@ -317,7 +317,7 @@ int main(int argc, char ** argv, char ** envp) {
     if (!common_params_parse(argc, argv, params, LLAMA_EXAMPLE_SERVER)) {
         return 1;
     }
-  
+
     // Mmojo Server START
         printf("\n\n----------START: " PRODUCT_NAME " ---------------------------------------------------\n\n");
         printf("- Checking for missing model and model inside APE zip.\n");
@@ -423,7 +423,7 @@ int main(int argc, char ** argv, char ** envp) {
     //
 
     // register API routes
-    server_routes routes(params, ctx_server, [&ctx_http]() { return ctx_http.is_ready.load(); });
+    server_routes routes(params, ctx_server);
 
     bool is_router_server = params.model.path.empty();
     std::optional<server_models_routes> models_routes{};
@@ -556,7 +556,7 @@ int main(int argc, char ** argv, char ** envp) {
             return 1;
         }
 
-        ctx_server.init();
+        routes.update_meta(ctx_server);
         ctx_http.is_ready.store(true);
 
         LOG_INF("%s: model loaded\n", __func__);
@@ -613,7 +613,11 @@ int main(int argc, char ** argv, char ** envp) {
         if (monitor_thread.joinable()) {
             monitor_thread.join();
         }
-        llama_memory_breakdown_print(ctx_server.get_llama_context());
+
+        auto * ll_ctx = ctx_server.get_llama_context();
+        if (ll_ctx != nullptr) {
+            llama_memory_breakdown_print(ll_ctx);
+        }
     }
 
     return 0;
