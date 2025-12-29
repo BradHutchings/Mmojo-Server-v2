@@ -618,11 +618,12 @@ async function StartCompleting(workAreaText, temperature, tokens, stopWords) {
 
                         let processed = lineData.data.prompt_progress.processed;
                         let total = lineData.data.prompt_progress.total;
-
-                        let elapsedMS = Date.now() - script.completionStartedMS;
-   			            let estimatedMS = (elapsedMS * total) / processed;
-			            estimatedMS += (10 * 0000);
-			            estimatedMS = 10000 * Math.ceil(estimatedMS / 10000);
+						let elapsedMS = Date.now() - script.completionStartedMS;
+						let estimatedMS = (processed > 0) ? (elapsedMS * total) / processed : 0;
+						if (estimatedMS > 0) {
+			            	estimatedMS += (10 * 10000);
+			            	estimatedMS = 10000 * Math.ceil(estimatedMS / 10000);
+						}
 
                         script.evaluatingEstimatedMS = estimatedMS;
                         script.evaluatingTokensProcessed = processed;
