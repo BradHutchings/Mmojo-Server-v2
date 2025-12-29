@@ -201,20 +201,21 @@ bool server_http_context::init(const common_params & params) {
         bool ready = is_ready.load();
         if (!ready) {
             auto tmp = string_split<std::string>(req.path, '.');
+          
             // Mmojo Server START -- XXX
             // if (req.path == "/" || tmp.back() == "html") {
-            //    res.set_content(reinterpret_cast<const char*>(loading_html), loading_html_len, "text/html; charset=utf-8");
             //    res.status = 503;
+            //    res.set_content(reinterpret_cast<const char*>(loading_html), loading_html_len, "text/html; charset=utf-8");
             // This can be automated by searching for "req.path == \"/models\"" then replacing previous 3 lines with this block. -Brad 2025-11-05
             if (req.path == "/" || tmp.back() == "html" || ends_with(req.path, "/") || ends_with(req.path, ".html")) {
                 // res.set_content(reinterpret_cast<const char*>(loading_html), loading_html_len, "text/html; charset=utf-8");
-                res.set_content(reinterpret_cast<const char*>(loading_mmojo_html), loading_mmojo_html_len, "text/html; charset=utf-8");
                 res.status = 503;
+                res.set_content(reinterpret_cast<const char*>(loading_mmojo_html), loading_mmojo_html_len, "text/html; charset=utf-8");
             // Mmojo Server END
-            } else if (req.path == "/models" || req.path == "/v1/models" || req.path == "/api/tags") {
-                // allow the models endpoint to be accessed during loading
-                return true;
+            
             } else {
+                // no endpoints is allowed to be accessed when the server is not ready
+                // this is to prevent any data races or inconsistent states
                 res.status = 503;
                 res.set_content(
                     safe_json_to_str(json {
@@ -293,7 +294,7 @@ bool server_http_context::init(const common_params & params) {
     }
   
     // Mmojo Server START
-    // This can be automated by searching for "register API routes" and inserting this block before. -Brad 2025-11-05
+    // This can be automated by searching for "server_http_context::start" and inserting this block before the return true above. -Brad 2025-12-29
     // LOG_INF("%s%s\n", "default_ui_endpoint: ", params.default_ui_endpoint.c_str());
 
     if (params.default_ui_endpoint != "") {
@@ -325,8 +326,8 @@ bool server_http_context::init(const common_params & params) {
             return false;
         });        
     }
-    // Mmojo Server END    
-
+    // Mmojo Server END
+  
     return true;
 }
 
@@ -402,12 +403,16 @@ static std::map<std::string, std::string> get_headers(const httplib::Request & r
     return headers;
 }
 
-static void process_handler_response(server_http_res_ptr & response, httplib::Response & res) {
+// using unique_ptr for request to allow safe capturing in lambdas
+using server_http_req_ptr = std::unique_ptr<server_http_req>;
+
+static void process_handler_response(server_http_req_ptr && request, server_http_res_ptr & response, httplib::Response & res) {
     if (response->is_stream()) {
         res.status = response->status;
         set_headers(res, response->headers);
         std::string content_type = response->content_type;
         // convert to shared_ptr as both chunked_content_provider() and on_complete() need to use it
+        std::shared_ptr<server_http_req> q_ptr = std::move(request);
         std::shared_ptr<server_http_res> r_ptr = std::move(response);
         const auto chunked_content_provider = [response = r_ptr](size_t, httplib::DataSink & sink) -> bool {
             std::string chunk;
@@ -423,8 +428,9 @@ static void process_handler_response(server_http_res_ptr & response, httplib::Re
             }
             return has_next;
         };
-        const auto on_complete = [response = r_ptr](bool) mutable {
+        const auto on_complete = [request = q_ptr, response = r_ptr](bool) mutable {
             response.reset(); // trigger the destruction of the response object
+            request.reset();  // trigger the destruction of the request object
         };
         res.set_chunked_content_provider(content_type, chunked_content_provider, on_complete);
     } else {
@@ -436,26 +442,28 @@ static void process_handler_response(server_http_res_ptr & response, httplib::Re
 
 void server_http_context::get(const std::string & path, const server_http_context::handler_t & handler) const {
     pimpl->srv->Get(path_prefix + path, [handler](const httplib::Request & req, httplib::Response & res) {
-        server_http_res_ptr response = handler(server_http_req{
+        server_http_req_ptr request = std::make_unique<server_http_req>(server_http_req{
             get_params(req),
             get_headers(req),
             req.path,
             req.body,
             req.is_connection_closed
         });
-        process_handler_response(response, res);
+        server_http_res_ptr response = handler(*request);
+        process_handler_response(std::move(request), response, res);
     });
 }
 
 void server_http_context::post(const std::string & path, const server_http_context::handler_t & handler) const {
     pimpl->srv->Post(path_prefix + path, [handler](const httplib::Request & req, httplib::Response & res) {
-        server_http_res_ptr response = handler(server_http_req{
+        server_http_req_ptr request = std::make_unique<server_http_req>(server_http_req{
             get_params(req),
             get_headers(req),
             req.path,
             req.body,
             req.is_connection_closed
         });
-        process_handler_response(response, res);
+        server_http_res_ptr response = handler(*request);
+        process_handler_response(std::move(request), response, res);
     });
 }
