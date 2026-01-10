@@ -62,7 +62,8 @@ cp -r $BUILD_OPENSSSL_DIR/openssl .
 cd cpp-httplib
 # git checkout 1d36013fc3aa14f39f5e8071be445e5a75fafff7 # worked!
 # git checkout dbd5ca4bf2da438da1c6dcd0ba7c725f7f2cc7b7 $ failed
-git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563
+
+# git checkout 143019a38cb88661ce78ca3799dc1c0779c6c563 # Try this. -Brad 2026-01-10
 
 cd ..
 # Roll the llama.cpp repo back to last known working.
